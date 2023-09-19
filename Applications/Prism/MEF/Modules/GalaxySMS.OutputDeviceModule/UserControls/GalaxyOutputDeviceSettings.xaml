@@ -1,0 +1,322 @@
+﻿<UserControl x:Class="GalaxySMS.OutputDevice.UserControls.GalaxyOutputDeviceSettings"
+                          xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                          xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                          xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                          xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                          xmlns:core="http://www.galaxysys.com/GCS/Core"
+                          xmlns:prism="http://prismlibrary.com/"
+                          xmlns:prismInfra="clr-namespace:GalaxySMS.Prism.Infrastructure;assembly=GalaxySMS.Prism.Infrastructure"
+                          xmlns:resx="clr-namespace:GalaxySMS.OutputDevice.Properties"
+                          xmlns:sharedResources="clr-namespace:GalaxySMS.Resources;assembly=GalaxySMS.Resources"
+                          xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+                          xmlns:converters="clr-namespace:GCS.Core.Common.UI.Converters;assembly=GCS.Core.Common.UI"
+                          xmlns:constants="clr-namespace:GalaxySMS.Common.Constants;assembly=GalaxySMS.Common"
+                          xmlns:ui="clr-namespace:GalaxySMS.Client.UI;assembly=GalaxySMS.Client.UI"
+                          xmlns:ui1="clr-namespace:GCS.Core.Common.UI;assembly=GCS.Core.Common.UI"
+                          xmlns:local="clr-namespace:GalaxySMS.OutputDevice.UserControls"
+                          xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+                          xmlns:maskedInput="clr-namespace:Telerik.Windows.Controls.MaskedInput;assembly=Telerik.Windows.Controls.Input"
+                          mc:Ignorable="d"
+                          d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <converters:BooleanToVisibilityConverter x:Key="boolToVisibility" />
+        <converters:TimeSpanToSecondsConverter x:Key="timeSpanToSecondsConverter" />
+        <converters:ParameterAndValueToVisibilityConverter x:Key="parameterAndValueToVisibilityConverter"/>
+        <converters:ParameterAndNotValueToVisibilityConverter x:Key="parameterAndNotValueToVisibilityConverter"/>
+        <BitmapImage x:Key="Inverted" UriSource="/GalaxySMS.Resources;component/Images/Outputs/32x32/inverter.png" />
+        <BitmapImage x:Key="NotInverted" UriSource="/GalaxySMS.Resources;component/Images/Outputs/32x32/amplifier.png" />
+        <BitmapImage x:Key="IncrementArrow" UriSource="/GalaxySMS.Resources;component/Images/Arrows/32/arrow_up.png" />
+        <BitmapImage x:Key="DecrementArrow" UriSource="/GalaxySMS.Resources;component/Images/Arrows/32/arrow_down.png" />
+        <BitmapImage x:Key="ResetCountArrow" UriSource="/GalaxySMS.Resources;component/Images/Arrows/32/arrow_download.png" />
+        <BitmapImage x:Key="MaxCountArrow" UriSource="/GalaxySMS.Resources;component/Images/Arrows/32/arrow_upload.png" />
+        <BitmapImage x:Key="Numeral1" UriSource="/GalaxySMS.Resources;component/Images/RomanNumerals/32/1-blue.png" />
+        <BitmapImage x:Key="Numeral2" UriSource="/GalaxySMS.Resources;component/Images/RomanNumerals/32/2-blue.png" />
+        <BitmapImage x:Key="Numeral3" UriSource="/GalaxySMS.Resources;component/Images/RomanNumerals/32/3-blue.png" />
+        <BitmapImage x:Key="Numeral4" UriSource="/GalaxySMS.Resources;component/Images/RomanNumerals/32/4-blue.png" />
+    </UserControl.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+
+        <telerik:RadExpander Margin="5" IsExpanded="{Binding IsGalaxyOutputDeviceControlExpanded}"
+                                 ExpandDirection="Down">
+            <telerik:RadExpander.Header>
+                <Border Style="{StaticResource HeaderBorder}">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Margin="8"
+                                       Style="{StaticResource Heading2Left}"
+                                       Text="{x:Static sharedResources:Resources.GalaxyOutputDevice_MainSettings_HeaderText}" />
+                    </StackPanel>
+                </Border>
+            </telerik:RadExpander.Header>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="10"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="10"/>
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.Row="0" Grid.Column="0">
+                    <local:ucOutputSchedule Margin="3"/>
+                    <local:ucOutputMode Margin="3"/>
+                    <local:ucTimeoutDuration Margin="3"
+                                                 Visibility="{Binding OutputDevice.GalaxyOutputDevice.GalaxyOutputModeUid,
+                                    Converter={StaticResource parameterAndValueToVisibilityConverter},
+                                    ConverterParameter={x:Static constants:GalaxyOutputModeIds.Timeout}}" />
+
+                    <local:ucTimeoutDuration Margin="3"
+                                                 Visibility="{Binding OutputDevice.GalaxyOutputDevice.GalaxyOutputModeUid,
+                                    Converter={StaticResource parameterAndValueToVisibilityConverter},
+                                    ConverterParameter={x:Static constants:GalaxyOutputModeIds.TimeoutRetriggerable}}" />
+
+                    <local:ucLimitValue Margin="3"
+                                            Visibility="{Binding OutputDevice.GalaxyOutputDevice.GalaxyOutputModeUid,
+                                    Converter={StaticResource parameterAndValueToVisibilityConverter},
+                                    ConverterParameter={x:Static constants:GalaxyOutputModeIds.Limit}}" />
+
+                    <local:ucCounterValue Margin="3"
+                                          Visibility="{Binding OutputDevice.GalaxyOutputDevice.GalaxyOutputModeUid,
+                                    Converter={StaticResource parameterAndValueToVisibilityConverter},
+                                    ConverterParameter={x:Static constants:GalaxyOutputModeIds.Counter}}" />
+                    <local:ucInputSourceRelationship Margin="3"
+                                                     Visibility="{Binding OutputDevice.GalaxyOutputDevice.GalaxyOutputModeUid,
+                    Converter={StaticResource parameterAndNotValueToVisibilityConverter}, 
+                    ConverterParameter={x:Static constants:GalaxyOutputModeIds.Scheduled}}" />
+                    <ui:ToggleSwitchButtonBindable Margin="3"
+                                                   IsChecked="{Binding OutputDevice.GalaxyOutputDevice.InvertOutput, Mode=TwoWay}"
+                                                   TitleText="{x:Static sharedResources:Resources.GalaxyOutputDevice_InvertOutput_Text}"
+                                                   ToolTip="{x:Static sharedResources:Resources.GalaxyOutputDevice_InvertOutput_ToolTip}"
+                                                   TitleStyle="{StaticResource DataEntryControlTitle}"
+                                                   CheckedImageSource="{StaticResource Inverted}"
+                                                   UncheckedImageSource="{StaticResource NotInverted}"
+                                                   CheckedToolTip="{x:Static sharedResources:Resources.GalaxyOutputDevice_OutputInverted_ToolTip}"
+                                                   UncheckedToolTip="{x:Static sharedResources:Resources.GalaxyOutputDevice_OutputNotInverted_ToolTip}" 
+                                                   CheckedStateTextVisibility="Visible"
+                                                   CheckedStateText ="{x:Static sharedResources:Resources.OutputInverted_Text}"
+                                                   UncheckedStateText="{x:Static sharedResources:Resources.OutputNotInverted_Text}"/>
+                </StackPanel>
+
+                <StackPanel Grid.Row="0" Grid.Column="2" Grid.RowSpan="3"
+                            Visibility="{Binding OutputDevice.GalaxyOutputDevice.GalaxyOutputModeUid,
+                    Converter={StaticResource parameterAndNotValueToVisibilityConverter}, 
+                    ConverterParameter={x:Static constants:GalaxyOutputModeIds.Scheduled}}">
+                    <telerik:RadExpander Margin="5" IsExpanded="{Binding IsInputSource1Expanded}"
+                                         ExpandDirection="Down">
+                        <telerik:RadExpander.Header>
+                            <Border Style="{StaticResource HeaderBorder}">
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Source="{StaticResource IncrementArrow}"
+                                           Visibility="{Binding OutputDevice.GalaxyOutputDevice.GalaxyOutputModeUid, 
+                                        Converter={StaticResource parameterAndValueToVisibilityConverter},
+                                        ConverterParameter={x:Static constants:GalaxyOutputModeIds.Counter}}" />
+                                    <Image Source="{StaticResource Numeral1}"
+                                           Visibility="{Binding OutputDevice.GalaxyOutputDevice.GalaxyOutputModeUid, 
+                                        Converter={StaticResource parameterAndNotValueToVisibilityConverter},
+                                        ConverterParameter={x:Static constants:GalaxyOutputModeIds.Counter}}" />
+                                    <TextBlock Margin="8"
+                                               Style="{StaticResource Heading2Left}"
+                                               Text="{Binding OutputDevice.GalaxyOutputDevice.InputSource1.HeaderTitle}" />
+
+                                </StackPanel>
+                            </Border>
+                        </telerik:RadExpander.Header>
+                        <local:ucInputSourceSettings Margin="35,0,0,0"
+                            InputSource="{Binding OutputDevice.GalaxyOutputDevice.InputSource1}" />
+                    </telerik:RadExpander>
+
+                    <telerik:RadExpander Margin="5" IsExpanded="{Binding IsInputSource2Expanded}"
+                                         ExpandDirection="Down">
+                        <telerik:RadExpander.Header>
+                            <Border Style="{StaticResource HeaderBorder}">
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Source="{StaticResource DecrementArrow}"
+                                           Visibility="{Binding OutputDevice.GalaxyOutputDevice.GalaxyOutputModeUid, 
+                                        Converter={StaticResource parameterAndValueToVisibilityConverter},
+                                        ConverterParameter={x:Static constants:GalaxyOutputModeIds.Counter}}" />
+                                    <Image Source="{StaticResource Numeral2}"
+                                           Visibility="{Binding OutputDevice.GalaxyOutputDevice.GalaxyOutputModeUid, 
+                                        Converter={StaticResource parameterAndNotValueToVisibilityConverter},
+                                        ConverterParameter={x:Static constants:GalaxyOutputModeIds.Counter}}" />
+                                    <TextBlock Margin="8"
+                                               Style="{StaticResource Heading2Left}"
+                                               Text="{Binding OutputDevice.GalaxyOutputDevice.InputSource2.HeaderTitle}" />
+                                </StackPanel>
+                            </Border>
+                        </telerik:RadExpander.Header>
+                        <local:ucInputSourceSettings Margin="35,0,0,0"
+                            InputSource="{Binding OutputDevice.GalaxyOutputDevice.InputSource2}" />
+                    </telerik:RadExpander>
+
+                    <telerik:RadExpander Margin="5" IsExpanded="{Binding IsInputSource3Expanded}"
+                                         ExpandDirection="Down">
+                        <telerik:RadExpander.Header>
+                            <Border Style="{StaticResource HeaderBorder}">
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Source="{StaticResource MaxCountArrow}"
+                                           Visibility="{Binding OutputDevice.GalaxyOutputDevice.GalaxyOutputModeUid, 
+                                        Converter={StaticResource parameterAndValueToVisibilityConverter},
+                                        ConverterParameter={x:Static constants:GalaxyOutputModeIds.Counter}}" />
+                                    <Image Source="{StaticResource Numeral3}"
+                                           Visibility="{Binding OutputDevice.GalaxyOutputDevice.GalaxyOutputModeUid, 
+                                        Converter={StaticResource parameterAndNotValueToVisibilityConverter},
+                                        ConverterParameter={x:Static constants:GalaxyOutputModeIds.Counter}}" />
+                                    <TextBlock Margin="8"
+                                               Style="{StaticResource Heading2Left}"
+                                               Text="{Binding OutputDevice.GalaxyOutputDevice.InputSource3.HeaderTitle}" />
+                                </StackPanel>
+                            </Border>
+                        </telerik:RadExpander.Header>
+                        <local:ucInputSourceSettings Margin="35,0,0,0"
+                                                     InputSource="{Binding OutputDevice.GalaxyOutputDevice.InputSource3}" />
+                    </telerik:RadExpander>
+
+                    <telerik:RadExpander Margin="5" IsExpanded="{Binding IsInputSource4Expanded}"
+                                         ExpandDirection="Down">
+                        <telerik:RadExpander.Header>
+                            <Border Style="{StaticResource HeaderBorder}">
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Source="{StaticResource ResetCountArrow}"
+                                           Visibility="{Binding OutputDevice.GalaxyOutputDevice.GalaxyOutputModeUid, 
+                                        Converter={StaticResource parameterAndValueToVisibilityConverter},
+                                        ConverterParameter={x:Static constants:GalaxyOutputModeIds.Counter}}" />
+                                    <Image Source="{StaticResource Numeral4}"
+                                           Visibility="{Binding OutputDevice.GalaxyOutputDevice.GalaxyOutputModeUid, 
+                                        Converter={StaticResource parameterAndNotValueToVisibilityConverter},
+                                        ConverterParameter={x:Static constants:GalaxyOutputModeIds.Counter}}" />
+                                    <TextBlock Margin="8"
+                                               Style="{StaticResource Heading2Left}"
+                                               Text="{Binding OutputDevice.GalaxyOutputDevice.InputSource4.HeaderTitle}" />
+                                </StackPanel>
+                            </Border>
+                        </telerik:RadExpander.Header>
+                        <local:ucInputSourceSettings Margin="35,0,0,0"
+                                                     InputSource="{Binding OutputDevice.GalaxyOutputDevice.InputSource4}" />
+                    </telerik:RadExpander>
+                </StackPanel>
+                <!--<telerik:RadTabControl>
+                        <telerik:RadTabItem Header="{Binding OutputDevice.GalaxyOutputDevice.InputSource1.HeaderTitle}">
+                            <local:ucInputSourceSettings InputSource="{Binding OutputDevice.GalaxyOutputDevice.InputSource1}"/>
+                        </telerik:RadTabItem>
+                        <telerik:RadTabItem Header="{Binding OutputDevice.GalaxyOutputDevice.InputSource2.HeaderTitle}">
+                            <local:ucInputSourceSettings InputSource="{Binding OutputDevice.GalaxyOutputDevice.InputSource2}"/>
+                        </telerik:RadTabItem>                    
+                        <telerik:RadTabItem Header="{Binding OutputDevice.GalaxyOutputDevice.InputSource3.HeaderTitle}">
+                            <local:ucInputSourceSettings InputSource="{Binding OutputDevice.GalaxyOutputDevice.InputSource3}"/>
+                        </telerik:RadTabItem>                    
+                        <telerik:RadTabItem Header="{Binding OutputDevice.GalaxyOutputDevice.InputSource4.HeaderTitle}">
+                            <local:ucInputSourceSettings InputSource="{Binding OutputDevice.GalaxyOutputDevice.InputSource4}"/>
+                        </telerik:RadTabItem>                    
+                    </telerik:RadTabControl>-->
+
+
+                <!--<StackPanel Orientation="Vertical" Grid.Row="2" Grid.Column="0">
+                    <TextBlock Style="{StaticResource DataEntryControlTitle}">
+                        <Run Text="{x:Static sharedResources:Resources.InputDevice_ArmingControl_InputOutputGroup_Label}"/>
+                        <Run Text=" "/>
+                        <Run Text="{Binding InputDevice.GalaxyInputDevice.ArmingIoGroup1.OrderNumber}"/>
+                    </TextBlock>
+                    <telerik:RadComboBox x:Name="radComboBoxIOGroups1"
+                                         ItemsSource="{Binding DeviceSpecificEditingData.InputOutputGroups}"
+                                         SelectedValue="{Binding InputDevice.GalaxyInputDevice.ArmingIoGroup1.InputOutputGroupUid}"
+                                         SelectedValuePath="InputOutputGroupUid"
+                                         ToolTip="{x:Static sharedResources:Resources.InputDevice_ArmingControl_InputOutputGroup_ToolTip}">
+                        <telerik:RadComboBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock
+                                        VerticalAlignment="Center"
+                                        Text="{Binding Display}" />
+                                </StackPanel>
+                            </DataTemplate>
+                        </telerik:RadComboBox.ItemTemplate>
+                    </telerik:RadComboBox>
+                </StackPanel>
+
+                <StackPanel Orientation="Vertical" Grid.Row="2" Grid.Column="2">
+                    <TextBlock Style="{StaticResource DataEntryControlTitle}">
+                        <Run Text="{x:Static sharedResources:Resources.InputDevice_ArmingControl_InputOutputGroup_Label}"/>
+                        <Run Text=" "/>
+                        <Run Text="{Binding InputDevice.GalaxyInputDevice.ArmingIoGroup2.OrderNumber}"/>
+                    </TextBlock>
+                    <telerik:RadComboBox x:Name="radComboBoxIOGroups2"
+                                         ItemsSource="{Binding DeviceSpecificEditingData.InputOutputGroups}"
+                                         SelectedValue="{Binding InputDevice.GalaxyInputDevice.ArmingIoGroup2.InputOutputGroupUid}"
+                                         SelectedValuePath="InputOutputGroupUid"
+                                         ToolTip="{x:Static sharedResources:Resources.InputDevice_ArmingControl_InputOutputGroup_ToolTip}">
+                        <telerik:RadComboBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock
+                                        VerticalAlignment="Center"
+                                        Text="{Binding Display}" />
+                                </StackPanel>
+                            </DataTemplate>
+                        </telerik:RadComboBox.ItemTemplate>
+                    </telerik:RadComboBox>
+                </StackPanel>
+
+                <StackPanel Orientation="Vertical" Grid.Row="2" Grid.Column="4">
+                    <TextBlock Style="{StaticResource DataEntryControlTitle}">
+                        <Run Text="{x:Static sharedResources:Resources.InputDevice_ArmingControl_InputOutputGroup_Label}"/>
+                        <Run Text=" "/>
+                        <Run Text="{Binding InputDevice.GalaxyInputDevice.ArmingIoGroup3.OrderNumber}"/>
+                    </TextBlock>
+                    <telerik:RadComboBox x:Name="radComboBoxIOGroups3"
+                                         ItemsSource="{Binding DeviceSpecificEditingData.InputOutputGroups}"
+                                         SelectedValue="{Binding InputDevice.GalaxyInputDevice.ArmingIoGroup3.InputOutputGroupUid}"
+                                         SelectedValuePath="InputOutputGroupUid"
+                                         ToolTip="{x:Static sharedResources:Resources.InputDevice_ArmingControl_InputOutputGroup_ToolTip}">
+                        <telerik:RadComboBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock
+                                        VerticalAlignment="Center"
+                                        Text="{Binding Display}" />
+                                </StackPanel>
+                            </DataTemplate>
+                        </telerik:RadComboBox.ItemTemplate>
+                    </telerik:RadComboBox>
+                </StackPanel>
+
+                <StackPanel Orientation="Vertical" Grid.Row="2" Grid.Column="6">
+                    <TextBlock Style="{StaticResource DataEntryControlTitle}">
+                        <Run Text="{x:Static sharedResources:Resources.InputDevice_ArmingControl_InputOutputGroup_Label}"/>
+                        <Run Text=" "/>
+                        <Run Text="{Binding InputDevice.GalaxyInputDevice.ArmingIoGroup4.OrderNumber}"/>
+                    </TextBlock>
+                    <telerik:RadComboBox x:Name="radComboBoxIOGroups4"
+                                         ItemsSource="{Binding DeviceSpecificEditingData.InputOutputGroups}"
+                                         SelectedValue="{Binding InputDevice.GalaxyInputDevice.ArmingIoGroup4.InputOutputGroupUid}"
+                                         SelectedValuePath="InputOutputGroupUid"
+                                         ToolTip="{x:Static sharedResources:Resources.InputDevice_ArmingControl_InputOutputGroup_ToolTip}">
+                        <telerik:RadComboBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock
+                                        VerticalAlignment="Center"
+                                        Text="{Binding Display}" />
+                                </StackPanel>
+                            </DataTemplate>
+                        </telerik:RadComboBox.ItemTemplate>
+                    </telerik:RadComboBox>
+                </StackPanel>-->
+
+            </Grid>
+        </telerik:RadExpander>
+    </Grid>
+</UserControl>
+

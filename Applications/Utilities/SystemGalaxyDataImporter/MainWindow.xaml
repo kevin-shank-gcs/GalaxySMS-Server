@@ -1,0 +1,282 @@
+﻿<Window x:Class="SystemGalaxyDataImporter.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+        xmlns:local="clr-namespace:SystemGalaxyDataImporter"
+        xmlns:userControls="clr-namespace:SystemGalaxyDataImporter.UserControls"
+        xmlns:converters="clr-namespace:GCS.Core.Common.UI.Converters;assembly=GCS.Core.Common.UI"
+        xmlns:controls="http://www.galaxysys.com/GCS/Core"
+        xmlns:resx="clr-namespace:SystemGalaxyDataImporter.Properties"
+        xmlns:ui="clr-namespace:GalaxySMS.Client.UI;assembly=GalaxySMS.Client.UI"
+        mc:Ignorable="d"
+        Title="{Binding ViewTitle}" Height="450" Width="800"
+        DataContext="{Binding Main, Source={StaticResource Locator}}">
+    <Window.Resources>
+        <SolidColorBrush x:Key="SGBorderBrush" Color="#33B833" Opacity="0.75"/>
+        <SolidColorBrush x:Key="GalaxySMSBorderBrush" Color="#0B77C9" Opacity="0.75"/>
+        <SolidColorBrush x:Key="SGBackgroundBrush" Color="#33B833" Opacity="0.25"/>
+        <SolidColorBrush x:Key="GalaxySMSBackgroundBrush" Color="#0B77C9" Opacity="0.25"/>
+        <Thickness x:Key="BorderThickness">2</Thickness>
+        <converters:BooleanToVisibilityConverter x:Key="boolToVisibility" />
+        <converters:InverseBooleanToVisibilityConverter x:Key="inverseBoolToVisibility" />
+        <converters:NotNullToVisibilityConverter x:Key="notNullToVisibility"/>
+        <converters:NullToVisibilityConverter x:Key="nullToVisibility"/>
+        <BitmapImage x:Key="checkMarkGreen" UriSource="/SystemGalaxyDataImporter;component/Resources/GreenCheck1.png" />
+        <BitmapImage x:Key="redDot" UriSource="/SystemGalaxyDataImporter;component/Resources/red-dot.png" />
+        <BitmapImage x:Key="dbImport" UriSource="/SystemGalaxyDataImporter;component/Resources/database-import.png" />
+
+    </Window.Resources>
+    <telerik:RadBusyIndicator IsBusy="{Binding Globals.IsBusy}" BusyContent="{Binding Globals.BusyContent}" >
+        <!--<ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+        </ScrollViewer>-->
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="5" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Border BorderThickness="{StaticResource BorderThickness}"
+                            BorderBrush="{StaticResource SGBorderBrush}"
+                            Background="{StaticResource SGBackgroundBrush}"
+                            Grid.Column="0">
+                        <StackPanel>
+                            <userControls:ucSystemGalaxyConnection />
+                        </StackPanel>
+                    </Border>
+                    <GridSplitter Grid.Column="1" />
+                    <Border BorderThickness="{StaticResource BorderThickness}"
+                            BorderBrush="{StaticResource GalaxySMSBorderBrush}"
+                            Background="{StaticResource GalaxySMSBackgroundBrush}"
+                            Grid.Column="2">
+                        <userControls:ucGalaxySMSConnection />
+                    </Border>
+                </Grid>
+            </Grid>
+            <telerik:RadTabControl Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" VerticalAlignment="Top"
+                                   DisplayMemberPath="Content" DropDownDisplayMode="Visible" ScrollMode="Viewport" BorderThickness="0"
+                                   Visibility="{Binding AreConversionControlsVisible,Converter={StaticResource boolToVisibility}}">
+                <telerik:RadTabItem Header="{x:Static resx:Resources.SGCustomerTab_HeaderText}">
+                    <StackPanel>
+                        <telerik:RadGridView Visibility="Visible" x:Name="radGridViewCustomers" ShowGroupPanel="False"
+                                             ItemsSource="{Binding Globals.SystemGalaxyData.CustomerList}"
+                                             IsFilteringAllowed="False" IsReadOnly="True" AutoGenerateColumns="False"
+                                             RowIndicatorVisibility="Collapsed"
+                                             RowDetailsVisibilityMode="VisibleWhenSelected">
+                            <telerik:RadGridView.Columns>
+                                <telerik:GridViewDataColumn Header="{x:Static resx:Resources.SGCustomerList_CustomerIdTitle}" DataMemberBinding="{Binding Customer.ID}" />
+                                <telerik:GridViewDataColumn Header="{x:Static resx:Resources.SGCustomerList_CustomerNameTitle}" DataMemberBinding="{Binding Customer.Name}" />
+                            </telerik:RadGridView.Columns>
+                            <telerik:RadGridView.RowDetailsTemplate>
+                                <DataTemplate>
+                                    <StackPanel Margin="5">
+                                        <StackPanel x:Name="spCustomerMappedToEntity"
+                                            Visibility="{Binding SmsEntity, Converter={StaticResource nullToVisibility}}" >
+                                            <StackPanel Orientation="Horizontal">
+                                                <Image x:Name="imgGreenCheck" Source="{StaticResource checkMarkGreen}" Margin="5" MaxHeight="20"
+                                                   VerticalAlignment="Top" />
+                                                <TextBlock Margin="5">
+                                                <Run Text="{x:Static resx:Resources.SGCustomerDetailsRun1}"/>
+                                                <Run Text="{Binding Customer.Name}"/>
+                                                <Run Text="{x:Static resx:Resources.SGCustomerDetailsRun2}"/>
+                                                <Run Text="{Binding SmsEntity.EntityName}"></Run>
+                                                <Run Text="'"/>
+                                                </TextBlock>
+                                            </StackPanel>
+                                            <StackPanel>
+                                                <TextBlock FontWeight="Bold" Margin="3"
+                                                           Text="{x:Static resx:Resources.ImportClustersBeforeTheFollowingSteps}">
+                                                </TextBlock>
+                                                <StackPanel x:Name="spCustomerMappedToEntityCommands" Orientation="Horizontal">
+                                                    <telerik:RadButton Content="{x:Static resx:Resources.Button_SyncDepartmentsTitle}"
+                                                                   ToolTip="{x:Static resx:Resources.Button_SyncDepartmentsToolTip}"
+                                                                   Command="{Binding DataContext.SyncDepartmentsCommand, RelativeSource={RelativeSource AncestorType=Window}}"
+                                                                   CommandParameter="{Binding}"
+                                                                   Margin="5">
+                                                    </telerik:RadButton>
+                                                    <telerik:RadButton Content="{x:Static resx:Resources.Button_SyncAccessProfilesTitle}"
+                                                                   ToolTip="{x:Static resx:Resources.Button_SyncAccessProfilesToolTip}"
+                                                                   Command="{Binding DataContext.SyncAccessProfilesCommand, RelativeSource={RelativeSource AncestorType=Window}}"
+                                                                   CommandParameter="{Binding}"
+                                                                   Margin="5">
+                                                    </telerik:RadButton>
+                                                    <telerik:RadButton Content="{x:Static resx:Resources.Button_SyncBadgeTemplatesTitle}"
+                                                                   ToolTip="{x:Static resx:Resources.Button_SyncBadgeTemplatesToolTip}"
+                                                                   Command="{Binding DataContext.SyncBadgeTemplatesCommand, RelativeSource={RelativeSource AncestorType=Window}}"
+                                                                   CommandParameter="{Binding}"
+                                                                   Margin="5">
+                                                    </telerik:RadButton>
+                                                    <telerik:RadButton Content="{x:Static resx:Resources.Button_SyncPersonEditingItemsTitle}"
+                                                                   ToolTip="{x:Static resx:Resources.Button_SyncPersonEditingItemsToolTip}" 
+                                                                   Command="{Binding DataContext.SyncCardholderPropertyItemsCommand, RelativeSource={RelativeSource AncestorType=Window}}"
+                                                                   CommandParameter="{Binding}"
+                                                                   Margin="5">
+                                                    </telerik:RadButton>
+                                                    <telerik:RadButton Content="{x:Static resx:Resources.Button_SyncPersonsTitle}"
+                                                                   ToolTip="{x:Static resx:Resources.Button_SyncPersonsToolTip}" 
+                                                                   Command="{Binding DataContext.SyncPeopleCommand, RelativeSource={RelativeSource AncestorType=Window}}"
+                                                                   CommandParameter="{Binding}"
+                                                                   Margin="5">
+                                                    </telerik:RadButton>
+                                                </StackPanel>
+                                            </StackPanel>
+                                        </StackPanel>
+                                        <StackPanel x:Name="spCustomerNotMappedToEntity" 
+                                                    Orientation="Horizontal" 
+                                                    Visibility="{Binding SmsEntity, Converter={StaticResource notNullToVisibility}}">
+                                            <Image x:Name="imgRedDot" Source="{StaticResource redDot}" Margin="5" Height="10"
+                                                   VerticalAlignment="Center" />
+                                            <TextBlock Margin="5" VerticalAlignment="Center">
+                                                <Run Text="{x:Static resx:Resources.SGCustomerDetailsRun1}"/>
+                                                <Run Text="{Binding Customer.Name}"/>
+                                                <Run Text="{x:Static resx:Resources.SGCustomerDetailsRun3}"/>
+                                            </TextBlock>
+                                            <!--<telerik:RadButton Content="{x:Static resx:Resources.EnsureEntityExistsButton_Text}" 
+                                                               Command="{Binding DataContext.EnsureMatchingEntityExistsCommand, RelativeSource={RelativeSource AncestorType=Window}}" CommandParameter="{Binding}"
+                                                               />-->
+                                            <ui:ButtonControlBindable
+                                                Command="{Binding DataContext.EnsureMatchingEntityExistsCommand, RelativeSource={RelativeSource AncestorType=Window}}"
+                                                CommandParameter="{Binding}"
+                                                Text="{x:Static resx:Resources.EnsureEntityExistsButton_Text}"
+                                                ImageSource="{StaticResource dbImport}"
+                                                ImageHeight="16"
+                                                ImageWidth="16"
+                                                ImagePosition="Left"
+                                                ButtonMargin="2" ContentMargin="1"/>
+                                            <TextBlock Margin="5" Text ="{x:Static resx:Resources.SGCustomerDetailsRun4}"/>
+                                        </StackPanel>
+                                        <controls:ErrorsPanel DataContext="{Binding DataContext, RelativeSource={RelativeSource AncestorType=Window}}"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </telerik:RadGridView.RowDetailsTemplate>
+                        </telerik:RadGridView>
+                    </StackPanel>
+                </telerik:RadTabItem>
+                <telerik:RadTabItem Header="{x:Static resx:Resources.SGClustersTab_HeaderText}">
+                    <StackPanel>
+                        <telerik:RadGridView Visibility="Visible" x:Name="radGridViewClusters" ShowGroupPanel="False"
+                                             ItemsSource="{Binding Globals.SystemGalaxyData.ClusterList}"
+                                             IsFilteringAllowed="False" IsReadOnly="True" AutoGenerateColumns="False"
+                                             RowIndicatorVisibility="Collapsed"
+                                             RowDetailsVisibilityMode="VisibleWhenSelected">
+                            <telerik:RadGridView.Columns>
+                                <telerik:GridViewDataColumn Header="{x:Static resx:Resources.SGClusterList_ClusterIdTitle}" DataMemberBinding="{Binding SgClusterData.ClusterId}" />
+                                <telerik:GridViewDataColumn Header="{x:Static resx:Resources.SGClusterList_ClusterNameTitle}" DataMemberBinding="{Binding SgClusterData.ClusterName}" />
+                            </telerik:RadGridView.Columns>
+                            <telerik:RadGridView.RowDetailsTemplate>
+                                <DataTemplate>
+                                    <StackPanel Margin="5">
+                                        <StackPanel x:Name="spSGClusterImportedAlready" 
+                                                    Orientation="Horizontal"
+                                                    Visibility="{Binding SmsCluster, Converter={StaticResource nullToVisibility}}">
+                                            <Image x:Name="imgGreenCheck" Source="{StaticResource checkMarkGreen}" Margin="5" MaxHeight="20"
+                                                   VerticalAlignment="Top" />
+                                            <TextBlock Margin="5">
+                                                <Run Text="{x:Static resx:Resources.SGClusterDetailsRun1}"/>
+                                                <Run Text="{Binding SgClusterData.ClusterName}"/>
+                                                <Run Text="{x:Static resx:Resources.SGClusterDetailsRun2}"/>
+                                                <Run Text="{Binding SmsCluster.ClusterName}"></Run>
+                                                <Run Text="'"/>
+                                            </TextBlock>
+                                        </StackPanel>
+                                        <StackPanel x:Name="spClusterNotImportedYet" 
+                                                    Orientation="Horizontal" 
+                                                    Visibility="{Binding SmsCluster, Converter={StaticResource notNullToVisibility}}">
+                                            <Image x:Name="imgRedDot" Source="{StaticResource redDot}" Margin="5" MaxHeight="20"
+                                                   VerticalAlignment="Top" />
+                                            <TextBlock Margin="5">
+                                                <Run Text="{x:Static resx:Resources.SGClusterDetailsRun1}"/>
+                                                <Run Text="{Binding SgClusterData.ClusterName}"/>
+                                                <Run Text="{x:Static resx:Resources.SGClusterDetailsRun3}"/>
+                                            </TextBlock>
+                                            <StackPanel>
+                                                <telerik:RadButton Margin="2" Command="{Binding DataContext.ImportClusterIntoGalaxySMSCommand, RelativeSource={RelativeSource AncestorType=Window}}" CommandParameter="{Binding}">
+                                                    <telerik:RadButton.Content>
+                                                        <StackPanel Orientation="Horizontal">
+                                                            <Image x:Name="imgImportCluster" Source="{StaticResource dbImport}" Margin="5" MaxHeight="16"
+                                                               VerticalAlignment="Top" />
+                                                            <TextBlock VerticalAlignment="Center">
+                                                            <Run Text="{x:Static resx:Resources.ImportClusterButton_TextRun1}" />
+                                                            <Run Text="{Binding SgClusterData.ClusterName}" />
+                                                            <Run Text="{x:Static resx:Resources.ImportClusterButton_TextRun2}" />
+                                                            <Run Text="{Binding DataContext.Globals.CurrentUserEntity.EntityName, Mode=OneWay, RelativeSource={RelativeSource AncestorType=Window}}" />
+                                                            <Run Text="{x:Static resx:Resources.ImportClusterButton_TextRun3}" />
+                                                            <Run Text="{Binding DataContext.Globals.CurrentSite.Name, Mode=OneWay, RelativeSource={RelativeSource AncestorType=Window}}" />
+                                                            <Run Text="'" />
+                                                            </TextBlock>
+                                                        </StackPanel>
+                                                    </telerik:RadButton.Content>
+                                                </telerik:RadButton>
+                                            </StackPanel>
+                                            <TextBlock Margin="5" Text ="{x:Static resx:Resources.SGClusterDetailsRun4}"/>
+                                        </StackPanel>
+                                        <StackPanel>
+                                            <telerik:RadGridView Visibility="{Binding SmsCluster, Converter={StaticResource nullToVisibility}}"
+                                                                 x:Name="radGridViewPanels" ShowGroupPanel="False"
+                                                                 ItemsSource="{Binding SgClusterData.ControllersEx}"
+                                                                 IsFilteringAllowed="False" IsReadOnly="True" AutoGenerateColumns="False"
+                                                                 RowIndicatorVisibility="Collapsed"
+                                                                 RowDetailsVisibilityMode="VisibleWhenSelected">
+                                                <telerik:RadGridView.Columns>
+                                                    <telerik:GridViewDataColumn Header="{x:Static resx:Resources.SGPanelList_PanelClusterIdTitle}" DataMemberBinding="{Binding LoopClusterId}" />
+                                                    <telerik:GridViewDataColumn Header="{x:Static resx:Resources.SGPanelList_PanelNumberTitle}" DataMemberBinding="{Binding UnitNumber}" />
+                                                    <telerik:GridViewDataColumn Header="{x:Static resx:Resources.SGPanelList_PanelNameTitle}" DataMemberBinding="{Binding Name}" />
+                                                    <telerik:GridViewColumn
+                                                        Header="{x:Static resx:Resources.PanelImportStatusColumnHeader}">
+                                                        <telerik:GridViewColumn.CellTemplate>
+                                                            <DataTemplate>
+                                                                <StackPanel>
+                                                                    <StackPanel Orientation="Horizontal" Visibility="{Binding HasBeenImported, Converter={StaticResource inverseBoolToVisibility}}">
+                                                                        <telerik:RadButton Margin="5" Command="{Binding DataContext.ImportControlPanelCommand, RelativeSource={RelativeSource AncestorType=Window}}" CommandParameter="{Binding}">
+                                                                            <telerik:RadButton.Content>
+                                                                                <StackPanel Orientation="Horizontal">
+                                                                                    <Image x:Name="imgImportCluster" Source="{StaticResource dbImport}" Margin="2" MaxHeight="16" VerticalAlignment="Center" />
+                                                                                    <TextBlock VerticalAlignment="Center"
+                                                                                        Text="{x:Static resx:Resources.ImportPanelButton_TextRun1}"/>
+                                                                                </StackPanel>
+                                                                            </telerik:RadButton.Content>
+                                                                        </telerik:RadButton>
+                                                                    </StackPanel>
+                                                                    <StackPanel Orientation="Horizontal" Visibility="{Binding HasBeenImported, Converter={StaticResource boolToVisibility}}">
+                                                                        <Image x:Name="imgGreenCheck" Source="{StaticResource checkMarkGreen}" Margin="5" MaxHeight="20"
+                                                                           VerticalAlignment="Top" />
+                                                                        <TextBlock Margin="5">
+                                                                        <Run Text="{x:Static resx:Resources.SGPanelDetailsRun1}"/>
+                                                                        <Run Text="{Binding Name}"/>
+                                                                        <Run Text="{x:Static resx:Resources.SGPanelDetailsRun2}"/>
+                                                                        </TextBlock>
+                                                                    </StackPanel>
+                                                                </StackPanel>
+                                                            </DataTemplate>
+                                                        </telerik:GridViewColumn.CellTemplate>
+                                                    </telerik:GridViewColumn>
+                                                </telerik:RadGridView.Columns>
+                                            </telerik:RadGridView>
+                                        </StackPanel>
+                                        <controls:ErrorsPanel DataContext="{Binding DataContext, RelativeSource={RelativeSource AncestorType=Window}}"/>
+                                    </StackPanel>
+                                </DataTemplate>
+
+                            </telerik:RadGridView.RowDetailsTemplate>
+                        </telerik:RadGridView>
+                    </StackPanel>
+                </telerik:RadTabItem>
+            </telerik:RadTabControl>
+
+        </Grid>
+    </telerik:RadBusyIndicator>
+</Window>

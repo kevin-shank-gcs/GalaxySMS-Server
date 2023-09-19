@@ -1,0 +1,546 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>GCS.Core.Common.WebApi</name>
+    </assembly>
+    <members>
+        <member name="T:GCS.Core.Common.WebApi.ApiLogEntry">
+             <summary>   An API log entry. </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+        </member>
+        <member name="P:GCS.Core.Common.WebApi.ApiLogEntry.ApiLogEntryId">
+             <summary>   Gets or sets the identifier of the API log entry. </summary>
+            
+             <value> The identifier of the API log entry. </value>
+        </member>
+        <member name="P:GCS.Core.Common.WebApi.ApiLogEntry.Application">
+             <summary>   Gets or sets the application. </summary>
+            
+             <value> The application. </value>
+        </member>
+        <member name="P:GCS.Core.Common.WebApi.ApiLogEntry.User">
+             <summary>   Gets or sets the user. </summary>
+            
+             <value> The user. </value>
+        </member>
+        <member name="P:GCS.Core.Common.WebApi.ApiLogEntry.Machine">
+             <summary>   Gets or sets the machine. </summary>
+            
+             <value> The machine. </value>
+        </member>
+        <member name="P:GCS.Core.Common.WebApi.ApiLogEntry.RequestIpAddress">
+             <summary>   Gets or sets the request IP address. </summary>
+            
+             <value> The request IP address. </value>
+        </member>
+        <member name="P:GCS.Core.Common.WebApi.ApiLogEntry.RequestContentType">
+             <summary>   Gets or sets the type of the request content. </summary>
+            
+             <value> The type of the request content. </value>
+        </member>
+        <member name="P:GCS.Core.Common.WebApi.ApiLogEntry.RequestContentBody">
+             <summary>   Gets or sets the request content body. </summary>
+            
+             <value> The request content body. </value>
+        </member>
+        <member name="P:GCS.Core.Common.WebApi.ApiLogEntry.RequestUri">
+             <summary>   Gets or sets URI of the request. </summary>
+            
+             <value> The request URI. </value>
+        </member>
+        <member name="P:GCS.Core.Common.WebApi.ApiLogEntry.RequestMethod">
+             <summary>   Gets or sets the request method. </summary>
+            
+             <value> The request method. </value>
+        </member>
+        <member name="P:GCS.Core.Common.WebApi.ApiLogEntry.RequestRouteTemplate">
+             <summary>   Gets or sets the request route template. </summary>
+            
+             <value> The request route template. </value>
+        </member>
+        <member name="P:GCS.Core.Common.WebApi.ApiLogEntry.RequestRouteData">
+             <summary>   Gets or sets information describing the request route. </summary>
+            
+             <value> Information describing the request route. </value>
+        </member>
+        <member name="P:GCS.Core.Common.WebApi.ApiLogEntry.RequestHeaders">
+             <summary>   Gets or sets the request headers. </summary>
+            
+             <value> The request headers. </value>
+        </member>
+        <member name="P:GCS.Core.Common.WebApi.ApiLogEntry.RequestTimestamp">
+             <summary>   Gets or sets the Date/Time of the request timestamp. </summary>
+            
+             <value> The request timestamp. </value>
+        </member>
+        <member name="P:GCS.Core.Common.WebApi.ApiLogEntry.ResponseContentType">
+             <summary>   Gets or sets the type of the response content. </summary>
+            
+             <value> The type of the response content. </value>
+        </member>
+        <member name="P:GCS.Core.Common.WebApi.ApiLogEntry.ResponseContentBody">
+             <summary>   Gets or sets the response content body. </summary>
+            
+             <value> The response content body. </value>
+        </member>
+        <member name="P:GCS.Core.Common.WebApi.ApiLogEntry.ResponseStatusCode">
+             <summary>   Gets or sets the response status code. </summary>
+            
+             <value> The response status code. </value>
+        </member>
+        <member name="P:GCS.Core.Common.WebApi.ApiLogEntry.ResponseHeaders">
+             <summary>   Gets or sets the response headers. </summary>
+            
+             <value> The response headers. </value>
+        </member>
+        <member name="P:GCS.Core.Common.WebApi.ApiLogEntry.ResponseTimestamp">
+             <summary>   Gets or sets the Date/Time of the response timestamp. </summary>
+            
+             <value> The response timestamp. </value>
+        </member>
+        <member name="M:GCS.Core.Common.WebApi.ApiLogEntry.ToString">
+             <summary>   Returns a string that represents the current object. </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+            
+             <returns>   A string that represents the current object. </returns>
+        </member>
+        <member name="M:GCS.Core.Common.WebApi.ApiLogEntry.ToJsonString">
+             <summary>   Converts this ApiLogEntry to a JSON string. </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+            
+             <returns>   This ApiLogEntry as a string. </returns>
+        </member>
+        <member name="M:GCS.Core.Common.WebApi.ApiLogEntry.ToXmlString">
+             <summary>   Converts this ApiLogEntry to an XML string. </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+            
+             <returns>   This ApiLogEntry as a string. </returns>
+        </member>
+        <member name="T:GCS.Core.Common.WebApi.MessageHandlers.ApiLogHandler">
+             <summary>   An API log handler. </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+        </member>
+        <member name="M:GCS.Core.Common.WebApi.MessageHandlers.ApiLogHandler.SendAsync(System.Net.Http.HttpRequestMessage,System.Threading.CancellationToken)">
+             <summary>
+             Sends an HTTP request to the inner handler to send to the server as an asynchronous operation.
+             </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+            
+             <param name="request">              The HTTP request message to send to the server. </param>
+             <param name="cancellationToken">    A cancellation token to cancel operation. </param>
+            
+             <returns>
+             Returns <see cref="T:System.Threading.Tasks.Task`1" />. The task object representing the
+             asynchronous operation.
+             </returns>
+        </member>
+        <member name="M:GCS.Core.Common.WebApi.MessageHandlers.ApiLogHandler.CreateApiLogEntryWithRequestData(System.Net.Http.HttpRequestMessage)">
+             <summary>   Creates API log entry with request data. </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+            
+             <param name="request">  The request. </param>
+            
+             <returns>   The new API log entry with request data. </returns>
+        </member>
+        <member name="M:GCS.Core.Common.WebApi.MessageHandlers.ApiLogHandler.SerializeRouteData(System.Web.Http.Routing.IHttpRouteData)">
+             <summary>   Serialize route data. </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+            
+             <param name="routeData">    Information describing the route. </param>
+            
+             <returns>   A string. </returns>
+        </member>
+        <member name="M:GCS.Core.Common.WebApi.MessageHandlers.ApiLogHandler.SerializeHeaders(System.Net.Http.Headers.HttpHeaders)">
+             <summary>   Serialize headers. </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+            
+             <param name="headers">  The headers. </param>
+            
+             <returns>   A string. </returns>
+        </member>
+        <member name="T:GCS.Core.Common.WebApi.HttpRequestMessageExtensions">
+             <summary>   A HTTP request message extensions. </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+        </member>
+        <member name="M:GCS.Core.Common.WebApi.HttpRequestMessageExtensions.GetHeaderValue(System.Net.Http.HttpRequestMessage,System.String)">
+             <summary>   A HttpRequestMessage extension method that gets header value. </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+            
+             <param name="request">  The request to act on. </param>
+             <param name="name">     The name. </param>
+            
+             <returns>   The header value. </returns>
+        </member>
+        <member name="M:GCS.Core.Common.WebApi.HttpRequestMessageExtensions.GetHeaderValues(System.Net.Http.HttpRequestMessage,System.String)">
+             <summary>   Gets the header values in this collection. </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+            
+             <param name="request">  The request to act on. </param>
+             <param name="name">     The name. </param>
+            
+             <returns>
+             An enumerator that allows foreach to be used to process the header values in this collection.
+             </returns>
+        </member>
+        <member name="M:GCS.Core.Common.WebApi.HttpRequestMessageExtensions.AddHeaderValue(System.Net.Http.HttpRequestMessage,System.String,System.String)">
+             <summary>   A HttpRequestMessage extension method that adds a header value. </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+            
+             <param name="request">  The request to act on. </param>
+             <param name="name">     The name. </param>
+             <param name="value">    The value. </param>
+        </member>
+        <member name="M:GCS.Core.Common.WebApi.HttpRequestMessageExtensions.AddHeaderValues(System.Net.Http.HttpRequestMessage,System.String,System.Collections.Generic.IEnumerable{System.String})">
+             <summary>   A HttpRequestMessage extension method that adds a header values. </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+            
+             <param name="request">  The request to act on. </param>
+             <param name="name">     The name. </param>
+             <param name="values">   The values. </param>
+        </member>
+        <member name="T:GCS.Core.Common.WebApi.RequireHttpsHandler">
+             <summary>   A require HTTPS handler. </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+        </member>
+        <member name="F:GCS.Core.Common.WebApi.RequireHttpsHandler._httpsPort">
+            <summary>   The HTTPS port. </summary>
+        </member>
+        <member name="M:GCS.Core.Common.WebApi.RequireHttpsHandler.#ctor">
+             <summary>
+             Initializes a new instance of the <see cref="T:GCS.Core.Common.WebApi.RequireHttpsHandler" /> class.
+             </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+        </member>
+        <member name="M:GCS.Core.Common.WebApi.RequireHttpsHandler.#ctor(System.Int32)">
+             <summary>
+             Initializes a new instance of the <see cref="T:GCS.Core.Common.WebApi.RequireHttpsHandler" /> class.
+             </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+            
+             <param name="httpsPort">    The HTTPS port. </param>
+        </member>
+        <member name="M:GCS.Core.Common.WebApi.RequireHttpsHandler.SendAsync(System.Net.Http.HttpRequestMessage,System.Threading.CancellationToken)">
+             <summary>
+             Sends an HTTP request to the inner handler to send to the server as an asynchronous operation.
+             </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+            
+             <param name="request">              The HTTP request message to send to the server. </param>
+             <param name="cancellationToken">    A cancellation token to cancel operation. </param>
+            
+             <returns>
+             Returns <see cref="T:System.Threading.Tasks.Task`1" />. The task object representing the
+             asynchronous operation.
+             </returns>
+        </member>
+        <member name="M:GCS.Core.Common.WebApi.RequireHttpsHandler.CreateResponse(System.Net.Http.HttpRequestMessage)">
+             <summary>   Creates the response based on the request method. </summary>
+            
+             <remarks>
+             <para>If the request method was GET, the caller is automatically redirected (Code 302).
+             Otherwise, a 404 is returned.</para>
+             <para>Based on
+             http://blogs.msdn.com/b/carlosfigueira/archive/2012/03/09/implementing-requirehttps-with-asp-net-web-api.aspx</para>
+             </remarks>
+            
+             <param name="request">  The request. </param>
+            
+             <returns>   The response based on the request method. </returns>
+        </member>
+        <member name="T:GCS.Core.Common.WebApi.ContentType">
+             <summary>   Values that represent content types. </summary>
+            
+             <remarks>   Kevin, 4/23/2015. </remarks>
+        </member>
+        <member name="F:GCS.Core.Common.WebApi.ContentType.Json">
+            <summary>   An enum constant representing the JSON option. </summary>
+        </member>
+        <member name="F:GCS.Core.Common.WebApi.ContentType.Xml">
+            <summary>   An enum constant representing the XML option. </summary>
+        </member>
+        <member name="T:GCS.Core.Common.WebApi.ContentTypeStrings">
+             <summary>   A content type strings. </summary>
+            
+             <remarks>   Kevin, 4/23/2015. </remarks>
+        </member>
+        <member name="F:GCS.Core.Common.WebApi.ContentTypeStrings.ContentType_ApplicationJson">
+            <summary>   The content type application JSON. </summary>
+        </member>
+        <member name="F:GCS.Core.Common.WebApi.ContentTypeStrings.ContentType_ApplicationXml">
+            <summary>   The content type application XML. </summary>
+        </member>
+        <member name="T:GCS.Core.Common.WebApi.WebServiceCallProperties">
+             <summary>   A web service call properties. </summary>
+            
+             <remarks>   Kevin, 4/23/2015. </remarks>
+        </member>
+        <member name="M:GCS.Core.Common.WebApi.WebServiceCallProperties.#ctor">
+             <summary>   Default constructor. </summary>
+            
+             <remarks>   Kevin, 4/23/2015. </remarks>
+        </member>
+        <member name="P:GCS.Core.Common.WebApi.WebServiceCallProperties.ServerUrl">
+             <summary>   Gets or sets URL of the server. </summary>
+            
+             <value> The server URL. </value>
+        </member>
+        <member name="P:GCS.Core.Common.WebApi.WebServiceCallProperties.UrlSuffix">
+             <summary>   Gets or sets the URL suffix. </summary>
+            
+             <value> The URL suffix. </value>
+        </member>
+        <member name="P:GCS.Core.Common.WebApi.WebServiceCallProperties.ContentType">
+             <summary>   Gets or sets the type of the content. </summary>
+            
+             <value> The type of the content. </value>
+        </member>
+        <member name="P:GCS.Core.Common.WebApi.WebServiceCallProperties.AcceptType">
+             <summary>   Gets or sets the type of the accept. </summary>
+            
+             <value> The type of the accept. </value>
+        </member>
+        <member name="P:GCS.Core.Common.WebApi.WebServiceCallProperties.ContentTypeString">
+             <summary>   Gets the content type string. </summary>
+            
+             <value> The content type string. </value>
+        </member>
+        <member name="P:GCS.Core.Common.WebApi.WebServiceCallProperties.AcceptTypeString">
+             <summary>   Gets the accept type string. </summary>
+            
+             <value> The accept type string. </value>
+        </member>
+        <member name="T:GCS.Core.Common.WebApi.WebApiClientBase">
+             <summary>   A web API client base. </summary>
+            
+             <remarks>   Kevin, 4/23/2015. </remarks>
+        </member>
+        <member name="M:GCS.Core.Common.WebApi.WebApiClientBase.#ctor">
+             <summary>   Default constructor. </summary>
+            
+             <remarks>   Kevin, 4/23/2015. </remarks>
+        </member>
+        <member name="M:GCS.Core.Common.WebApi.WebApiClientBase.#ctor(System.String)">
+             <summary>   Constructor. </summary>
+            
+             <remarks>   Kevin, 4/23/2015. </remarks>
+            
+             <param name="serverUrl">    URL of the server. </param>
+        </member>
+        <member name="M:GCS.Core.Common.WebApi.WebApiClientBase.#ctor(System.String,GCS.Core.Common.WebApi.ContentType)">
+             <summary>   Constructor. </summary>
+            
+             <remarks>   Kevin, 4/23/2015. </remarks>
+            
+             <param name="serverUrl">    URL of the server. </param>
+             <param name="contentType">  Type of the content. </param>
+        </member>
+        <member name="P:GCS.Core.Common.WebApi.WebApiClientBase.DefaultWebServiceCallProperties">
+             <summary>   Gets or sets the default web service call properties. </summary>
+            
+             <value> The default web service call properties. </value>
+        </member>
+        <member name="M:GCS.Core.Common.WebApi.WebApiClientBase.DoUploadDataTaskAsync``2(``0,GCS.Core.Common.WebApi.WebServiceCallProperties)">
+             <summary>   Executes the upload data task asynchronous operation. </summary>
+            
+             <remarks>   Kevin, 4/23/2015. </remarks>
+            
+             <exception cref="T:System.ArgumentOutOfRangeException">  Thrown when one or more arguments are outside
+                                                             the required range. </exception>
+            
+             <typeparam name="T">    Generic type parameter. </typeparam>
+             <typeparam name="TU">   Type of the tu. </typeparam>
+             <param name="uploadData">       Information describing the upload. </param>
+             <param name="callProperties">   The call properties. </param>
+            
+             <returns>   A Task&lt;TU&gt; </returns>
+        </member>
+        <member name="M:GCS.Core.Common.WebApi.WebApiClientBase.DoDownloadDataTaskAsync``1(GCS.Core.Common.WebApi.WebServiceCallProperties)">
+             <summary>   Executes the download data task asynchronous operation. </summary>
+            
+             <remarks>   Kevin, 4/23/2015. </remarks>
+            
+             <exception cref="T:System.ArgumentOutOfRangeException">  Thrown when one or more arguments are outside
+                                                             the required range. </exception>
+            
+             <typeparam name="T">    Generic type parameter. </typeparam>
+             <param name="callProperties">   The call properties. </param>
+            
+             <returns>   A Task&lt;T&gt; </returns>
+        </member>
+        <member name="M:GCS.Core.Common.WebApi.WebApiClientBase.GetAsync``1(GCS.Core.Common.WebApi.WebServiceCallProperties)">
+             <summary>   Gets the asynchronous. </summary>
+            
+             <remarks>   Kevin, 4/23/2015. </remarks>
+            
+             <exception cref="T:System.ArgumentOutOfRangeException">  Thrown when one or more arguments are outside
+                                                             the required range. </exception>
+            
+             <typeparam name="T">    Generic type parameter. </typeparam>
+             <param name="callProperties">   The call properties. </param>
+            
+             <returns>   The asynchronous. </returns>
+        </member>
+        <member name="T:GCS.Core.Common.WebApi.ApiControllerBase">
+             <summary>   An API controller base. </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+        </member>
+        <member name="F:GCS.Core.Common.WebApi.ApiControllerBase._DisposableServices">
+            <summary>   The disposable services. </summary>
+        </member>
+        <member name="F:GCS.Core.Common.WebApi.ApiControllerBase._clientUserSessionData">
+            <summary>   Information describing the client user session. </summary>
+        </member>
+        <member name="M:GCS.Core.Common.WebApi.ApiControllerBase.#ctor">
+             <summary>   Default constructor. </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+        </member>
+        <member name="M:GCS.Core.Common.WebApi.ApiControllerBase.RegisterServices(System.Collections.Generic.List{GCS.Core.Common.Contracts.IServiceContract})">
+             <summary>   Registers the services described by disposableServices. </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+            
+             <param name="disposableServices">   The disposable services. </param>
+        </member>
+        <member name="M:GCS.Core.Common.WebApi.ApiControllerBase.GCS#Core#Common#Contracts#IServiceAwareController#RegisterDisposableServices(System.Collections.Generic.List{GCS.Core.Common.Contracts.IServiceContract})">
+             <summary>   Registers the disposable services described by disposableServices. </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+            
+             <param name="disposableServices">   The disposable services. </param>
+        </member>
+        <member name="P:GCS.Core.Common.WebApi.ApiControllerBase.GCS#Core#Common#Contracts#IServiceAwareController#DisposableServices">
+             <summary>   Gets the disposable services. </summary>
+            
+             <value> The disposable services. </value>
+        </member>
+        <member name="M:GCS.Core.Common.WebApi.ApiControllerBase.ValidateAuthorizedUser(System.String)">
+             <summary>   Validates the authorized user described by userRequested. </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+            
+             <exception cref="T:System.Security.SecurityException">    Thrown when a security violation occurs. </exception>
+            
+             <param name="userRequested">    The user requested. </param>
+        </member>
+        <member name="M:GCS.Core.Common.WebApi.ApiControllerBase.GetHttpResponse(System.Net.Http.HttpRequestMessage,System.Func{System.Net.Http.HttpResponseMessage})">
+             <summary>   Gets HTTP response. </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+            
+             <param name="request">          The request. </param>
+             <param name="codeToExecute">    The code to execute. </param>
+            
+             <returns>   The HTTP response. </returns>
+        </member>
+        <member name="M:GCS.Core.Common.WebApi.ApiControllerBase.GetErrorResponse(System.Net.Http.HttpRequestMessage,GCS.Core.Common.CustomError,System.String)">
+             <summary>   Gets error response. </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+            
+             <param name="request">  The request. </param>
+             <param name="error">    The error. </param>
+             <param name="message">  The message. </param>
+            
+             <returns>   The error response. </returns>
+        </member>
+        <member name="M:GCS.Core.Common.WebApi.ApiControllerBase.GetHttpResponseAsync(System.Net.Http.HttpRequestMessage,System.Func{System.Net.Http.HttpResponseMessage})">
+             <summary>   Gets HTTP response asynchronous. </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+            
+             <param name="request">          The request. </param>
+             <param name="codeToExecute">    The code to execute. </param>
+            
+             <returns>   The HTTP response asynchronous. </returns>
+        </member>
+        <member name="P:GCS.Core.Common.WebApi.ApiControllerBase.ApplicationUserSessionHeader">
+             <summary>   Gets the application user session header. </summary>
+            
+             <value> The application user session header. </value>
+        </member>
+        <member name="P:GCS.Core.Common.WebApi.ApiControllerBase.LoginName">
+             <summary>   Gets the name of the login. </summary>
+            
+             <value> The name of the login. </value>
+        </member>
+        <member name="P:GCS.Core.Common.WebApi.ApiControllerBase.GalaxyUserSessionGuid">
+             <summary>   Gets a unique identifier of the galaxy user session. </summary>
+            
+             <value> Unique identifier of the galaxy user session. </value>
+        </member>
+        <member name="P:GCS.Core.Common.WebApi.ApiControllerBase.GalaxyOperationGuid">
+             <summary>   Gets a unique identifier of the galaxy operation. </summary>
+            
+             <value> Unique identifier of the galaxy operation. </value>
+        </member>
+        <member name="P:GCS.Core.Common.WebApi.ApiControllerBase.CultureName">
+             <summary>   Gets the name of the culture. </summary>
+            
+             <value> The name of the culture. </value>
+        </member>
+        <member name="P:GCS.Core.Common.WebApi.ApiControllerBase.UiCultureName">
+             <summary>   Gets the name of the culture. </summary>
+            
+             <value> The name of the culture. </value>
+        </member>
+        <member name="P:GCS.Core.Common.WebApi.ApiControllerBase.ClientTimeZoneId">
+             <summary>   Gets the identifier of the client time zone. </summary>
+            
+             <value> The identifier of the client time zone. </value>
+        </member>
+        <member name="M:GCS.Core.Common.WebApi.ApiControllerBase.ExecuteFaultHandledOperation``1(System.Func{``0})">
+             <summary>   Executes the fault handled operation operation. </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+            
+             <exception cref="T:System.ServiceModel.FaultException`1"> Thrown when a fault
+                                                                                 exception error condition
+                                                                                 occurs. </exception>
+             <exception cref="!:fe">                                               Thrown when a fe error
+                                                                                 condition occurs. </exception>
+             <exception cref="T:System.ServiceModel.FaultException">                                   Thrown when a Fault error
+                                                                                 condition occurs. </exception>
+            
+             <typeparam name="T">    Generic type parameter. </typeparam>
+             <param name="codetoExecute">    The codeto execute. </param>
+            
+             <returns>   A T. </returns>
+        </member>
+        <member name="M:GCS.Core.Common.WebApi.ApiControllerBase.ExecuteFaultHandledOperation(System.Action)">
+             <summary>   Executes the fault handled operation operation. </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+            
+             <exception cref="T:System.ServiceModel.FaultException`1"> Thrown when a fault
+                                                                                 exception error condition
+                                                                                 occurs. </exception>
+             <exception cref="T:System.ServiceModel.FaultException">                                   Thrown when a Fault error
+                                                                                 condition occurs. </exception>
+             <exception cref="T:System.ServiceModel.FaultException`1">                Thrown when a fault
+                                                                                 exception error condition
+                                                                                 occurs. </exception>
+            
+             <param name="codetoExecute">    The codeto execute. </param>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,68 @@
+using System;
+using System.Collections.Generic;
+using GCS.Core.Common.Contracts;
+using GCS.Core.Common.Core;
+using GCS.Core.Common.Extensions;
+
+namespace GalaxySMS.Business.Entities
+{
+    public partial class gcsEntityApplicationRole
+    {
+        public gcsEntityApplicationRole()
+        {
+            Initialize();
+        }
+
+        public gcsEntityApplicationRole(gcsEntityApplicationRole e)
+        {
+            Initialize(e);
+        }
+
+        public void Initialize()
+        {
+            this.gcsUserEntityApplicationRoles = new HashSet<gcsUserEntityApplicationRole>();
+        }
+
+        public void Initialize(gcsEntityApplicationRole e)
+        {
+            Initialize();
+            if (e == null)
+                return;
+            this.EntityApplicationRoleId = e.EntityApplicationRoleId;
+            this.RoleId = e.RoleId;
+            this.EntityApplicationId = e.EntityApplicationId;
+            this.InsertName = e.InsertName;
+            this.InsertDate = e.InsertDate;
+            this.UpdateName = e.UpdateName;
+            this.UpdateDate = e.UpdateDate;
+            this.ConcurrencyValue = e.ConcurrencyValue;
+            this.gcsUserEntityApplicationRoles = e.gcsUserEntityApplicationRoles.ToCollection();
+
+        }
+
+        public gcsEntityApplicationRole Clone(gcsEntityApplicationRole e)
+        {
+            return new gcsEntityApplicationRole(e);
+        }
+
+        public bool Equals(gcsEntityApplicationRole other)
+        {
+            return base.Equals(other);
+        }
+
+        public bool IsPrimaryKeyEqual(gcsEntityApplicationRole other)
+        {
+            if (other == null)
+                return false;
+
+            if (other.EntityApplicationRoleId != this.EntityApplicationRoleId)
+                return false;
+            return true;
+        }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
+    }
+}

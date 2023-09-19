@@ -1,0 +1,75 @@
+﻿<core:UserControlViewBase x:Class="GalaxySMS.Client.UI.Views.CurrentSystemUserControlView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:resx="clr-namespace:GalaxySMS.Client.UI.Properties"
+             xmlns:core="http://www.galaxysys.com/GCS/Core"
+             xmlns:converters="clr-namespace:GCS.Core.Common.UI.Converters;assembly=GCS.Core.Common.UI"
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             mc:Ignorable="d" 
+             Effect="{Binding BackgroundEffect}" Opacity="{Binding BackgroundOpacity}"
+             d:DesignHeight="40" d:DesignWidth="100">
+    <core:UserControlViewBase.Resources>
+        <converters:NullToVisibilityConverter x:Key="nullToVisibilityConverter" />
+        <converters:BooleanToVisibilityConverter x:Key="boolToVisibility" />
+    </core:UserControlViewBase.Resources>
+    <Grid>
+        <StackPanel Orientation="Horizontal">
+            <!--<telerik:RadDropDownButton DropDownButtonPosition="Right" HorizontalContentAlignment="Right">
+                <telerik:RadDropDownButton.Content>
+                    <StackPanel Orientation="Horizontal">
+                        <Border BorderThickness="1" BorderBrush="Black" Width="32" Height="32" HorizontalAlignment="Left" VerticalAlignment="Top">
+                            <Image Width="32" Height="32" Source="{Binding CurrentUserImage}"></Image>
+                        </Border>
+                        <TextBlock Margin="5" VerticalAlignment="Center" FontWeight="Bold" Text="{Binding CurrentUserDisplayName}"></TextBlock>
+                    </StackPanel>
+                </telerik:RadDropDownButton.Content>
+                <telerik:RadDropDownButton.DropDownContent>
+            <telerik:RadMenu Orientation="Vertical">
+                    <telerik:RadMenuItem Header="{x:Static resx:Resources.Menu_UserSignIn_HeaderText}" Command="{Binding SignInCommand}"></telerik:RadMenuItem>
+                    <telerik:RadMenuItem Header="{x:Static resx:Resources.Menu_UserSignOut_HeaderText}" Command="{Binding SignOutCommand}"></telerik:RadMenuItem>
+            </telerik:RadMenu>
+            </telerik:RadDropDownButton.DropDownContent>
+            </telerik:RadDropDownButton>-->
+
+            <telerik:RadDropDownButton DropDownButtonPosition="Right" HorizontalContentAlignment="Right" AutoOpenDelay="0:0:0.5" Command="{Binding CurrentUserControlButtonCommand}">
+                <telerik:RadDropDownButton.Content>
+                    <StackPanel Orientation="Horizontal">
+                        <Rectangle RadiusX="20" RadiusY="20" Width="32" Height="32">
+                            <Rectangle.Fill>
+                                <ImageBrush x:Name="myImage" ImageSource="{Binding CurrentUserImage}"/>
+                            </Rectangle.Fill>
+                        </Rectangle>
+                        <TextBlock Margin="5" VerticalAlignment="Center" FontWeight="Bold" Text="{Binding CurrentUserDisplayName}"></TextBlock>
+                    </StackPanel>
+                </telerik:RadDropDownButton.Content>
+                <telerik:RadDropDownButton.DropDownContent>
+                    <telerik:RadMenu Orientation="Vertical">
+                        <telerik:RadMenuItem Header="{x:Static resx:Resources.Menu_UserSignIn_HeaderText}" Command="{Binding SignInCommand}"></telerik:RadMenuItem>
+                        <telerik:RadMenuItem Header="{x:Static resx:Resources.Menu_UserSignOut_HeaderText}" Command="{Binding SignOutCommand}"></telerik:RadMenuItem>
+                    </telerik:RadMenu>
+                </telerik:RadDropDownButton.DropDownContent>
+            </telerik:RadDropDownButton>
+
+        </StackPanel>
+
+        <!--<StackPanel Orientation="Horizontal">
+            <telerik:RadMenu>
+                <telerik:RadMenuItem>
+                    <telerik:RadMenuItem.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <Border BorderThickness="2" BorderBrush="Black" Width="32" Height="32" HorizontalAlignment="Left" VerticalAlignment="Top">
+                                <Image Width="32" Height="32" Source="{Binding Globals.UserSessionToken.UserData.UserImage}"></Image>
+                            </Border>
+                            <TextBlock Margin="5" VerticalAlignment="Center" FontWeight="Bold" Text="{Binding Globals.UserSessionToken.UserData.DisplayName}"></TextBlock>
+                        </StackPanel>
+                    </telerik:RadMenuItem.Header>
+                    <telerik:RadMenuItem Header="{x:Static resx:Resources.Menu_UserSignIn_HeaderText}" Command="{Binding SignInCommand}"></telerik:RadMenuItem>
+                    <telerik:RadMenuItem Header="{x:Static resx:Resources.Menu_UserSignOut_HeaderText}" Command="{Binding SignOutCommand}"></telerik:RadMenuItem>
+                </telerik:RadMenuItem>
+            </telerik:RadMenu>
+        </StackPanel>-->
+
+    </Grid>
+</core:UserControlViewBase>

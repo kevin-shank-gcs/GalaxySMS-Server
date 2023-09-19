@@ -1,0 +1,1889 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>GalaxySMS.Client.Entities</name>
+    </assembly>
+    <members>
+        <member name="F:GalaxySMS.Client.Entities.AssaAbloyDsr.AccessPointAttribute.SERIAL_NUMBER">
+            <remarks/>
+        </member>
+        <member name="F:GalaxySMS.Client.Entities.AssaAbloyDsr.AccessPointAttribute.BATTERY_LEVEL">
+            <remarks/>
+        </member>
+        <member name="F:GalaxySMS.Client.Entities.AssaAbloyDsr.AccessPointAttribute.BATTERY_STATUS">
+            <remarks/>
+        </member>
+        <member name="F:GalaxySMS.Client.Entities.AssaAbloyDsr.AccessPointAttribute.FIRMWARE_VERSION">
+            <remarks/>
+        </member>
+        <member name="F:GalaxySMS.Client.Entities.AssaAbloyDsr.AccessPointAttribute.FIRMWARE_TAMPERED">
+            <remarks/>
+        </member>
+        <member name="F:GalaxySMS.Client.Entities.AssaAbloyDsr.AccessPointAttribute.TAMPERED">
+            <remarks/>
+        </member>
+        <member name="F:GalaxySMS.Client.Entities.AssaAbloyDsr.AccessPointAttribute.DC_VOLTAGE">
+            <remarks/>
+        </member>
+        <member name="F:GalaxySMS.Client.Entities.AssaAbloyDsr.AccessPointAttribute.DESCRIPTION">
+            <remarks/>
+        </member>
+        <member name="F:GalaxySMS.Client.Entities.AssaAbloyDsr.AccessPointAttribute.LOCK_STATE">
+            <remarks/>
+        </member>
+        <member name="F:GalaxySMS.Client.Entities.AssaAbloyDsr.AccessPointAttribute.DOOR_STATE">
+            <remarks/>
+        </member>
+        <member name="F:GalaxySMS.Client.Entities.AssaAbloyDsr.AccessPointAttribute.RADIO_FIRMWARE_VERSION">
+            <remarks/>
+        </member>
+        <member name="F:GalaxySMS.Client.Entities.AssaAbloyDsr.AccessPointSynchronizationStatus.SYNCHRONIZED">
+            <remarks/>
+        </member>
+        <member name="F:GalaxySMS.Client.Entities.AssaAbloyDsr.AccessPointSynchronizationStatus.PENDING">
+            <remarks/>
+        </member>
+        <member name="F:GalaxySMS.Client.Entities.AssaAbloyDsr.AccessPointSynchronizationStatus.OUT_OF_SYNC">
+            <remarks/>
+        </member>
+        <member name="F:GalaxySMS.Client.Entities.AssaAbloyDsr.AccessPointSynchronizationStatus.OUT_OF_SYNC_INTERNAL">
+            <remarks/>
+        </member>
+        <member name="F:GalaxySMS.Client.Entities.AssaAbloyDsr.AccessPointSynchronizationStatus.OUT_OF_SYNC_COMM">
+            <remarks/>
+        </member>
+        <member name="F:GalaxySMS.Client.Entities.AssaAbloyDsr.AccessPointSynchronizationStatus.ENABLED">
+            <remarks/>
+        </member>
+        <member name="F:GalaxySMS.Client.Entities.AssaAbloyDsr.AccessPointSynchronizationStatus.DISABLED">
+            <remarks/>
+        </member>
+        <member name="F:GalaxySMS.Client.Entities.AssaAbloyDsr.AccessPointSynchronizationStatus.CLEARED">
+            <remarks/>
+        </member>
+        <member name="F:GalaxySMS.Client.Entities.AssaAbloyDsr.AccessPointSynchronizationStatus.UNKNOWN">
+            <remarks/>
+        </member>
+        <member name="F:GalaxySMS.Client.Entities.AssaAbloyDsr.LogOriginType.CONTROLLER">
+            <remarks/>
+        </member>
+        <member name="F:GalaxySMS.Client.Entities.AssaAbloyDsr.LogOriginType.DOOR">
+            <remarks/>
+        </member>
+        <member name="F:GalaxySMS.Client.Entities.AssaAbloyDsr.LogOriginType.EXTENSION">
+            <remarks/>
+        </member>
+        <member name="F:GalaxySMS.Client.Entities.AssaAbloyDsr.LogOriginType.DSR">
+            <remarks/>
+        </member>
+        <member name="F:GalaxySMS.Client.Entities.AssaAbloyDsr.LogOriginType.CYLINDER">
+            <remarks/>
+        </member>
+        <member name="F:GalaxySMS.Client.Entities.AssaAbloyDsr.LogOriginType.KEY">
+            <remarks/>
+        </member>
+        <member name="F:GalaxySMS.Client.Entities.AssaAbloyDsr.LogFamily.ACCESS">
+            <remarks/>
+        </member>
+        <member name="F:GalaxySMS.Client.Entities.AssaAbloyDsr.LogFamily.ALARM">
+            <remarks/>
+        </member>
+        <member name="F:GalaxySMS.Client.Entities.AssaAbloyDsr.LogFamily.GENERAL">
+            <remarks/>
+        </member>
+        <member name="F:GalaxySMS.Client.Entities.AssaAbloyDsr.LogFamily.AUDIT">
+            <remarks/>
+        </member>
+        <member name="F:GalaxySMS.Client.Entities.AssaAbloyDsr.LogCode.PROPRIETARY">
+            <remarks/>
+        </member>
+        <member name="F:GalaxySMS.Client.Entities.AssaAbloyDsr.LogCode.DOOR_FORCED">
+            <remarks/>
+        </member>
+        <member name="F:GalaxySMS.Client.Entities.AssaAbloyDsr.LogCode.DOOR_HELD">
+            <remarks/>
+        </member>
+        <member name="F:GalaxySMS.Client.Entities.AssaAbloyDsr.LogCode.DOOR_BOLTTHROWN">
+            <remarks/>
+        </member>
+        <member name="F:GalaxySMS.Client.Entities.AssaAbloyDsr.LogCode.DOOR_BOLTRETRACTED">
+            <remarks/>
+        </member>
+        <member name="F:GalaxySMS.Client.Entities.AssaAbloyDsr.LogCode.MODE_PROGRAMMING">
+            <remarks/>
+        </member>
+        <member name="F:GalaxySMS.Client.Entities.AssaAbloyDsr.LogCode.MODE_LOCKOUT">
+            <remarks/>
+        </member>
+        <member name="F:GalaxySMS.Client.Entities.AssaAbloyDsr.LogCode.MODE_LOCKOUT_TIMED">
+            <remarks/>
+        </member>
+        <member name="F:GalaxySMS.Client.Entities.AssaAbloyDsr.LogCode.MODE_LOCKOUT_USER">
+            <remarks/>
+        </member>
+        <member name="F:GalaxySMS.Client.Entities.AssaAbloyDsr.LogCode.MODE_RELOCK">
+            <remarks/>
+        </member>
+        <member name="F:GalaxySMS.Client.Entities.AssaAbloyDsr.LogCode.MODE_EMERGENCY">
+            <remarks/>
+        </member>
+        <member name="F:GalaxySMS.Client.Entities.AssaAbloyDsr.LogCode.MODE_PANIC">
+            <remarks/>
+        </member>
+        <member name="F:GalaxySMS.Client.Entities.AssaAbloyDsr.LogCode.MODE_RESET">
+            <remarks/>
+        </member>
+        <member name="F:GalaxySMS.Client.Entities.AssaAbloyDsr.LogCode.MODE_NORMAL">
+            <remarks/>
+        </member>
+        <member name="F:GalaxySMS.Client.Entities.AssaAbloyDsr.LogCode.MODE_PASSAGE">
+            <remarks/>
+        </member>
+        <member name="F:GalaxySMS.Client.Entities.AssaAbloyDsr.LogCode.MODE_PASSAGE_TIMED">
+            <remarks/>
+        </member>
+        <member name="F:GalaxySMS.Client.Entities.AssaAbloyDsr.LogCode.MODE_PASSAGE_USER">
+            <remarks/>
+        </member>
+        <member name="F:GalaxySMS.Client.Entities.AssaAbloyDsr.LogCode.MODE_LOCKED">
+            <remarks/>
+        </member>
+        <member name="F:GalaxySMS.Client.Entities.AssaAbloyDsr.LogCode.MODE_LOCKED_TIMED">
+            <remarks/>
+        </member>
+        <member name="F:GalaxySMS.Client.Entities.AssaAbloyDsr.LogCode.MODE_LOCKED_USER">
+            <remarks/>
+        </member>
+        <member name="F:GalaxySMS.Client.Entities.AssaAbloyDsr.LogCode.MODE_SECURED">
+            <remarks/>
+        </member>
+        <member name="F:GalaxySMS.Client.Entities.AssaAbloyDsr.LogCode.MODE_PANIC_END">
+            <remarks/>
+        </member>
+        <member name="F:GalaxySMS.Client.Entities.AssaAbloyDsr.LogCode.BATTERY_DEPLETED">
+            <remarks/>
+        </member>
+        <member name="F:GalaxySMS.Client.Entities.AssaAbloyDsr.LogCode.BATTERY_REPLACED">
+            <remarks/>
+        </member>
+        <member name="F:GalaxySMS.Client.Entities.AssaAbloyDsr.LogCode.BATTERY_CRITICAL">
+            <remarks/>
+        </member>
+        <member name="F:GalaxySMS.Client.Entities.AssaAbloyDsr.LogCode.BATTERY_WARN">
+            <remarks/>
+        </member>
+        <member name="F:GalaxySMS.Client.Entities.AssaAbloyDsr.LogCode.BATTERY_CHECK_ERROR">
+            <remarks/>
+        </member>
+        <member name="F:GalaxySMS.Client.Entities.AssaAbloyDsr.LogCode.USER_MODIFY">
+            <remarks/>
+        </member>
+        <member name="F:GalaxySMS.Client.Entities.AssaAbloyDsr.LogCode.USER_REVOKE">
+            <remarks/>
+        </member>
+        <member name="F:GalaxySMS.Client.Entities.AssaAbloyDsr.LogCode.USER_ADD">
+            <remarks/>
+        </member>
+        <member name="F:GalaxySMS.Client.Entities.AssaAbloyDsr.LogCode.USER_BADTIME">
+            <remarks/>
+        </member>
+        <member name="F:GalaxySMS.Client.Entities.AssaAbloyDsr.LogCode.USER_INVALID">
+            <remarks/>
+        </member>
+        <member name="F:GalaxySMS.Client.Entities.AssaAbloyDsr.LogCode.USER_OK">
+            <remarks/>
+        </member>
+        <member name="F:GalaxySMS.Client.Entities.AssaAbloyDsr.LogCode.ACCESS_DENIED">
+            <remarks/>
+        </member>
+        <member name="F:GalaxySMS.Client.Entities.AssaAbloyDsr.LogCode.ACCESS_DENIED_SCHEDULE">
+            <remarks/>
+        </member>
+        <member name="F:GalaxySMS.Client.Entities.AssaAbloyDsr.LogCode.ACCESS_DENIED_LOCKOUT">
+            <remarks/>
+        </member>
+        <member name="F:GalaxySMS.Client.Entities.AssaAbloyDsr.LogCode.ACCESS_DENIED_BOLTED">
+            <remarks/>
+        </member>
+        <member name="F:GalaxySMS.Client.Entities.AssaAbloyDsr.LogCode.ACCESS_DENIED_EXPIRED">
+            <remarks/>
+        </member>
+        <member name="F:GalaxySMS.Client.Entities.AssaAbloyDsr.LogCode.ACCESS_DENIED_BUSY">
+            <remarks/>
+        </member>
+        <member name="F:GalaxySMS.Client.Entities.AssaAbloyDsr.LogCode.ACCESS_DENIED_SUSPENDED">
+            <remarks/>
+        </member>
+        <member name="F:GalaxySMS.Client.Entities.AssaAbloyDsr.LogCode.ACCESS_DENIED_PANIC">
+            <remarks/>
+        </member>
+        <member name="F:GalaxySMS.Client.Entities.AssaAbloyDsr.LogCode.ACCESS_DENIED_PASSAGE">
+            <remarks/>
+        </member>
+        <member name="F:GalaxySMS.Client.Entities.AssaAbloyDsr.LogCode.ACCESS_GRANTED">
+            <remarks/>
+        </member>
+        <member name="F:GalaxySMS.Client.Entities.AssaAbloyDsr.LogCode.ACCESS_GRANTED_REMOTEUNLOCK">
+            <remarks/>
+        </member>
+        <member name="F:GalaxySMS.Client.Entities.AssaAbloyDsr.LogCode.ACCESS_GRANTED_ONE_TIME_USER">
+            <remarks/>
+        </member>
+        <member name="F:GalaxySMS.Client.Entities.AssaAbloyDsr.LogCode.ACCESS_GRANTED_NOTIFY">
+            <remarks/>
+        </member>
+        <member name="F:GalaxySMS.Client.Entities.AssaAbloyDsr.LogCode.ACCESS_GRANTED_DEADBOLT_OVERRIDE">
+            <remarks/>
+        </member>
+        <member name="F:GalaxySMS.Client.Entities.AssaAbloyDsr.LogCode.ACCESS_KEYOVERRIDE">
+            <remarks/>
+        </member>
+        <member name="F:GalaxySMS.Client.Entities.AssaAbloyDsr.LogCode.ACCESS_INVALIDENTRY">
+            <remarks/>
+        </member>
+        <member name="F:GalaxySMS.Client.Entities.AssaAbloyDsr.LogCode.AUTHORIZATION_SUCCESS_COMMUSER">
+            <remarks/>
+        </member>
+        <member name="F:GalaxySMS.Client.Entities.AssaAbloyDsr.LogCode.AUTHORIZATION_DENY_COMMUSER">
+            <remarks/>
+        </member>
+        <member name="F:GalaxySMS.Client.Entities.AssaAbloyDsr.LogCode.AUTHORIZATION_SUCCESS_MASTER">
+            <remarks/>
+        </member>
+        <member name="F:GalaxySMS.Client.Entities.AssaAbloyDsr.LogCode.AUTHORIZATION_FAIL_MASTER">
+            <remarks/>
+        </member>
+        <member name="F:GalaxySMS.Client.Entities.AssaAbloyDsr.LogCode.LOG_LOGCLEARED">
+            <remarks/>
+        </member>
+        <member name="F:GalaxySMS.Client.Entities.AssaAbloyDsr.LogCode.LOG_LOGWRAPPED">
+            <remarks/>
+        </member>
+        <member name="F:GalaxySMS.Client.Entities.AssaAbloyDsr.LogCode.FIRMWARE_UPDATE_ABORT">
+            <remarks/>
+        </member>
+        <member name="F:GalaxySMS.Client.Entities.AssaAbloyDsr.LogCode.FIRMWARE_UPDATE_ERROR">
+            <remarks/>
+        </member>
+        <member name="F:GalaxySMS.Client.Entities.AssaAbloyDsr.LogCode.FIRMWARE_UPDATE_TIMEOUT">
+            <remarks/>
+        </member>
+        <member name="F:GalaxySMS.Client.Entities.AssaAbloyDsr.LogCode.FIRMWARE_UPDATE_SUCCESS">
+            <remarks/>
+        </member>
+        <member name="F:GalaxySMS.Client.Entities.AssaAbloyDsr.LogCode.FIRMWARE_UPDATE_FAIL">
+            <remarks/>
+        </member>
+        <member name="F:GalaxySMS.Client.Entities.AssaAbloyDsr.LogCode.DB_USERDB_RESET">
+            <remarks/>
+        </member>
+        <member name="F:GalaxySMS.Client.Entities.AssaAbloyDsr.LogCode.DB_USERDB_RESET_USER">
+            <remarks/>
+        </member>
+        <member name="F:GalaxySMS.Client.Entities.AssaAbloyDsr.LogCode.CLOCK_DATETIMESET">
+            <remarks/>
+        </member>
+        <member name="F:GalaxySMS.Client.Entities.AssaAbloyDsr.LogCode.CLOCK_DSTFORWARD">
+            <remarks/>
+        </member>
+        <member name="F:GalaxySMS.Client.Entities.AssaAbloyDsr.LogCode.CLOCK_DSTBACK">
+            <remarks/>
+        </member>
+        <member name="F:GalaxySMS.Client.Entities.AssaAbloyDsr.LogCode.CLOCK_ERROR">
+            <remarks/>
+        </member>
+        <member name="F:GalaxySMS.Client.Entities.AssaAbloyDsr.LogCode.CLOCK_RESET">
+            <remarks/>
+        </member>
+        <member name="F:GalaxySMS.Client.Entities.AssaAbloyDsr.LogCode.NVRAM_CLEAR">
+            <remarks/>
+        </member>
+        <member name="F:GalaxySMS.Client.Entities.AssaAbloyDsr.LogCode.NVRAM_OK">
+            <remarks/>
+        </member>
+        <member name="F:GalaxySMS.Client.Entities.AssaAbloyDsr.LogCode.NVRAM_CLEAR_USER">
+            <remarks/>
+        </member>
+        <member name="F:GalaxySMS.Client.Entities.AssaAbloyDsr.LogCode.NVRAM_LAYUT_CHANGED">
+            <remarks/>
+        </member>
+        <member name="F:GalaxySMS.Client.Entities.AssaAbloyDsr.LogCode.NVRAM_CHECKSUM">
+            <remarks/>
+        </member>
+        <member name="F:GalaxySMS.Client.Entities.AssaAbloyDsr.LogCode.HW_MORTISE_ERROR">
+            <remarks/>
+        </member>
+        <member name="F:GalaxySMS.Client.Entities.AssaAbloyDsr.LogCode.HW_POWER_ERROR">
+            <remarks/>
+        </member>
+        <member name="F:GalaxySMS.Client.Entities.AssaAbloyDsr.LogCode.HW_DPAC_ERROR">
+            <remarks/>
+        </member>
+        <member name="F:GalaxySMS.Client.Entities.AssaAbloyDsr.LogCode.COMMUNICATION_ERROR">
+            <remarks/>
+        </member>
+        <member name="F:GalaxySMS.Client.Entities.AssaAbloyDsr.LogCode.COMMUNICATION_TIMEOUT">
+            <remarks/>
+        </member>
+        <member name="F:GalaxySMS.Client.Entities.AssaAbloyDsr.LogCode.COMMUNICATION_HW_DISABLED">
+            <remarks/>
+        </member>
+        <member name="F:GalaxySMS.Client.Entities.AssaAbloyDsr.LogCode.COMMUNICATION_START">
+            <remarks/>
+        </member>
+        <member name="F:GalaxySMS.Client.Entities.AssaAbloyDsr.LogCode.COMMUNICATION_END">
+            <remarks/>
+        </member>
+        <member name="F:GalaxySMS.Client.Entities.AssaAbloyDsr.LogCode.RESET_PERFORMED">
+            <remarks/>
+        </member>
+        <member name="F:GalaxySMS.Client.Entities.AssaAbloyDsr.LogCode.REMOTE_AUTHORIZATION_REQUEST">
+            <remarks/>
+        </member>
+        <member name="F:GalaxySMS.Client.Entities.AssaAbloyDsr.LogCode.RXOVERRUN">
+            <remarks/>
+        </member>
+        <member name="F:GalaxySMS.Client.Entities.AssaAbloyDsr.LogCode.ACCESSPOINT_RXHELD">
+            <remarks/>
+        </member>
+        <member name="F:GalaxySMS.Client.Entities.AssaAbloyDsr.LogCode.ACCESSPOINT_DELETED">
+            <remarks/>
+        </member>
+        <member name="F:GalaxySMS.Client.Entities.AssaAbloyDsr.LogCode.ACCESSPOINT_CREATED">
+            <remarks/>
+        </member>
+        <member name="F:GalaxySMS.Client.Entities.AssaAbloyDsr.LogCode.ACCESSPOINT_REPLACED">
+            <remarks/>
+        </member>
+        <member name="F:GalaxySMS.Client.Entities.AssaAbloyDsr.LogCode.ACCESSPOINT_CONFIRMED">
+            <remarks/>
+        </member>
+        <member name="F:GalaxySMS.Client.Entities.AssaAbloyDsr.LogCode.ACCESSPOINT_UNCONFIRMED">
+            <remarks/>
+        </member>
+        <member name="F:GalaxySMS.Client.Entities.AssaAbloyDsr.LogCode.ACCESSPOINT_ONLINE">
+            <remarks/>
+        </member>
+        <member name="F:GalaxySMS.Client.Entities.AssaAbloyDsr.LogCode.ACCESSPOINT_OFFLINE">
+            <remarks/>
+        </member>
+        <member name="F:GalaxySMS.Client.Entities.AssaAbloyDsr.LogCode.ACCESSPOINT_REQUEST_CLOCK_RESET">
+            <remarks/>
+        </member>
+        <member name="F:GalaxySMS.Client.Entities.AssaAbloyDsr.LogCode.INTERNAL_ERROR">
+            <remarks/>
+        </member>
+        <member name="F:GalaxySMS.Client.Entities.AssaAbloyDsr.LogCode.LOG_RETRIEVED">
+            <remarks/>
+        </member>
+        <member name="F:GalaxySMS.Client.Entities.AssaAbloyDsr.LogCode.FIRMWARE_TAMPERED">
+            <remarks/>
+        </member>
+        <member name="F:GalaxySMS.Client.Entities.AssaAbloyDsr.LogCode.LOCK_TAMPERED">
+            <remarks/>
+        </member>
+        <member name="F:GalaxySMS.Client.Entities.AssaAbloyDsr.LogCode.AUDIT_LOG">
+            <remarks/>
+        </member>
+        <member name="F:GalaxySMS.Client.Entities.AssaAbloyDsr.LogCode.MISSED_CALLBACKS_FROM_DSR">
+            <remarks/>
+        </member>
+        <member name="F:GalaxySMS.Client.Entities.AssaAbloyDsr.LogCode.INTEGRITY_CHECK_FAILED">
+            <remarks/>
+        </member>
+        <member name="F:GalaxySMS.Client.Entities.AssaAbloyDsr.LogCode.PRESENT_ON_BLACKLIST">
+            <remarks/>
+        </member>
+        <member name="F:GalaxySMS.Client.Entities.AssaAbloyDsr.LogCode.BLACKLIST_CLEARED">
+            <remarks/>
+        </member>
+        <member name="F:GalaxySMS.Client.Entities.AssaAbloyDsr.LogCode.BLACKLIST_LOADED">
+            <remarks/>
+        </member>
+        <member name="T:GalaxySMS.Client.Entities.GalaxyCpuDatabaseInformation">
+            <summary>
+            This class contains properties for each data value that makes up a GalaxyCpuInformationPDSA.
+            This class is generated by the Haystack Code Generator for .NET.
+            Do not modify this class or add methods as it is intended to be able to be re-generated at any time.
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.GalaxyCpuDatabaseInformation.ClusterUid">
+            <summary>
+            Get/Set the Cluster Uid value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.GalaxyCpuDatabaseInformation.GalaxyPanelUid">
+            <summary>
+            Get/Set the Galaxy Panel Uid value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.GalaxyCpuDatabaseInformation.CpuUid">
+            <summary>
+            Get/Set the Cpu Uid value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.GalaxyCpuDatabaseInformation.AccountCode">
+            <summary>
+            Get/Set the Account Code value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.GalaxyCpuDatabaseInformation.ClusterNumber">
+            <summary>
+            Get/Set the Cluster Number value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.GalaxyCpuDatabaseInformation.PanelNumber">
+            <summary>
+            Get/Set the Panel Number value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.GalaxyCpuDatabaseInformation.CpuNumber">
+            <summary>
+            Get/Set the Cpu Number value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.GalaxyCpuDatabaseInformation.SerialNumber">
+            <summary>
+            Get/Set the Serial Number value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.GalaxyCpuDatabaseInformation.IpAddress">
+            <summary>
+            Get/Set the Ip Address value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.GalaxyCpuDatabaseInformation.DefaultEventLoggingOn">
+            <summary>
+            Get/Set the Default Event Logging On value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.GalaxyCpuDatabaseInformation.PreventDataLoading">
+            <summary>
+            Get/Set the Prevent Data Loading value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.GalaxyCpuDatabaseInformation.PreventFlashLoading">
+            <summary>
+            Get/Set the Prevent Flash Loading value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.GalaxyCpuDatabaseInformation.LastLogIndex">
+            <summary>
+            Get/Set the Last Log Index value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.GalaxyCpuDatabaseInformation.ClusterName">
+            <summary>
+            Get/Set the Cluster Name value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.GalaxyCpuDatabaseInformation.PanelName">
+            <summary>
+            Get/Set the Panel Name value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.GalaxyCpuDatabaseInformation.ClusterTypeCode">
+            <summary>
+            Get/Set the Cluster Type Code value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.GalaxyCpuDatabaseInformation.ClusterTypeIsActive">
+            <summary>
+            Get/Set the Cluster Type Is Active value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.GalaxyCpuDatabaseInformation.CredentialDataLength">
+            <summary>
+            Get/Set the Credential Data Length value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.GalaxyCpuDatabaseInformation.PanelLocation">
+            <summary>
+            Get/Set the Panel Location value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.GalaxyCpuDatabaseInformation.PanelModelTypeCode">
+            <summary>
+            Get/Set the Panel Model Type Code value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.GalaxyCpuDatabaseInformation.PanelModelIsActive">
+            <summary>
+            Get/Set the Panel Model Is Active value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.GalaxyCpuDatabaseInformation.CpuIsActive">
+            <summary>
+            Get/Set the Cpu Is Active value
+            </summary>
+        </member>
+        <member name="T:GalaxySMS.Client.Entities.GetParameters">
+             <summary>   The GetParameters class that provides properties commonly used to request data. </summary>
+            
+             <remarks>   Kevin, 8/8/2018. </remarks>
+        </member>
+        <member name="M:GalaxySMS.Client.Entities.GetParameters.#ctor">
+             <summary>   Default constructor. </summary>
+            
+             <remarks>   Kevin, 8/8/2018. </remarks>
+        </member>
+        <member name="M:GalaxySMS.Client.Entities.GetParameters.#ctor(GCS.Core.Common.Contracts.IGetParametersBase)">
+             <summary>   Constructor. </summary>
+            
+             <remarks>   Kevin, 8/8/2018. </remarks>
+            
+             <param name="o">    The IGetParametersBase to process. </param>
+        </member>
+        <member name="M:GalaxySMS.Client.Entities.GetParameters.Init">
+             <summary>   Initializes this GetParameters. </summary>
+            
+             <remarks>   Kevin, 8/8/2018. </remarks>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.GetParameters.SessionId">
+             <summary>   Gets or sets the SessionId Guid value. </summary>
+             <remarks>   This value is used to identify the user session that this call is being made from. It must be provided to most calls. If set, this value will override the SessionGuid header value. If not set, the SessionGuid header value will be used. If neither are supplied, the operation will typically fail. </remarks>
+              <description>  The unique Session Guid value. </description>
+            
+             <value> The identifier of the session. </value>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.GetParameters.CurrentEntityId">
+             <summary>   Gets or sets the current entity unique identifier. </summary>
+            
+             <value> The identifier of the current entity. </value>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.GetParameters.CurrentSiteUId">
+             <summary>   Gets or sets the current site unique identifier. </summary>
+            
+             <value> The identifier of the current site u. </value>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.GetParameters.UniqueId">
+             <summary>   Gets or sets a unique identifier. </summary>
+            
+             <value> The identifier of the unique. </value>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.GetParameters.PersonUid">
+             <summary>   Gets or sets the person UID. </summary>
+            
+             <value> The person UID. </value>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.GetParameters.GetGuid">
+             <summary>   Gets or sets a unique identifier of the get. </summary>
+            
+             <value> Unique identifier of the get. </value>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.GetParameters.GetString">
+             <summary>   Gets or sets the get string. </summary>
+            
+             <value> The get string. </value>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.GetParameters.GetForList">
+             <summary>   Gets or sets a value indicating whether or not to get for list. </summary>
+            
+             <value> True if get for list, false if not. </value>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.GetParameters.IncludeMemberCollections">
+             <summary>
+             Gets or sets a value indicating whether the member collections should be included.
+             </summary>
+            
+             <value> True if include member collections, false if not. </value>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.GetParameters.ThrowExceptionIfNotFound">
+             <summary>
+             Gets or sets a value indicating whether the throw exception if not found.
+             </summary>
+            
+             <value> True if throw exception if not found, false if not. </value>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.GetParameters.RequestDateTime">
+             <summary>   Gets or sets the request date time. </summary>
+            
+             <value> The request date time. </value>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.GetParameters.GetUInt32">
+             <summary>   Gets or sets the get u int 32. </summary>
+            
+             <value> The get u int 32. </value>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.GetParameters.GetUInt16">
+             <summary>   Gets or sets the get u int 16. </summary>
+            
+             <value> The get u int 16. </value>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.GetParameters.GetInt32">
+             <summary>   Gets or sets the get int 32. </summary>
+            
+             <value> The get int 32. </value>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.GetParameters.GetInt16">
+             <summary>   Gets or sets the get int 16. </summary>
+            
+             <value> The get int 16. </value>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.GetParameters.ExcludeMemberCollectionSettings">
+             <summary>   Gets or sets the exclude member collection settings. </summary>
+            
+             <value> The exclude member collection settings. </value>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.GetParameters.Options">
+             <summary>   Gets or sets options for controlling the operation. </summary>
+            
+             <value> The options. </value>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.GetParameters.AccountCode">
+             <summary>   Gets or sets the account code. </summary>
+            
+             <value> The account code. </value>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.GetParameters.ClusterNumber">
+             <summary>   Gets or sets the cluster number. </summary>
+            
+             <value> The cluster number. </value>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.GetParameters.PanelNumber">
+             <summary>   Gets or sets the panel number. </summary>
+            
+             <value> The panel number. </value>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.GetParameters.ClusterUid">
+             <summary>   Gets or sets the cluster UID. </summary>
+            
+             <value> The cluster UID. </value>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.GetParameters.PageNumber">
+             <summary>   Gets or sets the page number. </summary>
+            
+             <value> The page number. </value>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.GetParameters.PageSize">
+             <summary>   Gets or sets the size of the page. </summary>
+            
+             <value> The size of the page. </value>
+        </member>
+        <member name="T:GalaxySMS.Client.Entities.GetParameters`1">
+             <summary>   A get parameters. </summary>
+            
+             <remarks>   Kevin, 8/8/2018. </remarks>
+            
+             <typeparam name="T">    Generic type parameter. </typeparam>
+        </member>
+        <member name="M:GalaxySMS.Client.Entities.GetParameters`1.#ctor">
+             <summary>   Default constructor. </summary>
+            
+             <remarks>   Kevin, 8/8/2018. </remarks>
+        </member>
+        <member name="M:GalaxySMS.Client.Entities.GetParameters`1.Init">
+             <summary>   Initialises this GetParameters&lt;T&gt; </summary>
+            
+             <remarks>   Kevin, 8/8/2018. </remarks>
+        </member>
+        <member name="M:GalaxySMS.Client.Entities.GetParameters`1.#ctor(System.Guid)">
+             <summary>   Constructor. </summary>
+            
+             <remarks>   Kevin, 8/8/2018. </remarks>
+            
+             <param name="sessionId">    Identifier for the session. </param>
+        </member>
+        <member name="M:GalaxySMS.Client.Entities.GetParameters`1.#ctor(GalaxySMS.Client.Entities.GetParameters{`0})">
+             <summary>   Constructor. </summary>
+            
+             <remarks>   Kevin, 8/8/2018. </remarks>
+            
+             <param name="o">    The GetParameters&lt;T&gt; to process. </param>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.GetParameters`1.Data">
+             <summary>   Gets or sets the data. </summary>
+            
+             <value> The data. </value>
+        </member>
+        <member name="T:GalaxySMS.Client.Entities.GetParametersWithPhoto">
+             <summary>   A get parameters with photo. </summary>
+            
+             <remarks>   Kevin, 8/8/2018. </remarks>
+        </member>
+        <member name="M:GalaxySMS.Client.Entities.GetParametersWithPhoto.#ctor">
+             <summary>   Default constructor. </summary>
+            
+             <remarks>   Kevin, 8/8/2018. </remarks>
+        </member>
+        <member name="M:GalaxySMS.Client.Entities.GetParametersWithPhoto.Init">
+             <summary>   Initializes this GetParametersWithPhoto. </summary>
+            
+             <remarks>   Kevin, 8/8/2018. </remarks>
+        </member>
+        <member name="M:GalaxySMS.Client.Entities.GetParametersWithPhoto.#ctor(GCS.Core.Common.Contracts.IGetParametersWithPhoto)">
+             <summary>   Constructor. </summary>
+            
+             <remarks>   Kevin, 8/8/2018. </remarks>
+            
+             <param name="o">    The IGetParametersWithPhoto to process. </param>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.GetParametersWithPhoto.IncludePhoto">
+             <summary>   Gets or sets a value indicating whether the photo should be included. </summary>
+            
+             <value> True if include photo, false if not. </value>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.GetParametersWithPhoto.PhotoPixelWidth">
+            <summary>   Gets or sets the width of the photo pixel. </summary>
+            <value> The width of the photo pixel. </value>
+        </member>
+        <member name="T:GalaxySMS.Client.Entities.GetParametersWithPhoto`1">
+             <summary>   A get parameters with photo. </summary>
+            
+             <remarks>   Kevin, 8/8/2018. </remarks>
+            
+             <typeparam name="T">    Generic type parameter. </typeparam>
+        </member>
+        <member name="M:GalaxySMS.Client.Entities.GetParametersWithPhoto`1.#ctor">
+             <summary>   Default constructor. </summary>
+            
+             <remarks>   Kevin, 8/8/2018. </remarks>
+        </member>
+        <member name="M:GalaxySMS.Client.Entities.GetParametersWithPhoto`1.Init">
+             <summary>   Initialises this GetParametersWithPhoto&lt;T&gt; </summary>
+            
+             <remarks>   Kevin, 8/8/2018. </remarks>
+        </member>
+        <member name="M:GalaxySMS.Client.Entities.GetParametersWithPhoto`1.#ctor(GalaxySMS.Client.Entities.GetParametersWithPhoto{`0})">
+             <summary>   Constructor. </summary>
+            
+             <remarks>   Kevin, 8/8/2018. </remarks>
+            
+             <param name="o">    The GetParametersWithPhoto&lt;T&gt; to process. </param>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.GetParametersWithPhoto`1.IncludePhoto">
+             <summary>   Gets or sets a value indicating whether the photo should be included. </summary>
+            
+             <value> True if include photo, false if not. </value>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.GetParametersWithPhoto`1.PhotoPixelWidth">
+             <summary>   Gets or sets the width of the photo pixel. </summary>
+            
+             <value> The width of the photo pixel. </value>
+        </member>
+        <member name="T:GalaxySMS.Client.Entities.UserSignInRequest">
+             <summary>   A user sign in request. </summary>
+            
+             <remarks>   Kevin, 4/19/2016. </remarks>
+        </member>
+        <member name="T:GalaxySMS.Client.Entities.UserSignInRequest.SignInUsing">
+             <summary>   Values that represent sign in usings. </summary>
+            
+             <remarks>   Kevin, 4/19/2016. </remarks>
+        </member>
+        <!-- Badly formed XML comment ignored for member "F:GalaxySMS.Client.Entities.UserSignInRequest.SignInUsing.Email" -->
+        <!-- Badly formed XML comment ignored for member "F:GalaxySMS.Client.Entities.UserSignInRequest.SignInUsing.AutoDetect" -->
+        <!-- Badly formed XML comment ignored for member "F:GalaxySMS.Client.Entities.UserSignInRequest._email" -->
+        <!-- Badly formed XML comment ignored for member "F:GalaxySMS.Client.Entities.UserSignInRequest._userName" -->
+        <!-- Badly formed XML comment ignored for member "F:GalaxySMS.Client.Entities.UserSignInRequest._password" -->
+        <!-- Badly formed XML comment ignored for member "F:GalaxySMS.Client.Entities.UserSignInRequest._hashedPassword" -->
+        <!-- Badly formed XML comment ignored for member "F:GalaxySMS.Client.Entities.UserSignInRequest._applicationName" -->
+        <!-- Badly formed XML comment ignored for member "F:GalaxySMS.Client.Entities.UserSignInRequest._applicationId" -->
+        <!-- Badly formed XML comment ignored for member "F:GalaxySMS.Client.Entities.UserSignInRequest._applicationVersion" -->
+        <!-- Badly formed XML comment ignored for member "F:GalaxySMS.Client.Entities.UserSignInRequest._authenticationType" -->
+        <!-- Badly formed XML comment ignored for member "F:GalaxySMS.Client.Entities.UserSignInRequest._computerInformation" -->
+        <!-- Badly formed XML comment ignored for member "F:GalaxySMS.Client.Entities.UserSignInRequest._currentWindowsUserIdentity" -->
+        <!-- Badly formed XML comment ignored for member "F:GalaxySMS.Client.Entities.UserSignInRequest._signInRequestDateTime" -->
+        <member name="M:GalaxySMS.Client.Entities.UserSignInRequest.#ctor">
+             <summary>   Default constructor. </summary>
+            
+             <remarks>   Kevin, 4/19/2016. </remarks>
+        </member>
+        <member name="M:GalaxySMS.Client.Entities.UserSignInRequest.#ctor(GCS.Framework.Utilities.AssemblyAttributes)">
+             <summary>   Constructor. </summary>
+            
+             <remarks>   Kevin, 4/19/2016. </remarks>
+            
+             <param name="assemblyAttributes">   The assembly attributes. </param>
+        </member>
+        <member name="M:GalaxySMS.Client.Entities.UserSignInRequest.Initialize(GCS.Framework.Utilities.AssemblyAttributes)">
+             <summary>   Initializes this object. </summary>
+            
+             <remarks>   Kevin, 4/19/2016. </remarks>
+            
+             <param name="assemblyAttributes">   The assembly attributes. </param>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.UserSignInRequest.SignInBy">
+             <summary>   Gets or sets the amount to sign in by. </summary>
+            
+             <value> Amount to sign in by. </value>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.UserSignInRequest.UserName">
+             <summary>   Gets or sets the name of the user. </summary>
+            
+             <value> The name of the user. </value>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.UserSignInRequest.Password">
+             <summary>   Gets or sets the password. </summary>
+            
+             <value> The password. </value>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.UserSignInRequest.HashedPassword">
+             <summary>   Gets or sets the hashed password. </summary>
+            
+             <value> The hashed password. </value>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.UserSignInRequest.ApplicationName">
+             <summary>   Gets or sets the name of the application. </summary>
+            
+             <value> The name of the application. </value>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.UserSignInRequest.ApplicationId">
+             <summary>   Gets or sets the identifier of the application. </summary>
+            
+             <value> The identifier of the application. </value>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.UserSignInRequest.PermissionsForApplicationIds">
+             <summary>
+             Gets or sets a list of identifiers of the permissions for applications.
+             </summary>
+            
+             <value> A list of identifiers of the permissions for applications. </value>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.UserSignInRequest.ApplicationVersion">
+             <summary>   Gets or sets the application version. </summary>
+            
+             <value> The application version. </value>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.UserSignInRequest.AuthenticationType">
+             <summary>   Gets or sets the type of the authentication. </summary>
+            
+             <value> The type of the authentication. </value>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.UserSignInRequest.ComputerInformation">
+             <summary>   Gets or sets information describing the computer. </summary>
+            
+             <value> Information describing the computer. </value>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.UserSignInRequest.CurrentWindowsUserIdentity">
+             <summary>   Gets or sets the current windows user identity. </summary>
+            
+             <value> The current windows user identity. </value>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.UserSignInRequest.SignInRequestDateTime">
+             <summary>   Gets or sets the sign in request date time. </summary>
+            
+             <value> The sign in request date time. </value>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.UserSignInRequest.MinimumExecutionTime">
+             <summary>   Gets or sets the minimum execution time. </summary>
+            
+             <value> The minimum execution time. </value>
+        </member>
+        <member name="T:GalaxySMS.Client.Entities.AccessGroupAccessPortal_PanelLoadData">
+            <summary>
+            This class contains properties for each data value that makes up a AccessGroupAccessPortal_PanelLoadDataPDSA.
+            This class is generated by the Haystack Code Generator for .NET.
+            Do not modify this class or add methods as it is intended to be able to be re-generated at any time.
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.AccessGroupAccessPortal_PanelLoadData.AccessGroupAccessPortalUid">
+            <summary>
+            Get/Set the Access Group Access Portal Uid value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.AccessGroupAccessPortal_PanelLoadData.AccessPortalUid">
+            <summary>
+            Get/Set the Access Portal Uid value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.AccessGroupAccessPortal_PanelLoadData.TimeScheduleUid">
+            <summary>
+            Get/Set the Time Schedule Uid value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.AccessGroupAccessPortal_PanelLoadData.AccessGroupUid">
+            <summary>
+            Get/Set the Access Group Uid value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.AccessGroupAccessPortal_PanelLoadData.AccessGroupNumber">
+            <summary>
+            Get/Set the Access Group Number value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.AccessGroupAccessPortal_PanelLoadData.PanelScheduleNumber">
+            <summary>
+            Get/Set the Panel Schedule Number value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.AccessGroupAccessPortal_PanelLoadData.ActivationDate">
+            <summary>
+            Get/Set the Activation Date value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.AccessGroupAccessPortal_PanelLoadData.ExpirationDate">
+            <summary>
+            Get/Set the Expiration Date value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.AccessGroupAccessPortal_PanelLoadData.IsEnabled">
+            <summary>
+            Get/Set the Is Enabled value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.AccessPortalContactSupervisionType.ResourceClassName">
+            <summary>
+            Get/Set ResourceClassName
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.AccessPortalContactSupervisionType.DisplayResourceName">
+            <summary>
+            Get/Set DisplayResourceName
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.AccessPortalContactSupervisionType.DescriptionResourceName">
+            <summary>
+            Get/Set DescriptionResourceName
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.AccessPortalContactSupervisionType.UniqueResourceName">
+            <summary>
+            Get/Set UniqueResourceName
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.AccessPortalElevatorControlType.ResourceClassName">
+            <summary>
+            Get/Set ResourceClassName
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.AccessPortalElevatorControlType.DisplayResourceName">
+            <summary>
+            Get/Set DisplayResourceName
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.AccessPortalElevatorControlType.DescriptionResourceName">
+            <summary>
+            Get/Set DescriptionResourceName
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.AccessPortalElevatorControlType.UniqueResourceName">
+            <summary>
+            Get/Set UniqueResourceName
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.AccessPortal_PanelLoadData.AccessPortalUid">
+            <summary>
+            Get/Set the Access Portal Uid value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.AccessPortal_PanelLoadData.ClusterUid">
+            <summary>
+            Get/Set the Cluster Uid value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.AccessPortal_PanelLoadData.GalaxyPanelUid">
+            <summary>
+            Get/Set the Galaxy Panel Uid value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.AccessPortal_PanelLoadData.GalaxyInterfaceBoardUid">
+            <summary>
+            Get/Set the Galaxy Interface Board Uid value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.AccessPortal_PanelLoadData.GalaxyInterfaceBoardSectionUid">
+            <summary>
+            Get/Set the Galaxy Interface Board Section Uid value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.AccessPortal_PanelLoadData.GalaxyHardwareModuleUid">
+            <summary>
+            Get/Set the Galaxy Hardware Module Uid value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.AccessPortal_PanelLoadData.GalaxyInterfaceBoardSectionNodeUid">
+            <summary>
+            Get/Set the Galaxy Interface Board Section Node Uid value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.AccessPortal_PanelLoadData.PortalName">
+            <summary>
+            Get/Set the Portal Name value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.AccessPortal_PanelLoadData.AccountCode">
+            <summary>
+            Get/Set the Account Code value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.AccessPortal_PanelLoadData.ClusterNumber">
+            <summary>
+            Get/Set the Cluster Number value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.AccessPortal_PanelLoadData.PanelNumber">
+            <summary>
+            Get/Set the Panel Number value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.AccessPortal_PanelLoadData.BoardNumber">
+            <summary>
+            Get/Set the Board Number value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.AccessPortal_PanelLoadData.SectionNumber">
+            <summary>
+            Get/Set the Section Number value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.AccessPortal_PanelLoadData.ModuleNumber">
+            <summary>
+            Get/Set the Module Number value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.AccessPortal_PanelLoadData.NodeNumber">
+            <summary>
+            Get/Set the Node Number value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.AccessPortal_PanelLoadData.DoorNumber">
+            <summary>
+            Get/Set the Door Number value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.AccessPortal_PanelLoadData.AccessPortalTypeDescription">
+            <summary>
+            Get/Set the Access Portal Type Description value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.AccessPortal_PanelLoadData.ReaderTypeName">
+            <summary>
+            Get/Set the Reader Type Name value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.AccessPortal_PanelLoadData.PanelDataFormatCode">
+            <summary>
+            Get/Set the Panel Data Format Code value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.AccessPortal_PanelLoadData.DataFormatName">
+            <summary>
+            Get/Set the Data Format Name value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.AccessPortal_PanelLoadData.AccessPortalBoardSectionMode">
+            <summary>
+            Get/Set the Access Portal Board Section Mode value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.AccessPortal_PanelLoadData.AccessPortalBoardSectionModeDisplay">
+            <summary>
+            Get/Set the Access Portal Board Section Mode Display value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.AccessPortal_PanelLoadData.AccessPortalPanelModelTypeCode">
+            <summary>
+            Get/Set the Access Portal Panel Model Type Code value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.AccessPortal_PanelLoadData.AccessPortalCpuTypeCode">
+            <summary>
+            Get/Set the Access Portal Cpu Type Code value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.AccessPortal_PanelLoadData.AccessPortalBoardTypeModel">
+            <summary>
+            Get/Set the Access Portal Board Type Model value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.AccessPortal_PanelLoadData.AccessPortalBoardTypeTypeCode">
+            <summary>
+            Get/Set the Access Portal Board Type Type Code value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.AccessPortal_PanelLoadData.AccessPortalBoardTypeDisplay">
+            <summary>
+            Get/Set the Access Portal Board Type Display value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.AccessPortal_PanelLoadData.UnlockDelay">
+            <summary>
+            Get/Set the Unlock Delay value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.AccessPortal_PanelLoadData.UnlockDuration">
+            <summary>
+            Get/Set the Unlock Duration value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.AccessPortal_PanelLoadData.RecloseDuration">
+            <summary>
+            Get/Set the Reclose Duration value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.AccessPortal_PanelLoadData.AllowPassbackAccess">
+            <summary>
+            Get/Set the Allow Passback Access value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.AccessPortal_PanelLoadData.RequireTwoValidCredentials">
+            <summary>
+            Get/Set the Require Two Valid Credentials value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.AccessPortal_PanelLoadData.UnlockOnREX">
+            <summary>
+            Get/Set the Unlock On REX value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.AccessPortal_PanelLoadData.SuppressIllegalOpenLog">
+            <summary>
+            Get/Set the Suppress Illegal Open Log value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.AccessPortal_PanelLoadData.SuppressOpenTooLongLog">
+            <summary>
+            Get/Set the Suppress Open Too Long Log value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.AccessPortal_PanelLoadData.SuppressClosedLog">
+            <summary>
+            Get/Set the Suppress Closed Log value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.AccessPortal_PanelLoadData.SuppressREXLog">
+            <summary>
+            Get/Set the Suppress REX Log value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.AccessPortal_PanelLoadData.LockWhenDoorCloses">
+            <summary>
+            Get/Set the Lock When Door Closes value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.AccessPortal_PanelLoadData.EnableDuress">
+            <summary>
+            Get/Set the Enable Duress value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.AccessPortal_PanelLoadData.DoorGroupNotify">
+            <summary>
+            Get/Set the Door Group Notify value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.AccessPortal_PanelLoadData.DoorGroupCanDisable">
+            <summary>
+            Get/Set the Door Group Can Disable value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.AccessPortal_PanelLoadData.RelayOneOnDuringArmDelay">
+            <summary>
+            Get/Set the Relay One On During Arm Delay value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.AccessPortal_PanelLoadData.RequireValidAccessForAutoUnlock">
+            <summary>
+            Get/Set the Require Valid Access For Auto Unlock value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.AccessPortal_PanelLoadData.PINSpecifiesRecloseDuration">
+            <summary>
+            Get/Set the PIN Specifies Reclose Duration value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.AccessPortal_PanelLoadData.ValidAccessRequiresDoorOpen">
+            <summary>
+            Get/Set the Valid Access Requires Door Open value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.AccessPortal_PanelLoadData.DontDecrementLimitedSwipeExpireCount">
+            <summary>
+            Get/Set the Dont Decrement Limited Swipe Expire Count value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.AccessPortal_PanelLoadData.IgnoreNotInSystem">
+            <summary>
+            Get/Set the Ignore Not In System value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.AccessPortal_PanelLoadData.ReaderSendsHeartbeat">
+            <summary>
+            Get/Set the Reader Sends Heartbeat value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.AccessPortal_PanelLoadData.PropertiesLastUpdated">
+            <summary>
+            Get/Set the Properties Last Updated value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.AccessPortal_PanelLoadData.AutoForgivePassbackCode">
+            <summary>
+            Get/Set the Auto Forgive Passback Code value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.AccessPortal_PanelLoadData.AutoForgivePassbackDisplay">
+            <summary>
+            Get/Set the Auto Forgive Passback Display value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.AccessPortal_PanelLoadData.PinRequiredModeCode">
+            <summary>
+            Get/Set the Pin Required Mode Code value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.AccessPortal_PanelLoadData.PinRequiredModeDisplay">
+            <summary>
+            Get/Set the Pin Required Mode Display value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.AccessPortal_PanelLoadData.ContactSupervisionCode">
+            <summary>
+            Get/Set the Contact Supervision Code value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.AccessPortal_PanelLoadData.ContactSupervisionDisplay">
+            <summary>
+            Get/Set the Contact Supervision Display value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.AccessPortal_PanelLoadData.DeferToServerCode">
+            <summary>
+            Get/Set the Defer To Server Code value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.AccessPortal_PanelLoadData.DeferToServerDisplay">
+            <summary>
+            Get/Set the Defer To Server Display value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.AccessPortal_PanelLoadData.NoServerReplyCode">
+            <summary>
+            Get/Set the No Server Reply Code value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.AccessPortal_PanelLoadData.NoServerReplyDisplay">
+            <summary>
+            Get/Set the No Server Reply Display value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.AccessPortal_PanelLoadData.LockPushButtonCode">
+            <summary>
+            Get/Set the Lock Push Button Code value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.AccessPortal_PanelLoadData.LockPushButtonDisplay">
+            <summary>
+            Get/Set the Lock Push Button Display value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.AccessPortal_PanelLoadData.LCDBoardNumber">
+            <summary>
+            Get/Set the LCD Board Number value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.AccessPortal_PanelLoadData.LCDSectionNumber">
+            <summary>
+            Get/Set the LCD Section Number value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.AccessPortal_PanelLoadData.LCDNodeNumber">
+            <summary>
+            Get/Set the LCD Node Number value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.AccessPortal_PanelLoadData.ElevatorControlTypeCode">
+            <summary>
+            Get/Set the Elevator Control Type Code value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.AccessPortal_PanelLoadData.ElevatorControlTypeDisplay">
+            <summary>
+            Get/Set the Elevator Control Type Display value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.AccessPortal_PanelLoadData.ElevatorRelayBoardNumber">
+            <summary>
+            Get/Set the Elevator Relay Board Number value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.AccessPortal_PanelLoadData.ElevatorRelaySectionNumber">
+            <summary>
+            Get/Set the Elevator Relay Section Number value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.AccessPortal_PanelLoadData.PassbackIntoAreaNumber">
+            <summary>
+            Get/Set the Passback Into Area Number value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.AccessPortal_PanelLoadData.PassbackFromAreaNumber">
+            <summary>
+            Get/Set the Passback From Area Number value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.AccessPortal_PanelLoadData.FreeAccessScheduleNumber">
+            <summary>
+            Get/Set the Free Access Schedule Number value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.AccessPortal_PanelLoadData.FreeAccessScheduleDisplay">
+            <summary>
+            Get/Set the Free Access Schedule Display value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.AccessPortal_PanelLoadData.CrisisFreeAccessScheduleNumber">
+            <summary>
+            Get/Set the Crisis Free Access Schedule Number value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.AccessPortal_PanelLoadData.CrisisFreeAccessScheduleDisplay">
+            <summary>
+            Get/Set the Crisis Free Access Schedule Display value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.AccessPortal_PanelLoadData.PinRequiredScheduleNumber">
+            <summary>
+            Get/Set the Pin Required Schedule Number value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.AccessPortal_PanelLoadData.PinRequiredScheduleDisplay">
+            <summary>
+            Get/Set the Pin Required Schedule Display value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.AccessPortal_PanelLoadData.DisableForcedOpenScheduleNumber">
+            <summary>
+            Get/Set the Disable Forced Open Schedule Number value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.AccessPortal_PanelLoadData.DisableForcedOpenScheduleDisplay">
+            <summary>
+            Get/Set the Disable Forced Open Schedule Display value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.AccessPortal_PanelLoadData.DisableOpenTooLongScheduleNumber">
+            <summary>
+            Get/Set the Disable Open Too Long Schedule Number value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.AccessPortal_PanelLoadData.DisableOpenTooLongScheduleDisplay">
+            <summary>
+            Get/Set the Disable Open Too Long Schedule Display value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.AccessPortal_PanelLoadData.AuxiliaryOutputScheduleNumber">
+            <summary>
+            Get/Set the Auxiliary Output Schedule Number value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.AccessPortal_PanelLoadData.AuxiliaryOutputScheduleDisplay">
+            <summary>
+            Get/Set the Auxiliary Output Schedule Display value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.AccessPortal_PanelLoadData.Relay2ActivationDelay">
+            <summary>
+            Get/Set the Relay 2 Activation Delay value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.AccessPortal_PanelLoadData.Relay2ActivationDuration">
+            <summary>
+            Get/Set the Relay 2 Activation Duration value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.AccessPortal_PanelLoadData.Relay2TriggerAccessGranted">
+            <summary>
+            Get/Set the Relay 2 Trigger Access Granted value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.AccessPortal_PanelLoadData.Relay2TriggerDuress">
+            <summary>
+            Get/Set the Relay 2 Trigger Duress value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.AccessPortal_PanelLoadData.Relay2TriggerForcedOpen">
+            <summary>
+            Get/Set the Relay 2 Trigger Forced Open value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.AccessPortal_PanelLoadData.Relay2TriggerInvalidAttempt">
+            <summary>
+            Get/Set the Relay 2 Trigger Invalid Attempt value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.AccessPortal_PanelLoadData.Relay2TriggerOpenTooLong">
+            <summary>
+            Get/Set the Relay 2 Trigger Open Too Long value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.AccessPortal_PanelLoadData.Relay2TriggerPassbackViolation">
+            <summary>
+            Get/Set the Relay 2 Trigger Passback Violation value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.AccessPortal_PanelLoadData.Relay2ModeCode">
+            <summary>
+            Get/Set the Relay 2 Mode Code value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.AccessPortal_PanelLoadData.Relay2ModeDisplay">
+            <summary>
+            Get/Set the Relay 2 Mode Display value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.AccessPortal_PanelLoadData.Relay2ScheduleNumber">
+            <summary>
+            Get/Set the Relay 2 Schedule Number value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.AccessPortal_PanelLoadData.Relay2ScheduleDisplay">
+            <summary>
+            Get/Set the Relay 2 Schedule Display value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.AccessPortal_PanelLoadData.ForcedOpenIOGroupNumber">
+            <summary>
+            Get/Set the Forced Open IO Group Number value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.AccessPortal_PanelLoadData.ForcedOpenIOGroupOffset">
+            <summary>
+            Get/Set the Forced Open IO Group Offset value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.AccessPortal_PanelLoadData.OpenTooLongIOGroupNumber">
+            <summary>
+            Get/Set the Open Too Long IO Group Number value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.AccessPortal_PanelLoadData.OpenTooLongIOGroupOffset">
+            <summary>
+            Get/Set the Open Too Long IO Group Offset value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.AccessPortal_PanelLoadData.InvalidAccessAttemptIOGroupNumber">
+            <summary>
+            Get/Set the Invalid Access Attempt IO Group Number value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.AccessPortal_PanelLoadData.InvalidAccessAttemptIOGroupOffset">
+            <summary>
+            Get/Set the Invalid Access Attempt IO Group Offset value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.AccessPortal_PanelLoadData.PassbackViolationIOGroupNumber">
+            <summary>
+            Get/Set the Passback Violation IO Group Number value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.AccessPortal_PanelLoadData.PassbackViolationIOGroupOffset">
+            <summary>
+            Get/Set the Passback Violation IO Group Offset value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.AccessPortal_PanelLoadData.DuressIOGroupNumber">
+            <summary>
+            Get/Set the Duress IO Group Number value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.AccessPortal_PanelLoadData.DuressIOGroupOffset">
+            <summary>
+            Get/Set the Duress IO Group Offset value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.AccessPortal_PanelLoadData.MissedHeartbeatIOGroupNumber">
+            <summary>
+            Get/Set the Missed Heartbeat IO Group Number value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.AccessPortal_PanelLoadData.MissedHeartbeatIOGroupOffset">
+            <summary>
+            Get/Set the Missed Heartbeat IO Group Offset value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.AccessPortal_PanelLoadData.AccessGrantedIOGroupNumber">
+            <summary>
+            Get/Set the Access Granted IO Group Number value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.AccessPortal_PanelLoadData.AccessGrantedIOGroupOffset">
+            <summary>
+            Get/Set the Access Granted IO Group Offset value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.AccessPortal_PanelLoadData.DoorGroupIOGroupNumber">
+            <summary>
+            Get/Set the Door Group IO Group Number value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.AccessPortal_PanelLoadData.DoorGroupIOGroupOffset">
+            <summary>
+            Get/Set the Door Group IO Group Offset value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.AccessPortal_PanelLoadData.LockedByIOGroupNumber">
+            <summary>
+            Get/Set the Locked By IO Group Number value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.AccessPortal_PanelLoadData.UnlockedByIOGroupNumber">
+            <summary>
+            Get/Set the Unlocked By IO Group Number value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.AccessPortal_PanelLoadData.DisarmIOGroupNumber1">
+            <summary>
+            Get/Set the Disarm IO Group Number 1 value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.AccessPortal_PanelLoadData.DisarmIOGroupNumber2">
+            <summary>
+            Get/Set the Disarm IO Group Number 2 value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.AccessPortal_PanelLoadData.DisarmIOGroupNumber3">
+            <summary>
+            Get/Set the Disarm IO Group Number 3 value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.AccessPortal_PanelLoadData.DisarmIOGroupNumber4">
+            <summary>
+            Get/Set the Disarm IO Group Number 4 value
+            </summary>
+        </member>
+        <member name="T:GalaxySMS.Client.Entities.GalaxyInterfaceBoardSection_PanelLoadData">
+            <summary>
+            This class contains properties for each data value that makes up a GalaxyInterfaceBoardSection_PanelLoadDataPDSA.
+            This class is generated by the Haystack Code Generator for .NET.
+            Do not modify this class or add methods as it is intended to be able to be re-generated at any time.
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.GalaxyInterfaceBoardSection_PanelLoadData.GalaxyInterfaceBoardSectionUid">
+            <summary>
+            Get/Set the Galaxy Interface Board Section Uid value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.GalaxyInterfaceBoardSection_PanelLoadData.GalaxyInterfaceBoardUid">
+            <summary>
+            Get/Set the Galaxy Interface Board Uid value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.GalaxyInterfaceBoardSection_PanelLoadData.InterfaceBoardSectionModeUid">
+            <summary>
+            Get/Set the Interface Board Section Mode Uid value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.GalaxyInterfaceBoardSection_PanelLoadData.SectionNumber">
+            <summary>
+            Get/Set the Section Number value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.GalaxyInterfaceBoardSection_PanelLoadData.IsSectionActive">
+            <summary>
+            Get/Set the Is Section Active value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.GalaxyInterfaceBoardSection_PanelLoadData.InsertName">
+            <summary>
+            Get/Set the Insert Name value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.GalaxyInterfaceBoardSection_PanelLoadData.InsertDate">
+            <summary>
+            Get/Set the Insert Date value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.GalaxyInterfaceBoardSection_PanelLoadData.UpdateName">
+            <summary>
+            Get/Set the Update Name value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.GalaxyInterfaceBoardSection_PanelLoadData.UpdateDate">
+            <summary>
+            Get/Set the Update Date value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.GalaxyInterfaceBoardSection_PanelLoadData.ConcurrencyValue">
+            <summary>
+            Get/Set the Concurrency Value value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.GalaxyInterfaceBoardSection_PanelLoadData.ClusterUid">
+            <summary>
+            Get/Set the Cluster Uid value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.GalaxyInterfaceBoardSection_PanelLoadData.GalaxyPanelUid">
+            <summary>
+            Get/Set the Galaxy Panel Uid value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.GalaxyInterfaceBoardSection_PanelLoadData.AccountCode">
+            <summary>
+            Get/Set the Account Code value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.GalaxyInterfaceBoardSection_PanelLoadData.ClusterNumber">
+            <summary>
+            Get/Set the Cluster Number value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.GalaxyInterfaceBoardSection_PanelLoadData.PanelNumber">
+            <summary>
+            Get/Set the Panel Number value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.GalaxyInterfaceBoardSection_PanelLoadData.BoardNumber">
+            <summary>
+            Get/Set the Board Number value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.GalaxyInterfaceBoardSection_PanelLoadData.BoardSectionMode">
+            <summary>
+            Get/Set the Board Section Mode value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.GalaxyInterfaceBoardSection_PanelLoadData.BoardSectionModeDisplay">
+            <summary>
+            Get/Set the Board Section Mode Display value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.GalaxyInterfaceBoardSection_PanelLoadData.PanelModelTypeCode">
+            <summary>
+            Get/Set the Panel Model Type Code value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.GalaxyInterfaceBoardSection_PanelLoadData.CpuTypeCode">
+            <summary>
+            Get/Set the Cpu Type Code value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.GalaxyInterfaceBoardSection_PanelLoadData.BoardTypeModel">
+            <summary>
+            Get/Set the Board Type Model value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.GalaxyInterfaceBoardSection_PanelLoadData.BoardTypeTypeCode">
+            <summary>
+            Get/Set the Board Type Type Code value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.GalaxyInterfaceBoardSection_PanelLoadData.BoardTypeDisplay">
+            <summary>
+            Get/Set the Board Type Display value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.Cluster_CommonPanelLoadData.ClusterUid">
+            <summary>
+            Get/Set the Cluster Uid value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.Cluster_CommonPanelLoadData.ClusterNumber">
+            <summary>
+            Get/Set the Cluster Number value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.Cluster_CommonPanelLoadData.ClusterName">
+            <summary>
+            Get/Set the Cluster Name value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.Cluster_CommonPanelLoadData.InsertDate">
+            <summary>
+            Get/Set the Insert Date value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.Cluster_CommonPanelLoadData.UpdateDate">
+            <summary>
+            Get/Set the Update Date value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.Cluster_CommonPanelLoadData.AccountCode">
+            <summary>
+            Get/Set the Account Code value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.Cluster_CommonPanelLoadData.IsActive">
+            <summary>
+            Get/Set the Is Active value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.Cluster_CommonPanelLoadData.AbaStartDigit">
+            <summary>
+            Get/Set the Aba Start Digit value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.Cluster_CommonPanelLoadData.AbaStopDigit">
+            <summary>
+            Get/Set the Aba Stop Digit value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.Cluster_CommonPanelLoadData.AbaFoldOption">
+            <summary>
+            Get/Set the Aba Fold Option value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.Cluster_CommonPanelLoadData.AbaClipOption">
+            <summary>
+            Get/Set the Aba Clip Option value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.Cluster_CommonPanelLoadData.WiegandStartBit">
+            <summary>
+            Get/Set the Wiegand Start Bit value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.Cluster_CommonPanelLoadData.WiegandStopBit">
+            <summary>
+            Get/Set the Wiegand Stop Bit value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.Cluster_CommonPanelLoadData.CardaxStartBit">
+            <summary>
+            Get/Set the Cardax Start Bit value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.Cluster_CommonPanelLoadData.CardaxStopBit">
+            <summary>
+            Get/Set the Cardax Stop Bit value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.Cluster_CommonPanelLoadData.LockoutAfterInvalidAttempts">
+            <summary>
+            Get/Set the Lockout After Invalid Attempts value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.Cluster_CommonPanelLoadData.LockoutDurationSeconds">
+            <summary>
+            Get/Set the Lockout Duration Seconds value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.Cluster_CommonPanelLoadData.AccessRuleOverrideTimeout">
+            <summary>
+            Get/Set the Access Rule Override Timeout value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.Cluster_CommonPanelLoadData.UnlimitedCredentialTimeout">
+            <summary>
+            Get/Set the Unlimited Credential Timeout value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.Cluster_CommonPanelLoadData.TimeZoneId">
+            <summary>
+            Get/Set the Time Zone Id value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.Cluster_CommonPanelLoadData.ActivateCrisisIOGroupNumber">
+            <summary>
+            Get/Set the Activate Crisis IO Group Number value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.Cluster_CommonPanelLoadData.ResetCrisisIOGroupNumber">
+            <summary>
+            Get/Set the Reset Crisis IO Group Numbe value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.Cluster_CommonPanelLoadData.LockedLED">
+            <summary>
+            Get/Set the Locked LED value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.Cluster_CommonPanelLoadData.UnlockedLED">
+            <summary>
+            Get/Set the Unlocked LED value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.Cluster_CommonPanelLoadData.ClusterTypeCode">
+            <summary>
+            Get/Set the Cluster Type Code value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.Cluster_CommonPanelLoadData.CredentialDataLength">
+            <summary>
+            Get/Set the Credential Data Length value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.Cluster_CommonPanelLoadData.TimeScheduleTypeCode">
+            <summary>
+            Get/Set the Time Schedule Type Code value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.Cluster_CommonPanelLoadData.RETURNVALUE">
+            <summary>
+            Get/Set the return value value
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.InputDeviceSupervisionType.ResourceClassName">
+            <summary>
+            Get/Set ResourceClassName
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.InputDeviceSupervisionType.DisplayResourceName">
+            <summary>
+            Get/Set DisplayResourceName
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.InputDeviceSupervisionType.DescriptionResourceName">
+            <summary>
+            Get/Set DescriptionResourceName
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.InputDeviceSupervisionType.UniqueResourceName">
+            <summary>
+            Get/Set UniqueResourceName
+            </summary>
+        </member>
+        <member name="T:GalaxySMS.Client.Entities.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.Properties.Resources.EditUserRequirementsView_ValidatePasswordMinimumLengthMustBeLessThanEqualToMaximumLength">
+            <summary>
+              Looks up a localized string similar to The minimum password length must be less than or equal to the maximum password length.
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.Properties.Resources.ValidationMessage_EntityName">
+            <summary>
+              Looks up a localized string similar to Entity Name.
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.Properties.Resources.ValidationMessage_FieldCannotBeEmpty">
+            <summary>
+              Looks up a localized string similar to cannot be empty.
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.Properties.Resources.ValidationMessage_PasswordsDoNotMatch">
+            <summary>
+              Looks up a localized string similar to The passwords do not match.
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.Properties.Resources.ValidationMessage_UserActivationDateMustBeBeforeExpirationDate">
+            <summary>
+              Looks up a localized string similar to The activation date must be prior to or equal to the expiration date..
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.Properties.Resources.ValidationMessage_UserExpirationDateMustBeBeforeActivationDate">
+            <summary>
+              Looks up a localized string similar to The expiration date must be equal to or after the activation date..
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.Properties.Resources.ValidationMessage_UserPasswordDoesNotMeetRequirements">
+            <summary>
+              Looks up a localized string similar to The password does not satisfy requirements..
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.Properties.Resources.ValidationMessage_UserPasswordInvalid">
+            <summary>
+              Looks up a localized string similar to The password is invalid..
+            </summary>
+        </member>
+        <member name="P:GalaxySMS.Client.Entities.Properties.Resources.ValidationMessage_UserPrimaryEntityRequired">
+            <summary>
+              Looks up a localized string similar to A Primary Entity is required..
+            </summary>
+        </member>
+    </members>
+</doc>

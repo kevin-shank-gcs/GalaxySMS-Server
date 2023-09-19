@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <Nullable>enable</Nullable>
+    <RootNamespace>GalaxySMS.Resources</RootNamespace>
+  </PropertyGroup>
+
+  <Import Project="..\GalaxySMS.Resources.Shared\GalaxySMS.Resources.Shared.projitems" Label="Shared" />
+
+  <ItemGroup>
+    <PackageReference Include="System.Drawing.Common" Version="5.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\GCS.Core.Common.Contracts.Std64\GCS.Core.Common.Contracts.Std64.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="D:\Dev\GalaxySMS\GalaxySMS.Resources.Shared\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+    </Compile>
+  </ItemGroup>
+
+</Project>

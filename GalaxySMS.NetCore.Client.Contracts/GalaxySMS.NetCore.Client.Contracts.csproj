@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+  </PropertyGroup>
+
+  <Import Project="..\Shared\GalaxySMS.Client.Contracts.Shared\GalaxySMS.Client.Contracts.Shared.projitems" Label="Shared" />
+
+  <ItemGroup>
+    <PackageReference Include="System.Private.ServiceModel" Version="4.6.0-preview6.final" />
+    <PackageReference Include="System.ServiceModel.Duplex" Version="4.6.0-preview6.final" />
+    <PackageReference Include="System.ServiceModel.Http" Version="4.6.0-preview6.final" />
+    <PackageReference Include="System.ServiceModel.NetTcp" Version="4.6.0-preview6.final" />
+    <PackageReference Include="System.ServiceModel.Primitives" Version="4.6.0-preview6.final" />
+    <PackageReference Include="System.ServiceModel.Security" Version="4.6.0-preview6.final" />
+  </ItemGroup>
+
+</Project>

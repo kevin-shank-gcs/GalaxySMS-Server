@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <Import Project="..\GCS.PanelOutputDataHandlers.Shared\GCS.PanelOutputDataHandlers.Shared.projitems" Label="Shared" />
+
+  <ItemGroup>
+    <ProjectReference Include="..\GalaxySMS.Business.Entities.NetCore\GalaxySMS.Business.Entities.NetCore.csproj" />
+    <ProjectReference Include="..\GalaxySMS.MessageQueue.Integration.NetCore\GalaxySMS.MessageQueue.Integration.NetCore.csproj" />
+    <ProjectReference Include="..\GalaxySMS.SignalRClient\GalaxySMS.SignalRCoreClient.csproj" />
+    <ProjectReference Include="..\GCS.Framework.MessageQueue.Messaging.NetCore\GCS.Framework.MessageQueue.Messaging.NetCore.csproj" />
+    <ProjectReference Include="..\GCS.PanelDataProcessors.Interfaces.Std64\GCS.PanelDataProcessors.Interfaces.Std64.csproj" />
+  </ItemGroup>
+
+</Project>

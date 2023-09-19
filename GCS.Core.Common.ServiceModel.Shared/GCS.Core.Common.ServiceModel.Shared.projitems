@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>ad17f70c-d39f-42d5-8860-307fdaeaf637</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>GCS.Core.Common.ServiceModel.Shared</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Constants\HeaderNames.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Data Contracts\ApplicationUserSessionHeader.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\ClientApplicationUserSessionHeaderContext.cs" />
+  </ItemGroup>
+</Project>

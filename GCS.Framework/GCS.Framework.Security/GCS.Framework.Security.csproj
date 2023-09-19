@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4B4444B5-5DE7-4FFF-B355-F7DC8662F2A1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GCS.Framework.Security</RootNamespace>
+    <AssemblyName>GCS.Framework.Security</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Lorem.NET, Version=4.0.0.0, Culture=neutral, PublicKeyToken=ed1697c7b7619698, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Lorem.Universal.NET.4.0.80\lib\net461\Lorem.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="ReadablePassphrase, Version=1.3.0.0, Culture=neutral, PublicKeyToken=aacd6bbb302d670a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\ReadablePassphrase.1.3.0\lib\net452\ReadablePassphrase.dll</HintPath>
+    </Reference>
+    <Reference Include="ReadablePassphrase.Core, Version=1.3.0.0, Culture=neutral, PublicKeyToken=aacd6bbb302d670a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\ReadablePassphrase.Core.1.3.0\lib\net452\ReadablePassphrase.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="ReadablePassphrase.DefaultDictionary, Version=1.3.0.0, Culture=neutral, PublicKeyToken=aacd6bbb302d670a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\ReadablePassphrase.DefaultDictionary.1.3.0\lib\net452\ReadablePassphrase.DefaultDictionary.dll</HintPath>
+    </Reference>
+    <Reference Include="ReadablePassphrase.Words, Version=2.0.0.0, Culture=neutral, PublicKeyToken=aacd6bbb302d670a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\ReadablePassphrase.Words.2.0.0\lib\net452\ReadablePassphrase.Words.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GCS.Core.Common\GCS.Core.Common.csproj">
+      <Project>{106abc97-2143-4722-a2b0-cbe597d59f91}</Project>
+      <Name>GCS.Core.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GCS.Core.Contracts\GCS.Core.Common.Contracts.csproj">
+      <Project>{e3820436-5d37-4ccb-87ca-f50420041668}</Project>
+      <Name>GCS.Core.Common.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GCSUtilities\GCS.Framework.Utilities.csproj">
+      <Project>{0b5b7784-7385-44c7-9cfb-af51f3a430e4}</Project>
+      <Name>GCS.Framework.Utilities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Enums\" />
+  </ItemGroup>
+  <Import Project="..\..\Shared\GCS.Framework.Security.Shared\GCS.Framework.Security.Shared.projitems" Label="Shared" />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

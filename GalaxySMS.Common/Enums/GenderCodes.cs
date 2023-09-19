@@ -1,0 +1,28 @@
+﻿////////////////////////////////////////////////////////////////////////////////////////////////////
+// file:	Enums\GenderCodes.cs
+//
+// summary:	Implements the gender codes class
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace GalaxySMS.Common.Enums
+{
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+    /// <summary>   Values that represent gender codes. </summary>
+    ///
+    /// <remarks>   Kevin, 1/3/2019. </remarks>
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    public enum GenderCodes : short
+    {
+        /// <summary>   An enum constant representing the male option. </summary>
+        Male = 1,
+        /// <summary>   An enum constant representing the female option. </summary>
+        Female = 2
+    }
+}

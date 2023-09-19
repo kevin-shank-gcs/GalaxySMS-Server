@@ -1,0 +1,335 @@
+﻿<core:UserControlViewBase
+    x:Class="GalaxySMS.Site.Views.EditSiteView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:core="http://www.galaxysys.com/GCS/Core"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:prism="http://prismlibrary.com/"
+    xmlns:prismInfra="clr-namespace:GalaxySMS.Prism.Infrastructure;assembly=GalaxySMS.Prism.Infrastructure"
+    xmlns:resx="clr-namespace:GalaxySMS.Site.Properties"
+    xmlns:sharedResources="clr-namespace:GalaxySMS.Resources;assembly=GalaxySMS.Resources"
+    xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+    xmlns:converters="clr-namespace:GCS.Core.Common.UI.Converters;assembly=GCS.Core.Common.UI"
+    xmlns:site="clr-namespace:GalaxySMS.Site"
+    xmlns:ui="clr-namespace:GalaxySMS.Client.UI;assembly=GalaxySMS.Client.UI"
+    xmlns:ui1="clr-namespace:GCS.Core.Common.UI;assembly=GCS.Core.Common.UI"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+    mc:Ignorable="d"
+    d:DesignHeight="400"
+    d:DesignWidth="600"
+    FlowDirection="{Binding FlowDirection}">
+
+    <core:UserControlViewBase.Resources>
+        <BitmapImage x:Key="SelectPhoto" UriSource="/GalaxySMS.Resources;component/Images/Camera/SLR_32.png" />
+        <sys:Double x:Key="defaultImageButtonImageHeight">16</sys:Double>
+        <sys:Double x:Key="defaultImageButtonImageWidth">16</sys:Double>
+    </core:UserControlViewBase.Resources>
+
+    <telerik:RadBusyIndicator
+        BusyContent="{Binding BusyContent}"
+        DisplayAfter="0"
+        IsBusy="{Binding IsBusy}"
+        IsIndeterminate="True">
+        <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <ui:FormHeaderControl />
+                    <!--<ui:SaveCancelButtonControl Grid.Column="1" />-->
+                    <StackPanel Grid.Column="1" Orientation="Horizontal">
+                        <ui:SaveButtonControlBindable
+                            Command="{Binding  DataContext.SaveCommand, RelativeSource={RelativeSource AncestorType=core:UserControlViewBase}}"
+                            CommandParameter="{Binding}"
+                            ImageHeight="{StaticResource defaultImageButtonImageHeight}"
+                            ImageWidth="{StaticResource defaultImageButtonImageWidth}"
+                            Text="{x:Static sharedResources:Resources.SaveSite_Text}"
+                            ToolTip="{x:Static sharedResources:Resources.SaveSite_ToolTip}" />
+                        <ui:CancelButtonControlBindable
+                            Command="{Binding  DataContext.CancelCommand, RelativeSource={RelativeSource AncestorType=core:UserControlViewBase}}"
+                            CommandParameter="{Binding}"
+                            ImageHeight="{StaticResource defaultImageButtonImageHeight}"
+                            ImageWidth="{StaticResource defaultImageButtonImageWidth}"
+                            Text="{x:Static sharedResources:Resources.CancelEditSite_Text}"
+                            ToolTip="{x:Static sharedResources:Resources.CancelEditSite_ToolTip}" />
+                    </StackPanel>
+                </Grid>
+                <core:ValidationHeader Grid.Row="1" DataContext="{Binding}" />
+                <Grid Grid.Row="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="10" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="10" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="10" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <telerik:RadExpander
+                        Grid.Row="0"
+                        Grid.RowSpan="8"
+                        Grid.ColumnSpan="2"
+                        IsExpanded="{Binding IsBasicInfoExpanded}"
+                        ExpandDirection="Right">
+                        <telerik:RadExpander.Header>
+                            <Border Style="{StaticResource HeaderBorder}">
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock
+                                        Margin="8"
+                                        Style="{StaticResource Heading2Left}"
+                                        Text="{x:Static sharedResources:Resources.EditSiteView_BasicDataExpanderHeaderText}" />
+                                </StackPanel>
+                            </Border>
+                        </telerik:RadExpander.Header>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="10" />
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="10" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="10" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <TextBlock
+                                Grid.Row="0"
+                                Style="{StaticResource DataEntryControlTitle}"
+                                Text="{x:Static sharedResources:Resources.EditSiteView_SelectRegionTitle}" />
+                            <telerik:RadComboBox
+                                Grid.Row="1"
+                                Grid.Column="0"
+                                Margin="3"
+                                ItemsSource="{Binding Regions}"
+                                SelectedValue="{Binding Site.RegionUid}"
+                                SelectedValuePath="RegionUid"
+                                ToolTip="{x:Static sharedResources:Resources.EditSiteView_SelectRegionToolTip}">
+                                <telerik:RadComboBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <StackPanel Orientation="Horizontal">
+                                            <Image
+                                                MaxHeight="32"
+                                                Width="Auto"
+                                                Margin="5"
+                                                Source="{Binding gcsBinaryResource.BinaryResource}" />
+                                            <TextBlock
+                                                VerticalAlignment="Center"
+                                                FontSize="12"
+                                                Text="{Binding RegionName}" />
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </telerik:RadComboBox.ItemTemplate>
+                            </telerik:RadComboBox>
+                            <TextBlock
+                                Grid.Row="2"
+                                Grid.Column="0"
+                                Style="{StaticResource DataEntryControlTitle}"
+                                Text="{x:Static sharedResources:Resources.EditSiteView_SiteNameTitle}" />
+                            <TextBox
+                                Grid.Row="3"
+                                Grid.Column="0"
+                                Margin="3"
+                                MinWidth="200"
+                                HorizontalAlignment="Left"
+                                Text="{Binding Site.SiteName, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" />
+                            <TextBlock
+                                Grid.Row="4"
+                                Grid.Column="0"
+                                Style="{StaticResource DataEntryControlTitle}"
+                                Text="{x:Static sharedResources:Resources.EditSiteView_SiteIdTitle}" />
+                            <TextBox
+                                Grid.Row="5"
+                                Grid.Column="0"
+                                Margin="3"
+                                MinWidth="200"
+                                HorizontalAlignment="Left"
+                                Text="{Binding Site.SiteId, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" />
+                            <StackPanel
+                                Grid.Row="7"
+                                Grid.Column="0"
+                                Orientation="Horizontal">
+                                <ui:AddressControl />
+                            </StackPanel>
+                            <TextBlock
+                                Grid.Row="0"
+                                Grid.Column="2"
+                                Style="{StaticResource DataEntryControlTitle}"
+                                Text="{x:Static sharedResources:Resources.EditSiteView_SiteImageTitle}" />
+                            <Border
+                                Grid.Row="1"
+                                Grid.Column="2"
+                                Grid.RowSpan="7"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                BorderBrush="Black"
+                                BorderThickness="2">
+                                <StackPanel Orientation="Vertical">
+                                    <Image
+                                        MaxWidth="300"
+                                        MaxHeight="300"
+                                        Source="{Binding Site.gcsBinaryResource.BinaryResource}" />
+                                    <Button
+                                        Margin="0,3,0,0"
+                                        Command="{Binding SelectImageCommand}"
+                                        CommandParameter="{Binding Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}"
+                                        ToolTip="{x:Static sharedResources:Resources.EditSiteView_SiteImageSelectButtonToolTip}">
+                                        <StackPanel Margin="3" Orientation="Horizontal">
+                                            <Image x:Name="imgSelectPhoto" Source="{StaticResource SelectPhoto}" />
+                                            <TextBlock
+                                                Margin="3,0,0,0"
+                                                VerticalAlignment="Center"
+                                                Text="{x:Static sharedResources:Resources.EditSiteView_SiteImageSelectButtonText}" />
+                                        </StackPanel>
+                                    </Button>
+                                </StackPanel>
+                            </Border>
+                        </Grid>
+                        <!--<TextBlock Style="{StaticResource DataEntryControlTitle}" Grid.Row="0" 
+					Text="{x:Static sharedResources:Resources.EditSiteView_SelectRegionTitle}" />
+                    <telerik:RadComboBox Grid.Row="1" Grid.Column="0" Margin="3"
+					ToolTip="{x:Static sharedResources:Resources.EditSiteView_SelectRegionToolTip}"
+					ItemsSource="{Binding Regions}"
+					SelectedValue="{Binding Site.RegionUid}"
+					SelectedValuePath="RegionUid">
+                        <telerik:RadComboBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Source="{Binding gcsBinaryResource.BinaryResource}" MaxHeight="32" Width="Auto"
+									Margin="5" />
+                                    <TextBlock VerticalAlignment="Center" FontSize="12" Text="{Binding RegionName}" />
+                                </StackPanel>
+                            </DataTemplate>
+                        </telerik:RadComboBox.ItemTemplate>
+                    </telerik:RadComboBox>
+                    <TextBlock Grid.Row="2" Grid.Column="0" Style="{StaticResource DataEntryControlTitle}"
+					Text="{x:Static sharedResources:Resources.EditSiteView_SiteNameTitle}" />
+                    <TextBox Grid.Row="3" Grid.Column="0" Margin="3" MinWidth="200"
+					Text="{Binding Site.SiteName, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"
+					HorizontalAlignment="Left" />
+                    <TextBlock Grid.Row="4" Grid.Column="0" Style="{StaticResource DataEntryControlTitle}"
+					Text="{x:Static sharedResources:Resources.EditSiteView_SiteIdTitle}" />
+                    <TextBox Grid.Row="5" Grid.Column="0" Margin="3" MinWidth="200"
+					Text="{Binding Site.SiteId, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"
+					HorizontalAlignment="Left" />
+
+                    <StackPanel Orientation="Horizontal" Grid.Row="7" Grid.Column="0">
+                        <ui:AddressControl/>
+                    </StackPanel>
+
+                    <TextBlock Grid.Row="0" Grid.Column="2" Style="{StaticResource DataEntryControlTitle}"
+					Text="{x:Static sharedResources:Resources.EditSiteView_SiteImageTitle}" />
+                    <Border Grid.Row="1" Grid.Column="2" Grid.RowSpan="7" BorderThickness="2" BorderBrush="Black" HorizontalAlignment="Left" VerticalAlignment="Top">
+                        <StackPanel Orientation="Vertical">
+                            <Image MaxWidth="300" MaxHeight="300" Source="{Binding Site.gcsBinaryResource.BinaryResource}" />
+                            <Button Margin="0,3,0,0" Command="{Binding SelectImageCommand}"
+					CommandParameter="{Binding Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}"
+					ToolTip="{x:Static sharedResources:Resources.EditSiteView_SiteImageSelectButtonToolTip}">
+                                <StackPanel Orientation="Horizontal" Margin="3">
+                                    <Image x:Name="imgSelectPhoto" Source="{StaticResource SelectPhoto}" />
+                                    <TextBlock VerticalAlignment="Center" Margin="3,0,0,0"
+							Text="{x:Static sharedResources:Resources.EditSiteView_SiteImageSelectButtonText}" />
+                                </StackPanel>
+                            </Button>
+                        </StackPanel>
+                    </Border>-->
+                    </telerik:RadExpander>
+                    <telerik:RadTabControl
+                        Grid.Row="0"
+                        Grid.Column="4"
+                        Grid.RowSpan="8">
+                        <telerik:RadTabItem>
+                            <telerik:RadTabItem.Header>
+                                <Grid>
+                                    <Grid.ToolTip>
+                                        <TextBlock Text="{Binding Path=EntityAliasPlural, StringFormat={x:Static sharedResources:Resources.EditSiteView_EntityMappingTabHeaderToolTip}}" />
+                                    </Grid.ToolTip>
+                                    <TextBlock Text="{Binding Path=EntityAlias, StringFormat={x:Static sharedResources:Resources.EditSiteView_EntityMappingTabHeader}}" />
+                                </Grid>
+                            </telerik:RadTabItem.Header>
+                            <ui:EntityMapUserControl />
+                        </telerik:RadTabItem>
+                        <telerik:RadTabItem>
+                            <telerik:RadTabItem.Header>
+                                <Grid>
+                                    <Grid.ToolTip>
+                                        <TextBlock Text="{x:Static sharedResources:Resources.EditSiteView_GalaxyHardwareTabHeaderToolTip}" />
+                                    </Grid.ToolTip>
+                                    <TextBlock Text="{x:Static sharedResources:Resources.EditSiteView_GalaxyHardwareTabHeaderText}" />
+                                </Grid>
+                            </telerik:RadTabItem.Header>
+                            <ui:GalaxyClusterControl />
+                        </telerik:RadTabItem>
+                        <telerik:RadTabItem>
+                            <telerik:RadTabItem.Header>
+                                <Grid>
+                                    <Grid.ToolTip>
+                                        <TextBlock Text="{x:Static sharedResources:Resources.EditSiteView_AssaIPEnabledTabHeaderToolTip}" />
+                                    </Grid.ToolTip>
+                                    <TextBlock Text="{x:Static sharedResources:Resources.EditSiteView_AssaIPEnabledTabHeaderText}" />
+                                </Grid>
+                            </telerik:RadTabItem.Header>
+                            <StackPanel />
+                        </telerik:RadTabItem>
+                    </telerik:RadTabControl>
+                </Grid>
+                <!--<ui:SaveCancelButtonControl Grid.Row="3"/>-->
+                <StackPanel Grid.Row="3" Orientation="Horizontal">
+                    <ui:SaveButtonControlBindable
+                        Command="{Binding  DataContext.SaveCommand, RelativeSource={RelativeSource AncestorType=core:UserControlViewBase}}"
+                        CommandParameter="{Binding}"
+                        ImageHeight="{StaticResource defaultImageButtonImageHeight}"
+                        ImageWidth="{StaticResource defaultImageButtonImageWidth}"
+                        Text="{x:Static sharedResources:Resources.SaveSite_Text}"
+                        ToolTip="{x:Static sharedResources:Resources.SaveSite_ToolTip}" />
+                    <ui:CancelButtonControlBindable
+                        Command="{Binding  DataContext.CancelCommand, RelativeSource={RelativeSource AncestorType=core:UserControlViewBase}}"
+                        CommandParameter="{Binding}"
+                        ImageHeight="{StaticResource defaultImageButtonImageHeight}"
+                        ImageWidth="{StaticResource defaultImageButtonImageWidth}"
+                        Text="{x:Static sharedResources:Resources.CancelEditSite_Text}"
+                        ToolTip="{x:Static sharedResources:Resources.CancelEditSite_ToolTip}" />
+                </StackPanel>
+                <core:ErrorsPanel Grid.Row="4" DataContext="{Binding}" />
+            </Grid>
+        </ScrollViewer>
+    </telerik:RadBusyIndicator>
+
+</core:UserControlViewBase>

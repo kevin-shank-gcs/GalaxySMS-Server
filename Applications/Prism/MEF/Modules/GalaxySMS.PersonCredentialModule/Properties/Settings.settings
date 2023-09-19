@@ -1,0 +1,18 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="GalaxySMS.PersonCredential.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="EnrollmentReaderEnabled" Type="System.Boolean" Scope="Application">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="EnrollmentReaderCommPort" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">COM3</Value>
+    </Setting>
+    <Setting Name="CardWerkEnrollmentEnabled" Type="System.Boolean" Scope="Application">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="CardWerkiClassDataFormat" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Corporate1K48Bit</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

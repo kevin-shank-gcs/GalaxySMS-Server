@@ -1,0 +1,178 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <style>
+        table, td {
+            border: 1px solid black;
+        }
+    </style>
+    <title>GalaxySMS SignalR Client</title>
+</head>
+<body>
+    <script src="Scripts/jquery-3.3.1.min.js"></script>
+    <script src="Scripts/jquery.signalR-2.4.2.min.js"></script>
+    <!--<script src="Scripts/galaxysms.signalr.proxy.js"></script>-->
+    <script src="http://localhost:38000/signalr/hubs"></script>
+    <!--<script src="https://galaxyapisms-dev.galaxysys.com/signalr/hubs"></script>-->
+    <script type="text/javascript">
+
+
+        function toColor(num) {
+            num >>>= 0;
+            var b = num & 0xFF,
+                g = (num & 0xFF00) >>> 8,
+                r = (num & 0xFF0000) >>> 16,
+                a = ((num & 0xFF000000) >>> 24) / 255;
+            return "rgba(" + [r, g, b, a].join(",") + ")";
+        }
+
+        var galaxySMSHubProxy = $.connection.galaxySMSSignalRHub;
+
+        galaxySMSHubProxy.client.sendMessage = function (data) {
+            console.log('sendMessage: ' + data);
+        };
+
+        galaxySMSHubProxy.client.notifyAccessPortalStatusReply = function (data) {
+            console.log('notifyAccessPortalStatusReply: Cluster #: ' + data.ClusterNumber + ', PanelNumber: ' + data.PanelNumber + ', CpuId: ' + data.CpuId + ', Account: ' + data.AccountCode);
+        };
+
+        galaxySMSHubProxy.client.notifyAcknowledgedAlarmBasicData = function (data) {
+            console.log('notifyAcknowledgedAlarmBasicData: Cluster #: ' + data.ClusterNumber + ', PanelNumber: ' + data.PanelNumber + ', CpuId: ' + data.CpuId + ', Account: ' + data.AccountCode);
+        };
+
+        galaxySMSHubProxy.client.notifyCardCountReply = function (data) {
+            console.log('notifyCardCountReply: Cluster #: ' + data.ClusterNumber + ', PanelNumber: ' + data.PanelNumber + ', CpuId: ' + data.CpuId + ', Account: ' + data.AccountCode);
+        };
+
+        galaxySMSHubProxy.client.notifyFlashProgressMessage = function (data) {
+            console.log('notifyFlashProgressMessage: Cluster #: ' + data.ClusterNumber + ', PanelNumber: ' + data.PanelNumber + ', CpuId: ' + data.CpuId + ', Account: ' + data.AccountCode);
+        };
+
+        galaxySMSHubProxy.client.notifyLoggingStatusReply = function (data) {
+            console.log('notifyLoggingStatusReply: Cluster #: ' + data.ClusterNumber + ', PanelNumber: ' + data.PanelNumber + ', CpuId: ' + data.CpuId + ', Account: ' + data.AccountCode);
+        };
+
+        galaxySMSHubProxy.client.notifyPanelActivityLogMessage = function (data) {
+            console.log('notifyPanelActivityLogMessage: Cluster #: ' + data.ClusterNumber + ', PanelNumber: ' + data.PanelNumber + ', CpuId: ' + data.CpuId + ', Account: ' + data.AccountCode);
+            var table = document.getElementById("eventTable");
+            var row = table.insertRow(1);
+            row.style.color = toColor(data.Color);
+            var cellTime = row.insertCell(0);
+            var cellEvent = row.insertCell(1);
+            var cellDevice = row.insertCell(2);
+            var cellUser = row.insertCell(3);
+            var cellCardNumber = row.insertCell(4);
+            var cellCardHex = row.insertCell(5);
+            var cellCardBitCount = row.insertCell(6);
+            var cellIsAlarmEvent = row.insertCell(7);
+            var cellCpuModel = row.insertCell(8);
+
+            cellTime.innerHTML = data.DateTime;
+            cellEvent.innerHTML = data.EventDescription;
+            cellDevice.innerHTML = data.DeviceDescription;
+            cellIsAlarmEvent.innerHTML = data.IsAlarmEvent;
+            cellCpuModel.innerHTML = data.CpuModel;
+        };
+
+        galaxySMSHubProxy.client.notifyPanelBoardInformationCollection = function (data) {
+            console.log('notifyPanelBoardInformationCollection: Cluster #: ' + data.ClusterNumber + ', PanelNumber: ' + data.PanelNumber + ', CpuId: ' + data.CpuId + ', Account: ' + data.AccountCode);
+        };
+
+        galaxySMSHubProxy.client.notifyPanelCredentialActivityLogMessage = function (data) {
+            console.log('notifyPanelCredentialActivityLogMessage: Cluster #: ' + data.ClusterNumber + ', PanelNumber: ' + data.PanelNumber + ', CpuId: ' + data.CpuId + ', Account: ' + data.AccountCode);
+            var table = document.getElementById("eventTable");
+            var row = table.insertRow(1);
+            row.style.color = toColor(data.Color);
+            var cellTime = row.insertCell(0);
+            var cellEvent = row.insertCell(1);
+            var cellDevice = row.insertCell(2);
+            var cellUser = row.insertCell(3);
+            var cellCardNumber = row.insertCell(4);
+            var cellCardHex = row.insertCell(5);
+            var cellCardBitCount = row.insertCell(6);
+            var cellIsAlarmEvent = row.insertCell(7);
+            var cellCpuModel = row.insertCell(8);
+
+            cellTime.innerHTML = data.DateTime;
+            cellEvent.innerHTML = data.EventDescription;
+            cellDevice.innerHTML = data.DeviceDescription;
+            cellUser.innerHTML = data.PersonDescription;
+            cellCardNumber.innerHTML = data.CredentialNumber;
+            cellCardHex.innerHTML = data.CredentialNumberHex;
+            cellCardBitCount.innerHTML = data.BitCount;
+            cellIsAlarmEvent.innerHTML = data.IsAlarmEvent;
+            cellCpuModel.innerHTML = data.CpuModel;
+        };
+
+        galaxySMSHubProxy.client.notifyPanelInqueryReply = function (data) {
+            console.log('notifyPanelInqueryReply: Cluster #: ' + data.ClusterNumber + ', PanelNumber: ' + data.PanelNumber + ', CpuId: ' + data.CpuId + ', Account: ' + data.AccountCode);
+        };
+
+        galaxySMSHubProxy.client.notifyPanelLoadDataReply = function (data) {
+            console.log('notifyPanelLoadDataReply: Cluster #: ' + data.ClusterNumber + ', PanelNumber: ' + data.PanelNumber + ', CpuId: ' + data.CpuId + ', Account: ' + data.AccountCode);
+        };
+
+        var tryingToReconnect = false;
+
+        $.connection.hub.connectionSlow(function() {
+            console.log('SignalR connectionSlow notification received');
+        });
+
+        $.connection.hub.reconnecting(function() {
+            tryingToReconnect = true;
+            console.log('SignalR reconnecting notification received');
+        });
+
+        $.connection.hub.reconnected(function() {
+            tryingToReconnect = false;
+            console.log('SignalR reconnected notification received');
+        });
+
+        $.connection.hub.disconnected(function(error) {
+            console.log('SignalR disconnected notification received. ');
+            if (tryingToReconnect) {
+                console.log('Was trying to reconnect.');
+            }
+            if ($.connection.hub.lastError) {
+                console.log('Disconnected. Reason: ' + $.connection.hub.lastError.message);
+            }
+            setTimeout(function() {
+                StartSignalRConnection()
+            }, 5000); // Restart connection after 5 seconds.
+        });
+
+
+        $.connection.hub.start(StartSignalRConnection());
+
+        function StartSignalRConnection() {
+            console.log('StartSignalRConnection called. ');
+            $.connection.hub.url = "http://localhost:38000/signalr";
+            //$.connection.hub.url = "https://galaxyapisms-dev.galaxysys.com/signalr";
+            $.connection.hub.logging = true;
+            $.connection.hub.start({ transport: ['webSockets', 'longPolling'], jsonp: true })
+                .done(
+                    function () {
+                        console.log('Now connected, connection ID=' + $.connection.hub.id);
+                        galaxySMSHubProxy.server.joinGroup({ GroupName: "00000000-0000-0000-0000-000000000002" });
+                    })
+                .fail(function () { console.log('Could not Connect!'); });
+        }
+    </script>
+    <h1>GalaxySMS SignalR Client Sample</h1>
+    <h3>Activity Log Events</h3>
+    <table id="eventTable">
+        <tr>
+            <td>Event Time</td>
+            <td>Event Message</td>
+            <td>Device Name</td>
+            <td>User</td>
+            <td>Card #</td>
+            <td>Card # (HEX)</td>
+            <td>Bit Count</td>
+            <td>IsAlarmEvent</td>
+            <td>Cpu Model</td>
+        </tr>
+    </table>
+</body>
+</html>

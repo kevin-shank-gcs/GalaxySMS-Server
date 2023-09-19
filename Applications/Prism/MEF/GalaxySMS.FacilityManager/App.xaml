@@ -1,0 +1,142 @@
+﻿<Application
+    x:Class="GalaxySMS.FacilityManager.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+    xmlns:regionModuleViews="clr-namespace:GalaxySMS.Region.Views;assembly=GalaxySMS.Region"
+    xmlns:regionModuleVMs="clr-namespace:GalaxySMS.Region.ViewModels;assembly=GalaxySMS.Region"
+    xmlns:siteModuleViews="clr-namespace:GalaxySMS.Site.Views;assembly=GalaxySMS.Site"
+    xmlns:siteModuleVMs="clr-namespace:GalaxySMS.Site.ViewModels;assembly=GalaxySMS.Site"
+    xmlns:accessPortalModuleViews="clr-namespace:GalaxySMS.AccessPortal.Views;assembly=GalaxySMS.AccessPortal"
+    xmlns:accessPortalModuleVMs="clr-namespace:GalaxySMS.AccessPortal.ViewModels;assembly=GalaxySMS.AccessPortal"
+    xmlns:assaAbloyModuleViews="clr-namespace:GalaxySMS.AssaAbloy.Views;assembly=GalaxySMS.AssaAbloy"
+    xmlns:assaAbloyModuleVMs="clr-namespace:GalaxySMS.AssaAbloy.ViewModels;assembly=GalaxySMS.AssaAbloy"
+    xmlns:scheduleModuleViews="clr-namespace:GalaxySMS.Schedule.Views;assembly=GalaxySMS.Schedule"
+    xmlns:scheduleModuleVMs="clr-namespace:GalaxySMS.Schedule.ViewModels;assembly=GalaxySMS.Schedule"
+    xmlns:galaxyHardwareModuleViews="clr-namespace:GalaxySMS.GalaxyHardware.Views;assembly=GalaxySMS.GalaxyHardware"
+    xmlns:galaxyHardwareModuleVMs="clr-namespace:GalaxySMS.GalaxyHardware.ViewModels;assembly=GalaxySMS.GalaxyHardware"
+    xmlns:personCredentialModuleViews="clr-namespace:GalaxySMS.PersonCredential.Views;assembly=GalaxySMS.PersonCredential"
+    xmlns:personCredentialModuleVMs="clr-namespace:GalaxySMS.PersonCredential.ViewModels;assembly=GalaxySMS.PersonCredential"
+    xmlns:monitoredDeviceModuleViews="clr-namespace:GalaxySMS.MonitoredDevice.Views;assembly=GalaxySMS.MonitoredDevice"
+    xmlns:monitoredDeviceModuleVMs="clr-namespace:GalaxySMS.MonitoredDevice.ViewModels;assembly=GalaxySMS.MonitoredDevice"
+    xmlns:outputDeviceModuleViews="clr-namespace:GalaxySMS.OutputDevice.Views;assembly=GalaxySMS.OutputDevice"
+    xmlns:outputDeviceModuleVMs="clr-namespace:GalaxySMS.OutputDevice.ViewModels;assembly=GalaxySMS.OutputDevice">
+
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <telerik:Office2013ResourceDictionary />
+                <ResourceDictionary Source="/Telerik.Windows.Themes.Office2013;component/Themes/System.Windows.xaml" />
+                <ResourceDictionary Source="/Telerik.Windows.Themes.Office2013;component/Themes/Telerik.Windows.Controls.xaml" />
+                <ResourceDictionary Source="/Telerik.Windows.Themes.Office2013;component/Themes/Telerik.Windows.Controls.Data.xaml" />
+                <ResourceDictionary Source="/Telerik.Windows.Themes.Office2013;component/Themes/Telerik.Windows.Controls.Input.xaml" />
+                <ResourceDictionary Source="/Telerik.Windows.Themes.Office2013;component/Themes/Telerik.Windows.Controls.Navigation.xaml" />
+                <ResourceDictionary Source="/Telerik.Windows.Themes.Office2013;component/Themes/Telerik.Windows.Controls.ScheduleView.xaml" />
+                <ResourceDictionary Source="/Telerik.Windows.Themes.Office2013;component/Themes/Telerik.Windows.Controls.GridView.xaml" />
+                <ResourceDictionary Source="/Telerik.Windows.Themes.Office2013;component/Themes/Telerik.Windows.Controls.DataVisualization.xaml" />
+                <ResourceDictionary Source="/Telerik.Windows.Themes.Office2013;component/Themes/Telerik.Windows.Controls.Chart.xaml" />
+                <ResourceDictionary Source="/Telerik.Windows.Themes.Office2013;component/Themes/Telerik.Windows.Controls.Docking.xaml" />
+                <ResourceDictionary Source="/GalaxySMS.TelerikWPF.Infrastructure;component/Styles/Brushes.xaml" />
+                <ResourceDictionary Source="/GalaxySMS.TelerikWPF.Infrastructure;component/Styles/CommonStyles.xaml" />
+                <ResourceDictionary Source="/GalaxySMS.TelerikWPF.Infrastructure;component/Styles/RadButtonStyle.xaml" />
+                <ResourceDictionary Source="/GalaxySMS.TelerikWPF.Infrastructure;component/Styles/RadListBoxStyle.xaml" />
+                <ResourceDictionary Source="/GalaxySMS.TelerikWPF.Infrastructure;component/Styles/RadGridViewStyle.xaml" />
+                <ResourceDictionary Source="/GalaxySMS.TelerikWPF.Infrastructure;component/Styles/RadDataFormStyle.xaml" />
+                <ResourceDictionary Source="/GalaxySMS.TelerikWPF.Infrastructure;component/Styles/RadDateTimePickerStyle.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <Style BasedOn="{StaticResource RadPaneStyle}" TargetType="telerik:RadPane">
+                <Setter Property="CanDockInDocumentHost" Value="True" />
+                <Setter Property="Header" Value="{Binding Header}" />
+                <Setter Property="IsHidden" Value="{Binding IsHidden, Mode=TwoWay}" />
+                <Setter Property="IsActive" Value="{Binding IsActive, Mode=TwoWay}" />
+            </Style>
+            <Style BasedOn="{StaticResource RadPaneStyle}" TargetType="telerik:RadDocumentPane">
+                <Setter Property="Header" Value="{Binding Header}" />
+                <Setter Property="IsHidden" Value="{Binding IsHidden, Mode=TwoWay}" />
+                <Setter Property="IsActive" Value="{Binding IsActive, Mode=TwoWay}" />
+            </Style>
+            <DataTemplate DataType="{x:Type regionModuleVMs:EditRegionViewModel}">
+                <regionModuleViews:EditRegionView />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type siteModuleVMs:EditSiteViewModel}">
+                <siteModuleViews:EditSiteView />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type accessPortalModuleVMs:EditAccessPortalViewModel}">
+                <accessPortalModuleViews:EditAccessPortalView />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type assaAbloyModuleVMs:EditAssaAbloyViewModel}">
+                <assaAbloyModuleViews:EditAssaAbloyView />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type scheduleModuleVMs:EditScheduleViewModel}">
+                <scheduleModuleViews:EditScheduleView />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type scheduleModuleVMs:EditTimePeriodViewModel}">
+                <scheduleModuleViews:EditTimePeriodView />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type scheduleModuleVMs:EditGalaxyTimePeriodViewModel}">
+                <scheduleModuleViews:EditGalaxyTimePeriodView />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type scheduleModuleVMs:EditDayPeriodViewModel}">
+                <scheduleModuleViews:EditDayPeriodView />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type scheduleModuleVMs:EditDayTypeViewModel}">
+                <scheduleModuleViews:EditDayTypeView />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type galaxyHardwareModuleVMs:EditClusterViewModel}">
+                <galaxyHardwareModuleViews:EditClusterView />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type galaxyHardwareModuleVMs:InputOutputGroupViewModel}">
+                <galaxyHardwareModuleViews:InputOutputGroupView />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type galaxyHardwareModuleVMs:EditInputOutputGroupViewModel}">
+                <galaxyHardwareModuleViews:EditInputOutputGroupView />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type galaxyHardwareModuleVMs:AccessGroupViewModel}">
+                <galaxyHardwareModuleViews:AccessGroupView />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type galaxyHardwareModuleVMs:EditAccessGroupViewModel}">
+                <galaxyHardwareModuleViews:EditAccessGroupView />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type galaxyHardwareModuleVMs:AreaViewModel}">
+                <galaxyHardwareModuleViews:AreaView />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type galaxyHardwareModuleVMs:EditAreaViewModel}">
+                <galaxyHardwareModuleViews:EditAreaView />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type galaxyHardwareModuleVMs:TimeScheduleViewModel}">
+                <galaxyHardwareModuleViews:TimeScheduleView />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type galaxyHardwareModuleVMs:DayTypeViewModel}">
+                <galaxyHardwareModuleViews:DayTypeView />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type galaxyHardwareModuleVMs:GalaxyPanelViewModel}">
+                <galaxyHardwareModuleViews:GalaxyPanelView />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type galaxyHardwareModuleVMs:EditGalaxyPanelViewModel}">
+                <galaxyHardwareModuleViews:EditGalaxyPanelView />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type personCredentialModuleVMs:EditPersonViewModel}">
+                <personCredentialModuleViews:EditPersonView />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type personCredentialModuleVMs:EditAccessProfileViewModel}">
+                <personCredentialModuleViews:EditAccessProfileView />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type galaxyHardwareModuleVMs:EditGalaxyFlashImageViewModel}">
+                <galaxyHardwareModuleViews:EditGalaxyFlashImageView />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type monitoredDeviceModuleVMs:MonitoredDeviceViewModel}">
+                <monitoredDeviceModuleViews:MonitoredDeviceView />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type monitoredDeviceModuleVMs:EditMonitoredDeviceViewModel}">
+                <monitoredDeviceModuleViews:EditMonitoredDeviceView />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type outputDeviceModuleVMs:OutputDeviceViewModel}">
+                <outputDeviceModuleViews:OutputDeviceView />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type outputDeviceModuleVMs:EditOutputDeviceViewModel}">
+                <outputDeviceModuleViews:EditOutputDeviceView />
+            </DataTemplate>
+        </ResourceDictionary>
+    </Application.Resources>
+
+</Application>

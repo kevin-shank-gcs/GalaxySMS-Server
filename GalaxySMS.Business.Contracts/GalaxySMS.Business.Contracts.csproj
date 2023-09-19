@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A7B390C8-685E-448C-9903-03552375EE02}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GalaxySMS.Business.Contracts</RootNamespace>
+    <AssemblyName>GalaxySMS.Business.Contracts</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service Contracts\IGalaxyPanelCommunicationManagerService.cs" />
+    <Compile Include="Service Contracts\IMercuryManagementService.cs" />
+    <Compile Include="Service Contracts\ISystemManagementService.cs" />
+    <Compile Include="Service Contracts\IAdministrationService.cs" />
+    <Compile Include="Service Contracts\IPanelDataProcessingService.cs" />
+    <Compile Include="Service Contracts\IAccountService.cs" />
+    <Compile Include="Service Contracts\IUserSessionService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataProcessors\GCS.PanelDataProcessors.Interfaces\GCS.PanelDataProcessors.Interfaces.csproj">
+      <Project>{4463019E-2446-499D-A00B-1F80B5D437F3}</Project>
+      <Name>GCS.PanelDataProcessors.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GalaxySMS.Business.Entities\GalaxySMS.Business.Entities.csproj">
+      <Project>{98af1bad-593d-4e08-8d0d-50dcea4e7a95}</Project>
+      <Name>GalaxySMS.Business.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GalaxySMS.Common\GalaxySMS.Common.csproj">
+      <Project>{51d2f1c3-f892-4db1-ac14-52adc98ec05b}</Project>
+      <Name>GalaxySMS.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GalaxySMS.Data.PDSA\GalaxySMS.Data.PDSA.csproj">
+      <Project>{ae0f1b11-77ee-47e3-8bc8-4f47d99ec755}</Project>
+      <Name>GalaxySMS.Data.PDSA</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GCS.Framework\GCS.Core.Common.ServiceModel\GCS.Core.Common.ServiceModel.csproj">
+      <Project>{bb840c9e-afee-406d-8527-cfe934f0a527}</Project>
+      <Name>GCS.Core.Common.ServiceModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GCS.Framework\GCS.Core.Common\GCS.Core.Common.csproj">
+      <Project>{106abc97-2143-4722-a2b0-cbe597d59f91}</Project>
+      <Name>GCS.Core.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GCS.Framework\GCS.Core.Contracts\GCS.Core.Common.Contracts.csproj">
+      <Project>{e3820436-5d37-4ccb-87ca-f50420041668}</Project>
+      <Name>GCS.Core.Common.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GCS.Framework\GCS.Framework.Security\GCS.Framework.Security.csproj">
+      <Project>{4b4444b5-5de7-4fff-b355-f7dc8662f2a1}</Project>
+      <Name>GCS.Framework.Security</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Data Contracts\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

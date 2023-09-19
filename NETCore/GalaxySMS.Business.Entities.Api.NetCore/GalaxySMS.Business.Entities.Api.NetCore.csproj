@@ -1,0 +1,47 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DefineConstants>TRACE;NetCoreApi</DefineConstants>
+    <DocumentationFile>D:\Dev\GalaxySMS\GalaxySMS.Api\temp\GalaxySMS.Business.Entities.Api.NetCore.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DefineConstants>TRACE;NetCoreApi</DefineConstants>
+    <DocumentationFile>D:\Dev\GalaxySMS\NETCore\GalaxySMS.Business.Entities.Api.NetCore\GalaxySMS.Business.Entities.Api.NetCore.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <Import Project="..\..\GalaxySMS.Business.Entities.Shared\GalaxySMS.Business.Entities.Shared.projitems" Label="Shared" />
+
+  <ItemGroup>
+    <Compile Remove="Request\ClusterCommandActionReq.cs" />
+    <Compile Remove="Request\gcsEntityApplicationPutReq.cs" />
+    <Compile Remove="Request\gcsEntityApplicationReq.cs" />
+    <Compile Remove="Request\gcsEntityApplicationRolePutReq.cs" />
+    <Compile Remove="Request\gcsEntityApplicationRoleReq.cs" />
+    <Compile Remove="Request\gcsUserEntityApplicationRole - Copy.cs" />
+    <Compile Remove="Response\ArrayResponse.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Swashbuckle.AspNetCore.Annotations" Version="6.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\GalaxySMS.Common.NetCore\GalaxySMS.Common.NetCore.csproj" />
+    <ProjectReference Include="..\..\GalaxySMS.Resources.NetCore\GalaxySMS.Resources.NetCore.csproj" />
+    <ProjectReference Include="..\..\GCS.Framework\GCS.Core.Common.NetCore.Api\GCS.Core.Common.NetCore.Api.csproj" />
+    <ProjectReference Include="..\..\GCS.Framework\NETCore\GCS.Core.Common.ServiceModel.Client.NetCore.Api\GCS.Core.Common.ServiceModel.Client.NetCore.Api.csproj" />
+    <ProjectReference Include="..\..\GCS.Framework\NETCore\GCS.Framework.Imaging.NetCore\GCS.Framework.Imaging.NetCore.csproj" />
+    <ProjectReference Include="..\..\GCS.Framework\NETCore\GCS.Framework.Security.NetCore\GCS.Framework.Security.NetCore.csproj" />
+  </ItemGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="copy D:\Dev\GalaxySMS\NETCore\GalaxySMS.Business.Entities.Api.NetCore\GalaxySMS.Business.Entities.Api.NetCore.xml D:\Dev\GalaxySMS\GalaxySMS.Api&#xD;&#xA;copy D:\Dev\GalaxySMS\NETCore\GalaxySMS.Business.Entities.Api.NetCore\GalaxySMS.Business.Entities.Api.NetCore.xml D:\Dev\GalaxySMS\GalaxySMS.Cdn&#xD;&#xA;copy D:\Dev\GalaxySMS\NETCore\GalaxySMS.Business.Entities.Api.NetCore\GalaxySMS.Business.Entities.Api.NetCore.xml D:\Dev\GalaxySMS\GalaxySMS.MercuryApi" />
+  </Target>
+
+</Project>

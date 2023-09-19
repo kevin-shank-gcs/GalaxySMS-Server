@@ -1,0 +1,1003 @@
+﻿<core:UserControlViewBase xmlns:Views="clr-namespace:GalaxySMS.Admin.Views" 
+                          xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                          xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                          xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+                          xmlns:core="http://www.galaxysys.com/GCS/Core"
+                          xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                          xmlns:resx="clr-namespace:GalaxySMS.Admin.Properties"
+                          xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+                          xmlns:dragDrop="clr-namespace:GCS.Core.Common.UI.DragDrop;assembly=GCS.Core.Common.UI"
+                          xmlns:userControls="clr-namespace:GalaxySMS.Admin.UserControls"
+                          xmlns:ui="clr-namespace:GalaxySMS.Client.UI;assembly=GalaxySMS.Client.UI"
+                          xmlns:admin="clr-namespace:GalaxySMS.Admin"
+                          xmlns:sharedResources="clr-namespace:GalaxySMS.Resources;assembly=GalaxySMS.Resources"
+                          xmlns:globalization="clr-namespace:System.Globalization;assembly=mscorlib"
+                          xmlns:maskedInput="clr-namespace:Telerik.Windows.Controls.MaskedInput;assembly=Telerik.Windows.Controls.Input"
+                          x:Class="GalaxySMS.Admin.Views.EditEntityView"
+                          mc:Ignorable="d">
+    <Grid>
+        <Grid.Resources>
+            <BitmapImage x:Key="imgRefreshIdProd" UriSource="/GalaxySMS.Resources;component/Images/Refresh/RefreshGrayGold32.png" />
+
+            <!--<DataTemplate x:Key="borderBrushTemplate">
+                 <telerik:RadColorPicker SelectedColor="{Binding BorderBrush, Converter={StaticResource colorToBrush}, Mode=TwoWay}" />
+                 </DataTemplate>-->           
+             <DataTemplate x:Key="AccessProfileControlsAG1DataTemplate">
+                <StackPanel>
+                    <!--<TextBox Text="{Binding PasswordMinimumLength, Mode=TwoWay}" />-->
+                    <CheckBox IsChecked="{Binding AccessProfileControlsAG1, Mode=TwoWay}"/>
+                </StackPanel>
+            </DataTemplate>           
+             <DataTemplate x:Key="AccessProfileControlsAG2DataTemplate">
+                <StackPanel>
+                    <!--<TextBox Text="{Binding PasswordMinimumLength, Mode=TwoWay}" />-->
+                    <CheckBox IsChecked="{Binding AccessProfileControlsAG2, Mode=TwoWay}"/>
+                </StackPanel>
+            </DataTemplate>           
+             <DataTemplate x:Key="AccessProfileControlsAG3DataTemplate">
+                <StackPanel>
+                    <!--<TextBox Text="{Binding PasswordMinimumLength, Mode=TwoWay}" />-->
+                    <CheckBox IsChecked="{Binding AccessProfileControlsAG3, Mode=TwoWay}"/>
+                </StackPanel>
+            </DataTemplate>           
+             <DataTemplate x:Key="AccessProfileControlsAG4DataTemplate">
+                <StackPanel>
+                    <!--<TextBox Text="{Binding PasswordMinimumLength, Mode=TwoWay}" />-->
+                    <CheckBox IsChecked="{Binding AccessProfileControlsAG4, Mode=TwoWay}"/>
+                </StackPanel>
+            </DataTemplate>           
+             <DataTemplate x:Key="AccessProfileControlsIO1DataTemplate">
+                <StackPanel>
+                    <!--<TextBox Text="{Binding PasswordMinimumLength, Mode=TwoWay}" />-->
+                    <CheckBox IsChecked="{Binding AccessProfileControlsIO1, Mode=TwoWay}"/>
+                </StackPanel>
+            </DataTemplate>           
+             <DataTemplate x:Key="AccessProfileControlsIO2DataTemplate">
+                <StackPanel>
+                    <!--<TextBox Text="{Binding PasswordMinimumLength, Mode=TwoWay}" />-->
+                    <CheckBox IsChecked="{Binding AccessProfileControlsIO2, Mode=TwoWay}"/>
+                </StackPanel>
+            </DataTemplate>           
+             <DataTemplate x:Key="AccessProfileControlsIO3DataTemplate">
+                <StackPanel>
+                    <!--<TextBox Text="{Binding PasswordMinimumLength, Mode=TwoWay}" />-->
+                    <CheckBox IsChecked="{Binding AccessProfileControlsIO3, Mode=TwoWay}"/>
+                </StackPanel>
+            </DataTemplate>           
+             <DataTemplate x:Key="AccessProfileControlsIO4DataTemplate">
+                <StackPanel>
+                    <!--<TextBox Text="{Binding PasswordMinimumLength, Mode=TwoWay}" />-->
+                    <CheckBox IsChecked="{Binding AccessProfileControlsIO4, Mode=TwoWay}"/>
+                </StackPanel>
+            </DataTemplate>           
+            <DataTemplate x:Key="PasswordCannotContainNameDataTemplate">
+                <StackPanel>
+                    <!--<TextBox Text="{Binding PasswordMinimumLength, Mode=TwoWay}" />-->
+                    <CheckBox IsChecked="{Binding PasswordCannotContainName, Mode=TwoWay}"/>
+                </StackPanel>
+            </DataTemplate>
+            <DataTemplate x:Key="MinimumPasswordLengthDataTemplate">
+                <StackPanel>
+                    <!--<TextBox Text="{Binding PasswordMinimumLength, Mode=TwoWay}" />-->
+                    <telerik:RadNumericUpDown Value="{Binding PasswordMinimumLength, Mode=TwoWay}" 
+                                              HideTrailingZeros="True" Minimum="0" Maximum="100"  />
+                </StackPanel>
+            </DataTemplate>
+            <DataTemplate x:Key="MaximumPasswordLengthDataTemplate">
+                <StackPanel>
+                    <telerik:RadNumericUpDown Value="{Binding PasswordMaximumLength, Mode=TwoWay}" 
+                                              HideTrailingZeros="True" Minimum="1" Maximum="100"  />
+                </StackPanel>
+            </DataTemplate>
+            <DataTemplate x:Key="MinimumPasswordChangeCharactersDataTemplate">
+                <StackPanel>
+                    <telerik:RadNumericUpDown Value="{Binding PasswordMinimumChangeCharacters, Mode=TwoWay}" 
+                                              HideTrailingZeros="True" Minimum="1" Maximum="100"  />
+                </StackPanel>
+            </DataTemplate>
+            <DataTemplate x:Key="MinimumPasswordAgeDataTemplate">
+                <StackPanel>
+                    <telerik:RadNumericUpDown Value="{Binding MinimumPasswordAge, Mode=TwoWay}" 
+                                              HideTrailingZeros="True" Minimum="0" Maximum="65535"  />
+                </StackPanel>
+            </DataTemplate>
+            <DataTemplate x:Key="MaximumPasswordAgeDataTemplate">
+                <StackPanel>
+                    <telerik:RadNumericUpDown Value="{Binding MaximumPasswordAge, Mode=TwoWay}" 
+                                              HideTrailingZeros="True" Minimum="0" Maximum="65535"  />
+                </StackPanel>
+            </DataTemplate>
+            <DataTemplate x:Key="MaintainPasswordHistoryCountDataTemplate">
+                <StackPanel>
+                    <telerik:RadNumericUpDown Value="{Binding MaintainPasswordHistoryCount, Mode=TwoWay}" 
+                                              HideTrailingZeros="True" Minimum="0" Maximum="65535"  />
+                </StackPanel>
+            </DataTemplate>
+            <DataTemplate x:Key="DefaultExpirationDaysDataTemplate">
+                <StackPanel>
+                    <telerik:RadNumericUpDown Value="{Binding DefaultExpirationDays, Mode=TwoWay}" 
+                                              HideTrailingZeros="True" Minimum="0" Maximum="65535"  />
+                </StackPanel>
+            </DataTemplate>
+            <DataTemplate x:Key="LockoutUserIfInactiveForDaysDataTemplate">
+                <StackPanel>
+                    <telerik:RadNumericUpDown Value="{Binding LockoutUserIfInactiveForDays, Mode=TwoWay}" 
+                                              HideTrailingZeros="True" Minimum="0" Maximum="65535"  />
+                </StackPanel>
+            </DataTemplate>
+            <DataTemplate x:Key="AllowPasswordChangeAttemptDataTemplate">
+                <StackPanel>
+                    <!--<TextBox Text="{Binding PasswordMinimumLength, Mode=TwoWay}" />-->
+                    <CheckBox IsChecked="{Binding AllowPasswordChangeAttempt, Mode=TwoWay}"/>
+                </StackPanel>
+            </DataTemplate>
+            <DataTemplate x:Key="RequireLowerCaseLetterCountDataTemplate">
+                <StackPanel>
+                    <telerik:RadNumericUpDown Value="{Binding RequireLowerCaseLetterCount, Mode=TwoWay}" 
+                                              HideTrailingZeros="True" Minimum="0" Maximum="100"  />
+                </StackPanel>
+            </DataTemplate>
+            <DataTemplate x:Key="RequireUpperCaseLetterCountDataTemplate">
+                <StackPanel>
+                    <telerik:RadNumericUpDown Value="{Binding RequireUpperCaseLetterCount, Mode=TwoWay}" 
+                                              HideTrailingZeros="True" Minimum="0" Maximum="100"  />
+                </StackPanel>
+            </DataTemplate>
+            <DataTemplate x:Key="RequireNumericDigitCountDataTemplate">
+                <StackPanel>
+                    <telerik:RadNumericUpDown Value="{Binding RequireNumericDigitCount, Mode=TwoWay}" 
+                                              HideTrailingZeros="True" Minimum="0" Maximum="100"  />
+                </StackPanel>
+            </DataTemplate>
+            <DataTemplate x:Key="RequireSpecialCharacterCountDataTemplate">
+                <StackPanel>
+                    <telerik:RadNumericUpDown Value="{Binding RequireSpecialCharacterCount, Mode=TwoWay}" 
+                                              HideTrailingZeros="True" Minimum="0" Maximum="100"  />
+                </StackPanel>
+            </DataTemplate>
+            <DataTemplate x:Key="UseCustomRegExDataTemplate">
+                <StackPanel>
+                    <!--<TextBox Text="{Binding PasswordMinimumLength, Mode=TwoWay}" />-->
+                    <CheckBox IsChecked="{Binding UseCustomRegEx, Mode=TwoWay}"/>
+                </StackPanel>
+            </DataTemplate>
+            <DataTemplate x:Key="PasswordCustomRegExDataTemplate">
+                <StackPanel>
+                    <TextBox Text="{Binding PasswordCustomRegEx, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" />
+                </StackPanel>
+            </DataTemplate>
+            <DataTemplate x:Key="PasswordCustomRegExDescriptionDataTemplate">
+                <StackPanel>
+                    <TextBox Text="{Binding RegularExpressionDescription, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" SpellCheck.IsEnabled="True" TextWrapping="Wrap" AcceptsReturn="True"></TextBox>
+                </StackPanel>
+            </DataTemplate>
+            
+              <DataTemplate x:Key="RequireTwoFactorAuthenticationDataTemplate">
+                <StackPanel>
+                    <!--<TextBox Text="{Binding PasswordMinimumLength, Mode=TwoWay}" />-->
+                    <CheckBox IsChecked="{Binding RequireTwoFactorAuthentication, Mode=TwoWay}"/>
+                </StackPanel>
+            </DataTemplate>
+          
+            <DataTemplate x:Key="ApplicationDragTemplate">
+                <TextBlock Text="{Binding ApplicationName}" />
+            </DataTemplate>
+            <Style TargetType="telerik:GridViewRow" x:Key="OrderItemStyle" >
+                <Setter Property="telerik:DragDropManager.AllowCapturedDrag" Value="True" />
+                <Setter Property="telerik:DragDropManager.TouchDragTrigger" Value="TapAndHold"/>
+            </Style>
+
+            <admin:UserDefinedPropertyTypeDetailsSelector x:Key="UserDefinedPropertyTypeDetailsTemplateSelector">
+                <admin:UserDefinedPropertyTypeDetailsSelector.UserDefinedTextPropertyRulesTemplate>
+                    <DataTemplate>
+                        <GroupBox Margin="5">
+                            <GroupBox.Header>
+                                <TextBlock Text="{x:Static sharedResources:Resources.UserDefinedTextPropertyRules_Title}"/>
+                            </GroupBox.Header>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <WrapPanel Margin="3">
+                                    <CheckBox Margin="5"
+                                              Content="{x:Static sharedResources:Resources.UserDefinedTextPropertyRules_IsRequired_Title}"
+                                              ToolTip="{x:Static sharedResources:Resources.UserDefinedTextPropertyRules_IsRequired_ToolTip}"
+                                              IsChecked="{Binding UserDefinedTextPropertyRules.IsRequired}" />
+                                    <StackPanel Margin="5">
+                                        <TextBlock Text="{x:Static sharedResources:Resources.UserDefinedTextPropertyRules_MinimumLength_Title}" />
+                                        <telerik:RadNumericUpDown Margin="3"
+                                                                  ValueFormat="Numeric"
+                                                                  HorizontalAlignment="Left"
+                                                                  ToolTip="{x:Static sharedResources:Resources.UserDefinedTextPropertyRules_MinimumLength_ToolTIp}"
+                                                                  Value="{Binding UserDefinedTextPropertyRules.MinimumLength}"
+                                                                  Minimum="0"
+                                                                  Maximum="{Binding UserDefinedTextPropertyRules.MaximumLengthLimit}">
+                                            <telerik:RadNumericUpDown.NumberFormatInfo>
+                                                <globalization:NumberFormatInfo NumberDecimalDigits="0"/>
+                                            </telerik:RadNumericUpDown.NumberFormatInfo>
+                                        </telerik:RadNumericUpDown>
+                                    </StackPanel>
+                                    <StackPanel Margin="5">
+                                        <TextBlock
+                                            Text="{x:Static sharedResources:Resources.UserDefinedTextPropertyRules_MaximumLength_Title}" />
+                                        <telerik:RadNumericUpDown Margin="3"
+                                                                  HorizontalAlignment="Left"
+                                                                  ToolTip="{x:Static sharedResources:Resources.UserDefinedTextPropertyRules_MaximumLength_ToolTIp}"
+                                                                  Value="{Binding UserDefinedTextPropertyRules.MaximumLength}"
+                                                                  Minimum="1"
+                                                                  Maximum="{Binding UserDefinedTextPropertyRules.MaximumLengthLimit}">
+                                            <telerik:RadNumericUpDown.NumberFormatInfo>
+                                                <globalization:NumberFormatInfo NumberDecimalDigits="0"/>
+                                            </telerik:RadNumericUpDown.NumberFormatInfo>
+                                        </telerik:RadNumericUpDown>
+                                    </StackPanel>
+                                    <StackPanel Margin="5">
+                                        <TextBlock
+                                            Text="{x:Static sharedResources:Resources.UserDefinedTextPropertyRules_RegularExpression_Title}" />
+                                        <telerik:RadMaskedTextInput Margin="3"
+                                                                    TextMode="PlainText"
+                                                                    Value="{Binding UserDefinedTextPropertyRules.ValidationRegEx}"
+                                                                    ToolTip="{x:Static sharedResources:Resources.UserDefinedTextPropertyRules_RegularExpression_ToolTip}"
+                                                                    EmptyContent="{x:Static sharedResources:Resources.UserDefinedTextPropertyRules_RegularExpression_Title}"
+                                                                    Mask=""
+                                                                    UpdateValueEvent="LostFocus"
+                                                                    SelectionOnFocus="DefaultSelectAll" />
+                                    </StackPanel>
+                                </WrapPanel>
+                            </Grid>
+                        </GroupBox>
+                    </DataTemplate>
+                </admin:UserDefinedPropertyTypeDetailsSelector.UserDefinedTextPropertyRulesTemplate>
+                <admin:UserDefinedPropertyTypeDetailsSelector.UserDefinedBooleanPropertyRulesTemplate>
+                    <DataTemplate>
+                        <Border BorderThickness="5" Margin="5">
+                            <TextBlock>Boolean Property</TextBlock>
+                        </Border>
+                    </DataTemplate>
+                </admin:UserDefinedPropertyTypeDetailsSelector.UserDefinedBooleanPropertyRulesTemplate>
+                <admin:UserDefinedPropertyTypeDetailsSelector.UserDefinedNumberPropertyRulesTemplate>
+                    <DataTemplate>
+                        <Border BorderThickness="5" Margin="5">
+                            <TextBlock>Number Property</TextBlock>
+                        </Border>
+                    </DataTemplate>
+                </admin:UserDefinedPropertyTypeDetailsSelector.UserDefinedNumberPropertyRulesTemplate>
+                <admin:UserDefinedPropertyTypeDetailsSelector.UserDefinedDatePropertyRulesTemplate>
+                    <DataTemplate>
+                        <Border BorderThickness="5" Margin="5">
+                            <TextBlock>Date Property</TextBlock>
+                        </Border>
+                    </DataTemplate>
+                </admin:UserDefinedPropertyTypeDetailsSelector.UserDefinedDatePropertyRulesTemplate>
+                <admin:UserDefinedPropertyTypeDetailsSelector.UserDefinedListPropertyRulesTemplate>
+                    <DataTemplate>
+                        <Border BorderThickness="5" Margin="5">
+                            <TextBlock>List Property</TextBlock>
+                        </Border>
+                    </DataTemplate>
+                </admin:UserDefinedPropertyTypeDetailsSelector.UserDefinedListPropertyRulesTemplate>
+            </admin:UserDefinedPropertyTypeDetailsSelector>
+
+
+        </Grid.Resources>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Row="0">
+            <core:ValidationHeader Grid.Row="0" DataContext="{Binding}" />
+        </StackPanel>
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="10" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="10" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Row="0" Margin="3" Text="{x:Static resx:Resources.EditEntityView_EntityNameTitle}" />
+            <TextBox Grid.Row="1" Margin="3" MinWidth="200" Text="{Binding Entity.EntityName, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" HorizontalAlignment="Left" />
+            <TextBlock Grid.Row="2" Margin="3" Text="{x:Static resx:Resources.EditEntityView_EntityDescriptionTitle}" />
+            <TextBox Grid.Row="3" Margin="3" MinWidth="200" Text="{Binding Entity.EntityDescription, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" HorizontalAlignment="Left" />
+            <TextBlock Grid.Row="4" Margin="3" Text="{x:Static resx:Resources.EditEntityView_EntityKeyTitle}" />
+            <TextBox Grid.Row="5" Margin="3" MinWidth="200" Text="{Binding Entity.EntityKey, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" HorizontalAlignment="Left" />
+            <CheckBox Grid.Row="6" Margin="3" Content="{x:Static resx:Resources.EditEntityView_EntityIsActive}" IsChecked="{Binding Entity.IsActive, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" HorizontalAlignment="Left" />
+            <CheckBox Grid.Row="7" Margin="3" Content="{x:Static resx:Resources.EditEntityView_EntityIsDefault}" IsChecked="{Binding Entity.IsDefault, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" HorizontalAlignment="Left" />
+            <TextBlock
+                Grid.Row="8"
+                Text="{x:Static resx:Resources.EditEntityView_ParentEntityTitle}" />
+            <telerik:RadComboBox
+                Grid.Row="9"
+                Margin="3"
+                ItemsSource="{Binding Entities}"
+                SelectedValue="{Binding Entity.ParentEntityId}"
+                SelectedValuePath="EntityId"
+                ToolTip="{x:Static resx:Resources.EditEntityView_ParentEntityTitle}">
+                <telerik:RadComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <Image
+                                                MaxHeight="32"
+                                                Width="Auto"
+                                                Margin="5"
+                                                Source="{Binding gcsBinaryResource.BinaryResource}" />
+                            <TextBlock
+                                VerticalAlignment="Center"
+                                FontSize="12"
+                                Text="{Binding EntityName}" />
+                        </StackPanel>
+                    </DataTemplate>
+                </telerik:RadComboBox.ItemTemplate>
+            </telerik:RadComboBox>
+            <TextBlock Grid.Row="10" Margin="3" Text="{x:Static resx:Resources.EditEntityView_ClusterGroupIdTitle}" />
+            <TextBox Grid.Row="11" Margin="3" MinWidth="100" MaxWidth="100" IsReadOnly="True"  Text="{Binding Entity.ClusterGroupId, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" HorizontalAlignment="Left" />
+            <TextBlock
+                Grid.Row="12"
+                Text="{x:Static resx:Resources.EditEntityView_TimeZoneTitle}" 
+                ToolTip="{x:Static resx:Resources.EditEntityView_TimeZoneTitle}"/>
+            <telerik:RadComboBox
+                Grid.Row="13"
+                Grid.Column="0"
+                Margin="3"
+                ItemsSource="{Binding EntityEditingData.TimeZones}"
+                SelectedValue="{Binding Entity.TimeZoneId}"
+                SelectedValuePath="Id"
+                ToolTip="{x:Static resx:Resources.EditEntityView_SelectTimeZoneToolTip}">
+                <telerik:RadComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <!-- <Image
+                                                MaxHeight="32"
+                                                Width="Auto"
+                                                Margin="5"
+                                                Source="{Binding gcsBinaryResource.BinaryResource}" />-->
+                            <TextBlock
+                                VerticalAlignment="Center"
+                                Text="{Binding DisplayName}" />
+                        </StackPanel>
+                    </DataTemplate>
+                </telerik:RadComboBox.ItemTemplate>
+            </telerik:RadComboBox>
+
+            <StackPanel Grid.Row="0" Grid.RowSpan="16" Grid.Column="2" Orientation="Vertical">
+                <TextBlock Margin="3" Text="{x:Static resx:Resources.EditEntityView_EntityImageTitle}" />
+                <Border BorderThickness="2" BorderBrush="Black" Width="150" Height="150" HorizontalAlignment="Left" VerticalAlignment="Top">
+                    <Image Width="150" Height="150" Source="{Binding Entity.gcsBinaryResource.BinaryResource}"></Image>
+                </Border>
+                <Button Margin="0,3,0,0" Command="{Binding SelectEntityImageCommand}" CommandParameter="{Binding Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}"  ToolTip="{x:Static resx:Resources.EditEntityView_EntityImageSelectButtonToolTip}">
+                    <Button.Content>
+                        <StackPanel Orientation="Horizontal" Margin="3">
+                            <Image x:Name="imgSelectPhoto" Source="/Images\Camera.png" Width="16" Height="16" />
+                            <TextBlock VerticalAlignment="Center" Margin="3,0,0,0" Text="{x:Static resx:Resources.EditEntityView_EntityImageSelectButtonText}" ></TextBlock>
+                        </StackPanel>
+                    </Button.Content>
+                </Button>
+            </StackPanel>
+
+            <telerik:RadTabControl Grid.Row="0" Grid.Column="4" Grid.RowSpan="16">
+                <telerik:RadTabItem Header="{x:Static resx:Resources.EditEntityView_UserRequirementsTabItemTitle}" ToolTip="{x:Static resx:Resources.EditEntityView_UserRequirementsTabItemToolTip}" >
+                    <telerik:RadPropertyGrid Item="{Binding Entity.UserRequirements}" 
+                                             AutoGeneratePropertyDefinitions="False"
+                                             NestedPropertiesVisibility="Visible" 
+                                             LabelColumnWidth="250" 
+                                             MaxWidth="600"
+                                             SearchInNestedProperties="True" IsGrouped="True">
+                        <telerik:RadPropertyGrid.PropertyDefinitions>
+                            <telerik:PropertyDefinition Binding="{Binding PasswordCannotContainName, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" 
+                                                        GroupName="{x:Static resx:Resources.EditUserRequirementsView_PasswordStrengthRequirements}"
+                                                        DisplayName="{x:Static resx:Resources.EditUserRequirementsView_PasswordCannotContainName}" 
+                                                        Description="{x:Static resx:Resources.EditUserRequirementsView_PasswordCannotContainNameToolTip}"
+                                                        EditorTemplate="{StaticResource PasswordCannotContainNameDataTemplate}"/>
+
+                            <telerik:PropertyDefinition Binding="{Binding PasswordMinimumLength, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" 
+                                                        GroupName="{x:Static resx:Resources.EditUserRequirementsView_PasswordStrengthRequirements}"
+                                                        DisplayName="{x:Static resx:Resources.EditUserRequirementsView_MinimumLength}" 
+                                                        Description="{x:Static resx:Resources.EditUserRequirementsView_MinimumLengthToolTip}"
+                                                        EditorTemplate="{StaticResource MinimumPasswordLengthDataTemplate}"/>
+
+                            <telerik:PropertyDefinition Binding="{Binding PasswordMaximumLength, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" 
+                                                        GroupName="{x:Static resx:Resources.EditUserRequirementsView_PasswordStrengthRequirements}"
+                                                        DisplayName="{x:Static resx:Resources.EditUserRequirementsView_MaximumLength}" 
+                                                        Description="{x:Static resx:Resources.EditUserRequirementsView_MaximumLengthToolTip}"
+                                                        EditorTemplate="{StaticResource MaximumPasswordLengthDataTemplate}"/>
+
+
+                            <telerik:PropertyDefinition Binding="{Binding RequireLowerCaseLetterCount, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" 
+                                                        GroupName="{x:Static resx:Resources.EditUserRequirementsView_PasswordStrengthRequirements}"
+                                                        DisplayName="{x:Static resx:Resources.EditUserRequirementsView_PasswordMustContainLowerCaseLetters}" 
+                                                        Description="{x:Static resx:Resources.EditUserRequirementsView_PasswordMustContainLowerCaseLettersToolTip}"
+                                                        EditorTemplate="{StaticResource RequireLowerCaseLetterCountDataTemplate}"/>
+
+                            <telerik:PropertyDefinition Binding="{Binding RequireUpperCaseLetterCount, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" 
+                                                        GroupName="{x:Static resx:Resources.EditUserRequirementsView_PasswordStrengthRequirements}"
+                                                        DisplayName="{x:Static resx:Resources.EditUserRequirementsView_PasswordMustContainUPPERCASELetters}" 
+                                                        Description="{x:Static resx:Resources.EditUserRequirementsView_PasswordMustContainUPPERCASELettersToolTip}"
+                                                        EditorTemplate="{StaticResource RequireUpperCaseLetterCountDataTemplate}"/>
+
+                            <telerik:PropertyDefinition Binding="{Binding RequireNumericDigitCount, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" 
+                                                        GroupName="{x:Static resx:Resources.EditUserRequirementsView_PasswordStrengthRequirements}"
+                                                        DisplayName="{x:Static resx:Resources.EditUserRequirementsView_PasswordMustContainNumericDigits}" 
+                                                        Description="{x:Static resx:Resources.EditUserRequirementsView_PasswordMustContainNumericDigitsToolTip}"
+                                                        EditorTemplate="{StaticResource RequireNumericDigitCountDataTemplate}"/>
+
+                            <telerik:PropertyDefinition Binding="{Binding RequireSpecialCharacterCount, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" 
+                                                        GroupName="{x:Static resx:Resources.EditUserRequirementsView_PasswordStrengthRequirements}"
+                                                        DisplayName="{x:Static resx:Resources.EditUserRequirementsView_PasswordMustContainSpecialCharacters}" 
+                                                        Description="{x:Static resx:Resources.EditUserRequirementsView_PasswordMustContainSpecialCharactersToolTip}"
+                                                        EditorTemplate="{StaticResource RequireSpecialCharacterCountDataTemplate}"/>
+
+                            <telerik:PropertyDefinition Binding="{Binding UseCustomRegEx, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" 
+                                                        GroupName="{x:Static resx:Resources.EditUserRequirementsView_PasswordStrengthRequirements}"
+                                                        DisplayName="{x:Static resx:Resources.EditUserRequirementsView_PasswordValidationTechnique_CustomRegularExpression}" 
+                                                        Description="{x:Static resx:Resources.EditUserRequirementsView_PasswordValidationTechnique_CustomRegularExpressionToolTip}"
+                                                        EditorTemplate="{StaticResource UseCustomRegExDataTemplate}"/>
+
+                            <telerik:PropertyDefinition Binding="{Binding PasswordCustomRegEx, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" 
+                                                        GroupName="{x:Static resx:Resources.EditUserRequirementsView_PasswordStrengthRequirements}"
+                                                        DisplayName="{x:Static resx:Resources.EditUserRequirementsView_ValidatePasswordRegularExpression}" 
+                                                        Description="{x:Static resx:Resources.EditUserRequirementsView_ValidatePasswordRegularExpressionToolTip}"
+                                                        EditorTemplate="{StaticResource PasswordCustomRegExDataTemplate}"/>
+
+                            <telerik:PropertyDefinition Binding="{Binding RegularExpressionDescription, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" 
+                                                        GroupName="{x:Static resx:Resources.EditUserRequirementsView_PasswordStrengthRequirements}"
+                                                        DisplayName="{x:Static resx:Resources.EditUserRequirementsView_ValidatePasswordRegularExpressionDescription}" 
+                                                        Description="{x:Static resx:Resources.EditUserRequirementsView_ValidatePasswordRegularExpressionDescriptionToolTip}"
+                                                        EditorTemplate="{StaticResource PasswordCustomRegExDescriptionDataTemplate}"/>
+
+
+                            <telerik:PropertyDefinition Binding="{Binding AllowPasswordChangeAttempt, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" 
+                                                        GroupName="{x:Static resx:Resources.EditUserRequirementsView_PasswordChangeRequirements}"
+                                                        DisplayName="{x:Static resx:Resources.EditUserRequirementsView_AllowPasswordChangeAttempt}" 
+                                                        Description="{x:Static resx:Resources.EditUserRequirementsView_AllowPasswordChangeAttemptToolTip}"
+                                                        EditorTemplate="{StaticResource AllowPasswordChangeAttemptDataTemplate}"/>
+
+                            <telerik:PropertyDefinition Binding="{Binding PasswordMinimumChangeCharacters, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" 
+                                                        GroupName="{x:Static resx:Resources.EditUserRequirementsView_PasswordChangeRequirements}"
+                                                        DisplayName="{x:Static resx:Resources.EditUserRequirementsView_MinimumPasswordChangeCharacterCount}" 
+                                                        Description="{x:Static resx:Resources.EditUserRequirementsView_MinimumPasswordChangeCharacterCountToolTip}"
+                                                        EditorTemplate="{StaticResource MinimumPasswordChangeCharactersDataTemplate}"/>
+
+                            <telerik:PropertyDefinition Binding="{Binding MinimumPasswordAge, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" 
+                                                        GroupName="{x:Static resx:Resources.EditUserRequirementsView_PasswordChangeRequirements}"
+                                                        DisplayName="{x:Static resx:Resources.EditUserRequirementsView_PasswordMinimumAge}" 
+                                                        Description="{x:Static resx:Resources.EditUserRequirementsView_PasswordMinimumAgeToolTip}"
+                                                        EditorTemplate="{StaticResource MinimumPasswordAgeDataTemplate}"/>
+
+                            <telerik:PropertyDefinition Binding="{Binding MaximumPasswordAge, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" 
+                                                        GroupName="{x:Static resx:Resources.EditUserRequirementsView_PasswordChangeRequirements}"
+                                                        DisplayName="{x:Static resx:Resources.EditUserRequirementsView_PasswordMaximumAge}" 
+                                                        Description="{x:Static resx:Resources.EditUserRequirementsView_PasswordMaximumAgeToolTip}"
+                                                        EditorTemplate="{StaticResource MaximumPasswordAgeDataTemplate}"/>
+
+                            <telerik:PropertyDefinition Binding="{Binding MaintainPasswordHistoryCount, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" 
+                                                        GroupName="{x:Static resx:Resources.EditUserRequirementsView_PasswordChangeRequirements}"
+                                                        DisplayName="{x:Static resx:Resources.EditUserRequirementsView_MaintainPasswordHistoryCount}" 
+                                                        Description="{x:Static resx:Resources.EditUserRequirementsView_MaintainPasswordHistoryCountToolTip}"
+                                                        EditorTemplate="{StaticResource MaintainPasswordHistoryCountDataTemplate}"/>
+
+
+                            <telerik:PropertyDefinition Binding="{Binding DefaultExpirationDays, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" 
+                                                        GroupName="{x:Static resx:Resources.EditUserRequirementsView_MiscellaneousRequirements}"
+                                                        DisplayName="{x:Static resx:Resources.EditUserRequirementsView_DefaultExpirationDays}" 
+                                                        Description="{x:Static resx:Resources.EditUserRequirementsView_DefaultExpirationDaysToolTip}"
+                                                        EditorTemplate="{StaticResource DefaultExpirationDaysDataTemplate}"/>
+
+                            <telerik:PropertyDefinition Binding="{Binding LockoutUserIfInactiveForDays, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" 
+                                                        GroupName="{x:Static resx:Resources.EditUserRequirementsView_MiscellaneousRequirements}"
+                                                        DisplayName="{x:Static resx:Resources.EditUserRequirementsView_LockoutUserAfterBeingInactiveForDays}" 
+                                                        Description="{x:Static resx:Resources.EditUserRequirementsView_LockoutUserAfterBeingInactiveForDaysToolTip}"
+                                                        EditorTemplate="{StaticResource LockoutUserIfInactiveForDaysDataTemplate}"/>
+
+
+                            <telerik:PropertyDefinition Binding="{Binding RequireTwoFactorAuthentication, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" 
+                                                        GroupName="{x:Static resx:Resources.EditUserRequirementsView_MiscellaneousRequirements}"
+                                                        DisplayName="{x:Static resx:Resources.EditUserRequirementsView_RequireTwoFactorAuthentication}" 
+                                                        Description="{x:Static resx:Resources.EditUserRequirementsView_RequireTwoFactorAuthenticationToolTip}"
+                                                        EditorTemplate="{StaticResource RequireTwoFactorAuthenticationDataTemplate}"/>
+
+
+                        </telerik:RadPropertyGrid.PropertyDefinitions>
+                    </telerik:RadPropertyGrid>
+                </telerik:RadTabItem>
+                <telerik:RadTabItem Header="{x:Static resx:Resources.EditEntityView_ApplicationsTabItemTitle}" ToolTip="{x:Static resx:Resources.EditEntityView_ApplicationsTabItemToolTip}" >
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                            <ColumnDefinition Width="10"></ColumnDefinition>
+                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+
+                        <telerik:RadGridView Grid.Row="1" 
+                                             Visibility="Visible" 
+                                             x:Name="radGridViewIncludedApplications" 
+                                             ShowGroupPanel="False" 
+                                             ItemsSource="{Binding Entity.AllApplications}"
+                                             SelectedItem="{Binding CurrentApplication, Mode=TwoWay}" 
+                                             IsReadOnly="True" 
+                                             AutoGenerateColumns="False"
+                                             RowIndicatorVisibility="Collapsed"
+                                             AllowDrop="True"
+                                             dragDrop:GridViewDragDropBehavior.IsEnabled="True"
+                                             RowDetailsVisibilityMode="VisibleWhenSelected">
+                            <telerik:RadGridView.Resources>
+                                <DataTemplate x:Key="DraggedItemTemplate">
+                                    <StackPanel>
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Text="Dragging:"/>
+                                            <TextBlock Text="{Binding CurrentDraggedItem.Name}" FontWeight="Bold"/>
+                                        </StackPanel>
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Text="{Binding CurrentDropPosition}" FontWeight="Bold" MinWidth="45"/>
+                                            <TextBlock Text=", (" Foreground="Gray" />
+                                            <TextBlock Text="{Binding CurrentDraggedOverItem.Name}"/>
+                                            <TextBlock Text=")" Foreground="Gray" />
+                                        </StackPanel>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </telerik:RadGridView.Resources>
+                            <telerik:RadGridView.FilterDescriptors>
+                                <telerik:FilterDescriptor Member="IsAuthorized" Value="True"/>
+                            </telerik:RadGridView.FilterDescriptors>
+                            <telerik:RadGridView.Columns>
+                                <telerik:GridViewDataColumn Header="{x:Static resx:Resources.EditEntityView_AuthorizedApplications}" DataMemberBinding="{Binding ApplicationName}"/>
+                                <telerik:GridViewColumn Header="{x:Static resx:Resources.EditEntityView_Action}" >
+                                    <telerik:GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <StackPanel Orientation="Horizontal">
+                                                <Button Margin="1" ToolTip="{x:Static resx:Resources.EditEntityView_RemoveApplicationToolTip}"  Command="{Binding DataContext.DeleteEntityApplicationCommand, RelativeSource={RelativeSource AncestorType=Views:EditEntityView}}" CommandParameter="{Binding}">
+                                                    <Button.Content>
+                                                        <StackPanel Orientation="Horizontal" Margin="2">
+                                                            <TextBlock Margin="0,0,3,0"  Text="{x:Static resx:Resources.EditEntityView_RemoveApplication}" />
+                                                            <Image x:Name="imgClose" Source="/Images\arrow-right-red-icon.png" Width="16" Height="16"/>
+                                                        </StackPanel>
+                                                    </Button.Content>
+                                                </Button>
+                                            </StackPanel>
+                                        </DataTemplate>
+                                    </telerik:GridViewColumn.CellTemplate>
+                                </telerik:GridViewColumn>
+                            </telerik:RadGridView.Columns>
+                            <telerik:RadGridView.RowDetailsTemplate>
+                                <DataTemplate>
+                                    <telerik:RadTabControl Margin="10">
+                                        <telerik:RadTabItem Header="{x:Static resx:Resources.EditEntityView_ApplicationRolesTitle}" ToolTip="{x:Static resx:Resources.EditEntityView_ApplicationRolesToolTip}" >
+                                            <StackPanel Orientation="Vertical">
+                                                <StackPanel Orientation="Horizontal">
+                                                    <telerik:RadGridView 
+                                                        Visibility="Visible" 
+                                                        x:Name="radGridViewIncludedRoles" 
+                                                        ShowGroupPanel="False" 
+                                                        ItemsSource="{Binding AllRoles}"
+                                                        IsFilteringAllowed="False" 
+                                                        IsReadOnly="True" 
+                                                        AutoGenerateColumns="False"
+                                                        RowIndicatorVisibility="Collapsed"
+                                                        AllowDrop="True"
+                                                        dragDrop:GridViewDragDropBehavior.IsEnabled="True"
+                                                        RowDetailsVisibilityMode="VisibleWhenSelected">
+                                                        <telerik:RadGridView.Resources>
+                                                            <DataTemplate x:Key="DraggedItemTemplate">
+                                                                <StackPanel>
+                                                                    <StackPanel Orientation="Horizontal">
+                                                                        <TextBlock Text="Dragging:"/>
+                                                                        <TextBlock Text="{Binding CurrentDraggedItem.RoleName}" FontWeight="Bold"/>
+                                                                    </StackPanel>
+                                                                    <StackPanel Orientation="Horizontal">
+                                                                        <TextBlock Text="{Binding CurrentDropPosition}" FontWeight="Bold" MinWidth="45"/>
+                                                                        <TextBlock Text=", (" Foreground="Gray" />
+                                                                        <TextBlock Text="{Binding CurrentDraggedOverItem.RoleName}"/>
+                                                                        <TextBlock Text=")" Foreground="Gray" />
+                                                                    </StackPanel>
+                                                                </StackPanel>
+                                                            </DataTemplate>
+                                                        </telerik:RadGridView.Resources>
+                                                        <telerik:RadGridView.FilterDescriptors>
+                                                            <telerik:FilterDescriptor Member="IsAuthorized" Value="True"/>
+                                                        </telerik:RadGridView.FilterDescriptors>
+                                                        <telerik:RadGridView.Columns>
+                                                            <telerik:GridViewDataColumn Header="{x:Static resx:Resources.EditEntityView_AuthorizedRoles}" DataMemberBinding="{Binding RoleName}"/>
+                                                            <telerik:GridViewColumn Header="{x:Static resx:Resources.EditEntityView_Action}" >
+                                                                <telerik:GridViewColumn.CellTemplate>
+                                                                    <DataTemplate>
+                                                                        <StackPanel Orientation="Horizontal">
+                                                                            <Button Margin="1" ToolTip="{x:Static resx:Resources.EditEntityView_RemoveRoleToolTip}"  Command="{Binding DataContext.DeleteApplicationRoleCommand, RelativeSource={RelativeSource AncestorType=Views:EditEntityView}}" CommandParameter="{Binding}">
+                                                                                <Button.Content>
+                                                                                    <StackPanel Orientation="Horizontal" Margin="2">
+                                                                                        <TextBlock Margin="0,0,3,0"  Text="{x:Static resx:Resources.EditEntityView_RemoveRole}" />
+                                                                                        <Image x:Name="imgClose" Source="/Images\arrow-right-red-icon.png" Width="16" Height="16"/>
+                                                                                    </StackPanel>
+                                                                                </Button.Content>
+                                                                            </Button>
+                                                                        </StackPanel>
+                                                                    </DataTemplate>
+                                                                </telerik:GridViewColumn.CellTemplate>
+                                                            </telerik:GridViewColumn>
+                                                        </telerik:RadGridView.Columns>
+                                                    </telerik:RadGridView>
+                                                    <telerik:RadGridView 
+                                                        Visibility="Visible" 
+                                                        x:Name="radGridViewExcludedRoles" 
+                                                        ShowGroupPanel="False" 
+                                                        ItemsSource="{Binding AllRoles}"
+                                                        IsFilteringAllowed="False" 
+                                                        IsReadOnly="True" 
+                                                        RowIndicatorVisibility="Collapsed"
+                                                        AutoGenerateColumns="False"
+                                                        AllowDrop="True"
+                                                        dragDrop:GridViewDragDropBehavior.IsEnabled="True">
+                                                        <telerik:RadGridView.Resources>
+                                                            <DataTemplate x:Key="DraggedItemTemplate">
+                                                                <StackPanel>
+                                                                    <StackPanel Orientation="Horizontal">
+                                                                        <TextBlock Text="Dragging:"/>
+                                                                        <TextBlock Text="{Binding CurrentDraggedItem.RoleName}" FontWeight="Bold"/>
+                                                                    </StackPanel>
+                                                                    <StackPanel Orientation="Horizontal">
+                                                                        <TextBlock Text="{Binding CurrentDropPosition}" FontWeight="Bold" MinWidth="45"/>
+                                                                        <TextBlock Text=", (" Foreground="Gray" />
+                                                                        <TextBlock Text="{Binding CurrentDraggedOverItem.RoleName}"/>
+                                                                        <TextBlock Text=")" Foreground="Gray" />
+                                                                    </StackPanel>
+                                                                </StackPanel>
+                                                            </DataTemplate>
+                                                        </telerik:RadGridView.Resources>
+                                                        <telerik:RadGridView.FilterDescriptors>
+                                                            <telerik:FilterDescriptor Member="IsAuthorized" Value="False"/>
+                                                        </telerik:RadGridView.FilterDescriptors>
+                                                        <telerik:RadGridView.Columns>
+                                                            <telerik:GridViewColumn Header="{x:Static resx:Resources.EditEntityView_Action}" >
+                                                                <telerik:GridViewColumn.CellTemplate>
+                                                                    <DataTemplate>
+                                                                        <StackPanel Orientation="Horizontal">
+                                                                            <Button Margin="1" ToolTip="{x:Static resx:Resources.EditEntityView_AddRoleToolTip}"  Command="{Binding DataContext.AddApplicationRoleCommand, RelativeSource={RelativeSource AncestorType=Views:EditEntityView}}" CommandParameter="{Binding}">
+                                                                                <Button.Content>
+                                                                                    <StackPanel Orientation="Horizontal" Margin="2">
+                                                                                        <Image x:Name="imgClose" Source="/Images\arrow-left-green-icon.png" Width="16" Height="16"/>
+                                                                                        <TextBlock Margin="3,0,0,0"  Text="{x:Static resx:Resources.EditEntityView_AddRole}" />
+                                                                                    </StackPanel>
+                                                                                </Button.Content>
+                                                                            </Button>
+                                                                        </StackPanel>
+                                                                    </DataTemplate>
+                                                                </telerik:GridViewColumn.CellTemplate>
+                                                            </telerik:GridViewColumn>
+                                                            <telerik:GridViewDataColumn Header="{x:Static resx:Resources.EditEntityView_UnauthorizedRoles}" DataMemberBinding="{Binding RoleName}"/>
+                                                        </telerik:RadGridView.Columns>
+                                                        <telerik:RadGridView.RowDetailsTemplate>
+                                                            <DataTemplate>
+                                                                <StackPanel>
+                                                                    <TextBlock Text="{x:Static resx:Resources.MaintainLanguages_Notes}"></TextBlock>
+                                                                    <TextBlock Text="{Binding Notes}"></TextBlock>
+                                                                </StackPanel>
+                                                            </DataTemplate>
+                                                        </telerik:RadGridView.RowDetailsTemplate>
+                                                    </telerik:RadGridView>
+
+                                                </StackPanel>
+                                            </StackPanel>
+                                        </telerik:RadTabItem>
+                                    </telerik:RadTabControl>
+                                </DataTemplate>
+                            </telerik:RadGridView.RowDetailsTemplate>
+                        </telerik:RadGridView>
+                        <telerik:RadGridView Grid.Row="1" 
+                                             Grid.Column="2" 
+                                             Visibility="Visible" 
+                                             x:Name="radGridViewExcludedApplications" 
+                                             ShowGroupPanel="False" 
+                                             ItemsSource="{Binding Entity.AllApplications}"
+                                             IsFilteringAllowed="False" 
+                                             IsReadOnly="True" 
+                                             RowIndicatorVisibility="Collapsed"
+                                             AutoGenerateColumns="False"
+                                             AllowDrop="True"
+                                             dragDrop:GridViewDragDropBehavior.IsEnabled="True">
+                            <telerik:RadGridView.Resources>
+                                <DataTemplate x:Key="DraggedItemTemplate">
+                                    <StackPanel>
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Text="Dragging:"/>
+                                            <TextBlock Text="{Binding CurrentDraggedItem.Name}" FontWeight="Bold"/>
+                                        </StackPanel>
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Text="{Binding CurrentDropPosition}" FontWeight="Bold" MinWidth="45"/>
+                                            <TextBlock Text=", (" Foreground="Gray" />
+                                            <TextBlock Text="{Binding CurrentDraggedOverItem.Name}"/>
+                                            <TextBlock Text=")" Foreground="Gray" />
+                                        </StackPanel>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </telerik:RadGridView.Resources>
+                            <telerik:RadGridView.FilterDescriptors>
+                                <telerik:FilterDescriptor Member="IsAuthorized" Value="False"/>
+                            </telerik:RadGridView.FilterDescriptors>
+                            <telerik:RadGridView.Columns>
+                                <telerik:GridViewColumn Header="{x:Static resx:Resources.EditEntityView_Action}" >
+                                    <telerik:GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <StackPanel Orientation="Horizontal">
+                                                <Button Margin="1" ToolTip="{x:Static resx:Resources.EditEntityView_AddApplicationToolTip}" Command="{Binding DataContext.AddEntityApplicationCommand, RelativeSource={RelativeSource AncestorType=Views:EditEntityView}}" CommandParameter="{Binding}">
+                                                    <Button.Content>
+                                                        <StackPanel Orientation="Horizontal" Margin="2">
+                                                            <Image x:Name="imgClose" Source="/Images\arrow-left-green-icon.png" Width="16" Height="16"/>
+                                                            <TextBlock Margin="3,0,0,0"  Text="{x:Static resx:Resources.EditEntityView_AddApplication}" />
+                                                        </StackPanel>
+                                                    </Button.Content>
+                                                </Button>
+                                            </StackPanel>
+                                        </DataTemplate>
+                                    </telerik:GridViewColumn.CellTemplate>
+                                </telerik:GridViewColumn>
+                                <telerik:GridViewDataColumn Header="{x:Static resx:Resources.EditEntityView_UnauthorizedApplications}" DataMemberBinding="{Binding ApplicationName}"/>
+                            </telerik:RadGridView.Columns>
+                            <telerik:RadGridView.RowDetailsTemplate>
+                                <DataTemplate>
+                                    <StackPanel>
+                                        <TextBlock Text="{x:Static resx:Resources.MaintainLanguages_Notes}"></TextBlock>
+                                        <TextBlock Text="{Binding Notes}"></TextBlock>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </telerik:RadGridView.RowDetailsTemplate>
+                        </telerik:RadGridView>
+                    </Grid>
+
+                </telerik:RadTabItem>
+                <telerik:RadTabItem Header="{x:Static resx:Resources.EditEntityView_CustomizablePropertiesTabItemTitle}" ToolTip="{x:Static resx:Resources.EditEntityView_CustomizablePropertiesTabItemToolTip}" >
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                            <ColumnDefinition Width="10"></ColumnDefinition>
+                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <StackPanel Orientation="Horizontal" Grid.Row="0">
+                            <StackPanel Orientation="Vertical" Margin="5,0,0,0">
+                                <ui:TotalRecordCountControl />
+                                <telerik:RadDataPager PageSize="{Binding GridPageSize.Key}"
+                                                      Source="{Binding Items, ElementName=radGridViewCustomizableProperties}"
+                                                      IsTotalItemCountFixed="True" />
+
+                            </StackPanel>
+                            <ui:GridPageSizeSelector Margin="5,0,0,0" />
+                        </StackPanel>
+                        <telerik:RadGridView Grid.Row="1" 
+                                             Visibility="Visible" 
+                                             x:Name="radGridViewCustomizableProperties" 
+                                             ShowGroupPanel="False" 
+                                             ItemsSource="{Binding UserInterfacePageControlData.ControlProperties}"
+                                             IsReadOnly="False" 
+                                             AutoGenerateColumns="False"
+                                             RowIndicatorVisibility="Collapsed"
+                                             RowDetailsVisibilityMode="VisibleWhenSelected"
+                                             RowDetailsTemplateSelector="{StaticResource UserDefinedPropertyTypeDetailsTemplateSelector}">
+                            <telerik:RadGridView.SortDescriptors>
+                                <telerik:SortDescriptor Member="Display" SortDirection="Ascending" />
+                            </telerik:RadGridView.SortDescriptors>
+                            <telerik:RadGridView.Columns>
+                                <telerik:GridViewDataColumn Header="{x:Static resx:Resources.EditEntityView_CustomizableProperties_DisplayTitle}" DataMemberBinding="{Binding Display}"/>
+                                <telerik:GridViewCheckBoxColumn Header="{x:Static resx:Resources.EditEntityView_CustomizableProperties_IsActiveTitle}" DataMemberBinding="{Binding IsActive}"/>
+
+                                <telerik:GridViewColumn Header="{x:Static resx:Resources.EditEntityView_CustomizableProperties_SensitivityLevelTitle}" >
+                                    <telerik:GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <StackPanel Orientation="Horizontal">
+                                                <telerik:RadComboBox ItemsSource="{Binding DataContext.PropertySensitivityLevels, RelativeSource={RelativeSource AncestorType=core:UserControlViewBase}}"
+                                                                     SelectedValue="{Binding PropertySensitivityLevelUid}"
+                                                                     SelectedValuePath="PropertySensitivityLevelUid"
+                                                                     DisplayMemberPath="Display"/>
+                                            </StackPanel>
+                                        </DataTemplate>
+                                    </telerik:GridViewColumn.CellTemplate>
+                                </telerik:GridViewColumn>
+                                <telerik:GridViewDataColumn Header="{x:Static resx:Resources.EditEntityView_CustomizableProperties_DescriptionTitle}" DataMemberBinding="{Binding Description}"/>
+                                <telerik:GridViewDataColumn Header="{x:Static resx:Resources.EditEntityView_CustomizableProperties_TableNameTitle}" DataMemberBinding="{Binding TableName}" IsReadOnly="True"/>
+                                <telerik:GridViewDataColumn Header="{x:Static resx:Resources.EditEntityView_CustomizableProperties_ColumnNameTitle}" DataMemberBinding="{Binding ColumnName}" IsReadOnly="True"/>
+                                <telerik:GridViewDataColumn Header="{x:Static resx:Resources.EditEntityView_CustomizableProperties_PropertyNameTitle}" DataMemberBinding="{Binding PropertyName}" IsReadOnly="True"/>
+                            </telerik:RadGridView.Columns>
+                        </telerik:RadGridView>
+                        <StackPanel Grid.Row="2" Orientation="Horizontal">
+                            <telerik:RadDataPager PageSize="{Binding GridPageSize.Key}"
+                                                  Margin="5,0,0,0"
+                                                  Source="{Binding Items, ElementName=radGridViewCustomizableProperties}"
+                                                  IsTotalItemCountFixed="True" />
+                            <ui:GridPageSizeSelector Margin="5,0,0,0"/>
+                        </StackPanel>
+                    </Grid>
+
+                </telerik:RadTabItem>
+                <telerik:RadTabItem Header="{x:Static resx:Resources.EditEntityView_SettingsTabItemTitle}" ToolTip="{x:Static resx:Resources.EditEntityView_SettingsTabItemToolTip}">
+                    <telerik:RadPropertyGrid Item="{Binding Entity}" 
+                                             AutoGeneratePropertyDefinitions="False"
+                                             NestedPropertiesVisibility="Visible" 
+                                             LabelColumnWidth="250" 
+                                             MaxWidth="600"
+                                             SearchInNestedProperties="True" IsGrouped="True">
+                        <telerik:RadPropertyGrid.PropertyDefinitions>
+                            <telerik:PropertyDefinition Binding="{Binding AccessProfileControlsAG1, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" 
+                                                        GroupName="{x:Static resx:Resources.EditUserRequirementsView_AccessProfileAccessGroupBehaviorSettings}"
+                                                        DisplayName="{x:Static resx:Resources.EditUserRequirementsView_ControlsPersonAG1_Title}" 
+                                                        Description="{x:Static resx:Resources.EditUserRequirementsView_ControlsPersonAG1_ToolTip}"
+                                                        EditorTemplate="{StaticResource AccessProfileControlsAG1DataTemplate}"/>
+                            <telerik:PropertyDefinition Binding="{Binding AccessProfileControlsAG2, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" 
+                                                        GroupName="{x:Static resx:Resources.EditUserRequirementsView_AccessProfileAccessGroupBehaviorSettings}"
+                                                        DisplayName="{x:Static resx:Resources.EditUserRequirementsView_ControlsPersonAG2_Title}" 
+                                                        Description="{x:Static resx:Resources.EditUserRequirementsView_ControlsPersonAG2_ToolTip}"
+                                                        EditorTemplate="{StaticResource AccessProfileControlsAG2DataTemplate}"/>
+                            <telerik:PropertyDefinition Binding="{Binding AccessProfileControlsAG3, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" 
+                                                        GroupName="{x:Static resx:Resources.EditUserRequirementsView_AccessProfileAccessGroupBehaviorSettings}"
+                                                        DisplayName="{x:Static resx:Resources.EditUserRequirementsView_ControlsPersonAG3_Title}" 
+                                                        Description="{x:Static resx:Resources.EditUserRequirementsView_ControlsPersonAG3_ToolTip}"
+                                                        EditorTemplate="{StaticResource AccessProfileControlsAG3DataTemplate}"/>
+
+                            <telerik:PropertyDefinition Binding="{Binding AccessProfileControlsAG4, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" 
+                                                        GroupName="{x:Static resx:Resources.EditUserRequirementsView_AccessProfileAccessGroupBehaviorSettings}"
+                                                        DisplayName="{x:Static resx:Resources.EditUserRequirementsView_ControlsPersonAG4_Title}" 
+                                                        Description="{x:Static resx:Resources.EditUserRequirementsView_ControlsPersonAG4_ToolTip}"
+                                                        EditorTemplate="{StaticResource AccessProfileControlsAG4DataTemplate}"/>
+                            
+                            <telerik:PropertyDefinition Binding="{Binding AccessProfileControlsIO1, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" 
+                                                        GroupName="{x:Static resx:Resources.EditUserRequirementsView_AccessProfileIOGroupBehaviorSettings}"
+                                                        DisplayName="{x:Static resx:Resources.EditUserRequirementsView_ControlsPersonIO1_Title}" 
+                                                        Description="{x:Static resx:Resources.EditUserRequirementsView_ControlsPersonIO1_ToolTip}"
+                                                        EditorTemplate="{StaticResource AccessProfileControlsIO1DataTemplate}"/>
+                            <telerik:PropertyDefinition Binding="{Binding AccessProfileControlsIO2, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" 
+                                                        GroupName="{x:Static resx:Resources.EditUserRequirementsView_AccessProfileIOGroupBehaviorSettings}"
+                                                        DisplayName="{x:Static resx:Resources.EditUserRequirementsView_ControlsPersonIO2_Title}" 
+                                                        Description="{x:Static resx:Resources.EditUserRequirementsView_ControlsPersonIO2_ToolTip}"
+                                                        EditorTemplate="{StaticResource AccessProfileControlsIO2DataTemplate}"/>
+                            <telerik:PropertyDefinition Binding="{Binding AccessProfileControlsIO3, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" 
+                                                        GroupName="{x:Static resx:Resources.EditUserRequirementsView_AccessProfileIOGroupBehaviorSettings}"
+                                                        DisplayName="{x:Static resx:Resources.EditUserRequirementsView_ControlsPersonIO3_Title}" 
+                                                        Description="{x:Static resx:Resources.EditUserRequirementsView_ControlsPersonIO3_ToolTip}"
+                                                        EditorTemplate="{StaticResource AccessProfileControlsIO3DataTemplate}"/>
+
+                            <telerik:PropertyDefinition Binding="{Binding AccessProfileControlsIO4, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" 
+                                                        GroupName="{x:Static resx:Resources.EditUserRequirementsView_AccessProfileIOGroupBehaviorSettings}"
+                                                        DisplayName="{x:Static resx:Resources.EditUserRequirementsView_ControlsPersonIO4_Title}" 
+                                                        Description="{x:Static resx:Resources.EditUserRequirementsView_ControlsPersonIO4_ToolTip}"
+                                                        EditorTemplate="{StaticResource AccessProfileControlsIO4DataTemplate}"/>
+
+                        </telerik:RadPropertyGrid.PropertyDefinitions>
+                    </telerik:RadPropertyGrid>
+                </telerik:RadTabItem>
+                <telerik:RadTabItem Header="{x:Static resx:Resources.EditEntityView_LicenseTabItemTitle}" ToolTip="{x:Static resx:Resources.EditEntityView_LicenseTabItemToolTip}">
+                    <Grid>
+                        <!--<telerik:RadDropDownButton AutoOpenDelay="0:0:0.5" ToolTip="{x:Static resx:Resources.LicenseView_ImportLicenseButtonToolTip}" Visibility="{Binding CanUpateLicense, Converter={StaticResource boolNotToVisiblity}}">
+                            <telerik:RadDropDownButton.Content>
+                                <TextBlock Margin="5" VerticalAlignment="Center" FontWeight="Bold" Text="{x:Static resx:Resources.LicenseView_ImportLicenseButtonText}"></TextBlock>
+                            </telerik:RadDropDownButton.Content>
+                            <telerik:RadDropDownButton.DropDownContent>
+                                <telerik:RadMenu Orientation="Vertical">
+                                    <telerik:RadMenuItem Header="{x:Static resx:Resources.EditEntityView_ImportLicenseFromFileText}" ToolTip="{x:Static resx:Resources.LicenseView_ImportLicenseFromFileToolTip}"  Command="{Binding ImportLicenseFileCommand}"></telerik:RadMenuItem>
+                                    <telerik:RadMenuItem Header="{x:Static resx:Resources.EditEntityView_ImportLicenseOverInternetText}" ToolTip="{x:Static resx:Resources.LicenseView_ImportLicenseOverInternetToolTip}"  Command="{Binding ImportLicenseOverInternetCommand}"></telerik:RadMenuItem>
+                                </telerik:RadMenu>
+                            </telerik:RadDropDownButton.DropDownContent>
+                        </telerik:RadDropDownButton>-->
+                <GroupBox Margin="0,10,0,0" BorderBrush="{Binding LicenseBorderBrush}" BorderThickness="2">
+                    <GroupBox.HeaderTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{x:Static resx:Resources.EditEntityView_LicenseInfoHeader}" FontSize="16"/>
+                        </DataTemplate>
+                    </GroupBox.HeaderTemplate>
+                    <StackPanel>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition></RowDefinition>
+                                <RowDefinition></RowDefinition>
+                                <RowDefinition></RowDefinition>
+                                <RowDefinition></RowDefinition>
+                                <RowDefinition></RowDefinition>
+                                <RowDefinition></RowDefinition>
+                                <RowDefinition></RowDefinition>
+                                <RowDefinition></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition Width="10"></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Grid.Row="0" Text="{x:Static resx:Resources.EditEntityView_LicenseType}"/>
+                            <TextBlock Grid.Row="0" Grid.Column="2" Text="{Binding Entity.EntityLicense.LicenseTypeDescription}"/>
+                            <core:ErrorsPanel Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" />
+                            <TextBlock Grid.Row="2" Grid.Column="0" Text="{x:Static resx:Resources.EditEntityView_LicenseId}"/>
+                            <TextBlock Grid.Row="2" Grid.Column="2" Text="{Binding Entity.EntityLicense.LicenseId}"/>
+                            <TextBlock Grid.Row="3" Grid.Column="0" Text="{x:Static resx:Resources.EditEntityView_LicenseName}"/>
+                            <TextBlock Grid.Row="3" Grid.Column="2" Text="{Binding Entity.EntityLicense.LicensedCustomerName}"/>
+                            <TextBlock Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="3" Text="{x:Static resx:Resources.EditEntityView_LicenseDetails}" FontSize="16"/>
+                            <StackPanel Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="3">
+                                <!--<telerik:RadGridView MaxHeight="300"
+                                    ShowGroupPanel="False"
+                                    ItemsSource="{Binding Entity.EntityLicense.ProductFeatures}"
+                                    IsReadOnly="True" AutoGenerateColumns="False" Width="Auto" RowIndicatorVisibility="Collapsed" IsFilteringAllowed="False">
+                                    <telerik:RadGridView.Columns>
+                                        <telerik:GridViewDataColumn Header="{x:Static resx:Resources.EditEntityView_FeatureName}" DataMemberBinding="{Binding Key}"></telerik:GridViewDataColumn>
+                                        <telerik:GridViewDataColumn Header="{x:Static resx:Resources.EditEntityView_FeatureValue}" DataMemberBinding="{Binding Value}"></telerik:GridViewDataColumn>
+                                    </telerik:RadGridView.Columns>
+                                </telerik:RadGridView>-->
+                            </StackPanel>
+                        </Grid>
+                    </StackPanel>
+                </GroupBox>
+
+                    </Grid>
+                </telerik:RadTabItem>
+            </telerik:RadTabControl>
+        </Grid>
+        <StackPanel Grid.Row="2" Orientation="Horizontal">
+            <Button Margin="5" Command="{Binding SaveCommand}" ToolTip="{x:Static resx:Resources.Common_SaveToolTip}">
+                <StackPanel Orientation="Horizontal" Margin="3">
+                    <Image x:Name="imgSave" Source="/Images\SaveData.png" Width="16" Height="16"/>
+                    <TextBlock VerticalAlignment="Center" Margin="3,0,0,0" Text="{x:Static resx:Resources.Common_Save}" />
+                </StackPanel>
+            </Button>
+            <Button Margin="5" Command="{Binding CancelCommand}" ToolTip="{x:Static resx:Resources.Common_CancelToolTip}">
+                <StackPanel Orientation="Horizontal" Margin="3">
+                    <Image x:Name="imgCancel" Source="/Images\CancelEdit.png" Width="16" Height="16"/>
+                    <TextBlock VerticalAlignment="Center" Margin="3,0,0,0" Text="{x:Static resx:Resources.Common_Cancel}" />
+                </StackPanel>
+            </Button>
+            <Button Margin="5" Command="{Binding SynchronizeIdProducerCommand}" ToolTip="{x:Static resx:Resources.SyncIdProducerTemplates_ToolTip}">
+                <StackPanel Orientation="Horizontal" Margin="3">
+                    <Image x:Name="imgSyncIdProducer" Source="{StaticResource imgRefreshIdProd}" Width="16" Height="16"/>
+                    <TextBlock VerticalAlignment="Center" Margin="3,0,0,0" Text="{x:Static resx:Resources.SyncIdProducerTemplates}" />
+                </StackPanel>
+            </Button>        
+        </StackPanel>
+        <core:ErrorsPanel Grid.Row="3" DataContext="{Binding}" />
+    </Grid>
+</core:UserControlViewBase>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

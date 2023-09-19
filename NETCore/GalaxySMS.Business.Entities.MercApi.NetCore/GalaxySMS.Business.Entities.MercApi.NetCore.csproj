@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <DocumentationFile>D:\Dev\GalaxySMS\GalaxySMS.MercApi\GalaxySMS.Business.Entities.MercApi.NetCore.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="copy D:\Dev\GalaxySMS\GalaxySMS.MercApi\GalaxySMS.Business.Entities.MercApi.NetCore.xml D:\Dev\GalaxySMS\GalaxySMS.Cdn&#xD;&#xA;copy D:\Dev\GalaxySMS\GalaxySMS.MercApi\GalaxySMS.Business.Entities.MercApi.NetCore.xml D:\Dev\GalaxySMS\GalaxySMS.MercuryApi" />
+  </Target>
+
+</Project>

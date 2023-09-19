@@ -1,0 +1,14 @@
+﻿<Window x:Class="GalaxySMS.Prism.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:prism="http://prismlibrary.com/"
+        prism:ViewModelLocator.AutoWireViewModel="True"
+        Title="{Binding Title}">
+    
+    <DockPanel LastChildFill="True">
+        <StackPanel>
+            <Button Content="Sign In" Command="{Binding NavigateCommand}" CommandParameter="SignInOutView" />
+        </StackPanel>
+        <ContentControl prism:RegionManager.RegionName="ContentRegion" Margin="1,3,3,3" />
+    </DockPanel>
+</Window>

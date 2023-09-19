@@ -1,0 +1,61 @@
+﻿<UserControl x:Class="GalaxySMS.ClientAPI.Sample.UserControls.ucActivityEvents"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:GalaxySMS.ClientAPI.Sample.UserControls"
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             xmlns:converters="clr-namespace:GCS.Core.Common.UI.Converters;assembly=GCS.Core.Common.UI"
+             xmlns:commonEnums="clr-namespace:GalaxySMS.Common.Enums;assembly=GalaxySMS.Common"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800"
+             DataContext="{Binding ActivityEvents, Source={StaticResource Locator}}">
+    <UserControl.Resources>
+        <converters:IntToBrushConverter x:Key="intToBrushConverter" />
+        <converters:ParameterAndNotValueToVisibilityConverter x:Key="parameterAndNotValueToVisibilityConverter"/>
+    </UserControl.Resources>
+    <Grid>
+        <StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Button Command="{Binding ClearAllActivityEventsCommand}">Clear All Events</Button>
+            </StackPanel>
+            <telerik:RadGridView ItemsSource="{Binding ActivityEvents}" AutoGenerateColumns="False">
+                <telerik:RadGridView.Columns>
+                    <telerik:GridViewDataColumn DataMemberBinding="{Binding DateTime}" Header="Event Time" IsReadOnly="True" />
+                    <!--<telerik:GridViewDataColumn DataMemberBinding="{Binding EventDescription}" Header="Event Type" IsReadOnly="True" />
+                    <telerik:GridViewDataColumn DataMemberBinding="{Binding AccessPortalContactStatus}" Header="Contact Status" IsReadOnly="True" IsVisible="False" />-->
+                    <telerik:GridViewColumn Header="Event Type" IsReadOnly="True">
+                        <telerik:GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="{Binding EventDescription}" Foreground="{Binding Color, Converter={StaticResource intToBrushConverter}}"/>
+                                    <StackPanel Orientation="Horizontal" 
+                                                Visibility="{Binding AccessPortalContactStatus,
+                                            Converter={StaticResource parameterAndNotValueToVisibilityConverter}, 
+                                            ConverterParameter={x:Static commonEnums:AccessPortalContactStatus.Unknown }}">
+                                        <TextBlock Foreground="{Binding Color, Converter={StaticResource intToBrushConverter}}">
+                                            <Run Text=" - "/>
+                                            <Run Text="{Binding AccessPortalContactStatus}"/>
+                                        </TextBlock>
+                                    </StackPanel>
+                                </StackPanel>
+                            </DataTemplate>
+                        </telerik:GridViewColumn.CellTemplate>
+                    </telerik:GridViewColumn>
+                    <telerik:GridViewColumn Header="Device" IsReadOnly="True">
+                        <telerik:GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding DeviceDescription}" Foreground="{Binding Color, Converter={StaticResource intToBrushConverter}}"/>
+                            </DataTemplate>
+                        </telerik:GridViewColumn.CellTemplate>
+                    </telerik:GridViewColumn>
+
+                    <telerik:GridViewDataColumn DataMemberBinding="{Binding PersonDescription}" Header="Person" IsReadOnly="True" Background="{Binding }" />
+                    <telerik:GridViewDataColumn DataMemberBinding="{Binding InputOutputGroupName}" Header="Input-Output Group" IsReadOnly="True" Background="{Binding }" />
+                    <telerik:GridViewDataColumn DataMemberBinding="{Binding IsAlarmEvent}" Header="Is Alarm" IsReadOnly="True" Background="{Binding }" />
+                    <telerik:GridViewDataColumn DataMemberBinding="{Binding AlarmPriority}" Header="Alarm Priority" IsReadOnly="True" Background="{Binding }" />
+                </telerik:RadGridView.Columns>
+            </telerik:RadGridView>
+        </StackPanel>
+    </Grid>
+</UserControl>

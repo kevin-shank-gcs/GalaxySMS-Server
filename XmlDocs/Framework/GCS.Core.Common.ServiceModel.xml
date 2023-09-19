@@ -1,0 +1,410 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>GCS.Core.Common.ServiceModel</name>
+    </assembly>
+    <members>
+        <member name="T:GCS.Core.Common.ServiceModel.Extensions.ApplicationUserSessionHeaderInspectorBehavior">
+             <summary>
+             This is based on this article:
+             http://trycatch.me/adding-custom-message-headers-to-a-wcf-service-using-inspectors-behaviors/.
+             </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+        </member>
+        <member name="M:GCS.Core.Common.ServiceModel.Extensions.ApplicationUserSessionHeaderInspectorBehavior.AfterReceiveRequest(System.ServiceModel.Channels.Message@,System.ServiceModel.IClientChannel,System.ServiceModel.InstanceContext)">
+             <summary>
+             Called after an inbound message has been received but before the message is dispatched to the
+             intended operation.
+             </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+            
+             <param name="request">          [in,out] The request message. </param>
+             <param name="channel">          The incoming channel. </param>
+             <param name="instanceContext">  The current service instance. </param>
+            
+             <returns>
+             The object used to correlate state. This object is passed back in the
+             <see cref="M:System.ServiceModel.Dispatcher.IDispatchMessageInspector.BeforeSendReply(System.ServiceModel.Channels.Message@,System.Object)" />
+             method.
+             </returns>
+        </member>
+        <member name="M:GCS.Core.Common.ServiceModel.Extensions.ApplicationUserSessionHeaderInspectorBehavior.BeforeSendReply(System.ServiceModel.Channels.Message@,System.Object)">
+             <summary>
+             Called after the operation has returned but before the reply message is sent.
+             </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+            
+             <param name="reply">            [in,out] The reply message. This value is null if the
+                                             operation is one way. </param>
+             <param name="correlationState"> The correlation object returned from the
+                                             <see cref="M:System.ServiceModel.Dispatcher.IDispatchMessageInspector.AfterReceiveRequest(System.ServiceModel.Channels.Message@,System.ServiceModel.IClientChannel,System.ServiceModel.InstanceContext)" />
+                                             method. </param>
+        </member>
+        <member name="M:GCS.Core.Common.ServiceModel.Extensions.ApplicationUserSessionHeaderInspectorBehavior.BeforeSendRequest(System.ServiceModel.Channels.Message@,System.ServiceModel.IClientChannel)">
+             <summary>
+             Enables inspection or modification of a message before a request message is sent to a service.
+             </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+            
+             <param name="request">  [in,out] The message to be sent to the service. </param>
+             <param name="channel">  The WCF client object channel. </param>
+            
+             <returns>
+             The object that is returned as the <paramref name="correlationState " />argument of the
+             <see cref="M:System.ServiceModel.Dispatcher.IClientMessageInspector.AfterReceiveReply(System.ServiceModel.Channels.Message@,System.Object)" />
+             method. This is null if no correlation state is used.The best practice is to make this a
+             <see cref="T:System.Guid" /> to ensure that no two <paramref name="correlationState" />
+             objects are the same.
+             </returns>
+        </member>
+        <member name="M:GCS.Core.Common.ServiceModel.Extensions.ApplicationUserSessionHeaderInspectorBehavior.AfterReceiveReply(System.ServiceModel.Channels.Message@,System.Object)">
+             <summary>
+             Enables inspection or modification of a message after a reply message is received but prior
+             to passing it back to the client application.
+             </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+            
+             <param name="reply">            [in,out] The message to be transformed into types and handed
+                                             back to the client application. </param>
+             <param name="correlationState"> Correlation state data. </param>
+        </member>
+        <member name="M:GCS.Core.Common.ServiceModel.Extensions.ApplicationUserSessionHeaderInspectorBehavior.Validate(System.ServiceModel.Description.ServiceEndpoint)">
+             <summary>   Implement to confirm that the endpoint meets some intended criteria. </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+            
+             <param name="endpoint"> The endpoint to validate. </param>
+        </member>
+        <member name="M:GCS.Core.Common.ServiceModel.Extensions.ApplicationUserSessionHeaderInspectorBehavior.AddBindingParameters(System.ServiceModel.Description.ServiceEndpoint,System.ServiceModel.Channels.BindingParameterCollection)">
+             <summary>   Implement to pass data at runtime to bindings to support custom behavior. </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+            
+             <param name="endpoint">             The endpoint to modify. </param>
+             <param name="bindingParameters">    The objects that binding elements require to support the
+                                                 behavior. </param>
+        </member>
+        <member name="M:GCS.Core.Common.ServiceModel.Extensions.ApplicationUserSessionHeaderInspectorBehavior.ApplyDispatchBehavior(System.ServiceModel.Description.ServiceEndpoint,System.ServiceModel.Dispatcher.EndpointDispatcher)">
+             <summary>   Implements a modification or extension of the service across an endpoint. </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+            
+             <param name="endpoint">             The endpoint that exposes the contract. </param>
+             <param name="endpointDispatcher">   The endpoint dispatcher to be modified or extended. </param>
+        </member>
+        <member name="M:GCS.Core.Common.ServiceModel.Extensions.ApplicationUserSessionHeaderInspectorBehavior.ApplyClientBehavior(System.ServiceModel.Description.ServiceEndpoint,System.ServiceModel.Dispatcher.ClientRuntime)">
+             <summary>   Implements a modification or extension of the client across an endpoint. </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+            
+             <param name="endpoint">         The endpoint that is to be customized. </param>
+             <param name="clientRuntime">    The client runtime to be customized. </param>
+        </member>
+        <member name="M:GCS.Core.Common.ServiceModel.Extensions.ApplicationUserSessionHeaderInspectorBehavior.Validate(System.ServiceModel.Description.ServiceDescription,System.ServiceModel.ServiceHostBase)">
+             <summary>
+             Provides the ability to inspect the service host and the service description to confirm that
+             the service can run successfully.
+             </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+            
+             <param name="serviceDescription">   The service description. </param>
+             <param name="serviceHostBase">      The service host that is currently being constructed. </param>
+        </member>
+        <member name="M:GCS.Core.Common.ServiceModel.Extensions.ApplicationUserSessionHeaderInspectorBehavior.AddBindingParameters(System.ServiceModel.Description.ServiceDescription,System.ServiceModel.ServiceHostBase,System.Collections.ObjectModel.Collection{System.ServiceModel.Description.ServiceEndpoint},System.ServiceModel.Channels.BindingParameterCollection)">
+             <summary>
+             Provides the ability to pass custom data to binding elements to support the contract
+             implementation.
+             </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+            
+             <param name="serviceDescription">   The service description of the service. </param>
+             <param name="serviceHostBase">      The host of the service. </param>
+             <param name="endpoints">            The service endpoints. </param>
+             <param name="bindingParameters">    Custom objects to which binding elements have access. </param>
+        </member>
+        <member name="M:GCS.Core.Common.ServiceModel.Extensions.ApplicationUserSessionHeaderInspectorBehavior.ApplyDispatchBehavior(System.ServiceModel.Description.ServiceDescription,System.ServiceModel.ServiceHostBase)">
+             <summary>
+             Provides the ability to change run-time property values or insert custom extension objects
+             such as error handlers, message or parameter interceptors, security extensions, and other
+             custom extension objects.
+             </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+            
+             <param name="serviceDescription">   The service description. </param>
+             <param name="serviceHostBase">      The host that is currently being built. </param>
+        </member>
+        <member name="T:GCS.Core.Common.ServiceModel.Extensions.ApplicationUserSessionHeaderInspectorBehaviorExtension">
+             <summary>   An application user session header inspector behavior extension. </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+        </member>
+        <member name="M:GCS.Core.Common.ServiceModel.Extensions.ApplicationUserSessionHeaderInspectorBehaviorExtension.CreateBehavior">
+             <summary>   Creates a behavior extension based on the current configuration settings. </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+            
+             <returns>   The behavior extension. </returns>
+        </member>
+        <member name="P:GCS.Core.Common.ServiceModel.Extensions.ApplicationUserSessionHeaderInspectorBehaviorExtension.BehaviorType">
+             <summary>   Gets the type of behavior. </summary>
+            
+             <value> The type of behavior. </value>
+        </member>
+        <member name="T:GCS.Core.Common.ServiceModel.Extensions.ClientApplicationUserSessionHeaderContext">
+             <summary>   A client application user session header context. </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+        </member>
+        <member name="F:GCS.Core.Common.ServiceModel.Extensions.ClientApplicationUserSessionHeaderContext.HeaderInformation">
+            <summary>   Information describing the header. </summary>
+        </member>
+        <member name="M:GCS.Core.Common.ServiceModel.Extensions.ClientApplicationUserSessionHeaderContext.#cctor">
+             <summary>   Static constructor. </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+        </member>
+        <member name="T:GCS.Core.Common.ServiceModel.UserClientBase`1">
+             <summary>   A user client base. </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+            
+             <typeparam name="T">    Generic type parameter. </typeparam>
+        </member>
+        <member name="M:GCS.Core.Common.ServiceModel.UserClientBase`1.#ctor">
+             <summary>   Default constructor. </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+        </member>
+        <member name="M:GCS.Core.Common.ServiceModel.UserClientBase`1.#ctor(System.ServiceModel.Channels.Binding,System.ServiceModel.EndpointAddress)">
+             <summary>   Constructor. </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+            
+             <param name="binding">          The binding. </param>
+             <param name="endpointAddress">  The endpoint address. </param>
+        </member>
+        <member name="M:GCS.Core.Common.ServiceModel.UserClientBase`1.InsertUserDataToOutgoingHeader">
+             <summary>   Inserts a user data to outgoing header. </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+        </member>
+        <member name="P:GCS.Core.Common.ServiceModel.UserClientBase`1.GalaxyUserSessionGuid">
+             <summary>   Gets or sets a unique identifier of the galaxy user session. </summary>
+            
+             <value> Unique identifier of the galaxy user session. </value>
+        </member>
+        <member name="T:GCS.Core.Common.ServiceModel.UserDuplexClientBase`1">
+             <summary>   A user duplex client base. </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+            
+             <typeparam name="T">    Generic type parameter. </typeparam>
+        </member>
+        <member name="M:GCS.Core.Common.ServiceModel.UserDuplexClientBase`1.#ctor(System.Object)">
+             <summary>   Constructor. </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+            
+             <param name="callbackInstance"> The callback instance. </param>
+        </member>
+        <member name="M:GCS.Core.Common.ServiceModel.UserDuplexClientBase`1.InsertUserDataToOutgoingHeader">
+             <summary>   Inserts a user data to outgoing header. </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+        </member>
+        <member name="P:GCS.Core.Common.ServiceModel.UserDuplexClientBase`1.GalaxyUserSessionGuid">
+             <summary>   Gets or sets a unique identifier of the galaxy user session. </summary>
+            
+             <value> Unique identifier of the galaxy user session. </value>
+        </member>
+        <member name="T:GCS.Core.Common.ServiceModel.HeaderNames">
+             <summary>   A header names. </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+        </member>
+        <member name="F:GCS.Core.Common.ServiceModel.HeaderNames.ApplicationUserSessionHeaderName">
+            <summary>   Name of the application user session header. </summary>
+        </member>
+        <member name="F:GCS.Core.Common.ServiceModel.HeaderNames.HeaderNamespace">
+            <summary>   The header namespace. </summary>
+        </member>
+        <member name="F:GCS.Core.Common.ServiceModel.HeaderNames.ApplicationId">
+            <summary>   Identifier for the application. </summary>
+        </member>
+        <member name="F:GCS.Core.Common.ServiceModel.HeaderNames.ApplicationName">
+            <summary>   Name of the application. </summary>
+        </member>
+        <member name="F:GCS.Core.Common.ServiceModel.HeaderNames.ApplicationVersion">
+            <summary>   The application version. </summary>
+        </member>
+        <member name="F:GCS.Core.Common.ServiceModel.HeaderNames.ClientDateTime">
+            <summary>   The client date time. </summary>
+        </member>
+        <member name="F:GCS.Core.Common.ServiceModel.HeaderNames.ClientTimeZoneId">
+            <summary>   Identifier for the client time zone. </summary>
+        </member>
+        <member name="F:GCS.Core.Common.ServiceModel.HeaderNames.Culture">
+            <summary>   The culture. </summary>
+        </member>
+        <member name="F:GCS.Core.Common.ServiceModel.HeaderNames.UiCulture">
+            <summary>   The culture. </summary>
+        </member>
+        <member name="F:GCS.Core.Common.ServiceModel.HeaderNames.MachineName">
+            <summary>   Name of the machine. </summary>
+        </member>
+        <member name="F:GCS.Core.Common.ServiceModel.HeaderNames.OperationGuid">
+            <summary>   Unique identifier for the operation. </summary>
+        </member>
+        <member name="F:GCS.Core.Common.ServiceModel.HeaderNames.ProductVersionBuild">
+            <summary>   The product version build. </summary>
+        </member>
+        <member name="F:GCS.Core.Common.ServiceModel.HeaderNames.ProductVersionMajor">
+            <summary>   The product version major. </summary>
+        </member>
+        <member name="F:GCS.Core.Common.ServiceModel.HeaderNames.ProductVersionMinor">
+            <summary>   The product version minor. </summary>
+        </member>
+        <member name="F:GCS.Core.Common.ServiceModel.HeaderNames.ProductVersionRevision">
+            <summary>   The product version revision. </summary>
+        </member>
+        <member name="F:GCS.Core.Common.ServiceModel.HeaderNames.SessionGuid">
+            <summary>   Unique identifier for the session. </summary>
+        </member>
+        <member name="F:GCS.Core.Common.ServiceModel.HeaderNames.UserName">
+            <summary>   Name of the user. </summary>
+        </member>
+        <member name="F:GCS.Core.Common.ServiceModel.HeaderNames.CurrentEntityId">
+            <summary>   Identifier for the current entity. </summary>
+        </member>
+        <member name="T:GCS.Core.Common.ServiceModel.ApplicationUserSessionHeader">
+             <summary>   An application user session header. This class implements the IApplicationUserSessionDataHeader interface</summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+        </member>
+        <member name="M:GCS.Core.Common.ServiceModel.ApplicationUserSessionHeader.#ctor">
+             <summary>   Default constructor. </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+        </member>
+        <member name="M:GCS.Core.Common.ServiceModel.ApplicationUserSessionHeader.#ctor(GCS.Core.Common.Contracts.IApplicationUserSessionDataHeader)">
+             <summary>   Constructor. </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+            
+             <param name="data"> The data. </param>
+        </member>
+        <member name="M:GCS.Core.Common.ServiceModel.ApplicationUserSessionHeader.#ctor(GCS.Core.Common.ServiceModel.ApplicationUserSessionHeader)">
+            <summary>
+            
+            </summary>
+            <param name="data"></param>
+        </member>
+        <member name="M:GCS.Core.Common.ServiceModel.ApplicationUserSessionHeader.#ctor(GCS.Framework.Utilities.AssemblyAttributes)">
+             <summary>   Constructor. </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+            
+             <param name="assemblyAttributes">   The assembly attributes. </param>
+        </member>
+        <member name="M:GCS.Core.Common.ServiceModel.ApplicationUserSessionHeader.Init">
+             <summary>   Initialises this ApplicationUserSessionHeader. </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+        </member>
+        <member name="M:GCS.Core.Common.ServiceModel.ApplicationUserSessionHeader.Init(GCS.Framework.Utilities.AssemblyAttributes)">
+             <summary>   Initialises this ApplicationUserSessionHeader. </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+            
+             <param name="assemblyAttributes">   The assembly attributes. </param>
+        </member>
+        <member name="P:GCS.Core.Common.ServiceModel.ApplicationUserSessionHeader.SessionGuid">
+             <summary>   Gets or sets a unique identifier of the session. </summary>
+            
+             <value> Unique identifier of the session. </value>
+        </member>
+        <member name="P:GCS.Core.Common.ServiceModel.ApplicationUserSessionHeader.CurrentEntityId">
+             <summary>   Gets or sets the current entity identifier. </summary>
+            
+             <value> The identifier of the current entity. </value>
+        </member>
+        <member name="P:GCS.Core.Common.ServiceModel.ApplicationUserSessionHeader.CurrentSiteId">
+             <summary>   Gets or sets the current site identifier. </summary>
+            
+             <value> The identifier of the current site. </value>
+        </member>
+        <member name="P:GCS.Core.Common.ServiceModel.ApplicationUserSessionHeader.UserName">
+             <summary>   Gets or sets the name of the user. </summary>
+            
+             <value> The name of the user. </value>
+        </member>
+        <member name="P:GCS.Core.Common.ServiceModel.ApplicationUserSessionHeader.ApplicationName">
+             <summary>   Gets or sets the name of the application. </summary>
+            
+             <value> The name of the application. </value>
+        </member>
+        <member name="P:GCS.Core.Common.ServiceModel.ApplicationUserSessionHeader.OperationGuid">
+             <summary>   Gets or sets a unique identifier of the operation. </summary>
+            
+             <value> Unique identifier of the operation. </value>
+        </member>
+        <member name="P:GCS.Core.Common.ServiceModel.ApplicationUserSessionHeader.Culture">
+             <summary>   Gets or sets the culture. </summary>
+            
+             <value> The culture. </value>
+        </member>
+        <member name="P:GCS.Core.Common.ServiceModel.ApplicationUserSessionHeader.UiCulture">
+             <summary>   Gets or sets the culture. </summary>
+            
+             <value> The user interface culture. </value>
+        </member>
+        <member name="P:GCS.Core.Common.ServiceModel.ApplicationUserSessionHeader.ClientTimeZoneId">
+             <summary>   Gets or sets the identifier of the client time zone. </summary>
+            
+             <value> The identifier of the client time zone. </value>
+        </member>
+        <member name="P:GCS.Core.Common.ServiceModel.ApplicationUserSessionHeader.ApplicationId">
+             <summary>   Gets or sets the identifier of the application. </summary>
+            
+             <value> The identifier of the application. </value>
+        </member>
+        <member name="P:GCS.Core.Common.ServiceModel.ApplicationUserSessionHeader.ApplicationVersion">
+             <summary>   Gets or sets the application version. </summary>
+            
+             <value> The application version. </value>
+        </member>
+        <member name="P:GCS.Core.Common.ServiceModel.ApplicationUserSessionHeader.ProductVersionMajor">
+             <summary>   Gets or sets the product version major. </summary>
+            
+             <value> The product version major. </value>
+        </member>
+        <member name="P:GCS.Core.Common.ServiceModel.ApplicationUserSessionHeader.ProductVersionMinor">
+             <summary>   Gets or sets the product version minor. </summary>
+            
+             <value> The product version minor. </value>
+        </member>
+        <member name="P:GCS.Core.Common.ServiceModel.ApplicationUserSessionHeader.ProductVersionBuild">
+             <summary>   Gets or sets the product version build. </summary>
+            
+             <value> The product version build. </value>
+        </member>
+        <member name="P:GCS.Core.Common.ServiceModel.ApplicationUserSessionHeader.ProductVersionRevision">
+             <summary>   Gets or sets the product version revision. </summary>
+            
+             <value> The product version revision. </value>
+        </member>
+        <member name="P:GCS.Core.Common.ServiceModel.ApplicationUserSessionHeader.MachineName">
+             <summary>   Gets or sets the name of the machine. </summary>
+            
+             <value> The name of the machine. </value>
+        </member>
+    </members>
+</doc>

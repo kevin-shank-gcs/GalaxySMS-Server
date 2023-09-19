@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "GCS.Framework.Email.NetCore": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:8769;http://localhost:8770"
+    }
+  }
+}

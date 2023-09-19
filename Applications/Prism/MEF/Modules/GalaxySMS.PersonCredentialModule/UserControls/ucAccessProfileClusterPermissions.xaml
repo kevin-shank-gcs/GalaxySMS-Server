@@ -1,0 +1,210 @@
+﻿<UserControl x:Class="GalaxySMS.PersonCredential.UserControls.ucAccessProfileClusterPermissions"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:GalaxySMS.PersonCredential.UserControls"
+             xmlns:sharedResources="clr-namespace:GalaxySMS.Resources;assembly=GalaxySMS.Resources"
+             xmlns:ui="clr-namespace:GalaxySMS.Client.UI;assembly=GalaxySMS.Client.UI"
+             xmlns:core="http://www.galaxysys.com/GCS/Core"
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <sys:Double x:Key="ImageHeight">40</sys:Double>
+
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+
+        <telerik:RadExpander Grid.Column="0" ExpandDirection="Right" IsExpanded="True">
+            <telerik:RadExpander.Header>
+                <Border Style="{StaticResource HeaderBorder}">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock
+                            Margin="8"
+                            Style="{StaticResource Heading2Left}"
+                            Text="{x:Static sharedResources:Resources.AddClusterPermissionSelector_RegionSiteClusterTitle}" />
+                    </StackPanel>
+                </Border>
+            </telerik:RadExpander.Header>
+            <local:ucAccessProfileAddClusterPermissionSelector />
+        </telerik:RadExpander>
+        <telerik:RadGridView x:Name="RadGridView1" GroupRenderMode="Flat" Grid.Column="2"
+							 CanUserFreezeColumns="False"
+							 ItemsSource="{Binding DataContext.AccessProfile.AccessProfileClusters, RelativeSource={RelativeSource AncestorType=core:UserControlViewBase}}"
+                             GridLinesVisibility="None"
+							 RowIndicatorVisibility="Collapsed"
+                             RowDetailsVisibilityMode="VisibleWhenSelected"
+							 AutoGenerateColumns="False" EditTriggers="CellClick">
+            <telerik:RadGridView.Columns>
+                <telerik:GridViewColumn Header="{x:Static sharedResources:Resources.Common_Actions}" ToolTip="{x:Static sharedResources:Resources.Common_ActionsTooltip}" >
+                    <telerik:GridViewColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <ui:DeleteButtonControlBindable 
+                                    Command="{Binding DataContext.DeleteClusterPermissionCommand, RelativeSource={RelativeSource AncestorType=core:UserControlViewBase}}"
+                                    CommandParameter="{Binding}"
+                                    ImageHeight="16"
+                                    ImageWidth="16"
+                                    IsVisible="{Binding DataContext.IsAddNewClusterPermissionControlVisible, RelativeSource={RelativeSource AncestorType=core:UserControlViewBase}}"
+                                    Text="{x:Static sharedResources:Resources.DeletePersonClusterPermission_Text}"
+                                    ToolTip="{x:Static sharedResources:Resources.DeletePersonClusterPermission_ToolTip}" />
+                            </StackPanel>
+
+                        </DataTemplate>
+                    </telerik:GridViewColumn.CellTemplate>
+                </telerik:GridViewColumn>
+
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding RegionName}"
+                                            IsReadOnly="True"
+                                            Header="{x:Static sharedResources:Resources.PersonClusterPermission_RegionName_Title}" />
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding SiteName}"
+                                            IsReadOnly="True"
+                                            Header="{x:Static sharedResources:Resources.PersonClusterPermission_SiteName_Title}" />
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding ClusterName}"
+                                            IsReadOnly="True"
+											Header="{x:Static sharedResources:Resources.PersonClusterPermission_ClusterName_Title}" />
+                <telerik:GridViewImageColumn DataMemberBinding="{Binding ClusterImage}"
+                                             ImageWidth="{StaticResource ImageHeight}"
+											Header="{x:Static sharedResources:Resources.PersonClusterPermission_ClusterImage_Title}" />
+
+                <telerik:GridViewColumn Header="{x:Static sharedResources:Resources.PersonClusterPermission_AccessGroup1_Title}"  
+                                        ToolTip="{x:Static sharedResources:Resources.PersonClusterPermission_AccessGroup1_ToolTip}"
+                                        IsFilterable="False">
+                    <telerik:GridViewColumn.CellTemplate>
+                        <DataTemplate>
+                            <telerik:RadComboBox 
+                                                ItemsSource ="{Binding ClusterSelectionItem.AccessGroupNonExtendedSelectionItems}" 
+                                                DisplayMemberPath="AccessGroupName"
+                                                SelectedValue="{Binding AccessGroup1.AccessGroupUid, Mode=TwoWay}"
+                                                SelectedValuePath="AccessGroupUid">
+                            </telerik:RadComboBox>
+                        </DataTemplate>
+                    </telerik:GridViewColumn.CellTemplate>
+                </telerik:GridViewColumn>
+                <telerik:GridViewColumn Header="{x:Static sharedResources:Resources.PersonClusterPermission_AccessGroup2_Title}"  
+                                                ToolTip="{x:Static sharedResources:Resources.PersonClusterPermission_AccessGroup2_ToolTip}"
+                                        IsFilterable="False">
+                    <telerik:GridViewColumn.CellTemplate>
+                        <DataTemplate>
+                            <telerik:RadComboBox 
+                                                ItemsSource ="{Binding ClusterSelectionItem.AccessGroupNonExtendedSelectionItems}" 
+                                                DisplayMemberPath="AccessGroupName"
+                                                SelectedValue="{Binding AccessGroup2.AccessGroupUid, Mode=TwoWay}"
+                                                SelectedValuePath="AccessGroupUid">
+                            </telerik:RadComboBox>
+                        </DataTemplate>
+                    </telerik:GridViewColumn.CellTemplate>
+                </telerik:GridViewColumn>
+                <telerik:GridViewColumn Header="{x:Static sharedResources:Resources.PersonClusterPermission_AccessGroup3_Title}"  
+                                        ToolTip="{x:Static sharedResources:Resources.PersonClusterPermission_AccessGroup3_ToolTip}"
+                                        IsFilterable="False">
+                    <telerik:GridViewColumn.CellTemplate>
+                        <DataTemplate>
+                            <telerik:RadComboBox 
+                                                ItemsSource ="{Binding ClusterSelectionItem.AccessGroupWithExtendedSelectionItems}" 
+                                                DisplayMemberPath="AccessGroupName"
+                                                SelectedValue="{Binding AccessGroup3.AccessGroupUid, Mode=TwoWay}"
+                                                SelectedValuePath="AccessGroupUid">
+                            </telerik:RadComboBox>
+                        </DataTemplate>
+                    </telerik:GridViewColumn.CellTemplate>
+                </telerik:GridViewColumn>
+                <telerik:GridViewColumn Header="{x:Static sharedResources:Resources.PersonClusterPermission_AccessGroup4_Title}"
+                                        ToolTip="{x:Static sharedResources:Resources.PersonClusterPermission_AccessGroup4_ToolTip}"
+                                        IsFilterable="False">
+                    <telerik:GridViewColumn.CellTemplate>
+                        <DataTemplate>
+                            <telerik:RadComboBox 
+                                                ItemsSource ="{Binding ClusterSelectionItem.AccessGroupWithPersonalAccessGroupSelectionItems}" 
+                                                DisplayMemberPath="AccessGroupName"
+                                                SelectedValue="{Binding AccessGroup4.AccessGroupUid, Mode=TwoWay}"
+                                                SelectedValuePath="AccessGroupUid">
+                            </telerik:RadComboBox>
+                        </DataTemplate>
+                    </telerik:GridViewColumn.CellTemplate>
+                </telerik:GridViewColumn>
+
+
+                <telerik:GridViewColumn Header="{x:Static sharedResources:Resources.PersonClusterPermission_InputOutputGroup1_Title}"
+                                        ToolTip="{x:Static sharedResources:Resources.PersonClusterPermission_InputOutputGroup1_ToolTip}"
+                                        IsFilterable="False">
+                    <telerik:GridViewColumn.CellTemplate>
+                        <DataTemplate>
+                            <telerik:RadComboBox 
+                                                ItemsSource ="{Binding ClusterSelectionItem.InputOutputGroups}" 
+                                                DisplayMemberPath="InputOutputGroupName"
+                                                SelectedValue="{Binding InputOutputGroup1.InputOutputGroupUid, Mode=TwoWay}"
+                                                SelectedValuePath="InputOutputGroupUid">
+                            </telerik:RadComboBox>
+                        </DataTemplate>
+                    </telerik:GridViewColumn.CellTemplate>
+                </telerik:GridViewColumn>             
+
+                <telerik:GridViewColumn Header="{x:Static sharedResources:Resources.PersonClusterPermission_InputOutputGroup2_Title}"
+                                        ToolTip="{x:Static sharedResources:Resources.PersonClusterPermission_InputOutputGroup2_ToolTip}"
+                                        IsFilterable="False">
+                    <telerik:GridViewColumn.CellTemplate>
+                        <DataTemplate>
+                            <telerik:RadComboBox 
+                                                ItemsSource ="{Binding ClusterSelectionItem.InputOutputGroups}" 
+                                                DisplayMemberPath="InputOutputGroupName"
+                                                SelectedValue="{Binding InputOutputGroup2.InputOutputGroupUid, Mode=TwoWay}"
+                                                SelectedValuePath="InputOutputGroupUid">
+                            </telerik:RadComboBox>
+                        </DataTemplate>
+                    </telerik:GridViewColumn.CellTemplate>
+                </telerik:GridViewColumn>             
+                
+                <telerik:GridViewColumn Header="{x:Static sharedResources:Resources.PersonClusterPermission_InputOutputGroup3_Title}"
+                                        ToolTip="{x:Static sharedResources:Resources.PersonClusterPermission_InputOutputGroup3_ToolTip}"
+                                        IsFilterable="False">
+                    <telerik:GridViewColumn.CellTemplate>
+                        <DataTemplate>
+                            <telerik:RadComboBox 
+                                                ItemsSource ="{Binding ClusterSelectionItem.InputOutputGroups}" 
+                                                DisplayMemberPath="InputOutputGroupName"
+                                                SelectedValue="{Binding InputOutputGroup3.InputOutputGroupUid, Mode=TwoWay}"
+                                                SelectedValuePath="InputOutputGroupUid">
+                            </telerik:RadComboBox>
+                        </DataTemplate>
+                    </telerik:GridViewColumn.CellTemplate>
+                </telerik:GridViewColumn>                       
+
+                <telerik:GridViewColumn Header="{x:Static sharedResources:Resources.PersonClusterPermission_InputOutputGroup4_Title}"
+                                        ToolTip="{x:Static sharedResources:Resources.PersonClusterPermission_InputOutputGroup4_ToolTip}"
+                                        IsFilterable="False">
+                    <telerik:GridViewColumn.CellTemplate>
+                        <DataTemplate>
+                            <telerik:RadComboBox 
+                                                ItemsSource ="{Binding ClusterSelectionItem.InputOutputGroups}" 
+                                                DisplayMemberPath="InputOutputGroupName"
+                                                SelectedValue="{Binding InputOutputGroup4.InputOutputGroupUid, Mode=TwoWay}"
+                                                SelectedValuePath="InputOutputGroupUid">
+                            </telerik:RadComboBox>
+                        </DataTemplate>
+                    </telerik:GridViewColumn.CellTemplate>
+                </telerik:GridViewColumn>                
+                
+            </telerik:RadGridView.Columns>
+            <telerik:RadGridView.RowDetailsTemplate>
+                <DataTemplate>
+
+                </DataTemplate>
+            </telerik:RadGridView.RowDetailsTemplate>
+
+        </telerik:RadGridView>
+
+    </Grid>
+</UserControl>

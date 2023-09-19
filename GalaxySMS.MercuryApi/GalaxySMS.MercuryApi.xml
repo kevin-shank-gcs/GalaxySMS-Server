@@ -1,0 +1,244 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>GalaxySMS.MercuryApi</name>
+    </assembly>
+    <members>
+        <member name="T:GalaxySMS.MercuryApi.Controllers.Api.ApplicationSettingController">
+             <summary>   A controller for handling application settings. </summary>
+            
+             <seealso cref="T:GalaxySMS.Api.Controllers.Api.ControllerBaseEx"/>
+            =================================================================================================
+        </member>
+        <member name="M:GalaxySMS.MercuryApi.Controllers.Api.ApplicationSettingController.Get(System.Guid)">
+             <summary> Get a specific of gcsApplicationSetting item based on applicationSettingId (unique id (Guid or uuid) value). </summary>
+            
+             <param name="applicationSettingId">         Identifier for the setting. </param>
+             <returns>   A Task&lt;ActionResult&lt;ApiEntities.gcsApplicationSetting[]&gt;&gt; </returns>
+            =================================================================================================
+        </member>
+        <member name="M:GalaxySMS.MercuryApi.Controllers.Api.ApplicationSettingController.Post(GalaxySMS.Api.Models.RequestModels.SaveParams{GalaxySMS.Api.Models.RequestModels.gcsApplicationSettingPostReq})">
+             <summary>
+             Create a new gcsApplicationSetting item.
+             </summary>
+            
+             <param name="parameters">   Options for controlling the operation. </param>
+            
+             <returns>   A Task&lt;ActionResult&lt;ApiEntities.gcsApplicationSetting[]&gt;&gt; </returns>
+            =================================================================================================
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:GalaxySMS.MercuryApi.Controllers.Api.ApplicationSettingController.Put(GalaxySMS.Api.Models.RequestModels.SaveParams{GalaxySMS.Api.Models.RequestModels.gcsApplicationSettingPutReq})" -->
+        <member name="M:GalaxySMS.MercuryApi.Controllers.Api.ApplicationSettingController.Delete(System.Guid)">
+             <summary>
+             Delete a specific gcsApplicationSetting by applicationSettingId.
+             </summary>
+            
+             <param name="applicationSettingId"> Identifier for the setting to delete. </param>
+            
+             <returns>   A Task&lt;IActionResult&gt; </returns>
+            =================================================================================================        
+        </member>
+        <member name="M:GalaxySMS.MercuryApi.Controllers.Api.ApplicationSettingController.GetAllForApplication(System.Guid)">
+             <summary>
+             gets all for application.
+             </summary>
+            
+             <param name="applicationId"> Identifier for the application. </param>
+            
+             <returns>   all for application. </returns>
+            =================================================================================================
+        </member>
+        <member name="M:GalaxySMS.MercuryApi.Controllers.Api.ApplicationSettingController.GetSettingsForApplicationAndGroup(System.Guid,System.String)">
+             <summary>
+             gets settings for application and category.
+             </summary>
+            
+             <param name="applicationId"> Identifier for the application. </param>
+             <param name="category">    The category. </param>
+            
+             <returns>   The settings for application and category. </returns>
+            =================================================================================================
+        </member>
+        <member name="M:GalaxySMS.MercuryApi.Controllers.Api.ApplicationSettingController.GetSettingFromParameters(System.Guid,System.String,System.String,System.String,System.String,System.Boolean)">
+             <summary>
+             gets setting from parameters.
+             </summary>
+            
+             <param name="applicationId">         Identifier for the application. </param>
+             <param name="category">            The category. </param>
+             <param name="settingkey">              The key. </param>
+             <param name="defaultValue">     The default value. </param>
+             <param name="defaultdescription">         The description. </param>
+             <param name="createIfNotFound"> True to create if not found. </param>
+            
+             <returns>   The setting from parameters. </returns>
+            =================================================================================================
+        </member>
+        <member name="T:GalaxySMS.MercuryApi.Controllers.Api.AuthController">
+            <summary>
+            Manage user authentication operations such as sign in and sign out
+            </summary>
+        </member>
+        <member name="M:GalaxySMS.MercuryApi.Controllers.Api.AuthController.SignInAsync(GalaxySMS.Business.Entities.Api.NetCore.UserSignInRequest)">
+             <summary>   Sign in asynchronously. </summary>
+            
+             <remarks>   Use this to sign in to a specific application and obtain a token along with entities and roles/permissions </remarks>
+            
+             <param name="requestData">  Information describing the request. </param>
+            
+             <returns>   A Task&lt;ActionResult&lt;ApiEntities.UserSignInResult&gt;&gt; </returns>
+        </member>
+        <member name="M:GalaxySMS.MercuryApi.Controllers.Api.AuthController.VerifyTwoFactorAuthenticationTokenAsync(GalaxySMS.Business.Entities.Api.NetCore.TwoFactorAuthenticationData)">
+             <summary>
+             Verify two factor authentication token.
+             </summary>
+             <remarks>   Validate a two-factor authentication. Requires Authorization Bearer header which was returned from a prior call to api/auth/signinrequest</remarks>
+             <param name="requestData">  Information describing the request. </param>
+            
+             <returns>   A Task&lt;ActionResult&lt;ApiEntities.UserSignInResult&gt;&gt; </returns>
+            =================================================================================================
+        </member>
+        <member name="M:GalaxySMS.MercuryApi.Controllers.Api.AuthController.SignOutUserSessionToken">
+             <summary>
+             Sign out user.
+             </summary>
+             <remarks>   Sign out by passing the SessionId value in the request body. Requires Authorization Bearer header</remarks>
+             
+            
+             <returns>   A Task&lt;ActionResult&lt;ApiEntities.UserSessionToken&gt;&gt; </returns>
+            =================================================================================================
+        </member>
+        <member name="M:GalaxySMS.MercuryApi.Controllers.Api.AuthController.KeepSessionAlive">
+             <summary>   Keep session alive. </summary>
+             <remarks>   Refresh the session expiration time so that it does not go stale</remarks>
+            
+             <returns>   A Task&lt;ActionResult&lt;ApiEntities.UserSessionToken&gt;&gt; </returns>
+            =================================================================================================
+        </member>
+        <member name="M:GalaxySMS.MercuryApi.Controllers.Api.AuthController.DecodeToken">
+             <summary>   Decodes the JSON Web Token and returns the decoded values </summary>
+            
+             <returns>   A Task&lt;ActionResult&lt;JwtSecurityToken&gt;&gt; </returns>
+            =================================================================================================
+        </member>
+        <member name="M:GalaxySMS.MercuryApi.Controllers.Api.AuthController.UpdateSessionSettings(GalaxySMS.Business.Entities.Api.NetCore.SaveParameters{GalaxySMS.Business.Entities.Api.NetCore.UserSessionSettings})">
+             <summary>
+             updates the session settings described by parameters.
+             </summary>
+            
+             <param name="parameters">   Options for controlling the operation. </param>
+            
+             <returns>   A Task&lt;ActionResult&lt;ApiEntities.UserSessionToken&gt;&gt; </returns>
+            =================================================================================================
+        </member>
+        <member name="M:GalaxySMS.MercuryApi.Controllers.Api.AuthController.GetSampleData">
+            =================================================================================================
+        </member>
+        <member name="T:GalaxySMS.MercuryApi.Controllers.Api.ControllerController">
+             <summary>   Operations relating to Galaxy Panels. </summary>
+            <remarks>  </remarks>
+             <seealso cref="T:GalaxySMS.Api.Controllers.Api.ControllerBaseEx"/>
+            =================================================================================================
+        </member>
+        <member name="M:GalaxySMS.MercuryApi.Controllers.Api.ControllerController.Post(System.Collections.Generic.List{AscendGalaxyLibrary.Serialization.Mercury.MercuryPanel})">
+             <summary>   Add new panels. </summary>
+            
+             <remarks>   Adds new panels. Duplicate MACAddress values are not permitted. If any dups are detected, the entire request fails. </remarks>
+            
+             <param name="parameters">   Options for controlling the operation. </param>
+            
+             <returns>   A list of. </returns>
+        </member>
+        <member name="T:GalaxySMS.MercuryApi.Controllers.Api.UserSettingController">
+             <summary>   A controller for handling application settings. </summary>
+            
+             <seealso cref="T:GalaxySMS.Api.Controllers.Api.ControllerBaseEx"/>
+            =================================================================================================
+        </member>
+        <member name="M:GalaxySMS.MercuryApi.Controllers.Api.UserSettingController.Get(System.Guid)">
+             <summary> Get a specific of gcsUserSetting item based on applicationSettingId (unique id (Guid or uuid) value). </summary>
+            
+             <param name="userSettingId">         Identifier for the setting. </param>
+             <returns>   A Task&lt;ActionResult&lt;ApiEntities.gcsUserSetting[]&gt;&gt; </returns>
+            =================================================================================================
+        </member>
+        <member name="M:GalaxySMS.MercuryApi.Controllers.Api.UserSettingController.Post(GalaxySMS.Api.Models.RequestModels.SaveParams{GalaxySMS.Api.Models.RequestModels.UserSettingPostReq})">
+             <summary>
+             Create a new gcsUserSetting item.
+             </summary>
+            
+             <param name="parameters">   Options for controlling the operation. </param>
+            
+             <returns>   A Task&lt;ActionResult&lt;ApiEntities.gcsUserSetting[]&gt;&gt; </returns>
+            =================================================================================================
+        </member>
+        <member name="M:GalaxySMS.MercuryApi.Controllers.Api.UserSettingController.Put(GalaxySMS.Api.Models.RequestModels.SaveParams{GalaxySMS.Api.Models.RequestModels.UserSettingPutReq})">
+             <summary>
+             Updates an existing gcsUserSetting item. Can also create a new gcsUserSetting if the UserSettingId property is specified 
+             </summary>
+             <param name="parameters">   Options for controlling the operation. </param>
+            
+             <returns>   A Task&lt;ActionResult&lt;ApiEntities.gcsUserSetting&gt;&gt; </returns>
+            =================================================================================================
+        </member>
+        <member name="M:GalaxySMS.MercuryApi.Controllers.Api.UserSettingController.Delete(System.Guid)">
+             <summary>
+             Delete a specific gcsUserSetting by userSettingId.
+             </summary>
+            
+             <param name="userSettingId"> Identifier for the setting to delete. </param>
+            
+             <returns>   A Task&lt;IActionResult&gt; </returns>
+            =================================================================================================        
+        </member>
+        <member name="M:GalaxySMS.MercuryApi.Controllers.Api.UserSettingController.GetAllForUser(System.Guid)">
+             <summary>
+             gets all for user.
+             </summary>
+            
+             <param name="userId"> Identifier for the user. </param>
+            
+             <returns>   all for application. </returns>
+            =================================================================================================
+        </member>
+        <member name="M:GalaxySMS.MercuryApi.Controllers.Api.UserSettingController.GetSettingsForUserAndApplication(System.Guid,System.Nullable{System.Guid})">
+             <summary>
+             gets settings for user and application.
+             </summary>
+            
+             <param name="userId"> Identifier for the user. </param>
+             <param name="applicationId"> Identifier for the application. empty or 00000000-0000-0000-0000-000000000000 = no application</param>
+            
+             <returns>   The settings for application and category. </returns>
+            =================================================================================================
+        </member>
+        <member name="M:GalaxySMS.MercuryApi.Controllers.Api.UserSettingController.GetSettingsForUserApplicationCategory(System.Guid,System.String,System.Nullable{System.Guid})">
+             <summary>
+             gets setting from parameters.
+             </summary>
+            
+             <param name="userId">         Identifier for the application. </param>
+             <param name="category">            The category. </param>
+             <param name="applicationId"> Identifier for the application. empty or 00000000-0000-0000-0000-000000000000 = no application</param>
+            
+             <returns>   The setting from parameters. </returns>
+            =================================================================================================
+        </member>
+        <member name="M:GalaxySMS.MercuryApi.Controllers.Api.UserSettingController.GetSettingFromParameters(System.Guid,System.String,System.String,System.String,System.String,System.Boolean,System.Nullable{System.Guid})">
+             <summary>
+             gets setting from parameters.
+             </summary>
+            
+             <param name="userId">         Identifier for the user. </param>
+             <param name="category">            The category. </param>
+             <param name="settingkey">              The key. </param>
+             <param name="defaultValue">     The default value. </param>
+             <param name="defaultdescription">         The description. </param>
+             <param name="createIfNotFound"> True to create if not found. </param>
+             <param name="applicationId"> Identifier for the application. empty or 00000000-0000-0000-0000-000000000000 = no application</param>
+            
+             <returns>   The setting from parameters. </returns>
+            =================================================================================================
+        </member>
+    </members>
+</doc>

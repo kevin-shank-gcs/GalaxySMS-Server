@@ -1,0 +1,133 @@
+﻿////////////////////////////////////////////////////////////////////////////////////////////////////
+// file:	Shared.cs
+//
+// summary:	Implements the shared class
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+namespace GCS.Core.Common.WebApi
+{
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+    /// <summary>   Values that represent content types. </summary>
+    ///
+    /// <remarks>   Kevin, 4/23/2015. </remarks>
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    public enum ContentType
+    {
+        /// <summary>   An enum constant representing the JSON option. </summary>
+        Json,
+        /// <summary>   An enum constant representing the XML option. </summary>
+        Xml
+    }
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+    /// <summary>   A content type strings. </summary>
+    ///
+    /// <remarks>   Kevin, 4/23/2015. </remarks>
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    public class ContentTypeStrings
+    {
+        /// <summary>   The content type application JSON. </summary>
+        public const string ContentType_ApplicationJson = "application/json";
+        /// <summary>   The content type application XML. </summary>
+        public const string ContentType_ApplicationXml = "application/xml";
+    }
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+    /// <summary>   A web service call properties. </summary>
+    ///
+    /// <remarks>   Kevin, 4/23/2015. </remarks>
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    public class WebServiceCallProperties
+    {
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Default constructor. </summary>
+        ///
+        /// <remarks>   Kevin, 4/23/2015. </remarks>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        public WebServiceCallProperties()
+        {
+            ContentType = ContentType.Json;
+            AcceptType = ContentType.Json;
+            ServerUrl = string.Empty;
+            UrlSuffix = string.Empty;
+        }
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Gets or sets URL of the server. </summary>
+        ///
+        /// <value> The server URL. </value>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        public string ServerUrl { get; set; }
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Gets or sets the URL suffix. </summary>
+        ///
+        /// <value> The URL suffix. </value>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        public string UrlSuffix { get; set; }
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Gets or sets the type of the content. </summary>
+        ///
+        /// <value> The type of the content. </value>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        public ContentType ContentType { get; set; }
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Gets or sets the type of the accept. </summary>
+        ///
+        /// <value> The type of the accept. </value>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        public ContentType AcceptType { get; set; }
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Gets the content type string. </summary>
+        ///
+        /// <value> The content type string. </value>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        public string ContentTypeString
+        {
+            get
+            {
+                switch (ContentType)
+                {
+                    case ContentType.Xml:
+                        return ContentTypeStrings.ContentType_ApplicationXml;
+
+                    default:
+                        return ContentTypeStrings.ContentType_ApplicationJson;
+                }
+            }
+        }
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Gets the accept type string. </summary>
+        ///
+        /// <value> The accept type string. </value>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        public string AcceptTypeString
+        {
+            get
+            {
+                switch (AcceptType)
+                {
+                    case ContentType.Xml:
+                        return ContentTypeStrings.ContentType_ApplicationXml;
+
+                    default:
+                        return ContentTypeStrings.ContentType_ApplicationJson;
+                }
+            }
+        }
+    }
+}

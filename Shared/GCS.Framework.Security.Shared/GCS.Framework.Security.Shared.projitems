@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>4c1e46bc-e111-466e-b4ed-a75bd353af0f</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>GCS.Framework.Security.Shared</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Encryption.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Enums\AuthenticationType.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Enums\UserSignInRequestResult.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)PasswordGeneratorValidator.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)RandomTokenGenerator.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)X509CertificatesHelpers.cs" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,96 @@
+﻿<core:UserControlViewBase x:Class="GalaxySMS.MonitoredDevice.UserControls.InputDeviceSupervisionProperties"
+                          xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                          xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                          xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                          xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                          xmlns:core="http://www.galaxysys.com/GCS/Core"
+                          xmlns:prism="http://prismlibrary.com/"
+                          xmlns:prismInfra="clr-namespace:GalaxySMS.Prism.Infrastructure;assembly=GalaxySMS.Prism.Infrastructure"
+                          xmlns:resx="clr-namespace:GalaxySMS.MonitoredDevice.Properties"
+                          xmlns:sharedResources="clr-namespace:GalaxySMS.Resources;assembly=GalaxySMS.Resources"
+                          xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+                          xmlns:converters="clr-namespace:GCS.Core.Common.UI.Converters;assembly=GCS.Core.Common.UI"
+                          xmlns:ui="clr-namespace:GalaxySMS.Client.UI;assembly=GalaxySMS.Client.UI"
+                          xmlns:ui1="clr-namespace:GCS.Core.Common.UI;assembly=GCS.Core.Common.UI"
+                          xmlns:local="clr-namespace:GalaxySMS.MonitoredDevice.UserControls"
+                          xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+                          mc:Ignorable="d"
+                          d:DesignHeight="300" d:DesignWidth="300"
+                          FlowDirection="{Binding FlowDirection}">
+    <core:UserControlViewBase.Resources>
+        <BitmapImage x:Key="NormalClosed" UriSource="/GalaxySMS.Resources;component/Images/Inputs/32x32/switch-closed.png" />
+        <BitmapImage x:Key="NormalOpen" UriSource="/GalaxySMS.Resources;component/Images/Inputs/32x32/switch_open.png" />
+        <converters:BooleanToVisibilityConverter x:Key="boolToVisibility"/>
+        <converters:InverseBooleanToVisibilityConverter x:Key="boolToNotVisibility"/>
+    </core:UserControlViewBase.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+
+        <telerik:RadExpander Margin="5" IsExpanded="{Binding IsSupervisionControlExpanded}"
+                             ExpandDirection="Down">
+            <telerik:RadExpander.Header>
+                <Border Style="{StaticResource HeaderBorder}">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Margin="8"
+                                   Style="{StaticResource Heading2Left}"
+                                   Text="{x:Static sharedResources:Resources.InputDeviceProperties_SupervisionProperties_HeaderText}" />
+                    </StackPanel>
+                </Border>
+            </telerik:RadExpander.Header>
+
+            <StackPanel Orientation="Horizontal">
+                <StackPanel Orientation="Vertical" Margin="3">
+                    <TextBlock
+                        Text="{x:Static sharedResources:Resources.InputDeviceProperties_SupervisionProperties_Text}"
+                        Style="{StaticResource DataEntryControlTitle}" />
+                    <telerik:RadComboBox ItemsSource="{Binding DeviceSpecificEditingData.ContactSupervisionTypes}"
+                                         SelectedValue="{Binding InputDevice.GalaxyInputDevice.InputDeviceSupervisionTypeUid}"
+                                         SelectedValuePath="InputDeviceSupervisionTypeUid"
+                                         ToolTip="{x:Static sharedResources:Resources.InputDeviceProperties_SupervisionProperties_ToolTip}">
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="SelectionChanged">
+                                <i:InvokeCommandAction 
+                        Command="{Binding Path=DataContext.SupervisionTypeSelectionChanged, Mode=OneWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type core:UserControlViewBase}}}"
+                        CommandParameter="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=telerik:RadComboBox}, Path=SelectedItem}"/>
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                        <telerik:RadComboBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal" ToolTip="{Binding Description}">
+                                    <Image MaxHeight="48"
+                                           Width="Auto"
+                                           Margin="5"
+                                           Source="{Binding gcsBinaryResource.BinaryResource}" />
+                                    <TextBlock
+                                        VerticalAlignment="Center"
+                                        Text="{Binding Display}" />
+                                </StackPanel>
+                            </DataTemplate>
+                        </telerik:RadComboBox.ItemTemplate>
+                    </telerik:RadComboBox>
+
+                </StackPanel>
+                <StackPanel Margin="3">
+                    <ui:ToggleSwitchButtonBindable
+                            IsChecked="{Binding InputDevice.GalaxyInputDevice.IsNormalOpen, Mode=TwoWay}"
+                            TitleText="{x:Static sharedResources:Resources.InputDeviceProperties_IsNormalOpen_Text}"
+                            ToolTip="{x:Static sharedResources:Resources.InputDeviceProperties_IsNormalOpen_ToolTip}"
+                            TitleStyle="{StaticResource DataEntryControlTitle}"
+                            CheckedImageSource="{StaticResource NormalOpen}"
+                            UncheckedImageSource="{StaticResource NormalClosed}"
+                            CheckedToolTip="{x:Static sharedResources:Resources.InputDeviceProperties_NormalOpen_ToolTip}"
+                            UncheckedToolTip="{x:Static sharedResources:Resources.InputDeviceProperties_NormalClosed_ToolTip}" 
+                            CheckedStateTextVisibility="Visible"
+                            CheckedStateText ="{x:Static sharedResources:Resources.NormallyOpen_Text}"
+                            UncheckedStateText="{x:Static sharedResources:Resources.NormallyClosed_Text}"/>
+                </StackPanel>
+                <local:InputDeviceDIOVoltageSettings Visibility="{Binding AreVoltageSettingVisible, Converter={StaticResource boolToVisibility}}"/>
+            </StackPanel>
+        </telerik:RadExpander>
+    </Grid>
+</core:UserControlViewBase>
+

@@ -1,0 +1,221 @@
+﻿<UserControl x:Class="GalaxySMS.FacilityManager.Views.RibbonViewContainer"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:GalaxySMS.FacilityManager.Views"
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+            xmlns:prism="http://prismlibrary.com/"
+         xmlns:resx="clr-namespace:GalaxySMS.FacilityManager.Properties"
+         xmlns:prismInfra="clr-namespace:GalaxySMS.Prism.Infrastructure;assembly=GalaxySMS.Prism.Infrastructure"
+         xmlns:converters="clr-namespace:GCS.Core.Common.UI.Converters;assembly=GCS.Core.Common.UI"
+         mc:Ignorable="d" 
+             d:DesignHeight="200" d:DesignWidth="500">
+  <UserControl.Resources>
+    <Style x:Key="helpBtnStyle" TargetType="telerik:RadRibbonButton">
+      <Setter Property="telerik:ScreenTip.Description" Value="Press F1 for help" />
+    </Style>
+        <converters:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+    </UserControl.Resources>
+
+        <telerik:RadRibbonView prism:RegionManager.RegionName="{x:Static prismInfra:RegionNames.RibbonTabRegion}" HelpButtonVisibility="Visible"
+                               ApplicationName="{Binding Title}"
+                               ApplicationButtonImageSource="..\Images/Backstage_Icon.png"
+                               HelpButtonStyle="{StaticResource helpBtnStyle}"
+                               HelpCommand="{Binding OpenHelpPageCommand}" >
+    <telerik:RadRibbonView.QuickAccessToolBar>
+      <telerik:QuickAccessToolBar>
+        <telerik:RadRibbonButton Text="Save"
+                                 Size="Small" telerik:KeyTipService.AccessText="1" Content="Save" />
+        <!--<telerik:RadRibbonButton Text="Undo"
+                                 Size="Small" telerik:KeyTipService.AccessText="2" />-->
+        <telerik:RadRibbonButton Text="Print"
+                                 Size="Small" telerik:KeyTipService.AccessText="3" />
+      </telerik:QuickAccessToolBar>
+    </telerik:RadRibbonView.QuickAccessToolBar>
+    <telerik:RadRibbonView.Backstage>
+      <telerik:RadRibbonBackstage>
+        <telerik:RadRibbonBackstageItem Header="{x:Static resx:Resources.User_SignIn}" Command="{Binding NavigateCommand}" CommandParameter="SignInOutView" IsSelectable="False"/>
+        <!--<telerik:RadRibbonBackstageItem Header="Save As" IsSelectable="False"/>
+        <telerik:RadRibbonBackstageItem Header="Open" IsSelectable="False"/>-->
+      </telerik:RadRibbonBackstage>
+    </telerik:RadRibbonView.Backstage>
+        <telerik:RadRibbonTab x:Name="XRibbonTabHome" Header="{x:Static resx:Resources.RibbonTabHome_Header}">
+            <telerik:RadRibbonGroup Header="{x:Static resx:Resources.RibbonTabGroup_User}">
+                <telerik:RadRibbonDropDownButton Text="{Binding UserButtonText}" 
+                                              ToolTip="{x:Static resx:Resources.User_SignInToolTip}" 
+                                              LargeImage="{Binding UserImage}"
+                                              Size="Large">
+                    <telerik:RadRibbonDropDownButton.DropDownContent>
+                    <telerik:RadContextMenu BorderThickness="0">
+                            <telerik:RadMenuItem Header="{x:Static resx:Resources.User_SignIn}"
+                                                 ToolTip="{x:Static resx:Resources.User_SignInToolTip}"
+                                              Command="{Binding NavigateCommand}" CommandParameter="SignInOutView" telerik:KeyTipService.AccessText="S"/>
+                        <!--<telerik:RadMenuItem Header="Paste Special..." telerik:KeyTipService.AccessText="H"/>
+                        <telerik:RadMenuItem Header="Paste as Hyperlink" IsEnabled="False"/>-->
+                    </telerik:RadContextMenu>
+                </telerik:RadRibbonDropDownButton.DropDownContent>
+                </telerik:RadRibbonDropDownButton>
+                <StackPanel Visibility="{Binding IsUserSessionValid, Converter={StaticResource BooleanToVisibilityConverter}}">
+                    <telerik:RadComboBox telerik:ScreenTip.Title="{x:Static resx:Resources.CurrentUserEntityUserControl_SelectedEntityTitle}"
+									telerik:ScreenTip.Description="{x:Static resx:Resources.CurrentUserEntityUserControl_SelectedEntityToolTip}"
+									telerik:KeyTipService.AccessText="UE"
+                                    ToolTip="{x:Static resx:Resources.CurrentUserEntityUserControl_SelectedEntityToolTip}" 
+                                    ItemsSource="{Binding CurrentUserEntities}" 
+                                    SelectedItem="{Binding CurrentUserEntity}"                                    >
+                        <telerik:RadComboBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Source="{Binding Thumbnail}" Height="32" Width="Auto" Margin="5"/>
+                                    <TextBlock VerticalAlignment="Center" FontSize="12" Text="{Binding Path=EntityName}"></TextBlock>
+                                </StackPanel>
+                            </DataTemplate>
+                        </telerik:RadComboBox.ItemTemplate>
+                    </telerik:RadComboBox>
+
+                </StackPanel>
+            </telerik:RadRibbonGroup>
+            <!--<telerik:RadRibbonGroup Header="Clipboard">
+                <telerik:RadRibbonButton Text="Paste" 
+                                             SmallImage="..\images/paste.png"
+                                             LargeImage="..\images/paste.png" Size="Large"/>
+                <telerik:RadCollapsiblePanel>
+                    <telerik:RadRibbonButton Text="Cut" 
+                                                 SmallImage="..\images/cut.png"
+                                                 CollapseToSmall="WhenGroupIsMedium"/>
+                    <telerik:RadRibbonButton Text="Copy" 
+                                                 SmallImage="..\images/copy.png"
+								                 CollapseToSmall="WhenGroupIsMedium"/>
+                    <telerik:RadRibbonButton Text="Format Painter"
+                                                 SmallImage="..\images/formatpainter.png"
+                                                 CollapseToSmall="WhenGroupIsMedium"/>
+                </telerik:RadCollapsiblePanel>
+            </telerik:RadRibbonGroup>-->
+            <telerik:RadRibbonGroup Header="{x:Static resx:Resources.RibbonTabGroup_Locations}" Visibility="{Binding IsUserSessionValid, Converter={StaticResource BooleanToVisibilityConverter}}">
+                <telerik:RadRibbonButton Text="{x:Static resx:Resources.RibbonButton_Regions_Text}" 
+                                         ToolTip="{x:Static resx:Resources.RibbonButton_Regions_ToolTip}"
+                                         Command="{Binding NavigateCommand}" CommandParameter="RegionView"
+                                             SmallImage="..\images/Globe.png"
+                                             LargeImage="..\images/Globe.png" Size="Large"/>
+                <telerik:RadRibbonButton Text="{x:Static resx:Resources.RibbonButton_Sites_Text}" 
+                                         ToolTip="{x:Static resx:Resources.RibbonButton_Sites_ToolTip}"
+                                         Command="{Binding NavigateCommand}" CommandParameter="SiteView"
+                                             SmallImage="..\images/site.png"
+                                             LargeImage="..\images/site.png" Size="Large"/>
+                <!--<telerik:RadCollapsiblePanel>
+                    <telerik:RadRibbonButton Text="Sites" 
+                                                 SmallImage="..\images/cut.png"
+                                                 CollapseToSmall="WhenGroupIsMedium"/>
+                    <telerik:RadRibbonButton Text="Copy" 
+                                                 SmallImage="..\images/copy.png"
+								                 CollapseToSmall="WhenGroupIsMedium"/>
+                    <telerik:RadRibbonButton Text="Format Painter"
+                                                 SmallImage="..\images/formatpainter.png"
+                                                 CollapseToSmall="WhenGroupIsMedium"/>
+                </telerik:RadCollapsiblePanel>-->
+            </telerik:RadRibbonGroup>
+            <telerik:RadRibbonGroup Header="{x:Static resx:Resources.RibbonTabGroup_Devices}" Visibility="{Binding IsUserSessionValid, Converter={StaticResource BooleanToVisibilityConverter}}">
+                <telerik:RadRibbonButton Text="{x:Static resx:Resources.RibbonButton_AccessPortals_Text}" 
+                                         ToolTip="{x:Static resx:Resources.RibbonButton_AccessPortals_ToolTip}"
+                                         Command="{Binding NavigateCommand}" CommandParameter="AccessPortalEditView"
+                                             SmallImage="..\images/Door-Padlock.png"
+                                             LargeImage="..\images/Door-Padlock.png" Size="Large"/>
+                <telerik:RadRibbonButton Text="{x:Static resx:Resources.RibbonButton_MonitoredDevices_Text}" 
+                                         ToolTip="{x:Static resx:Resources.RibbonButton_MonitoredDevices_ToolTip}"
+                                         Command="{Binding NavigateCommand}" CommandParameter="MonitoredDeviceEditView"
+                                             SmallImage="..\images/alarm_detector.png"
+                                             LargeImage="..\images/alarm_detector.png" Size="Large"/>
+                <telerik:RadRibbonButton Text="{x:Static resx:Resources.RibbonButton_OutputDevices_Text}" 
+                                         ToolTip="{x:Static resx:Resources.RibbonButton_OutputDevices_ToolTip}"
+                                         Command="{Binding NavigateCommand}" CommandParameter="OutputDeviceEditView"
+                                             SmallImage="..\images/alarm_bell.png"
+                                             LargeImage="..\images/alarm_bell.png" Size="Large"/>
+                <telerik:RadRibbonButton Text="{x:Static resx:Resources.RibbonButton_VideoCameras_Text}" 
+                                         ToolTip="{x:Static resx:Resources.RibbonButton_VideoCameras_ToolTip}"
+                                         Command="{Binding NavigateCommand}" CommandParameter="CameraEditView"
+                                             SmallImage="..\images/camera_cctv.png"
+                                             LargeImage="..\images/camera_cctv.png" Size="Large"/>            
+            </telerik:RadRibbonGroup>
+            <telerik:RadRibbonGroup Header="{x:Static resx:Resources.RibbonTabGroup_Schedules}" Visibility="{Binding IsUserSessionValid, Converter={StaticResource BooleanToVisibilityConverter}}">
+                <telerik:RadRibbonButton Text="{x:Static resx:Resources.RibbonButton_Schedules_Text}" 
+                                         ToolTip="{x:Static resx:Resources.RibbonButton_Schedules_ToolTip}"
+                                         Command="{Binding NavigateCommand}" CommandParameter="ScheduleEditView"
+                                             SmallImage="..\images/time-schedule.png"
+                                             LargeImage="..\images/time-schedule.png" Size="Large"/>
+                <telerik:RadRibbonButton Text="{x:Static resx:Resources.RibbonButton_DayTypes_Text}" 
+                                         ToolTip="{x:Static resx:Resources.RibbonButton_DayTypes_ToolTip}"
+                                         Command="{Binding NavigateCommand}" CommandParameter="DayTypesEditView"
+                                             SmallImage="..\images/calendar.png"
+                                             LargeImage="..\images/calendar.png" Size="Large"/>
+            </telerik:RadRibbonGroup>
+            <telerik:RadRibbonGroup Header="{x:Static resx:Resources.RibbonTabGroup_AccessPermissions}" Visibility="{Binding IsUserSessionValid, Converter={StaticResource BooleanToVisibilityConverter}}">
+                <telerik:RadRibbonButton Text="{x:Static resx:Resources.RibbonButton_AccessGroups_Text}" 
+                                         ToolTip="{x:Static resx:Resources.RibbonButton_AccessGroups_ToolTip}"
+                                         Command="{Binding NavigateCommand}" CommandParameter="AccessGroupEditView"
+                                             SmallImage="..\images/access_group.png"
+                                             LargeImage="..\images/access_group.png" Size="Large"/>
+                <telerik:RadRibbonButton Text="{x:Static resx:Resources.RibbonButton_AccessProfiles_Text}" 
+                                         ToolTip="{x:Static resx:Resources.RibbonButton_AccessProfiles_ToolTip}"
+                                         Command="{Binding NavigateCommand}" CommandParameter="AccessProfilesEditView"
+                                             SmallImage="..\images/group_profile.png"
+                                             LargeImage="..\images/group_profile.png" Size="Large"/>
+            </telerik:RadRibbonGroup>
+            <telerik:RadRibbonGroup Header="{x:Static resx:Resources.RibbonTabGroup_PersonnelCredentials}" Visibility="{Binding IsUserSessionValid, Converter={StaticResource BooleanToVisibilityConverter}}">
+            <telerik:RadRibbonButton Text="{x:Static resx:Resources.RibbonButton_Personnel_Text}" 
+                                         ToolTip="{x:Static resx:Resources.RibbonButton_Personnel_ToolTip}"
+                                         Command="{Binding NavigateCommand}" CommandParameter="PersonnelEditView"
+                                             SmallImage="..\images/employees.png"
+                                             LargeImage="..\images/employees.png" Size="Large"/>
+            <telerik:RadRibbonButton Text="{x:Static resx:Resources.RibbonButton_Credentials_Text}" 
+                                         ToolTip="{x:Static resx:Resources.RibbonButton_Credentials_ToolTip}"
+                                         Command="{Binding NavigateCommand}" CommandParameter="CredentialsEditView"
+                                             SmallImage="..\images/access_card-print.png"
+                                             LargeImage="..\images/access_card-print.png" Size="Large"/>
+            </telerik:RadRibbonGroup>
+            <telerik:RadRibbonGroup Header="{x:Static resx:Resources.RibbonTabGroup_Reports}" Visibility="{Binding IsUserSessionValid, Converter={StaticResource BooleanToVisibilityConverter}}">
+                <telerik:RadRibbonButton Text="{x:Static resx:Resources.RibbonButton_ViewReports_Text}" 
+                                         ToolTip="{x:Static resx:Resources.RibbonButton_ViewReports_ToolTip}"
+                                         Command="{Binding NavigateCommand}" CommandParameter="ReportsView"
+                                             SmallImage="..\images/report-print.png"
+                                             LargeImage="..\images/report-print.png" Size="Large"/>
+            </telerik:RadRibbonGroup>
+        </telerik:RadRibbonTab>
+        <telerik:RadRibbonTab x:Name="XRibbonTabHardwareDevices" Header="{x:Static resx:Resources.RibbonTabHardwareDevices_Header}" Visibility="{Binding IsUserSessionValid, Converter={StaticResource BooleanToVisibilityConverter}}">
+            <telerik:RadRibbonGroup Header="{x:Static resx:Resources.RibbonTabGroup_GalaxyControlSystems}" Visibility="{Binding IsUserSessionValid, Converter={StaticResource BooleanToVisibilityConverter}}">
+                <telerik:RadRibbonButton Text="{x:Static resx:Resources.RibbonButton_GalaxyClusters_Text}" 
+                                         ToolTip="{x:Static resx:Resources.RibbonButton_GalaxyClusters_ToolTip}"
+                                         Command="{Binding NavigateCommand}" CommandParameter="GalaxyClusterEditView"
+                                             SmallImage="..\images/cluster.png"
+                                             LargeImage="..\images/cluster.png" Size="Large"/>
+            </telerik:RadRibbonGroup>
+            <telerik:RadRibbonGroup Header="{x:Static resx:Resources.RibbonTabGroup_AssaAbloy}" Visibility="{Binding IsUserSessionValid, Converter={StaticResource BooleanToVisibilityConverter}}">
+                <telerik:RadRibbonButton Text="{x:Static resx:Resources.RibbonButton_AssaAbloy_Text}" 
+                                         ToolTip="{x:Static resx:Resources.RibbonButton_AssaAbloy_ToolTip}"
+                                         Command="{Binding NavigateCommand}" CommandParameter="AssaAbloyEditView"
+                                             SmallImage="..\images/Assa-Abloy-logo.png"
+                                             LargeImage="..\images/Assa-Abloy-logo.png" Size="Large"/>
+            </telerik:RadRibbonGroup>
+            <telerik:RadRibbonGroup Header="{x:Static resx:Resources.RibbonTabGroup_Bosch}" Visibility="{Binding IsUserSessionValid, Converter={StaticResource BooleanToVisibilityConverter}}">
+                <telerik:RadRibbonButton Text="{x:Static resx:Resources.RibbonButton_Bosch_Text}" 
+                                         ToolTip="{x:Static resx:Resources.RibbonButton_Bosch_ToolTip}"
+                                         Command="{Binding NavigateCommand}" CommandParameter="GalaxyClusterEditView"
+                                             SmallImage="..\images/Bosch-logo.png"
+                                             LargeImage="..\images/Bosch-logo.png" Size="Large"/>
+            </telerik:RadRibbonGroup>
+            <telerik:RadRibbonGroup Header="{x:Static resx:Resources.RibbonTabGroup_VideoSystems}" Visibility="{Binding IsUserSessionValid, Converter={StaticResource BooleanToVisibilityConverter}}">
+                <!--<telerik:RadRibbonButton Text="{x:Static resx:Resources.RibbonButton_GalaxyClusters_Text}" 
+                                         ToolTip="{x:Static resx:Resources.RibbonButton_GalaxyClusters_ToolTip}"
+                                         Command="{Binding NavigateCommand}" CommandParameter="GalaxyClusterEditView"
+                                             SmallImage="..\images/report-print.png"
+                                             LargeImage="..\images/report-print.png" Size="Large"/>-->
+            </telerik:RadRibbonGroup>        </telerik:RadRibbonTab>
+        <telerik:RadRibbonTab x:Name="XRibbonTabSettings" Header="{x:Static resx:Resources.RibbonTabSettings_Header}">
+            <telerik:RadRibbonGroup Header="{x:Static resx:Resources.RibbonTabGroup_Theme}">
+                <StackPanel Orientation="Vertical">
+                    <telerik:RadComboBox ItemsSource="{Binding Themes}" DisplayMemberPath="DisplayName"
+                                           SelectedItem="{Binding SelectedTheme}" />
+                </StackPanel>
+            </telerik:RadRibbonGroup>
+        </telerik:RadRibbonTab>
+    </telerik:RadRibbonView>
+</UserControl>

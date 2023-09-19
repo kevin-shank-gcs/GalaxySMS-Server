@@ -1,0 +1,43 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <DocumentationFile>d:\Dev\GalaxySMS\GalaxySMS.Cdn\GalaxySMS.Cdn.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="ResponseModels\" />
+    <Folder Include="Resources\" />
+    <Folder Include="uploads\photos\entity\" />
+    <Folder Include="uploads\photos\user\" />
+    <Folder Include="uploads\photos\person\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.10" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="6.0.10" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning" Version="5.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Hosting.WindowsServices" Version="6.0.1" />
+    <PackageReference Include="Serilog.AspNetCore" Version="6.0.1" />
+    <PackageReference Include="Serilog.Sinks.MSSqlServer" Version="5.8.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore.Annotations" Version="6.4.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore.Filters" Version="7.0.5" />
+    <PackageReference Include="Swashbuckle.AspNetCore.ReDoc" Version="6.4.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="6.4.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="6.4.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="6.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\GalaxySMS.Business.Entities.NetCore\GalaxySMS.Business.Entities.NetCore.csproj" />
+    <ProjectReference Include="..\GalaxySMS.Client.SDK.NetCore\GalaxySMS.Client.SDK.NetCore.csproj" />
+    <ProjectReference Include="..\GCS.Framework\NETCore\GCS.Core.Common.NetCore\GCS.Core.Common.NetCore.csproj" />
+    <ProjectReference Include="..\NETCore\GalaxySMS.Business.Entities.Api.NetCore\GalaxySMS.Business.Entities.Api.NetCore.csproj" />
+  </ItemGroup>
+
+</Project>

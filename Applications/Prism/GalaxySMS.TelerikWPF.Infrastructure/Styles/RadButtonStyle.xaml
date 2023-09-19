@@ -1,0 +1,585 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d"
+    xmlns:System="clr-namespace:System;assembly=mscorlib"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+    xmlns:theme="clr-namespace:GalaxySMS.TelerikWPF.Infrastructure.Appearance">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="Brushes.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+
+    <telerik:BooleanToVisibilityConverter x:Key="BooleanToOpacityConverterInstance" />
+
+    <!--HEADER NAVIGATION RADIO BUTTON STYLE-->
+    <ControlTemplate TargetType="telerik:RadRadioButton" x:Key="RadRadioButtonTemplate">
+            <TextBlock x:Name="text" Opacity="0.7" 
+                        Text="{TemplateBinding Tag}"
+						Margin="{TemplateBinding Padding}"
+                        Foreground="{TemplateBinding Foreground}"
+                        FontSize="{TemplateBinding FontSize}"
+						VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+						HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"/>
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsChecked" Value="True">
+                <Setter TargetName="text" Property="TextElement.Foreground" Value="{theme:ThemeResource Resource=AccentBrush}" />
+                <Setter TargetName="text" Property="Opacity" Value="1" />
+            </Trigger>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter TargetName="text" Property="TextElement.Foreground" Value="{theme:ThemeResource Resource=AccentBrush}" />
+                <Setter TargetName="text" Property="Opacity" Value="1" />
+            </Trigger>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter TargetName="text" Property="TextElement.Foreground" Value="{theme:ThemeResource Resource=AccentBrush}" />
+                <Setter TargetName="text" Property="Opacity" Value="1" />
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
+    <!-- HEADER NAVIGATION RADIO BUTTON STYLE -->
+    <Style TargetType="telerik:RadRadioButton" x:Key="RadRadioButtonLargeStyle">
+        <Setter Property="Foreground" Value="{theme:ThemeResource Resource=Foreground}" />
+        <Setter Property="FontFamily" Value="{StaticResource FontFamily}" />
+        <Setter Property="FontSize" Value="18" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="BorderBrush" Value="Transparent" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Padding" Value="5 0" />
+        <Setter Property="Margin" Value="5 0 0 0" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="FocusVisualStyle" Value="{StaticResource CustomFocusVisual}" />
+        <Setter Property="Template" Value="{StaticResource RadRadioButtonTemplate}"/>
+    </Style>
+
+    <!--HEADER NAVIGATION TOGGLE BUTTON STYLE-->
+    <Style TargetType="telerik:RadToggleButton" x:Key="DialogToggleButtonStyle">
+        <Setter Property="Foreground" Value="{StaticResource HighDarkBrush}"/>
+        <Setter Property="Background" Value="{StaticResource TransparentBrush}" />
+        <Setter Property="Margin" Value="5 0 0 0"/>
+        <Setter Property="FocusVisualStyle" Value="{StaticResource CustomFocusVisual}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="telerik:RadToggleButton">
+                    <Grid>
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal"/>
+                                <VisualState x:Name="MouseOver">
+                                    <Storyboard>
+                                        <DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="MouseOverVisual" />
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Pressed">
+                                    <Storyboard>
+                                        <DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="MouseOverVisual" />
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Disabled" />
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="CheckStates">
+                                <VisualState x:Name="Checked">
+                                    <Storyboard>
+                                        <DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="CheckedVisual"/>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Unchecked"/>
+                                <VisualState x:Name="Indeterminate"/>
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="FocusStates">
+                                <VisualState x:Name="Focused" />
+                                <VisualState x:Name="Unfocused"/>
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="ValidationStates">
+                                <VisualState x:Name="Valid"/>
+                                <VisualState x:Name="InvalidFocused"/>
+                                <VisualState x:Name="InvalidUnfocused"/>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+
+                        <Grid VerticalAlignment="Center" HorizontalAlignment="Center" Background="{TemplateBinding Background}">
+                            <Path x:Name="NormalVisual" Data="M11,9 C12,9 13,10 13,11 C13,12 12,13 11,13 C10,13 9,12 9,11 C9,10 10,9 11,9 z M10.8,5.9 C10,5.9 9.3,6 8.6,6.4 C6.1,7.7 5.1,10.8 6.5,13.3 C7.8,15.8 10.9,16.8 13.4,15.6 C15.9,14.2 16.9,11.2 15.5,8.7 C14.6,6.9 12.7,5.8 10.8,5.9 z M9.8,0 L10.9,2.6 C11.6,2.6 12.4,2.9 13,3 L15,0.6 L18,2.5 L16.9,5.3 C17.4,5.8 17.6,6.3 18,6.8 L21.1,6.4 L22,10 L19.1,11.2 C19.1,11.8 19.1,12.4 18.9,12.9 L21.4,15 L19.4,18.1 L16.8,17 C16.3,17.3 15.8,17.7 15.3,18.1 L15.5,21.2 L12,22 L10.9,19.4 C10.3,19.4 9.5,19.2 8.9,19 L7,21.4 L4,19.5 L5,16.8 C4.6,16.3 4.1,15.8 3.9,15.2 L0.9,15.6 L0,11.9 L2.6,10.8 C2.8,10.2 2.8,9.6 3,8.9 L0.6,7 L2.6,3.9 L5.3,5 C5.6,4.7 6.1,4.3 6.6,3.9 L6.1,1 z" Stretch="None" Fill="{TemplateBinding Foreground}" />
+                            <Path x:Name="MouseOverVisual" Opacity="0" Data="M11,9 C12,9 13,10 13,11 C13,12 12,13 11,13 C10,13 9,12 9,11 C9,10 10,9 11,9 z M10.8,5.9 C10,5.9 9.3,6 8.6,6.4 C6.1,7.7 5.1,10.8 6.5,13.3 C7.8,15.8 10.9,16.8 13.4,15.6 C15.9,14.2 16.9,11.2 15.5,8.7 C14.6,6.9 12.7,5.8 10.8,5.9 z M9.8,0 L10.9,2.6 C11.6,2.6 12.4,2.9 13,3 L15,0.6 L18,2.5 L16.9,5.3 C17.4,5.8 17.6,6.3 18,6.8 L21.1,6.4 L22,10 L19.1,11.2 C19.1,11.8 19.1,12.4 18.9,12.9 L21.4,15 L19.4,18.1 L16.8,17 C16.3,17.3 15.8,17.7 15.3,18.1 L15.5,21.2 L12,22 L10.9,19.4 C10.3,19.4 9.5,19.2 8.9,19 L7,21.4 L4,19.5 L5,16.8 C4.6,16.3 4.1,15.8 3.9,15.2 L0.9,15.6 L0,11.9 L2.6,10.8 C2.8,10.2 2.8,9.6 3,8.9 L0.6,7 L2.6,3.9 L5.3,5 C5.6,4.7 6.1,4.3 6.6,3.9 L6.1,1 z" Stretch="None" Fill="{theme:ThemeResource Resource=AccentBrush}" />
+                            <Path x:Name="CheckedVisual" Opacity="0" Data="M11,9 C12,9 13,10 13,11 C13,12 12,13 11,13 C10,13 9,12 9,11 C9,10 10,9 11,9 z M10.8,5.9 C10,5.9 9.3,6 8.6,6.4 C6.1,7.7 5.1,10.8 6.5,13.3 C7.8,15.8 10.9,16.8 13.4,15.6 C15.9,14.2 16.9,11.2 15.5,8.7 C14.6,6.9 12.7,5.8 10.8,5.9 z M9.8,0 L10.9,2.6 C11.6,2.6 12.4,2.9 13,3 L15,0.6 L18,2.5 L16.9,5.3 C17.4,5.8 17.6,6.3 18,6.8 L21.1,6.4 L22,10 L19.1,11.2 C19.1,11.8 19.1,12.4 18.9,12.9 L21.4,15 L19.4,18.1 L16.8,17 C16.3,17.3 15.8,17.7 15.3,18.1 L15.5,21.2 L12,22 L10.9,19.4 C10.3,19.4 9.5,19.2 8.9,19 L7,21.4 L4,19.5 L5,16.8 C4.6,16.3 4.1,15.8 3.9,15.2 L0.9,15.6 L0,11.9 L2.6,10.8 C2.8,10.2 2.8,9.6 3,8.9 L0.6,7 L2.6,3.9 L5.3,5 C5.6,4.7 6.1,4.3 6.6,3.9 L6.1,1 z" Stretch="None" Fill="{theme:ThemeResource Resource=AccentBrush}" />
+                        </Grid>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--Next/Previous Buttons around Dashboard Transition Control-->
+    <Style x:Key="ArrowButtonStyle" TargetType="telerik:RadButton">
+        <Setter Property="Foreground" Value="{StaticResource HighDarkBrush}" />
+        <Setter Property="Background" Value="{StaticResource TransparentBrush}" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="Padding" Value="10" />
+        <Setter Property="FocusVisualStyle" Value="{StaticResource CustomFocusVisual}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="telerik:RadButton">
+                    <Grid x:Name="Root" Background="{TemplateBinding Background}">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Disabled" />
+                                <VisualState x:Name="Normal" />
+                                <VisualState x:Name="MouseOver">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Arrow" Storyboard.TargetProperty="Fill">
+                                            <DiscreteObjectKeyFrame KeyTime="0:0:0" Value="{theme:ThemeResource Resource=AccentBrush}" />
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Pressed" />
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" />
+                        <Path x:Name="Arrow" Width="10" Height="16" 
+                              Margin="{TemplateBinding Padding}"
+                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                              Data="M0,4 L4,0 5,0 5,1 2,4 5,7 5,8 4,8 z" 
+                              Stretch="Fill" 
+                              Fill="{TemplateBinding Foreground}" />
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--Theme Buttons Style-->
+    <Style x:Key="ThemeRadioButtonStyle" TargetType="telerik:RadRadioButton">
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="Padding" Value="1"/>
+        <Setter Property="BorderThickness" Value="2"/>
+        <Setter Property="BorderBrush" Value="Transparent"/>
+        <Setter Property="Margin" Value="0 0 20 0" />
+        <Setter Property="MinWidth" Value="100" />
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="FocusVisualStyle" Value="{StaticResource CustomFocusVisual}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="telerik:RadRadioButton">
+                    <Grid Background="Transparent">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <StackPanel>
+                            <Grid Width="48" Height="48">
+                                <Border x:Name="NormalVisual" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="True">
+                                    <Rectangle Stroke="{StaticResource HighLightBrush}" StrokeThickness="1" Fill="{TemplateBinding Background}" />
+                                </Border>
+                                <Border x:Name="CheckedVisual" Opacity="0" BorderBrush="{theme:ThemeResource Resource=AccentBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{x:Null}" SnapsToDevicePixels="True" />
+                            </Grid>
+                            <ContentPresenter x:Name="Content" ContentTemplate="{TemplateBinding ContentTemplate}" 
+                                              Content="{TemplateBinding Content}" Margin="0 10 0 0" 
+                                              TextBlock.TextAlignment="Center"
+                                              TextBlock.Foreground="{TemplateBinding Foreground}"
+                                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" 
+                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </StackPanel>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter TargetName="Content" Property="TextElement.Foreground" Value="{theme:ThemeResource Resource=AccentBrush}" />
+                            <Setter TargetName="NormalVisual" Property="BorderBrush" Value="{theme:ThemeResource Resource=AccentBrush}" />
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="Content" Property="TextElement.Foreground" Value="{theme:ThemeResource Resource=AccentBrush}" />
+                            <Setter TargetName="NormalVisual" Property="BorderBrush" Value="{theme:ThemeResource Resource=AccentBrush}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--ADD/EDIT BUTTON STYLE-->
+    <ControlTemplate TargetType="telerik:RadButton" x:Key="HeaderAddEditButtonTemplate">
+        <Grid>
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal"/>
+                    <VisualState x:Name="MouseOver">
+                        <Storyboard>
+                            <DoubleAnimation Duration="0" Storyboard.TargetName="MouseOverVisual" Storyboard.TargetProperty="Opacity" To="0.2" />
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="NormalVisual" Storyboard.TargetProperty="BorderBrush">
+                                <DiscreteObjectKeyFrame KeyTime="0" Value="{theme:ThemeResource Resource=AccentBrush}" />
+                            </ObjectAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Pressed">
+                        <Storyboard>
+                            <DoubleAnimation Duration="0" Storyboard.TargetName="MouseOverVisual" Storyboard.TargetProperty="Opacity" To="0.5" />
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="NormalVisual" Storyboard.TargetProperty="BorderBrush">
+                                <DiscreteObjectKeyFrame KeyTime="0" Value="{theme:ThemeResource Resource=AccentBrush}" />
+                            </ObjectAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Disabled">
+                        <Storyboard>
+                            <DoubleAnimation Duration="0" To="0.5" 
+                                             Storyboard.TargetProperty="Opacity" 
+                                             Storyboard.TargetName="content" />
+                            <DoubleAnimation Duration="0" To="0.5" 
+                                             Storyboard.TargetProperty="Opacity" 
+                                             Storyboard.TargetName="text" />
+                        </Storyboard>
+                    </VisualState>
+                </VisualStateGroup>
+                <VisualStateGroup x:Name="FocusStatesGroup">
+                    <VisualState x:Name="Unfocused"/>
+                    <VisualState x:Name="Focused"/>
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+
+            <Border x:Name="NormalVisual"
+                    Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}" 
+                    BorderThickness="{TemplateBinding BorderThickness}"
+                    SnapsToDevicePixels="True" />
+
+            <Border x:Name="MouseOverVisual"
+                    Margin="1"
+                    Background="{theme:ThemeResource Resource=AccentBrush}"
+                    SnapsToDevicePixels="True"
+                    Opacity="0" />
+
+            <Grid Margin="{TemplateBinding Padding}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+
+                <!-- content -->
+                <ContentPresenter x:Name="content"
+					    Content="{TemplateBinding Content}"
+					    ContentTemplate="{TemplateBinding ContentTemplate}"
+					    VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+					    HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" />
+                <!-- text -->
+                <TextBlock x:Name="text" 
+                           Grid.Column="1" 
+                           FontFamily="{theme:ThemeResource Resource=FontFamily}"
+                           FontSize="{TemplateBinding FontSize}"
+                           Text="{TemplateBinding Tag, Converter={StaticResource StringToUpperCaseConverter}}" 
+                           VerticalAlignment="Center"
+                           Margin="5 0 0 0" />
+            </Grid>
+        </Grid>
+    </ControlTemplate>
+    <Style TargetType="telerik:RadButton" x:Key="HeaderAddEditButtonStyle">
+        <Setter Property="Template" Value="{StaticResource HeaderAddEditButtonTemplate}"/>
+        <Setter Property="Background" Value="{StaticResource TransparentBrush}" />
+        <Setter Property="BorderBrush" Value="Transparent" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="Padding" Value="5 4"/>
+        <Setter Property="FontSize" Value="{StaticResource FontSize}" />
+        <Setter Property="FocusVisualStyle" Value="{StaticResource CustomFocusVisual}" />
+    </Style>
+
+    <!--Grid/ScheduleView RADIOBUTTON STYLE-->
+    <ControlTemplate TargetType="telerik:RadRadioButton" x:Key="CustomRadioButtonTemplate">
+        <Grid>
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal"/>
+                    <VisualState x:Name="MouseOver">
+                        <Storyboard>
+                            <DoubleAnimation Duration="0" Storyboard.TargetName="MouseOverVisual" Storyboard.TargetProperty="Opacity" To="0.2" />
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="NormalVisual" Storyboard.TargetProperty="BorderBrush">
+                                <DiscreteObjectKeyFrame KeyTime="0" Value="{theme:ThemeResource Resource=AccentBrush}" />
+                            </ObjectAnimationUsingKeyFrames>
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="NormalVisual" Storyboard.TargetProperty="BorderThickness">
+                                <DiscreteObjectKeyFrame KeyTime="0">
+                                    <DiscreteObjectKeyFrame.Value>
+                                        <Thickness>1</Thickness>
+                                    </DiscreteObjectKeyFrame.Value>
+                                </DiscreteObjectKeyFrame>
+                            </ObjectAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Pressed">
+                        <Storyboard>
+                            <DoubleAnimation Duration="0" Storyboard.TargetName="MouseOverVisual" Storyboard.TargetProperty="Opacity" To="0.5" />
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="NormalVisual" Storyboard.TargetProperty="BorderBrush">
+                                <DiscreteObjectKeyFrame KeyTime="0" Value="{theme:ThemeResource Resource=AccentBrush}" />
+                            </ObjectAnimationUsingKeyFrames>
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="NormalVisual" Storyboard.TargetProperty="BorderThickness">
+                                <DiscreteObjectKeyFrame KeyTime="0">
+                                    <DiscreteObjectKeyFrame.Value>
+                                        <Thickness>1</Thickness>
+                                    </DiscreteObjectKeyFrame.Value>
+                                </DiscreteObjectKeyFrame>
+                            </ObjectAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Disabled">
+                        <Storyboard>
+                            <DoubleAnimation Duration="0" To="0.5" 
+                                             Storyboard.TargetProperty="Opacity" 
+                                             Storyboard.TargetName="content" />
+                            <DoubleAnimation Duration="0" To="0.5" 
+                                             Storyboard.TargetProperty="Opacity" 
+                                             Storyboard.TargetName="text" />
+                        </Storyboard>
+                    </VisualState> 
+                    <VisualState x:Name="DisabledChecked">
+                        <Storyboard>
+                            <DoubleAnimation Duration="0" To="0.5" 
+                                             Storyboard.TargetProperty="Opacity" 
+                                             Storyboard.TargetName="content" />
+                            <DoubleAnimation Duration="0" To="0.5" 
+                                             Storyboard.TargetProperty="Opacity" 
+                                             Storyboard.TargetName="text" />
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="MouseOverChecked">
+                        <Storyboard>
+                            <DoubleAnimation Duration="0" Storyboard.TargetName="MouseOverVisual" Storyboard.TargetProperty="Opacity" To="0.7" />
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="NormalVisual" Storyboard.TargetProperty="BorderBrush">
+                                <DiscreteObjectKeyFrame KeyTime="0" Value="{theme:ThemeResource Resource=AccentBrush}" />
+                            </ObjectAnimationUsingKeyFrames>
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="NormalVisual" Storyboard.TargetProperty="BorderThickness">
+                                <DiscreteObjectKeyFrame KeyTime="0">
+                                    <DiscreteObjectKeyFrame.Value>
+                                        <Thickness>1</Thickness>
+                                    </DiscreteObjectKeyFrame.Value>
+                                </DiscreteObjectKeyFrame>
+                            </ObjectAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </VisualState>
+                </VisualStateGroup>
+                <VisualStateGroup x:Name="CheckStates">
+                    <VisualState x:Name="Checked">
+                        <Storyboard>
+                            <DoubleAnimation Duration="0"  Storyboard.TargetName="CheckedVisual" Storyboard.TargetProperty="Opacity" To="1" />
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Unchecked" />
+                </VisualStateGroup>
+                <VisualStateGroup x:Name="FocusStatesGroup">
+                    <VisualState x:Name="Unfocused"/>
+                    <VisualState x:Name="Focused"/>
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+
+            <Border x:Name="NormalVisual"
+                    Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}" 
+                    BorderThickness="{TemplateBinding BorderThickness}"
+                    SnapsToDevicePixels="True" />
+
+            <Border x:Name="CheckedVisual"
+                    BorderBrush="{theme:ThemeResource Resource=AccentBrush}"
+                    BorderThickness="1"
+                    SnapsToDevicePixels="True"
+                    Opacity="0">
+                <Border Background="{theme:ThemeResource Resource=AccentBrush}" 
+                        Opacity="0.5" />
+            </Border>
+
+            <Border x:Name="MouseOverVisual"
+                    Margin="1"
+                    Background="{theme:ThemeResource Resource=AccentBrush}"
+                    SnapsToDevicePixels="True"
+                    Opacity="0" />
+            
+
+            <Grid Margin="{TemplateBinding Padding}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+
+                <!-- content -->
+                <ContentPresenter x:Name="content"
+					    Content="{TemplateBinding Content}"
+					    ContentTemplate="{TemplateBinding ContentTemplate}"
+					    VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+					    HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" />
+                <!-- text -->
+                <TextBlock x:Name="text" 
+                           Grid.Column="1" 
+                           FontFamily="{theme:ThemeResource Resource=FontFamily}"
+                           FontSize="{TemplateBinding FontSize}"
+                           Text="{TemplateBinding Tag, Converter={StaticResource StringToUpperCaseConverter}}" 
+                           VerticalAlignment="Center" />
+            </Grid>
+        </Grid>
+    </ControlTemplate>
+    <Style TargetType="telerik:RadRadioButton" x:Key="CustomRadioButtonStyle">
+        <Setter Property="Template" Value="{StaticResource CustomRadioButtonTemplate}"/>
+        <Setter Property="Background" Value="{StaticResource TransparentBrush}" />
+        <Setter Property="BorderBrush" Value="#FFABABAB" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="Padding" Value="5 4"/>
+        <Setter Property="FontSize" Value="{StaticResource FontSize}" />
+        <Setter Property="FocusVisualStyle" Value="{StaticResource CustomFocusVisual}" />
+    </Style>
+
+    <!--ADD/EDIT BUTTON STYLE-->
+    <ControlTemplate TargetType="telerik:RadButton" x:Key="MapButtonTemplate">
+        <Grid Background="{TemplateBinding Background}">
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal"/>
+                    <VisualState x:Name="MouseOver"/>
+                    <VisualState x:Name="Pressed" />
+                    <VisualState x:Name="Disabled">
+                        <Storyboard>
+                            <DoubleAnimation Duration="0" To="0.5" 
+                                             Storyboard.TargetProperty="Opacity" 
+                                             Storyboard.TargetName="content" />
+                        </Storyboard>
+                    </VisualState>
+                </VisualStateGroup>
+                <VisualStateGroup x:Name="FocusStatesGroup">
+                    <VisualState x:Name="Unfocused"/>
+                    <VisualState x:Name="Focused"/>
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+
+            <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" />
+            <!-- content -->
+            <ContentPresenter x:Name="content"
+                                Margin="{TemplateBinding Padding}"
+				                Content="{TemplateBinding Content}"
+				                ContentTemplate="{TemplateBinding ContentTemplate}"
+				                VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+				                HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" />
+        </Grid>
+    </ControlTemplate>
+    <Style TargetType="telerik:RadButton" x:Key="MapButtonStyle">
+        <Setter Property="Template" Value="{StaticResource MapButtonTemplate}"/>
+        <Setter Property="Background" Value="{StaticResource TransparentBrush}" />
+        <Setter Property="BorderBrush" Value="Transparent" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="Padding" Value="5 4"/>
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="FocusVisualStyle" Value="{StaticResource CustomFocusVisual}" />
+    </Style>
+
+    <!--SHOW DETAILS BUTTON STYLE-->
+    <ControlTemplate TargetType="telerik:RadToggleButton" x:Key="ExpandDetailsButtonTemplate">
+        <Grid>
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal" />
+                    <VisualState x:Name="MouseOver">
+                        <Storyboard>
+                            <DoubleAnimation Duration="0" To="0.2" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="MouseOverVisual" d:IsOptimized="True"/>
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Pressed">
+                        <Storyboard>
+                            <DoubleAnimation Duration="0" To="0.2" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="PressedVisual" d:IsOptimized="True"/>
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="MouseOverChecked">
+                        <Storyboard>
+                            <DoubleAnimation Duration="0" To="0.2" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="MouseOverVisual" d:IsOptimized="True"/>
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Disabled"/>
+                    <VisualState x:Name="DisabledChecked"/>
+                </VisualStateGroup>
+                <VisualStateGroup x:Name="CheckStates">
+                    <VisualState x:Name="Checked">
+                        <Storyboard>
+                            <DoubleAnimation Duration="0" To="-1" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)" Storyboard.TargetName="content" d:IsOptimized="True"/>
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Unchecked" />
+                </VisualStateGroup>
+                <VisualStateGroup x:Name="FocusStatesGroup">
+                    <VisualState x:Name="Focused"/>
+                    <VisualState x:Name="UnFocused"/>
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+
+            <Border x:Name="MouseOverVisual" Opacity="0"
+                    Background="#FF000000" />
+
+            <Border x:Name="PressedVisual" Opacity="0"
+                    Background="#FFFFFFFF" />
+
+            <!--content-->
+            <Path x:Name="content"
+                  Data="M0,0 1,0 5,4 1,8 0,8 0,7 3,4 0,1 z M5,0 6,0 10,4 6,8 5,8 5,7 8,4 5,1" 
+                  Fill="{TemplateBinding Foreground}" 
+                  HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" 
+                  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                  Stretch="None"
+                  SnapsToDevicePixels="True"
+                  RenderTransformOrigin="0.5,0.5" >
+                <Path.RenderTransform>
+                    <ScaleTransform />
+                </Path.RenderTransform>
+            </Path>
+        </Grid>
+    </ControlTemplate>
+    <Style TargetType="telerik:RadToggleButton" x:Key="ExpandDetailsButtonStyle">
+        <Setter Property="Template" Value="{StaticResource ExpandDetailsButtonTemplate}"/>
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Background" Value="{StaticResource TransparentBrush}" />
+        <Setter Property="Foreground" Value="{StaticResource MainBrush}"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="HorizontalAlignment" Value="Right" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="Width" Value="26"/>
+        <Setter Property="Height" Value="26"/>
+        <Setter Property="Margin" Value="0 0 2 0" />
+    </Style>
+
+    <!-- HYPERLINK -->
+    <Style x:Key="HyperlinkLikeButton" TargetType="telerik:RadButton">
+        <Setter Property="Foreground" Value="{theme:ThemeResource Resource=AccentBrush}" />
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="Margin" Value="0 2 0 0" />
+        <Setter Property="FocusVisualStyle" Value="{StaticResource CustomFocusVisual}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="telerik:RadButton">
+                    <Grid>
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal"/>
+                                <VisualState x:Name="Disabled">
+                                    <Storyboard>
+                                        <DoubleAnimation Duration="0" Storyboard.TargetName="ContentElement" Storyboard.TargetProperty="Opacity" To="0.5"/>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="MouseOver">
+                                    <Storyboard>
+                                        <DoubleAnimation Duration="0" Storyboard.TargetName="UnderlineDecorator" Storyboard.TargetProperty="Opacity" To="1"/>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <StackPanel HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}">
+                            <TextBlock x:Name="ContentElement" Text="{TemplateBinding Content}" Foreground="{TemplateBinding Foreground}" FontSize="{TemplateBinding FontSize}"/>
+                            <Rectangle x:Name="UnderlineDecorator" Height="1" Fill="{TemplateBinding Foreground}" Opacity="0" Margin="0 -2 0 0" SnapsToDevicePixels="True" />
+                        </StackPanel>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

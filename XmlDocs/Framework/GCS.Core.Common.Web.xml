@@ -1,0 +1,669 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>GCS.Core.Common.Web</name>
+    </assembly>
+    <members>
+        <member name="T:GCS.Core.Common.Web.Mvc.Components.HtmlExtensionsButton">
+             <summary>   A HTML extensions button. </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+        </member>
+        <member name="M:GCS.Core.Common.Web.Mvc.Components.HtmlExtensionsButton.BootstrapButton(System.Web.Mvc.HtmlHelper,System.String,System.Object)">
+             <summary>   Bootstrap Submit Button Helper. </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+            
+             <param name="htmlHelper">       The helper. </param>
+             <param name="innerHtml">        The text (or HTML) for the button. </param>
+             <param name="htmlAttributes">   An object that sets the HTML attributes for the element. </param>
+            
+             <returns>   A HTML &lt;button&gt; element with the appropriate properties set. </returns>
+        </member>
+        <member name="M:GCS.Core.Common.Web.Mvc.Components.HtmlExtensionsButton.BootstrapButton(System.Web.Mvc.HtmlHelper,System.String,System.String,System.Object)">
+             <summary>   Bootstrap Submit Button Helper. </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+            
+             <param name="htmlHelper">       The helper. </param>
+             <param name="innerHtml">        The text (or HTML) for the button. </param>
+             <param name="cssClass">         CSS class(es) to add. </param>
+             <param name="htmlAttributes">   An object that sets the HTML attributes for the element. </param>
+            
+             <returns>   A HTML &lt;button&gt; element with the appropriate properties set. </returns>
+        </member>
+        <member name="M:GCS.Core.Common.Web.Mvc.Components.HtmlExtensionsButton.BootstrapButton(System.Web.Mvc.HtmlHelper,System.String,System.String,System.String,System.String,System.Object)">
+             <summary>   Bootstrap Submit Button Helper. </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+            
+             <param name="htmlHelper">       The helper. </param>
+             <param name="innerHtml">        The text (or HTML) for the button. </param>
+             <param name="cssClass">         CSS class(es) to add. </param>
+             <param name="name">             The 'name' attribute for this element. </param>
+             <param name="pdsaAction">       The 'pdsa-data-action' attribute to add. </param>
+             <param name="htmlAttributes">   An object that sets the HTML attributes for the element. </param>
+            
+             <returns>   A HTML &lt;button&gt; element with the appropriate properties set. </returns>
+        </member>
+        <member name="M:GCS.Core.Common.Web.Mvc.Components.HtmlExtensionsButton.BootstrapButton(System.Web.Mvc.HtmlHelper,System.String,System.String,System.String,System.String,System.Boolean,System.Boolean,GCS.Core.Common.Web.Mvc.Components.HtmlExtensionsCommon.HtmlButtonTypes,System.String,System.Object)">
+             <summary>   Bootstrap Submit Button Helper. </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+            
+             <param name="htmlHelper">       The helper. </param>
+             <param name="innerHtml">        The text (or HTML) for the button. </param>
+             <param name="cssClass">         CSS class(es) to add. </param>
+             <param name="name">             The 'name' attribute for this element. </param>
+             <param name="title">            The 'title' for the button. </param>
+             <param name="isFormNoValidate"> Whether or not this button validates the form. </param>
+             <param name="isAutoFocus">      Whether or not this button gets the input focus. </param>
+             <param name="buttonType">       The 'type' of button. Can be 'submit', 'reset', or 'button') </param>
+             <param name="pdsaAction">       The 'pdsa-data-action' attribute to add. </param>
+             <param name="htmlAttributes">   An object that sets the HTML attributes for the element. </param>
+            
+             <returns>   A HTML &lt;button&gt; element with the appropriate properties set. </returns>
+        </member>
+        <member name="T:GCS.Core.Common.Web.Mvc.Components.HtmlExtensionsCheckBox">
+             <summary> A HTML extensions check box. </summary>
+            
+             <remarks> Kevin, 12/26/2018. </remarks>
+        </member>
+        <member name="M:GCS.Core.Common.Web.Mvc.Components.HtmlExtensionsCheckBox.BootstrapCheckBoxFor``1(System.Web.Mvc.HtmlHelper{``0},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.String,System.Object)">
+             <summary>   A HtmlHelper&lt;TModel&gt; extension method that bootstrap check box for. </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+            
+             <typeparam name="TModel">   Type of the model. </typeparam>
+             <param name="htmlHelper">       The htmlHelper to act on. </param>
+             <param name="expression">       The expression. </param>
+             <param name="text">             The text. </param>
+             <param name="htmlAttributes">   The HTML attributes. </param>
+            
+             <returns>   A MvcHtmlString. </returns>
+        </member>
+        <member name="M:GCS.Core.Common.Web.Mvc.Components.HtmlExtensionsCheckBox.BootstrapCheckBoxFor``1(System.Web.Mvc.HtmlHelper{``0},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.String,System.String,System.Boolean,System.Object)">
+             <summary>   A HtmlHelper&lt;TModel&gt; extension method that bootstrap check box for. </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+            
+             <typeparam name="TModel">   Type of the model. </typeparam>
+             <param name="htmlHelper">       The htmlHelper to act on. </param>
+             <param name="expression">       The expression. </param>
+             <param name="text">             The text. </param>
+             <param name="title">            The title. </param>
+             <param name="isAutoFocus">      True if this HtmlExtensionsCheckBox is automatic focus. </param>
+             <param name="htmlAttributes">   The HTML attributes. </param>
+            
+             <returns>   A MvcHtmlString. </returns>
+        </member>
+        <member name="M:GCS.Core.Common.Web.Mvc.Components.HtmlExtensionsCheckBox.BootstrapCheckBoxFor``1(System.Web.Mvc.HtmlHelper{``0},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.String,System.String,System.Boolean,System.Boolean,System.Object)">
+             <summary>
+             A HtmlHelper&lt;TModel&gt; extension method that bootstrap check box for.
+             </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+            
+             <typeparam name="TModel">   Type of the model. </typeparam>
+             <param name="htmlHelper">       The htmlHelper to act on. </param>
+             <param name="expression">       The expression. </param>
+             <param name="text">             The text. </param>
+             <param name="title">            The title. </param>
+             <param name="isAutoFocus">      True if this HtmlExtensionsCheckBox is automatic focus. </param>
+             <param name="useInline">        True to use inline. </param>
+             <param name="htmlAttributes">   The HTML attributes. </param>
+            
+             <returns>   A MvcHtmlString. </returns>
+        </member>
+        <member name="T:GCS.Core.Common.Web.Mvc.Components.HtmlExtensionsCommon">
+             <summary> A HTML extensions common. </summary>
+            
+             <remarks> Kevin, 12/26/2018. </remarks>
+        </member>
+        <member name="T:GCS.Core.Common.Web.Mvc.Components.HtmlExtensionsCommon.HtmlButtonTypes">
+             <summary>   Values that represent HTML button types. </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+        </member>
+        <member name="F:GCS.Core.Common.Web.Mvc.Components.HtmlExtensionsCommon.HtmlButtonTypes.submit">
+            <summary> An enum constant representing the submit option. </summary>
+        </member>
+        <member name="F:GCS.Core.Common.Web.Mvc.Components.HtmlExtensionsCommon.HtmlButtonTypes.button">
+            <summary> An enum constant representing the button option. </summary>
+        </member>
+        <member name="F:GCS.Core.Common.Web.Mvc.Components.HtmlExtensionsCommon.HtmlButtonTypes.reset">
+            <summary> An enum constant representing the reset option. </summary>
+        </member>
+        <member name="T:GCS.Core.Common.Web.Mvc.Components.HtmlExtensionsCommon.Html5InputTypes">
+             <summary>   Values that represent HTML 5 input types. </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+        </member>
+        <member name="F:GCS.Core.Common.Web.Mvc.Components.HtmlExtensionsCommon.Html5InputTypes.text">
+            <summary> An enum constant representing the text option. </summary>
+        </member>
+        <member name="F:GCS.Core.Common.Web.Mvc.Components.HtmlExtensionsCommon.Html5InputTypes.color">
+            <summary> An enum constant representing the color option. </summary>
+        </member>
+        <member name="F:GCS.Core.Common.Web.Mvc.Components.HtmlExtensionsCommon.Html5InputTypes.date">
+            <summary> An enum constant representing the date option. </summary>
+        </member>
+        <member name="F:GCS.Core.Common.Web.Mvc.Components.HtmlExtensionsCommon.Html5InputTypes.datetime">
+            <summary> An enum constant representing the datetime option. </summary>
+        </member>
+        <member name="F:GCS.Core.Common.Web.Mvc.Components.HtmlExtensionsCommon.Html5InputTypes.email">
+            <summary> An enum constant representing the email option. </summary>
+        </member>
+        <member name="F:GCS.Core.Common.Web.Mvc.Components.HtmlExtensionsCommon.Html5InputTypes.month">
+            <summary> An enum constant representing the month option. </summary>
+        </member>
+        <member name="F:GCS.Core.Common.Web.Mvc.Components.HtmlExtensionsCommon.Html5InputTypes.number">
+            <summary> An enum constant representing the number option. </summary>
+        </member>
+        <member name="F:GCS.Core.Common.Web.Mvc.Components.HtmlExtensionsCommon.Html5InputTypes.password">
+            <summary> An enum constant representing the password option. </summary>
+        </member>
+        <member name="F:GCS.Core.Common.Web.Mvc.Components.HtmlExtensionsCommon.Html5InputTypes.range">
+            <summary> An enum constant representing the range option. </summary>
+        </member>
+        <member name="F:GCS.Core.Common.Web.Mvc.Components.HtmlExtensionsCommon.Html5InputTypes.search">
+            <summary> An enum constant representing the search option. </summary>
+        </member>
+        <member name="F:GCS.Core.Common.Web.Mvc.Components.HtmlExtensionsCommon.Html5InputTypes.tel">
+            <summary> An enum constant representing the tel option. </summary>
+        </member>
+        <member name="F:GCS.Core.Common.Web.Mvc.Components.HtmlExtensionsCommon.Html5InputTypes.time">
+            <summary> An enum constant representing the time option. </summary>
+        </member>
+        <member name="F:GCS.Core.Common.Web.Mvc.Components.HtmlExtensionsCommon.Html5InputTypes.url">
+            <summary> An enum constant representing the URL option. </summary>
+        </member>
+        <member name="F:GCS.Core.Common.Web.Mvc.Components.HtmlExtensionsCommon.Html5InputTypes.week">
+            <summary> An enum constant representing the week option. </summary>
+        </member>
+        <member name="M:GCS.Core.Common.Web.Mvc.Components.HtmlExtensionsCommon.AddName(System.Web.Mvc.TagBuilder,System.String,System.String)">
+             <summary>   Adds a name. </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+            
+             <param name="tb">   The terabytes. </param>
+             <param name="name"> The name. </param>
+             <param name="id">   The identifier. </param>
+        </member>
+        <member name="T:GCS.Core.Common.Web.Mvc.Components.HtmlExtensionsImage">
+             <summary>   A HTML extensions image. </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+        </member>
+        <member name="M:GCS.Core.Common.Web.Mvc.Components.HtmlExtensionsImage.Image(System.Web.Mvc.HtmlHelper,System.Byte[],System.Object)">
+             <summary>   A HtmlHelper extension method that images. </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+            
+             <param name="htmlHelper">       The htmlHelper to act on. </param>
+             <param name="image">            The image. </param>
+             <param name="htmlAttributes">   The HTML attributes. </param>
+            
+             <returns>   A MvcHtmlString. </returns>
+        </member>
+        <member name="M:GCS.Core.Common.Web.Mvc.Components.HtmlExtensionsImage.Image(System.Web.Mvc.HtmlHelper,System.Byte[],System.String,System.Object)">
+             <summary>   A HtmlHelper extension method that images. </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+            
+             <param name="htmlHelper">       The htmlHelper to act on. </param>
+             <param name="image">            The image. </param>
+             <param name="altText">          The alternate text. </param>
+             <param name="htmlAttributes">   The HTML attributes. </param>
+            
+             <returns>   A MvcHtmlString. </returns>
+        </member>
+        <member name="M:GCS.Core.Common.Web.Mvc.Components.HtmlExtensionsImage.Image(System.Web.Mvc.HtmlHelper,System.Byte[],System.String,System.String,System.Object)">
+             <summary>   A HtmlHelper extension method that images. </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+            
+             <param name="htmlHelper">       The htmlHelper to act on. </param>
+             <param name="image">            The image. </param>
+             <param name="altText">          The alternate text. </param>
+             <param name="cssClass">         The CSS class. </param>
+             <param name="htmlAttributes">   The HTML attributes. </param>
+            
+             <returns>   A MvcHtmlString. </returns>
+        </member>
+        <member name="M:GCS.Core.Common.Web.Mvc.Components.HtmlExtensionsImage.Image(System.Web.Mvc.HtmlHelper,System.Byte[],System.String,System.String,System.String,System.Object)">
+             <summary>   A HtmlHelper extension method that images. </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+            
+             <param name="htmlHelper">       The htmlHelper to act on. </param>
+             <param name="image">            The image. </param>
+             <param name="altText">          The alternate text. </param>
+             <param name="cssClass">         The CSS class. </param>
+             <param name="name">             The name. </param>
+             <param name="htmlAttributes">   The HTML attributes. </param>
+            
+             <returns>   A MvcHtmlString. </returns>
+        </member>
+        <member name="M:GCS.Core.Common.Web.Mvc.Components.HtmlExtensionsImage.ImageFromBase64String(System.Web.Mvc.HtmlHelper,System.String,System.Object)">
+             <summary>   A HtmlHelper extension method that image from base 64 string. </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+            
+             <param name="htmlHelper">       The htmlHelper to act on. </param>
+             <param name="base64String">     The base 64 string. </param>
+             <param name="htmlAttributes">   The HTML attributes. </param>
+            
+             <returns>   A MvcHtmlString. </returns>
+        </member>
+        <member name="M:GCS.Core.Common.Web.Mvc.Components.HtmlExtensionsImage.ImageFromBase64String(System.Web.Mvc.HtmlHelper,System.String,System.String,System.Object)">
+             <summary>   A HtmlHelper extension method that image from base 64 string. </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+            
+             <param name="htmlHelper">       The htmlHelper to act on. </param>
+             <param name="base64String">     The base 64 string. </param>
+             <param name="altText">          The alternate text. </param>
+             <param name="htmlAttributes">   The HTML attributes. </param>
+            
+             <returns>   A MvcHtmlString. </returns>
+        </member>
+        <member name="M:GCS.Core.Common.Web.Mvc.Components.HtmlExtensionsImage.ImageFromBase64String(System.Web.Mvc.HtmlHelper,System.String,System.String,System.String,System.Object)">
+             <summary>   A HtmlHelper extension method that image from base 64 string. </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+            
+             <param name="htmlHelper">       The htmlHelper to act on. </param>
+             <param name="base64String">     The base 64 string. </param>
+             <param name="altText">          The alternate text. </param>
+             <param name="cssClass">         The CSS class. </param>
+             <param name="htmlAttributes">   The HTML attributes. </param>
+            
+             <returns>   A MvcHtmlString. </returns>
+        </member>
+        <member name="M:GCS.Core.Common.Web.Mvc.Components.HtmlExtensionsImage.ImageFromBase64String(System.Web.Mvc.HtmlHelper,System.String,System.String,System.String,System.String,System.Object)">
+             <summary>   A HtmlHelper extension method that image from base 64 string. </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+            
+             <param name="htmlHelper">       The htmlHelper to act on. </param>
+             <param name="base64String">     The base 64 string. </param>
+             <param name="altText">          The alternate text. </param>
+             <param name="cssClass">         The CSS class. </param>
+             <param name="name">             The name. </param>
+             <param name="htmlAttributes">   The HTML attributes. </param>
+            
+             <returns>   A MvcHtmlString. </returns>
+        </member>
+        <member name="M:GCS.Core.Common.Web.Mvc.Components.HtmlExtensionsImage.Image(System.Web.Mvc.HtmlHelper,System.String,System.String,System.Object)">
+             <summary>   A HtmlHelper extension method that images. </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+            
+             <param name="htmlHelper">       The htmlHelper to act on. </param>
+             <param name="src">              Source for the. </param>
+             <param name="altText">          The alternate text. </param>
+             <param name="htmlAttributes">   The HTML attributes. </param>
+            
+             <returns>   A MvcHtmlString. </returns>
+        </member>
+        <member name="M:GCS.Core.Common.Web.Mvc.Components.HtmlExtensionsImage.Image(System.Web.Mvc.HtmlHelper,System.String,System.String,System.String,System.Object)">
+             <summary>   A HtmlHelper extension method that images. </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+            
+             <param name="htmlHelper">       The htmlHelper to act on. </param>
+             <param name="src">              Source for the. </param>
+             <param name="altText">          The alternate text. </param>
+             <param name="cssClass">         The CSS class. </param>
+             <param name="htmlAttributes">   The HTML attributes. </param>
+            
+             <returns>   A MvcHtmlString. </returns>
+        </member>
+        <member name="M:GCS.Core.Common.Web.Mvc.Components.HtmlExtensionsImage.Image(System.Web.Mvc.HtmlHelper,System.String,System.String,System.String,System.String,System.Object)">
+             <summary>   A HtmlHelper extension method that images. </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+            
+             <param name="htmlHelper">       The htmlHelper to act on. </param>
+             <param name="src">              Source for the. </param>
+             <param name="altText">          The alternate text. </param>
+             <param name="cssClass">         The CSS class. </param>
+             <param name="name">             The name. </param>
+             <param name="htmlAttributes">   The HTML attributes. </param>
+            
+             <returns>   A MvcHtmlString. </returns>
+        </member>
+        <member name="T:GCS.Core.Common.Web.Mvc.Components.HtmlExtensionsPassword">
+             <summary> A HTML extensions password. </summary>
+            
+             <remarks> Kevin, 12/26/2018. </remarks>
+        </member>
+        <member name="M:GCS.Core.Common.Web.Mvc.Components.HtmlExtensionsPassword.BootstrapPasswordFor``2(System.Web.Mvc.HtmlHelper{``0},System.Linq.Expressions.Expression{System.Func{``0,``1}},GCS.Core.Common.Web.Mvc.Components.HtmlExtensionsCommon.Html5InputTypes,System.Object)">
+             <summary>   A HtmlHelper&lt;TModel&gt; extension method that bootstrap password for. </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+            
+             <typeparam name="TModel">   Type of the model. </typeparam>
+             <typeparam name="TValue">   Type of the value. </typeparam>
+             <param name="htmlHelper">       The htmlHelper to act on. </param>
+             <param name="expression">       The expression. </param>
+             <param name="type">             The type. </param>
+             <param name="htmlAttributes">   The HTML attributes. </param>
+            
+             <returns>   A MvcHtmlString. </returns>
+        </member>
+        <member name="M:GCS.Core.Common.Web.Mvc.Components.HtmlExtensionsPassword.BootstrapPasswordFor``2(System.Web.Mvc.HtmlHelper{``0},System.Linq.Expressions.Expression{System.Func{``0,``1}},GCS.Core.Common.Web.Mvc.Components.HtmlExtensionsCommon.Html5InputTypes,System.String,System.Object)">
+             <summary>   A HtmlHelper&lt;TModel&gt; extension method that bootstrap password for. </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+            
+             <typeparam name="TModel">   Type of the model. </typeparam>
+             <typeparam name="TValue">   Type of the value. </typeparam>
+             <param name="htmlHelper">       The htmlHelper to act on. </param>
+             <param name="expression">       The expression. </param>
+             <param name="type">             The type. </param>
+             <param name="cssClass">         The CSS class. </param>
+             <param name="htmlAttributes">   The HTML attributes. </param>
+            
+             <returns>   A MvcHtmlString. </returns>
+        </member>
+        <member name="M:GCS.Core.Common.Web.Mvc.Components.HtmlExtensionsPassword.BootstrapPasswordFor``2(System.Web.Mvc.HtmlHelper{``0},System.Linq.Expressions.Expression{System.Func{``0,``1}},GCS.Core.Common.Web.Mvc.Components.HtmlExtensionsCommon.Html5InputTypes,System.String,System.String,System.Boolean,System.Boolean,System.Object)">
+             <summary>   A HtmlHelper&lt;TModel&gt; extension method that bootstrap password for. </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+            
+             <typeparam name="TModel">   Type of the model. </typeparam>
+             <typeparam name="TValue">   Type of the value. </typeparam>
+             <param name="htmlHelper">       The htmlHelper to act on. </param>
+             <param name="expression">       The expression. </param>
+             <param name="type">             The type. </param>
+             <param name="title">            The title. </param>
+             <param name="placeholder">      The placeholder. </param>
+             <param name="isRequired">       True if this HtmlExtensionsPassword is required. </param>
+             <param name="isAutoFocus">      True if this HtmlExtensionsPassword is automatic focus. </param>
+             <param name="htmlAttributes">   The HTML attributes. </param>
+            
+             <returns>   A MvcHtmlString. </returns>
+        </member>
+        <member name="M:GCS.Core.Common.Web.Mvc.Components.HtmlExtensionsPassword.BootstrapPasswordFor``2(System.Web.Mvc.HtmlHelper{``0},System.Linq.Expressions.Expression{System.Func{``0,``1}},GCS.Core.Common.Web.Mvc.Components.HtmlExtensionsCommon.Html5InputTypes,System.String,System.String,System.Boolean,System.Boolean,System.String,System.Object)">
+             <summary>
+             A HtmlHelper&lt;TModel&gt; extension method that bootstrap password for.
+             </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+            
+             <typeparam name="TModel">   Type of the model. </typeparam>
+             <typeparam name="TValue">   Type of the value. </typeparam>
+             <param name="htmlHelper">       The htmlHelper to act on. </param>
+             <param name="expression">       The expression. </param>
+             <param name="type">             The type. </param>
+             <param name="title">            The title. </param>
+             <param name="placeholder">      The placeholder. </param>
+             <param name="isRequired">       True if this HtmlExtensionsPassword is required. </param>
+             <param name="isAutoFocus">      True if this HtmlExtensionsPassword is automatic focus. </param>
+             <param name="cssClass">         The CSS class. </param>
+             <param name="htmlAttributes">   The HTML attributes. </param>
+            
+             <returns>   A MvcHtmlString. </returns>
+        </member>
+        <member name="T:GCS.Core.Common.Web.Mvc.Components.HtmlExtensionsRadioButton">
+             <summary> A HTML extensions radio button. </summary>
+            
+             <remarks> Kevin, 12/26/2018. </remarks>
+        </member>
+        <member name="M:GCS.Core.Common.Web.Mvc.Components.HtmlExtensionsRadioButton.BootstrapRadioButtonFor``1(System.Web.Mvc.HtmlHelper{``0},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.String,System.Object)">
+             <summary>
+             A HtmlHelper&lt;TModel&gt; extension method that bootstrap radio button for.
+             </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+            
+             <typeparam name="TModel">   Type of the model. </typeparam>
+             <param name="htmlHelper">       The htmlHelper to act on. </param>
+             <param name="expression">       The expression. </param>
+             <param name="text">             The text. </param>
+             <param name="htmlAttributes">   The HTML attributes. </param>
+            
+             <returns>   A MvcHtmlString. </returns>
+        </member>
+        <member name="M:GCS.Core.Common.Web.Mvc.Components.HtmlExtensionsRadioButton.BootstrapRadioButtonFor``1(System.Web.Mvc.HtmlHelper{``0},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.String,System.String,System.Boolean,System.Object)">
+             <summary>
+             A HtmlHelper&lt;TModel&gt; extension method that bootstrap radio button for.
+             </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+            
+             <typeparam name="TModel">   Type of the model. </typeparam>
+             <param name="htmlHelper">       The htmlHelper to act on. </param>
+             <param name="expression">       The expression. </param>
+             <param name="text">             The text. </param>
+             <param name="title">            The title. </param>
+             <param name="isAutoFocus">      True if this HtmlExtensionsRadioButton is automatic focus. </param>
+             <param name="htmlAttributes">   The HTML attributes. </param>
+            
+             <returns>   A MvcHtmlString. </returns>
+        </member>
+        <member name="M:GCS.Core.Common.Web.Mvc.Components.HtmlExtensionsRadioButton.BootstrapRadioButtonFor``1(System.Web.Mvc.HtmlHelper{``0},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.String,System.String,System.Boolean,System.Boolean,System.Object)">
+             <summary>
+             A HtmlHelper&lt;TModel&gt; extension method that bootstrap radio button for.
+             </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+            
+             <typeparam name="TModel">   Type of the model. </typeparam>
+             <param name="htmlHelper">       The htmlHelper to act on. </param>
+             <param name="expression">       The expression. </param>
+             <param name="text">             The text. </param>
+             <param name="title">            The title. </param>
+             <param name="isAutoFocus">      True if this HtmlExtensionsRadioButton is automatic focus. </param>
+             <param name="useInline">        True to use inline. </param>
+             <param name="htmlAttributes">   The HTML attributes. </param>
+            
+             <returns>   A MvcHtmlString. </returns>
+        </member>
+        <member name="T:GCS.Core.Common.Web.Mvc.Components.HtmlExtensionsTextBox">
+             <summary> A HTML extensions text box. </summary>
+            
+             <remarks> Kevin, 12/26/2018. </remarks>
+        </member>
+        <member name="M:GCS.Core.Common.Web.Mvc.Components.HtmlExtensionsTextBox.BootstrapTextBoxFor``2(System.Web.Mvc.HtmlHelper{``0},System.Linq.Expressions.Expression{System.Func{``0,``1}},GCS.Core.Common.Web.Mvc.Components.HtmlExtensionsCommon.Html5InputTypes,System.Object)">
+             <summary>   A HtmlHelper&lt;TModel&gt; extension method that bootstrap text box for. </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+            
+             <typeparam name="TModel">   Type of the model. </typeparam>
+             <typeparam name="TValue">   Type of the value. </typeparam>
+             <param name="htmlHelper">       The htmlHelper to act on. </param>
+             <param name="expression">       The expression. </param>
+             <param name="type">             The type. </param>
+             <param name="htmlAttributes">   The HTML attributes. </param>
+            
+             <returns>   A MvcHtmlString. </returns>
+        </member>
+        <member name="M:GCS.Core.Common.Web.Mvc.Components.HtmlExtensionsTextBox.BootstrapTextBoxFor``2(System.Web.Mvc.HtmlHelper{``0},System.Linq.Expressions.Expression{System.Func{``0,``1}},GCS.Core.Common.Web.Mvc.Components.HtmlExtensionsCommon.Html5InputTypes,System.String,System.Object)">
+             <summary>   A HtmlHelper&lt;TModel&gt; extension method that bootstrap text box for. </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+            
+             <typeparam name="TModel">   Type of the model. </typeparam>
+             <typeparam name="TValue">   Type of the value. </typeparam>
+             <param name="htmlHelper">       The htmlHelper to act on. </param>
+             <param name="expression">       The expression. </param>
+             <param name="type">             The type. </param>
+             <param name="cssClass">         The CSS class. </param>
+             <param name="htmlAttributes">   The HTML attributes. </param>
+            
+             <returns>   A MvcHtmlString. </returns>
+        </member>
+        <member name="M:GCS.Core.Common.Web.Mvc.Components.HtmlExtensionsTextBox.BootstrapTextBoxFor``2(System.Web.Mvc.HtmlHelper{``0},System.Linq.Expressions.Expression{System.Func{``0,``1}},GCS.Core.Common.Web.Mvc.Components.HtmlExtensionsCommon.Html5InputTypes,System.String,System.String,System.Boolean,System.Boolean,System.Object)">
+             <summary>   A HtmlHelper&lt;TModel&gt; extension method that bootstrap text box for. </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+            
+             <typeparam name="TModel">   Type of the model. </typeparam>
+             <typeparam name="TValue">   Type of the value. </typeparam>
+             <param name="htmlHelper">       The htmlHelper to act on. </param>
+             <param name="expression">       The expression. </param>
+             <param name="type">             The type. </param>
+             <param name="title">            The title. </param>
+             <param name="placeholder">      The placeholder. </param>
+             <param name="isRequired">       True if this HtmlExtensionsTextBox is required. </param>
+             <param name="isAutoFocus">      True if this HtmlExtensionsTextBox is automatic focus. </param>
+             <param name="htmlAttributes">   The HTML attributes. </param>
+            
+             <returns>   A MvcHtmlString. </returns>
+        </member>
+        <member name="M:GCS.Core.Common.Web.Mvc.Components.HtmlExtensionsTextBox.BootstrapTextBoxFor``2(System.Web.Mvc.HtmlHelper{``0},System.Linq.Expressions.Expression{System.Func{``0,``1}},GCS.Core.Common.Web.Mvc.Components.HtmlExtensionsCommon.Html5InputTypes,System.String,System.String,System.Boolean,System.Boolean,System.String,System.Object)">
+             <summary>
+             A HtmlHelper&lt;TModel&gt; extension method that bootstrap text box for.
+             </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+            
+             <typeparam name="TModel">   Type of the model. </typeparam>
+             <typeparam name="TValue">   Type of the value. </typeparam>
+             <param name="htmlHelper">       The htmlHelper to act on. </param>
+             <param name="expression">       The expression. </param>
+             <param name="type">             The type. </param>
+             <param name="title">            The title. </param>
+             <param name="placeholder">      The placeholder. </param>
+             <param name="isRequired">       True if this HtmlExtensionsTextBox is required. </param>
+             <param name="isAutoFocus">      True if this HtmlExtensionsTextBox is automatic focus. </param>
+             <param name="cssClass">         The CSS class. </param>
+             <param name="htmlAttributes">   The HTML attributes. </param>
+            
+             <returns>   A MvcHtmlString. </returns>
+        </member>
+        <member name="T:GCS.Core.Common.Web.Mvc.ViewModelBase">
+             <summary>   A view model base. </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+        </member>
+        <member name="M:GCS.Core.Common.Web.Mvc.ViewModelBase.#ctor">
+             <summary>   Default constructor. </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+        </member>
+        <member name="P:GCS.Core.Common.Web.Mvc.ViewModelBase.ValidationErrors">
+             <summary>   Gets or sets the validation errors. </summary>
+            
+             <value> The validation errors. </value>
+        </member>
+        <member name="P:GCS.Core.Common.Web.Mvc.ViewModelBase.Mode">
+             <summary>   Gets or sets the mode. </summary>
+            
+             <value> The mode. </value>
+        </member>
+        <member name="P:GCS.Core.Common.Web.Mvc.ViewModelBase.IsValid">
+             <summary>   Gets or sets a value indicating whether this ViewModelBase is valid. </summary>
+            
+             <value> True if this ViewModelBase is valid, false if not. </value>
+        </member>
+        <member name="P:GCS.Core.Common.Web.Mvc.ViewModelBase.EventCommand">
+             <summary>   Gets or sets the event command. </summary>
+            
+             <value> The event command. </value>
+        </member>
+        <member name="P:GCS.Core.Common.Web.Mvc.ViewModelBase.EventArgument">
+             <summary>   Gets or sets the event argument. </summary>
+            
+             <value> The event argument. </value>
+        </member>
+        <member name="P:GCS.Core.Common.Web.Mvc.ViewModelBase.IsDetailAreaVisible">
+             <summary>
+             Gets or sets a value indicating whether this ViewModelBase is detail area visible.
+             </summary>
+            
+             <value> True if this ViewModelBase is detail area visible, false if not. </value>
+        </member>
+        <member name="P:GCS.Core.Common.Web.Mvc.ViewModelBase.IsListAreaVisible">
+             <summary>
+             Gets or sets a value indicating whether this ViewModelBase is list area visible.
+             </summary>
+            
+             <value> True if this ViewModelBase is list area visible, false if not. </value>
+        </member>
+        <member name="P:GCS.Core.Common.Web.Mvc.ViewModelBase.IsSearchAreaVisible">
+             <summary>
+             Gets or sets a value indicating whether this ViewModelBase is search area visible.
+             </summary>
+            
+             <value> True if this ViewModelBase is search area visible, false if not. </value>
+        </member>
+        <member name="M:GCS.Core.Common.Web.Mvc.ViewModelBase.Init">
+             <summary>   Initialises this ViewModelBase. </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+        </member>
+        <member name="M:GCS.Core.Common.Web.Mvc.ViewModelBase.Get">
+             <summary>   Gets this ViewModelBase. </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+        </member>
+        <member name="M:GCS.Core.Common.Web.Mvc.ViewModelBase.HandleRequest">
+             <summary>   Handles the request. </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+        </member>
+        <member name="M:GCS.Core.Common.Web.Mvc.ViewModelBase.ListMode">
+             <summary>   List mode. </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+        </member>
+        <member name="M:GCS.Core.Common.Web.Mvc.ViewModelBase.AddMode">
+             <summary>   Adds mode. </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+        </member>
+        <member name="M:GCS.Core.Common.Web.Mvc.ViewModelBase.EditMode">
+             <summary>   Edit mode. </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+        </member>
+        <member name="M:GCS.Core.Common.Web.Mvc.ViewModelBase.Add">
+             <summary>   Adds.  </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+        </member>
+        <member name="M:GCS.Core.Common.Web.Mvc.ViewModelBase.Edit">
+             <summary>   Edits this ViewModelBase. </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+        </member>
+        <member name="M:GCS.Core.Common.Web.Mvc.ViewModelBase.Delete">
+             <summary>   Deletes this ViewModelBase. </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+        </member>
+        <member name="M:GCS.Core.Common.Web.Mvc.ViewModelBase.Save">
+             <summary>   Saves this ViewModelBase. </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+        </member>
+        <member name="M:GCS.Core.Common.Web.Mvc.ViewModelBase.ResetSearch">
+             <summary>   Resets the search. </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+        </member>
+        <member name="T:GCS.Core.Common.Web.UsesDisposableServiceAttribute">
+             <summary>   Attribute for uses disposable service. </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+        </member>
+        <member name="M:GCS.Core.Common.Web.UsesDisposableServiceAttribute.OnActionExecuting(System.Web.Http.Controllers.HttpActionContext)">
+             <summary>   Occurs before the action method is invoked. </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+            
+             <param name="actionContext">    The action context. </param>
+        </member>
+        <member name="M:GCS.Core.Common.Web.UsesDisposableServiceAttribute.OnActionExecuted(System.Web.Http.Filters.HttpActionExecutedContext)">
+             <summary>   Occurs after the action method is invoked. </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+            
+             <param name="actionExecutedContext">    The action executed context. </param>
+        </member>
+    </members>
+</doc>

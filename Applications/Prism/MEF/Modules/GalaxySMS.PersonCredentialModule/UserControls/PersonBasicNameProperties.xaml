@@ -1,0 +1,61 @@
+﻿<core:UserControlViewBase x:Class="GalaxySMS.PersonCredential.UserControls.PersonBasicNameProperties"
+                          xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                          xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                          xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                          xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                          xmlns:local="clr-namespace:GalaxySMS.PersonCredential.UserControls"
+                          xmlns:core="http://www.galaxysys.com/GCS/Core"
+                          xmlns:prism="http://prismlibrary.com/"
+                          xmlns:prismInfra="clr-namespace:GalaxySMS.Prism.Infrastructure;assembly=GalaxySMS.Prism.Infrastructure"
+                          xmlns:resx="clr-namespace:GalaxySMS.PersonCredential.Properties"
+                          xmlns:sharedResources="clr-namespace:GalaxySMS.Resources;assembly=GalaxySMS.Resources"
+                          xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+                          xmlns:converters="clr-namespace:GCS.Core.Common.UI.Converters;assembly=GCS.Core.Common.UI"
+                          xmlns:ui="clr-namespace:GalaxySMS.Client.UI;assembly=GalaxySMS.Client.UI"
+                          xmlns:ui1="clr-namespace:GCS.Core.Common.UI;assembly=GCS.Core.Common.UI"
+                          xmlns:sys="clr-namespace:System;assembly=mscorlib"
+                          xmlns:clientEntities="clr-namespace:GalaxySMS.Client.Entities"
+                          xmlns:viewModels="clr-namespace:GalaxySMS.PersonCredential.ViewModels"
+                          xmlns:maskedInput="clr-namespace:Telerik.Windows.Controls.MaskedInput;assembly=Telerik.Windows.Controls.Input"
+                          xmlns:individualProperties="clr-namespace:GalaxySMS.PersonCredential.UserControls.IndividualProperties"
+                          mc:Ignorable="d"
+                          d:DesignHeight="400"
+                          d:DesignWidth="600"
+                          FlowDirection="{Binding FlowDirection}">
+    <core:UserControlViewBase.Resources>
+        <!--<BitmapImage x:Key="SelectPhoto" UriSource="/GalaxySMS.Resources;component/Images/Camera/SLR_32.png" />-->
+        <converters:NullToVisibilityConverter x:Key="nullToVisibilityConverter" />
+        <converters:NotNullToVisibilityConverter x:Key="notNullToVisibilityConverter" />
+        <converters:BooleanToVisibilityConverter x:Key="boolToVisibility" />
+        <converters:NotNullToBooleanConverter x:Key="NotNullToBooleanConverter"/>
+    </core:UserControlViewBase.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="10" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="10" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="10" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="10" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Orientation="Horizontal">
+            <individualProperties:ucLastName/>
+            <individualProperties:ucFirstName/>
+            <individualProperties:ucMiddleName/>
+        </StackPanel>
+    </Grid>
+</core:UserControlViewBase>

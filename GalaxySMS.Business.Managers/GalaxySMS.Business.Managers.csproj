@@ -1,0 +1,301 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{212F1579-F0D5-46A7-A677-F688FB65E752}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GalaxySMS.Business.Managers</RootNamespace>
+    <AssemblyName>GalaxySMS.Business.Managers</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;PDSANoLicense CanSpecifyIdProducerMaxCustomerCount</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;PDSANoLicense CanSpecifyIdProducerMaxCustomerCount</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=10.0.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.10.1.1\lib\net461\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentValidation, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7de548da2fbae0f0, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentValidation.10.1.0\lib\netstandard2.0\FluentValidation.dll</HintPath>
+    </Reference>
+    <Reference Include="Hangfire.Core, Version=1.7.30.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Hangfire.Core.1.7.30\lib\net46\Hangfire.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Hangfire.SqlServer, Version=1.7.30.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Hangfire.SqlServer.1.7.30\lib\net45\Hangfire.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.5.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.JsonWebTokens, Version=6.15.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.JsonWebTokens.6.15.0\lib\net472\Microsoft.IdentityModel.JsonWebTokens.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Logging, Version=6.15.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Logging.6.15.0\lib\net472\Microsoft.IdentityModel.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Tokens, Version=6.15.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Tokens.6.15.0\lib\net472\Microsoft.IdentityModel.Tokens.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.3.0.0\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.0\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="PDSA.Common, Version=5.0.9.0, Culture=neutral, PublicKeyToken=e9345238070b4f6f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\PDSA\PDSA.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="PDSA.Common.Extensions, Version=5.0.9.0, Culture=neutral, PublicKeyToken=e9345238070b4f6f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\PDSA\PDSA.Common.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="PDSA.DataLayer, Version=5.0.9.0, Culture=neutral, PublicKeyToken=e9345238070b4f6f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\PDSA\PDSA.DataLayer.dll</HintPath>
+    </Reference>
+    <Reference Include="Pipelines.Sockets.Unofficial, Version=1.0.0.0, Culture=neutral, PublicKeyToken=42ea0a778e13fbe2, processorArchitecture=MSIL">
+      <HintPath>..\packages\Pipelines.Sockets.Unofficial.2.2.2\lib\net472\Pipelines.Sockets.Unofficial.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationFramework" />
+    <Reference Include="StackExchange.Redis, Version=2.0.0.0, Culture=neutral, PublicKeyToken=c219ff1ca8c2ce46, processorArchitecture=MSIL">
+      <HintPath>..\packages\StackExchange.Redis.2.6.48\lib\net472\StackExchange.Redis.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Diagnostics.PerformanceCounter, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.PerformanceCounter.5.0.0\lib\net461\System.Diagnostics.PerformanceCounter.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IdentityModel.Tokens.Jwt, Version=6.15.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IdentityModel.Tokens.Jwt.6.15.0\lib\net472\System.IdentityModel.Tokens.Jwt.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Compression, Version=4.1.2.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Compression.4.3.0\lib\net46\System.IO.Compression.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.Pipelines, Version=5.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Pipelines.5.0.1\lib\net461\System.IO.Pipelines.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.3\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Threading.Channels, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Channels.5.0.0\lib\net461\System.Threading.Channels.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Windows" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Entities\IdProducerSettings.cs" />
+    <Compile Include="Entities\JwtTokenSettings.cs" />
+    <Compile Include="Entities\PasswordResetSettings.cs" />
+    <Compile Include="Entities\TwoFactorAuthenticationSettings.cs" />
+    <Compile Include="Globals.cs" />
+    <Compile Include="ManagerBase.cs" />
+    <Compile Include="Managers\AccountManager.cs" />
+    <Compile Include="Managers\MercuryManagement..cs" />
+    <Compile Include="Managers\SystemManagement.cs" />
+    <Compile Include="Managers\UserSessionManager.cs" />
+    <Compile Include="Managers\AdministrationManager.cs" />
+    <Compile Include="Managers\GalaxyPanelCommunicationManager.cs" />
+    <Compile Include="Managers\PanelDataProcessingManager.cs" />
+    <Compile Include="MessageBrokerMessageNames.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Support\AutoMapperProfile.cs" />
+    <Compile Include="Support\Helpers.cs" />
+    <Compile Include="Support\ImageInfo.cs" />
+    <Compile Include="Support\StringExtensions.cs" />
+    <Compile Include="Support\MagicStrings.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataProcessors\GCS.PanelDataHandler\GCS.PanelOutputDataHandlers.csproj">
+      <Project>{28001285-43B9-4D36-B378-9623273E0288}</Project>
+      <Name>GCS.PanelOutputDataHandlers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataProcessors\GCS.PanelDataProcessors.Interfaces\GCS.PanelDataProcessors.Interfaces.csproj">
+      <Project>{4463019E-2446-499D-A00B-1F80B5D437F3}</Project>
+      <Name>GCS.PanelDataProcessors.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GalaxySMS.Business.Common\GalaxySMS.Business.Common.csproj">
+      <Project>{05397468-0fcf-4fc9-ab9b-2743f09c213f}</Project>
+      <Name>GalaxySMS.Business.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GalaxySMS.Business.Contracts\GalaxySMS.Business.Contracts.csproj">
+      <Project>{a7b390c8-685e-448c-9903-03552375ee02}</Project>
+      <Name>GalaxySMS.Business.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GalaxySMS.Business.Entities\GalaxySMS.Business.Entities.csproj">
+      <Project>{98af1bad-593d-4e08-8d0d-50dcea4e7a95}</Project>
+      <Name>GalaxySMS.Business.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GalaxySMS.Business\GalaxySMS.Business.csproj">
+      <Project>{bd06b071-fa3f-4bce-b931-350deb26da48}</Project>
+      <Name>GalaxySMS.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GalaxySMS.Client.Resources\GalaxySMS.Resources.csproj">
+      <Project>{8c7ef8a3-05d8-4f67-baa3-8e7d4c09d1c3}</Project>
+      <Name>GalaxySMS.Resources</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GalaxySMS.Common.Contracts\GalaxySMS.Common.Contracts.csproj">
+      <Project>{21fed814-f824-4a78-a67f-13c5aa6b18a2}</Project>
+      <Name>GalaxySMS.Common.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GalaxySMS.Common\GalaxySMS.Common.csproj">
+      <Project>{51d2f1c3-f892-4db1-ac14-52adc98ec05b}</Project>
+      <Name>GalaxySMS.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GalaxySMS.Data.Contracts\GalaxySMS.Data.Contracts.csproj">
+      <Project>{df1387d0-e630-4f05-9b65-622f9dc8a12f}</Project>
+      <Name>GalaxySMS.Data.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GalaxySMS.Data\GalaxySMS.Data.csproj">
+      <Project>{8f7b6f67-2933-4b98-9bc5-56138f7e255b}</Project>
+      <Name>GalaxySMS.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GCS.AssaAbloyDSR\GCS.AssaAbloyDSR.csproj">
+      <Project>{FE0681DA-2330-4AE2-AA1F-AE32C27B8169}</Project>
+      <Name>GCS.AssaAbloyDSR</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GCS.Framework.Badging.Api\GCS.Framework.Badging.Api.csproj">
+      <Project>{888B041A-76F8-499E-9AB9-0AE80A449DE1}</Project>
+      <Name>GCS.Framework.Badging.Api</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GCS.Framework.Badging\GCS.Framework.Badging.csproj">
+      <Project>{be2256ec-79a1-4226-90cb-73a225eebb50}</Project>
+      <Name>GCS.Framework.Badging</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GCS.Framework.Caching.StackEx.Redis\GCS.Framework.Caching.StackEx.Redis.csproj">
+      <Project>{1F63BBB1-CA55-4E51-B4AC-FB062FA303C5}</Project>
+      <Name>GCS.Framework.Caching.StackEx.Redis</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GCS.Framework.Flash\GCS.Framework.Flash.csproj">
+      <Project>{ea747f92-0087-4aed-a4b2-d86fe9a60289}</Project>
+      <Name>GCS.Framework.Flash</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GCS.Framework.Licensing\GCS.Framework.Licensing.csproj">
+      <Project>{EF5FB621-A35D-4A0C-932A-AC4FD850ACDF}</Project>
+      <Name>GCS.Framework.Licensing</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GCS.Framework.Magick\GCS.Framework.Magick.csproj">
+      <Project>{a4fdb639-b564-465b-a99b-fb49e259fe60}</Project>
+      <Name>GCS.Framework.Magick</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GCS.Framework\GCS.Core.Common.ServiceModel\GCS.Core.Common.ServiceModel.csproj">
+      <Project>{bb840c9e-afee-406d-8527-cfe934f0a527}</Project>
+      <Name>GCS.Core.Common.ServiceModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GCS.Framework\GCS.Core.Common\GCS.Core.Common.csproj">
+      <Project>{106abc97-2143-4722-a2b0-cbe597d59f91}</Project>
+      <Name>GCS.Core.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GCS.Framework\GCS.Core.Contracts\GCS.Core.Common.Contracts.csproj">
+      <Project>{e3820436-5d37-4ccb-87ca-f50420041668}</Project>
+      <Name>GCS.Core.Common.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GCS.Framework\GCS.Framework.CredentialProcessor\GCS.Framework.CredentialProcessor.csproj">
+      <Project>{18d53df1-76a3-4039-a5a8-7360f0a01d80}</Project>
+      <Name>GCS.Framework.CredentialProcessor</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GCS.Framework\GCS.Framework.Imaging\GCS.Framework.Imaging.csproj">
+      <Project>{be49a800-0276-49d8-b0cd-cb5af0120643}</Project>
+      <Name>GCS.Framework.Imaging</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GCS.Framework\GCS.Framework.Security\GCS.Framework.Security.csproj">
+      <Project>{4b4444b5-5de7-4fff-b355-f7dc8662f2a1}</Project>
+      <Name>GCS.Framework.Security</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GCS.Framework\GCSUtilities\GCS.Framework.Utilities.csproj">
+      <Project>{0B5B7784-7385-44C7-9CFB-AF51F3A430E4}</Project>
+      <Name>GCS.Framework.Utilities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PanelCommunication\PanelProtocols\PanelProtocols\PanelProtocols.csproj">
+      <Project>{fb196c8f-69e5-48e7-a0a4-97e62382d681}</Project>
+      <Name>PanelProtocols</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PanelCommunication\SocketServerAsync\GCS.PanelCommunicationServerAsync.csproj">
+      <Project>{32884591-8455-436c-b6f1-ac09ba822f99}</Project>
+      <Name>GCS.PanelCommunicationServerAsync</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Templates\PasswordResetEmailTemplate.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\PasswordResetSMSTemplate.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\TwoFactorAuthEmailTemplate.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\TwoFactorAuthSMSTemplate.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

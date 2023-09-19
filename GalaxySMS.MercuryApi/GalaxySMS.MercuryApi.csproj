@@ -1,0 +1,295 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <UserSecretsId>aspnet-GalaxySMS.MercuryApi-6338746C-520D-4367-A058-2E46D75E45DE</UserSecretsId>
+    <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
+    <DockerDefaultTargetOS>Windows</DockerDefaultTargetOS>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>d:\Dev\GalaxySMS\GalaxySMS.MercuryApi\GalaxySMS.MercuryApi.xml</DocumentationFile>
+    <NoWarn>1701;1702;1591</NoWarn>
+    <OutputPath></OutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Controllers\Api\FileUploadController.cs" />
+    <Compile Remove="Controllers\Api\GalaxyPanelController.cs" />
+    <Compile Remove="Controllers\Api\MercScpController.cs" />
+    <Compile Remove="Controllers\Api\MercScpIdReportController.cs" />
+    <Compile Remove="Data\ApplicationDbContext.cs" />
+    <Compile Remove="Data\Migrations\00000000000000_CreateIdentitySchema.cs" />
+    <Compile Remove="Data\Migrations\00000000000000_CreateIdentitySchema.Designer.cs" />
+    <Compile Remove="Data\Migrations\ApplicationDbContextModelSnapshot.cs" />
+    <Compile Remove="Models\RequestModels\AccessGroupAccessPortalApPutReq.cs" />
+    <Compile Remove="Models\RequestModels\AccessGroupAccessPortalPutReq.cs" />
+    <Compile Remove="Models\RequestModels\AccessGroupAccessPortalReq.cs" />
+    <Compile Remove="Models\RequestModels\AccessGroupPutReq.cs" />
+    <Compile Remove="Models\RequestModels\AccessGroupReq.cs" />
+    <Compile Remove="Models\RequestModels\AccessPortalAlertEventPutReq.cs" />
+    <Compile Remove="Models\RequestModels\AccessPortalAlertEventReq.cs" />
+    <Compile Remove="Models\RequestModels\AccessPortalAlertEventTypeReq.cs" />
+    <Compile Remove="Models\RequestModels\AccessPortalAreaPutReq.cs" />
+    <Compile Remove="Models\RequestModels\AccessPortalAreaReq.cs" />
+    <Compile Remove="Models\RequestModels\AccessPortalAuxiliaryOutputPutReq.cs" />
+    <Compile Remove="Models\RequestModels\AccessPortalAuxiliaryOutputReq.cs" />
+    <Compile Remove="Models\RequestModels\AccessPortalCommandActionReq.cs" />
+    <Compile Remove="Models\RequestModels\AccessPortalPropertiesPutReq.cs" />
+    <Compile Remove="Models\RequestModels\AccessPortalPropertiesReq.cs" />
+    <Compile Remove="Models\RequestModels\AccessPortalPutReq.cs" />
+    <Compile Remove="Models\RequestModels\AccessPortalReq.cs" />
+    <Compile Remove="Models\RequestModels\AccessPortalTimeSchedulePutReq.cs" />
+    <Compile Remove="Models\RequestModels\AccessPortalTimeScheduleReq.cs" />
+    <Compile Remove="Models\RequestModels\AccessProfileAccessGroupPutReq.cs" />
+    <Compile Remove="Models\RequestModels\AccessProfileAccessGroupReq.cs" />
+    <Compile Remove="Models\RequestModels\AccessProfileClusterPutReq.cs" />
+    <Compile Remove="Models\RequestModels\AccessProfileClusterReq.cs" />
+    <Compile Remove="Models\RequestModels\AccessProfileInputOutputGroupPutReq.cs" />
+    <Compile Remove="Models\RequestModels\AccessProfileInputOutputGroupReq.cs" />
+    <Compile Remove="Models\RequestModels\AccessProfilePutReq.cs" />
+    <Compile Remove="Models\RequestModels\AccessProfileReq.cs" />
+    <Compile Remove="Models\RequestModels\ActivityHistoryEventSearchParametersReq.cs" />
+    <Compile Remove="Models\RequestModels\AddressPutReq.cs" />
+    <Compile Remove="Models\RequestModels\AddressReq.cs" />
+    <Compile Remove="Models\RequestModels\AreaPutReq.cs" />
+    <Compile Remove="Models\RequestModels\AreaReq.cs" />
+    <Compile Remove="Models\RequestModels\ClusterAddressReq.cs" />
+    <Compile Remove="Models\RequestModels\ClusterCommandActionReq.cs" />
+    <Compile Remove="Models\RequestModels\ClusterPutReq.cs" />
+    <Compile Remove="Models\RequestModels\ClusterReq.cs" />
+    <Compile Remove="Models\RequestModels\CommandParameters.cs" />
+    <Compile Remove="Models\RequestModels\CountryReq.cs" />
+    <Compile Remove="Models\RequestModels\CpuHardwareAddressReq.cs" />
+    <Compile Remove="Models\RequestModels\CpuInfoReq.cs" />
+    <Compile Remove="Models\RequestModels\Credential26BitStandardPutReq.cs" />
+    <Compile Remove="Models\RequestModels\Credential26BitStandardReq.cs" />
+    <Compile Remove="Models\RequestModels\CredentialBqt36BitPutReq.cs" />
+    <Compile Remove="Models\RequestModels\CredentialBqt36BitReq.cs" />
+    <Compile Remove="Models\RequestModels\CredentialCorporate1K35BitPutReq.cs" />
+    <Compile Remove="Models\RequestModels\CredentialCorporate1K35BitReq.cs" />
+    <Compile Remove="Models\RequestModels\CredentialCorporate1K48BitPutReq.cs" />
+    <Compile Remove="Models\RequestModels\CredentialCorporate1K48BitReq.cs" />
+    <Compile Remove="Models\RequestModels\CredentialCypress37BitPutReq.cs" />
+    <Compile Remove="Models\RequestModels\CredentialCypress37BitReq.cs" />
+    <Compile Remove="Models\RequestModels\CredentialDataPutReq.cs" />
+    <Compile Remove="Models\RequestModels\CredentialDataReq.cs" />
+    <Compile Remove="Models\RequestModels\CredentialFormatDataFieldPutReq.cs" />
+    <Compile Remove="Models\RequestModels\CredentialFormatDataFieldReq.cs" />
+    <Compile Remove="Models\RequestModels\CredentialFormatParityPutReq.cs" />
+    <Compile Remove="Models\RequestModels\CredentialFormatParityReq.cs" />
+    <Compile Remove="Models\RequestModels\CredentialFormatPutReq.cs" />
+    <Compile Remove="Models\RequestModels\CredentialFormatReq.cs" />
+    <Compile Remove="Models\RequestModels\CredentialH1030237BitPutReq.cs" />
+    <Compile Remove="Models\RequestModels\CredentialH1030237BitReq.cs" />
+    <Compile Remove="Models\RequestModels\CredentialH1030437BitPutReq.cs" />
+    <Compile Remove="Models\RequestModels\CredentialH1030437BitReq.cs" />
+    <Compile Remove="Models\RequestModels\CredentialPIV75BitPutReq.cs" />
+    <Compile Remove="Models\RequestModels\CredentialPIV75BitReq.cs" />
+    <Compile Remove="Models\RequestModels\CredentialPutReq.cs" />
+    <Compile Remove="Models\RequestModels\CredentialReq.cs" />
+    <Compile Remove="Models\RequestModels\CredentialSoftwareHouse37BitPutReq.cs" />
+    <Compile Remove="Models\RequestModels\CredentialSoftwareHouse37BitReq.cs" />
+    <Compile Remove="Models\RequestModels\CredentialXceedId40BitPutReq.cs" />
+    <Compile Remove="Models\RequestModels\CredentialXceedId40BitReq.cs" />
+    <Compile Remove="Models\RequestModels\DateTypeDefaultBehaviorPutReq.cs" />
+    <Compile Remove="Models\RequestModels\DateTypeDefaultBehaviorReq.cs" />
+    <Compile Remove="Models\RequestModels\DateTypePutReq.cs" />
+    <Compile Remove="Models\RequestModels\DateTypeReq.cs" />
+    <Compile Remove="Models\RequestModels\DayTypePutReq.cs" />
+    <Compile Remove="Models\RequestModels\DayTypeReq.cs" />
+    <Compile Remove="Models\RequestModels\DayTypeTimePeriodsPutReq.cs" />
+    <Compile Remove="Models\RequestModels\DayTypeTimePeriodsReq.cs" />
+    <Compile Remove="Models\RequestModels\DecodeRawCredentialNumberParametersReq.cs" />
+    <Compile Remove="Models\RequestModels\DepartmentPutReq.cs" />
+    <Compile Remove="Models\RequestModels\DepartmentReq.cs" />
+    <Compile Remove="Models\RequestModels\EntityIdEntityMapPermissionLevelReq.cs" />
+    <Compile Remove="Models\RequestModels\GalaxyClusterDayTypeMapPutReq.cs" />
+    <Compile Remove="Models\RequestModels\GalaxyClusterTimeScheduleMapPutReq.cs" />
+    <Compile Remove="Models\RequestModels\GalaxyCpuCommandActionReq.cs" />
+    <Compile Remove="Models\RequestModels\GalaxyCpuCommandBaseReq.cs" />
+    <Compile Remove="Models\RequestModels\GalaxyCpuPostReq.cs" />
+    <Compile Remove="Models\RequestModels\GalaxyCpuPutReq.cs" />
+    <Compile Remove="Models\RequestModels\GalaxyCpuReq.cs" />
+    <Compile Remove="Models\RequestModels\GalaxyHardwareModuleReq.cs" />
+    <Compile Remove="Models\RequestModels\GalaxyInputArmingInputOutputGroupPutReq.cs" />
+    <Compile Remove="Models\RequestModels\GalaxyInputDevicePutReq.cs" />
+    <Compile Remove="Models\RequestModels\GalaxyInputDeviceTimeSchedulePutReq.cs" />
+    <Compile Remove="Models\RequestModels\GalaxyInterfaceBoardReq.cs" />
+    <Compile Remove="Models\RequestModels\GalaxyInterfaceBoardSectionNodeReq.cs" />
+    <Compile Remove="Models\RequestModels\GalaxyInterfaceBoardSectionReq.cs" />
+    <Compile Remove="Models\RequestModels\GalaxyOutputDeviceInputSourceAssignmentPutReq.cs" />
+    <Compile Remove="Models\RequestModels\GalaxyOutputDeviceInputSourceInputOutputGroupPutReq.cs" />
+    <Compile Remove="Models\RequestModels\GalaxyOutputDeviceInputSourcePutReq.cs" />
+    <Compile Remove="Models\RequestModels\GalaxyOutputDevicePutReq.cs" />
+    <Compile Remove="Models\RequestModels\GalaxyPanelAlertEventReq.cs" />
+    <Compile Remove="Models\RequestModels\GalaxyPanelReq.cs" />
+    <Compile Remove="Models\RequestModels\GalaxyTimePeriodPutReq.cs" />
+    <Compile Remove="Models\RequestModels\GalaxyTimePeriodReq.cs" />
+    <Compile Remove="Models\RequestModels\gcsApplicationReq.cs" />
+    <Compile Remove="Models\RequestModels\gcsBinaryResource.cs" />
+    <Compile Remove="Models\RequestModels\gcsEntityApplicationReq.cs" />
+    <Compile Remove="Models\RequestModels\gcsEntityApplicationRoleReq.cs" />
+    <Compile Remove="Models\RequestModels\gcsEntityPutReq.cs" />
+    <Compile Remove="Models\RequestModels\gcsEntityReq.cs" />
+    <Compile Remove="Models\RequestModels\gcsPermissionCategoryReq.cs" />
+    <Compile Remove="Models\RequestModels\gcsPermissionReq.cs" />
+    <Compile Remove="Models\RequestModels\gcsRolePermissionReq.cs" />
+    <Compile Remove="Models\RequestModels\gcsRoleReq.cs" />
+    <Compile Remove="Models\RequestModels\gcsSystemReq.cs" />
+    <Compile Remove="Models\RequestModels\gcsUserEntity.cs" />
+    <Compile Remove="Models\RequestModels\gcsUserEntityApplicationRole.cs" />
+    <Compile Remove="Models\RequestModels\gcsUserReq.cs" />
+    <Compile Remove="Models\RequestModels\gcsUserRequirementPutReq.cs" />
+    <Compile Remove="Models\RequestModels\gcsUserRequirementReq.cs" />
+    <Compile Remove="Models\RequestModels\gcsUserSettingReq.cs" />
+    <Compile Remove="Models\RequestModels\InputDeviceAlertEventPutReq.cs" />
+    <Compile Remove="Models\RequestModels\InputDeviceCommandActionReq.cs" />
+    <Compile Remove="Models\RequestModels\InputDeviceGalaxyHardwareAddressPutReq.cs" />
+    <Compile Remove="Models\RequestModels\InputDevicePutReq.cs" />
+    <Compile Remove="Models\RequestModels\InputOutputGroupAssignmentReq.cs" />
+    <Compile Remove="Models\RequestModels\InputOutputGroupCommandActionReq.cs" />
+    <Compile Remove="Models\RequestModels\InputOutputGroupPutReq.cs" />
+    <Compile Remove="Models\RequestModels\InputOutputGroupReq.cs" />
+    <Compile Remove="Models\RequestModels\NotePutReq.cs" />
+    <Compile Remove="Models\RequestModels\NoteReq.cs" />
+    <Compile Remove="Models\RequestModels\OutputDeviceCommandActionReq.cs" />
+    <Compile Remove="Models\RequestModels\OutputDeviceGalaxyHardwareAddressPutReq.cs" />
+    <Compile Remove="Models\RequestModels\OutputDevicePutReq.cs" />
+    <Compile Remove="Models\RequestModels\PanelBoardInformationReq.cs" />
+    <Compile Remove="Models\RequestModels\PersonAccessControlPropertyPutReq.cs" />
+    <Compile Remove="Models\RequestModels\PersonAccessControlPropertyReq.cs" />
+    <Compile Remove="Models\RequestModels\PersonAccessGroupPutReq.cs" />
+    <Compile Remove="Models\RequestModels\PersonAccessGroupReq.cs" />
+    <Compile Remove="Models\RequestModels\PersonAddressPutReq.cs" />
+    <Compile Remove="Models\RequestModels\PersonAddressReq.cs" />
+    <Compile Remove="Models\RequestModels\PersonClusterPermissionPutReq.cs" />
+    <Compile Remove="Models\RequestModels\PersonClusterPermissionReq.cs" />
+    <Compile Remove="Models\RequestModels\PersonCredentialCommandScriptReq - Copy.cs" />
+    <Compile Remove="Models\RequestModels\PersonCredentialCommandScriptReq.cs" />
+    <Compile Remove="Models\RequestModels\PersonCredentialPutReq.cs" />
+    <Compile Remove="Models\RequestModels\PersonCredentialReq.cs" />
+    <Compile Remove="Models\RequestModels\PersonEmailAddressPutReq.cs" />
+    <Compile Remove="Models\RequestModels\PersonEmailAddressReq.cs" />
+    <Compile Remove="Models\RequestModels\PersonInputOutputGroupPutReq.cs" />
+    <Compile Remove="Models\RequestModels\PersonInputOutputGroupReq.cs" />
+    <Compile Remove="Models\RequestModels\PersonLcdMessagePutReq.cs" />
+    <Compile Remove="Models\RequestModels\PersonLcdMessageReq.cs" />
+    <Compile Remove="Models\RequestModels\PersonNotePutReq.cs" />
+    <Compile Remove="Models\RequestModels\PersonNoteReq.cs" />
+    <Compile Remove="Models\RequestModels\PersonOtisElevatorPutReq.cs" />
+    <Compile Remove="Models\RequestModels\PersonOtisElevatorReq.cs" />
+    <Compile Remove="Models\RequestModels\PersonPersonalAccessGroupPutReq.cs" />
+    <Compile Remove="Models\RequestModels\PersonPersonalAccessGroupReq.cs" />
+    <Compile Remove="Models\RequestModels\PersonPhoneNumberPutReq.cs" />
+    <Compile Remove="Models\RequestModels\PersonPhoneNumberReq.cs" />
+    <Compile Remove="Models\RequestModels\PersonPhotoPutReq.cs" />
+    <Compile Remove="Models\RequestModels\PersonPhotoReq.cs" />
+    <Compile Remove="Models\RequestModels\PersonPropertyBagPutReq.cs" />
+    <Compile Remove="Models\RequestModels\PersonPropertyBagReq.cs" />
+    <Compile Remove="Models\RequestModels\PersonPutReq.cs" />
+    <Compile Remove="Models\RequestModels\PersonReq.cs" />
+    <Compile Remove="Models\RequestModels\PersonSearchParametersReq.cs" />
+    <Compile Remove="Models\RequestModels\PutRequestBase.cs" />
+    <Compile Remove="Models\RequestModels\RegionPutReq.cs" />
+    <Compile Remove="Models\RequestModels\RegionReq.cs" />
+    <Compile Remove="Models\RequestModels\RequestBase.cs" />
+    <Compile Remove="Models\RequestModels\RequestEntityModel.cs" />
+    <Compile Remove="Models\RequestModels\SaveParameters.cs" />
+    <Compile Remove="Models\RequestModels\SitePutReq.cs" />
+    <Compile Remove="Models\RequestModels\SiteReq.cs" />
+    <Compile Remove="Models\RequestModels\StateProvinceReq.cs" />
+    <Compile Remove="Models\RequestModels\TimePeriodPutReq.cs" />
+    <Compile Remove="Models\RequestModels\TimePeriodReq.cs" />
+    <Compile Remove="Models\RequestModels\TimeScheduleDayTypeGalaxyTimePeriodReq.cs" />
+    <Compile Remove="Models\RequestModels\TimeScheduleDayTypeTimePeriodReq.cs" />
+    <Compile Remove="Models\RequestModels\TimeSchedulePutReq.cs" />
+    <Compile Remove="Models\RequestModels\TimeScheduleReq.cs" />
+    <Compile Remove="Models\ResponseModels\AccessGroupResp.cs" />
+    <Compile Remove="Models\ResponseModels\AccessPortalResp.cs" />
+    <Compile Remove="Models\ResponseModels\AreaResp.cs" />
+    <Compile Remove="Models\ResponseModels\BoardHardwareAddressResp.cs" />
+    <Compile Remove="Models\ResponseModels\BoardSectionHardwareAddressResp.cs" />
+    <Compile Remove="Models\ResponseModels\BoardSectionNodeHardwareAddress.cs" />
+    <Compile Remove="Models\ResponseModels\ClusterAddressResp.cs" />
+    <Compile Remove="Models\ResponseModels\ClusterResp.cs" />
+    <Compile Remove="Models\ResponseModels\CpuHardwareAddressResp.cs" />
+    <Compile Remove="Models\ResponseModels\CpuInfoResp.cs" />
+    <Compile Remove="Models\ResponseModels\CredentialCountReplyResp.cs" />
+    <Compile Remove="Models\ResponseModels\DecodedCredentialResp.cs" />
+    <Compile Remove="Models\ResponseModels\FirmwareVersionResp.cs" />
+    <Compile Remove="Models\ResponseModels\GalaxyCpuDatabaseInformationResp.cs" />
+    <Compile Remove="Models\ResponseModels\GalaxyCpuInformationResp.cs" />
+    <Compile Remove="Models\ResponseModels\GalaxyPanelResp.cs" />
+    <Compile Remove="Models\ResponseModels\GalaxyPanel_GetAlertEventAcknowledgeDataResp.cs" />
+    <Compile Remove="Models\ResponseModels\GalaxyRegionResp.cs" />
+    <Compile Remove="Models\ResponseModels\GalaxySiteResp.cs" />
+    <Compile Remove="Models\ResponseModels\GalaxyTimePeriodResp.cs" />
+    <Compile Remove="Models\ResponseModels\InputDeviceResp.cs" />
+    <Compile Remove="Models\ResponseModels\InputOutputGroupResp.cs" />
+    <Compile Remove="Models\ResponseModels\LoggingStatusReplyResp.cs" />
+    <Compile Remove="Models\ResponseModels\OutputDeviceResp.cs" />
+    <Compile Remove="Models\ResponseModels\PanelBoardInformationResp.cs" />
+    <Compile Remove="Models\ResponseModels\PanelInqueryReplyResp.cs" />
+    <Compile Remove="Models\ResponseModels\PanelMessageBaseResp.cs" />
+    <Compile Remove="Models\ResponseModels\PersonResp.cs" />
+    <Compile Remove="Models\ResponseModels\TimeScheduleResp.cs" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.10" />
+    <PackageReference Include="Microsoft.AspNetCore.Connections.Abstractions" Version="6.0.10" />
+    <PackageReference Include="Microsoft.AspNetCore.Localization" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Localization.Routing" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="6.0.10" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning" Version="5.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Caching.Memory" Version="6.0.1" />
+    <PackageReference Include="Microsoft.Extensions.Caching.StackExchangeRedis" Version="6.0.10" />
+    <PackageReference Include="Microsoft.Extensions.Hosting.WindowsServices" Version="6.0.1" />
+    <PackageReference Include="Serilog.AspNetCore" Version="6.0.1" />
+    <PackageReference Include="Serilog.Sinks.MSSqlServer" Version="5.8.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore.Annotations" Version="6.4.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore.Filters" Version="7.0.5" />
+    <PackageReference Include="Swashbuckle.AspNetCore.ReDoc" Version="6.4.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="6.4.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="6.4.0" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <Folder Include="Data\Migrations\" />
+    <Folder Include="Models\RequestModels\" />
+    <Folder Include="Models\ResponseModels\" />
+    <Folder Include="Resources\" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Mercury\Ascend\AscendGalaxyLibrary.csproj" />
+    <ProjectReference Include="..\GalaxySMS.Business.Entities.NetCore\GalaxySMS.Business.Entities.NetCore.csproj" />
+    <ProjectReference Include="..\GalaxySMS.Client.SDK.NetCore\GalaxySMS.Client.SDK.NetCore.csproj" />
+    <ProjectReference Include="..\GCS.Framework.Badging.Api.NetCore\GCS.Framework.Badging.Api.NetCore.csproj" />
+    <ProjectReference Include="..\GCS.Framework\NETCore\GCS.Core.Common.NetCore\GCS.Core.Common.NetCore.csproj">
+      <Aliases>NetCoreCommon</Aliases>
+    </ProjectReference>
+    <ProjectReference Include="..\NETCore\GalaxySMS.Business.Entities.Api.NetCore\GalaxySMS.Business.Entities.Api.NetCore.csproj" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <None Update="GalaxySMS.Business.Entities.Api.NetCore.xml">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="GalaxySMS.Business.Entities.MercApi.NetCore.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="GalaxySMS.MercuryApi.xml">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>

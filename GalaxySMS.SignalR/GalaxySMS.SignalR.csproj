@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.10" />
+    <PackageReference Include="Microsoft.Extensions.Hosting.WindowsServices" Version="6.0.1" />
+    <PackageReference Include="Serilog.AspNetCore" Version="6.0.1" />
+    <PackageReference Include="Serilog.Sinks.MSSqlServer" Version="5.8.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\GalaxySMS.Business.Entities.NetCore\GalaxySMS.Business.Entities.NetCore.csproj" />
+    <ProjectReference Include="..\GCS.Core.Common.SignalR\GCS.Core.Common.SignalR.csproj" />
+    <ProjectReference Include="..\GCS.Framework\NETCore\GCS.Core.Common.NetCore\GCS.Core.Common.NetCore.csproj" />
+  </ItemGroup>
+
+</Project>

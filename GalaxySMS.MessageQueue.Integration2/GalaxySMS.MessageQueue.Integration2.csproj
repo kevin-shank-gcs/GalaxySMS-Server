@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AA182E00-9665-459D-8343-3884CD310311}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GalaxySMS.MessageQueue.Integration2</RootNamespace>
+    <AssemblyName>GalaxySMS.MessageQueue.Integration2</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;NETFRAMEWORK SignalRCore</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFRAMEWORK SignalRCore</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=10.0.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.10.1.1\lib\net461\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AutoMapperProfile.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GalaxySMS.Business.Entities.Std\GalaxySMS.Business.Entities.Std.csproj">
+      <Project>{e9f9b51f-909f-44a2-8399-be8a9bd2ab9e}</Project>
+      <Name>GalaxySMS.Business.Entities.Std</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GalaxySMS.Business.Entities\GalaxySMS.Business.Entities.csproj">
+      <Project>{98af1bad-593d-4e08-8d0d-50dcea4e7a95}</Project>
+      <Name>GalaxySMS.Business.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GalaxySMS.Business.WcfClient.SDK\GalaxySMS.Client.SDK.NetFx.csproj">
+      <Project>{5530ace6-65e5-402b-bbd7-4148be37600e}</Project>
+      <Name>GalaxySMS.Client.SDK.NetFx</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GalaxySMS.Common\GalaxySMS.Common.csproj">
+      <Project>{51d2f1c3-f892-4db1-ac14-52adc98ec05b}</Project>
+      <Name>GalaxySMS.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GalaxySMS.Data\GalaxySMS.Data.csproj">
+      <Project>{8f7b6f67-2933-4b98-9bc5-56138f7e255b}</Project>
+      <Name>GalaxySMS.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GalaxySMS.SignalRClient\GalaxySMS.SignalRCoreClient.csproj">
+      <Project>{4d698ce0-5b58-4763-8cc2-73bb6c63b730}</Project>
+      <Name>GalaxySMS.SignalRCoreClient</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GCS.Framework.Utilities.Std2\GCS.Framework.Utilities.Std2.csproj">
+      <Project>{eaa1c3bb-bb72-47f5-bfc8-b3f573d1e615}</Project>
+      <Name>GCS.Framework.Utilities.Std2</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GCS.Framework\GCS.Core.Common.ServiceModel\GCS.Core.Common.ServiceModel.csproj">
+      <Project>{bb840c9e-afee-406d-8527-cfe934f0a527}</Project>
+      <Name>GCS.Core.Common.ServiceModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GCS.Framework\GCS.Core.Common\GCS.Core.Common.csproj">
+      <Project>{106abc97-2143-4722-a2b0-cbe597d59f91}</Project>
+      <Name>GCS.Core.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GCS.Framework\GCS.Core.Contracts\GCS.Core.Common.Contracts.csproj">
+      <Project>{e3820436-5d37-4ccb-87ca-f50420041668}</Project>
+      <Name>GCS.Core.Common.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GCS.Framework\GCS.Framework.MessageQueue.Messaging\GCS.Framework.MessageQueue.Messaging.csproj">
+      <Project>{1c426b41-359c-43f9-990c-5e548ac65ed7}</Project>
+      <Name>GCS.Framework.MessageQueue.Messaging</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="..\GalaxySMS.MessageQueue.Integration.Shared\GalaxySMS.MessageQueue.Integration.Shared.projitems" Label="Shared" />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

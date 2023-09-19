@@ -1,0 +1,28 @@
+﻿////////////////////////////////////////////////////////////////////////////////////////////////////
+// file:	Enums\CredentialDataLength.cs
+//
+// summary:	Implements the credential data length class
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace GalaxySMS.Common.Enums
+{
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+    /// <summary>   Values that represent credential data sizes. </summary>
+    ///
+    /// <remarks>   Kevin, 1/3/2019. </remarks>
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+	public enum CredentialDataSize
+	{
+        /// <summary>   = 6,. </summary>
+        Standard48Bits,
+        /// <summary>   = 32. </summary>
+        Extended256Bits
+	}
+}

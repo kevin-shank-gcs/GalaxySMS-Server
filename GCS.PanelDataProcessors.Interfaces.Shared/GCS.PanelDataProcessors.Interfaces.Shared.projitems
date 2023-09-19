@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects Condition="'$(MSBuildVersion)' == '' Or '$(MSBuildVersion)' &lt; '16.0'">$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>a09ff7df-fa0d-409e-a78b-775c3965d30a</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>GCS.PanelDataProcessors.Interfaces.Shared</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)IPanelHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IJobMessageHandler.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IPanelOutputDataMessageHandler.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IPanelOutputDataProcessor.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SystemType.cs" />
+  </ItemGroup>
+</Project>

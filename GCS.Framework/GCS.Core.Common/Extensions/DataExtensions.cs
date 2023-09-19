@@ -1,0 +1,37 @@
+﻿////////////////////////////////////////////////////////////////////////////////////////////////////
+// file:	Extensions\DataExtensions.cs
+//
+// summary:	Implements the data extensions class
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace GCS.Core.Common.Extensions
+{
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+    /// <summary>   A data extensions. </summary>
+    ///
+    /// <remarks>   Kevin, 12/26/2018. </remarks>
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    public static class DataExtensions
+    {
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Enumerates to fully loaded in this collection. </summary>
+        ///
+        /// <remarks>   Kevin, 12/26/2018. </remarks>
+        ///
+        /// <typeparam name="T">    Generic type parameter. </typeparam>
+        /// <param name="query">    The query to act on. </param>
+        ///
+        /// <returns>   Query as an IEnumerable&lt;T&gt; </returns>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        public static IEnumerable<T> ToFullyLoaded<T>(this IQueryable<T> query)
+        {
+            return query.ToArray().ToList();
+        }
+    }
+}

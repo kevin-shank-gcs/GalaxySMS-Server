@@ -1,0 +1,256 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{574996B0-F074-484B-9D11-6E47DF8307A7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GCS.Core.Common.UI</RootNamespace>
+    <AssemblyName>GCS.Core.Common.UI</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\GCS.Core.Common.UI.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FluentValidation, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7de548da2fbae0f0, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\FluentValidation.10.1.0\lib\netstandard2.0\FluentValidation.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.ComponentModel.Annotations.4.7.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.ComponentModel.Primitives, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.ComponentModel.Primitives.4.3.0\lib\net45\System.ComponentModel.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.ValueTuple.4.5.0\lib\net461\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Telerik.Windows.Controls, Version=2020.1.218.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\RCWPF\Current\Telerik.Windows.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Data, Version=2020.1.218.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\RCWPF\Current\Telerik.Windows.Controls.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Docking, Version=2020.1.218.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\RCWPF\Current\Telerik.Windows.Controls.Docking.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.GridView, Version=2020.1.218.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\RCWPF\Current\Telerik.Windows.Controls.GridView.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Input, Version=2020.1.218.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\RCWPF\Current\Telerik.Windows.Controls.Input.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Navigation, Version=2020.1.218.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\RCWPF\Current\Telerik.Windows.Controls.Navigation.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Data, Version=2020.1.218.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\RCWPF\Current\Telerik.Windows.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Animations\VisibilityAnimation.cs" />
+    <Compile Include="Behaviors\IListItemConverter.cs" />
+    <Compile Include="Behaviors\MultiSelectBehavior.cs" />
+    <Compile Include="Behaviors\RadGridViewMultiSelectBehavior.cs" />
+    <Compile Include="Behaviors\RadProgressPageBehavior.cs" />
+    <Compile Include="Behaviors\TwoListSynchronizer.cs" />
+    <Compile Include="Collections\ItemObservableCollection.cs" />
+    <Compile Include="Controls\HyperlinkControl.cs" />
+    <Compile Include="Controls\MessagesPanel.xaml.cs">
+      <DependentUpon>MessagesPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ErrorsPanel.xaml.cs">
+      <DependentUpon>ErrorsPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ValidationHeader.xaml.cs">
+      <DependentUpon>ValidationHeader.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Converters\BinaryImageConverter.cs" />
+    <Compile Include="Converters\DateTimeOffsetToDateTimeConverter.cs" />
+    <Compile Include="Converters\GuidEmptyToBooleanConverter.cs" />
+    <Compile Include="Converters\GuidNotEmptyToBooleanConverter.cs" />
+    <Compile Include="Converters\StringCollection.cs" />
+    <Compile Include="Converters\GuidCollection.cs" />
+    <Compile Include="Converters\InverseVisibilityToBooleanConverter.cs" />
+    <Compile Include="Converters\VisibilityToBooleanConverter.cs" />
+    <Compile Include="Converters\ParameterAndNotAnyValueToVisibilityConverter.cs" />
+    <Compile Include="Converters\ParameterAndAnyValueToVisibilityConverter.cs" />
+    <Compile Include="Converters\SliderValueToPercentageConverter.cs" />
+    <Compile Include="Converters\EnumToIntConverter.cs" />
+    <Compile Include="Converters\GuidNotEmptyToVisibilityConverter.cs" />
+    <Compile Include="Converters\GuidEmptyToVisibilityConverter.cs" />
+    <Compile Include="Converters\IntToBrushConverter.cs" />
+    <Compile Include="Converters\IntToColorConverter.cs" />
+    <Compile Include="Converters\NotZeroToBooleanConverter.cs" />
+    <Compile Include="Converters\StringToDoubleConverter.cs" />
+    <Compile Include="Converters\TimeSpanToSecondsConverter.cs" />
+    <Compile Include="Converters\TimeSpanToHundredthsConverter.cs" />
+    <Compile Include="Converters\NotZeroToVisibilityConverter.cs" />
+    <Compile Include="Converters\ObjectToFalseConverter.cs" />
+    <Compile Include="Converters\SignedToUnsignedConverter.cs" />
+    <Compile Include="Converters\ZeroToVisibilityConverter.cs" />
+    <Compile Include="Converters\BooleanToWidthConverter.cs" />
+    <Compile Include="Converters\ColorConverter.cs" />
+    <Compile Include="Converters\ColorToBrushConverter.cs" />
+    <Compile Include="Converters\DateTimeToRecentDaysConverter.cs" />
+    <Compile Include="Converters\DateTimeToUpperStringConverter.cs" />
+    <Compile Include="Converters\DebugConverter.cs" />
+    <Compile Include="Converters\InverseBooleanToVisibilityConverter.cs" />
+    <Compile Include="Converters\BooleanToVisibilityConverter.cs" />
+    <Compile Include="Converters\ByteArrayToHexStringConverter.cs" />
+    <Compile Include="Converters\InverseBooleanConverter.cs" />
+    <Compile Include="Converters\NavigationIntervalStringConverter.cs" />
+    <Compile Include="Converters\NullToBooleanConverter.cs" />
+    <Compile Include="Converters\NotNullToBooleanConverter.cs" />
+    <Compile Include="Converters\NumberToBooleanConverter.cs" />
+    <Compile Include="Converters\ObjectToUpperCaseStringConverter.cs" />
+    <Compile Include="Converters\ParameterAndValueToBooleanConverter.cs" />
+    <Compile Include="Converters\ParameterAndNotValueToVisibilityConverter.cs" />
+    <Compile Include="Converters\ParameterAndValueToVisibilityConverter.cs" />
+    <Compile Include="Converters\StringToUpperCaseConverter.cs" />
+    <Compile Include="Converters\StringToVisibiltyConverter.cs" />
+    <Compile Include="Converters\ThicknessToStringConverter.cs" />
+    <Compile Include="Converters\NotNullToVisibilityConverter.cs" />
+    <Compile Include="Converters\NullToVisibilityConverter.cs" />
+    <Compile Include="Converters\WidthToVisibilityConverter.cs" />
+    <Compile Include="Core\BindingProxy.cs" />
+    <Compile Include="Core\ContentControlEx.cs" />
+    <Compile Include="Core\DelegateCommand.cs" />
+    <Compile Include="Core\DialogService.cs" />
+    <Compile Include="Core\DispatchHelper.cs" />
+    <Compile Include="Core\DockingUserControlViewBase.cs" />
+    <Compile Include="Core\MessageListener.cs" />
+    <Compile Include="Core\RadPaneViewBase.cs" />
+    <Compile Include="Core\UserControlViewBase.cs" />
+    <Compile Include="Core\ViewModelBase.cs" />
+    <Compile Include="Core\TelerikRadWindowViewBase.cs" />
+    <Compile Include="Core\WindowViewBase.cs" />
+    <Compile Include="DragDrop\DragVisualProvider.cs" />
+    <Compile Include="DragDrop\DropIndicationDetails.cs" />
+    <Compile Include="DragDrop\GridViewDragDropBehavior.cs" />
+    <Compile Include="DragDrop\TreeViewDragDropBehavior.cs" />
+    <Compile Include="Enums\DataEditMode.cs" />
+    <Compile Include="Core\DialogCloser.cs" />
+    <Compile Include="Extensions\LocalizationExtensions.cs" />
+    <Compile Include="Extensions\PasswordBoxAssistant.cs" />
+    <Compile Include="Interfaces\IDialogService.cs" />
+    <Compile Include="Behaviors\ListBoxDragDropBehavior.cs" />
+    <Compile Include="Interfaces\IPaneModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="QuickStart.cs" />
+    <Compile Include="Splasher\Splasher.cs" />
+    <Compile Include="Spys\ElementSpy.cs" />
+    <Compile Include="Telerik\DateTimePickerColumn.cs" />
+    <Compile Include="Telerik\HundredthsTimeSpanComponent.cs" />
+    <Compile Include="Telerik\VisibilityAttachedProperty.cs" />
+    <Compile Include="TemplateSelectors\PropertyGridDataTemplateSelector.cs" />
+    <Compile Include="TreeView\Attached.cs" />
+    <Compile Include="WPF\ConstrainingStackPanel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Controls\MessagesPanel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\ErrorsPanel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\ValidationHeader.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\close.png" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Resources\CloseX.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\GalaxySMS.Common\GalaxySMS.Common.csproj">
+      <Project>{51D2F1C3-F892-4DB1-AC14-52ADC98EC05B}</Project>
+      <Name>GalaxySMS.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GCS.Core.Common.ServiceModel\GCS.Core.Common.ServiceModel.csproj">
+      <Project>{BB840C9E-AFEE-406D-8527-CFE934F0A527}</Project>
+      <Name>GCS.Core.Common.ServiceModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GCS.Core.Common\GCS.Core.Common.csproj">
+      <Project>{106abc97-2143-4722-a2b0-cbe597d59f91}</Project>
+      <Name>GCS.Core.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GCS.Core.Contracts\GCS.Core.Common.Contracts.csproj">
+      <Project>{e3820436-5d37-4ccb-87ca-f50420041668}</Project>
+      <Name>GCS.Core.Common.Contracts</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

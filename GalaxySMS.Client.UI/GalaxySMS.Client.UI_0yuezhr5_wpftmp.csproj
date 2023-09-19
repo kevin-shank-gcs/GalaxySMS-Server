@@ -1,0 +1,331 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{524F7C40-89C7-4C0F-A8BE-697BC520E533}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GalaxySMS.Client.UI</RootNamespace>
+    <AssemblyName>GalaxySMS.Client.UI</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BindableControls\AddNewButtonControlBindable.xaml.cs" />
+    <Compile Include="BindableControls\AddNewRefreshButtonControlBindable.xaml.cs" />
+    <Compile Include="BindableControls\ButtonControlBindable.xaml.cs" />
+    <Compile Include="BindableControls\LabeledMaskedTextInputBindable.xaml.cs">
+      <DependentUpon>LabeledMaskedTextInputBindable.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BindableControls\LabeledTextBoxBindable.xaml.cs">
+      <DependentUpon>LabeledTextBoxBindable.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BindableControls\LabeledTextBoxUserControlBase.cs" />
+    <Compile Include="BindableControls\ButtonUserControlBase.cs" />
+    <Compile Include="BindableControls\CancelButtonControlBindable.xaml.cs" />
+    <Compile Include="BindableControls\DeleteButtonControlBindable.xaml.cs" />
+    <Compile Include="BindableControls\EditButtonControlBindable.xaml.cs" />
+    <Compile Include="BindableControls\RefreshButtonControlBindable.xaml.cs" />
+    <Compile Include="BindableControls\SaveButtonControlBindable.xaml.cs" />
+    <Compile Include="Converters\DeviceIdCommandIdMultiValueConverter.cs" />
+    <Compile Include="Converters\MenuBuilder.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ComboColumnFilteringControl.xaml.cs">
+      <DependentUpon>ComboColumnFilteringControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ucStandardInsertUpdateData.xaml.cs">
+      <DependentUpon>ucStandardInsertUpdateData.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\CalendarDayControl.xaml.cs">
+      <DependentUpon>CalendarDayControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\MonthYearControl.xaml.cs">
+      <DependentUpon>MonthYearControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\NoteUserControl.xaml.cs">
+      <DependentUpon>NoteUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\TotalRecordCountUserControl.xaml.cs">
+      <DependentUpon>TotalRecordCountUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\GridPageSizeSelectorUserControl.xaml.cs">
+      <DependentUpon>GridPageSizeSelectorUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\DayPeriodControl.xaml.cs">
+      <DependentUpon>DayPeriodControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\SectionHeaderControl.xaml.cs">
+      <DependentUpon>SectionHeaderControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\TimeScheduleMapUserControl.xaml.cs">
+      <DependentUpon>TimeScheduleMapUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\GalaxyClusterControl.xaml.cs">
+      <DependentUpon>GalaxyClusterControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\SaveDeleteButtonControl.xaml.cs">
+      <DependentUpon>SaveDeleteButtonControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\EntityMapUserControl.xaml.cs">
+      <DependentUpon>EntityMapUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\FormHeaderControl.xaml.cs">
+      <DependentUpon>FormHeaderControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\EditDeleteButtonControl.xaml.cs">
+      <DependentUpon>EditDeleteButtonControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\AddressUserControl.xaml.cs">
+      <DependentUpon>AddressUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\AddNewRefreshButtonControl.xaml.cs">
+      <DependentUpon>AddNewRefreshButtonControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\SaveCancelButtonControl.xaml.cs">
+      <DependentUpon>SaveCancelButtonControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\TimePeriodStartStopControl.xaml.cs">
+      <DependentUpon>TimePeriodStartStopControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\SignInOutViewModel.cs" />
+    <Compile Include="Views\CurrentUserEntityUserControlView.xaml.cs">
+      <DependentUpon>CurrentUserEntityUserControlView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CurrentSystemUserControlView.xaml.cs">
+      <DependentUpon>CurrentSystemUserControlView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SignInOutView.xaml.cs">
+      <DependentUpon>SignInOutView.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Applications\Prism\GalaxySMS.TelerikWPF.Infrastructure\GalaxySMS.TelerikWPF.Infrastructure.csproj">
+      <Project>{6de0ac28-0b20-42c7-a5a6-c608224fe8a9}</Project>
+      <Name>GalaxySMS.TelerikWPF.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GalaxySMS.Client.Contracts\GalaxySMS.Client.Contracts.csproj">
+      <Project>{3e3f24e8-dc52-49e6-909d-aa4577e15375}</Project>
+      <Name>GalaxySMS.Client.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GalaxySMS.Client.Entities\GalaxySMS.Client.Entities.csproj">
+      <Project>{5868c670-3e3f-4022-b780-5b27cef8d3e7}</Project>
+      <Name>GalaxySMS.Client.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GalaxySMS.Client.Resources\GalaxySMS.Resources.csproj">
+      <Project>{8c7ef8a3-05d8-4f67-baa3-8e7d4c09d1c3}</Project>
+      <Name>GalaxySMS.Resources</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GalaxySMS.Client.SDK\GalaxySMS.Client.SDK.csproj">
+      <Project>{ceea547d-5774-412b-9b13-50402c2a3d7d}</Project>
+      <Name>GalaxySMS.Client.SDK</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GCS.Framework\GCS.Core.Common.UI\GCS.Core.Common.UI.csproj">
+      <Project>{574996b0-f074-484b-9d11-6e47df8307a7}</Project>
+      <Name>GCS.Core.Common.UI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GCS.Framework\GCS.Core.Common\GCS.Core.Common.csproj">
+      <Project>{106abc97-2143-4722-a2b0-cbe597d59f91}</Project>
+      <Name>GCS.Core.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GCS.Framework\GCS.Core.Contracts\GCS.Core.Common.Contracts.csproj">
+      <Project>{e3820436-5d37-4ccb-87ca-f50420041668}</Project>
+      <Name>GCS.Core.Common.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GCS.Framework\GCS.Framework.Security\GCS.Framework.Security.csproj">
+      <Project>{4b4444b5-5de7-4fff-b355-f7dc8662f2a1}</Project>
+      <Name>GCS.Framework.Security</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DataClasses\" />
+    <Folder Include="Resources\Images\Refresh\96x96\" />
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ItemGroup>
+    <ReferencePath Include="D:\Dev\GalaxySMS\GalaxySMS.Client.Contracts\bin\Debug\GalaxySMS.Client.Contracts.dll" />
+    <ReferencePath Include="D:\Dev\GalaxySMS\GalaxySMS.Client.Entities\bin\Debug\GalaxySMS.Client.Entities.dll" />
+    <ReferencePath Include="D:\Dev\GalaxySMS\GalaxySMS.Client.SDK\bin\Debug\GalaxySMS.Client.SDK.dll" />
+    <ReferencePath Include="D:\Dev\GalaxySMS\GalaxySMS.Client.Resources\bin\Debug\GalaxySMS.Resources.dll" />
+    <ReferencePath Include="D:\Dev\GalaxySMS\Applications\Prism\GalaxySMS.TelerikWPF.Infrastructure\bin\Debug\GalaxySMS.TelerikWPF.Infrastructure.dll" />
+    <ReferencePath Include="D:\Dev\GalaxySMS\GCS.Framework\GCS.Core.Contracts\bin\Debug\GCS.Core.Common.Contracts.dll" />
+    <ReferencePath Include="D:\Dev\GalaxySMS\GCS.Framework\GCS.Core.Common\bin\Debug\GCS.Core.Common.dll" />
+    <ReferencePath Include="D:\Dev\GalaxySMS\GalaxySMS.Client.UI\bin\Debug\GCS.Core.Common.ServiceModel.dll" />
+    <ReferencePath Include="D:\Dev\GalaxySMS\GCS.Framework\GCS.Core.Common.UI\bin\Debug\GCS.Core.Common.UI.dll" />
+    <ReferencePath Include="D:\Dev\GalaxySMS\GCS.Framework\GCS.Framework.Security\bin\Debug\GCS.Framework.Security.dll" />
+    <ReferencePath Include="D:\Dev\GalaxySMS\GalaxySMS.Client.UI\bin\Debug\GCS.Framework.Utilities.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Microsoft.CSharp.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\mscorlib.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\PresentationCore.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\PresentationFramework.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\System.ComponentModel.Composition.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\System.Core.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\System.Data.DataSetExtensions.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\System.Data.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\System.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\System.Drawing.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\System.Runtime.Serialization.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Microsoft SDKs\Expression\Blend\.NETFramework\v4.5\Libraries\System.Windows.Interactivity.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\System.Xaml.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\System.Xml.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\System.Xml.Linq.dll" />
+    <ReferencePath Include="D:\Dev\GalaxySMS\lib\RCWPF\2018.1.220.45.NoXaml\Telerik.Windows.Controls.Data.dll" />
+    <ReferencePath Include="D:\Dev\GalaxySMS\lib\RCWPF\2018.1.220.45.NoXaml\Telerik.Windows.Controls.dll" />
+    <ReferencePath Include="D:\Dev\GalaxySMS\lib\RCWPF\2018.1.220.45.NoXaml\Telerik.Windows.Controls.Docking.dll" />
+    <ReferencePath Include="D:\Dev\GalaxySMS\lib\RCWPF\2018.1.220.45.NoXaml\Telerik.Windows.Controls.GridView.dll" />
+    <ReferencePath Include="D:\Dev\GalaxySMS\lib\RCWPF\2018.1.220.45.NoXaml\Telerik.Windows.Controls.Input.dll" />
+    <ReferencePath Include="D:\Dev\GalaxySMS\lib\RCWPF\2018.1.220.45.NoXaml\Telerik.Windows.Controls.Navigation.dll" />
+    <ReferencePath Include="D:\Dev\GalaxySMS\lib\RCWPF\2018.1.220.45.NoXaml\Telerik.Windows.Data.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\WindowsBase.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.Collections.Concurrent.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.Collections.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.ComponentModel.Annotations.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.ComponentModel.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.ComponentModel.EventBasedAsync.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.Diagnostics.Contracts.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.Diagnostics.Debug.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.Diagnostics.Tools.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.Diagnostics.Tracing.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.Dynamic.Runtime.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.Globalization.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.IO.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.Linq.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.Linq.Expressions.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.Linq.Parallel.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.Linq.Queryable.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.Net.NetworkInformation.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.Net.Primitives.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.Net.Requests.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.Net.WebHeaderCollection.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.ObjectModel.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.Reflection.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.Reflection.Emit.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.Reflection.Emit.ILGeneration.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.Reflection.Emit.Lightweight.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.Reflection.Extensions.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.Reflection.Primitives.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.Resources.ResourceManager.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.Runtime.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.Runtime.Extensions.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.Runtime.Handles.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.Runtime.InteropServices.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.Runtime.InteropServices.WindowsRuntime.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.Runtime.Numerics.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.Runtime.Serialization.Json.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.Runtime.Serialization.Primitives.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.Runtime.Serialization.Xml.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.Security.Principal.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.ServiceModel.Duplex.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.ServiceModel.Http.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.ServiceModel.NetTcp.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.ServiceModel.Primitives.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.ServiceModel.Security.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.Text.Encoding.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.Text.Encoding.Extensions.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.Text.RegularExpressions.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.Threading.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.Threading.Tasks.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.Threading.Tasks.Parallel.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.Threading.Timer.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.Xml.ReaderWriter.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.Xml.XDocument.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.Xml.XmlSerializer.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="D:\Dev\GalaxySMS\GalaxySMS.Client.UI\obj\Debug\BindableControls\AddNewButtonControlBindable.g.cs" />
+    <Compile Include="D:\Dev\GalaxySMS\GalaxySMS.Client.UI\obj\Debug\BindableControls\AddNewRefreshButtonControlBindable.g.cs" />
+    <Compile Include="D:\Dev\GalaxySMS\GalaxySMS.Client.UI\obj\Debug\BindableControls\ButtonControlBindable.g.cs" />
+    <Compile Include="D:\Dev\GalaxySMS\GalaxySMS.Client.UI\obj\Debug\BindableControls\CancelButtonControlBindable.g.cs" />
+    <Compile Include="D:\Dev\GalaxySMS\GalaxySMS.Client.UI\obj\Debug\BindableControls\DeleteButtonControlBindable.g.cs" />
+    <Compile Include="D:\Dev\GalaxySMS\GalaxySMS.Client.UI\obj\Debug\BindableControls\EditButtonControlBindable.g.cs" />
+    <Compile Include="D:\Dev\GalaxySMS\GalaxySMS.Client.UI\obj\Debug\BindableControls\LabeledMaskedTextInputBindable.g.cs" />
+    <Compile Include="D:\Dev\GalaxySMS\GalaxySMS.Client.UI\obj\Debug\BindableControls\LabeledTextBoxBindable.g.cs" />
+    <Compile Include="D:\Dev\GalaxySMS\GalaxySMS.Client.UI\obj\Debug\BindableControls\RefreshButtonControlBindable.g.cs" />
+    <Compile Include="D:\Dev\GalaxySMS\GalaxySMS.Client.UI\obj\Debug\BindableControls\SaveButtonControlBindable.g.cs" />
+    <Compile Include="D:\Dev\GalaxySMS\GalaxySMS.Client.UI\obj\Debug\UserControls\ComboColumnFilteringControl.g.cs" />
+    <Compile Include="D:\Dev\GalaxySMS\GalaxySMS.Client.UI\obj\Debug\UserControls\ucStandardInsertUpdateData.g.cs" />
+    <Compile Include="D:\Dev\GalaxySMS\GalaxySMS.Client.UI\obj\Debug\UserControls\CalendarDayControl.g.cs" />
+    <Compile Include="D:\Dev\GalaxySMS\GalaxySMS.Client.UI\obj\Debug\UserControls\MonthYearControl.g.cs" />
+    <Compile Include="D:\Dev\GalaxySMS\GalaxySMS.Client.UI\obj\Debug\UserControls\NoteUserControl.g.cs" />
+    <Compile Include="D:\Dev\GalaxySMS\GalaxySMS.Client.UI\obj\Debug\UserControls\TotalRecordCountUserControl.g.cs" />
+    <Compile Include="D:\Dev\GalaxySMS\GalaxySMS.Client.UI\obj\Debug\UserControls\GridPageSizeSelectorUserControl.g.cs" />
+    <Compile Include="D:\Dev\GalaxySMS\GalaxySMS.Client.UI\obj\Debug\UserControls\DayPeriodControl.g.cs" />
+    <Compile Include="D:\Dev\GalaxySMS\GalaxySMS.Client.UI\obj\Debug\UserControls\SectionHeaderControl.g.cs" />
+    <Compile Include="D:\Dev\GalaxySMS\GalaxySMS.Client.UI\obj\Debug\UserControls\TimeScheduleMapUserControl.g.cs" />
+    <Compile Include="D:\Dev\GalaxySMS\GalaxySMS.Client.UI\obj\Debug\UserControls\GalaxyClusterControl.g.cs" />
+    <Compile Include="D:\Dev\GalaxySMS\GalaxySMS.Client.UI\obj\Debug\UserControls\SaveDeleteButtonControl.g.cs" />
+    <Compile Include="D:\Dev\GalaxySMS\GalaxySMS.Client.UI\obj\Debug\UserControls\EntityMapUserControl.g.cs" />
+    <Compile Include="D:\Dev\GalaxySMS\GalaxySMS.Client.UI\obj\Debug\UserControls\FormHeaderControl.g.cs" />
+    <Compile Include="D:\Dev\GalaxySMS\GalaxySMS.Client.UI\obj\Debug\UserControls\EditDeleteButtonControl.g.cs" />
+    <Compile Include="D:\Dev\GalaxySMS\GalaxySMS.Client.UI\obj\Debug\UserControls\AddressUserControl.g.cs" />
+    <Compile Include="D:\Dev\GalaxySMS\GalaxySMS.Client.UI\obj\Debug\UserControls\AddNewRefreshButtonControl.g.cs" />
+    <Compile Include="D:\Dev\GalaxySMS\GalaxySMS.Client.UI\obj\Debug\UserControls\SaveCancelButtonControl.g.cs" />
+    <Compile Include="D:\Dev\GalaxySMS\GalaxySMS.Client.UI\obj\Debug\UserControls\TimePeriodStartStopControl.g.cs" />
+    <Compile Include="D:\Dev\GalaxySMS\GalaxySMS.Client.UI\obj\Debug\Views\CurrentUserEntityUserControlView.g.cs" />
+    <Compile Include="D:\Dev\GalaxySMS\GalaxySMS.Client.UI\obj\Debug\Views\CurrentSystemUserControlView.g.cs" />
+    <Compile Include="D:\Dev\GalaxySMS\GalaxySMS.Client.UI\obj\Debug\Views\SignInOutView.g.cs" />
+    <Compile Include="D:\Dev\GalaxySMS\GalaxySMS.Client.UI\obj\Debug\GeneratedInternalTypeHelper.g.cs" />
+  </ItemGroup>
+</Project>

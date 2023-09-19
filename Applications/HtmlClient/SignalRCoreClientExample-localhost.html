@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <style>
+        table,
+        td {
+            border: 1px solid black;
+        }
+    </style>
+    <title>GalaxySMS SignalR Core Client</title>
+</head>
+
+<body>
+
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/3.1.7/signalr.min.js"></script>-->
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/6.0.1/signalr.js"></script>-->
+    <!--https://cdnjs.com/-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/7.0.4/signalr.min.js"></script>
+
+<script type="text/javascript">
+        //const API_HOST = "https://galaxyapisms-dev.galaxysys.com";
+        const API_HOST = "http://localhost:38002";
+        const SIGNALR_HOST = "http://localhost:38000";
+        const SELECT_ENTITIES = 2048;
+        /**
+         * If whiteEntitiesList is null, the script
+         * will connect to most recent SELECT_ENTITIES entities.
+         * In other case, just defined IDs will be filtered
+         * from the list of selected entities.
+         */
+        // const whiteEntitiesList = null;
+        const whiteEntitiesList = {
+            "00000000-0000-0000-0000-000000000002": true
+        };
+
+        // Refer to this URL for ASP.NET Core SignalR JavaScript client information: https://docs.microsoft.com/en-us/aspnet/core/signalr/javascript-client?view=aspnetcore-6.0
+        // The SignalR client scripts can be pulled in via cdn, Library Manager (LibMan) or Node Package Manager (npm). This example uses the cloudflare cdn.
+        // This will not be suitable if the system is on a closed network without public internet access
+        function toColor(num) {
+            num >>>= 0;
+            var b = num & 0xFF,
+                g = (num & 0xFF00) >>> 8,
+                r = (num & 0xFF0000) >>> 16,
+                a = ((num & 0xFF000000) >>> 24) / 255;
+            return "rgba(" + [r, g, b, a].join(",") + ")";
+        }
+
+        // data to be sent to the POST request
+        let _data = {
+            "AuthenticationType": 2,
+            "SignInBy": 0,
+            "UserName": "administrator",
+            "Password": "P@$$word"
+        }
+
+        fetch(`${API_HOST}/api/auth/signinrequest`, {
+            method: "POST",
+            body: JSON.stringify(_data),
+            headers: {
+                "Content-type": "application/json; charset=UTF-8"
+            }
+        })
+            .then(response => response.json())
+            .then(json => {
+                console.log(json);
+                var jwt = json.SessionToken.JwtToken;
+                console.log(jwt);
+                //                Create the connection with valid parameters
+                const connection = new signalR.HubConnectionBuilder()
+                    .withUrl(`${SIGNALR_HOST}/signalr/galaxySMSSignalRHub`, {
+                        accessTokenFactory: () => jwt
+                    })
+                    .withAutomaticReconnect()
+                    .configureLogging(signalR.LogLevel.Trace)
+                    .build();
+
+                // Sign up for notifications
+                connection.on("NotifyPanelCredentialActivityLogMessage",
+                    (data) => {
+                        console.log('NotifyPanelCredentialActivityLogMessage: Cluster #: ' + data.clusterNumber + ', PanelNumber: ' + data.panelNumber + ', CpuId: ' + data.cpuId + ', ClusterGroupId: ' + data.clusterGroupId);
+                        var table = document.getElementById("eventTable");
+                        var row = table.insertRow(1);
+                        row.style.color = toColor(data.color);
+                        var cellTime = row.insertCell(0);
+                        var cellEvent = row.insertCell(1);
+                        var cellDevice = row.insertCell(2);
+                        var cellUser = row.insertCell(3);
+                        var cellCardNumber = row.insertCell(4);
+                        var cellCardHex = row.insertCell(5);
+                        var cellCardBitCount = row.insertCell(6);
+                        var cellIsAlarmEvent = row.insertCell(7);
+                        var cellCpuModel = row.insertCell(8);
+
+                        cellTime.innerHTML = data.dateTime;
+                        cellEvent.innerHTML = data.eventDescription;
+                        cellDevice.innerHTML = data.deviceDescription;
+                        cellUser.innerHTML = data.personDescription;
+                        cellCardNumber.innerHTML = data.credentialNumber;
+                        cellCardHex.innerHTML = data.credentialNumberHex;
+                        cellCardBitCount.innerHTML = data.bitCount;
+                        cellIsAlarmEvent.innerHTML = data.isAlarmEvent;
+                        cellCpuModel.innerHTML = data.cpuModel;
+                    });
+
+                connection.on("NotifyPanelCredentialActivityAlarmLogMessage",
+                    (data) => {
+                        console.log('NotifyPanelCredentialActivityAlarmLogMessage: Cluster #: ' + data.clusterNumber + ', PanelNumber: ' + data.panelNumber + ', CpuId: ' + data.cpuId + ', ClusterGroupId: ' + data.clusterGroupId);
+                        var table = document.getElementById("alarmTable");
+                        var row = table.insertRow(1);
+                        row.style.color = toColor(data.color);
+                        var cellTime = row.insertCell(0);
+                        var cellEvent = row.insertCell(1);
+                        var cellDevice = row.insertCell(2);
+                        var cellUser = row.insertCell(3);
+                        var cellCardNumber = row.insertCell(4);
+                        var cellCardHex = row.insertCell(5);
+                        var cellCardBitCount = row.insertCell(6);
+                        var cellIsAlarmEvent = row.insertCell(7);
+                        var cellCpuModel = row.insertCell(8);
+
+                        cellTime.innerHTML = data.dateTime;
+                        cellEvent.innerHTML = data.eventDescription;
+                        cellDevice.innerHTML = data.deviceDescription;
+                        cellUser.innerHTML = data.personDescription;
+                        cellCardNumber.innerHTML = data.credentialNumber;
+                        cellCardHex.innerHTML = data.credentialNumberHex;
+                        cellCardBitCount.innerHTML = data.bitCount;
+                        cellIsAlarmEvent.innerHTML = data.isAlarmEvent;
+                        cellCpuModel.innerHTML = data.cpuModel;
+                    });
+
+
+                connection.on("NotifyPanelActivityLogMessage",
+                    (data) => {
+                        console.log(Date() + ' NotifyPanelActivityLogMessage: Cluster #: ' + data.clusterNumber + ', PanelNumber: ' + data.panelNumber + ', CpuId: ' + data.cpuId + ', ClusterGroupId: ' + data.clusterGroupId + ', Event: ' + data.eventDescription + ', Device: ' + data.deviceDescription);
+                        var table = document.getElementById("eventTable");
+                        var row = table.insertRow(1);
+                        row.style.color = toColor(data.color);
+                        var cellTime = row.insertCell(0);
+                        var cellEvent = row.insertCell(1);
+                        var cellDevice = row.insertCell(2);
+                        var cellUser = row.insertCell(3);
+                        var cellCardNumber = row.insertCell(4);
+                        var cellCardHex = row.insertCell(5);
+                        var cellCardBitCount = row.insertCell(6);
+                        var cellIsAlarmEvent = row.insertCell(7);
+                        var cellCpuModel = row.insertCell(8);
+
+                        cellTime.innerHTML = data.dateTime;
+                        cellEvent.innerHTML = data.eventDescription;
+                        cellDevice.innerHTML = data.deviceDescription;
+                        cellIsAlarmEvent.innerHTML = data.isAlarmEvent;
+                        cellCpuModel.innerHTML = data.cpuModel;
+                    });
+
+                connection.on("NotifyPanelActivityAlarmLogMessage",
+                    (data) => {
+                        console.log(Date() + ' NotifyPanelActivityAlarmLogMessage: Cluster #: ' + data.clusterNumber + ', PanelNumber: ' + data.panelNumber + ', CpuId: ' + data.cpuId + ', ClusterGroupId: ' + data.clusterGroupId + ', Event: ' + data.eventDescription + ', Device: ' + data.deviceDescription);
+                        var table = document.getElementById("alarmTable");
+                        var row = table.insertRow(1);
+                        row.style.color = toColor(data.color);
+                        var cellTime = row.insertCell(0);
+                        var cellEvent = row.insertCell(1);
+                        var cellDevice = row.insertCell(2);
+                        var cellUser = row.insertCell(3);
+                        var cellCardNumber = row.insertCell(4);
+                        var cellCardHex = row.insertCell(5);
+                        var cellCardBitCount = row.insertCell(6);
+                        var cellIsAlarmEvent = row.insertCell(7);
+                        var cellCpuModel = row.insertCell(8);
+
+                        cellTime.innerHTML = data.dateTime;
+                        cellEvent.innerHTML = data.eventDescription;
+                        cellDevice.innerHTML = data.deviceDescription;
+                        cellIsAlarmEvent.innerHTML = data.isAlarmEvent;
+                        cellCpuModel.innerHTML = data.cpuModel;
+                    });
+
+                connection.on("SendMessage",
+                    (data) => {
+                        console.log(Date() + 'sendMessage: ' + data);
+                    });
+
+                connection.on("NotifyAccessPortalStatusReply",
+                    (data) => {
+                        console.log(Date() + 'NotifyAccessPortalStatusReply: Cluster #: ' + data.clusterNumber + ', PanelNumber: ' + data.panelNumber + ', CpuId: ' + data.cpuId + ', ClusterGroupId: ' + data.clusterGroupId);
+                    });
+
+                connection.on("NotifyInputDeviceStatusReply",
+                    (data) => {
+                        console.log(Date() + 'NotifyInputDeviceStatusReply: Cluster #: ' + data.clusterNumber + ', PanelNumber: ' + data.panelNumber + ', CpuId: ' + data.cpuId + ', ClusterGroupId: ' + data.clusterGroupId);
+                    });
+
+                connection.on("NotifyInputDeviceStatusReply",
+                    (data) => {
+                        console.log(Date() + 'NotifyInputDeviceStatusReply: Cluster #: ' + data.clusterNumber + ', PanelNumber: ' + data.panelNumber + ', CpuId: ' + data.cpuId + ', ClusterGroupId: ' + data.clusterGroupId);
+                    });
+
+                connection.on("NotifyAcknowledgedAlarmBasicData",
+                    (data) => {
+                        console.log(Date() + 'NotifyAcknowledgedAlarmBasicData: Cluster #: ' + data.clusterNumber + ', PanelNumber: ' + data.panelNumber + ', CpuId: ' + data.cpuId + ', ClusterGroupId: ' + data.clusterGroupId);
+                    });
+
+                connection.on("NotifyCardCountReply",
+                    (data) => {
+                        console.log(Date() + 'NotifyCardCountReply: Cluster #: ' + data.clusterNumber + ', PanelNumber: ' + data.panelNumber + ', CpuId: ' + data.cpuId + ', ClusterGroupId: ' + data.clusterGroupId);
+                    });
+
+                connection.on("NotifyFlashProgressMessage",
+                    (data) => {
+                        console.log(Date() + 'NotifyFlashProgressMessage: Cluster #: ' + data.clusterNumber + ', PanelNumber: ' + data.panelNumber + ', CpuId: ' + data.cpuId + ', ClusterGroupId: ' + data.clusterGroupId);
+                    });
+
+                connection.on("NotifyLoggingStatusReply",
+                    (data) => {
+                        console.log(Date() + 'NotifyLoggingStatusReply: Cluster #: ' + data.clusterNumber + ', PanelNumber: ' + data.panelNumber + ', CpuId: ' + data.cpuId + ', ClusterGroupId: ' + data.clusterGroupId);
+                    });
+
+
+                connection.on("NotifyPanelBoardInformationCollection",
+                    (data) => {
+                        console.log(Date() + 'NotifyPanelBoardInformationCollection: Cluster #: ' + data.clusterNumber + ', PanelNumber: ' + data.panelNumber + ', CpuId: ' + data.cpuId + ', ClusterGroupId: ' + data.clusterGroupId);
+                    });
+
+                connection.on("NotifyPanelInqueryReply",
+                    (data) => {
+                        console.log(Date() + 'NotifyPanelInqueryReply: Cluster #: ' + data.clusterNumber + ', PanelNumber: ' + data.panelNumber + ', CpuId: ' + data.cpuId + ', ClusterGroupId: ' + data.clusterGroupId);
+                    });
+
+                connection.on("NotifyPingReply",
+                    (data) => {
+                        console.log(Date() + 'NotifyPingReply: OperationUid: ' + data.operationUid + ', Cluster #: ' + data.clusterNumber + ', PanelNumber: ' + data.panelNumber + ', CpuId: ' + data.cpuId + ', ClusterGroupId: ' + data.clusterGroupId);
+                    });
+
+                connection.on("NotifyPanelLoadDataReply",
+                    (data) => {
+                        console.log(Date() + 'NotifyPanelLoadDataReply: OperationUid: ' + data.operationUid + ', LoadDataCategory:' + data.loadDataCategory + ', DataTypeCode: ' + data.dataTypeCode + ', Description: ' + data.description + ', Cluster #: ' + data.clusterNumber + ', PanelNumber: ' + data.panelNumber + ', CpuId: ' + data.cpuId + ', ClusterGroupId: ' + data.clusterGroupId + ', DataType: ' + data.dataType);
+
+                    });
+
+                connection.on("NotifyCpuConnectionInfo",
+                    (data) => {
+                        console.log(Date() + 'NotifyCpuConnectionInfo: Cluster #: ' + data.clusterNumber + ', PanelNumber: ' + data.panelNumber + ', CpuId: ' + data.cpuId + ', ClusterGroupId: ' + data.clusterGroupId);
+                    });
+
+                connection.on("NotifyBackgroundJobInfo",
+                    (data) => {
+                        console.log(Date() + 'NotifyBackgroundJobInfo: JobId: ' + data.jobId + ', State: ' + data.state + ', JobType: ' + data.jobType + ', DataType: ' + data.dataType + ', DataItemUid: ' + data.dataItemUid + ', EntityId: ' + data.entityId + ', ItemName: ' + data.itemName);
+                    });
+
+                connection.on("NotifyOperationStatusInfo",
+                    (data) => {
+                        console.log(Date() + 'NotifyOperationStatusInfo: OperationUid: ' + data.operationUid + ', Successful: ' + data.successful + ', Timeout: ' + data.timeout + ', PanelUid:' + data.panelUid + ', CpuUid:' + data.cpuUid + ', CommandActionCode:' + data.commandActionCode);
+                    });
+
+                function listenEntities(list) {
+                    for (var i = 0; i < list.length; i++) {
+                        const id = list[i].EntityId;
+                        let isAllowedToConnect = true;
+
+                        if (whiteEntitiesList) {
+                            isAllowedToConnect = !!whiteEntitiesList[id];
+                        }
+
+                        if (isAllowedToConnect) {
+                            connection.send("JoinGroup", {
+                                GroupName: id
+                            });
+
+                            console.log(`Connected to entity ${id}`);
+                        }
+                    }
+                }
+
+                async function start() {
+                    try {
+                        await connection.start();
+
+                        connection.send("JoinGroup", {
+                            GroupName: json.SessionToken.SessionId
+                        });
+
+                        connection.send("JoinGroup", {
+                            GroupName: "00000000-0000-0000-0000-000000000002"
+                        });
+
+                        connection.send("JoinGroup", {
+                            GroupName: "01234567-1111-2222-3333-123456789012"
+                        });
+
+                        const request = fetch(`${API_HOST}/api/entity/listforuser?PageSize=${SELECT_ENTITIES}`, {
+                            method: "GET",
+                            headers: {
+                                "Authorization": `Bearer ${jwt}`,
+                                "Content-type": "application/json; charset=UTF-8"
+                            }
+                        })
+                            .then(response => response.json())
+                            .then(json => {
+                                console.log(json);
+
+                                listenEntities(json.Items);
+                            });
+
+                        console.log("SignalR Connected.");
+                    } catch (err) {
+                        console.log(err);
+                        setTimeout(start, 5000);
+                    }
+                };
+
+                connection.onclose(async () => {
+                    await start();
+                });
+
+                connection.onreconnected(connectionId => {
+                    console.assert(connection.state === signalR.HubConnectionState.Connected);
+
+                    console.log(`Connection reestablished. Connected with connectionId ${connectionId}.`);
+                });
+
+                // Start the connection.
+                start();
+
+
+            })
+            .catch(err => console.log(err));
+    </script>
+<h1>GalaxySMS SignalR CORE Client Sample</h1>
+<div class="row">
+    <h3>Alarm Events</h3>
+    <table id="alarmTable">
+        <tr>
+            <td>Event Time</td>
+            <td>Event Message</td>
+            <td>Device Name</td>
+            <td>User</td>
+            <td>Card #</td>
+            <td>Card # (HEX)</td>
+            <td>Bit Count</td>
+            <td>IsAlarmEvent</td>
+            <td>Cpu Model</td>
+        </tr>
+    </table>
+
+    <h3>Activity Log Events</h3>
+    <table id="eventTable">
+        <tr>
+            <td>Event Time</td>
+            <td>Event Message</td>
+            <td>Device Name</td>
+            <td>User</td>
+            <td>Card #</td>
+            <td>Card # (HEX)</td>
+            <td>Bit Count</td>
+            <td>IsAlarmEvent</td>
+            <td>Cpu Model</td>
+        </tr>
+    </table>
+</div>
+</body>
+
+</html>

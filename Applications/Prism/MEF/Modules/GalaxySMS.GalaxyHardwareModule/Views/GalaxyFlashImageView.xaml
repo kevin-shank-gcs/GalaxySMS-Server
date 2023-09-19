@@ -1,0 +1,132 @@
+﻿<core:UserControlViewBase
+    x:Class="GalaxySMS.GalaxyHardware.Views.GalaxyFlashImageView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:prism="http://prismlibrary.com/"
+    xmlns:core="http://www.galaxysys.com/GCS/Core"
+    xmlns:views="clr-namespace:GalaxySMS.GalaxyHardware.Views"
+    xmlns:resx="clr-namespace:GalaxySMS.GalaxyHardware.Properties"
+    xmlns:sharedResources="clr-namespace:GalaxySMS.Resources;assembly=GalaxySMS.Resources"
+    xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+    xmlns:converters="clr-namespace:GCS.Core.Common.UI.Converters;assembly=GCS.Core.Common.UI"
+    xmlns:animations="clr-namespace:GCS.Core.Common.UI.Animations;assembly=GCS.Core.Common.UI"
+    xmlns:ui="clr-namespace:GalaxySMS.Client.UI;assembly=GalaxySMS.Client.UI"
+    mc:Ignorable="d"
+    FlowDirection="{Binding FlowDirection}"
+    prism:ViewModelLocator.AutoWireViewModel="True">
+
+    <core:UserControlViewBase.Resources>
+        <converters:NullToVisibilityConverter x:Key="nullToVisibilityConverter" />
+        <converters:NotNullToVisibilityConverter x:Key="notNullToVisibilityConverter" />
+        <converters:BooleanToVisibilityConverter x:Key="boolToVisibility" />
+    </core:UserControlViewBase.Resources>
+
+    <telerik:RadBusyIndicator IsBusy="{Binding IsBusy}" IsIndeterminate="True" BusyContent="{Binding BusyContent}"
+                              DisplayAfter="0">
+        <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+            <Grid>
+                <Grid Grid.Row="0"
+                      Visibility="{Binding CurrentGalaxyFlashImageViewModel, Converter={StaticResource notNullToVisibilityConverter}}"
+                      animations:VisibilityAnimation.AnimationType="Fade">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <StackPanel Grid.Row="0" Orientation="Vertical">
+                        <core:ErrorsPanel DataContext="{Binding}" />
+                        <StackPanel Orientation="Horizontal">
+                            <ui:AddNewButtonControlBindable
+                                Command="{Binding AddNewCommand}"
+                                ImageHeight="32"
+                                ImageWidth="32"
+                                IsVisible="{Binding IsAddNewControlVisible}"
+                                Text="{x:Static sharedResources:Resources.AddNewGalaxyFlashImage_Text}"
+                                ToolTip="{x:Static sharedResources:Resources.AddNewGalaxyFlashImage_ToolTip}" />
+                            <ui:RefreshButtonControlBindable
+                                Command="{Binding RefreshCommand}"
+                                ImageHeight="32"
+                                ImageWidth="32"
+                                IsVisible="{Binding IsRefreshControlVisible}"
+                                Text="{x:Static sharedResources:Resources.RefreshGalaxyFlashImages_Text}"
+                                ToolTip="{x:Static sharedResources:Resources.RefreshGalaxyFlashImages_ToolTip}" />
+                        </StackPanel>
+                    </StackPanel>
+
+                    <telerik:RadGridView Grid.Row="1"
+                                         x:Name="radGridViewGalaxyFlashImages"
+                                         Visibility="Visible"
+                                         ShowGroupPanel="False"
+                                         ItemsSource="{Binding GalaxyFlashImages}"
+                                         IsFilteringAllowed="False"
+                                         IsReadOnly="True"
+                                         AutoGenerateColumns="False"
+                                         Width="Auto"
+                                         RowIndicatorVisibility="Collapsed"
+                                         RowDetailsVisibilityMode="VisibleWhenSelected">
+                        <telerik:RadGridView.Columns>
+                            <!--<telerik:GridViewToggleRowDetailsColumn/>-->
+                            <telerik:GridViewColumn Header="{x:Static sharedResources:Resources.Common_Actions}"
+                                                    ToolTip="{x:Static sharedResources:Resources.Common_ActionsTooltip}">
+                                <telerik:GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <StackPanel Orientation="Horizontal">
+                                            <!--<ui:EditDeleteButtonControl/>-->
+                                            <ui:EditButtonControlBindable
+                                                Command="{Binding DataContext.EditCommand, RelativeSource={RelativeSource AncestorType=core:UserControlViewBase}}"
+                                                CommandParameter="{Binding}"
+                                                ImageHeight="32"
+                                                ImageWidth="32"
+                                                IsVisible="{Binding DataContext.IsEditControlVisible, RelativeSource={RelativeSource AncestorType=core:UserControlViewBase}}"
+                                                Text="{x:Static sharedResources:Resources.EditGalaxyFlashImage_Text}"
+                                                ToolTip="{x:Static sharedResources:Resources.EditGalaxyFlashImage_ToolTip}" />
+                                            <ui:DeleteButtonControlBindable
+                                                Command="{Binding DataContext.DeleteCommand, RelativeSource={RelativeSource AncestorType=core:UserControlViewBase}}"
+                                                CommandParameter="{Binding}"
+                                                ImageHeight="32"
+                                                ImageWidth="32"
+                                                IsVisible="{Binding DataContext.IsDeleteControlVisible, RelativeSource={RelativeSource AncestorType=core:UserControlViewBase}}"
+                                                Text="{x:Static sharedResources:Resources.DeleteGalaxyFlashImage_Text}"
+                                                ToolTip="{x:Static sharedResources:Resources.DeleteGalaxyFlashImage_ToolTip}" />
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </telerik:GridViewColumn.CellTemplate>
+                            </telerik:GridViewColumn>
+                            <telerik:GridViewDataColumn
+                                Header="{x:Static sharedResources:Resources.MaintainGalaxyFlashImages_Description}"
+                                DataMemberBinding="{Binding Description}" />
+                            <telerik:GridViewDataColumn
+                                Header="{x:Static sharedResources:Resources.MaintainGalaxyFlashImages_Version}"
+                                DataMemberBinding="{Binding Version}" />
+                            <telerik:GridViewDataColumn
+                                Header="{x:Static sharedResources:Resources.MaintainGalaxyFlashImages_DataFormat}"
+                                DataMemberBinding="{Binding DataFormat}" />
+                            <telerik:GridViewDataColumn
+                                Header="{x:Static sharedResources:Resources.MaintainGalaxyFlashImages_Filename}"
+                                DataMemberBinding="{Binding ImportedFilename}" />
+                            <telerik:GridViewDataColumn
+                                Header="{x:Static sharedResources:Resources.MaintainGalaxyFlashImages_FileDateTime}"
+                                DataMemberBinding="{Binding FileDateTime}" />   
+                            <telerik:GridViewDataColumn
+                                Header="{x:Static sharedResources:Resources.MaintainGalaxyFlashImages_Checksum}"
+                                DataMemberBinding="{Binding Checksum}" />                               
+                        </telerik:RadGridView.Columns>
+                    </telerik:RadGridView>
+                </Grid>
+
+
+                <Grid Grid.Row="0" Grid.Column="0" animations:VisibilityAnimation.AnimationType="Fade">
+
+                    <Border CornerRadius="4" Margin="10" BorderThickness="1"
+                            Visibility="{Binding CurrentGalaxyFlashImageViewModel, Converter={StaticResource nullToVisibilityConverter}}">
+                        <ContentControl Content="{Binding CurrentGalaxyFlashImageViewModel}" />
+                    </Border>
+                </Grid>
+
+            </Grid>
+        </ScrollViewer>
+    </telerik:RadBusyIndicator>
+</core:UserControlViewBase>

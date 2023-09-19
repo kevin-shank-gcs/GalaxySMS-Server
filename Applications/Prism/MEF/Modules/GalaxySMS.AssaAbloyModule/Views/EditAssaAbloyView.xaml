@@ -1,0 +1,226 @@
+﻿<core:UserControlViewBase x:Class="GalaxySMS.AssaAbloy.Views.EditAssaAbloyView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:core="http://www.galaxysys.com/GCS/Core"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:prism="http://prismlibrary.com/"
+             xmlns:resx="clr-namespace:GalaxySMS.AssaAbloy.Properties"
+             xmlns:sharedResources="clr-namespace:GalaxySMS.Resources;assembly=GalaxySMS.Resources"
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             xmlns:converters="clr-namespace:GCS.Core.Common.UI.Converters;assembly=GCS.Core.Common.UI"
+             xmlns:ui="clr-namespace:GalaxySMS.Client.UI;assembly=GalaxySMS.Client.UI"
+             mc:Ignorable="d"
+             d:DesignHeight="300" d:DesignWidth="300" FlowDirection="{Binding FlowDirection}">
+  <core:UserControlViewBase.Resources>
+    <BitmapImage x:Key="SelectPhoto" UriSource="/GalaxySMS.Resources;component/Images/Camera/SLR_32.png" />
+    <BitmapImage x:Key="ImportAccessPointDataImage" UriSource="/GalaxySMS.Resources;component/Images/ImportData1.png"></BitmapImage>
+    <BitmapImage x:Key="AccessPointConfirmedImage" UriSource="/GalaxySMS.Resources;component/Images/AssaAbloy/circle_green.png"></BitmapImage>
+    <BitmapImage x:Key="AccessPointNotConfirmedImage" UriSource="/GalaxySMS.Resources;component/Images/AssaAbloy/circle_red.png"></BitmapImage>
+    <BitmapImage x:Key="GreenCheckImage" UriSource="/GalaxySMS.Resources;component/Images/green_check.png"></BitmapImage>
+    <converters:NullToVisibilityConverter x:Key="nullToVisibilityConverter" />
+    <converters:BooleanToVisibilityConverter x:Key="boolToVisibility" />
+    <converters:InverseBooleanToVisibilityConverter x:Key="inverseBoolToVisibility"/>
+  </core:UserControlViewBase.Resources>
+
+  <telerik:RadBusyIndicator IsBusy="{Binding IsBusy}" IsIndeterminate="True" BusyContent="{Binding BusyContent}" DisplayAfter="0">
+    <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+      <Grid>
+        <Grid.RowDefinitions>
+          <RowDefinition Height="Auto" />
+          <RowDefinition Height="Auto" />
+          <RowDefinition Height="Auto" />
+          <RowDefinition Height="Auto" />
+          <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+          <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+          </Grid.RowDefinitions>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+          </Grid.ColumnDefinitions>
+          <ui:FormHeaderControl/>
+          <ui:SaveCancelButtonControl Grid.Column="1"/>
+        </Grid>
+        <core:ValidationHeader Grid.Row="1" DataContext="{Binding}" />
+        <Grid Grid.Row="2">
+          <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+          </Grid.RowDefinitions>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="10" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="Auto"/>
+          </Grid.ColumnDefinitions>
+          <TextBlock Grid.Row="0" Style="{StaticResource DataEntryControlTitle}" Text="{x:Static sharedResources:Resources.EditAssaDsrView_AssaDsrNameTitle}" />
+          <TextBox Grid.Row="1" Grid.Column="0" Margin="3" MinWidth="200"  Text="{Binding AssaDsr.Name, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" HorizontalAlignment="Left" />
+          <Grid Grid.Row="3" Grid.Column="0" >
+            <Grid.RowDefinitions>
+              <RowDefinition Height="Auto" />
+              <RowDefinition Height="Auto" />
+              <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="Auto"/>
+              <ColumnDefinition Width="10"/>
+              <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Row="0" Grid.Column="0" Style="{StaticResource DataEntryControlTitle}" Text="{x:Static sharedResources:Resources.EditAssaDsrView_IPAddressTitle}" />
+            <TextBox Grid.Row="1" Grid.Column="0" Margin="3" MinWidth="200" Text="{Binding AssaDsr.ServerIpAddress, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" HorizontalAlignment="Left"
+                 ToolTip="{x:Static sharedResources:Resources.EditAssaDsrView_IPAddressToolTip}"/>
+
+            <TextBlock Grid.Row="0" Grid.Column="2" Style="{StaticResource DataEntryControlTitle}" Text="{x:Static sharedResources:Resources.EditAssaDsrView_IPPortTitle}" />
+            <telerik:RadMaskedNumericInput Grid.Row="1" Grid.Column="2" Margin="3" Mask="d5" Value="{Binding AssaDsr.ServerPort, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"
+                ToolTip="{x:Static sharedResources:Resources.EditAssaDsrView_IPPortToolTip}" AutoFillNumberGroupSeparators="False"  HorizontalAlignment="Left" />
+          </Grid>
+          <CheckBox Grid.Row="4" Grid.Column="0" Margin="3" Content="{x:Static sharedResources:Resources.EditAssaDsrView_IsActiveText}"
+                    ToolTip="{x:Static sharedResources:Resources.EditAssaDsrView_IsActiveToolTip}"
+                    IsChecked="{Binding AssaDsr.IsActive, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"
+                    HorizontalAlignment="Left" />
+          <TextBlock Style="{StaticResource DataEntryControlTitle}" Grid.Row="5" Text="{x:Static sharedResources:Resources.EditAssaDsrView_CallbackURLTitle}" />
+          <TextBox Grid.Row="6" Grid.Column="0" Margin="3" MinWidth="200" Text="{Binding AssaDsr.CallbackUrl, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" HorizontalAlignment="Left"
+                   ToolTip="{x:Static sharedResources:Resources.EditAssaDsrView_CallbackURLToolTip}"/>
+
+          <telerik:RadTabControl Grid.Row="1" Grid.Column="4" Grid.RowSpan="7">
+            <telerik:RadTabItem>
+              <telerik:RadTabItem.Header>
+                <Grid>
+                  <Grid.ToolTip>
+                    <TextBlock Text="{x:Static sharedResources:Resources.EditAssaDsrView_AccessPointsTabHeaderToolTip}"/>
+                  </Grid.ToolTip>
+                  <TextBlock Text="{x:Static sharedResources:Resources.EditAssaDsrView_AccessPointsTabHeader}"/>
+                </Grid>
+              </telerik:RadTabItem.Header>
+              <Grid>
+                <Grid.RowDefinitions>
+                  <RowDefinition Height="Auto"/>
+                  <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <StackPanel Grid.Row="0" Orientation="Horizontal">
+                  <Button Margin="1" ToolTip="{x:Static sharedResources:Resources.EditAssaDsrView_ImportAccessPointsButtonToolTip}" Command="{Binding ImportDsrAccessPointData}">
+                    <Button.Content>
+                      <StackPanel Orientation="Horizontal" Margin="2">
+                        <Image x:Name="imgImport" Source="{StaticResource ImportAccessPointDataImage}" Width="16" Height="16"/>
+                        <TextBlock Margin="3,0,0,0" Text="{x:Static sharedResources:Resources.EditAssaDsrView_ImportAccessPointsButtonText}" />
+                      </StackPanel>
+                    </Button.Content>
+                  </Button>
+                </StackPanel>
+                <telerik:RadGridView Grid.Row="1"
+                 x:Name="radGridViewAssaAccessPoints"
+                 Visibility="Visible"
+                 ShowGroupPanel="False"
+                 ItemsSource="{Binding AssaDsr.AssaAccessPoints}"
+                 IsFilteringAllowed="False"
+                 IsReadOnly="False"
+                 AutoGenerateColumns="False"
+                 Width="Auto"
+                 RowIndicatorVisibility="Collapsed"
+                 RowDetailsVisibilityMode="VisibleWhenSelected">
+                  <telerik:RadGridView.Columns>
+                    <!--<telerik:GridViewToggleRowDetailsColumn/>-->
+                    <!--<telerik:GridViewColumn Header="{x:Static sharedResources:Resources.Common_Actions}" ToolTip="{x:Static sharedResources:Resources.Common_ActionsTooltip}" >
+                                        <telerik:GridViewColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <ui:EditDeleteButtonControl/>
+                                            </DataTemplate>
+                                        </telerik:GridViewColumn.CellTemplate>
+                                    </telerik:GridViewColumn>-->
+                    <telerik:GridViewDataColumn Header="{x:Static sharedResources:Resources.EditAssaDsrView_AccessPointName}"
+                                                DataMemberBinding="{Binding AccessPointName}" IsReadOnly="True"/>
+                    <telerik:GridViewDataColumn Header="{x:Static sharedResources:Resources.EditAssaDsrView_AccessPointSerialNumber}"
+                                                DataMemberBinding="{Binding SerialNumber}" IsReadOnly="True"/>
+                    <telerik:GridViewDataColumn Header="{x:Static sharedResources:Resources.EditAssaDsrView_AccessPointFirmwareVersion}"
+                                                DataMemberBinding="{Binding FirmwareVersion}" IsReadOnly="True"/>
+                    <telerik:GridViewDataColumn Header="{x:Static sharedResources:Resources.EditAssaDsrView_AccessPointAccessPointType}"
+                                                DataMemberBinding="{Binding AccessPointTypeDescription}" IsReadOnly="True"/>
+                    <!--<telerik:GridViewComboBoxColumn ItemsSource="{Binding CurrentEntitySites}" 
+                                                                        Header="{x:Static sharedResources:Resources.EditAssaDsrView_AccessPointAccessSiteName}"
+                                                                        DataMemberBinding="{Binding SiteUid}" UniqueName="Site" SelectedValueMemberPath="SiteUid"
+                                                                        DisplayMemberPath="SiteName" IsReadOnly="False"/>-->
+                    <telerik:GridViewComboBoxColumn ItemsSource="{Binding CurrentEntitySites}"
+                                                    Header="{x:Static sharedResources:Resources.EditAssaDsrView_AccessPointAccessSiteName}"
+                                                    DataMemberBinding="{Binding SiteUid}" UniqueName="Site" SelectedValueMemberPath="SiteUid"
+                                                    DisplayMemberPath="SiteName" IsReadOnly="False">
+                      <telerik:GridViewComboBoxColumn.ItemTemplate>
+                        <DataTemplate>
+                          <StackPanel Orientation="Horizontal">
+                            <Image Source="{Binding gcsBinaryResource.BinaryResource}" Height="24" Width="Auto" Margin="5" />
+                            <TextBlock VerticalAlignment="Center" Text="{Binding Path=SiteName}" />
+                          </StackPanel>
+                        </DataTemplate>
+                      </telerik:GridViewComboBoxColumn.ItemTemplate>
+                    </telerik:GridViewComboBoxColumn>
+                    <telerik:GridViewColumn Header="{x:Static sharedResources:Resources.EditAssaDsrView_AccessPointConfirmed}"
+                                            ToolTip="{x:Static sharedResources:Resources.EditAssaDsrView_AccessPointConfirmedToolTip}">
+                      <telerik:GridViewColumn.CellTemplate>
+                        <DataTemplate>
+                          <Grid>
+                            <Grid.ColumnDefinitions>
+                              <ColumnDefinition Width="Auto"/>
+                              <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                                                        <Image Source="{StaticResource AccessPointConfirmedImage}" Height="24" Width="Auto" Margin="5" Visibility="{Binding AccessPoint.confirmed, Converter={StaticResource boolToVisibility}}" />
+                                                        <Image Source="{StaticResource AccessPointNotConfirmedImage}" Height="24" Width="Auto" Margin="5" Visibility="{Binding AccessPoint.confirmed, Converter={StaticResource inverseBoolToVisibility}}" />
+                            <Button Margin="1" Grid.Column="1" 
+                                    Visibility="{Binding AccessPoint.confirmed, Converter={StaticResource inverseBoolToVisibility}}"
+                                    Command="{Binding DataContext.ConfirmAccessPointCommand, RelativeSource={RelativeSource AncestorType=core:UserControlViewBase}}" CommandParameter="{Binding}"
+                                    ToolTip="{x:Static sharedResources:Resources.EditAssaDsrView_AccessPointConfirmCommandToolTip}">
+                              <Button.Content>
+                                <StackPanel Orientation="Horizontal" Margin="3">
+                                  <Image x:Name="imgGreenCheck" Source="{StaticResource GreenCheckImage}" Height ="16"/>
+                                  <TextBlock VerticalAlignment="Center" Margin="3,0,0,0" Text="{x:Static sharedResources:Resources.EditAssaDsrView_AccessPointConfirmCommandText}" ></TextBlock>
+                                </StackPanel>
+                              </Button.Content>
+                            </Button>
+                          </Grid>
+
+                        </DataTemplate>
+                      </telerik:GridViewColumn.CellTemplate>
+                    </telerik:GridViewColumn>
+
+                    <telerik:GridViewColumn Header="{x:Static sharedResources:Resources.Common_Actions}" ToolTip="{x:Static sharedResources:Resources.Common_ActionsTooltip}" >
+                      <telerik:GridViewColumn.CellTemplate>
+                        <DataTemplate>
+                          <ui:SaveDeleteButtonControl/>
+                        </DataTemplate>
+                      </telerik:GridViewColumn.CellTemplate>
+                    </telerik:GridViewColumn>
+                  </telerik:RadGridView.Columns>
+                </telerik:RadGridView>
+              </Grid>
+
+            </telerik:RadTabItem>
+            <telerik:RadTabItem>
+              <telerik:RadTabItem.Header>
+                <Grid>
+                  <Grid.ToolTip>
+                    <TextBlock Text="{Binding Path=EntityAliasPlural, StringFormat={x:Static sharedResources:Resources.EditAssaDsrView_EntityMappingTabHeaderToolTip}}"/>
+                  </Grid.ToolTip>
+                  <TextBlock Text="{Binding Path=EntityAlias, StringFormat={x:Static sharedResources:Resources.EditAssaDsrView_EntityMappingTabHeader}}"/>
+                </Grid>
+              </telerik:RadTabItem.Header>
+              <ui:EntityMapUserControl />
+            </telerik:RadTabItem>
+          </telerik:RadTabControl>
+        </Grid>
+
+        <ui:SaveCancelButtonControl Grid.Row="3"/>
+        <core:ErrorsPanel Grid.Row="4" DataContext="{Binding}" />
+      </Grid>
+    </ScrollViewer>
+  </telerik:RadBusyIndicator>
+</core:UserControlViewBase>

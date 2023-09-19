@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+  </PropertyGroup>
+
+  <Import Project="..\GalaxySMS.MessageQueue.Integration.Shared\GalaxySMS.MessageQueue.Integration.Shared.projitems" Label="Shared" />
+
+  <ItemGroup>
+    <ProjectReference Include="..\GalaxySMS.Client.SDK.NetCore\GalaxySMS.Client.SDK.NetCore.csproj" />
+    <ProjectReference Include="..\GalaxySMS.SignalRClient\GalaxySMS.SignalRCoreClient.csproj" />
+    <ProjectReference Include="..\GCS.Framework.MessageQueue.Messaging.NetCore\GCS.Framework.MessageQueue.Messaging.NetCore.csproj" />
+  </ItemGroup>
+
+</Project>

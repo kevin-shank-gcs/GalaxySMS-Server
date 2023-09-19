@@ -1,0 +1,233 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>GalaxySMS.Business.WebApi.Controllers</name>
+    </assembly>
+    <members>
+        <!-- Badly formed XML comment ignored for member "M:GalaxySMS.Business.WebApi.Controllers.EntityController.#ctor" -->
+        <member name="T:GalaxySMS.Business.WebApi.Controllers.StateProvinceController">
+             <summary>   A controller for handling state and provinces. </summary>
+            
+             <remarks>   Kevin, 8/7/2018. </remarks>
+        </member>
+        <member name="F:GalaxySMS.Business.WebApi.Controllers.StateProvinceController.stateProvinceManager">
+            <summary>   Manager for states and provinces. </summary>
+        </member>
+        <member name="M:GalaxySMS.Business.WebApi.Controllers.StateProvinceController.#ctor">
+             <summary>   Default constructor. </summary>
+            
+             <remarks>   Kevin, 8/7/2018. </remarks>
+        </member>
+        <member name="M:GalaxySMS.Business.WebApi.Controllers.StateProvinceController.GetAll(System.Net.Http.HttpRequestMessage,GalaxySMS.Client.Entities.GetParametersWithPhoto)">
+             <summary>   (An Action that handles HTTP GET requests) gets all. </summary>
+            
+             <remarks>   Kevin, 8/7/2018. </remarks>
+            
+             <param name="request">  The request. </param>
+             <param name="p">        The DeleteParameters to process. </param>
+            
+             <returns>   all. </returns>
+        </member>
+        <member name="M:GalaxySMS.Business.WebApi.Controllers.StateProvinceController.GetForCountry(System.Net.Http.HttpRequestMessage,GalaxySMS.Client.Entities.GetParametersWithPhoto)">
+             <summary>   (An Action that handles HTTP GET requests) gets for country. </summary>
+            
+             <remarks>   Kevin, 8/7/2018. </remarks>
+            
+             <param name="request">  The request. </param>
+             <param name="p">        The DeleteParameters to process. </param>
+            
+             <returns>   for country. </returns>
+        </member>
+        <member name="M:GalaxySMS.Business.WebApi.Controllers.StateProvinceController.Save(System.Net.Http.HttpRequestMessage,GalaxySMS.Client.Entities.SaveParameters{GalaxySMS.Client.Entities.StateProvince})">
+             <summary>   (An Action that handles HTTP POST requests) saves. </summary>
+            
+             <remarks>   Kevin, 8/7/2018. </remarks>
+            
+             <param name="request">  The request. </param>
+             <param name="p">        The DeleteParameters to process. </param>
+            
+             <returns>   A Task&lt;HttpResponseMessage&gt; </returns>
+        </member>
+        <member name="M:GalaxySMS.Business.WebApi.Controllers.StateProvinceController.Delete(System.Net.Http.HttpRequestMessage,GalaxySMS.Client.Entities.DeleteParameters{GalaxySMS.Client.Entities.StateProvince})">
+             <summary>
+             (An Action that handles HTTP POST requests) deletes this StateProvinceController.
+             </summary>
+            
+             <remarks>   Kevin, 8/7/2018. </remarks>
+            
+             <param name="request">  The request. </param>
+             <param name="p">        The DeleteParameters to process. </param>
+            
+             <returns>   A Task&lt;HttpResponseMessage&gt; </returns>
+        </member>
+        <member name="M:GalaxySMS.Business.WebApi.Controllers.StateProvinceController.DeleteByUniqueId(System.Net.Http.HttpRequestMessage,GalaxySMS.Client.Entities.DeleteParameters)">
+             <summary>
+             Delete a state/province the by unique identifier.
+             </summary>
+            
+             <remarks>   Kevin, 8/7/2018. </remarks>
+            
+             <param name="request">  The request. </param>
+             <param name="p">        The DeleteParameters to process. </param>
+            
+             <returns>   A Task&lt;HttpResponseMessage&gt; </returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:GalaxySMS.Business.WebApi.Controllers.CountryController.#ctor" -->
+        <!-- Badly formed XML comment ignored for member "M:GalaxySMS.Business.WebApi.Controllers.RegionController.#ctor" -->
+        <member name="T:GalaxySMS.Business.WebApi.Controllers.UserSessionController">
+             <summary>   A controller for handling user sessions. </summary>
+            
+             <remarks>   Kevin, 4/19/2016. </remarks>
+        </member>
+        <member name="F:GalaxySMS.Business.WebApi.Controllers.UserSessionController.userManager">
+            <summary>   Manager for user. </summary>
+        </member>
+        <member name="M:GalaxySMS.Business.WebApi.Controllers.UserSessionController.#ctor">
+             <summary>   Default constructor. </summary>
+            
+             <remarks>   Kevin, 4/19/2016. </remarks>
+        </member>
+        <member name="M:GalaxySMS.Business.WebApi.Controllers.UserSessionController.GetByUserName(System.Net.Http.HttpRequestMessage,System.String)">
+             <summary>   (An Action that handles HTTP GET requests) gets by user name. </summary>
+            
+             <remarks>   Kevin, 4/19/2016. </remarks>
+            
+             <param name="request">  The request. </param>
+             <param name="userName"> Name of the user. </param>
+            
+             <returns>   The by user name. </returns>
+        </member>
+        <member name="M:GalaxySMS.Business.WebApi.Controllers.UserSessionController.SignInRequest(System.Net.Http.HttpRequestMessage,GalaxySMS.Client.Entities.UserSignInRequest)">
+             <summary>   Sign in to the system to obtain a SessionToken. </summary>
+            
+             <remarks>   If successful, the SessionToken property must be preserved and the SessionId property must be used for subsequent calls.  
+                         The determine if the operation is successful, all of the following must be true:  
+             - Response Code must be 200  
+             - RequestResult must be either Success (1) or SuccessWithInfo (2)    
+              
+            </remarks>
+             <param name="request">      The request. </param>
+             <param name="requestData">  Information describing the request. </param>
+            
+             <returns>   A Task&lt;HttpResponseMessage&gt; </returns>
+        </member>
+        <member name="M:GalaxySMS.Business.WebApi.Controllers.UserSessionController.SignOutUserSessionToken(System.Net.Http.HttpRequestMessage,GalaxySMS.Client.Entities.UserSessionToken)">
+             <summary>   (An Action that handles HTTP POST requests) sign out. </summary>
+            
+             <remarks>   Kevin, 4/19/2016. </remarks>
+            
+             <param name="request">      The request. </param>
+             <param name="userToken">    The user token. </param>
+            
+             <returns>   A Task&lt;HttpResponseMessage&gt; </returns>
+        </member>
+        <member name="M:GalaxySMS.Business.WebApi.Controllers.UserSessionController.SignOut(System.Net.Http.HttpRequestMessage,System.Guid)">
+             <summary>   (An Action that handles HTTP POST requests) sign out. </summary>
+            
+             <remarks>   Kevin, 7/9/2018. </remarks>
+            
+             <param name="request">      The request. </param>
+             <param name="sessionId">    Identifier for the session. </param>
+            
+             <returns>   A Task&lt;HttpResponseMessage&gt; </returns>
+        </member>
+        <member name="M:GalaxySMS.Business.WebApi.Controllers.UserSessionController.KeepAlive(System.Net.Http.HttpRequestMessage,System.Guid)">
+             <summary>   (An Action that handles HTTP GET requests) keep alive. </summary>
+            
+             <remarks>   Kevin, 7/9/2018. </remarks>
+            
+             <param name="request">      The request. </param>
+             <param name="sessionId">    Identifier for the session. </param>
+            
+             <returns>   A Task&lt;HttpResponseMessage&gt; </returns>
+        </member>
+        <member name="M:GalaxySMS.Business.WebApi.Controllers.UserSessionController.UpdateSessionSettings(System.Net.Http.HttpRequestMessage,GalaxySMS.Client.Entities.SaveParameters{GalaxySMS.Client.Entities.UserSessionSettings})">
+             <summary>
+             (An Action that handles HTTP POST requests) updates the session settings.
+             </summary>
+            
+             <remarks>   Kevin, 7/9/2018. </remarks>
+            
+             <param name="request">  The request. </param>
+             <param name="p">        The SaveParameters&lt;UserSessionSettings&gt; to process. </param>
+            
+             <returns>   A Task&lt;HttpResponseMessage&gt; </returns>
+        </member>
+        <member name="M:GalaxySMS.Business.WebApi.Controllers.UserSessionController.GetUserDataForApplicationByUserId(System.Net.Http.HttpRequestMessage,System.Guid)">
+             <summary>
+             (An Action that handles HTTP GET requests) gets user data for application by user identifier.
+             </summary>
+            
+             <remarks>   Kevin, 7/9/2018. </remarks>
+            
+             <param name="request">  The request. </param>
+             <param name="userId">   Identifier for the user. </param>
+            
+             <returns>   The user data for application by user identifier. </returns>
+        </member>
+        <member name="M:GalaxySMS.Business.WebApi.Controllers.UserSessionController.GetUserDataForApplicationByUserId(System.Net.Http.HttpRequestMessage,System.String)">
+             <summary>
+             (An Action that handles HTTP GET requests) gets user data for application by user
+             identifier.
+             </summary>
+            
+             <remarks>   Kevin, 7/9/2018. </remarks>
+            
+             <param name="request">  The request. </param>
+             <param name="userName"> Name of the user. </param>
+            
+             <returns>   The user data for application by user identifier. </returns>
+        </member>
+        <member name="M:GalaxySMS.Business.WebApi.Controllers.UserSessionController.GetUserDataForApplicationByEmail(System.Net.Http.HttpRequestMessage,System.String)">
+             <summary>
+             (An Action that handles HTTP GET requests) gets user data for application by email.
+             </summary>
+            
+             <remarks>   Kevin, 7/9/2018. </remarks>
+            
+             <param name="request">  The request. </param>
+             <param name="email">    The email. </param>
+            
+             <returns>   The user data for application by email. </returns>
+        </member>
+        <member name="M:GalaxySMS.Business.WebApi.Controllers.UserSessionController.DoesUserHavePermission(System.Net.Http.HttpRequestMessage,System.Guid,System.Guid,System.Guid,System.Guid)">
+             <summary>   (An Action that handles HTTP GET requests) does user have permission. </summary>
+            
+             <remarks>   Kevin, 7/9/2018. </remarks>
+            
+             <param name="request">          The request. </param>
+             <param name="userId">           Identifier for the user. </param>
+             <param name="entityId">         Identifier for the entity. </param>
+             <param name="applicationId">    Identifier for the application. </param>
+             <param name="permissionId">     Identifier for the permission. </param>
+            
+             <returns>   A Task&lt;HttpResponseMessage&gt; </returns>
+        </member>
+        <member name="M:GalaxySMS.Business.WebApi.Controllers.UserSessionController.IsUserInRole(System.Net.Http.HttpRequestMessage,System.Guid,System.Guid,System.Guid,System.Guid)">
+             <summary>   (An Action that handles HTTP GET requests) is user in role. </summary>
+            
+             <remarks>   Kevin, 7/9/2018. </remarks>
+            
+             <param name="request">          The request. </param>
+             <param name="userId">           Identifier for the user. </param>
+             <param name="entityId">         Identifier for the entity. </param>
+             <param name="applicationId">    Identifier for the application. </param>
+             <param name="roleId">           Identifier for the role. </param>
+            
+             <returns>   A Task&lt;HttpResponseMessage&gt; </returns>
+        </member>
+        <member name="M:GalaxySMS.Business.WebApi.Controllers.UserSessionController.IsUserInRole(System.Net.Http.HttpRequestMessage,System.Guid,System.Guid,System.Guid,System.String)">
+             <summary>   (An Action that handles HTTP GET requests) is user in role. </summary>
+            
+             <remarks>   Kevin, 7/9/2018. </remarks>
+            
+             <param name="request">          The request. </param>
+             <param name="userId">           Identifier for the user. </param>
+             <param name="entityId">         Identifier for the entity. </param>
+             <param name="applicationId">    Identifier for the application. </param>
+             <param name="roleName">         Name of the role. </param>
+            
+             <returns>   A Task&lt;HttpResponseMessage&gt; </returns>
+        </member>
+    </members>
+</doc>

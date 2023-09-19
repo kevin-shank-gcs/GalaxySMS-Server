@@ -1,0 +1,53 @@
+﻿<Window x:Class="RedisCacheClient.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RedisCacheClient"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+
+    <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="4"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="10"></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <StackPanel Orientation="Horizontal">
+                <Label>Redis URL:</Label>
+                <TextBox Text="{Binding RedisUrl}"></TextBox>
+                <TextBox Text="{Binding SearchKey}" MinWidth="100"></TextBox>
+                <Button Command="{Binding SearchCommand}">Search</Button>
+                <Label>Key Count: </Label>
+                <!--<Label Content="{Binding KeyCount}"></Label>-->
+                <Label Content="{Binding SearchResults.Count }"></Label>
+                <Button Command="{Binding DataContext.DeleteKeyCommand, RelativeSource={RelativeSource AncestorType=local:MainWindow} }" CommandParameter="">Delete All</Button>
+            </StackPanel>
+            <!--<ListBox Grid.Row="2" Grid.ColumnSpan="3" ItemsSource="{Binding SearchResults}"></ListBox>-->
+            <ListView Grid.Row="2" Grid.ColumnSpan="4" ItemsSource="{Binding SearchResults}">
+
+                <ListView.View>
+                    <GridView AllowsColumnReorder="true" ColumnHeaderToolTip="Cache Information">
+
+                        <GridViewColumn DisplayMemberBinding="{Binding }" Header="Key" Width="Auto"/>
+                        <GridViewColumn Header="Action" Width="100">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Command="{Binding DataContext.DeleteKeyCommand, RelativeSource={RelativeSource AncestorType=local:MainWindow} }" CommandParameter="{Binding}">Delete</Button>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                    </GridView>
+
+                </ListView.View>
+            </ListView>
+        </Grid>
+    </ScrollViewer>
+</Window>

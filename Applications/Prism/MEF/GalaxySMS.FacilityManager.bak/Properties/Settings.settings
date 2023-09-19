@@ -1,0 +1,68 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="GalaxySMS.FacilityManager.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="Theme" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Summer</Value>
+    </Setting>
+    <Setting Name="Culture" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">en-US</Value>
+    </Setting>
+    <Setting Name="UICulture" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">en-US</Value>
+    </Setting>
+    <Setting Name="MaxReceivedMessageSize" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">2147483647</Value>
+    </Setting>
+    <Setting Name="BackgroundSubduedOpacity" Type="System.Double" Scope="Application">
+      <Value Profile="(Default)">0.5</Value>
+    </Setting>
+    <Setting Name="BackgroundSubduedBlur" Type="System.Boolean" Scope="Application">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="ThemeVariation" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="LicenseFilename" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">GalaxySMS.FacilityManager.license</Value>
+    </Setting>
+    <Setting Name="LicenseKey" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">MIIBKjCB4wYHKoZIzj0CATCB1wIBATAsBgcqhkjOPQEBAiEA/////wAAAAEAAAAAAAAAAAAAAAD///////////////8wWwQg/////wAAAAEAAAAAAAAAAAAAAAD///////////////wEIFrGNdiqOpPns+u9VXaYhrxlHQawzFOw9jvOPD4n0mBLAxUAxJ02CIbnBJNqZnjhE50mt4GffpAEIQNrF9Hy4SxCR/i85uVjpEDydwN9gS3rM6D0oTlF2JjClgIhAP////8AAAAA//////////+85vqtpxeehPO5ysL8YyVRAgEBA0IABDGhYr4eVRNxi9iYIYSM3+9+GvV3q63LdN6bULegmMzh4CZtFrujsfeOVdLpiAcyDD12hWtTQOHpMhWelmtZVy8=</Value>
+    </Setting>
+    <Setting Name="CustomerName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">The Acme Company</Value>
+    </Setting>
+    <Setting Name="CustomerEmail" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">RoadRunner@Acme.com</Value>
+    </Setting>
+    <Setting Name="ServerAddress" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">localhost</Value>
+    </Setting>
+    <Setting Name="AuthenticationType" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Application</Value>
+    </Setting>
+    <Setting Name="Servers" Type="System.Collections.Specialized.StringCollection" Scope="Application">
+      <Value Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;string&gt;localhost&lt;/string&gt;
+  &lt;string&gt;127.0.0.1&lt;/string&gt;
+  &lt;string&gt;.&lt;/string&gt;
+&lt;/ArrayOfString&gt;</Value>
+    </Setting>
+    <Setting Name="AllGoodBorderColor" Type="System.Windows.Media.Color" Scope="Application">
+      <Value Profile="(Default)">#FFE6E6E6</Value>
+    </Setting>
+    <Setting Name="NotGoodBorderColor" Type="System.Windows.Media.Color" Scope="Application">
+      <Value Profile="(Default)">#FFCC0000</Value>
+    </Setting>
+    <Setting Name="ServerPort" Type="System.UInt16" Scope="Application">
+      <Value Profile="(Default)">8010</Value>
+    </Setting>
+    <Setting Name="FlowDirection" Type="System.String" Scope="User">
+      <Value Profile="(Default)">RightToLeft</Value>
+    </Setting>
+    <Setting Name="UseLocalLicenseFile" Type="System.Boolean" Scope="Application">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

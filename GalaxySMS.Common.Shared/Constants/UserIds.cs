@@ -1,0 +1,26 @@
+﻿////////////////////////////////////////////////////////////////////////////////////////////////////
+// file:	Constants\UserIds.cs
+//
+// summary:	Implements the user identifiers class
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace GalaxySMS.Common.Constants
+{
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+    /// <summary>   A user identifiers. </summary>
+    ///
+    /// <remarks>   Kevin, 1/3/2019. </remarks>
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    public class UserIds
+    {
+        /// <summary>   Identifier for the galaxy SMS administrator. </summary>
+        public static readonly Guid GalaxySMS_Administrator_Id = new Guid("00000000-0000-0000-0000-000000000001");
+    }
+}

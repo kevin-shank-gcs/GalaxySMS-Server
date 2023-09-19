@@ -1,0 +1,46 @@
+﻿<UserControl x:Class="GalaxySMS.PersonCredential.UserControls.IndividualProperties.ucAccessProfileSelector"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:GalaxySMS.PersonCredential.UserControls.IndividualProperties"
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             xmlns:core="http://www.galaxysys.com/GCS/Core"
+             xmlns:maskedInput="clr-namespace:Telerik.Windows.Controls.MaskedInput;assembly=Telerik.Windows.Controls.Input"
+             xmlns:converters="clr-namespace:GCS.Core.Common.UI.Converters;assembly=GCS.Core.Common.UI"
+             xmlns:sharedResources="clr-namespace:GalaxySMS.Resources;assembly=GalaxySMS.Resources"
+             xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <converters:BooleanToVisibilityConverter x:Key="boolToVisibility" />
+    </UserControl.Resources>
+    <StackPanel Orientation="Vertical" Margin="5">
+        <TextBlock Style="{StaticResource DataEntryControlTitle}"
+                   Text="{x:Static sharedResources:Resources.PersonEditor_AccessControlProperties_AccessProfile_Title}"/>
+        <telerik:RadComboBox
+            ItemsSource="{Binding DataContext.PersonEditingData.AccessProfiles, RelativeSource={RelativeSource AncestorType=core:UserControlViewBase}}"
+            SelectedValue="{Binding AccessProfileUid}"
+            SelectedValuePath="AccessProfileUid"
+            ToolTip="{x:Static sharedResources:Resources.PersonEditor_AccessControlProperties_AccessProfile_ToolTip}"
+            TextSearch.TextPath="Display"
+            TextSearchMode="StartsWith"
+            IsFilteringEnabled="True">
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="SelectionChanged">
+                    <i:InvokeCommandAction 
+                        Command="{Binding Path=DataContext.AccessProfileSelectionChanged, Mode=OneWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type core:UserControlViewBase}}}"
+                        CommandParameter="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=telerik:RadComboBox}, Path=SelectedItem}"/>
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+            <telerik:RadComboBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal" ToolTip="{Binding Comments}">
+                        <!--<Image Source="{Binding FlagImage}" Height="32" Width="Auto" Margin="5"/>-->
+                        <TextBlock VerticalAlignment="Center" Text="{Binding Path=AccessProfileName}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </telerik:RadComboBox.ItemTemplate>
+        </telerik:RadComboBox>
+    </StackPanel>
+</UserControl>

@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "GCS.Framework.Licensing.Generator.Core": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:8756;http://localhost:8757"
+    }
+  }
+}

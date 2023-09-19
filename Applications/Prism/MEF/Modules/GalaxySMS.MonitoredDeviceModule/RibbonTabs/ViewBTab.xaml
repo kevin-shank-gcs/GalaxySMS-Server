@@ -1,0 +1,14 @@
+﻿<telerik:RadRibbonTab x:Class="GalaxySMS.MonitoredDevice.RibbonTabs.ViewBTab"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:GalaxySMS.MonitoredDevice.RibbonTabs"
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             xmlns:resx="clr-namespace:GalaxySMS.MonitoredDevice.Properties"
+             mc:Ignorable="d" 
+             Header="{x:Static resx:Resources.ViewBRibbonTab_Header}">
+    <telerik:RadRibbonGroup Header="{x:Static resx:Resources.ViewBRibbonTab_RibbonGroupHeader}">
+        <telerik:RadRibbonButton Text="{x:Static resx:Resources.ViewBRibbonTab_RibbonGroupButton1Text}" ToolTip="{x:Static resx:Resources.ViewBRibbonTab_RibbonGroupButton1ToolTip}"  Command="{Binding UpdateCommand}" />
+    </telerik:RadRibbonGroup>
+</telerik:RadRibbonTab>

@@ -1,0 +1,30 @@
+﻿////////////////////////////////////////////////////////////////////////////////////////////////////
+// file:	Constants\AccessProfileIds.cs
+//
+// summary:	Implements the access profile identifiers class
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace GalaxySMS.Common.Constants
+{
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+    /// <summary>   The access profile identifiers. </summary>
+    ///
+    /// <remarks>   Kevin, 1/3/2019. </remarks>
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    public class AccessProfileIds
+    {
+        /// <summary>   The access profile identifier none. </summary>
+        public static readonly Guid AccessProfileId_None = new Guid("00000000-0000-0000-0000-000000000001");
+    }
+
+
+
+
+}

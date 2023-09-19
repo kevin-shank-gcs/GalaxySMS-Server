@@ -1,0 +1,27 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace GalaxySMS.Client.Licensing.Entities
+{
+    public class FacilityTypeModel
+    {
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Gets or sets the identifier. </summary>
+        ///
+        /// <value> The identifier. </value>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        public int Id { get; set; }
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Gets or sets the name of the facility type. </summary>
+        ///
+        /// <value> The name of the facility type. </value>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        public string FacilityTypeName { get; set; }
+    }
+}

@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>D:\Dev\GalaxySMS\GCS.Framework.Badging.Api.NetCore\GCS.Framework.Badging.Api.NetCore.xml</DocumentationFile>
+    <DefineConstants>$(DefineConstants)TRACE;CanSpecifyMaxCustomerCount</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>D:\Dev\GalaxySMS\GCS.Framework.Badging.Api.NetCore\GCS.Framework.Badging.Api.NetCore.xml</DocumentationFile>
+    <DefineConstants>$(DefineConstants)TRACE;CanSpecifyMaxCustomerCount</DefineConstants>
+  </PropertyGroup>
+
+  <Import Project="..\GCS.Framework.Badging.Api.Shared\GCS.Framework.Badging.Api.Shared.projitems" Label="Shared" />
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.SignalR.Client" Version="6.0.9" />
+    <PackageReference Include="TimeZoneConverter" Version="3.4.0" />
+    <PackageReference Include="TimeZoneNames" Version="4.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\GCS.Framework\NETCore\GCS.Core.Common.NetCore\GCS.Core.Common.NetCore.csproj" />
+  </ItemGroup>
+
+</Project>

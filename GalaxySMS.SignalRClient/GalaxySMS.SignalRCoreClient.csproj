@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.SignalR.Client" Version="6.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\GalaxySMS.Business.Entities.Std\GalaxySMS.Business.Entities.Std.csproj" />
+    <ProjectReference Include="..\GCS.Core.Common.SignalR\GCS.Core.Common.SignalR.csproj" />
+  </ItemGroup>
+
+</Project>

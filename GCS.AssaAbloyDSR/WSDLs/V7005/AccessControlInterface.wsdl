@@ -1,0 +1,3025 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="AccessControlInterfaceService" targetNamespace="http://xml.assaabloy.com/dsr/2.0" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://xml.assaabloy.com/dsr/2.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata">
+  <wsdl:types>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://xml.assaabloy.com/dsr/2.0" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://xml.assaabloy.com/dsr/2.0">
+<xs:element name="addAccessPointMode" type="tns:addAccessPointMode"/>
+<xs:element name="addAccessPointModeResponse" type="tns:addAccessPointModeResponse"/>
+<xs:element name="addAccessPointsToAuthorization" type="tns:addAccessPointsToAuthorization"/>
+<xs:element name="addAccessPointsToAuthorizationResponse" type="tns:addAccessPointsToAuthorizationResponse"/>
+<xs:element name="addAuthorization" type="tns:addAuthorization"/>
+<xs:element name="addAuthorizationResponse" type="tns:addAuthorizationResponse"/>
+<xs:element name="addDayException" type="tns:addDayException"/>
+<xs:element name="addDayExceptionGroup" type="tns:addDayExceptionGroup"/>
+<xs:element name="addDayExceptionGroupResponse" type="tns:addDayExceptionGroupResponse"/>
+<xs:element name="addDayExceptionGroupToSchedule" type="tns:addDayExceptionGroupToSchedule"/>
+<xs:element name="addDayExceptionGroupToScheduleResponse" type="tns:addDayExceptionGroupToScheduleResponse"/>
+<xs:element name="addDayExceptionResponse" type="tns:addDayExceptionResponse"/>
+<xs:element name="addDayExceptionToDayExceptionGroup" type="tns:addDayExceptionToDayExceptionGroup"/>
+<xs:element name="addDayExceptionToDayExceptionGroupResponse" type="tns:addDayExceptionToDayExceptionGroupResponse"/>
+<xs:element name="addDayPeriod" type="tns:addDayPeriod"/>
+<xs:element name="addDayPeriodResponse" type="tns:addDayPeriodResponse"/>
+<xs:element name="addDayPeriodToSchedule" type="tns:addDayPeriodToSchedule"/>
+<xs:element name="addDayPeriodToScheduleResponse" type="tns:addDayPeriodToScheduleResponse"/>
+<xs:element name="addOrUpdateCardholder" type="tns:addOrUpdateCardholder"/>
+<xs:element name="addOrUpdateCardholderResponse" type="tns:addOrUpdateCardholderResponse"/>
+<xs:element name="addSchedule" type="tns:addSchedule"/>
+<xs:element name="addScheduleResponse" type="tns:addScheduleResponse"/>
+<xs:element name="addUser" type="tns:addUser"/>
+<xs:element name="addUserResponse" type="tns:addUserResponse"/>
+<xs:element name="addUsersToAuthorization" type="tns:addUsersToAuthorization"/>
+<xs:element name="addUsersToAuthorizationResponse" type="tns:addUsersToAuthorizationResponse"/>
+<xs:element name="clearAll" type="tns:clearAll"/>
+<xs:element name="clearAllResponse" type="tns:clearAllResponse"/>
+<xs:element name="deleteAllOrphanEntities" type="tns:deleteAllOrphanEntities"/>
+<xs:element name="deleteAllOrphanEntitiesResponse" type="tns:deleteAllOrphanEntitiesResponse"/>
+<xs:element name="deviceSpecificCommand" type="tns:deviceSpecificCommand"/>
+<xs:element name="deviceSpecificCommandResponse" type="tns:deviceSpecificCommandResponse"/>
+<xs:element name="findAccessPointModes" type="tns:findAccessPointModes"/>
+<xs:element name="findAccessPointModesResponse" type="tns:findAccessPointModesResponse"/>
+<xs:element name="findAuthorizations" type="tns:findAuthorizations"/>
+<xs:element name="findAuthorizationsResponse" type="tns:findAuthorizationsResponse"/>
+<xs:element name="findDayExceptionGroups" type="tns:findDayExceptionGroups"/>
+<xs:element name="findDayExceptionGroupsResponse" type="tns:findDayExceptionGroupsResponse"/>
+<xs:element name="findDayExceptions" type="tns:findDayExceptions"/>
+<xs:element name="findDayExceptionsResponse" type="tns:findDayExceptionsResponse"/>
+<xs:element name="findDayPeriods" type="tns:findDayPeriods"/>
+<xs:element name="findDayPeriodsResponse" type="tns:findDayPeriodsResponse"/>
+<xs:element name="findEntityIdsForAccessPoint" type="tns:findEntityIdsForAccessPoint"/>
+<xs:element name="findEntityIdsForAccessPointResponse" type="tns:findEntityIdsForAccessPointResponse"/>
+<xs:element name="findSchedules" type="tns:findSchedules"/>
+<xs:element name="findSchedulesResponse" type="tns:findSchedulesResponse"/>
+<xs:element name="findUsers" type="tns:findUsers"/>
+<xs:element name="findUsersResponse" type="tns:findUsersResponse"/>
+<xs:element name="getAccessPointModeIds" type="tns:getAccessPointModeIds"/>
+<xs:element name="getAccessPointModeIdsResponse" type="tns:getAccessPointModeIdsResponse"/>
+<xs:element name="getAuthorizationIds" type="tns:getAuthorizationIds"/>
+<xs:element name="getAuthorizationIdsResponse" type="tns:getAuthorizationIdsResponse"/>
+<xs:element name="getDateTime" type="tns:getDateTime"/>
+<xs:element name="getDateTimeResponse" type="tns:getDateTimeResponse"/>
+<xs:element name="getDayExceptionGroupIds" type="tns:getDayExceptionGroupIds"/>
+<xs:element name="getDayExceptionGroupIdsResponse" type="tns:getDayExceptionGroupIdsResponse"/>
+<xs:element name="getDayExceptionIds" type="tns:getDayExceptionIds"/>
+<xs:element name="getDayExceptionIdsResponse" type="tns:getDayExceptionIdsResponse"/>
+<xs:element name="getDayPeriodIds" type="tns:getDayPeriodIds"/>
+<xs:element name="getDayPeriodIdsResponse" type="tns:getDayPeriodIdsResponse"/>
+<xs:element name="getEntityIdCountForAccessPoint" type="tns:getEntityIdCountForAccessPoint"/>
+<xs:element name="getEntityIdCountForAccessPointResponse" type="tns:getEntityIdCountForAccessPointResponse"/>
+<xs:element name="getLogsByDate" type="tns:getLogsByDate"/>
+<xs:element name="getLogsByDateResponse" type="tns:getLogsByDateResponse"/>
+<xs:element name="getNewLogs" type="tns:getNewLogs"/>
+<xs:element name="getNewLogsResponse" type="tns:getNewLogsResponse"/>
+<xs:element name="getScheduleIds" type="tns:getScheduleIds"/>
+<xs:element name="getScheduleIdsResponse" type="tns:getScheduleIdsResponse"/>
+<xs:element name="getUserIds" type="tns:getUserIds"/>
+<xs:element name="getUserIdsResponse" type="tns:getUserIdsResponse"/>
+<xs:element name="lock" type="tns:lock"/>
+<xs:element name="lockResponse" type="tns:lockResponse"/>
+<xs:element name="modifyAccessPointMode" type="tns:modifyAccessPointMode"/>
+<xs:element name="modifyAccessPointModeResponse" type="tns:modifyAccessPointModeResponse"/>
+<xs:element name="modifyAuthorization" type="tns:modifyAuthorization"/>
+<xs:element name="modifyAuthorizationResponse" type="tns:modifyAuthorizationResponse"/>
+<xs:element name="modifyDayException" type="tns:modifyDayException"/>
+<xs:element name="modifyDayExceptionGroup" type="tns:modifyDayExceptionGroup"/>
+<xs:element name="modifyDayExceptionGroupResponse" type="tns:modifyDayExceptionGroupResponse"/>
+<xs:element name="modifyDayExceptionResponse" type="tns:modifyDayExceptionResponse"/>
+<xs:element name="modifyDayPeriod" type="tns:modifyDayPeriod"/>
+<xs:element name="modifyDayPeriodResponse" type="tns:modifyDayPeriodResponse"/>
+<xs:element name="modifySchedule" type="tns:modifySchedule"/>
+<xs:element name="modifyScheduleResponse" type="tns:modifyScheduleResponse"/>
+<xs:element name="modifyUser" type="tns:modifyUser"/>
+<xs:element name="modifyUserResponse" type="tns:modifyUserResponse"/>
+<xs:element name="pulseOpen" type="tns:pulseOpen"/>
+<xs:element name="pulseOpenResponse" type="tns:pulseOpenResponse"/>
+<xs:element name="reloadAccessPointProvisioningData" type="tns:reloadAccessPointProvisioningData"/>
+<xs:element name="reloadAccessPointProvisioningDataResponse" type="tns:reloadAccessPointProvisioningDataResponse"/>
+<xs:element name="removeAccessPointMode" type="tns:removeAccessPointMode"/>
+<xs:element name="removeAccessPointModeResponse" type="tns:removeAccessPointModeResponse"/>
+<xs:element name="removeAccessPointsFromAuthorization" type="tns:removeAccessPointsFromAuthorization"/>
+<xs:element name="removeAccessPointsFromAuthorizationResponse" type="tns:removeAccessPointsFromAuthorizationResponse"/>
+<xs:element name="removeAllAuthorizationsFromAccessPoint" type="tns:removeAllAuthorizationsFromAccessPoint"/>
+<xs:element name="removeAllAuthorizationsFromAccessPointResponse" type="tns:removeAllAuthorizationsFromAccessPointResponse"/>
+<xs:element name="removeAuthorization" type="tns:removeAuthorization"/>
+<xs:element name="removeAuthorizationResponse" type="tns:removeAuthorizationResponse"/>
+<xs:element name="removeDayException" type="tns:removeDayException"/>
+<xs:element name="removeDayExceptionFromDayExceptionGroup" type="tns:removeDayExceptionFromDayExceptionGroup"/>
+<xs:element name="removeDayExceptionFromDayExceptionGroupResponse" type="tns:removeDayExceptionFromDayExceptionGroupResponse"/>
+<xs:element name="removeDayExceptionGroup" type="tns:removeDayExceptionGroup"/>
+<xs:element name="removeDayExceptionGroupFromSchedule" type="tns:removeDayExceptionGroupFromSchedule"/>
+<xs:element name="removeDayExceptionGroupFromScheduleResponse" type="tns:removeDayExceptionGroupFromScheduleResponse"/>
+<xs:element name="removeDayExceptionGroupResponse" type="tns:removeDayExceptionGroupResponse"/>
+<xs:element name="removeDayExceptionResponse" type="tns:removeDayExceptionResponse"/>
+<xs:element name="removeDayPeriod" type="tns:removeDayPeriod"/>
+<xs:element name="removeDayPeriodFromSchedule" type="tns:removeDayPeriodFromSchedule"/>
+<xs:element name="removeDayPeriodFromScheduleResponse" type="tns:removeDayPeriodFromScheduleResponse"/>
+<xs:element name="removeDayPeriodResponse" type="tns:removeDayPeriodResponse"/>
+<xs:element name="removeSchedule" type="tns:removeSchedule"/>
+<xs:element name="removeScheduleResponse" type="tns:removeScheduleResponse"/>
+<xs:element name="removeUser" type="tns:removeUser"/>
+<xs:element name="removeUserCascading" type="tns:removeUserCascading"/>
+<xs:element name="removeUserCascadingResponse" type="tns:removeUserCascadingResponse"/>
+<xs:element name="removeUserResponse" type="tns:removeUserResponse"/>
+<xs:element name="removeUsersFromAuthorization" type="tns:removeUsersFromAuthorization"/>
+<xs:element name="removeUsersFromAuthorizationResponse" type="tns:removeUsersFromAuthorizationResponse"/>
+<xs:element name="reset" type="tns:reset"/>
+<xs:element name="resetResponse" type="tns:resetResponse"/>
+<xs:element name="setAuthorizationTypeForAuthorization" type="tns:setAuthorizationTypeForAuthorization"/>
+<xs:element name="setAuthorizationTypeForAuthorizationResponse" type="tns:setAuthorizationTypeForAuthorizationResponse"/>
+<xs:element name="setDateTime" type="tns:setDateTime"/>
+<xs:element name="setDateTimeResponse" type="tns:setDateTimeResponse"/>
+<xs:element name="setNewScheduleInAuthorization" type="tns:setNewScheduleInAuthorization"/>
+<xs:element name="setNewScheduleInAuthorizationResponse" type="tns:setNewScheduleInAuthorizationResponse"/>
+<xs:element name="unlock" type="tns:unlock"/>
+<xs:element name="unlockResponse" type="tns:unlockResponse"/>
+<xs:complexType name="removeUser">
+<xs:sequence>
+<xs:element minOccurs="0" name="userId" type="xs:string"/>
+<xs:element minOccurs="0" name="requestId" type="tns:DsrUUID"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="DsrUUID">
+<xs:sequence>
+<xs:element form="qualified" name="requestId" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="removeUserResponse">
+<xs:sequence/>
+</xs:complexType>
+<xs:complexType name="addUser">
+<xs:sequence>
+<xs:element minOccurs="0" name="user" type="tns:User"/>
+<xs:element minOccurs="0" name="requestId" type="tns:DsrUUID"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="User">
+<xs:complexContent>
+<xs:extension base="tns:Entity">
+<xs:sequence>
+<xs:element form="qualified" maxOccurs="unbounded" minOccurs="0" name="userFlags" type="tns:UserFlag"/>
+<xs:element form="qualified" maxOccurs="unbounded" name="credentials" type="tns:Credential"/>
+<xs:element form="qualified" minOccurs="0" name="validity" type="tns:DateTimePeriod"/>
+<xs:element form="qualified" minOccurs="0" name="cardholderId" type="xs:string"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType abstract="true" name="Entity">
+<xs:sequence/>
+<xs:attribute name="id" type="xs:string"/>
+</xs:complexType>
+<xs:complexType name="Credential">
+<xs:sequence>
+<xs:element form="qualified" name="ordinal" type="xs:int"/>
+<xs:element form="qualified" name="value" type="tns:CredentialValue"/>
+<xs:element form="qualified" name="format" type="tns:CredentialFormat"/>
+<xs:element form="qualified" name="facilityCode" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="CredentialValue">
+<xs:sequence>
+<xs:element form="qualified" minOccurs="0" name="intValue" type="xs:long"/>
+<xs:element form="qualified" minOccurs="0" name="stringValue" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="DateTimePeriod">
+<xs:sequence>
+<xs:element form="qualified" minOccurs="0" name="start" type="tns:LocalDateTime"/>
+<xs:element form="qualified" minOccurs="0" name="end" type="tns:LocalDateTime"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="LocalDateTime">
+<xs:sequence>
+<xs:element form="qualified" name="localDate" type="tns:LocalDate"/>
+<xs:element form="qualified" name="localTime" type="tns:LocalTime"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="LocalDate">
+<xs:sequence>
+<xs:element form="qualified" name="year" type="xs:int"/>
+<xs:element form="qualified" name="month" type="xs:int"/>
+<xs:element form="qualified" name="dayOfMonth" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="LocalTime">
+<xs:sequence>
+<xs:element form="qualified" name="hour" type="xs:int"/>
+<xs:element form="qualified" name="minute" type="xs:int"/>
+<xs:element form="qualified" name="second" type="xs:int"/>
+<xs:element form="qualified" name="millisecond" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="addUserResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="return" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getAccessPointModeIds">
+<xs:sequence/>
+</xs:complexType>
+<xs:complexType name="getAccessPointModeIdsResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="entity" type="tns:GetIdResponse"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="GetIdResponse">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="id" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="addAccessPointMode">
+<xs:sequence>
+<xs:element minOccurs="0" name="accessPointMode" type="tns:AccessPointMode"/>
+<xs:element minOccurs="0" name="requestId" type="tns:DsrUUID"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="AccessPointMode">
+<xs:complexContent>
+<xs:extension base="tns:Entity">
+<xs:sequence>
+<xs:element form="qualified" name="accessPointModeType" type="tns:AccessPointModeType"/>
+<xs:element form="qualified" name="scheduleId" type="xs:string"/>
+<xs:element form="qualified" maxOccurs="unbounded" name="accessPointIds" type="xs:string"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="addAccessPointModeResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="return" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="findEntityIdsForAccessPoint">
+<xs:sequence>
+<xs:element minOccurs="0" name="entityType" type="tns:EntityType"/>
+<xs:element minOccurs="0" name="accessPointId" type="xs:string"/>
+<xs:element name="allowDuplicates" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="findEntityIdsForAccessPointResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="entity" type="tns:GetIdResponse"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="reloadAccessPointProvisioningData">
+<xs:sequence>
+<xs:element minOccurs="0" name="accessPointId" type="xs:string"/>
+<xs:element minOccurs="0" name="requestId" type="tns:DsrUUID"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="reloadAccessPointProvisioningDataResponse">
+<xs:sequence/>
+</xs:complexType>
+<xs:complexType name="modifyAccessPointMode">
+<xs:sequence>
+<xs:element minOccurs="0" name="accessPointMode" type="tns:AccessPointMode"/>
+<xs:element minOccurs="0" name="requestId" type="tns:DsrUUID"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="modifyAccessPointModeResponse">
+<xs:sequence/>
+</xs:complexType>
+<xs:complexType name="addSchedule">
+<xs:sequence>
+<xs:element minOccurs="0" name="schedule" type="tns:Schedule"/>
+<xs:element minOccurs="0" name="requestId" type="tns:DsrUUID"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="Schedule">
+<xs:complexContent>
+<xs:extension base="tns:Entity">
+<xs:sequence>
+<xs:element form="qualified" maxOccurs="unbounded" minOccurs="0" name="dayPeriodIds" type="xs:string"/>
+<xs:element form="qualified" maxOccurs="unbounded" minOccurs="0" name="dayExceptionGroupIds" type="xs:string"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="addScheduleResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="return" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="deleteAllOrphanEntities">
+<xs:sequence>
+<xs:element minOccurs="0" name="requestId" type="tns:DsrUUID"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="deleteAllOrphanEntitiesResponse">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:orphanedEntities"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="orphanedEntities">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="entityIds" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="entityType" type="tns:EntityType"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="reset">
+<xs:sequence>
+<xs:element minOccurs="0" name="accessPointId" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="resetResponse">
+<xs:sequence/>
+</xs:complexType>
+<xs:complexType name="getUserIds">
+<xs:sequence/>
+</xs:complexType>
+<xs:complexType name="getUserIdsResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="entity" type="tns:GetIdResponse"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getScheduleIds">
+<xs:sequence/>
+</xs:complexType>
+<xs:complexType name="getScheduleIdsResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="entity" type="tns:GetIdResponse"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="findAccessPointModes">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="accessPointModeIds" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="findAccessPointModesResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="accessPointModes" type="tns:AccessPointModesResponse"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="AccessPointModesResponse">
+<xs:sequence>
+<xs:element form="qualified" maxOccurs="unbounded" minOccurs="0" name="accessPointModes" type="tns:AccessPointMode"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="setNewScheduleInAuthorization">
+<xs:sequence>
+<xs:element minOccurs="0" name="scheduleId" type="xs:string"/>
+<xs:element minOccurs="0" name="authorizationId" type="xs:string"/>
+<xs:element minOccurs="0" name="requestId" type="tns:DsrUUID"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="setNewScheduleInAuthorizationResponse">
+<xs:sequence/>
+</xs:complexType>
+<xs:complexType name="getDayExceptionIds">
+<xs:sequence/>
+</xs:complexType>
+<xs:complexType name="getDayExceptionIdsResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="entity" type="tns:GetIdResponse"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="removeDayException">
+<xs:sequence>
+<xs:element minOccurs="0" name="dayExceptionId" type="xs:string"/>
+<xs:element minOccurs="0" name="requestId" type="tns:DsrUUID"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="removeDayExceptionResponse">
+<xs:sequence/>
+</xs:complexType>
+<xs:complexType name="getDayExceptionGroupIds">
+<xs:sequence/>
+</xs:complexType>
+<xs:complexType name="getDayExceptionGroupIdsResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="entity" type="tns:GetIdResponse"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="addOrUpdateCardholder">
+<xs:sequence>
+<xs:element minOccurs="0" name="cardholder" type="tns:Cardholder"/>
+<xs:element minOccurs="0" name="cardholderEvent" type="tns:DsrEntityEventType"/>
+<xs:element minOccurs="0" name="requestId" type="tns:DsrUUID"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="Cardholder">
+<xs:complexContent>
+<xs:extension base="tns:Entity">
+<xs:sequence>
+<xs:element form="qualified" minOccurs="0" name="firstname" type="xs:string"/>
+<xs:element form="qualified" minOccurs="0" name="lastname" type="xs:string"/>
+<xs:element form="qualified" minOccurs="0" name="midname" type="xs:string"/>
+<xs:element form="qualified" minOccurs="0" name="personalid" type="xs:string"/>
+<xs:element form="qualified" minOccurs="0" name="address" type="xs:string"/>
+<xs:element form="qualified" minOccurs="0" name="workphone" type="xs:string"/>
+<xs:element form="qualified" minOccurs="0" name="email" type="xs:string"/>
+<xs:element form="qualified" minOccurs="0" name="homephone" type="xs:string"/>
+<xs:element form="qualified" minOccurs="0" name="title" type="xs:string"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="addOrUpdateCardholderResponse">
+<xs:sequence/>
+</xs:complexType>
+<xs:complexType name="addDayExceptionGroup">
+<xs:sequence>
+<xs:element minOccurs="0" name="dayExceptionGroup" type="tns:DayExceptionGroup"/>
+<xs:element minOccurs="0" name="requestId" type="tns:DsrUUID"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="DayExceptionGroup">
+<xs:complexContent>
+<xs:extension base="tns:Entity">
+<xs:sequence>
+<xs:element form="qualified" maxOccurs="unbounded" minOccurs="0" name="dayExceptionIds" type="xs:string"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="addDayExceptionGroupResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="return" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="modifyAuthorization">
+<xs:sequence>
+<xs:element minOccurs="0" name="authorization" type="tns:Authorization"/>
+<xs:element minOccurs="0" name="requestId" type="tns:DsrUUID"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="Authorization">
+<xs:complexContent>
+<xs:extension base="tns:Entity">
+<xs:sequence>
+<xs:element form="qualified" maxOccurs="unbounded" name="authorizationType" type="tns:AuthorizationType"/>
+<xs:element form="qualified" minOccurs="0" name="useCount" type="xs:int"/>
+<xs:element form="qualified" name="scheduleId" type="xs:string"/>
+<xs:element form="qualified" maxOccurs="unbounded" minOccurs="0" name="userId" type="xs:string"/>
+<xs:element form="qualified" maxOccurs="unbounded" minOccurs="0" name="accessPointId" type="xs:string"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="modifyAuthorizationResponse">
+<xs:sequence/>
+</xs:complexType>
+<xs:complexType name="getNewLogs">
+<xs:sequence>
+<xs:element minOccurs="0" name="accessPointId" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getNewLogsResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="logEntry" type="tns:logEntryResponse"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="logEntryResponse">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" name="logEntryList" type="tns:LogEntry"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="LogEntry">
+<xs:sequence>
+<xs:element name="origin" type="tns:LogOrigin"/>
+<xs:element name="family" type="tns:LogFamily"/>
+<xs:element name="code" type="tns:LogCode"/>
+<xs:element name="timeStamp" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="requestId" type="tns:DsrUUID"/>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="logData" type="tns:LogData"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="LogOrigin">
+<xs:all>
+<xs:element name="logOriginType" type="tns:LogOriginType"/>
+<xs:element name="originId" type="xs:string"/>
+</xs:all>
+</xs:complexType>
+<xs:complexType name="LogData">
+<xs:sequence>
+<xs:element name="name" type="xs:string"/>
+<xs:element name="value" type="tns:LogDataType"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="LogDataType">
+<xs:sequence>
+<xs:element form="qualified" minOccurs="0" name="intValue" type="xs:long"/>
+<xs:element form="qualified" minOccurs="0" name="stringValue" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getLogsByDate">
+<xs:sequence>
+<xs:element minOccurs="0" name="accessPointId" type="xs:string"/>
+<xs:element minOccurs="0" name="logEntryStartDate" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="logEntryEndDate" type="xs:dateTime"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getLogsByDateResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="logEntry" type="tns:logEntryResponse"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="findSchedules">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="scheduleIds" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="findSchedulesResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="schedules" type="tns:SchedulesResponse"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="SchedulesResponse">
+<xs:sequence>
+<xs:element form="qualified" maxOccurs="unbounded" minOccurs="0" name="schedules" type="tns:Schedule"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="setAuthorizationTypeForAuthorization">
+<xs:sequence>
+<xs:element minOccurs="0" name="authorizationId" type="xs:string"/>
+<xs:element minOccurs="0" name="authorizationType" type="tns:AuthorizationType"/>
+<xs:element minOccurs="0" name="requestId" type="tns:DsrUUID"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="setAuthorizationTypeForAuthorizationResponse">
+<xs:sequence/>
+</xs:complexType>
+<xs:complexType name="addDayException">
+<xs:sequence>
+<xs:element minOccurs="0" name="dayException" type="tns:DayException"/>
+<xs:element minOccurs="0" name="requestId" type="tns:DsrUUID"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="DayException">
+<xs:complexContent>
+<xs:extension base="tns:Entity">
+<xs:sequence>
+<xs:element form="qualified" name="localDate" type="tns:LocalDate"/>
+<xs:element form="qualified" maxOccurs="unbounded" minOccurs="0" name="timePeriods" type="tns:TimePeriod"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="TimePeriod">
+<xs:sequence>
+<xs:element form="qualified" name="start" type="tns:LocalTime"/>
+<xs:element form="qualified" name="end" type="tns:LocalTime"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="addDayExceptionResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="return" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="removeAccessPointMode">
+<xs:sequence>
+<xs:element minOccurs="0" name="accessPointModeId" type="xs:string"/>
+<xs:element minOccurs="0" name="requestId" type="tns:DsrUUID"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="removeAccessPointModeResponse">
+<xs:sequence/>
+</xs:complexType>
+<xs:complexType name="removeDayPeriod">
+<xs:sequence>
+<xs:element minOccurs="0" name="dayPeriodId" type="xs:string"/>
+<xs:element minOccurs="0" name="requestId" type="tns:DsrUUID"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="removeDayPeriodResponse">
+<xs:sequence/>
+</xs:complexType>
+<xs:complexType name="removeDayExceptionGroupFromSchedule">
+<xs:sequence>
+<xs:element minOccurs="0" name="scheduleId" type="xs:string"/>
+<xs:element minOccurs="0" name="dayExceptionGroupId" type="xs:string"/>
+<xs:element minOccurs="0" name="requestId" type="tns:DsrUUID"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="removeDayExceptionGroupFromScheduleResponse">
+<xs:sequence/>
+</xs:complexType>
+<xs:complexType name="removeDayExceptionFromDayExceptionGroup">
+<xs:sequence>
+<xs:element minOccurs="0" name="dayExceptionGroupId" type="xs:string"/>
+<xs:element minOccurs="0" name="dayExceptionId" type="xs:string"/>
+<xs:element minOccurs="0" name="requestId" type="tns:DsrUUID"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="removeDayExceptionFromDayExceptionGroupResponse">
+<xs:sequence/>
+</xs:complexType>
+<xs:complexType name="getEntityIdCountForAccessPoint">
+<xs:sequence>
+<xs:element minOccurs="0" name="entityType" type="tns:EntityType"/>
+<xs:element minOccurs="0" name="accessPointId" type="xs:string"/>
+<xs:element name="allowDuplicates" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getEntityIdCountForAccessPointResponse">
+<xs:sequence>
+<xs:element  name="count" type="xs:long"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="clearAll">
+<xs:sequence>
+<xs:element minOccurs="0" name="requestId" type="tns:DsrUUID"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="clearAllResponse">
+<xs:sequence/>
+</xs:complexType>
+<xs:complexType name="findDayExceptions">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="dayExceptionIds" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="findDayExceptionsResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="dayExceptions" type="tns:DayExceptionsResponse"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="DayExceptionsResponse">
+<xs:sequence>
+<xs:element form="qualified" maxOccurs="unbounded" minOccurs="0" name="dayExceptions" type="tns:DayException"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="removeDayExceptionGroup">
+<xs:sequence>
+<xs:element minOccurs="0" name="dayExceptionGroupId" type="xs:string"/>
+<xs:element minOccurs="0" name="requestId" type="tns:DsrUUID"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="removeDayExceptionGroupResponse">
+<xs:sequence/>
+</xs:complexType>
+<xs:complexType name="deviceSpecificCommand">
+<xs:sequence>
+<xs:element minOccurs="0" name="accessPointId" type="xs:string"/>
+<xs:element minOccurs="0" name="deviceSpecificCommandType" type="tns:DeviceSpecificCommandType"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="DeviceSpecificCommandType">
+<xs:sequence>
+<xs:element form="qualified" name="commandName" type="xs:string"/>
+<xs:element form="qualified" name="commandPayload" type="tns:DeviceSpecificCommandPayload"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="DeviceSpecificCommandPayload">
+<xs:sequence>
+<xs:any namespace="##other" processContents="lax"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="deviceSpecificCommandResponse">
+<xs:sequence/>
+</xs:complexType>
+<xs:complexType name="removeUserCascading">
+<xs:sequence>
+<xs:element minOccurs="0" name="userId" type="xs:string"/>
+<xs:element minOccurs="0" name="requestId" type="tns:DsrUUID"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="removeUserCascadingResponse">
+<xs:sequence/>
+</xs:complexType>
+<xs:complexType name="findDayPeriods">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="dayPeriodIds" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="findDayPeriodsResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="dayPeriods" type="tns:DayPeriodsResponse"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="DayPeriodsResponse">
+<xs:sequence>
+<xs:element form="qualified" maxOccurs="unbounded" minOccurs="0" name="dayPeriods" type="tns:DayPeriod"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="DayPeriod">
+<xs:complexContent>
+<xs:extension base="tns:Entity">
+<xs:sequence>
+<xs:element form="qualified" maxOccurs="unbounded" name="weekDays" type="tns:WeekDay"/>
+<xs:element form="qualified" maxOccurs="unbounded" name="timePeriods" type="tns:TimePeriod"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="addUsersToAuthorization">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="userId" type="xs:string"/>
+<xs:element minOccurs="0" name="authorizationId" type="xs:string"/>
+<xs:element minOccurs="0" name="requestId" type="tns:DsrUUID"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="addUsersToAuthorizationResponse">
+<xs:sequence/>
+</xs:complexType>
+<xs:complexType name="modifyDayException">
+<xs:sequence>
+<xs:element minOccurs="0" name="dayException" type="tns:DayException"/>
+<xs:element minOccurs="0" name="requestId" type="tns:DsrUUID"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="modifyDayExceptionResponse">
+<xs:sequence/>
+</xs:complexType>
+<xs:complexType name="getAuthorizationIds">
+<xs:sequence/>
+</xs:complexType>
+<xs:complexType name="getAuthorizationIdsResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="entity" type="tns:GetIdResponse"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="lock">
+<xs:sequence>
+<xs:element minOccurs="0" name="accessPointId" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="lockResponse">
+<xs:sequence/>
+</xs:complexType>
+<xs:complexType name="removeUsersFromAuthorization">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="userId" type="xs:string"/>
+<xs:element minOccurs="0" name="authorizationId" type="xs:string"/>
+<xs:element minOccurs="0" name="requestId" type="tns:DsrUUID"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="removeUsersFromAuthorizationResponse">
+<xs:sequence/>
+</xs:complexType>
+<xs:complexType name="addDayPeriod">
+<xs:sequence>
+<xs:element minOccurs="0" name="dayPeriod" type="tns:DayPeriod"/>
+<xs:element minOccurs="0" name="requestId" type="tns:DsrUUID"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="addDayPeriodResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="return" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="modifyDayExceptionGroup">
+<xs:sequence>
+<xs:element minOccurs="0" name="dayExceptionGroup" type="tns:DayExceptionGroup"/>
+<xs:element minOccurs="0" name="requestId" type="tns:DsrUUID"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="modifyDayExceptionGroupResponse">
+<xs:sequence/>
+</xs:complexType>
+<xs:complexType name="addAccessPointsToAuthorization">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="accessPointId" type="xs:string"/>
+<xs:element minOccurs="0" name="authorizationId" type="xs:string"/>
+<xs:element minOccurs="0" name="requestId" type="tns:DsrUUID"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="addAccessPointsToAuthorizationResponse">
+<xs:sequence/>
+</xs:complexType>
+<xs:complexType name="removeSchedule">
+<xs:sequence>
+<xs:element minOccurs="0" name="schedule" type="xs:string"/>
+<xs:element minOccurs="0" name="requestId" type="tns:DsrUUID"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="removeScheduleResponse">
+<xs:sequence/>
+</xs:complexType>
+<xs:complexType name="findDayExceptionGroups">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="dayExceptionGroupIds" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="findDayExceptionGroupsResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="dayExceptionGroups" type="tns:DayExceptionGroupsResponse"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="DayExceptionGroupsResponse">
+<xs:sequence>
+<xs:element form="qualified" maxOccurs="unbounded" minOccurs="0" name="dayExceptionGroups" type="tns:DayExceptionGroup"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="removeDayPeriodFromSchedule">
+<xs:sequence>
+<xs:element minOccurs="0" name="scheduleId" type="xs:string"/>
+<xs:element minOccurs="0" name="dayPeriodId" type="xs:string"/>
+<xs:element minOccurs="0" name="requestId" type="tns:DsrUUID"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="removeDayPeriodFromScheduleResponse">
+<xs:sequence/>
+</xs:complexType>
+<xs:complexType name="removeAllAuthorizationsFromAccessPoint">
+<xs:sequence>
+<xs:element minOccurs="0" name="accessPointId" type="xs:string"/>
+<xs:element minOccurs="0" name="requestId" type="tns:DsrUUID"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="removeAllAuthorizationsFromAccessPointResponse">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="findUsers">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="userIds" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="findUsersResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="users" type="tns:UsersResponse"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="UsersResponse">
+<xs:sequence>
+<xs:element form="qualified" maxOccurs="unbounded" minOccurs="0" name="users" type="tns:User"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="addDayExceptionToDayExceptionGroup">
+<xs:sequence>
+<xs:element minOccurs="0" name="dayExceptionGroupId" type="xs:string"/>
+<xs:element minOccurs="0" name="dayExceptionId" type="xs:string"/>
+<xs:element minOccurs="0" name="requestId" type="tns:DsrUUID"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="addDayExceptionToDayExceptionGroupResponse">
+<xs:sequence/>
+</xs:complexType>
+<xs:complexType name="addDayExceptionGroupToSchedule">
+<xs:sequence>
+<xs:element minOccurs="0" name="scheduleId" type="xs:string"/>
+<xs:element minOccurs="0" name="dayExceptionGroupId" type="xs:string"/>
+<xs:element minOccurs="0" name="requestId" type="tns:DsrUUID"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="addDayExceptionGroupToScheduleResponse">
+<xs:sequence/>
+</xs:complexType>
+<xs:complexType name="modifySchedule">
+<xs:sequence>
+<xs:element minOccurs="0" name="schedule" type="tns:Schedule"/>
+<xs:element minOccurs="0" name="requestId" type="tns:DsrUUID"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="modifyScheduleResponse">
+<xs:sequence/>
+</xs:complexType>
+<xs:complexType name="addDayPeriodToSchedule">
+<xs:sequence>
+<xs:element minOccurs="0" name="scheduleId" type="xs:string"/>
+<xs:element minOccurs="0" name="dayPeriodId" type="xs:string"/>
+<xs:element minOccurs="0" name="requestId" type="tns:DsrUUID"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="addDayPeriodToScheduleResponse">
+<xs:sequence/>
+</xs:complexType>
+<xs:complexType name="removeAccessPointsFromAuthorization">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="accessPointId" type="xs:string"/>
+<xs:element minOccurs="0" name="authorizationId" type="xs:string"/>
+<xs:element minOccurs="0" name="requestId" type="tns:DsrUUID"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="removeAccessPointsFromAuthorizationResponse">
+<xs:sequence/>
+</xs:complexType>
+<xs:complexType name="addAuthorization">
+<xs:sequence>
+<xs:element minOccurs="0" name="authorization" type="tns:Authorization"/>
+<xs:element minOccurs="0" name="requestId" type="tns:DsrUUID"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="addAuthorizationResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="return" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="unlock">
+<xs:sequence>
+<xs:element minOccurs="0" name="accessPointId" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="unlockResponse">
+<xs:sequence/>
+</xs:complexType>
+<xs:complexType name="findAuthorizations">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="authorizationIds" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="findAuthorizationsResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="authorizations" type="tns:AuthorizationsResponse"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="AuthorizationsResponse">
+<xs:sequence>
+<xs:element form="qualified" maxOccurs="unbounded" minOccurs="0" name="authorizations" type="tns:Authorization"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="modifyUser">
+<xs:sequence>
+<xs:element minOccurs="0" name="user" type="tns:User"/>
+<xs:element minOccurs="0" name="requestId" type="tns:DsrUUID"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="modifyUserResponse">
+<xs:sequence/>
+</xs:complexType>
+<xs:complexType name="removeAuthorization">
+<xs:sequence>
+<xs:element minOccurs="0" name="authorization" type="xs:string"/>
+<xs:element minOccurs="0" name="requestId" type="tns:DsrUUID"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="removeAuthorizationResponse">
+<xs:sequence/>
+</xs:complexType>
+<xs:complexType name="modifyDayPeriod">
+<xs:sequence>
+<xs:element minOccurs="0" name="dayPeriod" type="tns:DayPeriod"/>
+<xs:element minOccurs="0" name="requestId" type="tns:DsrUUID"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="modifyDayPeriodResponse">
+<xs:sequence/>
+</xs:complexType>
+<xs:complexType name="pulseOpen">
+<xs:sequence>
+<xs:element minOccurs="0" name="accessPointId" type="xs:string"/>
+<xs:element name="miliseconds" type="xs:long"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="pulseOpenResponse">
+<xs:sequence/>
+</xs:complexType>
+<xs:complexType name="getDayPeriodIds">
+<xs:sequence/>
+</xs:complexType>
+<xs:complexType name="getDayPeriodIdsResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="entity" type="tns:GetIdResponse"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="setDateTime">
+<xs:sequence>
+<xs:element minOccurs="0" name="accessPointId" type="xs:string"/>
+<xs:element minOccurs="0" name="date" type="xs:dateTime"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="setDateTimeResponse">
+<xs:sequence/>
+</xs:complexType>
+<xs:complexType name="getDateTime">
+<xs:sequence>
+<xs:element minOccurs="0" name="accessPointId" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getDateTimeResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="return" type="xs:dateTime"/>
+</xs:sequence>
+</xs:complexType>
+<xs:simpleType name="EntityType">
+<xs:restriction base="xs:string">
+<xs:enumeration value="AUTHORIZATION"/>
+<xs:enumeration value="SCHEDULE"/>
+<xs:enumeration value="DAYEXCEPTION"/>
+<xs:enumeration value="DAYEXCEPTIONGROUP"/>
+<xs:enumeration value="DAYPERIOD"/>
+<xs:enumeration value="USER"/>
+<xs:enumeration value="ACCESSPOINT"/>
+<xs:enumeration value="ACCESSPOINTMODE"/>
+<xs:enumeration value="CARDHOLDER"/>
+</xs:restriction>
+</xs:simpleType>
+<xs:simpleType name="FaultCode">
+<xs:restriction base="xs:string">
+<xs:enumeration value="UNKNOWN_IDENTITY"/>
+<xs:enumeration value="DUPLICATE_IDENTITY"/>
+<xs:enumeration value="ENTITY_IN_USE"/>
+<xs:enumeration value="MALFORMED_ENTITY"/>
+<xs:enumeration value="HARDWARE_COMMUNICATION"/>
+<xs:enumeration value="UNSUPPORTED_DOOR_TYPE"/>
+<xs:enumeration value="UNSUPPORTED_OPERATION"/>
+<xs:enumeration value="ACCESSPOINT_NOT_CONFIRMED"/>
+<xs:enumeration value="COMMAND_TIMEOUT"/>
+<xs:enumeration value="UNTRANSLATABLE"/>
+<xs:enumeration value="UNKNOWN_VALUE"/>
+<xs:enumeration value="ACCESSPOINT_COMMUNICATION"/>
+<xs:enumeration value="ENTITY_DATA_VALIDATION"/>
+<xs:enumeration value="INTERNAL_ERROR"/>
+</xs:restriction>
+</xs:simpleType>
+<xs:simpleType name="UserFlag">
+<xs:restriction base="xs:string">
+<xs:enumeration value="EXTENDED"/>
+<xs:enumeration value="SUSPENDED"/>
+</xs:restriction>
+</xs:simpleType>
+<xs:simpleType name="CredentialFormat">
+<xs:restriction base="xs:string">
+<xs:enumeration value="UNKNOWN"/>
+<xs:enumeration value="SID_0_CID_32"/>
+<xs:enumeration value="SID_0_CID_64"/>
+<xs:enumeration value="SID_32_CID_32"/>
+<xs:enumeration value="MIFARE_CLASSIC_1_K"/>
+<xs:enumeration value="MIFARE_CLASSIC_4_K"/>
+<xs:enumeration value="MIFARE_ULTRALIGHT"/>
+<xs:enumeration value="MIFARE_DESFIRE"/>
+<xs:enumeration value="DALLAS"/>
+<xs:enumeration value="SOLID_DALLAS"/>
+<xs:enumeration value="MAGNETIC"/>
+<xs:enumeration value="PASSWORD"/>
+<xs:enumeration value="PIN_CODE"/>
+<xs:enumeration value="PROX_H_10301"/>
+<xs:enumeration value="PROX_H_10302"/>
+<xs:enumeration value="PROX_H_10304"/>
+<xs:enumeration value="HID_33_BIT_PROPRIETARY"/>
+<xs:enumeration value="HID_34_BIT_PROPRIETARY"/>
+<xs:enumeration value="CORPORATE_1000"/>
+<xs:enumeration value="PROX_RAW"/>
+<xs:enumeration value="MAGNETIC_TRACK_2"/>
+<xs:enumeration value="CORPORATE_1000_48"/>
+</xs:restriction>
+</xs:simpleType>
+<xs:simpleType name="AccessPointModeType">
+<xs:restriction base="xs:string">
+<xs:enumeration value="FIRST_PERSON_THROUGH"/>
+<xs:enumeration value="UNLOCK"/>
+<xs:enumeration value="ACCESSMODE_PRIMARY"/>
+<xs:enumeration value="ACCESSMODE_PRIMARY_THEN_SECONDARY"/>
+<xs:enumeration value="ACCESSMODE_PRIMARY_OR_SECONDARY"/>
+<xs:enumeration value="ACCESSMODE_PRIMARY_AND_SECONDARY"/>
+</xs:restriction>
+</xs:simpleType>
+<xs:simpleType name="DsrEntityEventType">
+<xs:restriction base="xs:string">
+<xs:enumeration value="ENTITY_CREATED"/>
+<xs:enumeration value="ENTITY_UPDATED"/>
+<xs:enumeration value="ENTITY_DELETED"/>
+</xs:restriction>
+</xs:simpleType>
+<xs:simpleType name="AuthorizationType">
+<xs:restriction base="xs:string">
+<xs:enumeration value="ACCESS"/>
+<xs:enumeration value="LOCK"/>
+<xs:enumeration value="UNLOCK"/>
+<xs:enumeration value="WAKEUP"/>
+<xs:enumeration value="ACCESS_OVERRIDE_DEADBOLT"/>
+<xs:enumeration value="UAPM"/>
+<xs:enumeration value="LIMITED_USE"/>
+</xs:restriction>
+</xs:simpleType>
+<xs:simpleType name="LogOriginType">
+<xs:restriction base="xs:string">
+<xs:enumeration value="CONTROLLER"/>
+<xs:enumeration value="DOOR"/>
+<xs:enumeration value="EXTENSION"/>
+<xs:enumeration value="DSR"/>
+<xs:enumeration value="CYLINDER"/>
+<xs:enumeration value="KEY"/>
+</xs:restriction>
+</xs:simpleType>
+<xs:simpleType name="LogFamily">
+<xs:restriction base="xs:string">
+<xs:enumeration value="ACCESS"/>
+<xs:enumeration value="ALARM"/>
+<xs:enumeration value="GENERAL"/>
+<xs:enumeration value="AUDIT"/>
+</xs:restriction>
+</xs:simpleType>
+<xs:simpleType name="LogCode">
+<xs:restriction base="xs:string">
+<xs:enumeration value="PROPRIETARY"/>
+<xs:enumeration value="DOOR_FORCED"/>
+<xs:enumeration value="DOOR_HELD"/>
+<xs:enumeration value="DOOR_BOLTTHROWN"/>
+<xs:enumeration value="DOOR_BOLTRETRACTED"/>
+<xs:enumeration value="MODE_PROGRAMMING"/>
+<xs:enumeration value="MODE_LOCKOUT"/>
+<xs:enumeration value="MODE_LOCKOUT_TIMED"/>
+<xs:enumeration value="MODE_LOCKOUT_USER"/>
+<xs:enumeration value="MODE_RELOCK"/>
+<xs:enumeration value="MODE_EMERGENCY"/>
+<xs:enumeration value="MODE_PANIC"/>
+<xs:enumeration value="MODE_RESET"/>
+<xs:enumeration value="MODE_NORMAL"/>
+<xs:enumeration value="MODE_PASSAGE"/>
+<xs:enumeration value="MODE_PASSAGE_TIMED"/>
+<xs:enumeration value="MODE_PASSAGE_USER"/>
+<xs:enumeration value="MODE_LOCKED"/>
+<xs:enumeration value="MODE_LOCKED_TIMED"/>
+<xs:enumeration value="MODE_LOCKED_USER"/>
+<xs:enumeration value="MODE_SECURED"/>
+<xs:enumeration value="MODE_PANIC_END"/>
+<xs:enumeration value="BATTERY_DEPLETED"/>
+<xs:enumeration value="BATTERY_REPLACED"/>
+<xs:enumeration value="BATTERY_CRITICAL"/>
+<xs:enumeration value="BATTERY_WARN"/>
+<xs:enumeration value="BATTERY_CHECK_ERROR"/>
+<xs:enumeration value="USER_MODIFY"/>
+<xs:enumeration value="USER_REVOKE"/>
+<xs:enumeration value="USER_ADD"/>
+<xs:enumeration value="USER_BADTIME"/>
+<xs:enumeration value="USER_INVALID"/>
+<xs:enumeration value="USER_OK"/>
+<xs:enumeration value="ACCESS_DENIED"/>
+<xs:enumeration value="ACCESS_DENIED_SCHEDULE"/>
+<xs:enumeration value="ACCESS_DENIED_LOCKOUT"/>
+<xs:enumeration value="ACCESS_DENIED_BOLTED"/>
+<xs:enumeration value="ACCESS_DENIED_EXPIRED"/>
+<xs:enumeration value="ACCESS_DENIED_BUSY"/>
+<xs:enumeration value="ACCESS_DENIED_SUSPENDED"/>
+<xs:enumeration value="ACCESS_DENIED_PANIC"/>
+<xs:enumeration value="ACCESS_DENIED_PASSAGE"/>
+<xs:enumeration value="ACCESS_GRANTED"/>
+<xs:enumeration value="ACCESS_GRANTED_REMOTEUNLOCK"/>
+<xs:enumeration value="ACCESS_GRANTED_ONE_TIME_USER"/>
+<xs:enumeration value="ACCESS_GRANTED_NOTIFY"/>
+<xs:enumeration value="ACCESS_GRANTED_DEADBOLT_OVERRIDE"/>
+<xs:enumeration value="ACCESS_KEYOVERRIDE"/>
+<xs:enumeration value="ACCESS_INVALIDENTRY"/>
+<xs:enumeration value="AUTHORIZATION_SUCCESS_COMMUSER"/>
+<xs:enumeration value="AUTHORIZATION_DENY_COMMUSER"/>
+<xs:enumeration value="AUTHORIZATION_SUCCESS_MASTER"/>
+<xs:enumeration value="AUTHORIZATION_FAIL_MASTER"/>
+<xs:enumeration value="LOG_LOGCLEARED"/>
+<xs:enumeration value="LOG_LOGWRAPPED"/>
+<xs:enumeration value="FIRMWARE_UPDATE_ABORT"/>
+<xs:enumeration value="FIRMWARE_UPDATE_ERROR"/>
+<xs:enumeration value="FIRMWARE_UPDATE_TIMEOUT"/>
+<xs:enumeration value="FIRMWARE_UPDATE_SUCCESS"/>
+<xs:enumeration value="FIRMWARE_UPDATE_FAIL"/>
+<xs:enumeration value="DB_USERDB_RESET"/>
+<xs:enumeration value="DB_USERDB_RESET_USER"/>
+<xs:enumeration value="CLOCK_DATETIMESET"/>
+<xs:enumeration value="CLOCK_DSTFORWARD"/>
+<xs:enumeration value="CLOCK_DSTBACK"/>
+<xs:enumeration value="CLOCK_ERROR"/>
+<xs:enumeration value="CLOCK_RESET"/>
+<xs:enumeration value="NVRAM_CLEAR"/>
+<xs:enumeration value="NVRAM_OK"/>
+<xs:enumeration value="NVRAM_CLEAR_USER"/>
+<xs:enumeration value="NVRAM_LAYUT_CHANGED"/>
+<xs:enumeration value="NVRAM_CHECKSUM"/>
+<xs:enumeration value="HW_MORTISE_ERROR"/>
+<xs:enumeration value="HW_POWER_ERROR"/>
+<xs:enumeration value="HW_DPAC_ERROR"/>
+<xs:enumeration value="COMMUNICATION_ERROR"/>
+<xs:enumeration value="COMMUNICATION_TIMEOUT"/>
+<xs:enumeration value="COMMUNICATION_HW_DISABLED"/>
+<xs:enumeration value="COMMUNICATION_START"/>
+<xs:enumeration value="COMMUNICATION_END"/>
+<xs:enumeration value="RESET_PERFORMED"/>
+<xs:enumeration value="REMOTE_AUTHORIZATION_REQUEST"/>
+<xs:enumeration value="RXOVERRUN"/>
+<xs:enumeration value="ACCESSPOINT_RXHELD"/>
+<xs:enumeration value="ACCESSPOINT_DELETED"/>
+<xs:enumeration value="ACCESSPOINT_CREATED"/>
+<xs:enumeration value="ACCESSPOINT_REPLACED"/>
+<xs:enumeration value="ACCESSPOINT_CONFIRMED"/>
+<xs:enumeration value="ACCESSPOINT_UNCONFIRMED"/>
+<xs:enumeration value="ACCESSPOINT_ONLINE"/>
+<xs:enumeration value="ACCESSPOINT_OFFLINE"/>
+<xs:enumeration value="ACCESSPOINT_REQUEST_CLOCK_RESET"/>
+<xs:enumeration value="INTERNAL_ERROR"/>
+<xs:enumeration value="LOG_RETRIEVED"/>
+<xs:enumeration value="FIRMWARE_TAMPERED"/>
+<xs:enumeration value="LOCK_TAMPERED"/>
+<xs:enumeration value="AUDIT_LOG"/>
+<xs:enumeration value="MISSED_CALLBACKS_FROM_DSR"/>
+<xs:enumeration value="INTEGRITY_CHECK_FAILED"/>
+<xs:enumeration value="PRESENT_ON_BLACKLIST"/>
+<xs:enumeration value="BLACKLIST_CLEARED"/>
+<xs:enumeration value="BLACKLIST_LOADED"/>
+</xs:restriction>
+</xs:simpleType>
+<xs:simpleType name="WeekDay">
+<xs:restriction base="xs:string">
+<xs:enumeration value="FRIDAY"/>
+<xs:enumeration value="MONDAY"/>
+<xs:enumeration value="SATURDAY"/>
+<xs:enumeration value="SUNDAY"/>
+<xs:enumeration value="TUESDAY"/>
+<xs:enumeration value="THURSDAY"/>
+<xs:enumeration value="WEDNESDAY"/>
+</xs:restriction>
+</xs:simpleType>
+<xs:element name="DoorServiceRouterException" type="tns:DoorServiceRouterException"/>
+<xs:complexType name="DoorServiceRouterException">
+<xs:sequence>
+<xs:element name="type" nillable="true" type="tns:EntityType"/>
+<xs:element name="faultCode" nillable="true" type="tns:FaultCode"/>
+<xs:element name="doorId" nillable="true" type="xs:string"/>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="entityIds" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="pulseOpen">
+    <wsdl:part name="parameters" element="tns:pulseOpen">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="setAuthorizationTypeForAuthorization">
+    <wsdl:part name="parameters" element="tns:setAuthorizationTypeForAuthorization">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addOrUpdateCardholderResponse">
+    <wsdl:part name="parameters" element="tns:addOrUpdateCardholderResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="removeUsersFromAuthorizationResponse">
+    <wsdl:part name="parameters" element="tns:removeUsersFromAuthorizationResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="modifyAccessPointMode">
+    <wsdl:part name="parameters" element="tns:modifyAccessPointMode">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="modifyAccessPointModeResponse">
+    <wsdl:part name="parameters" element="tns:modifyAccessPointModeResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="findSchedulesResponse">
+    <wsdl:part name="parameters" element="tns:findSchedulesResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getUserIdsResponse">
+    <wsdl:part name="parameters" element="tns:getUserIdsResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="removeDayExceptionFromDayExceptionGroupResponse">
+    <wsdl:part name="parameters" element="tns:removeDayExceptionFromDayExceptionGroupResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="unlock">
+    <wsdl:part name="parameters" element="tns:unlock">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="removeDayPeriodFromSchedule">
+    <wsdl:part name="parameters" element="tns:removeDayPeriodFromSchedule">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getDayExceptionGroupIds">
+    <wsdl:part name="parameters" element="tns:getDayExceptionGroupIds">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="removeDayPeriod">
+    <wsdl:part name="parameters" element="tns:removeDayPeriod">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="removeAccessPointMode">
+    <wsdl:part name="parameters" element="tns:removeAccessPointMode">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="findAuthorizations">
+    <wsdl:part name="parameters" element="tns:findAuthorizations">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="findDayPeriodsResponse">
+    <wsdl:part name="parameters" element="tns:findDayPeriodsResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="removeAccessPointsFromAuthorization">
+    <wsdl:part name="parameters" element="tns:removeAccessPointsFromAuthorization">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addUser">
+    <wsdl:part name="parameters" element="tns:addUser">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getLogsByDateResponse">
+    <wsdl:part name="parameters" element="tns:getLogsByDateResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="removeScheduleResponse">
+    <wsdl:part name="parameters" element="tns:removeScheduleResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="lockResponse">
+    <wsdl:part name="parameters" element="tns:lockResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addUserResponse">
+    <wsdl:part name="parameters" element="tns:addUserResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="removeDayExceptionGroupFromScheduleResponse">
+    <wsdl:part name="parameters" element="tns:removeDayExceptionGroupFromScheduleResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="modifyDayPeriodResponse">
+    <wsdl:part name="parameters" element="tns:modifyDayPeriodResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addUsersToAuthorization">
+    <wsdl:part name="parameters" element="tns:addUsersToAuthorization">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="setAuthorizationTypeForAuthorizationResponse">
+    <wsdl:part name="parameters" element="tns:setAuthorizationTypeForAuthorizationResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="modifySchedule">
+    <wsdl:part name="parameters" element="tns:modifySchedule">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="removeUserCascading">
+    <wsdl:part name="parameters" element="tns:removeUserCascading">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addAccessPointModeResponse">
+    <wsdl:part name="parameters" element="tns:addAccessPointModeResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="reset">
+    <wsdl:part name="parameters" element="tns:reset">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="findUsersResponse">
+    <wsdl:part name="parameters" element="tns:findUsersResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="setDateTime">
+    <wsdl:part name="parameters" element="tns:setDateTime">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="removeDayException">
+    <wsdl:part name="parameters" element="tns:removeDayException">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addSchedule">
+    <wsdl:part name="parameters" element="tns:addSchedule">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addAuthorization">
+    <wsdl:part name="parameters" element="tns:addAuthorization">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="unlockResponse">
+    <wsdl:part name="parameters" element="tns:unlockResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="modifyAuthorizationResponse">
+    <wsdl:part name="parameters" element="tns:modifyAuthorizationResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="deviceSpecificCommand">
+    <wsdl:part name="parameters" element="tns:deviceSpecificCommand">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getDayExceptionIds">
+    <wsdl:part name="parameters" element="tns:getDayExceptionIds">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addDayExceptionGroup">
+    <wsdl:part name="parameters" element="tns:addDayExceptionGroup">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getLogsByDate">
+    <wsdl:part name="parameters" element="tns:getLogsByDate">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="removeUsersFromAuthorization">
+    <wsdl:part name="parameters" element="tns:removeUsersFromAuthorization">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="modifyDayException">
+    <wsdl:part name="parameters" element="tns:modifyDayException">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="reloadAccessPointProvisioningDataResponse">
+    <wsdl:part name="parameters" element="tns:reloadAccessPointProvisioningDataResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="modifyUser">
+    <wsdl:part name="parameters" element="tns:modifyUser">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getDayPeriodIds">
+    <wsdl:part name="parameters" element="tns:getDayPeriodIds">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="findEntityIdsForAccessPoint">
+    <wsdl:part name="parameters" element="tns:findEntityIdsForAccessPoint">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addAccessPointsToAuthorizationResponse">
+    <wsdl:part name="parameters" element="tns:addAccessPointsToAuthorizationResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="findAccessPointModes">
+    <wsdl:part name="parameters" element="tns:findAccessPointModes">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="clearAll">
+    <wsdl:part name="parameters" element="tns:clearAll">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="DoorServiceRouterException">
+    <wsdl:part name="DoorServiceRouterException" element="tns:DoorServiceRouterException">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="modifyUserResponse">
+    <wsdl:part name="parameters" element="tns:modifyUserResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="deleteAllOrphanEntities">
+    <wsdl:part name="parameters" element="tns:deleteAllOrphanEntities">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addAccessPointMode">
+    <wsdl:part name="parameters" element="tns:addAccessPointMode">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="removeUserResponse">
+    <wsdl:part name="parameters" element="tns:removeUserResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addDayExceptionToDayExceptionGroupResponse">
+    <wsdl:part name="parameters" element="tns:addDayExceptionToDayExceptionGroupResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="removeUser">
+    <wsdl:part name="parameters" element="tns:removeUser">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="removeAccessPointModeResponse">
+    <wsdl:part name="parameters" element="tns:removeAccessPointModeResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="removeAuthorization">
+    <wsdl:part name="parameters" element="tns:removeAuthorization">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="findDayExceptionsResponse">
+    <wsdl:part name="parameters" element="tns:findDayExceptionsResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="findSchedules">
+    <wsdl:part name="parameters" element="tns:findSchedules">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getScheduleIds">
+    <wsdl:part name="parameters" element="tns:getScheduleIds">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="removeDayExceptionResponse">
+    <wsdl:part name="parameters" element="tns:removeDayExceptionResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addOrUpdateCardholder">
+    <wsdl:part name="parameters" element="tns:addOrUpdateCardholder">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="removeDayExceptionFromDayExceptionGroup">
+    <wsdl:part name="parameters" element="tns:removeDayExceptionFromDayExceptionGroup">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addDayPeriodResponse">
+    <wsdl:part name="parameters" element="tns:addDayPeriodResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="pulseOpenResponse">
+    <wsdl:part name="parameters" element="tns:pulseOpenResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addDayPeriod">
+    <wsdl:part name="parameters" element="tns:addDayPeriod">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getDayExceptionGroupIdsResponse">
+    <wsdl:part name="parameters" element="tns:getDayExceptionGroupIdsResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="removeUserCascadingResponse">
+    <wsdl:part name="parameters" element="tns:removeUserCascadingResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="setNewScheduleInAuthorization">
+    <wsdl:part name="parameters" element="tns:setNewScheduleInAuthorization">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getNewLogs">
+    <wsdl:part name="parameters" element="tns:getNewLogs">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getDateTime">
+    <wsdl:part name="parameters" element="tns:getDateTime">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="modifyDayExceptionResponse">
+    <wsdl:part name="parameters" element="tns:modifyDayExceptionResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="removeAllAuthorizationsFromAccessPointResponse">
+    <wsdl:part name="parameters" element="tns:removeAllAuthorizationsFromAccessPointResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="deviceSpecificCommandResponse">
+    <wsdl:part name="parameters" element="tns:deviceSpecificCommandResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="findUsers">
+    <wsdl:part name="parameters" element="tns:findUsers">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="findDayExceptionGroups">
+    <wsdl:part name="parameters" element="tns:findDayExceptionGroups">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getNewLogsResponse">
+    <wsdl:part name="parameters" element="tns:getNewLogsResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="removeSchedule">
+    <wsdl:part name="parameters" element="tns:removeSchedule">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addDayExceptionGroupToScheduleResponse">
+    <wsdl:part name="parameters" element="tns:addDayExceptionGroupToScheduleResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="findDayExceptions">
+    <wsdl:part name="parameters" element="tns:findDayExceptions">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getDayPeriodIdsResponse">
+    <wsdl:part name="parameters" element="tns:getDayPeriodIdsResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addAccessPointsToAuthorization">
+    <wsdl:part name="parameters" element="tns:addAccessPointsToAuthorization">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="removeAccessPointsFromAuthorizationResponse">
+    <wsdl:part name="parameters" element="tns:removeAccessPointsFromAuthorizationResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="setDateTimeResponse">
+    <wsdl:part name="parameters" element="tns:setDateTimeResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="findDayPeriods">
+    <wsdl:part name="parameters" element="tns:findDayPeriods">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addUsersToAuthorizationResponse">
+    <wsdl:part name="parameters" element="tns:addUsersToAuthorizationResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="reloadAccessPointProvisioningData">
+    <wsdl:part name="parameters" element="tns:reloadAccessPointProvisioningData">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAuthorizationIds">
+    <wsdl:part name="parameters" element="tns:getAuthorizationIds">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="findEntityIdsForAccessPointResponse">
+    <wsdl:part name="parameters" element="tns:findEntityIdsForAccessPointResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addScheduleResponse">
+    <wsdl:part name="parameters" element="tns:addScheduleResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addDayPeriodToSchedule">
+    <wsdl:part name="parameters" element="tns:addDayPeriodToSchedule">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="removeAuthorizationResponse">
+    <wsdl:part name="parameters" element="tns:removeAuthorizationResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="modifyDayPeriod">
+    <wsdl:part name="parameters" element="tns:modifyDayPeriod">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addDayException">
+    <wsdl:part name="parameters" element="tns:addDayException">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addAuthorizationResponse">
+    <wsdl:part name="parameters" element="tns:addAuthorizationResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="modifyScheduleResponse">
+    <wsdl:part name="parameters" element="tns:modifyScheduleResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="deleteAllOrphanEntitiesResponse">
+    <wsdl:part name="parameters" element="tns:deleteAllOrphanEntitiesResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAccessPointModeIdsResponse">
+    <wsdl:part name="parameters" element="tns:getAccessPointModeIdsResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="lock">
+    <wsdl:part name="parameters" element="tns:lock">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addDayExceptionResponse">
+    <wsdl:part name="parameters" element="tns:addDayExceptionResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getEntityIdCountForAccessPointResponse">
+    <wsdl:part name="parameters" element="tns:getEntityIdCountForAccessPointResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addDayExceptionGroupResponse">
+    <wsdl:part name="parameters" element="tns:addDayExceptionGroupResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getDayExceptionIdsResponse">
+    <wsdl:part name="parameters" element="tns:getDayExceptionIdsResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="setNewScheduleInAuthorizationResponse">
+    <wsdl:part name="parameters" element="tns:setNewScheduleInAuthorizationResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="removeAllAuthorizationsFromAccessPoint">
+    <wsdl:part name="parameters" element="tns:removeAllAuthorizationsFromAccessPoint">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="findAccessPointModesResponse">
+    <wsdl:part name="parameters" element="tns:findAccessPointModesResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="removeDayExceptionGroupFromSchedule">
+    <wsdl:part name="parameters" element="tns:removeDayExceptionGroupFromSchedule">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="modifyAuthorization">
+    <wsdl:part name="parameters" element="tns:modifyAuthorization">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="modifyDayExceptionGroupResponse">
+    <wsdl:part name="parameters" element="tns:modifyDayExceptionGroupResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="findAuthorizationsResponse">
+    <wsdl:part name="parameters" element="tns:findAuthorizationsResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="clearAllResponse">
+    <wsdl:part name="parameters" element="tns:clearAllResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="modifyDayExceptionGroup">
+    <wsdl:part name="parameters" element="tns:modifyDayExceptionGroup">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAuthorizationIdsResponse">
+    <wsdl:part name="parameters" element="tns:getAuthorizationIdsResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="removeDayExceptionGroup">
+    <wsdl:part name="parameters" element="tns:removeDayExceptionGroup">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getEntityIdCountForAccessPoint">
+    <wsdl:part name="parameters" element="tns:getEntityIdCountForAccessPoint">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="findDayExceptionGroupsResponse">
+    <wsdl:part name="parameters" element="tns:findDayExceptionGroupsResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getDateTimeResponse">
+    <wsdl:part name="parameters" element="tns:getDateTimeResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addDayExceptionGroupToSchedule">
+    <wsdl:part name="parameters" element="tns:addDayExceptionGroupToSchedule">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="removeDayPeriodResponse">
+    <wsdl:part name="parameters" element="tns:removeDayPeriodResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getUserIds">
+    <wsdl:part name="parameters" element="tns:getUserIds">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getScheduleIdsResponse">
+    <wsdl:part name="parameters" element="tns:getScheduleIdsResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="removeDayPeriodFromScheduleResponse">
+    <wsdl:part name="parameters" element="tns:removeDayPeriodFromScheduleResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="resetResponse">
+    <wsdl:part name="parameters" element="tns:resetResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="removeDayExceptionGroupResponse">
+    <wsdl:part name="parameters" element="tns:removeDayExceptionGroupResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAccessPointModeIds">
+    <wsdl:part name="parameters" element="tns:getAccessPointModeIds">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addDayExceptionToDayExceptionGroup">
+    <wsdl:part name="parameters" element="tns:addDayExceptionToDayExceptionGroup">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addDayPeriodToScheduleResponse">
+    <wsdl:part name="parameters" element="tns:addDayPeriodToScheduleResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="AccessControlInterface">
+    <wsdl:operation name="removeUser">
+      <wsdl:input name="removeUser" message="tns:removeUser" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/removeUserRequest" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/removeUserRequest">
+    </wsdl:input>
+      <wsdl:output name="removeUserResponse" message="tns:removeUserResponse" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/removeUserResponse" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/removeUserResponse">
+    </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException" message="tns:DoorServiceRouterException" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/removeUser/Fault/DoorServiceRouterException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="addUser">
+      <wsdl:input name="addUser" message="tns:addUser" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/addUserRequest" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/addUserRequest">
+    </wsdl:input>
+      <wsdl:output name="addUserResponse" message="tns:addUserResponse" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/addUserResponse" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/addUserResponse">
+    </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException" message="tns:DoorServiceRouterException" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/addUser/Fault/DoorServiceRouterException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getAccessPointModeIds">
+      <wsdl:input name="getAccessPointModeIds" message="tns:getAccessPointModeIds" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/getAccessPointModeIdsRequest" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/getAccessPointModeIdsRequest">
+    </wsdl:input>
+      <wsdl:output name="getAccessPointModeIdsResponse" message="tns:getAccessPointModeIdsResponse" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/getAccessPointModeIdsResponse" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/getAccessPointModeIdsResponse">
+    </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException" message="tns:DoorServiceRouterException" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/getAccessPointModeIds/Fault/DoorServiceRouterException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="addAccessPointMode">
+      <wsdl:input name="addAccessPointMode" message="tns:addAccessPointMode" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/addAccessPointModeRequest" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/addAccessPointModeRequest">
+    </wsdl:input>
+      <wsdl:output name="addAccessPointModeResponse" message="tns:addAccessPointModeResponse" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/addAccessPointModeResponse" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/addAccessPointModeResponse">
+    </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException" message="tns:DoorServiceRouterException" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/addAccessPointMode/Fault/DoorServiceRouterException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="findEntityIdsForAccessPoint">
+      <wsdl:input name="findEntityIdsForAccessPoint" message="tns:findEntityIdsForAccessPoint" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/findEntityIdsForAccessPointRequest" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/findEntityIdsForAccessPointRequest">
+    </wsdl:input>
+      <wsdl:output name="findEntityIdsForAccessPointResponse" message="tns:findEntityIdsForAccessPointResponse" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/findEntityIdsForAccessPointResponse" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/findEntityIdsForAccessPointResponse">
+    </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException" message="tns:DoorServiceRouterException" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/findEntityIdsForAccessPoint/Fault/DoorServiceRouterException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="reloadAccessPointProvisioningData">
+      <wsdl:input name="reloadAccessPointProvisioningData" message="tns:reloadAccessPointProvisioningData" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/reloadAccessPointProvisioningDataRequest" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/reloadAccessPointProvisioningDataRequest">
+    </wsdl:input>
+      <wsdl:output name="reloadAccessPointProvisioningDataResponse" message="tns:reloadAccessPointProvisioningDataResponse" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/reloadAccessPointProvisioningDataResponse" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/reloadAccessPointProvisioningDataResponse">
+    </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException" message="tns:DoorServiceRouterException" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/reloadAccessPointProvisioningData/Fault/DoorServiceRouterException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="modifyAccessPointMode">
+      <wsdl:input name="modifyAccessPointMode" message="tns:modifyAccessPointMode" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/modifyAccessPointModeRequest" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/modifyAccessPointModeRequest">
+    </wsdl:input>
+      <wsdl:output name="modifyAccessPointModeResponse" message="tns:modifyAccessPointModeResponse" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/modifyAccessPointModeResponse" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/modifyAccessPointModeResponse">
+    </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException" message="tns:DoorServiceRouterException" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/modifyAccessPointMode/Fault/DoorServiceRouterException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="addSchedule">
+      <wsdl:input name="addSchedule" message="tns:addSchedule" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/addScheduleRequest" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/addScheduleRequest">
+    </wsdl:input>
+      <wsdl:output name="addScheduleResponse" message="tns:addScheduleResponse" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/addScheduleResponse" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/addScheduleResponse">
+    </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException" message="tns:DoorServiceRouterException" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/addSchedule/Fault/DoorServiceRouterException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="deleteAllOrphanEntities">
+      <wsdl:input name="deleteAllOrphanEntities" message="tns:deleteAllOrphanEntities" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/deleteAllOrphanEntitiesRequest" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/deleteAllOrphanEntitiesRequest">
+    </wsdl:input>
+      <wsdl:output name="deleteAllOrphanEntitiesResponse" message="tns:deleteAllOrphanEntitiesResponse" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/deleteAllOrphanEntitiesResponse" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/deleteAllOrphanEntitiesResponse">
+    </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException" message="tns:DoorServiceRouterException" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/deleteAllOrphanEntities/Fault/DoorServiceRouterException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="reset">
+      <wsdl:input name="reset" message="tns:reset" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/resetRequest" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/resetRequest">
+    </wsdl:input>
+      <wsdl:output name="resetResponse" message="tns:resetResponse" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/resetResponse" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/resetResponse">
+    </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException" message="tns:DoorServiceRouterException" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/reset/Fault/DoorServiceRouterException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getUserIds">
+      <wsdl:input name="getUserIds" message="tns:getUserIds" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/getUserIdsRequest" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/getUserIdsRequest">
+    </wsdl:input>
+      <wsdl:output name="getUserIdsResponse" message="tns:getUserIdsResponse" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/getUserIdsResponse" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/getUserIdsResponse">
+    </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException" message="tns:DoorServiceRouterException" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/getUserIds/Fault/DoorServiceRouterException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getScheduleIds">
+      <wsdl:input name="getScheduleIds" message="tns:getScheduleIds" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/getScheduleIdsRequest" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/getScheduleIdsRequest">
+    </wsdl:input>
+      <wsdl:output name="getScheduleIdsResponse" message="tns:getScheduleIdsResponse" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/getScheduleIdsResponse" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/getScheduleIdsResponse">
+    </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException" message="tns:DoorServiceRouterException" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/getScheduleIds/Fault/DoorServiceRouterException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="findAccessPointModes">
+      <wsdl:input name="findAccessPointModes" message="tns:findAccessPointModes" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/findAccessPointModesRequest" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/findAccessPointModesRequest">
+    </wsdl:input>
+      <wsdl:output name="findAccessPointModesResponse" message="tns:findAccessPointModesResponse" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/findAccessPointModesResponse" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/findAccessPointModesResponse">
+    </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException" message="tns:DoorServiceRouterException" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/findAccessPointModes/Fault/DoorServiceRouterException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="setNewScheduleInAuthorization">
+      <wsdl:input name="setNewScheduleInAuthorization" message="tns:setNewScheduleInAuthorization" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/setNewScheduleInAuthorizationRequest" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/setNewScheduleInAuthorizationRequest">
+    </wsdl:input>
+      <wsdl:output name="setNewScheduleInAuthorizationResponse" message="tns:setNewScheduleInAuthorizationResponse" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/setNewScheduleInAuthorizationResponse" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/setNewScheduleInAuthorizationResponse">
+    </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException" message="tns:DoorServiceRouterException" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/setNewScheduleInAuthorization/Fault/DoorServiceRouterException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getDayExceptionIds">
+      <wsdl:input name="getDayExceptionIds" message="tns:getDayExceptionIds" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/getDayExceptionIdsRequest" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/getDayExceptionIdsRequest">
+    </wsdl:input>
+      <wsdl:output name="getDayExceptionIdsResponse" message="tns:getDayExceptionIdsResponse" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/getDayExceptionIdsResponse" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/getDayExceptionIdsResponse">
+    </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException" message="tns:DoorServiceRouterException" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/getDayExceptionIds/Fault/DoorServiceRouterException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="removeDayException">
+      <wsdl:input name="removeDayException" message="tns:removeDayException" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/removeDayExceptionRequest" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/removeDayExceptionRequest">
+    </wsdl:input>
+      <wsdl:output name="removeDayExceptionResponse" message="tns:removeDayExceptionResponse" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/removeDayExceptionResponse" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/removeDayExceptionResponse">
+    </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException" message="tns:DoorServiceRouterException" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/removeDayException/Fault/DoorServiceRouterException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getDayExceptionGroupIds">
+      <wsdl:input name="getDayExceptionGroupIds" message="tns:getDayExceptionGroupIds" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/getDayExceptionGroupIdsRequest" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/getDayExceptionGroupIdsRequest">
+    </wsdl:input>
+      <wsdl:output name="getDayExceptionGroupIdsResponse" message="tns:getDayExceptionGroupIdsResponse" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/getDayExceptionGroupIdsResponse" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/getDayExceptionGroupIdsResponse">
+    </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException" message="tns:DoorServiceRouterException" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/getDayExceptionGroupIds/Fault/DoorServiceRouterException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="addOrUpdateCardholder">
+      <wsdl:input name="addOrUpdateCardholder" message="tns:addOrUpdateCardholder" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/addOrUpdateCardholderRequest" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/addOrUpdateCardholderRequest">
+    </wsdl:input>
+      <wsdl:output name="addOrUpdateCardholderResponse" message="tns:addOrUpdateCardholderResponse" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/addOrUpdateCardholderResponse" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/addOrUpdateCardholderResponse">
+    </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException" message="tns:DoorServiceRouterException" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/addOrUpdateCardholder/Fault/DoorServiceRouterException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="addDayExceptionGroup">
+      <wsdl:input name="addDayExceptionGroup" message="tns:addDayExceptionGroup" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/addDayExceptionGroupRequest" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/addDayExceptionGroupRequest">
+    </wsdl:input>
+      <wsdl:output name="addDayExceptionGroupResponse" message="tns:addDayExceptionGroupResponse" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/addDayExceptionGroupResponse" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/addDayExceptionGroupResponse">
+    </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException" message="tns:DoorServiceRouterException" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/addDayExceptionGroup/Fault/DoorServiceRouterException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="modifyAuthorization">
+      <wsdl:input name="modifyAuthorization" message="tns:modifyAuthorization" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/modifyAuthorizationRequest" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/modifyAuthorizationRequest">
+    </wsdl:input>
+      <wsdl:output name="modifyAuthorizationResponse" message="tns:modifyAuthorizationResponse" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/modifyAuthorizationResponse" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/modifyAuthorizationResponse">
+    </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException" message="tns:DoorServiceRouterException" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/modifyAuthorization/Fault/DoorServiceRouterException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getNewLogs">
+      <wsdl:input name="getNewLogs" message="tns:getNewLogs" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/getNewLogsRequest" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/getNewLogsRequest">
+    </wsdl:input>
+      <wsdl:output name="getNewLogsResponse" message="tns:getNewLogsResponse" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/getNewLogsResponse" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/getNewLogsResponse">
+    </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException" message="tns:DoorServiceRouterException" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/getNewLogs/Fault/DoorServiceRouterException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getLogsByDate">
+      <wsdl:input name="getLogsByDate" message="tns:getLogsByDate" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/getLogsByDateRequest" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/getLogsByDateRequest">
+    </wsdl:input>
+      <wsdl:output name="getLogsByDateResponse" message="tns:getLogsByDateResponse" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/getLogsByDateResponse" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/getLogsByDateResponse">
+    </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException" message="tns:DoorServiceRouterException" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/getLogsByDate/Fault/DoorServiceRouterException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="findSchedules">
+      <wsdl:input name="findSchedules" message="tns:findSchedules" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/findSchedulesRequest" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/findSchedulesRequest">
+    </wsdl:input>
+      <wsdl:output name="findSchedulesResponse" message="tns:findSchedulesResponse" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/findSchedulesResponse" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/findSchedulesResponse">
+    </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException" message="tns:DoorServiceRouterException" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/findSchedules/Fault/DoorServiceRouterException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="setAuthorizationTypeForAuthorization">
+      <wsdl:input name="setAuthorizationTypeForAuthorization" message="tns:setAuthorizationTypeForAuthorization" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/setAuthorizationTypeForAuthorizationRequest" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/setAuthorizationTypeForAuthorizationRequest">
+    </wsdl:input>
+      <wsdl:output name="setAuthorizationTypeForAuthorizationResponse" message="tns:setAuthorizationTypeForAuthorizationResponse" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/setAuthorizationTypeForAuthorizationResponse" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/setAuthorizationTypeForAuthorizationResponse">
+    </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException" message="tns:DoorServiceRouterException" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/setAuthorizationTypeForAuthorization/Fault/DoorServiceRouterException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="addDayException">
+      <wsdl:input name="addDayException" message="tns:addDayException" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/addDayExceptionRequest" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/addDayExceptionRequest">
+    </wsdl:input>
+      <wsdl:output name="addDayExceptionResponse" message="tns:addDayExceptionResponse" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/addDayExceptionResponse" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/addDayExceptionResponse">
+    </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException" message="tns:DoorServiceRouterException" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/addDayException/Fault/DoorServiceRouterException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="removeAccessPointMode">
+      <wsdl:input name="removeAccessPointMode" message="tns:removeAccessPointMode" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/removeAccessPointModeRequest" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/removeAccessPointModeRequest">
+    </wsdl:input>
+      <wsdl:output name="removeAccessPointModeResponse" message="tns:removeAccessPointModeResponse" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/removeAccessPointModeResponse" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/removeAccessPointModeResponse">
+    </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException" message="tns:DoorServiceRouterException" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/removeAccessPointMode/Fault/DoorServiceRouterException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="removeDayPeriod">
+      <wsdl:input name="removeDayPeriod" message="tns:removeDayPeriod" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/removeDayPeriodRequest" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/removeDayPeriodRequest">
+    </wsdl:input>
+      <wsdl:output name="removeDayPeriodResponse" message="tns:removeDayPeriodResponse" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/removeDayPeriodResponse" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/removeDayPeriodResponse">
+    </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException" message="tns:DoorServiceRouterException" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/removeDayPeriod/Fault/DoorServiceRouterException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="removeDayExceptionGroupFromSchedule">
+      <wsdl:input name="removeDayExceptionGroupFromSchedule" message="tns:removeDayExceptionGroupFromSchedule" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/removeDayExceptionGroupFromScheduleRequest" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/removeDayExceptionGroupFromScheduleRequest">
+    </wsdl:input>
+      <wsdl:output name="removeDayExceptionGroupFromScheduleResponse" message="tns:removeDayExceptionGroupFromScheduleResponse" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/removeDayExceptionGroupFromScheduleResponse" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/removeDayExceptionGroupFromScheduleResponse">
+    </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException" message="tns:DoorServiceRouterException" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/removeDayExceptionGroupFromSchedule/Fault/DoorServiceRouterException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="removeDayExceptionFromDayExceptionGroup">
+      <wsdl:input name="removeDayExceptionFromDayExceptionGroup" message="tns:removeDayExceptionFromDayExceptionGroup" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/removeDayExceptionFromDayExceptionGroupRequest" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/removeDayExceptionFromDayExceptionGroupRequest">
+    </wsdl:input>
+      <wsdl:output name="removeDayExceptionFromDayExceptionGroupResponse" message="tns:removeDayExceptionFromDayExceptionGroupResponse" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/removeDayExceptionFromDayExceptionGroupResponse" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/removeDayExceptionFromDayExceptionGroupResponse">
+    </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException" message="tns:DoorServiceRouterException" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/removeDayExceptionFromDayExceptionGroup/Fault/DoorServiceRouterException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getEntityIdCountForAccessPoint">
+      <wsdl:input name="getEntityIdCountForAccessPoint" message="tns:getEntityIdCountForAccessPoint" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/getEntityIdCountForAccessPointRequest" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/getEntityIdCountForAccessPointRequest">
+    </wsdl:input>
+      <wsdl:output name="getEntityIdCountForAccessPointResponse" message="tns:getEntityIdCountForAccessPointResponse" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/getEntityIdCountForAccessPointResponse" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/getEntityIdCountForAccessPointResponse">
+    </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException" message="tns:DoorServiceRouterException" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/getEntityIdCountForAccessPoint/Fault/DoorServiceRouterException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="clearAll">
+      <wsdl:input name="clearAll" message="tns:clearAll" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/clearAllRequest" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/clearAllRequest">
+    </wsdl:input>
+      <wsdl:output name="clearAllResponse" message="tns:clearAllResponse" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/clearAllResponse" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/clearAllResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="findDayExceptions">
+      <wsdl:input name="findDayExceptions" message="tns:findDayExceptions" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/findDayExceptionsRequest" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/findDayExceptionsRequest">
+    </wsdl:input>
+      <wsdl:output name="findDayExceptionsResponse" message="tns:findDayExceptionsResponse" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/findDayExceptionsResponse" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/findDayExceptionsResponse">
+    </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException" message="tns:DoorServiceRouterException" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/findDayExceptions/Fault/DoorServiceRouterException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="removeDayExceptionGroup">
+      <wsdl:input name="removeDayExceptionGroup" message="tns:removeDayExceptionGroup" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/removeDayExceptionGroupRequest" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/removeDayExceptionGroupRequest">
+    </wsdl:input>
+      <wsdl:output name="removeDayExceptionGroupResponse" message="tns:removeDayExceptionGroupResponse" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/removeDayExceptionGroupResponse" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/removeDayExceptionGroupResponse">
+    </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException" message="tns:DoorServiceRouterException" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/removeDayExceptionGroup/Fault/DoorServiceRouterException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="deviceSpecificCommand">
+      <wsdl:input name="deviceSpecificCommand" message="tns:deviceSpecificCommand" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/deviceSpecificCommandRequest" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/deviceSpecificCommandRequest">
+    </wsdl:input>
+      <wsdl:output name="deviceSpecificCommandResponse" message="tns:deviceSpecificCommandResponse" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/deviceSpecificCommandResponse" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/deviceSpecificCommandResponse">
+    </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException" message="tns:DoorServiceRouterException" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/deviceSpecificCommand/Fault/DoorServiceRouterException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="removeUserCascading">
+      <wsdl:input name="removeUserCascading" message="tns:removeUserCascading" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/removeUserCascadingRequest" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/removeUserCascadingRequest">
+    </wsdl:input>
+      <wsdl:output name="removeUserCascadingResponse" message="tns:removeUserCascadingResponse" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/removeUserCascadingResponse" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/removeUserCascadingResponse">
+    </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException" message="tns:DoorServiceRouterException" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/removeUserCascading/Fault/DoorServiceRouterException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="findDayPeriods">
+      <wsdl:input name="findDayPeriods" message="tns:findDayPeriods" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/findDayPeriodsRequest" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/findDayPeriodsRequest">
+    </wsdl:input>
+      <wsdl:output name="findDayPeriodsResponse" message="tns:findDayPeriodsResponse" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/findDayPeriodsResponse" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/findDayPeriodsResponse">
+    </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException" message="tns:DoorServiceRouterException" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/findDayPeriods/Fault/DoorServiceRouterException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="addUsersToAuthorization">
+      <wsdl:input name="addUsersToAuthorization" message="tns:addUsersToAuthorization" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/addUsersToAuthorizationRequest" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/addUsersToAuthorizationRequest">
+    </wsdl:input>
+      <wsdl:output name="addUsersToAuthorizationResponse" message="tns:addUsersToAuthorizationResponse" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/addUsersToAuthorizationResponse" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/addUsersToAuthorizationResponse">
+    </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException" message="tns:DoorServiceRouterException" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/addUsersToAuthorization/Fault/DoorServiceRouterException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="modifyDayException">
+      <wsdl:input name="modifyDayException" message="tns:modifyDayException" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/modifyDayExceptionRequest" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/modifyDayExceptionRequest">
+    </wsdl:input>
+      <wsdl:output name="modifyDayExceptionResponse" message="tns:modifyDayExceptionResponse" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/modifyDayExceptionResponse" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/modifyDayExceptionResponse">
+    </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException" message="tns:DoorServiceRouterException" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/modifyDayException/Fault/DoorServiceRouterException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getAuthorizationIds">
+      <wsdl:input name="getAuthorizationIds" message="tns:getAuthorizationIds" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/getAuthorizationIdsRequest" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/getAuthorizationIdsRequest">
+    </wsdl:input>
+      <wsdl:output name="getAuthorizationIdsResponse" message="tns:getAuthorizationIdsResponse" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/getAuthorizationIdsResponse" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/getAuthorizationIdsResponse">
+    </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException" message="tns:DoorServiceRouterException" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/getAuthorizationIds/Fault/DoorServiceRouterException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="lock">
+      <wsdl:input name="lock" message="tns:lock" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/lockRequest" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/lockRequest">
+    </wsdl:input>
+      <wsdl:output name="lockResponse" message="tns:lockResponse" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/lockResponse" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/lockResponse">
+    </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException" message="tns:DoorServiceRouterException" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/lock/Fault/DoorServiceRouterException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="removeUsersFromAuthorization">
+      <wsdl:input name="removeUsersFromAuthorization" message="tns:removeUsersFromAuthorization" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/removeUsersFromAuthorizationRequest" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/removeUsersFromAuthorizationRequest">
+    </wsdl:input>
+      <wsdl:output name="removeUsersFromAuthorizationResponse" message="tns:removeUsersFromAuthorizationResponse" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/removeUsersFromAuthorizationResponse" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/removeUsersFromAuthorizationResponse">
+    </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException" message="tns:DoorServiceRouterException" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/removeUsersFromAuthorization/Fault/DoorServiceRouterException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="addDayPeriod">
+      <wsdl:input name="addDayPeriod" message="tns:addDayPeriod" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/addDayPeriodRequest" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/addDayPeriodRequest">
+    </wsdl:input>
+      <wsdl:output name="addDayPeriodResponse" message="tns:addDayPeriodResponse" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/addDayPeriodResponse" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/addDayPeriodResponse">
+    </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException" message="tns:DoorServiceRouterException" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/addDayPeriod/Fault/DoorServiceRouterException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="modifyDayExceptionGroup">
+      <wsdl:input name="modifyDayExceptionGroup" message="tns:modifyDayExceptionGroup" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/modifyDayExceptionGroupRequest" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/modifyDayExceptionGroupRequest">
+    </wsdl:input>
+      <wsdl:output name="modifyDayExceptionGroupResponse" message="tns:modifyDayExceptionGroupResponse" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/modifyDayExceptionGroupResponse" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/modifyDayExceptionGroupResponse">
+    </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException" message="tns:DoorServiceRouterException" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/modifyDayExceptionGroup/Fault/DoorServiceRouterException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="addAccessPointsToAuthorization">
+      <wsdl:input name="addAccessPointsToAuthorization" message="tns:addAccessPointsToAuthorization" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/addAccessPointsToAuthorizationRequest" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/addAccessPointsToAuthorizationRequest">
+    </wsdl:input>
+      <wsdl:output name="addAccessPointsToAuthorizationResponse" message="tns:addAccessPointsToAuthorizationResponse" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/addAccessPointsToAuthorizationResponse" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/addAccessPointsToAuthorizationResponse">
+    </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException" message="tns:DoorServiceRouterException" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/addAccessPointsToAuthorization/Fault/DoorServiceRouterException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="removeSchedule">
+      <wsdl:input name="removeSchedule" message="tns:removeSchedule" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/removeScheduleRequest" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/removeScheduleRequest">
+    </wsdl:input>
+      <wsdl:output name="removeScheduleResponse" message="tns:removeScheduleResponse" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/removeScheduleResponse" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/removeScheduleResponse">
+    </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException" message="tns:DoorServiceRouterException" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/removeSchedule/Fault/DoorServiceRouterException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="findDayExceptionGroups">
+      <wsdl:input name="findDayExceptionGroups" message="tns:findDayExceptionGroups" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/findDayExceptionGroupsRequest" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/findDayExceptionGroupsRequest">
+    </wsdl:input>
+      <wsdl:output name="findDayExceptionGroupsResponse" message="tns:findDayExceptionGroupsResponse" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/findDayExceptionGroupsResponse" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/findDayExceptionGroupsResponse">
+    </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException" message="tns:DoorServiceRouterException" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/findDayExceptionGroups/Fault/DoorServiceRouterException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="removeDayPeriodFromSchedule">
+      <wsdl:input name="removeDayPeriodFromSchedule" message="tns:removeDayPeriodFromSchedule" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/removeDayPeriodFromScheduleRequest" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/removeDayPeriodFromScheduleRequest">
+    </wsdl:input>
+      <wsdl:output name="removeDayPeriodFromScheduleResponse" message="tns:removeDayPeriodFromScheduleResponse" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/removeDayPeriodFromScheduleResponse" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/removeDayPeriodFromScheduleResponse">
+    </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException" message="tns:DoorServiceRouterException" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/removeDayPeriodFromSchedule/Fault/DoorServiceRouterException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="removeAllAuthorizationsFromAccessPoint">
+      <wsdl:input name="removeAllAuthorizationsFromAccessPoint" message="tns:removeAllAuthorizationsFromAccessPoint" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/removeAllAuthorizationsFromAccessPointRequest" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/removeAllAuthorizationsFromAccessPointRequest">
+    </wsdl:input>
+      <wsdl:output name="removeAllAuthorizationsFromAccessPointResponse" message="tns:removeAllAuthorizationsFromAccessPointResponse" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/removeAllAuthorizationsFromAccessPointResponse" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/removeAllAuthorizationsFromAccessPointResponse">
+    </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException" message="tns:DoorServiceRouterException" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/removeAllAuthorizationsFromAccessPoint/Fault/DoorServiceRouterException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="findUsers">
+      <wsdl:input name="findUsers" message="tns:findUsers" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/findUsersRequest" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/findUsersRequest">
+    </wsdl:input>
+      <wsdl:output name="findUsersResponse" message="tns:findUsersResponse" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/findUsersResponse" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/findUsersResponse">
+    </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException" message="tns:DoorServiceRouterException" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/findUsers/Fault/DoorServiceRouterException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="addDayExceptionToDayExceptionGroup">
+      <wsdl:input name="addDayExceptionToDayExceptionGroup" message="tns:addDayExceptionToDayExceptionGroup" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/addDayExceptionToDayExceptionGroupRequest" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/addDayExceptionToDayExceptionGroupRequest">
+    </wsdl:input>
+      <wsdl:output name="addDayExceptionToDayExceptionGroupResponse" message="tns:addDayExceptionToDayExceptionGroupResponse" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/addDayExceptionToDayExceptionGroupResponse" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/addDayExceptionToDayExceptionGroupResponse">
+    </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException" message="tns:DoorServiceRouterException" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/addDayExceptionToDayExceptionGroup/Fault/DoorServiceRouterException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="addDayExceptionGroupToSchedule">
+      <wsdl:input name="addDayExceptionGroupToSchedule" message="tns:addDayExceptionGroupToSchedule" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/addDayExceptionGroupToScheduleRequest" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/addDayExceptionGroupToScheduleRequest">
+    </wsdl:input>
+      <wsdl:output name="addDayExceptionGroupToScheduleResponse" message="tns:addDayExceptionGroupToScheduleResponse" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/addDayExceptionGroupToScheduleResponse" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/addDayExceptionGroupToScheduleResponse">
+    </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException" message="tns:DoorServiceRouterException" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/addDayExceptionGroupToSchedule/Fault/DoorServiceRouterException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="modifySchedule">
+      <wsdl:input name="modifySchedule" message="tns:modifySchedule" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/modifyScheduleRequest" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/modifyScheduleRequest">
+    </wsdl:input>
+      <wsdl:output name="modifyScheduleResponse" message="tns:modifyScheduleResponse" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/modifyScheduleResponse" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/modifyScheduleResponse">
+    </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException" message="tns:DoorServiceRouterException" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/modifySchedule/Fault/DoorServiceRouterException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="addDayPeriodToSchedule">
+      <wsdl:input name="addDayPeriodToSchedule" message="tns:addDayPeriodToSchedule" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/addDayPeriodToScheduleRequest" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/addDayPeriodToScheduleRequest">
+    </wsdl:input>
+      <wsdl:output name="addDayPeriodToScheduleResponse" message="tns:addDayPeriodToScheduleResponse" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/addDayPeriodToScheduleResponse" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/addDayPeriodToScheduleResponse">
+    </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException" message="tns:DoorServiceRouterException" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/addDayPeriodToSchedule/Fault/DoorServiceRouterException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="removeAccessPointsFromAuthorization">
+      <wsdl:input name="removeAccessPointsFromAuthorization" message="tns:removeAccessPointsFromAuthorization" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/removeAccessPointsFromAuthorizationRequest" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/removeAccessPointsFromAuthorizationRequest">
+    </wsdl:input>
+      <wsdl:output name="removeAccessPointsFromAuthorizationResponse" message="tns:removeAccessPointsFromAuthorizationResponse" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/removeAccessPointsFromAuthorizationResponse" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/removeAccessPointsFromAuthorizationResponse">
+    </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException" message="tns:DoorServiceRouterException" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/removeAccessPointsFromAuthorization/Fault/DoorServiceRouterException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="addAuthorization">
+      <wsdl:input name="addAuthorization" message="tns:addAuthorization" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/addAuthorizationRequest" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/addAuthorizationRequest">
+    </wsdl:input>
+      <wsdl:output name="addAuthorizationResponse" message="tns:addAuthorizationResponse" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/addAuthorizationResponse" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/addAuthorizationResponse">
+    </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException" message="tns:DoorServiceRouterException" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/addAuthorization/Fault/DoorServiceRouterException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="unlock">
+      <wsdl:input name="unlock" message="tns:unlock" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/unlockRequest" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/unlockRequest">
+    </wsdl:input>
+      <wsdl:output name="unlockResponse" message="tns:unlockResponse" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/unlockResponse" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/unlockResponse">
+    </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException" message="tns:DoorServiceRouterException" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/unlock/Fault/DoorServiceRouterException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="findAuthorizations">
+      <wsdl:input name="findAuthorizations" message="tns:findAuthorizations" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/findAuthorizationsRequest" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/findAuthorizationsRequest">
+    </wsdl:input>
+      <wsdl:output name="findAuthorizationsResponse" message="tns:findAuthorizationsResponse" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/findAuthorizationsResponse" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/findAuthorizationsResponse">
+    </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException" message="tns:DoorServiceRouterException" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/findAuthorizations/Fault/DoorServiceRouterException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="modifyUser">
+      <wsdl:input name="modifyUser" message="tns:modifyUser" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/modifyUserRequest" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/modifyUserRequest">
+    </wsdl:input>
+      <wsdl:output name="modifyUserResponse" message="tns:modifyUserResponse" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/modifyUserResponse" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/modifyUserResponse">
+    </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException" message="tns:DoorServiceRouterException" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/modifyUser/Fault/DoorServiceRouterException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="removeAuthorization">
+      <wsdl:input name="removeAuthorization" message="tns:removeAuthorization" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/removeAuthorizationRequest" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/removeAuthorizationRequest">
+    </wsdl:input>
+      <wsdl:output name="removeAuthorizationResponse" message="tns:removeAuthorizationResponse" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/removeAuthorizationResponse" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/removeAuthorizationResponse">
+    </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException" message="tns:DoorServiceRouterException" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/removeAuthorization/Fault/DoorServiceRouterException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="modifyDayPeriod">
+      <wsdl:input name="modifyDayPeriod" message="tns:modifyDayPeriod" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/modifyDayPeriodRequest" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/modifyDayPeriodRequest">
+    </wsdl:input>
+      <wsdl:output name="modifyDayPeriodResponse" message="tns:modifyDayPeriodResponse" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/modifyDayPeriodResponse" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/modifyDayPeriodResponse">
+    </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException" message="tns:DoorServiceRouterException" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/modifyDayPeriod/Fault/DoorServiceRouterException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="pulseOpen">
+      <wsdl:input name="pulseOpen" message="tns:pulseOpen" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/pulseOpenRequest" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/pulseOpenRequest">
+    </wsdl:input>
+      <wsdl:output name="pulseOpenResponse" message="tns:pulseOpenResponse" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/pulseOpenResponse" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/pulseOpenResponse">
+    </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException" message="tns:DoorServiceRouterException" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/pulseOpen/Fault/DoorServiceRouterException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getDayPeriodIds">
+      <wsdl:input name="getDayPeriodIds" message="tns:getDayPeriodIds" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/getDayPeriodIdsRequest" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/getDayPeriodIdsRequest">
+    </wsdl:input>
+      <wsdl:output name="getDayPeriodIdsResponse" message="tns:getDayPeriodIdsResponse" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/getDayPeriodIdsResponse" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/getDayPeriodIdsResponse">
+    </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException" message="tns:DoorServiceRouterException" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/getDayPeriodIds/Fault/DoorServiceRouterException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="setDateTime">
+      <wsdl:input name="setDateTime" message="tns:setDateTime" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/setDateTimeRequest" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/setDateTimeRequest">
+    </wsdl:input>
+      <wsdl:output name="setDateTimeResponse" message="tns:setDateTimeResponse" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/setDateTimeResponse" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/setDateTimeResponse">
+    </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException" message="tns:DoorServiceRouterException" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/setDateTime/Fault/DoorServiceRouterException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getDateTime">
+      <wsdl:input name="getDateTime" message="tns:getDateTime" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/getDateTimeRequest" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/getDateTimeRequest">
+    </wsdl:input>
+      <wsdl:output name="getDateTimeResponse" message="tns:getDateTimeResponse" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/getDateTimeResponse" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/getDateTimeResponse">
+    </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException" message="tns:DoorServiceRouterException" wsam:Action="http://xml.assaabloy.com/dsr/2.0/AccessControlInterface/getDateTime/Fault/DoorServiceRouterException">
+    </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="AccessControlInterfaceServiceSoapBinding" type="tns:AccessControlInterface">
+    <soap12:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsaw:UsingAddressing wsdl:required="true"/>
+    <wsp:PolicyReference URI="#AccessControlInterfaceServiceSoapBinding_WSAM_Addressing_Policy"/>
+    <wsdl:operation name="removeUser">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="removeUser">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="removeUserResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException">
+        <soap12:fault name="DoorServiceRouterException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="addUser">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="addUser">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="addUserResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException">
+        <soap12:fault name="DoorServiceRouterException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getAccessPointModeIds">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="getAccessPointModeIds">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getAccessPointModeIdsResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException">
+        <soap12:fault name="DoorServiceRouterException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="addAccessPointMode">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="addAccessPointMode">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="addAccessPointModeResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException">
+        <soap12:fault name="DoorServiceRouterException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="findEntityIdsForAccessPoint">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="findEntityIdsForAccessPoint">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="findEntityIdsForAccessPointResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException">
+        <soap12:fault name="DoorServiceRouterException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="addSchedule">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="addSchedule">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="addScheduleResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException">
+        <soap12:fault name="DoorServiceRouterException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="modifyAccessPointMode">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="modifyAccessPointMode">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="modifyAccessPointModeResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException">
+        <soap12:fault name="DoorServiceRouterException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="reloadAccessPointProvisioningData">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="reloadAccessPointProvisioningData">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="reloadAccessPointProvisioningDataResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException">
+        <soap12:fault name="DoorServiceRouterException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="deleteAllOrphanEntities">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="deleteAllOrphanEntities">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="deleteAllOrphanEntitiesResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException">
+        <soap12:fault name="DoorServiceRouterException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getUserIds">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="getUserIds">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getUserIdsResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException">
+        <soap12:fault name="DoorServiceRouterException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="reset">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="reset">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="resetResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException">
+        <soap12:fault name="DoorServiceRouterException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="findAccessPointModes">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="findAccessPointModes">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="findAccessPointModesResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException">
+        <soap12:fault name="DoorServiceRouterException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getScheduleIds">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="getScheduleIds">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getScheduleIdsResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException">
+        <soap12:fault name="DoorServiceRouterException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getDayExceptionIds">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="getDayExceptionIds">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getDayExceptionIdsResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException">
+        <soap12:fault name="DoorServiceRouterException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="setNewScheduleInAuthorization">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="setNewScheduleInAuthorization">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="setNewScheduleInAuthorizationResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException">
+        <soap12:fault name="DoorServiceRouterException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getDayExceptionGroupIds">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="getDayExceptionGroupIds">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getDayExceptionGroupIdsResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException">
+        <soap12:fault name="DoorServiceRouterException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="removeDayException">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="removeDayException">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="removeDayExceptionResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException">
+        <soap12:fault name="DoorServiceRouterException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="addDayExceptionGroup">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="addDayExceptionGroup">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="addDayExceptionGroupResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException">
+        <soap12:fault name="DoorServiceRouterException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="addOrUpdateCardholder">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="addOrUpdateCardholder">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="addOrUpdateCardholderResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException">
+        <soap12:fault name="DoorServiceRouterException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="modifyAuthorization">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="modifyAuthorization">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="modifyAuthorizationResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException">
+        <soap12:fault name="DoorServiceRouterException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getNewLogs">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="getNewLogs">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getNewLogsResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException">
+        <soap12:fault name="DoorServiceRouterException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getLogsByDate">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="getLogsByDate">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getLogsByDateResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException">
+        <soap12:fault name="DoorServiceRouterException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="findSchedules">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="findSchedules">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="findSchedulesResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException">
+        <soap12:fault name="DoorServiceRouterException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="addDayException">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="addDayException">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="addDayExceptionResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException">
+        <soap12:fault name="DoorServiceRouterException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="setAuthorizationTypeForAuthorization">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="setAuthorizationTypeForAuthorization">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="setAuthorizationTypeForAuthorizationResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException">
+        <soap12:fault name="DoorServiceRouterException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="removeAccessPointMode">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="removeAccessPointMode">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="removeAccessPointModeResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException">
+        <soap12:fault name="DoorServiceRouterException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="removeDayExceptionGroupFromSchedule">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="removeDayExceptionGroupFromSchedule">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="removeDayExceptionGroupFromScheduleResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException">
+        <soap12:fault name="DoorServiceRouterException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="removeDayPeriod">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="removeDayPeriod">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="removeDayPeriodResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException">
+        <soap12:fault name="DoorServiceRouterException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="removeDayExceptionFromDayExceptionGroup">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="removeDayExceptionFromDayExceptionGroup">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="removeDayExceptionFromDayExceptionGroupResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException">
+        <soap12:fault name="DoorServiceRouterException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getEntityIdCountForAccessPoint">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="getEntityIdCountForAccessPoint">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getEntityIdCountForAccessPointResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException">
+        <soap12:fault name="DoorServiceRouterException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="clearAll">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="clearAll">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="clearAllResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="findDayExceptions">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="findDayExceptions">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="findDayExceptionsResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException">
+        <soap12:fault name="DoorServiceRouterException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="removeDayExceptionGroup">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="removeDayExceptionGroup">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="removeDayExceptionGroupResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException">
+        <soap12:fault name="DoorServiceRouterException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="deviceSpecificCommand">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="deviceSpecificCommand">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="deviceSpecificCommandResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException">
+        <soap12:fault name="DoorServiceRouterException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="removeUserCascading">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="removeUserCascading">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="removeUserCascadingResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException">
+        <soap12:fault name="DoorServiceRouterException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="findDayPeriods">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="findDayPeriods">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="findDayPeriodsResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException">
+        <soap12:fault name="DoorServiceRouterException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="addUsersToAuthorization">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="addUsersToAuthorization">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="addUsersToAuthorizationResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException">
+        <soap12:fault name="DoorServiceRouterException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="modifyDayException">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="modifyDayException">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="modifyDayExceptionResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException">
+        <soap12:fault name="DoorServiceRouterException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getAuthorizationIds">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="getAuthorizationIds">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getAuthorizationIdsResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException">
+        <soap12:fault name="DoorServiceRouterException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="lock">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="lock">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="lockResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException">
+        <soap12:fault name="DoorServiceRouterException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="addDayPeriod">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="addDayPeriod">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="addDayPeriodResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException">
+        <soap12:fault name="DoorServiceRouterException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="removeUsersFromAuthorization">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="removeUsersFromAuthorization">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="removeUsersFromAuthorizationResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException">
+        <soap12:fault name="DoorServiceRouterException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="modifyDayExceptionGroup">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="modifyDayExceptionGroup">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="modifyDayExceptionGroupResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException">
+        <soap12:fault name="DoorServiceRouterException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="addAccessPointsToAuthorization">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="addAccessPointsToAuthorization">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="addAccessPointsToAuthorizationResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException">
+        <soap12:fault name="DoorServiceRouterException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="removeSchedule">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="removeSchedule">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="removeScheduleResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException">
+        <soap12:fault name="DoorServiceRouterException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="findDayExceptionGroups">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="findDayExceptionGroups">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="findDayExceptionGroupsResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException">
+        <soap12:fault name="DoorServiceRouterException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="removeDayPeriodFromSchedule">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="removeDayPeriodFromSchedule">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="removeDayPeriodFromScheduleResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException">
+        <soap12:fault name="DoorServiceRouterException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="addDayExceptionGroupToSchedule">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="addDayExceptionGroupToSchedule">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="addDayExceptionGroupToScheduleResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException">
+        <soap12:fault name="DoorServiceRouterException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="addDayExceptionToDayExceptionGroup">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="addDayExceptionToDayExceptionGroup">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="addDayExceptionToDayExceptionGroupResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException">
+        <soap12:fault name="DoorServiceRouterException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="findUsers">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="findUsers">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="findUsersResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException">
+        <soap12:fault name="DoorServiceRouterException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="removeAllAuthorizationsFromAccessPoint">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="removeAllAuthorizationsFromAccessPoint">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="removeAllAuthorizationsFromAccessPointResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException">
+        <soap12:fault name="DoorServiceRouterException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="addDayPeriodToSchedule">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="addDayPeriodToSchedule">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="addDayPeriodToScheduleResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException">
+        <soap12:fault name="DoorServiceRouterException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="modifySchedule">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="modifySchedule">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="modifyScheduleResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException">
+        <soap12:fault name="DoorServiceRouterException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="addAuthorization">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="addAuthorization">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="addAuthorizationResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException">
+        <soap12:fault name="DoorServiceRouterException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="removeAccessPointsFromAuthorization">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="removeAccessPointsFromAuthorization">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="removeAccessPointsFromAuthorizationResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException">
+        <soap12:fault name="DoorServiceRouterException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="unlock">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="unlock">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="unlockResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException">
+        <soap12:fault name="DoorServiceRouterException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="findAuthorizations">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="findAuthorizations">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="findAuthorizationsResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException">
+        <soap12:fault name="DoorServiceRouterException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="modifyUser">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="modifyUser">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="modifyUserResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException">
+        <soap12:fault name="DoorServiceRouterException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="removeAuthorization">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="removeAuthorization">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="removeAuthorizationResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException">
+        <soap12:fault name="DoorServiceRouterException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="modifyDayPeriod">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="modifyDayPeriod">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="modifyDayPeriodResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException">
+        <soap12:fault name="DoorServiceRouterException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getDayPeriodIds">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="getDayPeriodIds">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getDayPeriodIdsResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException">
+        <soap12:fault name="DoorServiceRouterException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="pulseOpen">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="pulseOpen">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="pulseOpenResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException">
+        <soap12:fault name="DoorServiceRouterException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getDateTime">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="getDateTime">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getDateTimeResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException">
+        <soap12:fault name="DoorServiceRouterException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="setDateTime">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="setDateTime">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="setDateTimeResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException">
+        <soap12:fault name="DoorServiceRouterException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AccessControlInterfaceService">
+    <wsdl:port name="AccessControlInterfacePort" binding="tns:AccessControlInterfaceServiceSoapBinding">
+      <soap12:address location="http://localhost:9090/AccessControlInterfacePort"/>
+    </wsdl:port>
+  </wsdl:service>
+    <wsp:Policy wsu:Id="AccessControlInterfaceServiceSoapBinding_WSAM_Addressing_Policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"><wsam:Addressing><wsp:Policy/></wsam:Addressing></wsp:Policy>
+</wsdl:definitions>

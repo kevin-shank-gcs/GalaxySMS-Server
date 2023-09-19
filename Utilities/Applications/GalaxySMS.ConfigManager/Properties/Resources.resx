@@ -1,0 +1,924 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AboutView_AboutUriDescription" xml:space="preserve">
+    <value>www.galaxysys.com</value>
+  </data>
+  <data name="AboutView_AllRightsReserved" xml:space="preserve">
+    <value>All Rights Reserved.</value>
+  </data>
+  <data name="AboutView_LicenseCompany" xml:space="preserve">
+    <value>Company:</value>
+  </data>
+  <data name="AboutView_LicenseEmail" xml:space="preserve">
+    <value>Licensed Email:</value>
+  </data>
+  <data name="AboutView_LicenseExpireation" xml:space="preserve">
+    <value>Expires On:</value>
+  </data>
+  <data name="AboutView_LicenseId" xml:space="preserve">
+    <value>License ID:</value>
+  </data>
+  <data name="AboutView_LicenseInfoHeader" xml:space="preserve">
+    <value>License Information</value>
+  </data>
+  <data name="AboutView_LicenseName" xml:space="preserve">
+    <value>Licensed To:</value>
+  </data>
+  <data name="AboutView_LicenseType" xml:space="preserve">
+    <value>Type:</value>
+  </data>
+  <data name="AboutView_LicenseTypeNone" xml:space="preserve">
+    <value>Not Licensed</value>
+  </data>
+  <data name="AboutView_LicenseTypeStandard" xml:space="preserve">
+    <value>Standard License</value>
+  </data>
+  <data name="AboutView_LicenseTypeTrial" xml:space="preserve">
+    <value>Trial License</value>
+  </data>
+  <data name="AboutView_OkButtonText" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="AboutView_ProductDetails" xml:space="preserve">
+    <value>Product details:</value>
+  </data>
+  <data name="AboutView_Title" xml:space="preserve">
+    <value>About {0}</value>
+  </data>
+  <data name="AboutView_VersionTitle" xml:space="preserve">
+    <value>Version:</value>
+  </data>
+  <data name="AboutView_ViewLicenseDetails" xml:space="preserve">
+    <value>View License Details...</value>
+  </data>
+  <data name="CurrentUserNameTitle" xml:space="preserve">
+    <value>Current User:</value>
+  </data>
+  <data name="DatabaseView_ConnectionGroupHeader_Title" xml:space="preserve">
+    <value>Database Configuration</value>
+  </data>
+  <data name="DatabaseView_InstallNewSQLInstance" xml:space="preserve">
+    <value>Install new SQL Server 2019 Instance</value>
+  </data>
+  <data name="DatabaseView_Install_AllowInstanceCredentialEditing_Title" xml:space="preserve">
+    <value>Enable Instance and/or login information</value>
+  </data>
+  <data name="DatabaseView_Install_AllowInstanceCredentialEditing_ToolTip" xml:space="preserve">
+    <value>Check to enable the instance name and login information to be edited</value>
+  </data>
+  <data name="DatabaseView_Install_ClientAccount_GroupBox_Header" xml:space="preserve">
+    <value>Client Account Information</value>
+  </data>
+  <data name="DatabaseView_Install_ClientLoginName_Title" xml:space="preserve">
+    <value>Login Name</value>
+  </data>
+  <data name="DatabaseView_Install_ClientLoginName_ToolTip" xml:space="preserve">
+    <value>Specify the login name for the client account</value>
+  </data>
+  <data name="DatabaseView_Install_ClientPasswordConfirm_Title" xml:space="preserve">
+    <value>Confirm Password</value>
+  </data>
+  <data name="DatabaseView_Install_ClientPasswordConfirm_ToolTip" xml:space="preserve">
+    <value>Confirm the password for the client account</value>
+  </data>
+  <data name="DatabaseView_Install_ClientPassword_Title" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="DatabaseView_Install_ClientPassword_ToolTip" xml:space="preserve">
+    <value>Specify the password for the client account</value>
+  </data>
+  <data name="DatabaseView_Install_InstallSQLServer_Button_Text" xml:space="preserve">
+    <value>Install SQL Server Now</value>
+  </data>
+  <data name="DatabaseView_Install_InstallSQLServer_Button_ToolTip" xml:space="preserve">
+    <value>Click to install SQL Server using the specified parameters</value>
+  </data>
+  <data name="DatabaseView_Install_InstallSSMS_Button_Text" xml:space="preserve">
+    <value>Install SQL Server Management Studio (SSMS) Now</value>
+  </data>
+  <data name="DatabaseView_Install_InstallSSMS_Button_ToolTip" xml:space="preserve">
+    <value>Click to install SQL Server Management Studio (SSMS). SSMS is a useful SQL Server management tool.</value>
+  </data>
+  <data name="DatabaseView_Install_InstanceName_Title" xml:space="preserve">
+    <value>Instance Name</value>
+  </data>
+  <data name="DatabaseView_Install_InstanceName_ToolTip" xml:space="preserve">
+    <value>Specify the instance name for the SQL Server installation</value>
+  </data>
+  <data name="DatabaseView_Install_saPasswordConfirm_Title" xml:space="preserve">
+    <value>Confirm sa Password</value>
+  </data>
+  <data name="DatabaseView_Install_saPasswordConfirm_ToolTip" xml:space="preserve">
+    <value>Confirm the password for the system administrator (sa) account</value>
+  </data>
+  <data name="DatabaseView_Install_saPassword_GroupBox_Header" xml:space="preserve">
+    <value>System Administrator (sa) Account Password</value>
+  </data>
+  <data name="DatabaseView_Install_saPassword_Title" xml:space="preserve">
+    <value>sa Password</value>
+  </data>
+  <data name="DatabaseView_Install_saPassword_ToolTip" xml:space="preserve">
+    <value>Specify the password for the system administrator (sa) account</value>
+  </data>
+  <data name="DatabaseView_Install_SelectFolder_Button_Text" xml:space="preserve">
+    <value>Select Install Folder</value>
+  </data>
+  <data name="DatabaseView_Install_SelectFolder_Button_ToolTip" xml:space="preserve">
+    <value>Select the folder where SQL Server will be installed</value>
+  </data>
+  <data name="DatabaseView_Install_SelectInstallFolder_Title" xml:space="preserve">
+    <value>Select Installation Folder</value>
+  </data>
+  <data name="DatabaseView_Install_SelectVersion_Title" xml:space="preserve">
+    <value>Select SQL Server version to install</value>
+  </data>
+  <data name="DatabaseView_Install_SelectVersion_ToolTip" xml:space="preserve">
+    <value>Select the version of SQL Server that will be installed</value>
+  </data>
+  <data name="DatabaseView_IntegratedSecurityCheck_Title" xml:space="preserve">
+    <value>Integrated Security</value>
+  </data>
+  <data name="DatabaseView_IntegratedSecurityCheck_ToolTip" xml:space="preserve">
+    <value>Indicates if integrated (windows) login will be used to connect to the database</value>
+  </data>
+  <data name="DatabaseView_Password_Title" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="DatabaseView_Password_ToolTip" xml:space="preserve">
+    <value>Specifies the SQL password</value>
+  </data>
+  <data name="DatabaseView_SQLServerInstance_Title" xml:space="preserve">
+    <value>SQL Server instance</value>
+  </data>
+  <data name="DatabaseView_SQLServerInstance_ToolTip" xml:space="preserve">
+    <value>Specifies the SQL Server instance name</value>
+  </data>
+  <data name="DatabaseView_SQLVersion_Title" xml:space="preserve">
+    <value>SQL Server Version</value>
+  </data>
+  <data name="DatabaseView_TestConnection_Fail" xml:space="preserve">
+    <value>Connection test failed</value>
+  </data>
+  <data name="DatabaseView_TestConnection_Header" xml:space="preserve">
+    <value>SQL Server Connection Test</value>
+  </data>
+  <data name="DatabaseView_TestConnection_Success" xml:space="preserve">
+    <value>Connection successful</value>
+  </data>
+  <data name="ServerView_Title" xml:space="preserve">
+    <value>Server Installation</value>
+  </data>
+  <data name="DatabaseView_UserName_Title" xml:space="preserve">
+    <value>User name</value>
+  </data>
+  <data name="DatabaseView_UserName_ToolTip" xml:space="preserve">
+    <value>Specifies the SQL login user name</value>
+  </data>
+  <data name="LicenseFileDoesNotExist" xml:space="preserve">
+    <value>License file does not exist:\n{0}</value>
+  </data>
+  <data name="LicenseView_CloseButtonText" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="LicenseView_FeatureName" xml:space="preserve">
+    <value>Feature Name</value>
+  </data>
+  <data name="LicenseView_FeatureValue" xml:space="preserve">
+    <value>Value</value>
+  </data>
+  <data name="LicenseView_LicenseCompany" xml:space="preserve">
+    <value>Company</value>
+  </data>
+  <data name="LicenseView_LicenseDetails" xml:space="preserve">
+    <value>License Details</value>
+  </data>
+  <data name="LicenseView_LicenseDetailsHeader" xml:space="preserve">
+    <value>License Details</value>
+  </data>
+  <data name="LicenseView_LicenseEmail" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="LicenseView_LicenseName" xml:space="preserve">
+    <value>Licensed To:</value>
+  </data>
+  <data name="MainView_ApplicationTitle" xml:space="preserve">
+    <value>GalaxySMS Configuration Manager</value>
+  </data>
+  <data name="MainView_Exit_ConfirmationNoButton" xml:space="preserve">
+    <value>No, do not exit</value>
+  </data>
+  <data name="MainView_Exit_ConfirmationPrompt" xml:space="preserve">
+    <value>Are you sure you want to exit '{0}'?</value>
+  </data>
+  <data name="MainView_Exit_ConfirmationPromptHeader" xml:space="preserve">
+    <value>Confirm</value>
+  </data>
+  <data name="MainView_Exit_ConfirmationYesButton" xml:space="preserve">
+    <value>Yes, shut it down</value>
+  </data>
+  <data name="MainView_Menu_AppA" xml:space="preserve">
+    <value>_Application Menu A</value>
+  </data>
+  <data name="MainView_Menu_AppB" xml:space="preserve">
+    <value>_Application Menu B</value>
+  </data>
+  <data name="MainView_Menu_File" xml:space="preserve">
+    <value>_File</value>
+  </data>
+  <data name="MainView_Menu_File_Exit" xml:space="preserve">
+    <value>_Exit</value>
+  </data>
+  <data name="MainView_Menu_Help" xml:space="preserve">
+    <value>_Help</value>
+  </data>
+  <data name="MainView_Menu_Help_About" xml:space="preserve">
+    <value>_About...</value>
+  </data>
+  <data name="MainView_Tab1_Header" xml:space="preserve">
+    <value>Tab 1</value>
+  </data>
+  <data name="MainView_Tab2_Header" xml:space="preserve">
+    <value>Tab 2</value>
+  </data>
+  <data name="MainView_ToolBar_SelectTheme" xml:space="preserve">
+    <value>Theme</value>
+  </data>
+  <data name="PasswordTitle" xml:space="preserve">
+    <value>Password:</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="Secure" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Secure.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SignInButton_Text" xml:space="preserve">
+    <value>Sign In</value>
+  </data>
+  <data name="SignInUnsuccessful_Text" xml:space="preserve">
+    <value>Unsuccessful sign in attempt.</value>
+  </data>
+  <data name="SignOutButton_Text" xml:space="preserve">
+    <value>Sign Out</value>
+  </data>
+  <data name="TestSqlConnectionButton_Text" xml:space="preserve">
+    <value>Test Connection</value>
+  </data>
+  <data name="TestSqlConnectionButton_ToolTip" xml:space="preserve">
+    <value>Verify if the connection can be made to the specified SQL instance using the credentials provided</value>
+  </data>
+  <data name="ThemeDisplayName_Crystal" xml:space="preserve">
+    <value>Crystal</value>
+  </data>
+  <data name="ThemeDisplayName_Expression_Dark" xml:space="preserve">
+    <value>Expression Dark</value>
+  </data>
+  <data name="ThemeDisplayName_Fluent" xml:space="preserve">
+    <value>Fluent</value>
+  </data>
+  <data name="ThemeDisplayName_Green" xml:space="preserve">
+    <value>Green</value>
+  </data>
+  <data name="ThemeDisplayName_Material" xml:space="preserve">
+    <value>Material</value>
+  </data>
+  <data name="ThemeDisplayName_Office2013" xml:space="preserve">
+    <value>Office 2013</value>
+  </data>
+  <data name="ThemeDisplayName_Office2013_DarkGray" xml:space="preserve">
+    <value>Office 2013 (Dark Gray)</value>
+  </data>
+  <data name="ThemeDisplayName_Office2013_GalaxyRed" xml:space="preserve">
+    <value>Office 2013 (Galaxy Red)</value>
+  </data>
+  <data name="ThemeDisplayName_Office2013_LightGray" xml:space="preserve">
+    <value>Office 2013 (Light Gray)</value>
+  </data>
+  <data name="ThemeDisplayName_Office2013_White" xml:space="preserve">
+    <value>Office 2013 (White)</value>
+  </data>
+  <data name="ThemeDisplayName_Office2016" xml:space="preserve">
+    <value>Office 2016</value>
+  </data>
+  <data name="ThemeDisplayName_Office2016Touch" xml:space="preserve">
+    <value>Office 2016 Touch</value>
+  </data>
+  <data name="ThemeDisplayName_Office_Black" xml:space="preserve">
+    <value>Office Black</value>
+  </data>
+  <data name="ThemeDisplayName_Office_Blue" xml:space="preserve">
+    <value>Office Blue</value>
+  </data>
+  <data name="ThemeDisplayName_Office_Silver" xml:space="preserve">
+    <value>Office Silver</value>
+  </data>
+  <data name="ThemeDisplayName_Summer" xml:space="preserve">
+    <value>Summer</value>
+  </data>
+  <data name="ThemeDisplayName_Transparent" xml:space="preserve">
+    <value>Transparent</value>
+  </data>
+  <data name="ThemeDisplayName_Vista" xml:space="preserve">
+    <value>Vista</value>
+  </data>
+  <data name="ThemeDisplayName_VisualStudio2013" xml:space="preserve">
+    <value>Visual Studio 2013</value>
+  </data>
+  <data name="ThemeDisplayName_VisualStudio2013_Blue" xml:space="preserve">
+    <value>Visual Studio 2013 (Blue)</value>
+  </data>
+  <data name="ThemeDisplayName_VisualStudio2013_Dark" xml:space="preserve">
+    <value>Visual Studio 2013 (Dark)</value>
+  </data>
+  <data name="ThemeDisplayName_VisualStudio2013_DarkGold" xml:space="preserve">
+    <value>Visual Studio 2013 (Dark Gold)</value>
+  </data>
+  <data name="ThemeDisplayName_VisualStudio2013_DarkOlive" xml:space="preserve">
+    <value>Visual Studio 2013 (Dark Olive)</value>
+  </data>
+  <data name="ThemeDisplayName_VisualStudio2013_EarthtoneBrown" xml:space="preserve">
+    <value>Visual Studio 2013 (Earthtone Brown)</value>
+  </data>
+  <data name="ThemeDisplayName_VisualStudio2013_GalaxyRed" xml:space="preserve">
+    <value>Visual Studio 2013 (Galaxy Red)</value>
+  </data>
+  <data name="ThemeDisplayName_VisualStudio2013_Green" xml:space="preserve">
+    <value>Visual Studio 2013 (Green)</value>
+  </data>
+  <data name="ThemeDisplayName_VisualStudio2013_Light" xml:space="preserve">
+    <value>Visual Studio 2013 (Light)</value>
+  </data>
+  <data name="ThemeDisplayName_VisualStudio2019" xml:space="preserve">
+    <value>Visual Studio 2019</value>
+  </data>
+  <data name="ThemeDisplayName_Windows7" xml:space="preserve">
+    <value>Windows 7</value>
+  </data>
+  <data name="ThemeDisplayName_Windows8" xml:space="preserve">
+    <value>Windows 8</value>
+  </data>
+  <data name="ThemeDisplayName_Windows8Touch" xml:space="preserve">
+    <value>Windows 8 Touch</value>
+  </data>
+  <data name="ThemeDisplayName_Windows8Touch_GalaxyRed" xml:space="preserve">
+    <value>Windows 8 Touch (Galaxy Red)</value>
+  </data>
+  <data name="ThemeDisplayName_Windows8_BeachBlue" xml:space="preserve">
+    <value>Windows 8 (Beach Blue)</value>
+  </data>
+  <data name="ThemeDisplayName_Windows8_BeachSand" xml:space="preserve">
+    <value>Windows 8 (Beach Sand)</value>
+  </data>
+  <data name="ThemeDisplayName_Windows8_CoolBlue" xml:space="preserve">
+    <value>Windows 8 (Cool Blue)</value>
+  </data>
+  <data name="ThemeDisplayName_Windows8_DarkBlue" xml:space="preserve">
+    <value>Windows 8 (Dark Blue)</value>
+  </data>
+  <data name="ThemeDisplayName_Windows8_DullBlue" xml:space="preserve">
+    <value>Windows 8 (Dull Blue)</value>
+  </data>
+  <data name="ThemeDisplayName_Windows8_GalaxyRed" xml:space="preserve">
+    <value>Windows 8 (Galaxy Red)</value>
+  </data>
+  <data name="ThemeDisplayName_Windows8_GrayOrange" xml:space="preserve">
+    <value>Windows 8 (Gray Orange)</value>
+  </data>
+  <data name="ThemeDisplayName_Windows8_GrayScale" xml:space="preserve">
+    <value>Windows 8 (Grayscale)</value>
+  </data>
+  <data name="UserNameTitle" xml:space="preserve">
+    <value>User name:</value>
+  </data>
+  <data name="DatabaseView_SSMS_Installed_successfully" xml:space="preserve">
+    <value>SSMS Installed successfully</value>
+  </data>
+  <data name="DatabaseView_The_SSMS_installation_completed_successfully" xml:space="preserve">
+    <value>The SSMS installation completed successfully.</value>
+  </data>
+  <data name="DatabaseView_Installation_Finished" xml:space="preserve">
+    <value>Installation Finished</value>
+  </data>
+  <data name="DatabaseView_SSMS_Install_did_not_succeed" xml:space="preserve">
+    <value>The SSMS installation did not complete successfully.
+Exit Code:{0}</value>
+  </data>
+  <data name="DatabaseView_Installation_Error" xml:space="preserve">
+    <value>Installation Error</value>
+  </data>
+  <data name="DatabaseView_SQL_Server_Installation_Finished" xml:space="preserve">
+    <value>SQL Server Installation Finished</value>
+  </data>
+  <data name="DatabaseView_0_Installed_successfully" xml:space="preserve">
+    <value>{0} Installed successfully</value>
+  </data>
+  <data name="DatabaseView_SQL_Server_Express_install_failed" xml:space="preserve">
+    <value>The SQL Server Express installation did not complete successfully.
+Exit Code:{0}</value>
+  </data>
+  <data name="DatabaseView_Error" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="DatabaseViewModel_service_started" xml:space="preserve">
+    <value>{0} service started.</value>
+  </data>
+  <data name="DatabaseView_Service_Status" xml:space="preserve">
+    <value>Service Status</value>
+  </data>
+  <data name="DatabaseView_SQL_Server_2019_Express" xml:space="preserve">
+    <value>SQL Server 2019 Express</value>
+  </data>
+  <data name="DatabaseView_SSMS_Installation_Finished" xml:space="preserve">
+    <value>SSMS Installation Finished</value>
+  </data>
+  <data name="CloseButtonText" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="OKButtonText" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="PublishGalaxySMSAuditDBButton_Text" xml:space="preserve">
+    <value>Publish GalaxySMS Audit DB</value>
+  </data>
+  <data name="PublishGalaxySMSAuditDBButton_ToolTip" xml:space="preserve">
+    <value>Create the GalaxySMS Audit database</value>
+  </data>
+  <data name="PublishGalaxySMSDBButton_Text" xml:space="preserve">
+    <value>Publish GalaxySMS DB</value>
+  </data>
+  <data name="PublishGalaxySMSDBButton_ToolTip" xml:space="preserve">
+    <value>Create the GalaxySMS database</value>
+  </data>
+  <data name="CreatedSuccessfully" xml:space="preserve">
+    <value>created successfully.</value>
+  </data>
+  <data name="DatabaseView_Busy_Content_PublishingDatabase" xml:space="preserve">
+    <value>Publishing database</value>
+  </data>
+  <data name="DatabaseView_CreateDatabase" xml:space="preserve">
+    <value>Create Database</value>
+  </data>
+  <data name="DatabaseView_Database" xml:space="preserve">
+    <value>Database</value>
+  </data>
+  <data name="DatabaseView_DBConnectionNotConfirmed" xml:space="preserve">
+    <value>The database connection has not been tested or confirmed.</value>
+  </data>
+  <data name="PleaseWait" xml:space="preserve">
+    <value>Please wait...</value>
+  </data>
+  <data name="Requirement_GalaxySMSAuditActivityDb_Title" xml:space="preserve">
+    <value>GalaxySMS-AuditActivity Database</value>
+  </data>
+  <data name="Requirement_GalaxySMSDb_Title" xml:space="preserve">
+    <value>GalaxySMS Database</value>
+  </data>
+  <data name="Requirement_GCSServiceAccount_Title" xml:space="preserve">
+    <value>GCSServiceAccount local user</value>
+  </data>
+  <data name="Requirement_MSMQ_Title" xml:space="preserve">
+    <value>Microsoft Message Queue (MSMQ)</value>
+  </data>
+  <data name="Requirement_NETCore3_1_Title" xml:space="preserve">
+    <value>.NET Core Version 3.1</value>
+  </data>
+  <data name="Requirement_NETFramework4_8_Title" xml:space="preserve">
+    <value>.NET Framework Version 4.8</value>
+  </data>
+  <data name="Requirement_SQLServerInstance_Title" xml:space="preserve">
+    <value>SQL Server Instance</value>
+  </data>
+  <data name="DatabaseView_DOTNETFramework_Installation_Finished" xml:space="preserve">
+    <value>.NET Framework Version 4.8 Installation Finished</value>
+  </data>
+  <data name="DatabaseView_DOTNETFramework_Install_did_not_succeed" xml:space="preserve">
+    <value>The .NET Framework installation did not complete successfully.
+Exit Code:{0}</value>
+  </data>
+  <data name="DatabaseView_GCSServiceAccountValidation_Header" xml:space="preserve">
+    <value>GCS Service User Account</value>
+  </data>
+  <data name="DatabaseView_Install_GCSServiceAccount_ConfirmPassword_Title" xml:space="preserve">
+    <value>Confirm Password</value>
+  </data>
+  <data name="DatabaseView_Install_GCSServiceAccount_ConfirmPassword_ToolTip" xml:space="preserve">
+    <value>Confirm the password for the user account that the GalaxySMS services will run as</value>
+  </data>
+  <data name="DatabaseView_Install_GCSServiceAccount_GroupBox_Header" xml:space="preserve">
+    <value>GCS Service User Account Information</value>
+  </data>
+  <data name="DatabaseView_Install_GCSServiceAccount_Name_Title" xml:space="preserve">
+    <value>User Name</value>
+  </data>
+  <data name="DatabaseView_Install_GCSServiceAccount_Name_ToolTip" xml:space="preserve">
+    <value>Specifies the local windows user name that the GalaxySMS services will run as</value>
+  </data>
+  <data name="DatabaseView_Install_GCSServiceAccount_Password_Title" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="DatabaseView_Install_GCSServiceAccount_Password_ToolTip" xml:space="preserve">
+    <value>Specifies the password for the user account that the GalaxySMS services will run as</value>
+  </data>
+  <data name="DatabaseView_Server_PreReqsHeader_Title" xml:space="preserve">
+    <value>Server Required Components</value>
+  </data>
+  <data name="DatabaseView_ServiceAccount_InvalidValues" xml:space="preserve">
+    <value>The user name or passwords do not contain valid values.</value>
+  </data>
+  <data name="DatabaseView_ServiceAccount_PasswordsDoNotMatch" xml:space="preserve">
+    <value>The passwords do not match.</value>
+  </data>
+  <data name="DatabaseView_The_DOTNETFramework_installation_completed_successfully" xml:space="preserve">
+    <value>The .NET Framework installation completed successfully.</value>
+  </data>
+  <data name="GCSServiceAccountName_Description" xml:space="preserve">
+    <value>Default account that Galaxy services run under</value>
+  </data>
+  <data name="GCSServicesGroup_Description" xml:space="preserve">
+    <value>Members of this group can be used to run Galaxy Control System services</value>
+  </data>
+  <data name="InstallStatus_Installed" xml:space="preserve">
+    <value>Installed</value>
+  </data>
+  <data name="InstallStatus_NotInstalled" xml:space="preserve">
+    <value>Not Installed</value>
+  </data>
+  <data name="InstallStatus_PartiallyInstalled" xml:space="preserve">
+    <value>Partially Installed</value>
+  </data>
+  <data name="InstallStatus_Unknown" xml:space="preserve">
+    <value>Unknown</value>
+  </data>
+  <data name="Prerequisite_Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="Prerequisite_Install" xml:space="preserve">
+    <value>Install</value>
+  </data>
+  <data name="Prerequisite_Install_ToolTip" xml:space="preserve">
+    <value>Install the pre-requisite</value>
+  </data>
+  <data name="Prerequisite_IsComplete" xml:space="preserve">
+    <value>Is Complete</value>
+  </data>
+  <data name="Prerequisite_Status" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="Prerequisite_Title" xml:space="preserve">
+    <value>Title</value>
+  </data>
+  <data name="Requirement_GalaxySMSAuditActivityDb_Desc" xml:space="preserve">
+    <value>GalaxySMS-AuditActivity Database</value>
+  </data>
+  <data name="Requirement_GalaxySMSDb_Desc" xml:space="preserve">
+    <value>GalaxySMS Database</value>
+  </data>
+  <data name="Requirement_GCSServiceAccount_Desc" xml:space="preserve">
+    <value>GCSServiceAccount local user</value>
+  </data>
+  <data name="Requirement_GCSServicesGroup_Desc" xml:space="preserve">
+    <value>GCSServicesGroup local user group</value>
+  </data>
+  <data name="Requirement_GCSServicesGroup_Title" xml:space="preserve">
+    <value>GCSServicesGroup local user group</value>
+  </data>
+  <data name="Requirement_MSMQ_Desc" xml:space="preserve">
+    <value>Microsoft Message Queue (MSMQ)</value>
+  </data>
+  <data name="Requirement_NETCore3_1_Desc" xml:space="preserve">
+    <value>.NET Core Version 3.1</value>
+  </data>
+  <data name="Requirement_NETFramework4_8_Desc" xml:space="preserve">
+    <value>.NET Framework Version 4.8</value>
+  </data>
+  <data name="Requirement_SQLServerInstance_Desc" xml:space="preserve">
+    <value>SQL Server database instances</value>
+  </data>
+  <data name="Status_PartiallyInstalled" xml:space="preserve">
+    <value>Partially installed.</value>
+  </data>
+  <data name="DatabaseView_Install_GCSServiceGroup_GroupBox_Header" xml:space="preserve">
+    <value>GCS Service Group Information</value>
+  </data>
+  <data name="DatabaseView_Install_GCSServiceGroup_Name_Title" xml:space="preserve">
+    <value>Group Name</value>
+  </data>
+  <data name="DatabaseView_Install_GCSServiceGroup_Name_ToolTip" xml:space="preserve">
+    <value>Specifies the local windows group name for the user accounts which the GalaxySMS services will run as</value>
+  </data>
+  <data name="DatabaseView_Busy_Content_Analyzing_MSMQ_Status" xml:space="preserve">
+    <value>Analyzing Microsoft Message Queue (MSMQ) installation status</value>
+  </data>
+  <data name="DatabaseView_Busy_Content_InstallingDotNetFramework" xml:space="preserve">
+    <value>Installing .NET Framework</value>
+  </data>
+  <data name="DatabaseView_Busy_Content_InstallingMSMQ" xml:space="preserve">
+    <value>Installing Microsoft Message Queue (MSMQ)</value>
+  </data>
+  <data name="DatabaseView_Busy_Content_InstallingSqlServer" xml:space="preserve">
+    <value>Installing Microsoft SQL Server</value>
+  </data>
+  <data name="DatabaseView_Busy_Content_InstallingSSMS" xml:space="preserve">
+    <value>Installing SQL Server Management Studio (SSMS)</value>
+  </data>
+  <data name="DatabaseView_Busy_Content_TestingDBConnectionTo" xml:space="preserve">
+    <value>Testing database connection to</value>
+  </data>
+  <data name="DatabaseView_AutoInstallSSMS_Title" xml:space="preserve">
+    <value>Automatically install SSMS after SQL Server</value>
+  </data>
+  <data name="DatabaseView_AutoInstallSSMS_ToolTip" xml:space="preserve">
+    <value>If checked, the SQL Server Management Studio installation will launch automatically when the SQL Server installation finishes successfully.</value>
+  </data>
+  <data name="DatabaseView_AutoPublishDBs_Title" xml:space="preserve">
+    <value>Automatically Publish GalaxySMS databases</value>
+  </data>
+  <data name="DatabaseView_AutoPublishDBs_ToolTip" xml:space="preserve">
+    <value>Automatically publish the GalaxySMS and GalaxySMS-AuditActivity databases after the SQL Server install finished successfully.</value>
+  </data>
+  <data name="DatabaseView_SSMS_InstallWillStart" xml:space="preserve">
+    <value>The SSMS installation will be launched automatically.</value>
+  </data>
+  <data name="ClientView_Busy_Content_InstallingClient" xml:space="preserve">
+    <value>Installing GalaxySMS Client Software</value>
+  </data>
+  <data name="ClientView_ClientSoftware_Installation_Finished" xml:space="preserve">
+    <value>GalaxySMS Client Installation Finished</value>
+  </data>
+  <data name="ClientView_ClientSoftware_Install_did_not_succeed" xml:space="preserve">
+    <value>The GalaxySMS Client installation did not complete successfully.
+Exit Code:{0}</value>
+  </data>
+  <data name="ClientView_Client_PreReqsHeader_Title" xml:space="preserve">
+    <value>Client Required Components</value>
+  </data>
+  <data name="ClientView_Client_Step1_PreReqsHeader_Title" xml:space="preserve">
+    <value>Step 1) Client Required Components</value>
+  </data>
+  <data name="ClientView_Client_Step2_InstallClient_Title" xml:space="preserve">
+    <value>Step 2) Install Client Software</value>
+  </data>
+  <data name="ClientView_Error" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="ClientView_Installation_Error" xml:space="preserve">
+    <value>Installation Error</value>
+  </data>
+  <data name="ClientView_InstallClient_GroupHeader_Title" xml:space="preserve">
+    <value>Install Software</value>
+  </data>
+  <data name="ClientView_The_ClientSoftware_installation_completed_successfully" xml:space="preserve">
+    <value>The GalaxySMS Client installation completed successfully.</value>
+  </data>
+  <data name="ClientView_Title" xml:space="preserve">
+    <value>Client Installation</value>
+  </data>
+  <data name="DatabaseView_Server_Step1_PreReqsHeader_Title" xml:space="preserve">
+    <value>Step 1) Install Required Components</value>
+  </data>
+  <data name="DatabaseView_SSMS_ThenInstallWillStart" xml:space="preserve">
+    <value>When database publishing completes, the SSMS installation will be launched automatically.</value>
+  </data>
+  <data name="DatabaseView_Step2_DatabaseHeader_Title" xml:space="preserve">
+    <value>Step 2) Configure Database</value>
+  </data>
+  <data name="DatabaseView_Will_AutomaticallyPublishDatabases" xml:space="preserve">
+    <value>The databases will be published next.</value>
+  </data>
+  <data name="InstallClientButton_Text" xml:space="preserve">
+    <value>Install Client Software</value>
+  </data>
+  <data name="InstallClientButton_ToolTip" xml:space="preserve">
+    <value>Click to launch the GalaxySMS client software</value>
+  </data>
+  <data name="InstallServerButton_Text" xml:space="preserve">
+    <value>Install Server Software</value>
+  </data>
+  <data name="InstallServerButton_ToolTip" xml:space="preserve">
+    <value>Click to launch the GalaxySMS server software</value>
+  </data>
+  <data name="ServerView_Busy_Content_InstallingServer" xml:space="preserve">
+    <value>Installing GalaxySMS Server Software</value>
+  </data>
+  <data name="ServerView_Error" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="ServerView_Installation_Error" xml:space="preserve">
+    <value>Installation Error</value>
+  </data>
+  <data name="ServerView_InstallServer_GroupHeader_Title" xml:space="preserve">
+    <value>Install Software</value>
+  </data>
+  <data name="ServerView_ServerSoftware_Installation_Finished" xml:space="preserve">
+    <value>GalaxySMS Server Installation Finished</value>
+  </data>
+  <data name="ServerView_ServerSoftware_Install_did_not_succeed" xml:space="preserve">
+    <value>The GalaxySMS Server installation did not complete successfully.
+Exit Code:{0}</value>
+  </data>
+  <data name="ServerView_Step3_InstallServer_Title" xml:space="preserve">
+    <value>Step 3) Install ServerSoftware</value>
+  </data>
+  <data name="ServerView_The_ServerSoftware_installation_completed_successfully" xml:space="preserve">
+    <value>The GalaxySMS Server installation completed successfully.</value>
+  </data>
+  <data name="DatabaseView_FileNotFound_Title" xml:space="preserve">
+    <value>File not found</value>
+  </data>
+  <data name="File_0_not_found" xml:space="preserve">
+    <value>File '{0}' not found.</value>
+  </data>
+  <data name="PublishGalaxySMSLoggingDBButton_Text" xml:space="preserve">
+    <value>Publish GalaxySMS Logging DB</value>
+  </data>
+  <data name="PublishGalaxySMSLoggingDBButton_ToolTip" xml:space="preserve">
+    <value>Create the GalaxySMS Logging database</value>
+  </data>
+  <data name="PublishGalaxySMSHangfireDBButton_Text" xml:space="preserve">
+    <value>Publish GalaxySMS Hangfire DB</value>
+  </data>
+  <data name="PublishGalaxySMSHangfireDBButton_ToolTip" xml:space="preserve">
+    <value>Create the GalaxySMS Hangfire database</value>
+  </data>
+  <data name="DatabaseView_Busy_Content_Analyzing_Redis_Status" xml:space="preserve">
+    <value>Analyzing Redis Cache installation status</value>
+  </data>
+  <data name="DatabaseView_Busy_Content_InstallingRedis" xml:space="preserve">
+    <value>Installing Redis Cache Server</value>
+  </data>
+  <data name="Requirement_Redis_Desc" xml:space="preserve">
+    <value>Redis Cache Server</value>
+  </data>
+  <data name="Requirement_Redis_Title" xml:space="preserve">
+    <value>Redis Cache</value>
+  </data>
+  <data name="DatabaseView_Redis_Installation_Finished" xml:space="preserve">
+    <value>Redis Installed successfully</value>
+  </data>
+  <data name="DatabaseView_Redis_Install_did_not_succeed" xml:space="preserve">
+    <value>The Redis installation did not complete successfully.
+Exit Code:{0}</value>
+  </data>
+  <data name="DatabaseView_The_Redis_installation_completed_successfully" xml:space="preserve">
+    <value>The Redis installation completed successfully.</value>
+  </data>
+  <data name="DatabaseView_Busy_Content_Analyzing_IIS_Status" xml:space="preserve">
+    <value>Analyzing Internet Information Services (IIS) installation status</value>
+  </data>
+  <data name="DatabaseView_Busy_Content_InstallingIIS" xml:space="preserve">
+    <value>Installing Internet Information Services (IIS)</value>
+  </data>
+  <data name="Requirement_IIS_Desc" xml:space="preserve">
+    <value>Internet Information Services Web Server (IIS)</value>
+  </data>
+  <data name="Requirement_IIS_Title" xml:space="preserve">
+    <value>Internet Information Services (IIS)</value>
+  </data>
+  <data name="DatabaseView_Busy_Content_InstallingUrlRewriteModule" xml:space="preserve">
+    <value>Installing URL Rewrite Module</value>
+  </data>
+  <data name="DatabaseView_The_UrlRewrite_installation_completed_successfully" xml:space="preserve">
+    <value>The URL Rewrite module installation completed successfully.</value>
+  </data>
+  <data name="DatabaseView_UrlRewrite_Installation_Finished" xml:space="preserve">
+    <value>URL Rewrite module installed successfully.</value>
+  </data>
+  <data name="DatabaseView_UrlRewrite_Install_did_not_succeed" xml:space="preserve">
+    <value>The URL Rewrite module installation did not complete successfully.
+Exit Code:{0}</value>
+  </data>
+  <data name="InstallWebUIButton_Text" xml:space="preserve">
+    <value>Install WebUI Software</value>
+  </data>
+  <data name="InstallWebUIButton_ToolTip" xml:space="preserve">
+    <value>Click to launch the GalaxySMS Web UI software</value>
+  </data>
+  <data name="ServerView_Busy_Content_InstallingWebUI" xml:space="preserve">
+    <value>Installing GalaxySMS WebUI Software</value>
+  </data>
+  <data name="ServerView_The_WebUISoftware_Installation_Finished" xml:space="preserve">
+    <value>WebUI Installation Finished</value>
+  </data>
+  <data name="ServerView_The_WebUISoftware_Install_did_not_succeed" xml:space="preserve">
+    <value>The GalaxySMS WebUI installation did not complete successfully.
+Exit Code:{0}</value>
+  </data>
+  <data name="ServerView_The_WebUI_installation_completed_successfully" xml:space="preserve">
+    <value>The GalaxySMS WebUI installation completed successfully.</value>
+  </data>
+</root>

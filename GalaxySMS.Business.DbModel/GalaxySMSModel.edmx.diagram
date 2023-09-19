@@ -1,0 +1,713 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="2fb8561b837844b8869cbf0c97383e06" Name="Diagram1" ZoomLevel="93">
+        <EntityTypeShape EntityType="GalaxySMSModel.gcsApplication" Width="2.125" PointX="0.75" PointY="17.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="GalaxySMSModel.gcsApplicationSetting" Width="2.375" PointX="2.125" PointY="9.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="GalaxySMSModel.gcsImageType" Width="1.5" PointX="0.75" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="GalaxySMSModel.gcsLanguage" Width="1.5" PointX="0.75" PointY="21.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="GalaxySMSModel.gcsLog" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GalaxySMSModel.gcsMenuItem" Width="1.5" PointX="7.5" PointY="19.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="GalaxySMSModel.gcsPermission" Width="1.5" PointX="5.25" PointY="24.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="GalaxySMSModel.gcsPermissionCategory" Width="1.5" PointX="3.125" PointY="23.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GalaxySMSModel.gcsReferenceTable" Width="1.5" PointX="3" PointY="19" IsExpanded="true" />
+        <EntityTypeShape EntityType="GalaxySMSModel.gcsResourceImage" Width="2.125" PointX="3" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="GalaxySMSModel.gcsResourceString" Width="1.5" PointX="5.25" PointY="19.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="GalaxySMSModel.gcsResourceStringLanguage" Width="1.5" PointX="10.5" PointY="25.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="GalaxySMSModel.gcsRole" Width="1.5" PointX="2.625" PointY="28.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="GalaxySMSModel.gcsRolePermission" Width="1.5" PointX="7.5" PointY="29.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="GalaxySMSModel.gcsSecurityControl" Width="1.5" PointX="10.5" PointY="20.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="GalaxySMSModel.gcsSerializedObject" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GalaxySMSModel.gcsUser" Width="2" PointX="0.75" PointY="38.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="GalaxySMSModel.gcsUserOldPassword" Width="1.5" PointX="3.375" PointY="44.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="GalaxySMSModel.gcsUserSecurityQuestion" Width="1.5" PointX="3.625" PointY="47.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="GalaxySMSModel.PanelDataPacketLog" Width="1.5" PointX="7.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GalaxySMSModel.Region" Width="1.75" PointX="0.5" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GalaxySMSModel.Site" Width="1.5" PointX="3.25" PointY="0.5" IsExpanded="true" />
+        <AssociationConnector Association="GalaxySMSModel.FK_GCSAPPLI_APPLICATI_GCSAPPLI" ManuallyRouted="false" />
+        <AssociationConnector Association="GalaxySMSModel.FK_ApplicationSystemRole" ManuallyRouted="false" />
+        <AssociationConnector Association="GalaxySMSModel.FK_GCSMENUI_MENUITEMA_GCSAPPLI" ManuallyRouted="false" />
+        <AssociationConnector Association="GalaxySMSModel.FK_gcsPermissionCategoryToApplication" ManuallyRouted="false" />
+        <AssociationConnector Association="GalaxySMSModel.FK_GCSREFER_REFERENCE_GCSAPPLI" ManuallyRouted="false" />
+        <AssociationConnector Association="GalaxySMSModel.FK_RoleApplication" ManuallyRouted="false" />
+        <AssociationConnector Association="GalaxySMSModel.FK_GCSSECUR_SECURITYC_GCSAPPLI" ManuallyRouted="false" />
+        <AssociationConnector Association="GalaxySMSModel.FK_GCSRESOU_RESOURCEI_GCSIMAGE" ManuallyRouted="false" />
+        <AssociationConnector Association="GalaxySMSModel.FK_GCSREFER_RESOURCEL_GCSLANGU" ManuallyRouted="false" />
+        <AssociationConnector Association="GalaxySMSModel.FK_GCSRESOU_RESOURCES_GCSLANGU" ManuallyRouted="false" />
+        <AssociationConnector Association="GalaxySMSModel.FK_GCSMENUI_MENUITEMP_GCSPERMI" ManuallyRouted="false" />
+        <AssociationConnector Association="GalaxySMSModel.FK_GCSMENUI_MENUITEMT_GCSRESOU" ManuallyRouted="false" />
+        <AssociationConnector Association="GalaxySMSModel.FK_gcsPermissionToPermissionCategory" ManuallyRouted="false" />
+        <AssociationConnector Association="GalaxySMSModel.FK_GCSROLEP_ROLEPERMI_GCSPERMI" ManuallyRouted="false" />
+        <AssociationConnector Association="GalaxySMSModel.FK_GCSSECUR_SECURITYC_GCSPERMI" ManuallyRouted="false" />
+        <AssociationConnector Association="GalaxySMSModel.FK_GCSRESOU_RESOURCES_GCSRESOU" ManuallyRouted="false" />
+        <AssociationConnector Association="GalaxySMSModel.FK_gcsRolePermissionToRole" ManuallyRouted="false" />
+        <AssociationConnector Association="GalaxySMSModel.FK_UserOldPasswordUser" ManuallyRouted="false" />
+        <AssociationConnector Association="GalaxySMSModel.FK_UserSecurityQuestionUser" ManuallyRouted="false" />
+        <AssociationConnector Association="GalaxySMSModel.FK_SITETOREGION" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="GalaxySMSModel.Cluster" Width="1.625" PointX="5.25" PointY="39" />
+        <EntityTypeShape EntityType="GalaxySMSModel.GalaxyCpu" Width="2" PointX="9.625" PointY="38.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="GalaxySMSModel.GalaxyPanel" Width="1.625" PointX="7.5" PointY="39.375" />
+        <AssociationConnector Association="GalaxySMSModel.FK_ClusterToSite" />
+        <AssociationConnector Association="GalaxySMSModel.FK_GalaxyPanelToCluster" />
+        <EntityTypeShape EntityType="GalaxySMSModel.GalaxyCpuLoggingControl" Width="1.875" PointX="12.125" PointY="39.625" />
+        <EntityTypeShape EntityType="GalaxySMSModel.GalaxyInterfaceBoard" Width="1.875" PointX="12.875" PointY="35" />
+        <EntityTypeShape EntityType="GalaxySMSModel.GalaxyInterfaceBoardSection" Width="1.875" PointX="15.125" PointY="34.875" />
+        <EntityTypeShape EntityType="GalaxySMSModel.GalaxyInterfaceBoardSectionNode" Width="1.875" PointX="17.375" PointY="35.125" />
+        <EntityTypeShape EntityType="GalaxySMSModel.InterfaceBoardSectionMode" Width="1.875" PointX="12.875" PointY="31.125" />
+        <EntityTypeShape EntityType="GalaxySMSModel.InterfaceBoardType" Width="1.875" PointX="10.625" PointY="34" />
+        <AssociationConnector Association="GalaxySMSModel.FK_GalaxyCpuLoggingControlToGalaxyCpu" />
+        <AssociationConnector Association="GalaxySMSModel.FK_GalaxyInterfaceBoardSectionToGalaxyInterfaceBoard" />
+        <AssociationConnector Association="GalaxySMSModel.FK_GalaxyInterfaceBoardToGalaxyPanel" />
+        <AssociationConnector Association="GalaxySMSModel.FK_GalaxyInterfaceBoardToInterfaceBoardType" />
+        <AssociationConnector Association="GalaxySMSModel.FK_GALAXYIN_GALAXYINT_INTERFAC" />
+        <AssociationConnector Association="GalaxySMSModel.FK_GalaxyInterfaceBoardSectionNodeToGalaxyInterfaceBoardSection" />
+        <EntityTypeShape EntityType="GalaxySMSModel.gcsEntity" Width="2" PointX="1.625" PointY="13" />
+        <EntityTypeShape EntityType="GalaxySMSModel.gcsEntityApplication" Width="2" PointX="5.75" PointY="9.375" />
+        <EntityTypeShape EntityType="GalaxySMSModel.gcsUserSetting" Width="1.5" PointX="3" PointY="32.75" />
+        <AssociationConnector Association="GalaxySMSModel.FK_UserSettingApplication" />
+        <AssociationConnector Association="GalaxySMSModel.FK_UserSettingUser" />
+        <EntityTypeShape EntityType="GalaxySMSModel.gcsUserRequirement" Width="2.625" PointX="4.75" PointY="52.125" />
+        <AssociationConnector Association="GalaxySMSModel.FK_UserRequirementsEntity" />
+        <AssociationConnector Association="GalaxySMSModel.FK_UserEntity" />
+        <AssociationConnector Association="GalaxySMSModel.FK_UserLanguage" />
+        <EntityTypeShape EntityType="GalaxySMSModel.gcsUserEntity" Width="2.5" PointX="0.75" PointY="47.75" IsExpanded="true" />
+        <AssociationConnector Association="GalaxySMSModel.FK_UserEntityEntity" />
+        <AssociationConnector Association="GalaxySMSModel.FK_UserEntityUser" />
+        <AssociationConnector Association="GalaxySMSModel.FK_gcsEntityApplicationApplication" />
+        <AssociationConnector Association="GalaxySMSModel.FK_gcsEntityApplicationEntity" />
+        <EntityTypeShape EntityType="GalaxySMSModel.gcsAudit" Width="1.5" PointX="4.125" PointY="15.25" />
+        <EntityTypeShape EntityType="GalaxySMSModel.gcsAuditXml" Width="1.5" PointX="5.875" PointY="15" />
+        <EntityTypeShape EntityType="GalaxySMSModel.gcsSetting" Width="1.5" PointX="7.75" PointY="13.875" />
+        <EntityTypeShape EntityType="GalaxySMSModel.gcsEntityApplicationRole" Width="2.125" PointX="10.625" PointY="16.25" />
+        <AssociationConnector Association="GalaxySMSModel.FK_EntityApplicationRoleEntityApplication" />
+        <AssociationConnector Association="GalaxySMSModel.gcsRolegcsEntityApplicationRole" />
+        <EntityTypeShape EntityType="GalaxySMSModel.gcsUserEntityApplicationRole" Width="3" PointX="10.375" PointY="9.5" />
+        <AssociationConnector Association="GalaxySMSModel.FK_UserEntityApplicationRoleEntityApplicationRole" />
+        <AssociationConnector Association="GalaxySMSModel.gcsUserEntitygcsUserEntityApplicationRole" />
+        <EntityTypeShape EntityType="GalaxySMSModel.gcsApplicationAudit" Width="2.375" PointX="10.25" PointY="44" />
+        <EntityTypeShape EntityType="GalaxySMSModel.gcsApplicationAuditType" Width="2.375" PointX="7.625" PointY="44.375" />
+        <EntityTypeShape EntityType="GalaxySMSModel.gcsEnumNamespace" Width="2.375" PointX="10" PointY="1" />
+        <EntityTypeShape EntityType="GalaxySMSModel.gcsEnumValue" Width="2.375" PointX="13.125" PointY="1.125" />
+        <AssociationConnector Association="GalaxySMSModel.FK_ApplicationAuditApplicationAuditType" />
+        <AssociationConnector Association="GalaxySMSModel.FK_ApplicationAuditTypeDescriptionResourceId" />
+        <AssociationConnector Association="GalaxySMSModel.FK_EnumValueEnumNamespace" />
+        <EntityTypeShape EntityType="GalaxySMSModel.gcsBinaryResource" Width="1.5" PointX="0.5" PointY="27.125" />
+        <AssociationConnector Association="GalaxySMSModel.FK_EntityBinaryResource" />
+        <EntityTypeShape EntityType="GalaxySMSModel.gcsSystem" Width="1.5" PointX="10.375" PointY="4.75" />
+        <AssociationConnector Association="GalaxySMSModel.FK_RegionEntity" />
+        <AssociationConnector Association="GalaxySMSModel.RegionBinaryResource" />
+        <AssociationConnector Association="GalaxySMSModel.FK_EntityBinaryResource1" />
+        <AssociationConnector Association="GalaxySMSModel.SiteBinaryResource" />
+        <EntityTypeShape EntityType="GalaxySMSModel.Address" Width="1.5" PointX="17.75" PointY="13.875" />
+        <EntityTypeShape EntityType="GalaxySMSModel.Country" Width="1.5" PointX="13.375" PointY="13.875" />
+        <EntityTypeShape EntityType="GalaxySMSModel.StateProvince" Width="1.5" PointX="15.375" PointY="13.875" />
+        <AssociationConnector Association="GalaxySMSModel.FK_AddressStateProvince" />
+        <AssociationConnector Association="GalaxySMSModel.FK_StateProvinceCountry" />
+        <AssociationConnector Association="GalaxySMSModel.SiteAddress" />
+        <EntityTypeShape EntityType="GalaxySMSModel.AccessPortal" Width="1.875" PointX="1.875" PointY="61.625" />
+        <EntityTypeShape EntityType="GalaxySMSModel.AccessPortalEntityMap" Width="1.5" PointX="3.5" PointY="58.75" />
+        <EntityTypeShape EntityType="GalaxySMSModel.AccessPortalType" Width="1.5" PointX="1.875" PointY="70.875" />
+        <EntityTypeShape EntityType="GalaxySMSModel.AccessPortalTypeFeatureMap" Width="1.5" PointX="15.75" PointY="0.5" />
+        <EntityTypeShape EntityType="GalaxySMSModel.AssaDsr" Width="1.5" PointX="15.5" PointY="4.5" />
+        <EntityTypeShape EntityType="GalaxySMSModel.Brand" Width="1.5" PointX="1.875" PointY="67" />
+        <EntityTypeShape EntityType="GalaxySMSModel.CredentialReaderDataFormat" Width="1.5" PointX="13.5" PointY="6.375" />
+        <EntityTypeShape EntityType="GalaxySMSModel.CredentialReaderType" Width="2.875" PointX="15.75" PointY="18.625" />
+        <EntityTypeShape EntityType="GalaxySMSModel.CredentialReaderTypeFeatureMap" Width="3.125" PointX="19.5" PointY="18.75" />
+        <AssociationConnector Association="GalaxySMSModel.FK_AccessPortalBinaryResource" />
+        <AssociationConnector Association="GalaxySMSModel.FK_AccessPortalEntityMapEntity" />
+        <AssociationConnector Association="GalaxySMSModel.FK_AccessPortalTypeBinaryResource" />
+        <AssociationConnector Association="GalaxySMSModel.FK_BrandBinaryResource" />
+        <AssociationConnector Association="GalaxySMSModel.FK_CredentialReaderTypeDataFormat" />
+        <AssociationConnector Association="GalaxySMSModel.FK_CredentialReaderTypeBinaryResource" />
+        <AssociationConnector Association="GalaxySMSModel.FK_CredentialReaderTypeFeaturesToReaderType" />
+        <EntityTypeShape EntityType="GalaxySMSModel.Feature" Width="1.5" PointX="13.25" PointY="20.5" />
+        <EntityTypeShape EntityType="GalaxySMSModel.FeatureItem" Width="1.5" PointX="15.5" PointY="24" />
+        <EntityTypeShape EntityType="GalaxySMSModel.RegionEntityMap" Width="1.5" PointX="4.375" PointY="62.5" />
+        <EntityTypeShape EntityType="GalaxySMSModel.SiteEntityMap" Width="1.5" PointX="4.375" PointY="66" />
+        <AssociationConnector Association="GalaxySMSModel.FK_AccessPortalTypeFeatureMapFeature" />
+        <AssociationConnector Association="GalaxySMSModel.FK_CredentialReaderTypeFeaturesToFeature" />
+        <AssociationConnector Association="GalaxySMSModel.FK_FeatureItemFeature" />
+        <AssociationConnector Association="GalaxySMSModel.FK_RegionEntityMapEntity" />
+        <AssociationConnector Association="GalaxySMSModel.FK_SiteEntityMapEntity" />
+        <EntityTypeShape EntityType="GalaxySMSModel.AssaDsrTimeScheduleMap" Width="1.5" PointX="17.875" PointY="4.625" />
+        <EntityTypeShape EntityType="GalaxySMSModel.GalaxyClusterTimeScheduleMap" Width="2.5" PointX="5.375" PointY="34" />
+        <EntityTypeShape EntityType="GalaxySMSModel.TimeSchedule" Width="1.5" PointX="4.5" PointY="69.75" />
+        <EntityTypeShape EntityType="GalaxySMSModel.TimeScheduleEntityMap" Width="1.5" PointX="4.5" PointY="73.25" />
+        <AssociationConnector Association="GalaxySMSModel.FK_AssaDsrTimeScheduleMapAssaDsr" />
+        <AssociationConnector Association="GalaxySMSModel.FK_GalaxyClusterTimeScheduleMapCluster" />
+        <AssociationConnector Association="GalaxySMSModel.FK_TimeScheduleEntity" />
+        <AssociationConnector Association="GalaxySMSModel.FK_TimeScheduleEntityMapEntity" />
+        <EntityTypeShape EntityType="GalaxySMSModel.AssaAccessPoint" Width="1.5" PointX="20.75" PointY="4.75" />
+        <EntityTypeShape EntityType="GalaxySMSModel.AssaAccessPointType" Width="1.5" PointX="18.5" PointY="1.125" />
+        <AssociationConnector Association="GalaxySMSModel.FK_AssaAccessPointAssaAccessPointType" />
+        <AssociationConnector Association="GalaxySMSModel.FK_AssaAccessPointAssaDsr" />
+        <EntityTypeShape EntityType="GalaxySMSModel.AssaDsrEntityMap" Width="1.5" PointX="4.5" PointY="77.625" />
+        <AssociationConnector Association="GalaxySMSModel.FK_AssaAccessPointSite" />
+        <AssociationConnector Association="GalaxySMSModel.FK_AssaDsrEntityMapEntity" />
+        <EntityTypeShape EntityType="GalaxySMSModel.AssaDayPeriod" Width="1.5" PointX="4.875" PointY="100.75" />
+        <EntityTypeShape EntityType="GalaxySMSModel.AssaDayPeriodEntityMap" Width="1.5" PointX="4.875" PointY="85.5" />
+        <EntityTypeShape EntityType="GalaxySMSModel.AssaDayPeriodTimePeriod" Width="1.5" PointX="7.125" PointY="99.875" />
+        <EntityTypeShape EntityType="GalaxySMSModel.AssaTimeScheduleDayPeriod" Width="1.5" PointX="7.125" PointY="103.375" />
+        <EntityTypeShape EntityType="GalaxySMSModel.DateType" Width="1.5" PointX="7.125" PointY="106.875" />
+        <EntityTypeShape EntityType="GalaxySMSModel.DateTypeEntityMap" Width="1.5" PointX="4.875" PointY="96.375" />
+        <EntityTypeShape EntityType="GalaxySMSModel.DayType" Width="1.5" PointX="4.875" PointY="108.5" />
+        <EntityTypeShape EntityType="GalaxySMSModel.DayTypeEntityMap" Width="1.5" PointX="4.875" PointY="89" />
+        <EntityTypeShape EntityType="GalaxySMSModel.DayTypeTimePeriod" Width="1.5" PointX="7.125" PointY="110.625" />
+        <EntityTypeShape EntityType="GalaxySMSModel.TimePeriod" Width="1.5" PointX="4.875" PointY="92.5" />
+        <EntityTypeShape EntityType="GalaxySMSModel.TimePeriodEntityMap" Width="1.5" PointX="4.875" PointY="82" />
+        <AssociationConnector Association="GalaxySMSModel.FK_AssaDayPeriodEntity" />
+        <AssociationConnector Association="GalaxySMSModel.FK_AssaDayPeriodTimePeriodAssaDayPeriod" />
+        <AssociationConnector Association="GalaxySMSModel.FK_AssaTimeScheduleDayPeriodAssaDayPeriod" />
+        <AssociationConnector Association="GalaxySMSModel.FK_AssaDayPeriodEntityMapEntity" />
+        <AssociationConnector Association="GalaxySMSModel.FK_DateTypeDayType" />
+        <AssociationConnector Association="GalaxySMSModel.FK_DateTypeEntityMapEntity" />
+        <AssociationConnector Association="GalaxySMSModel.FK_DayTypeEntity" />
+        <AssociationConnector Association="GalaxySMSModel.FK_DayTypeTimePeriodDayType" />
+        <AssociationConnector Association="GalaxySMSModel.FK_DayTypeEntityMapEntity" />
+        <AssociationConnector Association="GalaxySMSModel.FK_TimePeriodEntity" />
+        <AssociationConnector Association="GalaxySMSModel.FK_TimePeriodEntityMapEntity" />
+        <EntityTypeShape EntityType="GalaxySMSModel.ClusterCommand" Width="1.5" PointX="3.75" PointY="52.25" />
+        <EntityTypeShape EntityType="GalaxySMSModel.ClusterType" Width="1.5" PointX="3.125" PointY="39.125" />
+        <EntityTypeShape EntityType="GalaxySMSModel.ClusterTypeClusterCommand" Width="1.5" PointX="3" PointY="34.5" />
+        <EntityTypeShape EntityType="GalaxySMSModel.GalaxyCpuModel" Width="2.5" PointX="10.25" PointY="58.75" />
+        <EntityTypeShape EntityType="GalaxySMSModel.GalaxyHardwareModule" Width="2.75" PointX="23.5" PointY="34.75" />
+        <EntityTypeShape EntityType="GalaxySMSModel.GalaxyHardwareModuleType" Width="1.5" PointX="21.25" PointY="39.75" />
+        <EntityTypeShape EntityType="GalaxySMSModel.GalaxyPanelCommand" Width="1.5" PointX="16" PointY="48.875" />
+        <EntityTypeShape EntityType="GalaxySMSModel.GalaxyPanelModel" Width="1.5" PointX="8" PointY="33.625" />
+        <EntityTypeShape EntityType="GalaxySMSModel.GalaxyPanelModelGalaxyPanelCommand" Width="3.375" PointX="18.25" PointY="31.125" />
+        <EntityTypeShape EntityType="GalaxySMSModel.GalaxyPanelSite" Width="1.5" PointX="15.625" PointY="25" />
+        <EntityTypeShape EntityType="GalaxySMSModel.InputOutputGroup" Width="1.875" PointX="8.25" PointY="25.25" />
+        <EntityTypeShape EntityType="GalaxySMSModel.InputOutputGroupAssignment" Width="1.5" PointX="22.75" PointY="30.25" />
+        <AssociationConnector Association="GalaxySMSModel.FK_ClusterTypeCluster" />
+        <AssociationConnector Association="GalaxySMSModel.FK_InputOutputGroupCluster" />
+        <AssociationConnector Association="GalaxySMSModel.FK_ClusterTypeClusterCommandClusterCommand" />
+        <AssociationConnector Association="GalaxySMSModel.FK_ClusterTypeClusterCommandClusterType" />
+        <AssociationConnector Association="GalaxySMSModel.FK_GalaxyCpuGalaxyCpuModel" />
+        <AssociationConnector Association="GalaxySMSModel.FK_GalaxyHardwareModuleGalaxyHardwareModuleType" />
+        <AssociationConnector Association="GalaxySMSModel.FK_GalaxyHardwareModuleGalaxyInterfaceBoardSection" />
+        <AssociationConnector Association="GalaxySMSModel.FK_GalaxyInterfaceBoardSectionNodeGalaxyHardwareModule" />
+        <AssociationConnector Association="GalaxySMSModel.FK_InputOutputGroupAssignmentGalaxyInterfaceBoardSectionNode" />
+        <AssociationConnector Association="GalaxySMSModel.FK_GalaxyPanelGalaxyPanelModel" />
+        <AssociationConnector Association="GalaxySMSModel.FK_GalaxyPanelSiteGalaxyPanel" />
+        <AssociationConnector Association="GalaxySMSModel.FK_GalaxyPanelModelGalaxyPanelCommandGalaxyPanelCommand" />
+        <AssociationConnector Association="GalaxySMSModel.FK_GalaxyPanelModelGalaxyPanelCommandGalaxyPanelModel" />
+        <AssociationConnector Association="GalaxySMSModel.FK_GalaxyPanelSiteSite" />
+        <AssociationConnector Association="GalaxySMSModel.FK_InputOutputGroupAssignmentInputOutputGroup" />
+        <EntityTypeShape EntityType="GalaxySMSModel.AccessGroup" Width="1.5" PointX="8.125" PointY="59.125" />
+        <EntityTypeShape EntityType="GalaxySMSModel.AccessGroupEntityMap" Width="1.5" PointX="4.875" PointY="116.75" />
+        <EntityTypeShape EntityType="GalaxySMSModel.Area" Width="1.5" PointX="8.125" PointY="64.25" />
+        <EntityTypeShape EntityType="GalaxySMSModel.AreaEntityMap" Width="1.5" PointX="4.875" PointY="120.25" />
+        <EntityTypeShape EntityType="GalaxySMSModel.InputOutputGroupEntityMap" Width="1.5" PointX="4.875" PointY="113.25" />
+        <AssociationConnector Association="GalaxySMSModel.FK_AccessGroupCluster" />
+        <AssociationConnector Association="GalaxySMSModel.FK_AccessGroupEntityMapEntity" />
+        <AssociationConnector Association="GalaxySMSModel.FK_AreaCluster" />
+        <AssociationConnector Association="GalaxySMSModel.FK_AreaEntityMapEntity" />
+        <AssociationConnector Association="GalaxySMSModel.FK_IOGroupEntityMapEntity" />
+        <AssociationConnector Association="GalaxySMSModel.FK_GalaxyCpuToGalaxyPanel" />
+        <EntityTypeShape EntityType="GalaxySMSModel.AccessPortalAuxiliaryOutputMode" Width="2.625" PointX="22.875" PointY="0.75" />
+        <EntityTypeShape EntityType="GalaxySMSModel.AccessPortalContactSupervisionType" Width="1.5" PointX="24" PointY="5.75" />
+        <EntityTypeShape EntityType="GalaxySMSModel.AccessPortalDeferToServerBehavior" Width="1.5" PointX="24" PointY="17.75" />
+        <EntityTypeShape EntityType="GalaxySMSModel.AccessPortalElevatorControlType" Width="1.5" PointX="19" PointY="23.75" />
+        <EntityTypeShape EntityType="GalaxySMSModel.AccessPortalLockPushButtonBehavior" Width="1.5" PointX="21" PointY="23.75" />
+        <EntityTypeShape EntityType="GalaxySMSModel.AccessPortalNoServerReplyBehavior" Width="1.5" PointX="24" PointY="22.75" />
+        <EntityTypeShape EntityType="GalaxySMSModel.AutomaticForgivePassbackFrequency" Width="1.5" PointX="26" PointY="0.75" />
+        <EntityTypeShape EntityType="GalaxySMSModel.ClusterEntityMap" Width="1.5" PointX="11.25" PointY="29.875" />
+        <EntityTypeShape EntityType="GalaxySMSModel.PinRequiredMode" Width="1.5" PointX="26" PointY="5.75" />
+        <EntityTypeShape EntityType="GalaxySMSModel.UserDefinedBooleanPropertyRule" Width="1.5" PointX="30.5" PointY="5.625" />
+        <EntityTypeShape EntityType="GalaxySMSModel.UserDefinedDatePropertyRule" Width="1.5" PointX="30.5" PointY="16.5" />
+        <EntityTypeShape EntityType="GalaxySMSModel.UserDefinedListPropertyItem" Width="1.5" PointX="30.5" PointY="20.125" />
+        <EntityTypeShape EntityType="GalaxySMSModel.UserDefinedListPropertyRule" Width="1.5" PointX="30.5" PointY="2.125" />
+        <EntityTypeShape EntityType="GalaxySMSModel.UserDefinedNumberPropertyRule" Width="1.5" PointX="30.5" PointY="24.875" />
+        <EntityTypeShape EntityType="GalaxySMSModel.UserDefinedProperty" Width="1.5" PointX="28.25" PointY="12.5" />
+        <EntityTypeShape EntityType="GalaxySMSModel.UserDefinedPropertyType" Width="1.5" PointX="26" PointY="14" />
+        <EntityTypeShape EntityType="GalaxySMSModel.UserDefinedTextPropertyRule" Width="1.5" PointX="30.5" PointY="11.625" />
+        <AssociationConnector Association="GalaxySMSModel.FK_ClusterEntityCluster1" />
+        <AssociationConnector Association="GalaxySMSModel.FK_ClusterEntityEntity1" />
+        <AssociationConnector Association="GalaxySMSModel.FK_InterfaceBoardSectionModeDisplayResourceKey" />
+        <AssociationConnector Association="GalaxySMSModel.FK_InterfaceBoardTypeDisplayResourceKey" />
+        <AssociationConnector Association="GalaxySMSModel.FK_UserDefinedBooleanPropertyRulesUserDefinedPropertyType" />
+        <AssociationConnector Association="GalaxySMSModel.FK_UserDefinedDatePropertyRulesUserDefinedProperty" />
+        <AssociationConnector Association="GalaxySMSModel.FK_UserDefinedListPropertyItemUserDefinedProperty" />
+        <AssociationConnector Association="GalaxySMSModel.FK_UserDefinedListPropertyRulesUserDefinedProperty" />
+        <AssociationConnector Association="GalaxySMSModel.FK_UserDefinedNumberPropertyRulesUserDefinedProperty" />
+        <AssociationConnector Association="GalaxySMSModel.FK_UserDefinedPropertyUserDefinedPropertyType" />
+        <AssociationConnector Association="GalaxySMSModel.FK_UserDefinedTextPropertyRulesUserDefinedProperty" />
+        <EntityTypeShape EntityType="GalaxySMSModel.GalaxyCpuModelInterfaceBoardSectionMode" Width="1.5" PointX="15.5" PointY="44.5" />
+        <AssociationConnector Association="GalaxySMSModel.FK_GalaxyCpuModelInterfaceBoardSectionModeCpu" />
+        <AssociationConnector Association="GalaxySMSModel.FK_GalaxyCpuModelInterfaceBoardSectionModeMode" />
+        <EntityTypeShape EntityType="GalaxySMSModel.ClusterInputOutputGroup" Width="1.5" PointX="8.5" PointY="48.375" />
+        <EntityTypeShape EntityType="GalaxySMSModel.CredentialDataLength" Width="1.5" PointX="8.375" PointY="69.375" />
+        <EntityTypeShape EntityType="GalaxySMSModel.TimeScheduleType" Width="1.5" PointX="8.375" PointY="73.625" />
+        <EntityTypeShape EntityType="GalaxySMSModel.TimeZone" Width="1.5" PointX="17.25" PointY="9.75" />
+        <AssociationConnector Association="GalaxySMSModel.FK_ClusterInputOutputGroupCluster" />
+        <AssociationConnector Association="GalaxySMSModel.FK_CredentialDataLengthDisplayResourceKey" />
+        <AssociationConnector Association="GalaxySMSModel.FK_TimeScheduleTypeDisplayKey" />
+        <EntityTypeShape EntityType="GalaxySMSModel.ClusterLedBehaviorMode" Width="1.5" PointX="20.375" PointY="10.75" />
+        <EntityTypeShape EntityType="GalaxySMSModel.gcsUserSession" Width="1.5" PointX="16.125" PointY="30.75" />
+        <AssociationConnector Association="GalaxySMSModel.FK_AccessGroupEntity" />
+        <AssociationConnector Association="GalaxySMSModel.FK_AreaEntity" />
+        <AssociationConnector Association="GalaxySMSModel.FK_GcsUserSessionApplication" />
+        <AssociationConnector Association="GalaxySMSModel.FK_InputOutputGroupEntity" />
+        <AssociationConnector Association="GalaxySMSModel.FK_GcsUserSessionUser" />
+        <EntityTypeShape EntityType="GalaxySMSModel.EntityMapPermissionLevel" Width="1.5" PointX="0.875" PointY="63.875" />
+        <AssociationConnector Association="GalaxySMSModel.FK_RegionEntityMapPermissionLevel" />
+        <AssociationConnector Association="GalaxySMSModel.FK_SiteEntityMapPermissionLevel" />
+        <EntityTypeShape EntityType="GalaxySMSModel.GalaxyPanelModelInterfaceBoardSectionMode" Width="1.5" PointX="20.875" PointY="35" />
+        <EntityTypeShape EntityType="GalaxySMSModel.GalaxyPanelModelInterfaceBoardType" Width="1.5" PointX="15.625" PointY="39.25" />
+        <AssociationConnector Association="GalaxySMSModel.FK_GalaxyPanelModelInterfaceBoardSectionModePanelModel" />
+        <AssociationConnector Association="GalaxySMSModel.FK_GalaxyPanelModelInterfaceBoardTypePanelModel" />
+        <AssociationConnector Association="GalaxySMSModel.FK_GalaxyPanelModelInterfaceBoardSectionModeSectionMode" />
+        <AssociationConnector Association="GalaxySMSModel.FK_GalaxyPanelModelInterfaceBoardTypeBoardType" />
+        <EntityTypeShape EntityType="GalaxySMSModel.AccessPortalGalaxyHardwareAddress" Width="1.5" PointX="20.125" PointY="49.125" />
+        <AssociationConnector Association="GalaxySMSModel.FK_AccessPortalGalaxyHardwareAddressAccessPortal" />
+        <AssociationConnector Association="GalaxySMSModel.FK_AccessPortalGalaxyHardwareAddressNode" />
+        <EntityTypeShape EntityType="GalaxySMSModel.GalaxyInputDelayType" Width="1.5" PointX="7.875" PointY="84.375" />
+        <EntityTypeShape EntityType="GalaxySMSModel.GalaxyInputMode" Width="1.5" PointX="7.875" PointY="89" />
+        <EntityTypeShape EntityType="GalaxySMSModel.InputDevice" Width="1.5" PointX="22.125" PointY="53.5" />
+        <EntityTypeShape EntityType="GalaxySMSModel.InputDeviceGalaxyHardwareAddress" Width="1.5" PointX="24.375" PointY="39.5" />
+        <EntityTypeShape EntityType="GalaxySMSModel.InputDeviceSupervisionType" Width="1.5" PointX="7.875" PointY="78" />
+        <AssociationConnector Association="GalaxySMSModel.FK_GalaxyInputDelayTypeDisplayResourceKey" />
+        <AssociationConnector Association="GalaxySMSModel.FK_GalaxyInputModeDisplayResourceKey" />
+        <AssociationConnector Association="GalaxySMSModel.FK_InputDeviceGalaxyHardwareAddressGalaxyBoardSectionNode" />
+        <AssociationConnector Association="GalaxySMSModel.FK_InputDeviceBinaryResource" />
+        <AssociationConnector Association="GalaxySMSModel.FK_InputDeviceSupervisionTypeDisplayResourceKey" />
+        <AssociationConnector Association="GalaxySMSModel.FK_InputDeviceGalaxyHardwareAddressInputDevice" />
+        <EntityTypeShape EntityType="GalaxySMSModel.GalaxyInputDevice" Width="1.5" PointX="24.375" PointY="66.875" />
+        <AssociationConnector Association="GalaxySMSModel.FK_GalaxyInputDeviceInputDevice" />
+        <AssociationConnector Association="GalaxySMSModel.FK_GalaxyInputDeviceInputDeviceSupervisionType" />
+        <EntityTypeShape EntityType="GalaxySMSModel.InputDeviceEntityMap" Width="1.5" PointX="4.75" PointY="124.125" />
+        <AssociationConnector Association="GalaxySMSModel.FK_InputDeviceEntityMapEntity" />
+        <EntityTypeShape EntityType="GalaxySMSModel.InputDeviceSupervisionTypeInterfaceBoardSectionMode" Width="1.5" PointX="10.75" PointY="79.625" />
+        <AssociationConnector Association="GalaxySMSModel.FK_InputDeviceSupervisionTypeInterfaceBoardSectionModeInputDeviceSupervisionType" />
+        <EntityTypeShape EntityType="GalaxySMSModel.OutputDevice" Width="1.5" PointX="23.5" PointY="44.875" />
+        <EntityTypeShape EntityType="GalaxySMSModel.OutputDeviceEntityMap" Width="1.5" PointX="5.125" PointY="128.125" />
+        <EntityTypeShape EntityType="GalaxySMSModel.OutputDeviceGalaxyHardwareAddress" Width="1.5" PointX="25.75" PointY="30.625" />
+        <AssociationConnector Association="GalaxySMSModel.FK_OutputDeviceGalaxyHardwareAddressGalaxyBoardSectionNode" />
+        <AssociationConnector Association="GalaxySMSModel.FK_OutputDeviceBinaryResource" />
+        <AssociationConnector Association="GalaxySMSModel.FK_OutputDeviceEntityMapEntity" />
+        <AssociationConnector Association="GalaxySMSModel.FK_OutputDeviceGalaxyHardwareAddressOutputDevice" />
+        <EntityTypeShape EntityType="GalaxySMSModel.AccessPortalProperty" Width="1.5" PointX="28.875" PointY="28.75" />
+        <EntityTypeShape EntityType="GalaxySMSModel.LiquidCrystalDisplay" Width="1.5" PointX="25.375" PointY="50.625" />
+        <EntityTypeShape EntityType="GalaxySMSModel.LiquidCrystalDisplayEntityMap" Width="1.5" PointX="5" PointY="132.25" />
+        <EntityTypeShape EntityType="GalaxySMSModel.LiquidCrystalDisplayGalaxyHardwareAddress" Width="1.5" PointX="27.625" PointY="40.75" />
+        <AssociationConnector Association="GalaxySMSModel.FK_AccessPortalPropertyAccessPortal" />
+        <AssociationConnector Association="GalaxySMSModel.FK_AccessPortalPropertiesContactSupervisionType" />
+        <AssociationConnector Association="GalaxySMSModel.FK_AccessPortalDeferToServerBehavior" />
+        <AssociationConnector Association="GalaxySMSModel.FK_AccessPortalElevatorControlType" />
+        <AssociationConnector Association="GalaxySMSModel.FK_AccessPortalPropertiesLockPushButtonBehavior" />
+        <AssociationConnector Association="GalaxySMSModel.FK_AccessPortalPropertiesNoServerReplyBehavior" />
+        <AssociationConnector Association="GalaxySMSModel.FK_LcdGalaxyHardwareAddressGalaxyInterfaceBoardSectionNode" />
+        <AssociationConnector Association="GalaxySMSModel.FK_LiquidCrystalDisplayEntityMapEntity" />
+        <AssociationConnector Association="GalaxySMSModel.FK_LcdGalaxyHardwareAddressLcd" />
+        <EntityTypeShape EntityType="GalaxySMSModel.AccessPortalAlertEvent" Width="1.5" PointX="33.875" PointY="28.25" />
+        <EntityTypeShape EntityType="GalaxySMSModel.AccessPortalAlertEventType" Width="1.5" PointX="31.625" PointY="34.75" />
+        <EntityTypeShape EntityType="GalaxySMSModel.AccessPortalArea" Width="1.5" PointX="35.875" PointY="36.75" />
+        <EntityTypeShape EntityType="GalaxySMSModel.AccessPortalAreaType" Width="1.5" PointX="33.625" PointY="6" />
+        <EntityTypeShape EntityType="GalaxySMSModel.AccessPortalScheduleType" Width="1.5" PointX="33.625" PointY="1" />
+        <EntityTypeShape EntityType="GalaxySMSModel.AccessPortalTimeSchedule" Width="1.5" PointX="36.875" PointY="32.25" />
+        <EntityTypeShape EntityType="GalaxySMSModel.Note" Width="1.5" PointX="31.625" PointY="30.625" />
+        <AssociationConnector Association="GalaxySMSModel.FK_AccessPortalAreaAccessPortal" />
+        <AssociationConnector Association="GalaxySMSModel.FK_AccessPortalTimeScheduleAccessPortal" />
+        <AssociationConnector Association="GalaxySMSModel.FK_AccessPortalAlertEventAccessPortalAlertEventType" />
+        <AssociationConnector Association="GalaxySMSModel.FK_AccessPortalAlertEventAudioBinaryResource" />
+        <AssociationConnector Association="GalaxySMSModel.FK_AccessPortalAlertEventNote" />
+        <AssociationConnector Association="GalaxySMSModel.FK_AccessPortalAreaAccessPortalAreaType" />
+        <AssociationConnector Association="GalaxySMSModel.FK_AccessPortalTimeScheduleAccessPortalScheduleType" />
+        <EntityTypeShape EntityType="GalaxySMSModel.AccessPortalElevatorControlTypePanelModel" Width="1.5" PointX="26.5" PointY="26.5" />
+        <AssociationConnector Association="GalaxySMSModel.FK_AccessPortalElevatorControlTypePanelModelElevatorControlType" />
+        <AssociationConnector Association="GalaxySMSModel.FK_AccessPortalElevatorControlTypePanelModelPanelModel" />
+        <EntityTypeShape EntityType="GalaxySMSModel.AccessPortalAuxiliaryOutput" Width="1.5" PointX="30.25" PointY="40.75" />
+        <EntityTypeShape EntityType="GalaxySMSModel.AccessPortalAuxiliaryOutputTriggeringEvent" Width="1.5" PointX="33.875" PointY="41.25" />
+        <AssociationConnector Association="GalaxySMSModel.FK_AccessPortalAuxiliaryOutputAccessPortal" />
+        <AssociationConnector Association="GalaxySMSModel.FK_AccessPortalAuxiliaryOutputTriggeringEventType" />
+        <AssociationConnector Association="GalaxySMSModel.FK_AccessPortalAuxiliaryOutputAuxOutputMode" />
+        <AssociationConnector Association="GalaxySMSModel.FK_AccessPortalAuxiliaryOutputTriggeringEventOutput" />
+        <EntityTypeShape EntityType="GalaxySMSModel.AccessPortalNote" Width="1.5" PointX="34.25" PointY="47.375" />
+        <AssociationConnector Association="GalaxySMSModel.FK_AccessPortalNoteAccessPortal" />
+        <AssociationConnector Association="GalaxySMSModel.FK_AccessPortalNoteNote" />
+        <EntityTypeShape EntityType="GalaxySMSModel.ClusterCommandAudit" Width="1.5" PointX="11.75" PointY="49.5" />
+        <EntityTypeShape EntityType="GalaxySMSModel.InputDeviceAlertEvent" Width="1.5" PointX="26.75" PointY="67.125" />
+        <EntityTypeShape EntityType="GalaxySMSModel.InputOutputGroupAssignment1" Width="1.5" PointX="11" PointY="54" />
+        <AssociationConnector Association="GalaxySMSModel.FK_AccessPortalPropertiesElevatorRelayBoardSection" />
+        <AssociationConnector Association="GalaxySMSModel.FK_AccessPortalPropertiesLiquidCrystalDisplay" />
+        <AssociationConnector Association="GalaxySMSModel.FK_ClusterCommandAuditCluster" />
+        <AssociationConnector Association="GalaxySMSModel.FK_ClusterCommandAuditClusterCommand" />
+        <AssociationConnector Association="GalaxySMSModel.FK_ClusterCommandAuditGcsUser" />
+        <AssociationConnector Association="GalaxySMSModel.FK_InputDeviceAlertEventGalaxyInputDevice" />
+        <AssociationConnector Association="GalaxySMSModel.FK_InputOutputGroupAssignmentInputOutputGroup1" />
+        <EntityTypeShape EntityType="GalaxySMSModel.GalaxyPanelCommandAudit" Width="1.5" PointX="18.625" PointY="43.875" />
+        <AssociationConnector Association="GalaxySMSModel.FK_GalaxyPanelCommandAuditGalaxyPanel" />
+        <AssociationConnector Association="GalaxySMSModel.FK_GalaxyPanelCommandAuditGalaxyPanelCommand" />
+        <AssociationConnector Association="GalaxySMSModel.FK_GalaxyPanelCommandAuditGcsUser" />
+        <EntityTypeShape EntityType="GalaxySMSModel.AccessGroupAccessPortal" Width="1.5" PointX="10.625" PointY="63.5" />
+        <AssociationConnector Association="GalaxySMSModel.FK_AccessGroupAccessPortalAccessGroup" />
+        <EntityTypeShape EntityType="GalaxySMSModel.GalaxyClusterDayTypeMap" Width="1.5" PointX="7.625" PointY="94.375" />
+        <AssociationConnector Association="GalaxySMSModel.FK_GalaxyClusterDayTypeMapCluster" />
+        <EntityTypeShape EntityType="GalaxySMSModel.GalaxyTimePeriod" Width="1.5" PointX="5" PointY="140.125" />
+        <EntityTypeShape EntityType="GalaxySMSModel.GalaxyTimePeriodEntityMap" Width="1.5" PointX="5" PointY="136.625" />
+        <EntityTypeShape EntityType="GalaxySMSModel.TimeScheduleDayTypeGalaxyTimePeriod" Width="1.5" PointX="7.75" PointY="118.875" />
+        <EntityTypeShape EntityType="GalaxySMSModel.TimeScheduleDayTypeTimePeriod" Width="1.5" PointX="7.75" PointY="115.25" />
+        <AssociationConnector Association="GalaxySMSModel.FK_TimeScheduleDayTypeGalaxyTimePeriodDayType" />
+        <AssociationConnector Association="GalaxySMSModel.FK_TimeScheduleDayTypeTimePeriodDayType" />
+        <AssociationConnector Association="GalaxySMSModel.FK_GalaxyTimePeriodEntity" />
+        <AssociationConnector Association="GalaxySMSModel.FK_GalaxyTimePeriodEntityMapEntity" />
+        <EntityTypeShape EntityType="GalaxySMSModel.DateTypeDefaultBehavior" Width="1.5" PointX="4.625" PointY="145" />
+        <AssociationConnector Association="GalaxySMSModel.FK_DateTypeDefaultBehaviorEntity" />
+        <EntityTypeShape EntityType="GalaxySMSModel.BadgeTemplate" Width="1.5" PointX="5" PointY="166" />
+        <EntityTypeShape EntityType="GalaxySMSModel.BadgeTemplateEntityMap" Width="1.5" PointX="5" PointY="162.5" />
+        <EntityTypeShape EntityType="GalaxySMSModel.Department" Width="1.5" PointX="5" PointY="174" />
+        <EntityTypeShape EntityType="GalaxySMSModel.Gender" Width="1.5" PointX="5" PointY="154" />
+        <EntityTypeShape EntityType="GalaxySMSModel.PersonActiveStatusType" Width="1.5" PointX="5" PointY="158.25" />
+        <EntityTypeShape EntityType="GalaxySMSModel.PersonRecordType" Width="1.5" PointX="5" PointY="169.875" />
+        <EntityTypeShape EntityType="GalaxySMSModel.UserDefinedPropertyEntityMap" Width="1.5" PointX="5" PointY="150.5" />
+        <AssociationConnector Association="GalaxySMSModel.FK_BadgeTemplateEntity" />
+        <AssociationConnector Association="GalaxySMSModel.FK_BadgeTemplateEntityMapEntity" />
+        <AssociationConnector Association="GalaxySMSModel.FK_DepartmentEntity" />
+        <AssociationConnector Association="GalaxySMSModel.FK_EntityUserDefinedPropertyEntity" />
+        <AssociationConnector Association="GalaxySMSModel.FK_GenderEntity" />
+        <AssociationConnector Association="GalaxySMSModel.FK_if_exists__select_1" />
+        <AssociationConnector Association="GalaxySMSModel.FK_PersonActiveStatusTypeEntity" />
+        <AssociationConnector Association="GalaxySMSModel.FK_UserDefinedPropertyEntity" />
+        <EntityTypeShape EntityType="GalaxySMSModel.AccessProfile" Width="1.5" PointX="12" PointY="91.5" />
+        <EntityTypeShape EntityType="GalaxySMSModel.AccessProfileAccessGroup" Width="1.5" PointX="11" PointY="87.375" />
+        <EntityTypeShape EntityType="GalaxySMSModel.AccessProfileCluster" Width="1.5" PointX="14.25" PointY="53.625" />
+        <EntityTypeShape EntityType="GalaxySMSModel.AccessProfileEntityMap" Width="1.5" PointX="5" PointY="191.125" />
+        <EntityTypeShape EntityType="GalaxySMSModel.CellCarrier" Width="1.5" PointX="21" PointY="14.75" />
+        <EntityTypeShape EntityType="GalaxySMSModel.CommandScript" Width="1.5" PointX="5" PointY="198.25" />
+        <EntityTypeShape EntityType="GalaxySMSModel.Credential" Width="1.5" PointX="10.375" PointY="150.875" />
+        <EntityTypeShape EntityType="GalaxySMSModel.Credential26BitStandard" Width="1.5" PointX="12.625" PointY="151.875" />
+        <EntityTypeShape EntityType="GalaxySMSModel.CredentialBqt36Bit" Width="1.5" PointX="12.625" PointY="141.125" />
+        <EntityTypeShape EntityType="GalaxySMSModel.CredentialClusterTour" Width="1.5" PointX="8.25" PointY="137.875" />
+        <EntityTypeShape EntityType="GalaxySMSModel.CredentialCorporate1K35Bit" Width="1.5" PointX="12.625" PointY="162.375" />
+        <EntityTypeShape EntityType="GalaxySMSModel.CredentialCorporate1K48Bit" Width="1.5" PointX="12.625" PointY="158.875" />
+        <EntityTypeShape EntityType="GalaxySMSModel.CredentialCypress37Bit" Width="1.5" PointX="12.625" PointY="144.875" />
+        <EntityTypeShape EntityType="GalaxySMSModel.CredentialData" Width="1.5" PointX="12.625" PointY="165.875" />
+        <EntityTypeShape EntityType="GalaxySMSModel.CredentialFormat" Width="1.5" PointX="8.125" PointY="155.75" />
+        <EntityTypeShape EntityType="GalaxySMSModel.CredentialFormatDataField" Width="1.5" PointX="10.375" PointY="170.125" />
+        <EntityTypeShape EntityType="GalaxySMSModel.CredentialFormatEntity" Width="1.5" PointX="5" PointY="194.625" />
+        <EntityTypeShape EntityType="GalaxySMSModel.CredentialFormatParity" Width="1.5" PointX="10.375" PointY="175.875" />
+        <EntityTypeShape EntityType="GalaxySMSModel.CredentialH1030437Bit" Width="1.5" PointX="12.625" PointY="155.375" />
+        <EntityTypeShape EntityType="GalaxySMSModel.CredentialPIV75Bit" Width="1.5" PointX="12.625" PointY="137.5" />
+        <EntityTypeShape EntityType="GalaxySMSModel.CredentialXceedId40Bit" Width="1.5" PointX="12.625" PointY="148.375" />
+        <EntityTypeShape EntityType="GalaxySMSModel.Person" Width="1.5" PointX="39" PointY="46.625" />
+        <EntityTypeShape EntityType="GalaxySMSModel.PersonAccessControlProperty" Width="1.5" PointX="41.25" PointY="68.375" />
+        <EntityTypeShape EntityType="GalaxySMSModel.PersonAccessGroup" Width="1.5" PointX="11.5" PointY="75.5" />
+        <EntityTypeShape EntityType="GalaxySMSModel.PersonAccessProfile" Width="1.5" PointX="41.25" PointY="46.5" />
+        <EntityTypeShape EntityType="GalaxySMSModel.PersonActivationMode" Width="1.5" PointX="8.125" PointY="132.75" />
+        <EntityTypeShape EntityType="GalaxySMSModel.PersonAddress" Width="1.5" PointX="41.25" PointY="72.5" />
+        <EntityTypeShape EntityType="GalaxySMSModel.PersonalAccessGroupAccessPortal" Width="1.5" PointX="5.125" PointY="187.125" />
+        <EntityTypeShape EntityType="GalaxySMSModel.PersonalAccessGroupAccessPortalTemp" Width="1.5" PointX="23" PointY="10.75" />
+        <EntityTypeShape EntityType="GalaxySMSModel.PersonalAccessGroupDynamicAccessGroup" Width="1.5" PointX="11" PointY="83.875" />
+        <EntityTypeShape EntityType="GalaxySMSModel.PersonalAccessGroupDynamicAccessGroupTemp" Width="1.5" PointX="27" PointY="20.75" />
+        <EntityTypeShape EntityType="GalaxySMSModel.PersonBooleanProperty" Width="1.5" PointX="31.125" PointY="54.75" />
+        <EntityTypeShape EntityType="GalaxySMSModel.PersonClusterPermission" Width="1.5" PointX="9.25" PointY="53.125" />
+        <EntityTypeShape EntityType="GalaxySMSModel.PersonCredential" Width="1.5" PointX="7" PointY="178.625" />
+        <EntityTypeShape EntityType="GalaxySMSModel.PersonCredentialCommandScript" Width="1.5" PointX="9.25" PointY="180.5" />
+        <EntityTypeShape EntityType="GalaxySMSModel.PersonCredentialRole" Width="1.5" PointX="8.125" PointY="123.5" />
+        <EntityTypeShape EntityType="GalaxySMSModel.PersonDateProperty" Width="1.5" PointX="31.125" PointY="51" />
+        <EntityTypeShape EntityType="GalaxySMSModel.PersonEmailAddress" Width="1.5" PointX="41.25" PointY="38.625" />
+        <EntityTypeShape EntityType="GalaxySMSModel.PersonExpirationMode" Width="1.5" PointX="8.125" PointY="128.125" />
+        <EntityTypeShape EntityType="GalaxySMSModel.PersonInputOutputGroup" Width="1.5" PointX="11.5" PointY="67.25" />
+        <EntityTypeShape EntityType="GalaxySMSModel.PersonLcdMessage" Width="1.5" PointX="41.25" PointY="42.375" />
+        <EntityTypeShape EntityType="GalaxySMSModel.PersonLcdMessageDisplayMode" Width="1.5" PointX="34" PointY="10.75" />
+        <EntityTypeShape EntityType="GalaxySMSModel.PersonListPropertyItem" Width="1.5" PointX="31.125" PointY="58.375" />
+        <EntityTypeShape EntityType="GalaxySMSModel.PersonNote" Width="1.5" PointX="41.25" PointY="61" />
+        <EntityTypeShape EntityType="GalaxySMSModel.PersonNumberProperty" Width="1.5" PointX="31.125" PointY="47.375" />
+        <EntityTypeShape EntityType="GalaxySMSModel.PersonOtisElevator" Width="1.5" PointX="41.25" PointY="57.5" />
+        <EntityTypeShape EntityType="GalaxySMSModel.PersonPersonalAccessGroup" Width="1.5" PointX="11.5" PointY="71.75" />
+        <EntityTypeShape EntityType="GalaxySMSModel.PersonPhoneNumber" Width="1.5" PointX="41.25" PointY="64.5" />
+        <EntityTypeShape EntityType="GalaxySMSModel.PersonPhoto" Width="1.5" PointX="41.25" PointY="53.875" />
+        <EntityTypeShape EntityType="GalaxySMSModel.PersonPropertyBag" Width="1.5" PointX="41.25" PointY="50" />
+        <EntityTypeShape EntityType="GalaxySMSModel.PersonTextProperty" Width="1.5" PointX="31.125" PointY="62.125" />
+        <AssociationConnector Association="GalaxySMSModel.FK_AccessProfileAccessGroupAccessGroup" />
+        <AssociationConnector Association="GalaxySMSModel.FK_PesonalAccessGroupDynamicAccessGroupAccessGroup" />
+        <AssociationConnector Association="GalaxySMSModel.FK_PesonalAccessGroupAccessPortalAccessPortal" />
+        <AssociationConnector Association="GalaxySMSModel.FK_AccessProfileClusterAccessProfile" />
+        <AssociationConnector Association="GalaxySMSModel.FK_AccessProfileEntity" />
+        <AssociationConnector Association="GalaxySMSModel.FK_AccessProfileClusterCluster" />
+        <AssociationConnector Association="GalaxySMSModel.FK_AccessProfileEntityMapEntity" />
+        <AssociationConnector Association="GalaxySMSModel.FK_CredentialClusterTourCluster" />
+        <AssociationConnector Association="GalaxySMSModel.FK_PersonClusterPermissionCluster" />
+        <AssociationConnector Association="GalaxySMSModel.FK_CommandScriptEntity" />
+        <AssociationConnector Association="GalaxySMSModel.FK_Credential26BitStandardCredential" />
+        <AssociationConnector Association="GalaxySMSModel.FK_CredentialBQT36BitCredential" />
+        <AssociationConnector Association="GalaxySMSModel.FK_CredentialCorporate1K35BitCredential" />
+        <AssociationConnector Association="GalaxySMSModel.FK_CredentialCorporate1K48BitCredential" />
+        <AssociationConnector Association="GalaxySMSModel.FK_CredentialCredentialFormat" />
+        <AssociationConnector Association="GalaxySMSModel.FK_CredentialCypress37BitCredential" />
+        <AssociationConnector Association="GalaxySMSModel.FK_CredentialDataCredential" />
+        <AssociationConnector Association="GalaxySMSModel.FK_CredentialH1030437BitCredential" />
+        <AssociationConnector Association="GalaxySMSModel.FK_CredentialPIV75BitCredential" />
+        <AssociationConnector Association="GalaxySMSModel.FK_CredentialXCeedId40BitCredential" />
+        <AssociationConnector Association="GalaxySMSModel.FK_CredentialFormatDataFieldCredentialFormat" />
+        <AssociationConnector Association="GalaxySMSModel.FK_CredentialFormatDisplayResourceKey" />
+        <AssociationConnector Association="GalaxySMSModel.FK_CredentialFormatParityCredentialFormat" />
+        <AssociationConnector Association="GalaxySMSModel.FK_CredentialFormatEntityEntity" />
+        <AssociationConnector Association="GalaxySMSModel.FK_PersonEntity" />
+        <AssociationConnector Association="GalaxySMSModel.FK_PersonActivationModeDisplayResourceKey" />
+        <AssociationConnector Association="GalaxySMSModel.FK_PersonCredentialRoleDisplayResourceKey" />
+        <AssociationConnector Association="GalaxySMSModel.FK_PersonExpirationModeDisplayResourceKey" />
+        <AssociationConnector Association="GalaxySMSModel.FK_PersonInputOutputGroupInputOutputGroup" />
+        <AssociationConnector Association="GalaxySMSModel.FK_PersonAccesProfilePerson" />
+        <AssociationConnector Association="GalaxySMSModel.FK_PersonAccessControlPropertiesPerson" />
+        <AssociationConnector Association="GalaxySMSModel.FK_PersonAddressPerson" />
+        <AssociationConnector Association="GalaxySMSModel.FK_PersonEmailAddressPerson" />
+        <AssociationConnector Association="GalaxySMSModel.FK_PersonLcdMessagePerson" />
+        <AssociationConnector Association="GalaxySMSModel.FK_PersonNotePerson" />
+        <AssociationConnector Association="GalaxySMSModel.FK_PersonOtisElevatorPerson" />
+        <AssociationConnector Association="GalaxySMSModel.FK_PersonPhoneNumberPerson" />
+        <AssociationConnector Association="GalaxySMSModel.FK_PersonPhotoPerson" />
+        <AssociationConnector Association="GalaxySMSModel.FK_PersonPropertyBagPerson" />
+        <AssociationConnector Association="GalaxySMSModel.FK_PersonAccessGroupPersonClusterPermission" />
+        <AssociationConnector Association="GalaxySMSModel.FK_PersonBooleanPropertyUserDefinedProperty" />
+        <AssociationConnector Association="GalaxySMSModel.FK_PersonClusterPermissionPersonCredential" />
+        <AssociationConnector Association="GalaxySMSModel.FK_PersonPersonalAccessGroupPersonClusterPermission" />
+        <AssociationConnector Association="GalaxySMSModel.FK_PersonCredentialCommandScriptPersonCredential" />
+        <AssociationConnector Association="GalaxySMSModel.FK_PersonDatePropertyUserDefinedProperty" />
+        <AssociationConnector Association="GalaxySMSModel.FK_PersonListPropertyItemUserDefinedProperty" />
+        <AssociationConnector Association="GalaxySMSModel.FK_PersonNumberPropertyUserDefinedProperty" />
+        <AssociationConnector Association="GalaxySMSModel.FK_PersonPropertyUserDefinedProperty" />
+        <EntityTypeShape EntityType="GalaxySMSModel.CredentialFormatEntityMap" Width="1.5" PointX="4.75" PointY="178.125" />
+        <EntityTypeShape EntityType="GalaxySMSModel.PersonEntityMap" Width="1.5" PointX="4.75" PointY="181.875" />
+        <AssociationConnector Association="GalaxySMSModel.FK_CredentialFormatEntityEntity1" />
+        <AssociationConnector Association="GalaxySMSModel.FK_PersonEntityMapEntity" />
+        <EntityTypeShape EntityType="GalaxySMSModel.UserDefinedPropertyPermission" Width="1.5" PointX="7.875" PointY="141.5" />
+        <AssociationConnector Association="GalaxySMSModel.FK_UserDefinedPropertyPermissionGcsPermission" />
+        <EntityTypeShape EntityType="GalaxySMSModel.gcsPermissionType" Width="1.5" PointX="7.75" PointY="146.25" />
+        <AssociationConnector Association="GalaxySMSModel.FK_PermissionTypeDisplayResourceKey" />
+        <EntityTypeShape EntityType="GalaxySMSModel.PropertySensitivityLevel" Width="1.5" PointX="8.125" PointY="162.375" />
+        <EntityTypeShape EntityType="GalaxySMSModel.PropertySensitivityLevelPermission" Width="1.5" PointX="8.125" PointY="150.625" />
+        <AssociationConnector Association="GalaxySMSModel.FK_UserDefinedPropertyPermissionGcsPermission1" />
+        <AssociationConnector Association="GalaxySMSModel.FK_PropertySensitivityLevelDisplayResourceKey" />
+        <EntityTypeShape EntityType="GalaxySMSModel.UserDefinedGuidPropertyRule" Width="1.5" PointX="31.125" PointY="66.125" />
+        <AssociationConnector Association="GalaxySMSModel.FK_UserDefinedGuidPropertyRulesUserDefinedProperty" />
+        <EntityTypeShape EntityType="GalaxySMSModel.gcsEntityIdProducer" Width="1.5" PointX="33.5" PointY="14.75" />
+        <EntityTypeShape EntityType="GalaxySMSModel.BadgeSystemType" Width="1.5" PointX="34" PointY="19.75" />
+        <EntityTypeShape EntityType="GalaxySMSModel.BiometricSystemType" Width="1.5" PointX="34" PointY="23.75" />
+        <EntityTypeShape EntityType="GalaxySMSModel.AccessPortalCommand" Width="1.5" PointX="11.875" PointY="101.125" />
+        <EntityTypeShape EntityType="GalaxySMSModel.AccessPortalCommandAudit" Width="1.5" PointX="14.125" PointY="58.25" />
+        <EntityTypeShape EntityType="GalaxySMSModel.AccessPortalTypeAccessPortalCommand" Width="1.5" PointX="14.125" PointY="86.25" />
+        <EntityTypeShape EntityType="GalaxySMSModel.InputCommand" Width="1.5" PointX="24.75" PointY="59.75" />
+        <EntityTypeShape EntityType="GalaxySMSModel.InputCommandAudit" Width="1.5" PointX="27" PointY="45.875" />
+        <EntityTypeShape EntityType="GalaxySMSModel.InputCommandGalaxyPanelModel" Width="1.5" PointX="29" PointY="50.625" />
+        <EntityTypeShape EntityType="GalaxySMSModel.InputOutputGroupCommand" Width="1.5" PointX="11.25" PointY="96.125" />
+        <EntityTypeShape EntityType="GalaxySMSModel.InputOutputGroupCommandAudit" Width="1.5" PointX="13.5" PointY="25.25" />
+        <AssociationConnector Association="GalaxySMSModel.FK_AccessPortalCommandAuditAccessPortal" />
+        <AssociationConnector Association="GalaxySMSModel.FK_AccessPortalCommandAuditAccessPortalCommand" />
+        <AssociationConnector Association="GalaxySMSModel.FK_AccessPortalTypeAccessPortalCommandAccessPortalCommand" />
+        <AssociationConnector Association="GalaxySMSModel.FK_AccessPortalCommandAuditGcsUser" />
+        <AssociationConnector Association="GalaxySMSModel.FK_AccessPortalTypeAccessPortalCommandAccessPortalType" />
+        <AssociationConnector Association="GalaxySMSModel.FK_BadgeTemplateBadgeSystemType" />
+        <AssociationConnector Association="GalaxySMSModel.FK_InputCommandGalaxyPanelModelGalaxyPanelModel" />
+        <AssociationConnector Association="GalaxySMSModel.FK_InputCommandAuditGcsUser" />
+        <AssociationConnector Association="GalaxySMSModel.FK_InputOutputGroupCommandAuditGcsUser" />
+        <AssociationConnector Association="GalaxySMSModel.FK_InputCommandAuditInputCommand" />
+        <AssociationConnector Association="GalaxySMSModel.FK_InputCommandInputCommandGalaxyPanelModel" />
+        <AssociationConnector Association="GalaxySMSModel.FK_InputCommandAuditInputDevice" />
+        <AssociationConnector Association="GalaxySMSModel.FK_InputOutputGroupCommandAuditInputOutputGroup" />
+        <AssociationConnector Association="GalaxySMSModel.FK_InputOutputGroupCommandAuditInputOutputGroupCommand" />
+        <EntityTypeShape EntityType="GalaxySMSModel.OutputCommand" Width="1.5" PointX="31.75" PointY="70.125" />
+        <EntityTypeShape EntityType="GalaxySMSModel.OutputCommandAudit" Width="1.5" PointX="34" PointY="51.25" />
+        <AssociationConnector Association="GalaxySMSModel.FK_OutputCommandAuditGcsUser" />
+        <AssociationConnector Association="GalaxySMSModel.FK_OutputCommandAuditOutputCommand" />
+        <AssociationConnector Association="GalaxySMSModel.FK_OutputCommandAuditOutputDevice" />
+        <EntityTypeShape EntityType="GalaxySMSModel.RoleAccessPortal" Width="1.5" PointX="17.125" PointY="61.25" />
+        <EntityTypeShape EntityType="GalaxySMSModel.RoleAccessPortalPermission" Width="1.5" PointX="14.75" PointY="12.75" />
+        <EntityTypeShape EntityType="GalaxySMSModel.RoleCluster" Width="1.5" PointX="16.875" PointY="56.125" />
+        <EntityTypeShape EntityType="GalaxySMSModel.RoleClusterPermission" Width="1.5" PointX="19.125" PointY="56.75" />
+        <EntityTypeShape EntityType="GalaxySMSModel.RoleInputDevice" Width="1.5" PointX="36.625" PointY="44.875" />
+        <EntityTypeShape EntityType="GalaxySMSModel.RoleInputDevicePermission" Width="1.5" PointX="28.75" PointY="0.75" />
+        <EntityTypeShape EntityType="GalaxySMSModel.RoleInputOutputGroup" Width="1.5" PointX="21.125" PointY="47.25" />
+        <EntityTypeShape EntityType="GalaxySMSModel.RoleInputOutputGroupPermission" Width="1.5" PointX="36.375" PointY="31.25" />
+        <AssociationConnector Association="GalaxySMSModel.FK_RoleAccessPortalAccessPortal" />
+        <AssociationConnector Association="GalaxySMSModel.FK_RoleClusterCluster" />
+        <AssociationConnector Association="GalaxySMSModel.FK_RoleAccessPortalPermissionPermission" />
+        <AssociationConnector Association="GalaxySMSModel.FK_RoleClusterPermissionPermission" />
+        <AssociationConnector Association="GalaxySMSModel.FK_RoleInputDevicePermissionPermission" />
+        <AssociationConnector Association="GalaxySMSModel.FK_RoleInputOutputGroupPermissionPermission" />
+        <AssociationConnector Association="GalaxySMSModel.FK_RoleAccessPortalRole" />
+        <AssociationConnector Association="GalaxySMSModel.FK_RoleClusterRole" />
+        <AssociationConnector Association="GalaxySMSModel.FK_RoleInputDeviceRole" />
+        <AssociationConnector Association="GalaxySMSModel.FK_RoleInputOutputGroupRole" />
+        <AssociationConnector Association="GalaxySMSModel.FK_RoleInputDeviceInputDevice" />
+        <AssociationConnector Association="GalaxySMSModel.FK_RoleInputOutputGroupInputOutputGroup" />
+        <AssociationConnector Association="GalaxySMSModel.FK_RoleAccessPortalPermissionRoleAccessPortal" />
+        <AssociationConnector Association="GalaxySMSModel.FK_RoleClusterPermissionRoleCluster" />
+        <AssociationConnector Association="GalaxySMSModel.FK_RoleInputDevicePermissionRoleInputDevice" />
+        <AssociationConnector Association="GalaxySMSModel.FK_RoleInputOutputGroupPermissionRoleInputOutputGroup" />
+        <EntityTypeShape EntityType="GalaxySMSModel.RoleOutputDevice" Width="1.5" PointX="36.75" PointY="27.375" />
+        <EntityTypeShape EntityType="GalaxySMSModel.RoleOutputDevicePermission" Width="1.5" PointX="18.5" PointY="40" />
+        <AssociationConnector Association="GalaxySMSModel.FK_RoleOutputDevicePermissionPermission" />
+        <AssociationConnector Association="GalaxySMSModel.FK_RoleOutputDeviceRole" />
+        <AssociationConnector Association="GalaxySMSModel.FK_RoleOutputDeviceOutputDevice" />
+        <AssociationConnector Association="GalaxySMSModel.FK_RoleOutputDevicePermissionRoleOutputDevice" />
+        <EntityTypeShape EntityType="GalaxySMSModel.AccessPortalMultiFactorMode" Width="1.5" PointX="36.625" PointY="1" />
+        <AssociationConnector Association="GalaxySMSModel.FK_AccessPortalPropertiesAccessPortalMultiFactorMode" />
+        <EntityTypeShape EntityType="GalaxySMSModel.GalaxyRawActivityEvent" Width="1.5" PointX="36.375" PointY="5.75" />
+        <EntityTypeShape EntityType="GalaxySMSModel.GalaxyActivityEventType" Width="1.5" PointX="36.625" PointY="11.75" />
+        <EntityTypeShape EntityType="GalaxySMSModel.PersonalAccessGroup_PanelLoadData" Width="1.5" PointX="37" PointY="16.75" />
+        <EntityTypeShape EntityType="GalaxySMSModel.GalaxyFlashImage" Width="1.5" PointX="13.75" PointY="79.75" />
+        <AssociationConnector Association="GalaxySMSModel.FK_GalaxyFlashImageGalaxyCpuModel" />
+        <EntityTypeShape EntityType="GalaxySMSModel.GalaxyPanelAlertEvent" Width="1.5" PointX="40.125" PointY="28.75" />
+        <EntityTypeShape EntityType="GalaxySMSModel.GalaxyPanelAlertEventType" Width="1.5" PointX="37.875" PointY="21.625" />
+        <AssociationConnector Association="GalaxySMSModel.FK_GalaxyPanelAlertEventAudioBinaryResource" />
+        <AssociationConnector Association="GalaxySMSModel.FK_GalaxyPanelAlertEventGalaxyPanelAlertEventType" />
+        <AssociationConnector Association="GalaxySMSModel.FK_GalaxyPanelAlertEventNote" />
+        <EntityTypeShape EntityType="GalaxySMSModel.AccessPortalActivityEvent" Width="1.5" PointX="4.875" PointY="202.25" />
+        <AssociationConnector Association="GalaxySMSModel.FK_AccessPortalActivityEventAccessPortal" />
+        <EntityTypeShape EntityType="GalaxySMSModel.GalaxyPanelActivityEvent" Width="1.5" PointX="10.5" PointY="105.625" />
+        <EntityTypeShape EntityType="GalaxySMSModel.InputDeviceActivityEvent" Width="1.5" PointX="25" PointY="72" />
+        <EntityTypeShape EntityType="GalaxySMSModel.OutputDeviceActivityEvent" Width="1.5" PointX="26.375" PointY="54.875" />
+        <AssociationConnector Association="GalaxySMSModel.FK_GalaxyPanelActivityEventGalaxyPanel" />
+        <AssociationConnector Association="GalaxySMSModel.FK_InputDeviceActivityEventInputDevice" />
+        <AssociationConnector Association="GalaxySMSModel.FK_OutputDeviceActivityEventOutputDevice" />
+        <EntityTypeShape EntityType="GalaxySMSModel.CredentialToLoadToCpu" Width="1.5" PointX="14.25" PointY="96" />
+        <AssociationConnector Association="GalaxySMSModel.FK_CredentialToLoadToCpuCredential" />
+        <AssociationConnector Association="GalaxySMSModel.FK_CredentialToLoadToCpu" />
+        <EntityTypeShape EntityType="GalaxySMSModel.CredentialToDeleteFromCpu" Width="1.5" PointX="12.875" PointY="110.25" />
+        <AssociationConnector Association="GalaxySMSModel.FK_CredentialToDeleteFromCpuCpu" />
+        <EntityTypeShape EntityType="GalaxySMSModel.Credential_PanelLoadData" Width="1.5" PointX="40" PointY="0.75" />
+        <EntityTypeShape EntityType="GalaxySMSModel.AccessPortalActivityAlarmEvent" Width="1.5" PointX="34.5" PointY="117" />
+        <EntityTypeShape EntityType="GalaxySMSModel.AccessPortalAlarmEventAcknowledgment" Width="1.5" PointX="36.75" PointY="116.75" />
+        <AssociationConnector Association="GalaxySMSModel.FK_AccessPortalActivityAlarmEvent" />
+        <AssociationConnector Association="GalaxySMSModel.FK_AccessPortalActivityAlarmEventAcknowledgment" />
+        <AssociationConnector Association="GalaxySMSModel.FK_AccessPortalActivityAlarmEventNote" />
+        <AssociationConnector Association="GalaxySMSModel.FK_gcsSettingEntity" />
+        <EntityTypeShape EntityType="GalaxySMSModel.AcknowledgeAlarmPredefinedResponse" Width="1.5" PointX="5.125" PointY="207.25" />
+        <EntityTypeShape EntityType="GalaxySMSModel.GalaxyPanelActivityAlarmEvent" Width="1.5" PointX="13.5" PointY="106.5" />
+        <EntityTypeShape EntityType="GalaxySMSModel.GalaxyPanelAlarmEventAcknowledgment" Width="1.5" PointX="15.75" PointY="106.125" />
+        <EntityTypeShape EntityType="GalaxySMSModel.InputDeviceActivityAlarmEvent" Width="1.5" PointX="28" PointY="72.375" />
+        <EntityTypeShape EntityType="GalaxySMSModel.InputDeviceAlarmEventAcknowledgment" Width="1.5" PointX="30.25" PointY="72" />
+        <AssociationConnector Association="GalaxySMSModel.FK_AcknowledgeAlarmPredefinedResponseEntity" />
+        <AssociationConnector Association="GalaxySMSModel.FK_GalaxyPanelActivityAlarmEvent" />
+        <AssociationConnector Association="GalaxySMSModel.FK_GalaxyPanelActivityAlarmEventAcknowledgment" />
+        <AssociationConnector Association="GalaxySMSModel.FK_InputDeviceActivityAlarmEvent" />
+        <AssociationConnector Association="GalaxySMSModel.FK_InputDeviceActivityAlarmEventAcknowledgment" />
+        <EntityTypeShape EntityType="GalaxySMSModel.CredentialH1030237Bit" Width="1.5" PointX="13" PointY="170.25" />
+        <EntityTypeShape EntityType="GalaxySMSModel.CredentialSoftwareHouse37Bit" Width="1.5" PointX="13" PointY="133.625" />
+        <AssociationConnector Association="GalaxySMSModel.FK_CredentialH1030237BitCredential" />
+        <AssociationConnector Association="GalaxySMSModel.FK_CredentialSoftwareHouse37BitCredential" />
+        <EntityTypeShape EntityType="GalaxySMSModel.GalaxyInterfaceBoardSectionCommand" Width="1.5" PointX="27.125" PointY="76.125" />
+        <EntityTypeShape EntityType="GalaxySMSModel.GalaxyInterfaceBoardSectionCommandAudit" Width="1.5" PointX="29.375" PointY="55.25" />
+        <EntityTypeShape EntityType="GalaxySMSModel.GalaxyInterfaceBoardSectionModeCommand" Width="1.5" PointX="37.125" PointY="40.75" />
+        <AssociationConnector Association="GalaxySMSModel.FK_GalaxyIBSCommandAuditGIBS" />
+        <AssociationConnector Association="GalaxySMSModel.FK_GalaxyIBSCommandAuditCommand" />
+        <AssociationConnector Association="GalaxySMSModel.FK_GalaxyIBSModeCommandCommand" />
+        <AssociationConnector Association="GalaxySMSModel.FK_GalaxyIBSCommandAuditUser" />
+        <AssociationConnector Association="GalaxySMSModel.FK_GalaxyIBSModeCommandMode" />
+        <EntityTypeShape EntityType="GalaxySMSModel.AccessProfileInputOutputGroup" Width="1.5" PointX="11.125" PointY="113.625" />
+        <AssociationConnector Association="GalaxySMSModel.FK_AccessProfileInputOutputGroupInputOutputGroup" />
+        <EntityTypeShape EntityType="GalaxySMSModel.AccessGroupAccessPortalLoadToCpu" Width="1.5" PointX="12.625" PointY="120.875" />
+        <EntityTypeShape EntityType="GalaxySMSModel.AccessGroupLoadToCpu" Width="1.5" PointX="12.625" PointY="118" />
+        <AssociationConnector Association="GalaxySMSModel.FK_AccessGroupAccessPortalLoadToCpuCpu" />
+        <AssociationConnector Association="GalaxySMSModel.FK_AccessGroupLoadToCpuCpu" />
+        <EntityTypeShape EntityType="GalaxySMSModel.AccessPortalLoadToCpu" Width="1.5" PointX="12.625" PointY="124.5" />
+        <AssociationConnector Association="GalaxySMSModel.FK_AccessPortalLoadToCpuGalaxyCpu" />
+        <EntityTypeShape EntityType="GalaxySMSModel.InputDeviceAlertEventType" Width="1.5" PointX="39.5" PointY="16" />
+        <EntityTypeShape EntityType="GalaxySMSModel.InputDeviceEventProperty" Width="1.5" PointX="42.75" PointY="33.75" />
+        <AssociationConnector Association="GalaxySMSModel.FK_InputDeviceEventPropertiesInputDevice" />
+        <AssociationConnector Association="GalaxySMSModel.FK_InputDeviceAlertEventEventType" />
+        <AssociationConnector Association="GalaxySMSModel.FK_InputDeviceEventPropertiesEventType" />
+        <EntityTypeShape EntityType="GalaxySMSModel.GalaxyInputArmingInputOutputGroup" Width="1.5" PointX="11.125" PointY="184.75" />
+        <EntityTypeShape EntityType="GalaxySMSModel.GalaxyInputDeviceTimeSchedule" Width="1.5" PointX="7" PointY="211.125" />
+        <EntityTypeShape EntityType="GalaxySMSModel.InputDeviceLoadToCpu" Width="1.5" PointX="12.625" PointY="127.625" />
+        <AssociationConnector Association="GalaxySMSModel.FK_InputDeviceLoadToCpuGalaxyCpu" />
+        <AssociationConnector Association="GalaxySMSModel.FK_GalaxyInputArmingInputOutputGroupInputOutputGroup" />
+        <AssociationConnector Association="GalaxySMSModel.FK_GalaxyInputDeviceTimeScheduleTimeSchedule" />
+        <EntityTypeShape EntityType="GalaxySMSModel.InputDeviceNote" Width="1.5" PointX="38.875" PointY="36.625" />
+        <AssociationConnector Association="GalaxySMSModel.FK_InputDeviceNoteInputDevice" />
+        <AssociationConnector Association="GalaxySMSModel.FK_InputDeviceNoteNote" />
+        <EntityTypeShape EntityType="GalaxySMSModel.GalaxyOutputDevice" Width="1.5" PointX="26" PointY="80.875" />
+        <EntityTypeShape EntityType="GalaxySMSModel.GalaxyOutputDeviceInputSource" Width="1.5" PointX="28.25" PointY="80.875" />
+        <EntityTypeShape EntityType="GalaxySMSModel.GalaxyOutputDeviceInputSourceAssignment" Width="1.5" PointX="30.5" PointY="81.375" />
+        <EntityTypeShape EntityType="GalaxySMSModel.GalaxyOutputInputSourceMode" Width="1.5" PointX="40.625" PointY="21.75" />
+        <EntityTypeShape EntityType="GalaxySMSModel.GalaxyOutputInputSourceRelationship" Width="1.5" PointX="42.625" PointY="0.75" />
+        <EntityTypeShape EntityType="GalaxySMSModel.GalaxyOutputInputSourceTriggerCondition" Width="1.5" PointX="42.625" PointY="5.75" />
+        <EntityTypeShape EntityType="GalaxySMSModel.GalaxyOutputMode" Width="1.5" PointX="42.625" PointY="10.75" />
+        <AssociationConnector Association="GalaxySMSModel.FK_GalaxyOutputDeviceInputSourceOutputDevice" />
+        <AssociationConnector Association="GalaxySMSModel.FK_GalaxyOutputDeviceOutputDevice" />
+        <AssociationConnector Association="GalaxySMSModel.FK_GalaxyOutputDeviceInputSourceAssignmentInputSource" />
+        <EntityTypeShape EntityType="GalaxySMSModel.OutputCommandGalaxyOutputMode" Width="1.5" PointX="44.875" PointY="40.875" />
+        <AssociationConnector Association="GalaxySMSModel.FK_OutputCommandGalaxyOutputModeMode" />
+        <AssociationConnector Association="GalaxySMSModel.FK_OutputCommandGalaxyOutputModeCommand" />
+        <EntityTypeShape EntityType="GalaxySMSModel.GalaxyOutputDeviceInputSourceInputOutputGroup" Width="1.5" PointX="30.5" PointY="85.5" />
+        <EntityTypeShape EntityType="GalaxySMSModel.OutputDeviceNote" Width="1.5" PointX="43.875" PointY="45.25" />
+        <AssociationConnector Association="GalaxySMSModel.FK_GalaxyOutputDeviceInputSourceInputOutputGroupSource" />
+        <AssociationConnector Association="GalaxySMSModel.FK_OutputDeviceNoteNote" />
+        <AssociationConnector Association="GalaxySMSModel.FK_OutputDeviceNoteOutputDevice" />
+        <EntityTypeShape EntityType="GalaxySMSModel.GalaxyCpuConnection" Width="1.5" PointX="12.875" PointY="189.375" />
+        <EntityTypeShape EntityType="GalaxySMSModel.gcsLargeObjectStorage" Width="1.5" PointX="4.875" PointY="211" />
+        <EntityTypeShape EntityType="GalaxySMSModel.OutputDeviceLoadToCpu" Width="1.5" PointX="12.875" PointY="180.5" />
+        <AssociationConnector Association="GalaxySMSModel.FK_GalaxyCpuConnectionGalaxyCpu" />
+        <AssociationConnector Association="GalaxySMSModel.FK_OutputDeviceLoadToCpuGalaxyCpu" />
+        <AssociationConnector Association="GalaxySMSModel.FK_gcsFileStreamStorageEntity" />
+        <EntityTypeShape EntityType="GalaxySMSModel.MercScpIdReport" Width="1.5" PointX="43.375" PointY="15.75" />
+        <EntityTypeShape EntityType="GalaxySMSModel.MercScpType" Width="1.5" PointX="42.375" PointY="26.75" />
+        <EntityTypeShape EntityType="GalaxySMSModel.MercSioType" Width="1.5" PointX="44.375" PointY="24.75" />
+        <EntityTypeShape EntityType="GalaxySMSModel.gcsEntityCount" Width="1.5" PointX="4.375" PointY="215.5" />
+        <EntityTypeShape EntityType="GalaxySMSModel.PersonPhotoScaled" Width="1.5" PointX="43.5" PointY="54.25" />
+        <AssociationConnector Association="GalaxySMSModel.FK_gcsEntityCountEntity" />
+        <AssociationConnector Association="GalaxySMSModel.FK_PersonPhotoScaledPersonPhoto" />
+        <EntityTypeShape EntityType="GalaxySMSModel.PersonLastUsage" Width="1.5" PointX="41.25" PointY="76.375" />
+        <EntityTypeShape EntityType="GalaxySMSModel.UploadedFile" Width="1.5" PointX="44.375" PointY="28.75" />
+        <AssociationConnector Association="GalaxySMSModel.FK_PersonLastUsagePerson" />
+        <EntityTypeShape EntityType="GalaxySMSModel.AccessPortalCommandChoice" Width="1.5" PointX="14.125" PointY="63.125" />
+        <AssociationConnector Association="GalaxySMSModel.FK_AccessPortalCommandChoiceAccessPortal" />
+        <AssociationConnector Association="GalaxySMSModel.FK_AccessPortalCommandChoiceDisplayResourceKey" />
+        <EntityTypeShape EntityType="GalaxySMSModel.BackgroundJob" Width="1.5" PointX="45.375" PointY="1.5" />
+        <EntityTypeShape EntityType="GalaxySMSModel.BackgroundJobData" Width="1.5" PointX="47.625" PointY="1" />
+        <EntityTypeShape EntityType="GalaxySMSModel.BackgroundJobStateChange" Width="1.5" PointX="47.625" PointY="3.375" />
+        <AssociationConnector Association="GalaxySMSModel.FK_BackgroundJobJobData" />
+        <AssociationConnector Association="GalaxySMSModel.FK_BackgroundJobStateChange" />
+        <EntityTypeShape EntityType="GalaxySMSModel.gcsUserEntityRole" Width="1.5" PointX="4.875" PointY="219.875" />
+        <EntityTypeShape EntityType="GalaxySMSModel.gcsUserGroup" Width="1.5" PointX="17.25" PointY="65.375" />
+        <EntityTypeShape EntityType="GalaxySMSModel.gcsUserGroupEntity" Width="1.5" PointX="19.5" PointY="65.375" />
+        <EntityTypeShape EntityType="GalaxySMSModel.gcsUserGroupEntityRole" Width="1.5" PointX="4.875" PointY="223.375" />
+        <EntityTypeShape EntityType="GalaxySMSModel.gcsUserUserGroup" Width="1.5" PointX="19.5" PointY="61.375" />
+        <AssociationConnector Association="GalaxySMSModel.FK_UserEntityRoleRole" />
+        <AssociationConnector Association="GalaxySMSModel.FK_UserGroupEntityRoleRole" />
+        <AssociationConnector Association="GalaxySMSModel.FK_UserUserGroupUser" />
+        <AssociationConnector Association="GalaxySMSModel.FK_UserGroupEntityUserGroup" />
+        <AssociationConnector Association="GalaxySMSModel.FK_UserUserGroupUserGroup" />
+        <EntityTypeShape EntityType="GalaxySMSModel.RoleFilter" Width="1.5" PointX="4.875" PointY="227.625" />
+        <AssociationConnector Association="GalaxySMSModel.FK_RoleFiltersRole" />
+        <EntityTypeShape EntityType="GalaxySMSModel.RoleRegion" Width="1.5" PointX="18.875" PointY="0.875" />
+        <EntityTypeShape EntityType="GalaxySMSModel.RoleRegionPermission" Width="1.5" PointX="10.5" PointY="1.25" />
+        <EntityTypeShape EntityType="GalaxySMSModel.RoleSite" Width="1.5" PointX="5.5" PointY="0.75" />
+        <EntityTypeShape EntityType="GalaxySMSModel.RoleSitePermission" Width="1.5" PointX="13.5" PointY="1.25" />
+        <AssociationConnector Association="GalaxySMSModel.FK_RoleRegionPermissionPermission" />
+        <AssociationConnector Association="GalaxySMSModel.FK_RoleSitePermissionPermission" />
+        <AssociationConnector Association="GalaxySMSModel.FK_RoleRegionRole" />
+        <AssociationConnector Association="GalaxySMSModel.FK_RoleSiteRole" />
+        <AssociationConnector Association="GalaxySMSModel.FK_RoleRegionRegion" />
+        <AssociationConnector Association="GalaxySMSModel.FK_RoleRegionPermissionRoleRegion" />
+        <AssociationConnector Association="GalaxySMSModel.FK_RoleSitePermissionRoleSite" />
+        <AssociationConnector Association="GalaxySMSModel.FK_RoleSiteSite" />
+        <EntityTypeShape EntityType="GalaxySMSModel.AccessPortalLastUsage" Width="1.5" PointX="4.5" PointY="237" />
+        <EntityTypeShape EntityType="GalaxySMSModel.MercScp" Width="1.5" PointX="12.75" PointY="197.875" />
+        <EntityTypeShape EntityType="GalaxySMSModel.MercScpGroup" Width="1.5" PointX="10.5" PointY="0.75" />
+        <EntityTypeShape EntityType="GalaxySMSModel.MercScpIdReport1" Width="1.5" PointX="45.375" PointY="11.5" />
+        <EntityTypeShape EntityType="GalaxySMSModel.MercScpType1" Width="1.5" PointX="45.375" PointY="20.5" />
+        <EntityTypeShape EntityType="GalaxySMSModel.MercSioType1" Width="1.5" PointX="45.375" PointY="37.5" />
+        <AssociationConnector Association="GalaxySMSModel.FK_AccessPortalLastUsageAccessPortal" />
+        <AssociationConnector Association="GalaxySMSModel.FK_GcsMercScpGroupEntity" />
+        <AssociationConnector Association="GalaxySMSModel.FK_MercScpMercScpGroup" />
+        <AssociationConnector Association="GalaxySMSModel.FK_MercScpGroupSite" />
+        <EntityTypeShape EntityType="GalaxySMSModel.RoleMercScpGroup" Width="1.5" PointX="12.75" PointY="1.125" />
+        <EntityTypeShape EntityType="GalaxySMSModel.RoleMercScpGroupPermission" Width="1.5" PointX="15" PointY="0.75" />
+        <AssociationConnector Association="GalaxySMSModel.FK_RoleMercScpGroupPermissionPermission" />
+        <AssociationConnector Association="GalaxySMSModel.FK_RoleMercScpGroupRole" />
+        <AssociationConnector Association="GalaxySMSModel.FK_RoleMercScpGroupMercScpGroup" />
+        <AssociationConnector Association="GalaxySMSModel.FK_RoleMercScpGroupPermissionRoleMercScpGroup" />
+        <EntityTypeShape EntityType="GalaxySMSModel.MercScpStatu" Width="1.5" PointX="15" PointY="201.375" />
+        <AssociationConnector Association="GalaxySMSModel.FK_MercScpStatusMercScp" />
+        <EntityTypeShape EntityType="GalaxySMSModel.ActivityEvent" Width="1.5" PointX="46.375" PointY="27.25" />
+        <EntityTypeShape EntityType="GalaxySMSModel.ActivityEventAcknowledgement" Width="1.5" PointX="48.625" PointY="29.5" />
+        <AssociationConnector Association="GalaxySMSModel.FK_ActivityEventAcknowledgementActivityEvent" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

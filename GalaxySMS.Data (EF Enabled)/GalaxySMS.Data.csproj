@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8F7B6F67-2933-4B98-9BC5-56138F7E255B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GalaxySMS.Data</RootNamespace>
+    <AssemblyName>GalaxySMS.Data</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Desaware.MachineLicense40, Version=2.0.0.0, Culture=neutral, PublicKeyToken=c8956dcc7a600871, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Haystack\_Resources-For-WPF\VS-2012\Desaware.MachineLicense40.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.0.2\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.0.2\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="PDSA.Common, Version=5.0.7.0, Culture=neutral, PublicKeyToken=e9345238070b4f6f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Haystack\_Resources-For-WPF\VS-2012\PDSA.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="PDSA.DataLayer, Version=5.0.7.0, Culture=neutral, PublicKeyToken=e9345238070b4f6f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Haystack\_Resources-For-WPF\VS-2012\PDSA.DataLayer.dll</HintPath>
+    </Reference>
+    <Reference Include="PDSA.DataLayer.DataClasses, Version=5.0.7.0, Culture=neutral, PublicKeyToken=e9345238070b4f6f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Haystack\_Resources-For-WPF\VS-2012\PDSA.DataLayer.DataClasses.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Data Repositories\GcsEntityApplicationRepository.cs" />
+    <Compile Include="Data Repositories\GcsEntityRepository.cs" />
+    <Compile Include="Data Repositories\GcsApplicationRepository.cs" />
+    <Compile Include="Data Repositories\GcsLanguageRepository.cs" />
+    <Compile Include="Data Repositories\GcsRoleRepository.cs" />
+    <Compile Include="Data Repositories\GcsApplicationSettingRepository.cs" />
+    <Compile Include="Data Repositories\GcsUserEntityRepository.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Data Repositories\GcsUserOldPasswordRepository.cs" />
+    <Compile Include="Data Repositories\GcsUserRoleRepository.cs" />
+    <Compile Include="Data Repositories\GcsUserApplicationEntityRepository.cs" />
+    <Compile Include="Data Repositories\GcsUserSettingRepository.cs" />
+    <Compile Include="Data Repositories\GcsUserRequirementsRepository.cs" />
+    <Compile Include="Data Repositories\GcsUserRepository.cs" />
+    <Compile Include="Data Repositories\PanelDataPacketLogRepository.cs" />
+    <Compile Include="GalaxySMSDatabaseManager.cs" />
+    <Compile Include="GalaxySMSDBContextBase.cs" />
+    <Compile Include="GalaxySMSContext.cs" />
+    <Compile Include="Data Repositories\AccountRepository.cs" />
+    <Compile Include="DataRepositoryBase.cs" />
+    <Compile Include="DataRepositoryFactory.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GalaxySMS.Business.Entities\GalaxySMS.Business.Entities.csproj">
+      <Project>{98af1bad-593d-4e08-8d0d-50dcea4e7a95}</Project>
+      <Name>GalaxySMS.Business.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GalaxySMS.Data.Contracts\GalaxySMS.Data.Contracts.csproj">
+      <Project>{df1387d0-e630-4f05-9b65-622f9dc8a12f}</Project>
+      <Name>GalaxySMS.Data.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GalaxySMS.Data.PDSA\GalaxySMS.Data.PDSA.csproj">
+      <Project>{ae0f1b11-77ee-47e3-8bc8-4f47d99ec755}</Project>
+      <Name>GalaxySMS.Data.PDSA</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GCS.Framework\GCS.Core.Common\GCS.Core.Common.csproj">
+      <Project>{106abc97-2143-4722-a2b0-cbe597d59f91}</Project>
+      <Name>GCS.Core.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GCS.Framework\GCS.Core.Contracts\GCS.Core.Common.Contracts.csproj">
+      <Project>{e3820436-5d37-4ccb-87ca-f50420041668}</Project>
+      <Name>GCS.Core.Common.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GCS.Framework\GCS.Framework.Security\GCS.Framework.Security.csproj">
+      <Project>{4b4444b5-5de7-4fff-b355-f7dc8662f2a1}</Project>
+      <Name>GCS.Framework.Security</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

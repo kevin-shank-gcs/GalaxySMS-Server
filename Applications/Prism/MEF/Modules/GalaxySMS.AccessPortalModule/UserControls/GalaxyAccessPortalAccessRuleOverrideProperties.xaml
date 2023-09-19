@@ -1,0 +1,93 @@
+﻿<core:UserControlViewBase x:Class="GalaxySMS.AccessPortal.UserControls.GalaxyAccessPortalAccessRuleOverrideProperties"
+                          xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                          xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                          xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                          xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                          xmlns:core="http://www.galaxysys.com/GCS/Core"
+                          xmlns:prism="http://prismlibrary.com/"
+                          xmlns:prismInfra="clr-namespace:GalaxySMS.Prism.Infrastructure;assembly=GalaxySMS.Prism.Infrastructure"
+                          xmlns:resx="clr-namespace:GalaxySMS.AccessPortal.Properties"
+                          xmlns:sharedResources="clr-namespace:GalaxySMS.Resources;assembly=GalaxySMS.Resources"
+                          xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+                          xmlns:converters="clr-namespace:GCS.Core.Common.UI.Converters;assembly=GCS.Core.Common.UI"
+                          xmlns:ui="clr-namespace:GalaxySMS.Client.UI;assembly=GalaxySMS.Client.UI"
+                          xmlns:ui1="clr-namespace:GCS.Core.Common.UI;assembly=GCS.Core.Common.UI"
+                          xmlns:local="clr-namespace:GalaxySMS.AccessPortal.UserControls"
+                          mc:Ignorable="d"
+                          d:DesignHeight="300" d:DesignWidth="300"
+                          FlowDirection="{Binding FlowDirection}">
+    <core:UserControlViewBase.Resources>
+
+    </core:UserControlViewBase.Resources>
+ 
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <telerik:RadExpander Margin="5" IsExpanded="{Binding IsAccessRuleOverrideControlExpanded}"  ExpandDirection="Down">
+                <telerik:RadExpander.Header>
+                    <Border Style="{StaticResource HeaderBorder}">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Margin="8"
+                               Style="{StaticResource Heading2Left}"
+                               Text="{x:Static sharedResources:Resources.AccessPortalProperties_AccessRuleOverride_HeaderText}" />
+                        </StackPanel>
+                    </Border>
+                </telerik:RadExpander.Header>
+                <StackPanel Orientation="Vertical" Margin="3">
+                <StackPanel Orientation="Vertical">
+                    <TextBlock
+                        Text="{x:Static sharedResources:Resources.AccessPortalProperties_DeferToServer_Text}"
+                        Style="{StaticResource DataEntryControlTitle}" />
+                    <telerik:RadComboBox ItemsSource="{Binding CommonEditingData.DeferToServerBehaviors}"
+                                         SelectedValue="{Binding AccessPortal.Properties.AccessPortalDeferToServerBehaviorUid}"
+                                         SelectedValuePath="AccessPortalDeferToServerBehaviorUid"
+                                         ToolTip="{x:Static sharedResources:Resources.AccessPortalProperties_DeferToServer_ToolTip}">
+                        <telerik:RadComboBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <!-- <Image
+                                                MaxHeight="32"
+                                                Width="Auto"
+                                                Margin="5"
+                                                Source="{Binding gcsBinaryResource.BinaryResource}" />-->
+                                    <TextBlock
+                                        VerticalAlignment="Center"
+                                        Text="{Binding Display}" />
+                                </StackPanel>
+                            </DataTemplate>
+                        </telerik:RadComboBox.ItemTemplate>
+                    </telerik:RadComboBox>
+
+                </StackPanel>
+
+                <StackPanel Margin="0,5,0,0"  Orientation="Vertical">
+                    <TextBlock
+                        Text="{x:Static sharedResources:Resources.AccessPortalProperties_NoReplyFromServer_Text}"
+                        Style="{StaticResource DataEntryControlTitle}" />
+                    <telerik:RadComboBox ItemsSource="{Binding CommonEditingData.NoServerReplyBehaviors}"
+                                         SelectedValue="{Binding AccessPortal.Properties.AccessPortalNoServerReplyBehaviorUid}"
+                                         SelectedValuePath="AccessPortalNoServerReplyBehaviorUid"
+                                         ToolTip="{x:Static sharedResources:Resources.AccessPortalProperties_NoReplyFromServer_ToolTip}">
+                        <telerik:RadComboBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <!-- <Image
+                                                MaxHeight="32"
+                                                Width="Auto"
+                                                Margin="5"
+                                                Source="{Binding gcsBinaryResource.BinaryResource}" />-->
+                                    <TextBlock
+                                        VerticalAlignment="Center"
+                                        Text="{Binding Display}" />
+                                </StackPanel>
+                            </DataTemplate>
+                        </telerik:RadComboBox.ItemTemplate>
+                    </telerik:RadComboBox>
+                </StackPanel>
+            </StackPanel>
+        </telerik:RadExpander>
+    </Grid>
+</core:UserControlViewBase>
+

@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>41481432-0fca-479a-b470-850a66398f2d</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>GCS.Framework.Sms.Shared</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)GcsSmsHandler.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IGcsSmsHandler.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)TwilioSettings.cs" />
+  </ItemGroup>
+</Project>

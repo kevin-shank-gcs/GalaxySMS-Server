@@ -1,0 +1,2223 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="GalaxyConnectionDebugViewColumnHeader_Board" xml:space="preserve">
+    <value>Board</value>
+  </data>
+  <data name="GalaxyConnectionDebugViewColumnHeader_Cluster" xml:space="preserve">
+    <value>Cluster</value>
+  </data>
+  <data name="GalaxyConnectionDebugViewColumnHeader_Cpu" xml:space="preserve">
+    <value>Cpu</value>
+  </data>
+  <data name="GalaxyConnectionDebugViewColumnHeader_Data" xml:space="preserve">
+    <value>Data</value>
+  </data>
+  <data name="GalaxyConnectionDebugViewColumnHeader_DateTime" xml:space="preserve">
+    <value>Date/Time</value>
+  </data>
+  <data name="GalaxyConnectionDebugViewColumnHeader_Direction" xml:space="preserve">
+    <value>Direction</value>
+  </data>
+  <data name="GalaxyConnectionDebugViewColumnHeader_Distribution" xml:space="preserve">
+    <value>Dist</value>
+  </data>
+  <data name="GalaxyConnectionDebugViewColumnHeader_Length" xml:space="preserve">
+    <value>Length</value>
+  </data>
+  <data name="GalaxyConnectionDebugViewColumnHeader_Node" xml:space="preserve">
+    <value>Node</value>
+  </data>
+  <data name="GalaxyConnectionDebugViewColumnHeader_Panel" xml:space="preserve">
+    <value>Panel</value>
+  </data>
+  <data name="GalaxyConnectionDebugViewColumnHeader_Section" xml:space="preserve">
+    <value>Section</value>
+  </data>
+  <data name="GalaxyConnectionDebugViewColumnHeader_SectionValue" xml:space="preserve">
+    <value>SectionValue</value>
+  </data>
+  <data name="GalaxyConnectionDebugViewColumnHeader_Sequence" xml:space="preserve">
+    <value>Sequence</value>
+  </data>
+  <data name="GalaxyConnectionDebugViewColumnHeader_Type" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="GalaxyConnectionDebugViewColumnHeader_When" xml:space="preserve">
+    <value>When</value>
+  </data>
+  <data name="GalaxyConnectionDebugView_Board" xml:space="preserve">
+    <value>Board:</value>
+  </data>
+  <data name="GalaxyConnectionDebugView_Combined" xml:space="preserve">
+    <value>Combined</value>
+  </data>
+  <data name="GalaxyConnectionDebugView_CombinedListLimit" xml:space="preserve">
+    <value>Combined List Limit:</value>
+  </data>
+  <data name="GalaxyConnectionDebugView_CombineTransmitAndReceive" xml:space="preserve">
+    <value>Combine Transmit and Receive</value>
+  </data>
+  <data name="GalaxyConnectionDebugView_Data" xml:space="preserve">
+    <value>Data:</value>
+  </data>
+  <data name="GalaxyConnectionDebugView_DisplayHeartbeats" xml:space="preserve">
+    <value>Display Heartbeats</value>
+  </data>
+  <data name="GalaxyConnectionDebugView_Node" xml:space="preserve">
+    <value>Node:</value>
+  </data>
+  <data name="GalaxyConnectionDebugView_ReceiveData" xml:space="preserve">
+    <value>Receive Data</value>
+  </data>
+  <data name="GalaxyConnectionDebugView_ReceiveListLimit" xml:space="preserve">
+    <value>Receive List Limit:</value>
+  </data>
+  <data name="GalaxyConnectionDebugView_Section" xml:space="preserve">
+    <value>Section:</value>
+  </data>
+  <data name="GalaxyConnectionDebugView_SendData" xml:space="preserve">
+    <value>Send Data</value>
+  </data>
+  <data name="GalaxyConnectionDebugView_TransmitData" xml:space="preserve">
+    <value>Transmit Data</value>
+  </data>
+  <data name="GalaxyConnectionDebugView_TransmitListLimit" xml:space="preserve">
+    <value>Transmit List Limit:</value>
+  </data>
+  <data name="GalaxyPanelCommunicationView_CurrentStatus" xml:space="preserve">
+    <value>Current Status</value>
+  </data>
+  <data name="GalaxyPanelCommunicationView_RefreshConnections" xml:space="preserve">
+    <value>Refresh Connections</value>
+  </data>
+  <data name="GalaxyPanelCommunicationView_Running" xml:space="preserve">
+    <value>Running</value>
+  </data>
+  <data name="GalaxyPanelCommunicationView_Start" xml:space="preserve">
+    <value>Start</value>
+  </data>
+  <data name="GalaxyPanelCommunicationView_Stop" xml:space="preserve">
+    <value>Stop</value>
+  </data>
+  <data name="GalaxyPanelCommunicationView_Stopped" xml:space="preserve">
+    <value>Stopped</value>
+  </data>
+  <data name="GalaxyPanelCommunicationView_Title" xml:space="preserve">
+    <value>Galaxy Panel Communication Service</value>
+  </data>
+  <data name="UseAsynchronousServiceCalls" xml:space="preserve">
+    <value>Use Asynchronous Service Calls</value>
+  </data>
+  <data name="GalaxyPanelCommunicationViewConnectionsColumnHeader_BufferedLogCount" xml:space="preserve">
+    <value>Buffered Logs</value>
+  </data>
+  <data name="GalaxyPanelCommunicationViewConnectionsColumnHeader_CardCodeFormat" xml:space="preserve">
+    <value>Panel Card Size</value>
+  </data>
+  <data name="GalaxyPanelCommunicationViewConnectionsColumnHeader_CardCount" xml:space="preserve">
+    <value>Card Count</value>
+  </data>
+  <data name="GalaxyPanelCommunicationViewConnectionsColumnHeader_ClusterNumber" xml:space="preserve">
+    <value>Cluster #</value>
+  </data>
+  <data name="GalaxyPanelCommunicationViewConnectionsColumnHeader_CpuModel" xml:space="preserve">
+    <value>CpuModel</value>
+  </data>
+  <data name="GalaxyPanelCommunicationViewConnectionsColumnHeader_CpuNumber" xml:space="preserve">
+    <value>Cpu #</value>
+  </data>
+  <data name="GalaxyPanelCommunicationViewConnectionsColumnHeader_CreatedDateTime" xml:space="preserve">
+    <value>Created Date/Time</value>
+  </data>
+  <data name="GalaxyPanelCommunicationViewConnectionsColumnHeader_Debug" xml:space="preserve">
+    <value>Debug</value>
+  </data>
+  <data name="GalaxyPanelCommunicationViewConnectionsColumnHeader_Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="GalaxyPanelCommunicationViewConnectionsColumnHeader_InstanceGuid" xml:space="preserve">
+    <value>InstanceGuid</value>
+  </data>
+  <data name="GalaxyPanelCommunicationViewConnectionsColumnHeader_IsAuthenticated" xml:space="preserve">
+    <value>Is Authenticated</value>
+  </data>
+  <data name="GalaxyPanelCommunicationViewConnectionsColumnHeader_IsConnected" xml:space="preserve">
+    <value>Is Connected</value>
+  </data>
+  <data name="GalaxyPanelCommunicationViewConnectionsColumnHeader_LocalEndpoint" xml:space="preserve">
+    <value>Local Endpoint</value>
+  </data>
+  <data name="GalaxyPanelCommunicationViewConnectionsColumnHeader_LoggingEnabled" xml:space="preserve">
+    <value>Logging Enabled</value>
+  </data>
+  <data name="GalaxyPanelCommunicationViewConnectionsColumnHeader_PanelNumber" xml:space="preserve">
+    <value>Panel #</value>
+  </data>
+  <data name="GalaxyPanelCommunicationViewConnectionsColumnHeader_RemoteEndpoint" xml:space="preserve">
+    <value>Remote Endpoint</value>
+  </data>
+  <data name="GalaxyPanelCommunicationViewConnectionsColumnHeader_SerialNumber" xml:space="preserve">
+    <value>Serial #</value>
+  </data>
+  <data name="GalaxyPanelCommunicationViewConnectionsColumnHeader_SocketHandle" xml:space="preserve">
+    <value>Socket Handle</value>
+  </data>
+  <data name="GalaxyPanelCommunicationViewConnectionsColumnHeader_UniqueId" xml:space="preserve">
+    <value>Unique ID</value>
+  </data>
+  <data name="GalaxyPanelCommunicationViewConnectionsColumnHeader_Version" xml:space="preserve">
+    <value>Version</value>
+  </data>
+  <data name="GalaxyPanelCommunicationViewConnectionsColumn_DebugButton" xml:space="preserve">
+    <value>Debug</value>
+  </data>
+  <data name="ThemeDisplayName_Expression_Dark" xml:space="preserve">
+    <value>Expression Dark</value>
+  </data>
+  <data name="ThemeDisplayName_Office2013" xml:space="preserve">
+    <value>Office 2013</value>
+  </data>
+  <data name="ThemeDisplayName_Office_Black" xml:space="preserve">
+    <value>Office Black</value>
+  </data>
+  <data name="ThemeDisplayName_Office_Blue" xml:space="preserve">
+    <value>Office Blue</value>
+  </data>
+  <data name="ThemeDisplayName_Office_Silver" xml:space="preserve">
+    <value>Office Silver</value>
+  </data>
+  <data name="ThemeDisplayName_Summer" xml:space="preserve">
+    <value>Summer</value>
+  </data>
+  <data name="ThemeDisplayName_Transparent" xml:space="preserve">
+    <value>Transparent</value>
+  </data>
+  <data name="ThemeDisplayName_Vista" xml:space="preserve">
+    <value>Vista</value>
+  </data>
+  <data name="ThemeDisplayName_Windows7" xml:space="preserve">
+    <value>Windows 7</value>
+  </data>
+  <data name="ThemeDisplayName_Windows8" xml:space="preserve">
+    <value>Windows 8</value>
+  </data>
+  <data name="ThemeDisplayName_Windows8Touch" xml:space="preserve">
+    <value>Windows 8 Touch</value>
+  </data>
+  <data name="SelectTheme" xml:space="preserve">
+    <value>Select Theme:</value>
+  </data>
+  <data name="MaintainEntities_Title" xml:space="preserve">
+    <value>Maintain Entities</value>
+  </data>
+  <data name="Common_ConfirmDelete" xml:space="preserve">
+    <value>Confirm Delete</value>
+  </data>
+  <data name="MaintainEntities_AreYouSureDeleteEntity" xml:space="preserve">
+    <value>Are you sure you want to delete this entity '{0}'?</value>
+  </data>
+  <data name="MaintainEntities_CannotDeleteEntityIsReferenced" xml:space="preserve">
+    <value>Cannot delete this entity. It is currently being referenced.</value>
+  </data>
+  <data name="Common_Error" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="Common_AddNew" xml:space="preserve">
+    <value>Add New</value>
+  </data>
+  <data name="Common_Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="Common_Edit" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="Common_Save" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="EditEntityView_ApplicationTitle" xml:space="preserve">
+    <value>Application</value>
+  </data>
+  <data name="EditEntityView_EntityDescriptionTitle" xml:space="preserve">
+    <value>Description:</value>
+  </data>
+  <data name="EditEntityView_EntityIsActive" xml:space="preserve">
+    <value>Is Active</value>
+  </data>
+  <data name="EditEntityView_EntityIsDefault" xml:space="preserve">
+    <value>Is Default</value>
+  </data>
+  <data name="EditEntityView_EntityKeyTitle" xml:space="preserve">
+    <value>Key:</value>
+  </data>
+  <data name="EditEntityView_EntityNameTitle" xml:space="preserve">
+    <value>Name:</value>
+  </data>
+  <data name="MaintainEntities_EntityDescription" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="MaintainEntities_EntityKey" xml:space="preserve">
+    <value>Entity Key</value>
+  </data>
+  <data name="MaintainEntities_EntityName" xml:space="preserve">
+    <value>Entity Name</value>
+  </data>
+  <data name="MaintainEntities_Actions" xml:space="preserve">
+    <value>Actions</value>
+  </data>
+  <data name="CannotSave_DuplicateDatabaseItem" xml:space="preserve">
+    <value>Cannot save this item because it is not unique.</value>
+  </data>
+  <data name="EditLanguageView_ApplicationTitle" xml:space="preserve">
+    <value>Application</value>
+  </data>
+  <data name="EditLanguageView_CultureNameTitle" xml:space="preserve">
+    <value>Culture Name:</value>
+  </data>
+  <data name="EditLanguageView_LanguageDescriptionTitle" xml:space="preserve">
+    <value>Description:</value>
+  </data>
+  <data name="EditLanguageView_LanguageFlagImageSelectTitle" xml:space="preserve">
+    <value>Select Image</value>
+  </data>
+  <data name="EditLanguageView_LanguageFlagImageTitle" xml:space="preserve">
+    <value>Image</value>
+  </data>
+  <data name="EditLanguageView_LanguageIsActive" xml:space="preserve">
+    <value>Is Active</value>
+  </data>
+  <data name="EditLanguageView_LanguageIsDefault" xml:space="preserve">
+    <value>Is Default</value>
+  </data>
+  <data name="EditLanguageView_LanguageIsDisplay" xml:space="preserve">
+    <value>Is Display</value>
+  </data>
+  <data name="EditLanguageView_LanguageNameTitle" xml:space="preserve">
+    <value>Language Name:</value>
+  </data>
+  <data name="EditLanguageView_LanguageNotesTitle" xml:space="preserve">
+    <value>Notes:</value>
+  </data>
+  <data name="MaintainLanguages_Actions" xml:space="preserve">
+    <value>Actions</value>
+  </data>
+  <data name="MaintainLanguages_AreYouSureDeleteLanguage" xml:space="preserve">
+    <value>Are you sure you want to delete this language '{0}'?</value>
+  </data>
+  <data name="MaintainLanguages_CannotDeleteLanguageIsReferenced" xml:space="preserve">
+    <value>Cannot delete this language. It is currently being referenced.</value>
+  </data>
+  <data name="MaintainLanguages_CultureName" xml:space="preserve">
+    <value>Culture</value>
+  </data>
+  <data name="MaintainLanguages_FlagImage" xml:space="preserve">
+    <value>Image</value>
+  </data>
+  <data name="MaintainLanguages_IsActive" xml:space="preserve">
+    <value>Is Active</value>
+  </data>
+  <data name="MaintainLanguages_IsDefault" xml:space="preserve">
+    <value>Is Default</value>
+  </data>
+  <data name="MaintainLanguages_LanguageDescription" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="MaintainLanguages_LanguageName" xml:space="preserve">
+    <value>Language Name</value>
+  </data>
+  <data name="MaintainLanguages_Notes" xml:space="preserve">
+    <value>Notes</value>
+  </data>
+  <data name="MaintainLanguages_Title" xml:space="preserve">
+    <value>Maintain Languages</value>
+  </data>
+  <data name="Common_Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="Common_AddNewToolTip" xml:space="preserve">
+    <value>Add new item</value>
+  </data>
+  <data name="Common_CancelToolTip" xml:space="preserve">
+    <value>Cancel changes</value>
+  </data>
+  <data name="Common_DeleteToolTip" xml:space="preserve">
+    <value>Delete this item</value>
+  </data>
+  <data name="Common_EditToolTip" xml:space="preserve">
+    <value>Edit this item</value>
+  </data>
+  <data name="Common_SaveToolTip" xml:space="preserve">
+    <value>Save this item</value>
+  </data>
+  <data name="MaintainApplications_AreYouSureDeleteApplication" xml:space="preserve">
+    <value>Are you sure you want to delete this application '{0}'?</value>
+  </data>
+  <data name="MaintainApplications_CannotDeleteApplicationIsReferenced" xml:space="preserve">
+    <value>Cannot delete this application. It is currently being referenced.</value>
+  </data>
+  <data name="MaintainApplications_Title" xml:space="preserve">
+    <value>Maintain Applications</value>
+  </data>
+  <data name="MaintainApplications_Actions" xml:space="preserve">
+    <value>Actions</value>
+  </data>
+  <data name="MaintainApplications_ApplicationDescription" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="MaintainApplications_ApplicationName" xml:space="preserve">
+    <value>Application Name</value>
+  </data>
+  <data name="EditApplicationView_ApplicationAdministatorRole" xml:space="preserve">
+    <value>Administrator Role</value>
+  </data>
+  <data name="EditApplicationView_ApplicationDescriptionTitle" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="EditApplicationView_ApplicationNameTitle" xml:space="preserve">
+    <value>Application Name</value>
+  </data>
+  <data name="EditApplicationView_DefaultLanguageTitle" xml:space="preserve">
+    <value>Default Language</value>
+  </data>
+  <data name="MaintainRoles_Actions" xml:space="preserve">
+    <value>Actions</value>
+  </data>
+  <data name="MaintainRoles_AreYouSureDeleteRole" xml:space="preserve">
+    <value>Are you sure you want to delete this role '{0}'?</value>
+  </data>
+  <data name="MaintainRoles_CannotDeleteRoleIsReferenced" xml:space="preserve">
+    <value>Cannot delete this role. It is currently being referenced.</value>
+  </data>
+  <data name="MaintainRoles_RoleDescription" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="MaintainRoles_RoleName" xml:space="preserve">
+    <value>Role Name</value>
+  </data>
+  <data name="MaintainRoles_Title" xml:space="preserve">
+    <value>Maintain Roles</value>
+  </data>
+  <data name="EditRoleView_IsActiveTitle" xml:space="preserve">
+    <value>Is Active</value>
+  </data>
+  <data name="EditRoleView_IsDefaultTitle" xml:space="preserve">
+    <value>Is Default Role</value>
+  </data>
+  <data name="EditRoleView_RoleDescriptionTitle" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="EditRoleView_RoleNameTitle" xml:space="preserve">
+    <value>Role Name</value>
+  </data>
+  <data name="EditRoleView_SelectEntityTitle" xml:space="preserve">
+    <value>Select Entity</value>
+  </data>
+  <data name="MaintainRolesView_Application" xml:space="preserve">
+    <value>Application</value>
+  </data>
+  <data name="EditRoleView_RoleIsActive" xml:space="preserve">
+    <value>Is Active</value>
+  </data>
+  <data name="EditRoleView_RoleIsDefaultRole" xml:space="preserve">
+    <value>Is Default Role</value>
+  </data>
+  <data name="MaintainRoles_EntityName" xml:space="preserve">
+    <value>Entity</value>
+  </data>
+  <data name="EditApplicationView_RolesTitle" xml:space="preserve">
+    <value>Application Roles</value>
+  </data>
+  <data name="EditApplicationView_UsersTitle" xml:space="preserve">
+    <value>Application Users</value>
+  </data>
+  <data name="MaintainUsers_Title" xml:space="preserve">
+    <value>Maintain Users</value>
+  </data>
+  <data name="MaintainUsers_Actions" xml:space="preserve">
+    <value>Actions</value>
+  </data>
+  <data name="MaintainUsers_AreYouSureDeleteUser" xml:space="preserve">
+    <value>Are you sure you want to delete this user '{0}'?</value>
+  </data>
+  <data name="MaintainUsers_CannotDeleteUserIsReferenced" xml:space="preserve">
+    <value>Cannot delete this user. It is currently being referenced.</value>
+  </data>
+  <data name="MaintainUsers_DisplayName" xml:space="preserve">
+    <value>Display Name</value>
+  </data>
+  <data name="MaintainUsers_UserImage" xml:space="preserve">
+    <value>User Photo</value>
+  </data>
+  <data name="EditUserView_ConfirmPasswordTitle" xml:space="preserve">
+    <value>Confirm Password</value>
+  </data>
+  <data name="EditUserView_DisplayNameTitle" xml:space="preserve">
+    <value>Display Name</value>
+  </data>
+  <data name="EditUserView_EmailAddressTitle" xml:space="preserve">
+    <value>E-Mail Address</value>
+  </data>
+  <data name="EditUserView_FirstNameTitle" xml:space="preserve">
+    <value>First Name</value>
+  </data>
+  <data name="EditUserView_ImportedFromActiveDirectory" xml:space="preserve">
+    <value>Imported from Active Directory</value>
+  </data>
+  <data name="EditUserView_IsActive" xml:space="preserve">
+    <value>Is Active</value>
+  </data>
+  <data name="EditUserView_IsLockedOut" xml:space="preserve">
+    <value>Is Locked Out</value>
+  </data>
+  <data name="EditUserView_LastLoginDateTitle" xml:space="preserve">
+    <value>Last Login Date/Time</value>
+  </data>
+  <data name="EditUserView_LastNameTitle" xml:space="preserve">
+    <value>Last Name</value>
+  </data>
+  <data name="EditUserView_LastPasswordResetDateTitle" xml:space="preserve">
+    <value>Last Reset Date/Time</value>
+  </data>
+  <data name="EditUserView_LoginNameTitle" xml:space="preserve">
+    <value>Login Name</value>
+  </data>
+  <data name="EditUserView_PasswordTitle" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="EditUserView_ResetPasswordTitle" xml:space="preserve">
+    <value>User must change password at next login</value>
+  </data>
+  <data name="EditUserView_SecurityImageTitle" xml:space="preserve">
+    <value>Security Image</value>
+  </data>
+  <data name="EditUserView_SelectLanguageTitle" xml:space="preserve">
+    <value>Select Language</value>
+  </data>
+  <data name="EditUserView_UserActivationDateTitle" xml:space="preserve">
+    <value>Activation Date</value>
+  </data>
+  <data name="EditUserView_UserExpirationDateTitle" xml:space="preserve">
+    <value>Expiration Date</value>
+  </data>
+  <data name="EditUserView_UserImageTitle" xml:space="preserve">
+    <value>User Image</value>
+  </data>
+  <data name="EditUserView_UserInitialsTitle" xml:space="preserve">
+    <value>User Initials</value>
+  </data>
+  <data name="EditUserView_UserThemeTitle" xml:space="preserve">
+    <value>Select Theme</value>
+  </data>
+  <data name="EditUserView_SecurityImageSelectButton" xml:space="preserve">
+    <value>Select Image</value>
+  </data>
+  <data name="EditUserView_SelectActiveDirectoryUser" xml:space="preserve">
+    <value>Import from Active Directory</value>
+  </data>
+  <data name="EditUserView_SelectActiveDirectoryUserToolTip" xml:space="preserve">
+    <value>Select a user from Active Direcctory and import the data</value>
+  </data>
+  <data name="EditUserView_UserImageSelectButtonText" xml:space="preserve">
+    <value>Select Photo</value>
+  </data>
+  <data name="EditUserView_SecurityImageSelectButtonToolTip" xml:space="preserve">
+    <value>Select security image to associate with this user</value>
+  </data>
+  <data name="EditUserView_UserImageSelectButtonToolTip" xml:space="preserve">
+    <value>Browse computer to select a photo for this user</value>
+  </data>
+  <data name="EditUserView_UserImportedFromActiveDirectoryMessage" xml:space="preserve">
+    <value>This user originated in Active Directory</value>
+  </data>
+  <data name="EditUserView_ActivationDateTitle" xml:space="preserve">
+    <value>Activation Date</value>
+  </data>
+  <data name="EditUserView_ExpirationDateTitle" xml:space="preserve">
+    <value>Expiration Date</value>
+  </data>
+  <data name="Dialog_SelectActiveDirectoryUserTitle" xml:space="preserve">
+    <value>Select Active Directory User</value>
+  </data>
+  <data name="Dialog_SelectCapturePhotoTitle" xml:space="preserve">
+    <value>Capture Photograph</value>
+  </data>
+  <data name="Dialog_SelectCaptureSecurityImageTitle" xml:space="preserve">
+    <value>Select Security Image</value>
+  </data>
+  <data name="EditEntityView_UserRequirementsTitle" xml:space="preserve">
+    <value>User Requirements</value>
+  </data>
+  <data name="EditEntityView_UserRequirementsTabItemTitle" xml:space="preserve">
+    <value>User Requirements</value>
+  </data>
+  <data name="EditUserRequirementsView_AllowPasswordChangeAttempt" xml:space="preserve">
+    <value>Allow password change attempt after expiration</value>
+  </data>
+  <data name="EditUserRequirementsView_AllowPasswordChangeAttemptToolTip" xml:space="preserve">
+    <value>Allow one opportunity for a user to change their password after it expires. </value>
+  </data>
+  <data name="EditUserRequirementsView_DefaultExpirationDays" xml:space="preserve">
+    <value>Default expiration days</value>
+  </data>
+  <data name="EditUserRequirementsView_DefaultExpirationDaysToolTip" xml:space="preserve">
+    <value>Enter the default number of days until the users account will expire</value>
+  </data>
+  <data name="EditUserRequirementsView_LockoutUserAfterBeingInactiveForDaysPrefix" xml:space="preserve">
+    <value>Lockout user if not used in</value>
+  </data>
+  <data name="EditUserRequirementsView_LockoutUserAfterBeingInactiveForDaysSuffix" xml:space="preserve">
+    <value>days</value>
+  </data>
+  <data name="EditUserRequirementsView_LockoutUserAfterBeingInactiveForDaysToolTip" xml:space="preserve">
+    <value>The system will lock-out/de-activate user accounts after this many days of inactivity</value>
+  </data>
+  <data name="EditUserRequirementsView_MaximumLength" xml:space="preserve">
+    <value>Password Length Maximum</value>
+  </data>
+  <data name="EditUserRequirementsView_MaximumLengthToolTip" xml:space="preserve">
+    <value>Specifies the maximum number of characters permitted for passwords. The allowable range is 1-100</value>
+  </data>
+  <data name="EditUserRequirementsView_MinimumLength" xml:space="preserve">
+    <value>Password Length Minimum</value>
+  </data>
+  <data name="EditUserRequirementsView_MinimumLengthToolTip" xml:space="preserve">
+    <value>Specifies the minimum number of characters that must be contained in passwords. The allowable range is 0 -100</value>
+  </data>
+  <data name="EditUserRequirementsView_MinimumPasswordChangeCharacterCount" xml:space="preserve">
+    <value>Minimum change characters</value>
+  </data>
+  <data name="EditUserRequirementsView_MinimumPasswordChangeCharacterCountToolTip" xml:space="preserve">
+    <value>When changing passwords, the new password must have at least this many different characters compared to the previous password</value>
+  </data>
+  <data name="EditUserRequirementsView_MustChangePasswordIntervalInDaysPrefix" xml:space="preserve">
+    <value>Passwords must be changed every</value>
+  </data>
+  <data name="EditUserRequirementsView_MustChangePasswordIntervalInDaysSuffix" xml:space="preserve">
+    <value>days</value>
+  </data>
+  <data name="EditUserRequirementsView_MustChangePasswordIntervalInDaysToolTip" xml:space="preserve">
+    <value>Enter a non-zero value to specify how frequently users must change their passwords</value>
+  </data>
+  <data name="EditUserRequirementsView_PasswordCannotContainName" xml:space="preserve">
+    <value>Password cannot contain name</value>
+  </data>
+  <data name="EditUserRequirementsView_PasswordCannotContainNameToolTip" xml:space="preserve">
+    <value>If checked, the password cannot contain the user login name, display name, first name or last name</value>
+  </data>
+  <data name="EditUserRequirementsView_PasswordMustContainLowerCaseLetterPrefix" xml:space="preserve">
+    <value>Password must contain at least</value>
+  </data>
+  <data name="EditUserRequirementsView_PasswordMustContainLowerCaseLetterSuffix" xml:space="preserve">
+    <value>lower case letters</value>
+  </data>
+  <data name="EditUserRequirementsView_PasswordMustContainLowerCaseLettersToolTip" xml:space="preserve">
+    <value>Enter the minimum number of lower case letters that must be included in all passwords</value>
+  </data>
+  <data name="EditUserRequirementsView_PasswordMustContainNumericDigitsPrefix" xml:space="preserve">
+    <value>Password must contain at least</value>
+  </data>
+  <data name="EditUserRequirementsView_PasswordMustContainNumericDigitsSuffix" xml:space="preserve">
+    <value>numeric digits</value>
+  </data>
+  <data name="EditUserRequirementsView_PasswordMustContainNumericDigitsToolTip" xml:space="preserve">
+    <value>Enter the minimum number of numeric digits (0-9) that must be included in all passwords</value>
+  </data>
+  <data name="EditUserRequirementsView_PasswordMustContainSpecialCharactersPrefix" xml:space="preserve">
+    <value>Password must contain at least</value>
+  </data>
+  <data name="EditUserRequirementsView_PasswordMustContainSpecialCharactersSuffix" xml:space="preserve">
+    <value>special characters</value>
+  </data>
+  <data name="EditUserRequirementsView_PasswordMustContainSpecialCharactersToolTip" xml:space="preserve">
+    <value>Enter the minimum number of special characters that must be included in all passwords. Special characters include:\n!\"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\\]^_`{|}~</value>
+  </data>
+  <data name="EditUserRequirementsView_PasswordMustContainUPPERCASELetterPrefix" xml:space="preserve">
+    <value>Password must contain at least</value>
+  </data>
+  <data name="EditUserRequirementsView_PasswordMustContainUPPERCASELetterSuffix" xml:space="preserve">
+    <value>UPPER CASE (CAPITAL) letters</value>
+  </data>
+  <data name="EditUserRequirementsView_PasswordMustContainUPPERCASELettersToolTip" xml:space="preserve">
+    <value>Enter the minimum number of UPPER CASE (CAPITAL) letters that must be included in all passwords</value>
+  </data>
+  <data name="EditUserRequirementsView_PasswordStrengthRequirements" xml:space="preserve">
+    <value>Password Strength Requirements</value>
+  </data>
+  <data name="EditUserRequirementsView_PasswordValidationTechnique" xml:space="preserve">
+    <value>Choose Password Validation Technique</value>
+  </data>
+  <data name="EditUserRequirementsView_PasswordValidationTechniqueToolTip" xml:space="preserve">
+    <value>Password requirements can be defined by specifying discrete values for each element or by definining  a regular expression. Choose the technique that will be used by this entity</value>
+  </data>
+  <data name="EditUserRequirementsView_PasswordValidationTechnique_CustomRegularExpression" xml:space="preserve">
+    <value>Use Custom Regular Expression</value>
+  </data>
+  <data name="EditUserRequirementsView_PasswordValidationTechnique_UseExplicitRules" xml:space="preserve">
+    <value>Use Explicit Rules</value>
+  </data>
+  <data name="EditUserRequirementsView_MaintainPasswordHistoryCount" xml:space="preserve">
+    <value>Maintain Password History Count</value>
+  </data>
+  <data name="EditUserRequirementsView_MaintainPasswordHistoryCountToolTip" xml:space="preserve">
+    <value>The system can prevent recently used passwords from being reused. Enter the number of previous passwords that cannot be reused.</value>
+  </data>
+  <data name="EditUserRequirementsView_ValidatePasswordRegularExpression" xml:space="preserve">
+    <value>Custom Regular Expression</value>
+  </data>
+  <data name="EditUserRequirementsView_PasswordMaximumAge" xml:space="preserve">
+    <value>Password Age Maximum</value>
+  </data>
+  <data name="EditUserRequirementsView_PasswordMaximumAgeToolTip" xml:space="preserve">
+    <value>Specifies how frequently (in days) that users must change their password. 0 indicates that users never have to select a new password</value>
+  </data>
+  <data name="EditUserRequirementsView_PasswordMinimumAge" xml:space="preserve">
+    <value>Password Age Minimum</value>
+  </data>
+  <data name="EditUserRequirementsView_PasswordMinimumAgeToolTip" xml:space="preserve">
+    <value>Specifies how long (in days) that users must keep their password before they can change it. 0 indicates that they can select a new password immediately.</value>
+  </data>
+  <data name="EditUserRequirementsView_MiscellaneousRequirements" xml:space="preserve">
+    <value>Miscellaneous</value>
+  </data>
+  <data name="EditUserRequirementsView_PasswordChangeRequirements" xml:space="preserve">
+    <value>Password Change Requirements</value>
+  </data>
+  <data name="EditUserRequirementsView_LockoutUserAfterBeingInactiveForDays" xml:space="preserve">
+    <value>Inactivity Lockout Age</value>
+  </data>
+  <data name="EditUserRequirementsView_PasswordMustContainLowerCaseLetters" xml:space="preserve">
+    <value>Require lower case Characters Count</value>
+  </data>
+  <data name="EditUserRequirementsView_PasswordMustContainNumericDigits" xml:space="preserve">
+    <value>Require Numeric Digits Count</value>
+  </data>
+  <data name="EditUserRequirementsView_PasswordMustContainSpecialCharacters" xml:space="preserve">
+    <value>Require Special Characters Count</value>
+  </data>
+  <data name="EditUserRequirementsView_PasswordMustContainUPPERCASELetters" xml:space="preserve">
+    <value>Require UPPER Case Characters Count</value>
+  </data>
+  <data name="EditUserRequirementsView_PasswordValidationTechnique_CustomRegularExpressionToolTip" xml:space="preserve">
+    <value>Use Custom Regular Expression to specify password requirements.</value>
+  </data>
+  <data name="EditUserRequirementsView_ValidatePasswordRegularExpressionDescription" xml:space="preserve">
+    <value>Regular Expression Description</value>
+  </data>
+  <data name="EditUserRequirementsView_ValidatePasswordRegularExpressionDescriptionToolTip" xml:space="preserve">
+    <value>Describe the function of the regular expression</value>
+  </data>
+  <data name="EditUserRequirementsView_ValidatePasswordRegularExpressionToolTip" xml:space="preserve">
+    <value>This is the custom regular expression that will be used to validate passwords.</value>
+  </data>
+  <data name="EditEntityView_ApplicationsTabItemTitle" xml:space="preserve">
+    <value>Applications</value>
+  </data>
+  <data name="EditEntityView_ApplicationsTabItemToolTip" xml:space="preserve">
+    <value>Choose the applications that the entity has permissions to use</value>
+  </data>
+  <data name="EditEntityView_UserRequirementsTabItemToolTip" xml:space="preserve">
+    <value>Edit properties related to password strength and user account behavior</value>
+  </data>
+  <data name="EditEntityView_Action" xml:space="preserve">
+    <value>Action</value>
+  </data>
+  <data name="EditEntityView_AddApplication" xml:space="preserve">
+    <value>Add Application</value>
+  </data>
+  <data name="EditEntityView_AddApplicationToolTip" xml:space="preserve">
+    <value>Allow the entity to use this application</value>
+  </data>
+  <data name="EditEntityView_AuthorizedApplications" xml:space="preserve">
+    <value>Authorized Applications</value>
+  </data>
+  <data name="EditEntityView_RemoveApplication" xml:space="preserve">
+    <value>Remove Application</value>
+  </data>
+  <data name="EditEntityView_RemoveApplicationToolTip" xml:space="preserve">
+    <value>Prevent the entity from using this application</value>
+  </data>
+  <data name="EditEntityView_UnauthorizedApplications" xml:space="preserve">
+    <value>Unauthorized Applications</value>
+  </data>
+  <data name="MainView_ApplicationTitle" xml:space="preserve">
+    <value>GalaxySMS Administration Manager</value>
+  </data>
+  <data name="ThemeDisplayName_VisualStudio2013" xml:space="preserve">
+    <value>Visual Studio 2013</value>
+  </data>
+  <data name="ThemeDisplayName_Office2013_DarkGray" xml:space="preserve">
+    <value>Office 2013 (Dark Gray)</value>
+  </data>
+  <data name="ThemeDisplayName_Office2013_LightGray" xml:space="preserve">
+    <value>Office 2013 (Light Gray)</value>
+  </data>
+  <data name="ThemeDisplayName_Office2013_White" xml:space="preserve">
+    <value>Office 2013 (White)</value>
+  </data>
+  <data name="ThemeDisplayName_VisualStudio2013_Blue" xml:space="preserve">
+    <value>Visual Studio 2013 (Blue)</value>
+  </data>
+  <data name="ThemeDisplayName_VisualStudio2013_Dark" xml:space="preserve">
+    <value>Visual Studio 2013 (Dark)</value>
+  </data>
+  <data name="ThemeDisplayName_VisualStudio2013_Light" xml:space="preserve">
+    <value>Visual Studio 2013 (Light)</value>
+  </data>
+  <data name="ThemeDisplayName_VisualStudio2013_DarkOlive" xml:space="preserve">
+    <value>Visual Studio 2013 (Dark Olive)</value>
+  </data>
+  <data name="ThemeDisplayName_VisualStudio2013_EarthtoneBrown" xml:space="preserve">
+    <value>Visual Studio 2013 (Earthtone Brown)</value>
+  </data>
+  <data name="ThemeDisplayName_VisualStudio2013_Green" xml:space="preserve">
+    <value>Visual Studio 2013 (Green)</value>
+  </data>
+  <data name="ThemeDisplayName_Windows8_BeachBlue" xml:space="preserve">
+    <value>Windows 8 (Beach Blue)</value>
+  </data>
+  <data name="ThemeDisplayName_Windows8_BeachSand" xml:space="preserve">
+    <value>Windows 8 (Beach Sand)</value>
+  </data>
+  <data name="ThemeDisplayName_Windows8_DarkBlue" xml:space="preserve">
+    <value>Windows 8 (Dark Blue)</value>
+  </data>
+  <data name="ThemeDisplayName_Windows8_GrayScale" xml:space="preserve">
+    <value>Windows 8 (Grayscale)</value>
+  </data>
+  <data name="ThemeDisplayName_Windows8_PaleGreenBrown" xml:space="preserve">
+    <value>Windows 8 (Pale Green-Brown)</value>
+  </data>
+  <data name="EditUserView_SelectPrimaryEntityTitle" xml:space="preserve">
+    <value>Select Primary Entity</value>
+  </data>
+  <data name="PasswordValidationResult_InvalidContainsIllegalContent" xml:space="preserve">
+    <value>The password has illegal content. Passwords cannot contain the users name, login name, initials or email address.</value>
+  </data>
+  <data name="PasswordValidationResult_InvalidDoesNotMatchRegularExpression" xml:space="preserve">
+    <value>The password does not match regular expression: {0}</value>
+  </data>
+  <data name="PasswordValidationResult_InvalidLengthToLong" xml:space="preserve">
+    <value>The password is too long. Passwords must contain no more than {0} characters.</value>
+  </data>
+  <data name="PasswordValidationResult_InvalidLengthToShort" xml:space="preserve">
+    <value>The password is not long enough. Passwords must contain at least {0} characters.</value>
+  </data>
+  <data name="PasswordValidationResult_InvalidMatchesPreviouslyUsedPassword" xml:space="preserve">
+    <value>The password was used before. The previous {0} passwords cannot be reused.</value>
+  </data>
+  <data name="PasswordValidationResult_InvalidNotEnoughCharactersHaveBeenChanged" xml:space="preserve">
+    <value>The password must contain at least {0} different characters compared with the previous password.</value>
+  </data>
+  <data name="PasswordValidationResult_InvalidNotEnoughLowerCaseCharacters" xml:space="preserve">
+    <value>The password must contain at least {0} lower case characters.</value>
+  </data>
+  <data name="PasswordValidationResult_InvalidNotEnoughNumericDigits" xml:space="preserve">
+    <value>The password must contain at least {0} numeric digits.</value>
+  </data>
+  <data name="PasswordValidationResult_InvalidNotEnoughSpecialCharacters" xml:space="preserve">
+    <value>The password must contain at least {0} special characters.</value>
+  </data>
+  <data name="PasswordValidationResult_InvalidNotEnoughUpperCaseCharacters" xml:space="preserve">
+    <value>The password must contain at least {0} UPPER case characters.</value>
+  </data>
+  <data name="PasswordValidationResult_InvalidParameter" xml:space="preserve">
+    <value>The password validator was provided an invalid parameter.</value>
+  </data>
+  <data name="PasswordValidationResult_UnknownError" xml:space="preserve">
+    <value>The password is not valid.</value>
+  </data>
+  <data name="PasswordRule_CannotContainIllegalContent" xml:space="preserve">
+    <value>Cannot contain the users name, login name, initials or email address</value>
+  </data>
+  <data name="PasswordRule_CannotReuseRecentPasswords" xml:space="preserve">
+    <value>Cannot reuse most recent {0} passwords</value>
+  </data>
+  <data name="PasswordRule_MaximumLength" xml:space="preserve">
+    <value>Maximum Length: {0}</value>
+  </data>
+  <data name="PasswordRule_MinimumLength" xml:space="preserve">
+    <value>Minimum Length: {0}</value>
+  </data>
+  <data name="PasswordRule_MustChangeCharacterCount" xml:space="preserve">
+    <value>When changing passwords, at least {0} characters must differ from previous password</value>
+  </data>
+  <data name="PasswordRule_MustContainLowerCaseCharacterCount" xml:space="preserve">
+    <value>The password must contain at least {0} lower case characters.</value>
+  </data>
+  <data name="PasswordRule_MustContainNumericDigitsCount" xml:space="preserve">
+    <value>The password must contain at least {0} numeric digits.</value>
+  </data>
+  <data name="PasswordRule_MustContainSpecialCharacterCount" xml:space="preserve">
+    <value>The password must contain at least {0} special characters.</value>
+  </data>
+  <data name="PasswordRule_MustContainUpperCaseCharacterCount" xml:space="preserve">
+    <value>The password must contain at least {0} UPPER case characters.</value>
+  </data>
+  <data name="PasswordRule_MustMatchRegularExpression" xml:space="preserve">
+    <value>Must match regular expression: {0}\n{1}</value>
+  </data>
+  <data name="PasswordValidationResult_PasswordIsRequired" xml:space="preserve">
+    <value>A password is required.</value>
+  </data>
+  <data name="EditUserView_ApplicationsTabItemTitle" xml:space="preserve">
+    <value>Roles</value>
+  </data>
+  <data name="EditUserView_Action" xml:space="preserve">
+    <value>Action</value>
+  </data>
+  <data name="EditUserView_AddApplication" xml:space="preserve">
+    <value>Add Application</value>
+  </data>
+  <data name="EditUserView_AddApplicationToolTip" xml:space="preserve">
+    <value>Allow the user to use this application</value>
+  </data>
+  <data name="EditUserView_ApplicationsTabItemToolTip" xml:space="preserve">
+    <value>Choose the applications and roles that the user has permissions to use</value>
+  </data>
+  <data name="EditUserView_AuthorizedApplications" xml:space="preserve">
+    <value>Authorized Applications</value>
+  </data>
+  <data name="EditUserView_RemoveApplication" xml:space="preserve">
+    <value>Remove Application</value>
+  </data>
+  <data name="EditUserView_RemoveApplicationToolTip" xml:space="preserve">
+    <value>Prevent the user from using this application</value>
+  </data>
+  <data name="EditUserView_UnauthorizedApplications" xml:space="preserve">
+    <value>Unauthorized Applications</value>
+  </data>
+  <data name="EditUserView_AddEntity" xml:space="preserve">
+    <value>Add Entity</value>
+  </data>
+  <data name="EditUserView_AddEntityToolTip" xml:space="preserve">
+    <value>Add the user to this entity</value>
+  </data>
+  <data name="EditUserView_AuthorizedEntities" xml:space="preserve">
+    <value>Authorized Entities</value>
+  </data>
+  <data name="EditUserView_EntitiesTabItemTitle" xml:space="preserve">
+    <value>Entities</value>
+  </data>
+  <data name="EditUserView_EntitiesTabItemToolTip" xml:space="preserve">
+    <value>Choose the entities that the user is associated with</value>
+  </data>
+  <data name="EditUserView_RemoveEntity" xml:space="preserve">
+    <value>Remove Entity</value>
+  </data>
+  <data name="EditUserView_RemoveEntityToolTip" xml:space="preserve">
+    <value>Disassociate the user from this entity</value>
+  </data>
+  <data name="EditUserView_UnauthorizedEntities" xml:space="preserve">
+    <value>Unauthorized Entities</value>
+  </data>
+  <data name="EditEntityView_AddRole" xml:space="preserve">
+    <value>Add Role</value>
+  </data>
+  <data name="EditEntityView_AddRoleToolTip" xml:space="preserve">
+    <value>Allow the entity to use this role</value>
+  </data>
+  <data name="EditEntityView_ApplicationRolesTitle" xml:space="preserve">
+    <value>Application Roles</value>
+  </data>
+  <data name="EditEntityView_AuthorizedRoles" xml:space="preserve">
+    <value>Authorized Roles</value>
+  </data>
+  <data name="EditEntityView_RemoveRole" xml:space="preserve">
+    <value>Remove Role</value>
+  </data>
+  <data name="EditEntityView_RemoveRoleToolTip" xml:space="preserve">
+    <value>Prevent the entity from using this role</value>
+  </data>
+  <data name="EditEntityView_UnauthorizedRoles" xml:space="preserve">
+    <value>Unauthorized Roles</value>
+  </data>
+  <data name="EditEntityView_ApplicationRolesToolTip" xml:space="preserve">
+    <value>Configure application roles the entity is permitted to user</value>
+  </data>
+  <data name="EditUserView_RolesTabItemTitle" xml:space="preserve">
+    <value>Roles</value>
+  </data>
+  <data name="EditUserView_RolesTabItemToolTip" xml:space="preserve">
+    <value>Choose the roles that the user is associated with</value>
+  </data>
+  <data name="EditUserView_AddRole" xml:space="preserve">
+    <value>Add Role</value>
+  </data>
+  <data name="EditUserView_AddRoleToolTip" xml:space="preserve">
+    <value>Allow the entity to use this role</value>
+  </data>
+  <data name="EditUserView_AuthorizedRoles" xml:space="preserve">
+    <value>Authorized Roles</value>
+  </data>
+  <data name="EditUserView_RemoveRole" xml:space="preserve">
+    <value>Remove Role</value>
+  </data>
+  <data name="EditUserView_RemoveRoleToolTip" xml:space="preserve">
+    <value>Remove this role from the user</value>
+  </data>
+  <data name="EditUserView_UnauthorizedRoles" xml:space="preserve">
+    <value>Unauthorized Roles</value>
+  </data>
+  <data name="ThemeDisplayName_VisualStudio2013_DarkGold" xml:space="preserve">
+    <value>Visual Studio 2013 (Dark Gold)</value>
+  </data>
+  <data name="Dialog_UserSignInOutDialogTitle" xml:space="preserve">
+    <value>User Sign In/Out</value>
+  </data>
+  <data name="Menu_Exit_HeaderText" xml:space="preserve">
+    <value>_Exit</value>
+  </data>
+  <data name="Menu_File_HeaderText" xml:space="preserve">
+    <value>_File</value>
+  </data>
+  <data name="Menu_UserGroup_HeaderText" xml:space="preserve">
+    <value>_User</value>
+  </data>
+  <data name="Menu_UserSignIn_HeaderText" xml:space="preserve">
+    <value>Sign _In</value>
+  </data>
+  <data name="Menu_UserSignOut_HeaderText" xml:space="preserve">
+    <value>Sign _Out</value>
+  </data>
+  <data name="SignInOutView_FooterText" xml:space="preserve">
+    <value>Galaxy Control Systems</value>
+  </data>
+  <data name="SignInOutView_HeaderText" xml:space="preserve">
+    <value>Sign In/Out</value>
+  </data>
+  <data name="AboutView_AboutUriDescription" xml:space="preserve">
+    <value>www.galaxysys.com</value>
+  </data>
+  <data name="AboutView_AllRightsReserved" xml:space="preserve">
+    <value>All Rights Reserved.</value>
+  </data>
+  <data name="AboutView_LicenseCompany" xml:space="preserve">
+    <value>Company:</value>
+  </data>
+  <data name="AboutView_LicenseExpireation" xml:space="preserve">
+    <value>Expires On:</value>
+  </data>
+  <data name="AboutView_LicenseId" xml:space="preserve">
+    <value>License ID:</value>
+  </data>
+  <data name="AboutView_LicenseInfoHeader" xml:space="preserve">
+    <value>License Information</value>
+  </data>
+  <data name="AboutView_LicenseName" xml:space="preserve">
+    <value>Licensed To:</value>
+  </data>
+  <data name="AboutView_LicenseType" xml:space="preserve">
+    <value>Type:</value>
+  </data>
+  <data name="AboutView_LicenseTypeNone" xml:space="preserve">
+    <value>Not Licensed</value>
+  </data>
+  <data name="AboutView_LicenseTypeStandard" xml:space="preserve">
+    <value>Standard License</value>
+  </data>
+  <data name="AboutView_LicenseTypeTrial" xml:space="preserve">
+    <value>Trial License</value>
+  </data>
+  <data name="AboutView_OkButtonText" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="AboutView_ProductDetails" xml:space="preserve">
+    <value>Product details:</value>
+  </data>
+  <data name="AboutView_Title" xml:space="preserve">
+    <value>About {0}</value>
+  </data>
+  <data name="AboutView_VersionTitle" xml:space="preserve">
+    <value>Version:</value>
+  </data>
+  <data name="AboutView_ViewLicenseDetails" xml:space="preserve">
+    <value>View License Details...</value>
+  </data>
+  <data name="LicenseFileDoesNotExist" xml:space="preserve">
+    <value>License file does not exist:\n{0}</value>
+  </data>
+  <data name="LicenseView_FeatureName" xml:space="preserve">
+    <value>Feature Name</value>
+  </data>
+  <data name="LicenseView_FeatureValue" xml:space="preserve">
+    <value>Value</value>
+  </data>
+  <data name="LicenseView_LicenseDetails" xml:space="preserve">
+    <value>License Details</value>
+  </data>
+  <data name="LicenseView_LicenseDetailsHeader" xml:space="preserve">
+    <value>License Details</value>
+  </data>
+  <data name="ThemeDisplayName_Windows8_CoolBlue" xml:space="preserve">
+    <value>Windows 8 (Cool Blue)</value>
+  </data>
+  <data name="ThemeDisplayName_Windows8_DullBlue" xml:space="preserve">
+    <value>Windows 8 (Dull Blue)</value>
+  </data>
+  <data name="ThemeDisplayName_Windows8_GrayOrange" xml:space="preserve">
+    <value>Windows 8 (Gray Orange)</value>
+  </data>
+  <data name="MainView_Exit_ConfirmationNoButton" xml:space="preserve">
+    <value>No, do not exit</value>
+  </data>
+  <data name="MainView_Exit_ConfirmationPrompt" xml:space="preserve">
+    <value>Are you sure you want to exit '{0}'?</value>
+  </data>
+  <data name="MainView_Exit_ConfirmationPromptHeader" xml:space="preserve">
+    <value>Confirm</value>
+  </data>
+  <data name="MainView_Exit_ConfirmationYesButton" xml:space="preserve">
+    <value>Yes, shut it down</value>
+  </data>
+  <data name="MainView_Menu_Help" xml:space="preserve">
+    <value>_Help</value>
+  </data>
+  <data name="MainView_Menu_Help_About" xml:space="preserve">
+    <value>_About...</value>
+  </data>
+  <data name="AboutView_LicenseEmail" xml:space="preserve">
+    <value>Licensed Email:</value>
+  </data>
+  <data name="LicenseView_LicenseCompany" xml:space="preserve">
+    <value>Company</value>
+  </data>
+  <data name="LicenseView_LicenseEmail" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="LicenseView_LicenseName" xml:space="preserve">
+    <value>Licensed To:</value>
+  </data>
+  <data name="LicenseView_CloseButtonText" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="LicenseView_LicenseExpiration" xml:space="preserve">
+    <value>Expires On:</value>
+  </data>
+  <data name="LicenseView_LicenseId" xml:space="preserve">
+    <value>License ID:</value>
+  </data>
+  <data name="MainWindow_Title" xml:space="preserve">
+    <value>Main Window</value>
+  </data>
+  <data name="MainView_ApplicationValidationAlertCloseButtonText" xml:space="preserve">
+    <value>On, shut it down</value>
+  </data>
+  <data name="MainView_ApplicationValidationAlertHeader" xml:space="preserve">
+    <value>Application Validation Alert</value>
+  </data>
+  <data name="MainView_ApplicationValidationAlertMessage" xml:space="preserve">
+    <value>This application '{0}' could not be validated with the server. It will now shut down. Please contact techical support for assistance.</value>
+  </data>
+  <data name="MainView_ApplicationTitleFormat" xml:space="preserve">
+    <value>{0} (Version: {1})</value>
+  </data>
+  <data name="SplashScreen_ApplicationValidatedWithServer" xml:space="preserve">
+    <value>Validated with server '{0}'...</value>
+  </data>
+  <data name="SplashScreen_CouldNotValidateApplicationWithServer" xml:space="preserve">
+    <value>Unable to validate the application with server '{0}'. The application will close automatically,</value>
+  </data>
+  <data name="SplashScreen_InitializationComplete" xml:space="preserve">
+    <value>Initialization complete.</value>
+  </data>
+  <data name="SplashScreen_Initializing" xml:space="preserve">
+    <value>Initializing...</value>
+  </data>
+  <data name="SplashScreen_LicenseInvalid" xml:space="preserve">
+    <value>The license is not valid.</value>
+  </data>
+  <data name="SplashScreen_LicenseLoadedAndValidated" xml:space="preserve">
+    <value>License loaded and validated</value>
+  </data>
+  <data name="SplashScreen_LoadingData" xml:space="preserve">
+    <value>Loading data from server...</value>
+  </data>
+  <data name="SplashScreen_LoadingLicense" xml:space="preserve">
+    <value>Loading and validating license...</value>
+  </data>
+  <data name="SplashScreen_ValidatingApplicationWithServer" xml:space="preserve">
+    <value>Validating with server '{0}'...</value>
+  </data>
+  <data name="CustomMessagesHeader_MessageCount" xml:space="preserve">
+    <value>Message Count: {0}</value>
+  </data>
+  <data name="xDefaultUserDisplayName" xml:space="preserve">
+    <value>Joe Admin</value>
+  </data>
+  <data name="xDefaultUserEmail" xml:space="preserve">
+    <value>joe.admin@acme.com</value>
+  </data>
+  <data name="xDefaultUserFirstName" xml:space="preserve">
+    <value>Joe</value>
+  </data>
+  <data name="xDefaultUserLastName" xml:space="preserve">
+    <value>Admin</value>
+  </data>
+  <data name="xDefaultUserLoginName" xml:space="preserve">
+    <value>administrator</value>
+    <comment>DO NOT TRANSLATE THIS STRING</comment>
+  </data>
+  <data name="xDefaultUserPassword" xml:space="preserve">
+    <value>P@$$word</value>
+    <comment>DO NOT TRANSLATE THIS STRING</comment>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="PersonSilhouette" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PersonSilhouette.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CurrentUserDisplayName" xml:space="preserve">
+    <value>Click to sign on</value>
+  </data>
+  <data name="PersonSilhouetteRound" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PersonSilhouetteRound.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="EditApplicationView_PermissionCategoriesTitle" xml:space="preserve">
+    <value>Application Permission Categories</value>
+  </data>
+  <data name="EditApplicationView_PermissionsTitle" xml:space="preserve">
+    <value>Application Permissions</value>
+  </data>
+  <data name="MaintainPermissions_Title" xml:space="preserve">
+    <value>Maintain Permissions</value>
+  </data>
+  <data name="MaintainPermissionCategories_Title" xml:space="preserve">
+    <value>Maintain Permission Categories</value>
+  </data>
+  <data name="EditPermissionCategoryView_IsEntityCategory" xml:space="preserve">
+    <value>Is Entity Category</value>
+  </data>
+  <data name="EditPermissionCategoryView_IsSystemCategory" xml:space="preserve">
+    <value>Is System Category</value>
+  </data>
+  <data name="EditPermissionCategoryView_PermissionCategoryDescriptionTitle" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="EditPermissionCategoryView_PermissionCategoryNameTitle" xml:space="preserve">
+    <value>Permission Category Name</value>
+  </data>
+  <data name="EditPermissionCategoryView_SelectApplicationTitle" xml:space="preserve">
+    <value>Select Application</value>
+  </data>
+  <data name="MaintainPermissionCategories_Actions" xml:space="preserve">
+    <value>Actions</value>
+  </data>
+  <data name="MaintainPermissionCategories_ApplicationName" xml:space="preserve">
+    <value>Application</value>
+  </data>
+  <data name="MaintainPermissionCategories_AreYouSureDeletePermissionCategory" xml:space="preserve">
+    <value>Are you sure you want to delete this permission category '{0}'?</value>
+  </data>
+  <data name="MaintainPermissionCategories_PermissionCategoryDescription" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="MaintainPermissionCategories_PermissionCategoryName" xml:space="preserve">
+    <value>Permission Category Name</value>
+  </data>
+  <data name="EditPermissionView_PermissionDescriptionTitle" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="EditPermissionView_PermissionDisabled" xml:space="preserve">
+    <value>Disabled</value>
+  </data>
+  <data name="EditPermissionView_PermissionInvisible" xml:space="preserve">
+    <value>Is Invisible</value>
+  </data>
+  <data name="EditPermissionView_PermissionIsActive" xml:space="preserve">
+    <value>Is Active</value>
+  </data>
+  <data name="EditPermissionView_PermissionNameTitle" xml:space="preserve">
+    <value>Permission Name</value>
+  </data>
+  <data name="EditPermissionView_SelectPermissionCategoryTitle" xml:space="preserve">
+    <value>Select Permission Category</value>
+  </data>
+  <data name="MaintainPermissions_PermissionDescription" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="MaintainPermissions_PermissionName" xml:space="preserve">
+    <value>Permission Name</value>
+  </data>
+  <data name="MaintainPermission_Actions" xml:space="preserve">
+    <value>Actions</value>
+  </data>
+  <data name="MaintainPermissions_AreYouSureDeletePermission" xml:space="preserve">
+    <value>Are you sure you want to delete this permission '{0}'?</value>
+  </data>
+  <data name="EditRoleView_PermissionsTabItemTitle" xml:space="preserve">
+    <value>Role Permissions</value>
+  </data>
+  <data name="EditRoleView_PermissionsTabItemToolTip" xml:space="preserve">
+    <value>Choose the permissions that are assigned to the role</value>
+  </data>
+  <data name="MaintainPermissions_PermissionCategoryName" xml:space="preserve">
+    <value>Permission Category</value>
+  </data>
+  <data name="EditRoleView_RolePermissions" xml:space="preserve">
+    <value>Permissions</value>
+  </data>
+  <data name="EditEntityView_EntityImageSelectButtonText" xml:space="preserve">
+    <value>Select Image</value>
+  </data>
+  <data name="EditEntityView_EntityImageSelectButtonToolTip" xml:space="preserve">
+    <value>Capture a image or browse computer to select a image for this entity</value>
+  </data>
+  <data name="EditEntityView_EntityImageTitle" xml:space="preserve">
+    <value>Entity Image</value>
+  </data>
+  <data name="MaintainEntities_EntityImage" xml:space="preserve">
+    <value>Entity Image</value>
+  </data>
+  <data name="FlowDirection_LeftToRight" xml:space="preserve">
+    <value>Left to Right</value>
+  </data>
+  <data name="FlowDirection_LeftToRight_Tooltip" xml:space="preserve">
+    <value>Text and controls are oriented and flow from left to right which is common in western languages and cultures</value>
+  </data>
+  <data name="FlowDirection_RightToLeft" xml:space="preserve">
+    <value>Right to Left</value>
+  </data>
+  <data name="FlowDirection_RightToLeft_Tooltip" xml:space="preserve">
+    <value>Text and controls are oriented and flow from right to left which is common in middle eastern languages and cultures</value>
+  </data>
+  <data name="SelectFlowDirection" xml:space="preserve">
+    <value>Select Flow Direction</value>
+  </data>
+  <data name="LicenseDataDoesNotExist" xml:space="preserve">
+    <value>License data does not exist:\n</value>
+  </data>
+  <data name="SplashScreen_CouldNotAccessSystemDataFromServer" xml:space="preserve">
+    <value>Unable to access system data from server '{0}'. The application will close automatically,</value>
+  </data>
+  <data name="Menu_Tools_HeaderText" xml:space="preserve">
+    <value>_Tools</value>
+  </data>
+  <data name="Menu_Tools_ManageLicense" xml:space="preserve">
+    <value>_License</value>
+  </data>
+  <data name="AboutView_UpdateLicense" xml:space="preserve">
+    <value>Update License ...</value>
+  </data>
+  <data name="LicenseView_ImportLicenseButtonText" xml:space="preserve">
+    <value>Import License</value>
+  </data>
+  <data name="LicenseView_ImportLicenseButtonToolTip" xml:space="preserve">
+    <value>Import license data from file or over the internet</value>
+  </data>
+  <data name="LicenseView_ImportLicenseFromFileText" xml:space="preserve">
+    <value>Import license file</value>
+  </data>
+  <data name="LicenseView_ImportLicenseFromFileToolTip" xml:space="preserve">
+    <value>Import license data from a file</value>
+  </data>
+  <data name="LicenseView_ImportLicenseOverInternetText" xml:space="preserve">
+    <value>Activate/Refresh license from online license server</value>
+  </data>
+  <data name="LicenseView_ImportLicenseOverInternetToolTip" xml:space="preserve">
+    <value>Activate/Refresh license data from the online license server</value>
+  </data>
+  <data name="LicenseView_LicenseFileOpenFilter" xml:space="preserve">
+    <value>License files (*.gcslic)</value>
+  </data>
+  <data name="LicenseView_SaveLicenseButtonText" xml:space="preserve">
+    <value>Save License Data</value>
+  </data>
+  <data name="LicenseView_SaveLicenseButtonToolTip" xml:space="preserve">
+    <value>Save the imported license data as the system license</value>
+  </data>
+  <data name="ThemeDisplayName_Green" xml:space="preserve">
+    <value>Green</value>
+  </data>
+  <data name="Menu_Tools_SeedDatabase" xml:space="preserve">
+    <value>_Seed Database</value>
+  </data>
+  <data name="BusyContent_SeedingDatabase" xml:space="preserve">
+    <value>Please wait while the database is being initialized with required data...</value>
+  </data>
+  <data name="GalaxyPanelCommunicationViewConnectionsColumnHeader_ClusterGroupId" xml:space="preserve">
+    <value>Cluster Group #</value>
+  </data>
+  <data name="EditEntityView_ParentEntityTitle" xml:space="preserve">
+    <value>Parent Entity</value>
+  </data>
+  <data name="EditEntityView_EntityDetails" xml:space="preserve">
+    <value>Entity Details</value>
+  </data>
+  <data name="MaintainEntities_ContextMenu_AddNewChildText" xml:space="preserve">
+    <value>Add New Child</value>
+  </data>
+  <data name="MaintainEntities_ContextMenu_AddNewChildToolTip" xml:space="preserve">
+    <value>Add a new entity as a child of the selected entity</value>
+  </data>
+  <data name="MaintainEntities_ContextMenu_AddNewSiblingText" xml:space="preserve">
+    <value>Add New Sibling</value>
+  </data>
+  <data name="MaintainEntities_ContextMenu_AddNewSiblingToolTip" xml:space="preserve">
+    <value>Add a new entity as a sibling to the selected entity</value>
+  </data>
+  <data name="MaintainEntities_ContextMenu_DeleteText" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="MaintainEntities_ContextMenu_DeleteToolTip" xml:space="preserve">
+    <value>Delete the selected entity</value>
+  </data>
+  <data name="MaintainEntities_ContextMenu_EditText" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="MaintainEntities_ContextMenu_EditToolTip" xml:space="preserve">
+    <value>Edit the selected entity</value>
+  </data>
+  <data name="MaintainEntities_EntityTreeHeaderTitle" xml:space="preserve">
+    <value>Entities</value>
+  </data>
+  <data name="EditUserView_PleaseWaitWhileISave" xml:space="preserve">
+    <value>Please wait while I save the user...</value>
+  </data>
+  <data name="GalaxyConnectionDebugView_SendAbaSettingsData" xml:space="preserve">
+    <value>Send ABA Settings</value>
+  </data>
+  <data name="EditEntityView_CustomizablePropertiesTabItemTitle" xml:space="preserve">
+    <value>Customizable Properties</value>
+  </data>
+  <data name="EditEntityView_CustomizablePropertiesTabItemToolTip" xml:space="preserve">
+    <value>Change the title and sensitivity level of customizable properties</value>
+  </data>
+  <data name="EditEntityView_CustomizableProperties_ColumnNameTitle" xml:space="preserve">
+    <value>Column Name</value>
+  </data>
+  <data name="EditEntityView_CustomizableProperties_DisplayTitle" xml:space="preserve">
+    <value>Title</value>
+  </data>
+  <data name="EditEntityView_CustomizableProperties_PropertyNameTitle" xml:space="preserve">
+    <value>Property Name</value>
+  </data>
+  <data name="EditEntityView_CustomizableProperties_SensitivityLevelTitle" xml:space="preserve">
+    <value>Sensitivity Level</value>
+  </data>
+  <data name="EditEntityView_CustomizableProperties_TableNameTitle" xml:space="preserve">
+    <value>Table Name</value>
+  </data>
+  <data name="EditEntityView_CustomizableProperties_DescriptionTitle" xml:space="preserve">
+    <value>Description/ToolTip</value>
+  </data>
+  <data name="EditEntityView_CustomizableProperties_IsActiveTitle" xml:space="preserve">
+    <value>Is Active</value>
+  </data>
+  <data name="GalaxyPanelCommunicationViewConnectionsColumn_PanelUrlLink" xml:space="preserve">
+    <value>CPU URL</value>
+  </data>
+  <data name="EditRoleView_RoleIsAdministratorRole" xml:space="preserve">
+    <value>Is Administrator Role</value>
+  </data>
+  <data name="MaintainRoles_RoleIsAdministrator" xml:space="preserve">
+    <value>Is Admin Role</value>
+  </data>
+  <data name="GalaxyPanelCommunicationView_CpuBoards_BoardNumber_Title" xml:space="preserve">
+    <value>Board #</value>
+  </data>
+  <data name="GalaxyPanelCommunicationView_CpuBoards_BootVersion_Title" xml:space="preserve">
+    <value>Boot Version</value>
+  </data>
+  <data name="GalaxyPanelCommunicationView_CpuBoards_FlashPackage_Title" xml:space="preserve">
+    <value>Flash Package</value>
+  </data>
+  <data name="GalaxyPanelCommunicationView_CpuBoards_FlashResult_Title" xml:space="preserve">
+    <value>Flash Result</value>
+  </data>
+  <data name="GalaxyPanelCommunicationView_CpuBoards_HeartbeatAge_Title" xml:space="preserve">
+    <value>Heartbeat Age</value>
+  </data>
+  <data name="GalaxyPanelCommunicationView_CpuBoards_SelectedCpuNumber_Title" xml:space="preserve">
+    <value>Selected CPU #</value>
+  </data>
+  <data name="GalaxyPanelCommunicationView_CpuBoards_Status_Title" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="GalaxyPanelCommunicationView_CpuBoards_Version_Title" xml:space="preserve">
+    <value>Version</value>
+  </data>
+  <data name="GalaxyPanelCommunicationView_CpuDetails_ClusterName_Title" xml:space="preserve">
+    <value>Cluster Name:</value>
+  </data>
+  <data name="GalaxyPanelCommunicationView_CpuDetails_CpuUid_Title" xml:space="preserve">
+    <value>CpuUid:</value>
+  </data>
+  <data name="GalaxyPanelCommunicationView_CreateClusterAndSaveCpu_Content" xml:space="preserve">
+    <value>Create Cluster, Panel &amp; Save CPU</value>
+  </data>
+  <data name="GalaxyPanelCommunicationView_CreateClusterAndSaveCpu_ToolTip" xml:space="preserve">
+    <value>Create a cluster and panel in the database and save this CPU</value>
+  </data>
+  <data name="GalaxyPanelCommunicationView_CreatePanelAndSaveCpu_Content" xml:space="preserve">
+    <value>Create Panel &amp; Save CPU to Cluster:</value>
+  </data>
+  <data name="GalaxyPanelCommunicationView_CreatePanelAndSaveCpu_ToolTip" xml:space="preserve">
+    <value>Create a panel in the database and save this CPU</value>
+  </data>
+  <data name="GalaxyPanelCommunicationView_SaveCpuToDatabase_Content" xml:space="preserve">
+    <value>Add CPU to Panel:</value>
+  </data>
+  <data name="GalaxyPanelCommunicationView_SaveCpuToDatabase_ToolTip" xml:space="preserve">
+    <value>Add this CPU to the database</value>
+  </data>
+  <data name="BusyContent_PleaseWait_SavingCpuInformation" xml:space="preserve">
+    <value>Please wait while I save the CPU information...</value>
+  </data>
+  <data name="CurrentSite_SelectedSiteTitle" xml:space="preserve">
+    <value>Selected Site</value>
+  </data>
+  <data name="CurrentSite_SelectedSiteToolTip" xml:space="preserve">
+    <value>Select the site to add the data to</value>
+  </data>
+  <data name="GalaxyPanelCommunicationViewConnectionsColumnHeader_ClusterName" xml:space="preserve">
+    <value>Cluster Name</value>
+  </data>
+  <data name="GalaxyPanelCommunicationViewConnectionsColumnHeader_EntityName" xml:space="preserve">
+    <value>Entity Name</value>
+  </data>
+  <data name="GalaxyPanelCommunicationViewConnectionsColumnHeader_PanelName" xml:space="preserve">
+    <value>Panel Name</value>
+  </data>
+  <data name="GalaxyPanelCommunicationViewConnectionsColumnHeader_SiteName" xml:space="preserve">
+    <value>Site Name</value>
+  </data>
+  <data name="GalaxyPanelCommunicationView_BeginFlashLoadCPU_Content" xml:space="preserve">
+    <value>Begin Flash Load</value>
+  </data>
+  <data name="GalaxyPanelCommunicationView_BeginFlashLoadCPU_ToolTip" xml:space="preserve">
+    <value>Start loading the selected flash image to this CPU</value>
+  </data>
+  <data name="GalaxyPanelCommunicationView_CancelFlashLoadCPU_Content" xml:space="preserve">
+    <value>Cancel Flash Loading</value>
+  </data>
+  <data name="GalaxyPanelCommunicationView_CancelFlashLoadCPU_ToolTip" xml:space="preserve">
+    <value>Cancel the loading of flash image to this CPU</value>
+  </data>
+  <data name="GalaxyPanelCommunicationView_CpuDetails_BeginFlashLoad_Title" xml:space="preserve">
+    <value>Begin Flash Load</value>
+  </data>
+  <data name="GalaxyPanelCommunicationView_CpuDetails_BeginFlashLoad_ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GalaxyPanelCommunicationView_CpuDetails_FlashImage_Title" xml:space="preserve">
+    <value>Select Flash Image</value>
+  </data>
+  <data name="GalaxyPanelCommunicationView_CpuDetails_FlashImage_ToolTip" xml:space="preserve">
+    <value>Select the flash image to load</value>
+  </data>
+  <data name="GalaxyPanelCommunicationView_ValidateAndBurnFlashCPU_Content" xml:space="preserve">
+    <value>Validate &amp; Burn Flash</value>
+  </data>
+  <data name="GalaxyPanelCommunicationView_ValidateAndBurnFlashCPU_ToolTip" xml:space="preserve">
+    <value>Validate that the flash image loaded correctly. If validated, then burn the flash image into the CPU</value>
+  </data>
+  <data name="GalaxyPanelCommunicationView_ValidateFlashLoadCPU_Content" xml:space="preserve">
+    <value>Validate Flash</value>
+  </data>
+  <data name="GalaxyPanelCommunicationView_ValidateFlashLoadCPU_ToolTip" xml:space="preserve">
+    <value>Validate that the flash image loaded correctly</value>
+  </data>
+  <data name="GalaxyPanelCommunicationView_PauseFlashLoadCPU_Content" xml:space="preserve">
+    <value>Pause Flash Loading</value>
+  </data>
+  <data name="GalaxyPanelCommunicationView_PauseFlashLoadCPU_ToolTip" xml:space="preserve">
+    <value>Pause loading the selected flash image to this CPU</value>
+  </data>
+  <data name="GalaxyPanelCommunicationView_VerifyAndBurnFlashLoadCPU_Content" xml:space="preserve">
+    <value>Verify &amp; Burn</value>
+  </data>
+  <data name="GalaxyPanelCommunicationView_VerifyAndBurnFlashLoadCPU_ToolTip" xml:space="preserve">
+    <value>Verify that the flash loaded correctly and if so, burn in into the CPU</value>
+  </data>
+  <data name="GalaxyPanelCommunicationView_VerifyFlashLoadCPU_Content" xml:space="preserve">
+    <value>Verify Flash</value>
+  </data>
+  <data name="GalaxyPanelCommunicationView_VerifyFlashLoadCPU_ToolTip" xml:space="preserve">
+    <value>Verify that the flash loaded correctly</value>
+  </data>
+  <data name="GalaxyPanelCommunicationView_ResumeFlashLoadCPU_Content" xml:space="preserve">
+    <value>Resume Flash Loading</value>
+  </data>
+  <data name="GalaxyPanelCommunicationView_ResumeFlashLoadCPU_ToolTip" xml:space="preserve">
+    <value>Resume loading the selected flash image to this CPU</value>
+  </data>
+  <data name="GalaxyPanelCommunicationView_ValidatingFlash_BusyContent" xml:space="preserve">
+    <value>Validating flash data...</value>
+  </data>
+  <data name="GalaxyPanelCommunicationView_FlashLoadDuration" xml:space="preserve">
+    <value>Duration:</value>
+  </data>
+  <data name="GalaxyPanelCommunicationViewConnectionsColumnHeader_FlashLoadingProgress" xml:space="preserve">
+    <value>Flash Loading Progress</value>
+  </data>
+  <data name="GalaxyPanelCommunicationView_FlashValidationFailed_ToolTip" xml:space="preserve">
+    <value>Validation Failed</value>
+  </data>
+  <data name="GalaxyPanelCommunicationView_FlashValidationPassed_ToolTip" xml:space="preserve">
+    <value>Validation Passed</value>
+  </data>
+  <data name="GalaxyPanelCommunicationViewConnectionsColumnHeader_InstanceId" xml:space="preserve">
+    <value>Instance ID:</value>
+  </data>
+  <data name="GalaxyPanelCommunicationViewConnection_BoardsTabHeader" xml:space="preserve">
+    <value>Boards</value>
+  </data>
+  <data name="GalaxyPanelCommunicationViewConnection_DataLoadingTabHeader" xml:space="preserve">
+    <value>Data Loading</value>
+  </data>
+  <data name="GalaxyPanelCommunicationViewConnection_FlashLoadingTabHeader" xml:space="preserve">
+    <value>Flash Loading</value>
+  </data>
+  <data name="GalaxyPanelCommunicationViewConnection_ClusterSharedSettings_Text" xml:space="preserve">
+    <value>Load Common Cluster Data</value>
+  </data>
+  <data name="GalaxyPanelCommunicationViewConnection_ClusterSharedSettings_ToolTip" xml:space="preserve">
+    <value>Load settings that are common to all panels in the cluster. These include Wiegand, ABA and Cardax start and end settings, crisis mode and access rule override settings.</value>
+  </data>
+  <data name="GalaxyPanelCommunicationViewConnection_LoadCommonClusterData_Text" xml:space="preserve">
+    <value>Common Cluster Data</value>
+  </data>
+  <data name="GalaxyPanelCommunicationViewConnection_LoadCommonClusterData_ToolTip" xml:space="preserve">
+    <value>Load settings that are common to all panels in the cluster. These include Wiegand, ABA and Cardax start and end settings, crisis mode and access rule override settings.</value>
+  </data>
+  <data name="GalaxyPanelCommunicationViewConnection_LoadIOGroupData_Text" xml:space="preserve">
+    <value>I/O Groups</value>
+  </data>
+  <data name="GalaxyPanelCommunicationViewConnection_LoadIOGroupData_ToolTip" xml:space="preserve">
+    <value>Load Input-Output group settings</value>
+  </data>
+  <data name="GalaxyPanelCommunicationViewConnection_LoadResponses_Header" xml:space="preserve">
+    <value>Panel Responses</value>
+  </data>
+  <data name="GalaxyPanelCommunicationViewConnection_LoadSchedulesData_Text" xml:space="preserve">
+    <value>Time Schedules</value>
+  </data>
+  <data name="GalaxyPanelCommunicationViewConnection_LoadSchedulesData_ToolTip" xml:space="preserve">
+    <value>Load all time schedule data to the panel</value>
+  </data>
+  <data name="GalaxyPanelCommunicationView_PanelMessage_AckNack_Title" xml:space="preserve">
+    <value>Result</value>
+  </data>
+  <data name="GalaxyPanelCommunicationView_PanelMessage_CreatedDateTime_Title" xml:space="preserve">
+    <value>Date &amp; Time</value>
+  </data>
+  <data name="GalaxyPanelCommunicationView_PanelMessage_DataType_Title" xml:space="preserve">
+    <value>Data Type</value>
+  </data>
+  <data name="GalaxyPanelCommunicationViewConnection_LoadAccessPortalsData_Text" xml:space="preserve">
+    <value>Access Portals</value>
+  </data>
+  <data name="GalaxyPanelCommunicationViewConnection_LoadAccessPortalsData_ToolTip" xml:space="preserve">
+    <value>Load all access portal data to the panel</value>
+  </data>
+  <data name="GalaxyPanelCommunicationViewConnection_LoadAccessRulesData_Text" xml:space="preserve">
+    <value>Access Rules</value>
+  </data>
+  <data name="GalaxyPanelCommunicationViewConnection_LoadAccessRulesData_ToolTip" xml:space="preserve">
+    <value>Load all access rule data to the panel</value>
+  </data>
+  <data name="GalaxyPanelCommunicationViewConnection_LoadAllCredentials_Text" xml:space="preserve">
+    <value>All Credentials</value>
+  </data>
+  <data name="GalaxyPanelCommunicationViewConnection_LoadAllCredentials_ToolTip" xml:space="preserve">
+    <value>Load all credential data to the panel</value>
+  </data>
+  <data name="GalaxyPanelCommunicationViewConnection_LoadCredentialChanges_Text" xml:space="preserve">
+    <value>Credential Changes</value>
+  </data>
+  <data name="GalaxyPanelCommunicationViewConnection_LoadCredentialChanges_ToolTip" xml:space="preserve">
+    <value>Load all credential changes to the panel</value>
+  </data>
+  <data name="GalaxyPanelCommunicationViewConnection_LoadInputOutputDeviceData_Text" xml:space="preserve">
+    <value>Input Output Devices</value>
+  </data>
+  <data name="GalaxyPanelCommunicationViewConnection_LoadInputOutputDeviceData_ToolTip" xml:space="preserve">
+    <value>Load all input and output device data to the panel</value>
+  </data>
+  <data name="GalaxyPanelCommunicationViewConnection_LoadOptions_GroupBox_Header" xml:space="preserve">
+    <value>Select Data To Load</value>
+  </data>
+  <data name="GalaxyPanelCommunicationViewConnection_LoadPanelAlarms_Text" xml:space="preserve">
+    <value>Panel Alarms</value>
+  </data>
+  <data name="GalaxyPanelCommunicationViewConnection_LoadPanelAlarms_ToolTip" xml:space="preserve">
+    <value>Load AC Failure, Low Battery and Tamper alarm data to the panel</value>
+  </data>
+  <data name="GalaxyPanelCommunicationView_PanelMessage_Description_Title" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="GalaxyPanelCommunicationView_PanelMessage_ItemNumber_Title" xml:space="preserve">
+    <value>Item #</value>
+  </data>
+  <data name="GalaxyPanelCommunicationView_CpuDetails_ClusterUid_Title" xml:space="preserve">
+    <value>ClusterUid:</value>
+  </data>
+  <data name="GalaxyPanelCommunicationView_CpuDetails_PanelUid_Title" xml:space="preserve">
+    <value>PanelUid:</value>
+  </data>
+  <data name="GalaxyPanelCommunicationViewConnection_ClearPanelLoadDataReplies_Text" xml:space="preserve">
+    <value>Clear Replies</value>
+  </data>
+  <data name="GalaxyPanelCommunicationViewConnection_ClearPanelLoadDataReplies_ToolTip" xml:space="preserve">
+    <value>Clear the panel load replies list</value>
+  </data>
+  <data name="GalaxyPanelCommunicationViewConnection_LoadSelectedData_Text" xml:space="preserve">
+    <value>Load Selected Data</value>
+  </data>
+  <data name="GalaxyPanelCommunicationViewConnection_LoadSelectedData_ToolTip" xml:space="preserve">
+    <value>Load the data that has been selected</value>
+  </data>
+  <data name="GalaxyConnectionDebugView_ClearPacketData" xml:space="preserve">
+    <value>Clear Recv &amp; Xmit Data</value>
+  </data>
+  <data name="EditEntityView_FeatureName" xml:space="preserve">
+    <value>Feature Name</value>
+  </data>
+  <data name="EditEntityView_FeatureValue" xml:space="preserve">
+    <value>Value</value>
+  </data>
+  <data name="EditEntityView_LicenseDetails" xml:space="preserve">
+    <value>License Details</value>
+  </data>
+  <data name="EditEntityView_LicenseDetailsHeader" xml:space="preserve">
+    <value>License Details</value>
+  </data>
+  <data name="EditEntityView_LicenseId" xml:space="preserve">
+    <value>License ID:</value>
+  </data>
+  <data name="EditEntityView_LicenseInfoHeader" xml:space="preserve">
+    <value>License Information</value>
+  </data>
+  <data name="EditEntityView_LicenseName" xml:space="preserve">
+    <value>Licensed To:</value>
+  </data>
+  <data name="EditEntityView_LicenseTabItemTitle" xml:space="preserve">
+    <value>License</value>
+  </data>
+  <data name="EditEntityView_LicenseTabItemToolTip" xml:space="preserve">
+    <value>View and edit the license information</value>
+  </data>
+  <data name="EditEntityView_LicenseType" xml:space="preserve">
+    <value>Type:</value>
+  </data>
+  <data name="EditEntityView_LicenseTypeNone" xml:space="preserve">
+    <value>Not Licensed</value>
+  </data>
+  <data name="EditEntityView_LicenseTypeStandard" xml:space="preserve">
+    <value>Standard License</value>
+  </data>
+  <data name="EditEntityView_LicenseTypeTrial" xml:space="preserve">
+    <value>Trial License</value>
+  </data>
+  <data name="EditEntityView_SaveLicenseButtonText" xml:space="preserve">
+    <value>Save License Data</value>
+  </data>
+  <data name="EditEntityView_SaveLicenseButtonToolTip" xml:space="preserve">
+    <value>Save the imported license data as the system license</value>
+  </data>
+  <data name="LicenseView_ActivatedByPersonName_Text" xml:space="preserve">
+    <value>Activated by Person Name</value>
+  </data>
+  <data name="LicenseView_ActivatedByPersonName_ToolTip" xml:space="preserve">
+    <value>Enter the name of the person who is activating the license</value>
+  </data>
+  <data name="LicenseView_ActivateLicenseInformation_GroupHeader" xml:space="preserve">
+    <value>Activate License Information</value>
+  </data>
+  <data name="LicenseView_ActivateLicenseOverInternetButtonText" xml:space="preserve">
+    <value>Activate Now</value>
+  </data>
+  <data name="LicenseView_ActivateLicenseOverInternetButtonToolTip" xml:space="preserve">
+    <value>Activate over the internet</value>
+  </data>
+  <data name="LicenseView_Cities_Text" xml:space="preserve">
+    <value>City</value>
+  </data>
+  <data name="LicenseView_Cities_ToolTip" xml:space="preserve">
+    <value>Select or specify the city where this system is located</value>
+  </data>
+  <data name="LicenseView_ContactInformation_HeaderText" xml:space="preserve">
+    <value>Contact Information</value>
+  </data>
+  <data name="LicenseView_Countries_Text" xml:space="preserve">
+    <value>Country</value>
+  </data>
+  <data name="LicenseView_Countries_ToolTip" xml:space="preserve">
+    <value>Select the country where this system is located</value>
+  </data>
+  <data name="LicenseView_CustomerContactPerson_Text" xml:space="preserve">
+    <value>Customer Contact Person</value>
+  </data>
+  <data name="LicenseView_CustomerContactPerson_ToolTip" xml:space="preserve">
+    <value>Enter the name of the customers' primary contact person </value>
+  </data>
+  <data name="LicenseView_CustomerContactPhone_Text" xml:space="preserve">
+    <value>Customer Contact Phone #</value>
+  </data>
+  <data name="LicenseView_CustomerContactPhone_ToolTip" xml:space="preserve">
+    <value>Enter the customers' primary contact phone number</value>
+  </data>
+  <data name="LicenseView_CustomerEmailAddress_Text" xml:space="preserve">
+    <value>Customer E-Mail Address</value>
+  </data>
+  <data name="LicenseView_CustomerEmailAddress_ToolTip" xml:space="preserve">
+    <value>Enter the customers' primary contact email address</value>
+  </data>
+  <data name="LicenseView_CustomerInformation_HeaderText" xml:space="preserve">
+    <value>Customer Information</value>
+  </data>
+  <data name="LicenseView_CustomerJobNumber_Text" xml:space="preserve">
+    <value>Customer Job #</value>
+  </data>
+  <data name="LicenseView_CustomerJobNumber_ToolTip" xml:space="preserve">
+    <value>Enter the customer job number (optional)</value>
+  </data>
+  <data name="LicenseView_CustomerName_Text" xml:space="preserve">
+    <value>Customer Name</value>
+  </data>
+  <data name="LicenseView_CustomerName_ToolTip" xml:space="preserve">
+    <value>Enter software license key</value>
+  </data>
+  <data name="LicenseView_CustomerPurchaseOrder_Text" xml:space="preserve">
+    <value>Customer Purchase Order</value>
+  </data>
+  <data name="LicenseView_CustomerPurchaseOrder_ToolTip" xml:space="preserve">
+    <value>Enter the customer purchase order (optional)</value>
+  </data>
+  <data name="LicenseView_FacilityTypes_Text" xml:space="preserve">
+    <value>Facility Type</value>
+  </data>
+  <data name="LicenseView_FacilityTypes_ToolTip" xml:space="preserve">
+    <value>Select the type of facility where this system is used</value>
+  </data>
+  <data name="LicenseView_LicenseKey_Text" xml:space="preserve">
+    <value>License Key</value>
+  </data>
+  <data name="LicenseView_LicenseKey_ToolTip" xml:space="preserve">
+    <value>Enter software license key</value>
+  </data>
+  <data name="LicenseView_LicenseType_Text" xml:space="preserve">
+    <value>License Type</value>
+  </data>
+  <data name="LicenseView_LicenseType_ToolTip" xml:space="preserve">
+    <value>Select the license type</value>
+  </data>
+  <data name="LicenseView_PleaseWaitWhileActivateLicense" xml:space="preserve">
+    <value>Please wait while the license is activated...</value>
+  </data>
+  <data name="LicenseView_ServerSystemNumber_Text" xml:space="preserve">
+    <value>Server System Number</value>
+  </data>
+  <data name="LicenseView_ServerSystemNumber_ToolTip" xml:space="preserve">
+    <value>The unique system number</value>
+  </data>
+  <data name="LicenseView_States_Text" xml:space="preserve">
+    <value>State / Province</value>
+  </data>
+  <data name="LicenseView_States_ToolTip" xml:space="preserve">
+    <value>Select the state or province where this system is located</value>
+  </data>
+  <data name="LicenseView_StreetAddress_Text" xml:space="preserve">
+    <value>Street Address</value>
+  </data>
+  <data name="LicenseView_StreetAddress_ToolTip" xml:space="preserve">
+    <value>Enter the street address where the customer is located</value>
+  </data>
+  <data name="LicenseView_SystemInformation_HeaderText" xml:space="preserve">
+    <value>System Information</value>
+  </data>
+  <data name="LicenseView_SystemThumbprint_Text" xml:space="preserve">
+    <value>System Thumbprint</value>
+  </data>
+  <data name="LicenseView_SystemThumbprint_ToolTip" xml:space="preserve">
+    <value>The unique system thumbprint</value>
+  </data>
+  <data name="LicenseView_ActivateLicenseDataFileSaveFilter" xml:space="preserve">
+    <value>Activate License Data files (*.gcslicdata)</value>
+  </data>
+  <data name="LicenseView_CreateActivateLicenseDataFileButtonText" xml:space="preserve">
+    <value>Save To File</value>
+  </data>
+  <data name="LicenseView_CreateActivateLicenseDataFileButtonToolTip" xml:space="preserve">
+    <value>Save license activation data to file for emailing to GCS customer service</value>
+  </data>
+  <data name="EditUserRequirementsView_RequireTwoFactorAuthentication" xml:space="preserve">
+    <value>Require Two Factor Authentication</value>
+  </data>
+  <data name="EditUserRequirementsView_RequireTwoFactorAuthenticationToolTip" xml:space="preserve">
+    <value>The system will require two factor authentication for any user that is assigned to this entity as the Primary Entity</value>
+  </data>
+  <data name="EditUserView_EmailAddressConfirmed_Title" xml:space="preserve">
+    <value>Confirmed</value>
+  </data>
+  <data name="EditUserView_EmailAddressConfirmed_ToolTip" xml:space="preserve">
+    <value>Checked indicates that the users email address has been confirmed.</value>
+  </data>
+  <data name="EditUserView_MobilePhoneNumberConfirmed_Title" xml:space="preserve">
+    <value>Confirmed</value>
+  </data>
+  <data name="EditUserView_MobilePhoneNumberConfirmed_ToolTip" xml:space="preserve">
+    <value>Checked indicates that the users mobile phone number has been confirmed.</value>
+  </data>
+  <data name="EditUserView_MobilePhoneNumberTitle" xml:space="preserve">
+    <value>Mobile Phone Number</value>
+  </data>
+  <data name="EditUserView_MobilePhoneNumberToolTip" xml:space="preserve">
+    <value>Enter the users' cell phone number. The phone must support text messaging if it must be used for two-factor authentication</value>
+  </data>
+  <data name="GalaxyPanelCommunicationViewConnectionsColumnHeader_CrisisMode_Status" xml:space="preserve">
+    <value>Crisis Mode</value>
+  </data>
+  <data name="Menu_Tools_RefreshSites" xml:space="preserve">
+    <value>Refresh Sites</value>
+  </data>
+  <data name="GalaxyPanelCommunicationViewConnectionsColumn_EnableDaughterBoardFlashingButton" xml:space="preserve">
+    <value>Enable Daughter Board Flash Update</value>
+  </data>
+  <data name="GalaxyPanelCommunicationViewConnectionsColumn_RefreshBoardsFromPanelButton" xml:space="preserve">
+    <value>Refresh Boards From Panel</value>
+  </data>
+  <data name="GalaxyPanelCommunicationViewConnectionsColumn_EnableDaughterBoardFlashingButton_ToolTip" xml:space="preserve">
+    <value>Allow the CPU to update flash in daughter boards </value>
+  </data>
+  <data name="GalaxyPanelCommunicationViewConnectionsColumn_RefreshBoardsFromPanelButton_ToolTip" xml:space="preserve">
+    <value>Request the list of boards that are detected in the panel</value>
+  </data>
+  <data name="EditEntityView_SettingsTabItemTitle" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="EditEntityView_SettingsTabItemToolTip" xml:space="preserve">
+    <value>View and edit entity settings values</value>
+  </data>
+  <data name="EditUserRequirementsView_AccessProfileAccessGroupBehaviorSettings" xml:space="preserve">
+    <value>Access Profile Access Group Behavior</value>
+  </data>
+  <data name="EditUserRequirementsView_AccessProfileIOGroupBehaviorSettings" xml:space="preserve">
+    <value>Access Profile Input-Output Group Behavior</value>
+  </data>
+  <data name="EditUserRequirementsView_ControlsPersonAG1_Title" xml:space="preserve">
+    <value>Controls 1st Access Group Selection</value>
+  </data>
+  <data name="EditUserRequirementsView_ControlsPersonAG1_ToolTip" xml:space="preserve">
+    <value>The access profile will apply to the first access group selection</value>
+  </data>
+  <data name="EditUserRequirementsView_ControlsPersonAG2_Title" xml:space="preserve">
+    <value>Controls 2nd Access Group Selection</value>
+  </data>
+  <data name="EditUserRequirementsView_ControlsPersonAG2_ToolTip" xml:space="preserve">
+    <value>The access profile will apply to the second access group selection</value>
+  </data>
+  <data name="EditUserRequirementsView_ControlsPersonAG3_Title" xml:space="preserve">
+    <value>Controls 3rd Access Group Selection</value>
+  </data>
+  <data name="EditUserRequirementsView_ControlsPersonAG3_ToolTip" xml:space="preserve">
+    <value>The access profile will apply to the third access group selection</value>
+  </data>
+  <data name="EditUserRequirementsView_ControlsPersonAG4_Title" xml:space="preserve">
+    <value>Controls 4th Access Group Selection</value>
+  </data>
+  <data name="EditUserRequirementsView_ControlsPersonAG4_ToolTip" xml:space="preserve">
+    <value>The access profile will apply to the fourth access group selection</value>
+  </data>
+  <data name="EditUserRequirementsView_ControlsPersonIO1_Title" xml:space="preserve">
+    <value>Controls 1st Input-Output Group Selection</value>
+  </data>
+  <data name="EditUserRequirementsView_ControlsPersonIO1_ToolTip" xml:space="preserve">
+    <value>The access profile will apply to the first IO group selection</value>
+  </data>
+  <data name="EditUserRequirementsView_ControlsPersonIO2_Title" xml:space="preserve">
+    <value>Controls 2nd Input-Output Group Selection</value>
+  </data>
+  <data name="EditUserRequirementsView_ControlsPersonIO2_ToolTip" xml:space="preserve">
+    <value>The access profile will apply to the second IO group selection</value>
+  </data>
+  <data name="EditUserRequirementsView_ControlsPersonIO3_Title" xml:space="preserve">
+    <value>Controls 3rd Input-Output Group Selection</value>
+  </data>
+  <data name="EditUserRequirementsView_ControlsPersonIO3_ToolTip" xml:space="preserve">
+    <value>The access profile will apply to the third IO group selection</value>
+  </data>
+  <data name="EditUserRequirementsView_ControlsPersonIO4_Title" xml:space="preserve">
+    <value>Controls 4th Input-Output Group Selection</value>
+  </data>
+  <data name="EditUserRequirementsView_ControlsPersonIO4_ToolTip" xml:space="preserve">
+    <value>The access profile will apply to the fourth IO group selection</value>
+  </data>
+  <data name="GalaxyPanelCommunicationViewConnectionsColumnHeader_DatabaseCardCodeFormat" xml:space="preserve">
+    <value>DB Card Size</value>
+  </data>
+  <data name="ThemeDisplayName_Crystal" xml:space="preserve">
+    <value>Crystal</value>
+  </data>
+  <data name="ThemeDisplayName_Fluent" xml:space="preserve">
+    <value>Fluent</value>
+  </data>
+  <data name="ThemeDisplayName_Material" xml:space="preserve">
+    <value>Material</value>
+  </data>
+  <data name="ThemeDisplayName_Office2016" xml:space="preserve">
+    <value>Office 2016</value>
+  </data>
+  <data name="ThemeDisplayName_Office2016Touch" xml:space="preserve">
+    <value>Office 2016 Touch</value>
+  </data>
+  <data name="ThemeDisplayName_VisualStudio2019" xml:space="preserve">
+    <value>Visual Studio 2019</value>
+  </data>
+  <data name="LicenseView_IDProducerLicense_Header" xml:space="preserve">
+    <value>idPRODUCER License</value>
+  </data>
+  <data name="LicenseView_IdProducer_LicensedTo_Title" xml:space="preserve">
+    <value>Licensed to</value>
+  </data>
+  <data name="LicenseView_IdProducer_LicenseType_Advanced" xml:space="preserve">
+    <value>Advanced License</value>
+  </data>
+  <data name="LicenseView_IdProducer_LicenseType_Basic" xml:space="preserve">
+    <value>Basic License</value>
+  </data>
+  <data name="LicenseView_IdProducer_LicenseType_Title" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="LicenseView_IdProducer_License_MaximumCustomers_Title" xml:space="preserve">
+    <value>Maximum Customers/Entities</value>
+  </data>
+  <data name="LicenseView_IdProducer_License_MaximumPrinters_Title" xml:space="preserve">
+    <value>Maximum Printer Count</value>
+  </data>
+  <data name="LicenseView_IdProducer_License_No" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="LicenseView_IdProducer_License_NotLicensed" xml:space="preserve">
+    <value>Not Licensed</value>
+  </data>
+  <data name="LicenseView_IdProducer_License_SupportsCustomers_Title" xml:space="preserve">
+    <value>Supports Customers</value>
+  </data>
+  <data name="LicenseView_IdProducer_License_SupportsMultiplePrinters_Title" xml:space="preserve">
+    <value>Supports Multiple Printers</value>
+  </data>
+  <data name="LicenseView_IdProducer_License_Unlimited" xml:space="preserve">
+    <value>Unlimited</value>
+  </data>
+  <data name="LicenseView_IdProducer_License_Yes" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+  <data name="LicenseView_IdProducer_ValidateLicense_Title" xml:space="preserve">
+    <value>Validate idPRODUCER License</value>
+  </data>
+  <data name="LicenseView_IdProducer_ValidateLicense_ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LicenseView_PleaseWaitWhileIdProducerLicenseIsValidated" xml:space="preserve">
+    <value>Please wait while the idPRODUCER license is validated.</value>
+  </data>
+  <data name="SyncIdProducerTemplates" xml:space="preserve">
+    <value>Sync idPRODUCER</value>
+  </data>
+  <data name="SyncIdProducerTemplates_ToolTip" xml:space="preserve">
+    <value>Synchronize badge templates and properties with idPRODUCER</value>
+  </data>
+  <data name="EditRoleView_AccessPortalsTabItemTitle" xml:space="preserve">
+    <value>Access Portals</value>
+  </data>
+  <data name="EditRoleView_AccessPortalsTabItemToolTip" xml:space="preserve">
+    <value>Configure which access portals are available to members of the role</value>
+  </data>
+  <data name="EditRoleView_RoleAccessPortals" xml:space="preserve">
+    <value>Access Portals</value>
+  </data>
+  <data name="EditRoleView_ClustersTabItemTitle" xml:space="preserve">
+    <value>Clusters</value>
+  </data>
+  <data name="EditRoleView_ClustersTabItemToolTip" xml:space="preserve">
+    <value>Configure which clusters are available to members of the role</value>
+  </data>
+  <data name="EditRoleView_InputDevicesTabItemTitle" xml:space="preserve">
+    <value>Input Devices</value>
+  </data>
+  <data name="EditRoleView_InputDevicesTabItemToolTip" xml:space="preserve">
+    <value>Configure which input devices are available to members of the role</value>
+  </data>
+  <data name="EditRoleView_InputOutputGroupsTabItemTitle" xml:space="preserve">
+    <value>Input-Output Groups</value>
+  </data>
+  <data name="EditRoleView_InputOutputGroupsTabItemToolTip" xml:space="preserve">
+    <value>Configure which input-output groups are available to members of the role</value>
+  </data>
+  <data name="EditRoleView_OutputDevicesTabItemTitle" xml:space="preserve">
+    <value>Output Devices</value>
+  </data>
+  <data name="EditRoleView_OutputDevicesTabItemToolTip" xml:space="preserve">
+    <value>Configure which output devices are available to members of the role</value>
+  </data>
+  <data name="EditRoleView_RoleClusters" xml:space="preserve">
+    <value>Clusters</value>
+  </data>
+  <data name="EditRoleView_RoleInputDevices" xml:space="preserve">
+    <value>Input Devices</value>
+  </data>
+  <data name="EditRoleView_RoleInputOutputGroups" xml:space="preserve">
+    <value>Input-Output Groups</value>
+  </data>
+  <data name="EditRoleView_RoleOutputDevices" xml:space="preserve">
+    <value>Output Devices</value>
+  </data>
+  <data name="EditUserView_UserIsEntityAdministrator" xml:space="preserve">
+    <value>Is Administrator</value>
+  </data>
+  <data name="GalaxyPanelCommunicationViewConnection_LoadAccessPortalsInputsOutputsData_Text" xml:space="preserve">
+    <value>Access Portals, Inputs &amp; Outputs</value>
+  </data>
+  <data name="GalaxyPanelCommunicationViewConnection_LoadAccessPortalsInputsOutputsData_ToolTip" xml:space="preserve">
+    <value>Load all access portal, input and output data to the panel</value>
+  </data>
+  <data name="MaintainUsers_ActivationDate" xml:space="preserve">
+    <value>Activation Date</value>
+  </data>
+  <data name="MaintainUsers_Email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="MaintainUsers_ExpirationDate" xml:space="preserve">
+    <value>Expiration Date</value>
+  </data>
+  <data name="MaintainUsers_IsActive" xml:space="preserve">
+    <value>Is Active</value>
+  </data>
+  <data name="MaintainUsers_IsLockedOut" xml:space="preserve">
+    <value>Locked Out</value>
+  </data>
+  <data name="MaintainUsers_UserName" xml:space="preserve">
+    <value>User Name</value>
+  </data>
+  <data name="EditUserView_UserInheritParentRoles" xml:space="preserve">
+    <value>Inherit Parent Roles</value>
+  </data>
+  <data name="EditEntityView_ClusterGroupIdTitle" xml:space="preserve">
+    <value>Cluster Group ID:</value>
+  </data>
+  <data name="EditEntityView_ClusterGroupIdToolTip" xml:space="preserve">
+    <value>The system assigned Cluster Group ID # for all clusters and panels owned by this entity</value>
+  </data>
+  <data name="EditEntityView_SelectTimeZoneToolTip" xml:space="preserve">
+    <value>Select the time zone for entity specific date processing</value>
+  </data>
+  <data name="EditEntityView_TimeZoneTitle" xml:space="preserve">
+    <value>Time Zone:</value>
+  </data>
+</root>

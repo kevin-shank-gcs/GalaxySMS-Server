@@ -1,0 +1,23 @@
+﻿////////////////////////////////////////////////////////////////////////////////////////////////////
+// file:	Enums\AccessPortalCommandActionCode.cs
+//
+// summary:	Implements the access portal command action code class
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace GalaxySMS.Common.Enums
+{
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+    /// <summary>   Values that represent access portal command action codes. </summary>
+    ///
+    /// <remarks>   Kevin, 1/3/2019. </remarks>
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    public enum AccessPortalCommandActionCode { None, Pulse, Unlock, Lock, Enable, Disable, AuxRelayOn, AuxRelayOff, SetLedTemporaryState, RequestStatus }
+
+}

@@ -1,0 +1,27 @@
+﻿////////////////////////////////////////////////////////////////////////////////////////////////////
+// file:	Enums\GalaxyInputMode.cs
+//
+// summary:	Implements the galaxy input mode class
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace GalaxySMS.Common.Enums
+{
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+    /// <summary>   Values that represent galaxy input modes. </summary>
+    ///
+    /// <remarks>   Kevin, 1/3/2019. </remarks>
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+	public enum GalaxyInputMode
+	{
+        /// <summary>   An enum constant representing the standard option. </summary>
+        Standard,
+        /// <summary>   An enum constant representing the arming option. </summary>
+        Arming
+    }
+}

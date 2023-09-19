@@ -1,0 +1,29 @@
+﻿////////////////////////////////////////////////////////////////////////////////////////////////////
+// file:	Security.cs
+//
+// summary:	Implements the security class
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace GalaxySMS.Common
+{
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+    /// <summary>   A security. </summary>
+    ///
+    /// <remarks>   Kevin, 1/3/2019. </remarks>
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    public static class Security
+    {
+        /// <summary>   The galaxy SMS user. </summary>
+        public const string GalaxySMSUser = "GalaxySMSUser";
+
+        /// <summary>   The galaxy SMS admin role. </summary>
+        public const string GalaxySMSAdminRole = "GalaxySMSAdmin";
+    }
+}

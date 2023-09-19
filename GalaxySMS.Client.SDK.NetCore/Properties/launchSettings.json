@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "GalaxySMS.Client.SDK.NetCore": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:36494;http://localhost:36495"
+    }
+  }
+}

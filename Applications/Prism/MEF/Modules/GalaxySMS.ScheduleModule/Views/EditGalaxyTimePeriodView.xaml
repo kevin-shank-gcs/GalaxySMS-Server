@@ -1,0 +1,187 @@
+﻿<core:UserControlViewBase
+    x:Class="GalaxySMS.Schedule.Views.EditGalaxyTimePeriodView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:core="http://www.galaxysys.com/GCS/Core"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:prism="http://prismlibrary.com/"
+    xmlns:resx="clr-namespace:GalaxySMS.Schedule.Properties"
+    xmlns:sharedResources="clr-namespace:GalaxySMS.Resources;assembly=GalaxySMS.Resources"
+    xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+    xmlns:converters="clr-namespace:GCS.Core.Common.UI.Converters;assembly=GCS.Core.Common.UI"
+    xmlns:ui="clr-namespace:GalaxySMS.Client.UI;assembly=GalaxySMS.Client.UI"
+    xmlns:system="clr-namespace:System;assembly=mscorlib"
+    xmlns:localUserControls="clr-namespace:GalaxySMS.Schedule.UserControls"
+    xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+    xmlns:support="clr-namespace:GalaxySMS.Schedule.Support"
+    mc:Ignorable="d"
+    d:DesignHeight="300"
+    d:DesignWidth="300"
+    FlowDirection="{Binding FlowDirection}">
+
+    <core:UserControlViewBase.Resources>
+        <converters:SliderValueToPercentageConverter x:Key="sliderValueToPercentageConverter" />
+        <BitmapImage x:Key="SelectPhoto" UriSource="/GalaxySMS.Resources;component/Images/Camera/SLR_32.png" />
+        <BitmapImage x:Key="Clock15" UriSource="/GalaxySMS.Resources;component/Images/Clocks/Analog-15-Minute-Clock-White-Blue.png"/>
+        <BitmapImage x:Key="Clock60" UriSource="/GalaxySMS.Resources;component/Images/Clocks/Analog-60-Minute-Clock-Blue.png"/>
+        <system:Double x:Key="TabHeaderImageHeight">32</system:Double>
+    </core:UserControlViewBase.Resources>
+
+    <telerik:RadBusyIndicator
+        BusyContent="{Binding BusyContent}"
+        DisplayAfter="0"
+        IsBusy="{Binding IsBusy}"
+        IsIndeterminate="True">
+        <!--<ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">-->
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <ui:FormHeaderControl />
+                <ui:SaveCancelButtonControl Grid.Column="1" />
+            </Grid>
+            <core:ValidationHeader Grid.Row="1" DataContext="{Binding}" />
+            <Grid Grid.Row="2" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="10" />
+                    <ColumnDefinition Width="*" />
+                    <!--<ColumnDefinition Width="10" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="10" />
+                    <ColumnDefinition Width="Auto" />-->
+                </Grid.ColumnDefinitions>
+                <telerik:RadExpander Grid.Row="1"
+                    ExpandDirection="Right"
+                    IsExpanded="{Binding IsBasicInfoExpanded}">
+                    <telerik:RadExpander.Header>
+                        <Border Style="{StaticResource HeaderBorder}">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock
+                                    Margin="8"
+                                    Style="{StaticResource Heading2Left}"
+                                    Text="{x:Static sharedResources:Resources.EditGalaxyTimePeriodView_BasicDataExpanderHeaderText}" />
+                            </StackPanel>
+                        </Border>
+                    </telerik:RadExpander.Header>
+                    <StackPanel>
+                        <StackPanel
+                        Margin="5"
+                        Orientation="Vertical">
+                            <TextBlock
+                            Style="{StaticResource DataEntryControlTitle}"
+                            Text="{x:Static sharedResources:Resources.EditGalaxyTimePeriodView_TimePeriodNameTitle}" />
+                            <TextBox
+                            Margin="3"
+                            MinWidth="200"
+                            HorizontalAlignment="Left"
+                            Text="{Binding GalaxyTimePeriod.Display, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" 
+                                ToolTip="{x:Static sharedResources:Resources.EditGalaxyTimePeriodView_TimePeriodNameToolTip}"/>
+                        </StackPanel>
+                        <StackPanel
+                            Margin="5"
+                            Orientation="Vertical">
+                            <TextBlock
+                                Style="{StaticResource DataEntryControlTitle}"
+                                Text="{x:Static sharedResources:Resources.EditGalaxyTimePeriodView_TimePeriodPanelTimePeriodNumberTitle}" />
+                            <TextBox
+                                Margin="3"
+                                MinWidth="40"
+                                HorizontalAlignment="Left"
+                                Text="{Binding GalaxyTimePeriod.PanelTimePeriodNumber, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"
+                                ToolTip="{x:Static sharedResources:Resources.EditGalaxyTimePeriodView_TimePeriodPanelTimePeriodNumberToolTip}"/>
+
+                        </StackPanel>
+                        <StackPanel
+                            Margin="5"
+                            Orientation="Vertical">
+                            <TextBlock Style="{StaticResource DataEntryControlTitle}" Text="{x:Static sharedResources:Resources.EditGalaxyTimePeriodView_TimePeriodDescriptionTitle}" />
+                            <TextBox
+                                Margin="3"
+                                MinWidth="200"
+                                MinHeight="100"
+                                HorizontalAlignment="Left"
+                                VerticalContentAlignment="Top"
+                                AcceptsReturn="True"
+                                Text="{Binding GalaxyTimePeriod.Description, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"
+                                TextWrapping= "Wrap"
+                                ToolTip="{x:Static sharedResources:Resources.EditGalaxyTimePeriodView_TimePeriodDescriptionToolTip}" />
+                        </StackPanel>
+                    </StackPanel>
+                </telerik:RadExpander>
+                <ScrollViewer HorizontalScrollBarVisibility="Auto"
+                              VerticalScrollBarVisibility="Auto"
+                              Grid.Column="2" Grid.Row="1" >
+                    <telerik:RadTabControl HorizontalAlignment="Stretch" Margin="0" VerticalAlignment="Stretch"
+                                           Height="Auto" Width="Auto">
+                        <telerik:RadTabItem x:Name="radTabOneMinuteTimePeriods">
+                            <telerik:RadTabItem.Header>
+                                <Grid>
+                                    <Grid.ToolTip>
+                                        <TextBlock Text="{x:Static sharedResources:Resources.EditGalaxyTimePeriodView_TimePeriodIntervalsTabToolTip}" />
+                                    </Grid.ToolTip>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Image Source="{StaticResource Clock60}" Height="{StaticResource TabHeaderImageHeight}"></Image>
+                                        <TextBlock
+                                            Text="{x:Static sharedResources:Resources.EditGalaxyTimePeriodView_TimePeriodIntervalsTabHeader}" />
+                                    </StackPanel>
+                                </Grid>
+                            </telerik:RadTabItem.Header>
+                            <i:Interaction.Triggers>
+                                <i:EventTrigger EventName="PreviewMouseWheel">
+                                    <!-- This action will invoke the selected command in the view model and pass the parameters of the event to it. -->
+                                    <support:MouseWheelInvokeCommandAction Command="{Binding MouseWheelOneMinuteCommand}" />
+                                </i:EventTrigger>
+                            </i:Interaction.Triggers>
+                            <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+                                <StackPanel Orientation="Vertical">
+                                    <telerik:RadSlider Maximum="2" LargeChange=".25" SmallChange=".1" Minimum=".25" Value="{Binding OneMinuteZoomFactor}"
+                                                       HorizontalAlignment="Stretch" HandlesVisibility="Visible" ToolTip="{Binding OneMinuteZoomFactor, Converter={StaticResource sliderValueToPercentageConverter}}" />
+
+                                    <localUserControls:DailyMinuteBasedTimePeriodEditor TimeIntervalResolution="Minute" 
+                                                                             ItemsPerTimeEditorRow="{Binding DataContext.ItemsPerTimeEditorRow, RelativeSource={RelativeSource AncestorType=core:UserControlViewBase}}"
+                                                                             TimePeriods="{Binding GalaxyTimePeriod.TimePeriods, Mode=TwoWay}"
+                                                                             ZoomFactor="{Binding DataContext.OneMinuteZoomFactor, RelativeSource={RelativeSource AncestorType=core:UserControlViewBase}}"
+                                                                             ExpanderHeaderText="{Binding GalaxyTimePeriod.Display}"/>
+                                    
+                                </StackPanel>
+                            </ScrollViewer>
+                        </telerik:RadTabItem>
+                        <!--<telerik:RadTabItem>
+                            <telerik:RadTabItem.Header>
+                                <Grid>
+                                    <Grid.ToolTip>
+                                        <TextBlock Text="{Binding Path=EntityAliasPlural, StringFormat={x:Static sharedResources:Resources.EditTimePeriodView_EntityMappingTabHeaderToolTip}}" />
+                                    </Grid.ToolTip>
+                                    <TextBlock Text="{Binding Path=EntityAlias, StringFormat={x:Static sharedResources:Resources.EditTimePeriodView_EntityMappingTabHeader}}" />
+                                </Grid>
+                            </telerik:RadTabItem.Header>
+                            <ui:EntityMapUserControl />
+                        </telerik:RadTabItem>-->
+                    </telerik:RadTabControl>
+                </ScrollViewer>
+            </Grid>
+            <ui:SaveCancelButtonControl Grid.Row="3" />
+            <core:ErrorsPanel Grid.Row="4" DataContext="{Binding}" />
+        </Grid>
+        <!--</ScrollViewer>-->
+    </telerik:RadBusyIndicator>
+
+</core:UserControlViewBase>

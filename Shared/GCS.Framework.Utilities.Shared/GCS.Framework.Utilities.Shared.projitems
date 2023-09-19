@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>d2905083-1837-410a-aca0-2260795f5881</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>GCS.Framework.Utilities.Shared</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)AssemblyAttributes.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CodeComputer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ComputerInformation.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SystemUtilities.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)UtilityFunctions.cs" />
+  </ItemGroup>
+</Project>

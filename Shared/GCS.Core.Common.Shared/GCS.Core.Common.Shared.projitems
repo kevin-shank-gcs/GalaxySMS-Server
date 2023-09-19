@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>085b58c6-e782-4f3b-b847-fc838497d225</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>GCS.Core.Common.Shared</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Core\DataContractBase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\DbObjectBase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\DtoObjectBase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\EntityBase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\NotificationObject.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\NotNavigableAttribute.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\ObjectBase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Exceptions\AuthorizationValidationException.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Exceptions\CannotDeleteReferenceException.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Exceptions\DataValidationException.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Exceptions\InvalidDataException.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Exceptions\DuplicateIndexException.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Exceptions\NotFoundException.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\ByteArrayExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\ColorConversions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\CoreExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\DateTimeExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\EnumExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\HttpClientExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\ObjectExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\ProcessExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\StreamExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\StringExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)File\FileContentTypes.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Logger\CachingLogManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Logger\GenericLoggingExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Logger\Logger.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Logger\LoggerExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Logger\LoggingActivity.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Logger\LogManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Misc\CustomError.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Misc\ExceptionDetailEx.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utils\GuidUtilities.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utils\HardDriveInfo.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utils\LogicalDriveInfo.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utils\ObjectComparer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utils\PrincipalIdentity.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utils\ProcessUtilities.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utils\PropertySupport.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utils\SystemUtilities.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utils\XmlUtilities.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Validation\ValidationRule.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Validation\ValidationRules.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="$(MSBuildThisFileDirectory)Config\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Converters\" />
+  </ItemGroup>
+</Project>

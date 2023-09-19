@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects Condition="'$(MSBuildVersion)' == '' Or '$(MSBuildVersion)' &lt; '16.0'">$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>07b21df8-89ed-466a-9b25-44a4be5948aa</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>GalaxySMS.Business.WcfClient.Shared</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Data Classes\GalaxySiteServerConnection.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Data Classes\GalaxySiteServerConnectionSettings.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Data Classes\IGalaxySiteServerConnection.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Data Classes\IGalaxySiteServerConnectionSettings.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Data Classes\ServiceNames.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)EventArgs\ErrorsOccurredEventArgs.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)EventArgs\EventArgsBase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\Helpers.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)WcfManagers\AccessPortalManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)WcfManagers\AccessProfileManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)WcfManagers\AlarmEventAcknowledgeManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)WcfManagers\ApplicationManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)WcfManagers\BadgePrintManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)WcfManagers\BadgeTemplateManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)WcfManagers\MercScpManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)WcfManagers\MercScpGroupManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)WcfManagers\ClusterManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)WcfManagers\CountryManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)WcfManagers\CredentialManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)WcfManagers\DateTypeDefaultBehaviorManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)WcfManagers\DateTypeManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)WcfManagers\DayTypeManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)WcfManagers\DepartmentManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)WcfManagers\EntityManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)WcfManagers\GalaxyAccessGroupManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)WcfManagers\GalaxyActivityEventTypeManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)WcfManagers\GalaxyAreaManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)WcfManagers\GalaxyCpuManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)WcfManagers\GalaxyInputOutputGroupManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)WcfManagers\GalaxyInterfaceBoardManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)WcfManagers\GalaxyPanelCommunicationManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)WcfManagers\GalaxyPanelManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)WcfManagers\GalaxyTimePeriodManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)WcfManagers\IdProducerManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)WcfManagers\InputDeviceManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)WcfManagers\ManagerBase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)WcfManagers\MercuryScpIdReportManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)WcfManagers\OutputDeviceManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)WcfManagers\PersonManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)WcfManagers\PersonRecordTypeManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)WcfManagers\RegionManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)WcfManagers\RoleManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)WcfManagers\SiteManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)WcfManagers\BackgroundJobManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)WcfManagers\StateProvinceManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)WcfManagers\SystemManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)WcfManagers\TimePeriodManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)WcfManagers\TimeScheduleManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)WcfManagers\UserManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)WcfManagers\ActivityHistoryEventManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)WcfManagers\ValidationManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)WcfManagers\UserSessionManager.cs" />
+  </ItemGroup>
+</Project>

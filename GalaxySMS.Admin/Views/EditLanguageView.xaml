@@ -1,0 +1,102 @@
+﻿<core:UserControlViewBase x:Class="GalaxySMS.Admin.Views.EditLanguageView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:core="http://www.galaxysys.com/GCS/Core"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:resx="clr-namespace:GalaxySMS.Admin.Properties"
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <core:ValidationHeader Grid.Row="0" DataContext="{Binding}" />
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Row="0" Margin="3" Text="{x:Static resx:Resources.EditLanguageView_LanguageNameTitle}" />
+            <TextBox Grid.Row="1" Margin="3" MinWidth="200"  Text="{Binding Language.LanguageName, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" HorizontalAlignment="Left" />
+            <TextBlock Grid.Row="2" Margin="3" Text="{x:Static resx:Resources.EditLanguageView_CultureNameTitle}" />
+            <!--<TextBox Grid.Row="3" Margin="3" MinWidth="100"  Text="{Binding Language.CultureName, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" HorizontalAlignment="Left" />-->
+            <!--<ComboBox Grid.Row="3" Margin="3" ItemsSource="{Binding Cultures}" SelectedValue="{Binding Language.CultureName}" SelectedValuePath="Name">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <Border CornerRadius="2" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Stretch">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Margin="2,0,5,0" VerticalAlignment="Center" Text="{Binding Path=Name}" FontWeight="Bold"></TextBlock>
+                                <StackPanel Orientation="Vertical">
+                                <TextBlock Text="{Binding NativeName}"></TextBlock>
+                                <TextBlock Text="{Binding EnglishName}"></TextBlock>
+                            </StackPanel>
+                            --><!--<TextBlock Margin="2" Text="{Binding DisplayName}"></TextBlock>--><!--
+                        </StackPanel>
+                        </Border>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>-->
+            <telerik:RadComboBox Grid.Row="3" Margin="3" ItemsSource="{Binding Cultures}" SelectedValue="{Binding Language.CultureName}" SelectedValuePath="Name">
+                <telerik:RadComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <Border CornerRadius="2" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Stretch">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Margin="2,0,5,0" VerticalAlignment="Center" Text="{Binding Path=Name}" FontWeight="Bold"></TextBlock>
+                                <StackPanel Orientation="Vertical">
+                                    <TextBlock Text="{Binding NativeName}"></TextBlock>
+                                    <TextBlock Text="{Binding EnglishName}"></TextBlock>
+                                </StackPanel>
+                                <!--<TextBlock Margin="2" Text="{Binding DisplayName}"></TextBlock>-->
+                            </StackPanel>
+                        </Border>
+                    </DataTemplate>
+                </telerik:RadComboBox.ItemTemplate>
+            </telerik:RadComboBox>
+            <TextBlock Grid.Row="4" Margin="3" Text="{x:Static resx:Resources.EditLanguageView_LanguageDescriptionTitle}" />
+            <TextBox Grid.Row="5" Margin="3" MinWidth="200" Text="{Binding Language.Description, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" HorizontalAlignment="Left" />
+            <TextBlock Grid.Row="6" Margin="3" Text="{x:Static resx:Resources.EditLanguageView_LanguageNotesTitle}" />
+            <TextBox Grid.Row="7" Margin="3" MinWidth="200" Text="{Binding Language.Notes, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" HorizontalAlignment="Left" />
+            <CheckBox Grid.Row="8" Margin="3" Content="{x:Static resx:Resources.EditLanguageView_LanguageIsActive}"  IsChecked="{Binding Language.IsActive, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" HorizontalAlignment="Left" />
+            <CheckBox Grid.Row="9" Margin="3" Content="{x:Static resx:Resources.EditLanguageView_LanguageIsDefault}"  IsChecked="{Binding Language.IsDefault, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" HorizontalAlignment="Left" />
+            <CheckBox Grid.Row="10" Margin="3" Content="{x:Static resx:Resources.EditLanguageView_LanguageIsDisplay}"  IsChecked="{Binding Language.IsDisplay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" HorizontalAlignment="Left" />
+        </Grid>
+
+        <StackPanel Grid.Row="2" Orientation="Horizontal">
+            <Button Margin="5" Command="{Binding SaveCommand}" ToolTip="{x:Static resx:Resources.Common_SaveToolTip}">
+                <Button.Content>
+                    <StackPanel Orientation="Horizontal" Margin="3">
+                        <Image x:Name="imgSave" Source="/Images\SaveData.png" Width="16" Height="16"/>
+                        <TextBlock VerticalAlignment="Center" Margin="3,0,0,0" Text="{x:Static resx:Resources.Common_Save}" ></TextBlock>
+                    </StackPanel>
+                </Button.Content>
+            </Button>
+            <Button Margin="5" Command="{Binding CancelCommand}" ToolTip="{x:Static resx:Resources.Common_CancelToolTip}">
+                <Button.Content>
+                    <StackPanel Orientation="Horizontal" Margin="3">
+                        <Image x:Name="imgCancel" Source="/Images\CancelEdit.png" Width="16" Height="16"/>
+                        <TextBlock VerticalAlignment="Center" Margin="3,0,0,0" Text="{x:Static resx:Resources.Common_Cancel}" ></TextBlock>
+                    </StackPanel>
+                </Button.Content>
+            </Button>
+        </StackPanel>
+        <core:ErrorsPanel Grid.Row="3" DataContext="{Binding}" />
+    </Grid>
+</core:UserControlViewBase>

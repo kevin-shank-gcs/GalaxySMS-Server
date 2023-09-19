@@ -1,0 +1,359 @@
+﻿<core:UserControlViewBase x:Class="GalaxySMS.AccessPortal.Views.AccessPortalView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:prism="http://prismlibrary.com/"
+             xmlns:core="http://www.galaxysys.com/GCS/Core"
+             xmlns:local="clr-namespace:GalaxySMS.AccessPortal.Views"
+             xmlns:resx="clr-namespace:GalaxySMS.AccessPortal.Properties"
+             xmlns:sharedResources="clr-namespace:GalaxySMS.Resources;assembly=GalaxySMS.Resources"
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             xmlns:converters="clr-namespace:GCS.Core.Common.UI.Converters;assembly=GCS.Core.Common.UI"
+             xmlns:animations="clr-namespace:GCS.Core.Common.UI.Animations;assembly=GCS.Core.Common.UI"
+             xmlns:ui="clr-namespace:GalaxySMS.Client.UI;assembly=GalaxySMS.Client.UI"
+                          xmlns:entities="clr-namespace:GalaxySMS.Client.Entities;assembly=GalaxySMS.Client.Entities"
+                          xmlns:system="clr-namespace:System;assembly=mscorlib"
+                          prism:ViewModelLocator.AutoWireViewModel="True" FlowDirection="{Binding FlowDirection}"
+             mc:Ignorable="d">
+    <core:UserControlViewBase.Resources>
+        <converters:NullToVisibilityConverter x:Key="nullToVisibilityConverter" />
+        <converters:NotNullToVisibilityConverter x:Key="notNullToVisibilityConverter" />
+        <converters:BooleanToVisibilityConverter x:Key="boolToVisibility" />
+        <system:Double x:Key="commandButtonImageWidth">24</system:Double>
+        <system:Double x:Key="commandButtonImageHeight">24</system:Double>
+        <ui:DeviceIdCommandIdMultiValueConverter x:Key="deviceIdCommandIdMVConverter"/>
+        <Style x:Key="MenuItemStyle" TargetType="telerik:RadMenuItem" BasedOn="{StaticResource RadMenuItemStyle}">
+            <Setter Property="Header" Value="{Binding Text}"/>
+            <Setter Property="ToolTip" Value="{Binding ToolTip}"/>
+            <Setter Property="ItemsSource" Value="{Binding SubItems}"/>
+            <Setter Property="Command" Value="{Binding DataContext.SendAccessPortalCommand, RelativeSource={RelativeSource AncestorType=core:UserControlViewBase}}" />
+            <Setter Property="CommandParameter" Value="{Binding}" />
+            <Setter Property="Icon" Value="{Binding IconUrl}"/>
+            <!--<Setter Property="IconColumnWidth" Value="{Binding IconColumnWidth}"/>-->
+            <Setter Property="IconColumnWidth" Value="NaN"/>
+            <Setter Property="IconTemplate">
+                <Setter.Value>
+                    <DataTemplate>
+                        <Image Source="{Binding}" Stretch="None" />
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+
+        <Style x:Key="MenuCustomIconColumnWidthStyle" TargetType="telerik:RadMenuItem" BasedOn="{StaticResource RadMenuItemStyle}">
+            <Setter Property="Header" Value="{Binding Text}"/>
+            <Setter Property="ToolTip" Value="{Binding ToolTip}"/>
+            <Setter Property="ItemsSource" Value="{Binding SubItems}"/>
+            <Setter Property="Command" Value="{Binding DataContext.SendAccessPortalCommand, RelativeSource={RelativeSource AncestorType=core:UserControlViewBase}}" />
+            <Setter Property="CommandParameter" Value="{Binding}" />
+            <Setter Property="Icon" Value="{Binding IconUrl}"/>
+            <Setter Property="IconColumnWidth" Value="NaN"/>
+            <Setter Property="IconTemplate">
+                <Setter.Value>
+                    <DataTemplate>
+                        <Image Source="{Binding}" Stretch="None" />
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </core:UserControlViewBase.Resources>
+
+    <telerik:RadBusyIndicator
+        BusyContent="{Binding BusyContent}"
+        DisplayAfter="0"
+        IsBusy="{Binding IsBusy}"
+        IsIndeterminate="True">
+        <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+            <Grid>
+                <Grid Grid.Row="0" Visibility="{Binding CurrentItemViewModel, Converter={StaticResource notNullToVisibilityConverter}}" 
+              animations:VisibilityAnimation.AnimationType="Fade" >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <StackPanel Grid.Row="0" Orientation="Vertical">
+                        <core:ErrorsPanel DataContext="{Binding}" />
+                        <StackPanel Orientation="Horizontal">
+                            <!--<ui:AddNewButtonControlBindable
+                            Command="{Binding AddNewCommand}"
+                            ImageHeight="32"
+                            ImageWidth="32"
+                            IsVisible="{Binding IsAddNewControlVisible}"
+                            Text="{x:Static sharedResources:Resources.AddNewAccessPortal_Text}"
+                            ToolTip="{x:Static sharedResources:Resources.AddNewAccessPortal_ToolTip}" />-->
+                            <ui:RefreshButtonControlBindable
+                            Command="{Binding RefreshCommand}"
+                            ImageHeight="32"
+                            ImageWidth="32"
+                            IsVisible="{Binding IsRefreshControlVisible}"
+                            Text="{x:Static sharedResources:Resources.RefreshAccessPortals_Text}"
+                            ToolTip="{x:Static sharedResources:Resources.RefreshAccessPortals_ToolTip}" />
+                        </StackPanel>
+
+                    </StackPanel>
+
+                    <telerik:RadTabControl Grid.Row="1">
+                        <telerik:RadTabItem>
+                            <telerik:RadTabItem.Header>
+                                <Grid>
+                                    <Grid.ToolTip>
+                                        <TextBlock Text="{x:Static sharedResources:Resources.AccessPortalView_ActivePortalsToolTip}"/>
+                                    </Grid.ToolTip>
+                                    <TextBlock Text="{x:Static sharedResources:Resources.AccessPortalView_ActivePortalsTabHeaderText}"/>
+                                </Grid>
+                            </telerik:RadTabItem.Header>
+                            <StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <StackPanel Orientation="Vertical" Margin="5,0,0,0">
+                                        <ui:TotalRecordCountControl/>
+                                        <telerik:RadDataPager PageSize="{Binding GridPageSize.Key}"
+                                                  Source="{Binding Items, ElementName=radGridViewAccessPortals}"
+                                                  IsTotalItemCountFixed="True" />
+                                    </StackPanel>
+                                    <ui:GridPageSizeSelector Margin="5,0,0,0"/>
+                                </StackPanel>
+                                <telerik:RadGridView
+                                 x:Name="radGridViewAccessPortals" 
+                                 Visibility="Visible" 
+                                 ShowGroupPanel="False" 
+                                 ItemsSource="{Binding AccessPortals}"
+                                 IsFilteringAllowed="True" 
+                                 IsReadOnly="True" 
+                                 AutoGenerateColumns="False"
+                                 Width="Auto"
+                                 RowIndicatorVisibility="Collapsed"
+                                 RowDetailsVisibilityMode="VisibleWhenSelected">
+                                    <telerik:RadGridView.Columns>
+                                        <!--<telerik:GridViewToggleRowDetailsColumn/>-->
+                                        <telerik:GridViewColumn Header="{x:Static sharedResources:Resources.Common_Actions}" ToolTip="{x:Static sharedResources:Resources.Common_ActionsTooltip}" >
+                                            <telerik:GridViewColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <!--<ui:EditDeleteButtonControl/>-->
+                                                    <ui:EditButtonControlBindable 
+                                                        Command="{Binding DataContext.EditCommand, RelativeSource={RelativeSource AncestorType=core:UserControlViewBase}}"
+                                                        CommandParameter="{Binding}"/>
+                                                </DataTemplate>
+                                            </telerik:GridViewColumn.CellTemplate>
+                                        </telerik:GridViewColumn>
+                                        <telerik:GridViewDataColumn Header="{x:Static sharedResources:Resources.MaintainAccessPortals_AccessPortalImage}" >
+                                            <telerik:GridViewDataColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <Border Visibility="{Binding gcsBinaryResource, Converter={StaticResource nullToVisibilityConverter}}"  Margin="2"  Height="64" BorderThickness="2" BorderBrush="Black">
+                                                        <Image MaxHeight="60" Source="{Binding gcsBinaryResource.BinaryResource, TargetNullValue={x:Null}}"/>
+                                                    </Border>
+                                                </DataTemplate>
+                                            </telerik:GridViewDataColumn.CellTemplate>
+                                        </telerik:GridViewDataColumn>
+                                        <telerik:GridViewDataColumn Header="{x:Static sharedResources:Resources.MaintainAccessPortals_AccessPortalName}" DataMemberBinding="{Binding PortalName}"/>
+                                        <telerik:GridViewDataColumn Header="{x:Static sharedResources:Resources.MaintainAccessPortals_Location}" DataMemberBinding="{Binding Location}"/>
+                                        <!--<telerik:GridViewCheckBoxColumn Header="{x:Static sharedResources:Resources.MaintainAccessPortals_IsActive}" DataMemberBinding="{Binding IsActive}"/>-->
+                                        <telerik:GridViewColumn Header="{x:Static sharedResources:Resources.MaintainAccessPortals_CommandActions}">
+                                            <telerik:GridViewColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <StackPanel Orientation ="Horizontal">
+                                                        <!--<telerik:RadMenu ItemsSource="{Binding CommandMenu}" ItemContainerStyle="{StaticResource MenuItemStyle}">
+                                                <telerik:EventToCommandBehavior.EventBindings>
+                                                    <telerik:EventBinding Command="{Binding DataContext.SendAccessPortalCommand, RelativeSource={RelativeSource AncestorType=core:UserControlViewBase}}"
+                                                                          EventName="ItemClick" RaiseOnHandledEvents="True">
+                                                        -->
+                                                        <!--<telerik:EventBinding.CommandParameter>
+                                                            <MultiBinding Converter="{StaticResource deviceIdCommandIdMVConverter}">
+                                                                <Binding Path="AccessPortalUid"/>
+                                                                <Binding Path="CommandUid"/>
+                                                            </MultiBinding>
+                                                        </telerik:EventBinding.CommandParameter>-->
+                                                        <!--
+                                                    </telerik:EventBinding>
+                                                </telerik:EventToCommandBehavior.EventBindings>
+                                            </telerik:RadMenu>-->
+                                                        <telerik:RadMenu ItemsSource="{Binding CommandMenu}" ItemContainerStyle="{StaticResource MenuCustomIconColumnWidthStyle}">
+
+                                                        </telerik:RadMenu>
+                                                        <telerik:RadMenu x:Name="Menu" VerticalAlignment="Top">
+                                                            <telerik:RadMenuItem Header="Test">
+                                                                <telerik:RadMenuGroupItem ItemsSource="{Binding CommandMenu}" ItemContainerStyle="{StaticResource MenuCustomIconColumnWidthStyle}"/>
+                                                            </telerik:RadMenuItem>
+                                                        </telerik:RadMenu>
+
+                                                        <ui:ButtonControlBindable
+                                                Command="{Binding DataContext.PulseCommand, RelativeSource={RelativeSource AncestorType=core:UserControlViewBase}}"
+                                                CommandParameter="{Binding}"
+                                                ImageHeight="{StaticResource commandButtonImageHeight}"
+                                                ImageWidth="{StaticResource commandButtonImageWidth}"
+                                                IsVisible="{Binding DataContext.IsPulseVisible, RelativeSource={RelativeSource AncestorType=core:UserControlViewBase}}"
+                                                Text="{x:Static sharedResources:Resources.AccessPortalCommand_UnlockMomentarily_Name}"
+                                                ToolTip="{x:Static sharedResources:Resources.AccessPortalCommand_UnlockMomentarily_Description}" />
+                                                        <ui:ButtonControlBindable
+                                                Command="{Binding DataContext.UnlockCommand, RelativeSource={RelativeSource AncestorType=core:UserControlViewBase}}"
+                                                CommandParameter="{Binding}"
+                                                ImageHeight="{StaticResource commandButtonImageHeight}"
+                                                ImageWidth="{StaticResource commandButtonImageWidth}"
+                                                IsVisible="{Binding DataContext.IsUnlockVisible, RelativeSource={RelativeSource AncestorType=core:UserControlViewBase}}"
+                                                Text="{x:Static sharedResources:Resources.AccessPortalCommand_Unlock_Name}"
+                                                ToolTip="{x:Static sharedResources:Resources.AccessPortalCommand_Unlock_Description}" />
+                                                        <ui:ButtonControlBindable
+                                                Command="{Binding DataContext.LockCommand, RelativeSource={RelativeSource AncestorType=core:UserControlViewBase}}"
+                                                CommandParameter="{Binding}"
+                                                ImageHeight="{StaticResource commandButtonImageHeight}"
+                                                ImageWidth="{StaticResource commandButtonImageWidth}"
+                                                IsVisible="{Binding DataContext.IsLockVisible, RelativeSource={RelativeSource AncestorType=core:UserControlViewBase}}"
+                                                Text="{x:Static sharedResources:Resources.AccessPortalCommand_Lock_Name}"
+                                                ToolTip="{x:Static sharedResources:Resources.AccessPortalCommand_Lock_Description}" />
+                                                        <ui:ButtonControlBindable
+                                                Command="{Binding DataContext.EnableCommand, RelativeSource={RelativeSource AncestorType=core:UserControlViewBase}}"
+                                                CommandParameter="{Binding}"
+                                                ImageHeight="{StaticResource commandButtonImageHeight}"
+                                                ImageWidth="{StaticResource commandButtonImageWidth}"
+                                                IsVisible="{Binding DataContext.IsEnableVisible, RelativeSource={RelativeSource AncestorType=core:UserControlViewBase}}"
+                                                Text="{x:Static sharedResources:Resources.AccessPortalCommand_Enable_Name}"
+                                                ToolTip="{x:Static sharedResources:Resources.AccessPortalCommand_Enable_Description}" />
+                                                        <ui:ButtonControlBindable
+                                                Command="{Binding DataContext.DisableCommand, RelativeSource={RelativeSource AncestorType=core:UserControlViewBase}}"
+                                                CommandParameter="{Binding}"
+                                                ImageHeight="{StaticResource commandButtonImageHeight}"
+                                                ImageWidth="{StaticResource commandButtonImageWidth}"
+                                                IsVisible="{Binding DataContext.IsDisableVisible, RelativeSource={RelativeSource AncestorType=core:UserControlViewBase}}"
+                                                Text="{x:Static sharedResources:Resources.AccessPortalCommand_Disable_Name}"
+                                                ToolTip="{x:Static sharedResources:Resources.AccessPortalCommand_Disable_Description}" />
+                                                        <ui:ButtonControlBindable
+                                                Command="{Binding DataContext.Relay2OnCommand, RelativeSource={RelativeSource AncestorType=core:UserControlViewBase}}"
+                                                CommandParameter="{Binding}"
+                                                ImageHeight="{StaticResource commandButtonImageHeight}"
+                                                ImageWidth="{StaticResource commandButtonImageWidth}"
+                                                IsVisible="{Binding DataContext.IsRelay2OnVisible, RelativeSource={RelativeSource AncestorType=core:UserControlViewBase}}"
+                                                Text="{x:Static sharedResources:Resources.AccessPortalCommand_AuxRelayOn_Name}"
+                                                ToolTip="{x:Static sharedResources:Resources.AccessPortalCommand_AuxRelayOn_Description}" />
+                                                        <ui:ButtonControlBindable
+                                                Command="{Binding DataContext.Relay2OffCommand, RelativeSource={RelativeSource AncestorType=core:UserControlViewBase}}"
+                                                CommandParameter="{Binding}"
+                                                ImageHeight="{StaticResource commandButtonImageHeight}"
+                                                ImageWidth="{StaticResource commandButtonImageWidth}"
+                                                IsVisible="{Binding DataContext.IsRelay2OffVisible, RelativeSource={RelativeSource AncestorType=core:UserControlViewBase}}"
+                                                Text="{x:Static sharedResources:Resources.AccessPortalCommand_AuxRelayOff_Name}"
+                                                ToolTip="{x:Static sharedResources:Resources.AccessPortalCommand_AuxRelayOff_Description}" />
+                                                    </StackPanel>
+                                                </DataTemplate>
+                                            </telerik:GridViewColumn.CellTemplate>
+                                        </telerik:GridViewColumn>
+                                    </telerik:RadGridView.Columns>
+                                    <!--<telerik:RadGridView.RowDetailsTemplate>
+                    <DataTemplate>
+
+                        <telerik:RadDataForm x:Name="myRadDataForm"
+										 CurrentItem="{Binding}"
+										 Header="{x:Static resx:Resources.MaintainRegions_RegionName}" 
+                                         telerik:TouchManager.TouchMode="HitTestVisible"/>
+                        -->
+                                    <!--<telerik:RadDataForm x:Name="regionRadDataForm" CurrentItem="{Binding}" AutoGenerateFields="false" Header="Edit Region:"
+                                             ReadOnlyTemplate="{StaticResource regionDetailTemplate}"
+                                             EditTemplate="{StaticResource regionDetailTemplate}"
+                                             NewItemTemplate="{StaticResource regionDetailTemplate}"/>-->
+                                    <!--
+                    </DataTemplate>
+                </telerik:RadGridView.RowDetailsTemplate>-->
+                                </telerik:RadGridView>
+                    <StackPanel Orientation="Horizontal">
+                        <telerik:RadDataPager PageSize="{Binding GridPageSize.Key}"
+                                                  Margin="5,0,0,0"
+                                                  Source="{Binding Items, ElementName=radGridViewAccessPortals}"
+                                                  IsTotalItemCountFixed="True" />
+                        <ui:GridPageSizeSelector Margin="5,0,0,0"/>
+                    </StackPanel>
+                            </StackPanel>
+                        </telerik:RadTabItem>
+                        <telerik:RadTabItem>
+                            <telerik:RadTabItem.Header>
+                                <Grid>
+                                    <Grid.ToolTip>
+                                        <TextBlock Text="{x:Static sharedResources:Resources.AccessPortalView_NotActivePortalsToolTip}"/>
+                                    </Grid.ToolTip>
+                                    <TextBlock Text="{x:Static sharedResources:Resources.AccessPortalView_NotActivePortalsTabHeaderText}"/>
+                                </Grid>
+                            </telerik:RadTabItem.Header>
+                            <StackPanel>
+                                 <StackPanel Orientation="Horizontal">
+                                    <StackPanel Orientation="Vertical" Margin="5,0,0,0">
+                                        <TextBlock>
+                                            <TextBlock.Text>
+                                                <MultiBinding StringFormat="{x:Static sharedResources:Resources.TotalRecordsCount}">
+                                                    <Binding Path="TotalInactiveRecordCount" />
+                                                </MultiBinding>
+                                            </TextBlock.Text>
+                                        </TextBlock>
+                                        <telerik:RadDataPager PageSize="{Binding GridPageSize.Key}"
+                                                  Source="{Binding Items, ElementName=radGridViewAccessPortalsInActive}"
+                                                  IsTotalItemCountFixed="True" />
+                                    </StackPanel>
+                                    <ui:GridPageSizeSelector Margin="5,0,0,0"/>
+                                </StackPanel>                               
+                                
+                                <telerik:RadGridView
+                                 x:Name="radGridViewAccessPortalsInActive" 
+                                 Visibility="Visible" 
+                                 ShowGroupPanel="False" 
+                                 ItemsSource="{Binding AccessPortalsInactive}"
+                                 IsFilteringAllowed="True" 
+                                 IsReadOnly="True" 
+                                 AutoGenerateColumns="False"
+                                 Width="Auto"
+                                 RowIndicatorVisibility="Collapsed"
+                                 RowDetailsVisibilityMode="VisibleWhenSelected">
+                                    <telerik:RadGridView.Columns>
+                                        <!--<telerik:GridViewToggleRowDetailsColumn/>-->
+                                        <telerik:GridViewColumn Header="{x:Static sharedResources:Resources.Common_Actions}" ToolTip="{x:Static sharedResources:Resources.Common_ActionsTooltip}" >
+                                            <telerik:GridViewColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <!--<ui:EditDeleteButtonControl/>-->
+                                                    <ui:EditButtonControlBindable 
+                                                        Command="{Binding DataContext.EditCommand, RelativeSource={RelativeSource AncestorType=core:UserControlViewBase}}"
+                                                        CommandParameter="{Binding}"/>
+                                                </DataTemplate>
+                                            </telerik:GridViewColumn.CellTemplate>
+                                        </telerik:GridViewColumn>
+                                        <telerik:GridViewDataColumn Header="{x:Static sharedResources:Resources.MaintainAccessPortals_AccessPortalImage}" >
+                                            <telerik:GridViewDataColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <Border Visibility="{Binding gcsBinaryResource, Converter={StaticResource nullToVisibilityConverter}}"  Margin="2"  Height="64" BorderThickness="2" BorderBrush="Black">
+                                                        <Image MaxHeight="60" Source="{Binding gcsBinaryResource.BinaryResource}"/>
+                                                    </Border>
+                                                </DataTemplate>
+                                            </telerik:GridViewDataColumn.CellTemplate>
+                                        </telerik:GridViewDataColumn>
+                                        <telerik:GridViewDataColumn Header="{x:Static sharedResources:Resources.MaintainAccessPortals_AccessPortalName}" DataMemberBinding="{Binding PortalName}"/>
+                                        <telerik:GridViewDataColumn Header="{x:Static sharedResources:Resources.MaintainAccessPortals_Location}" DataMemberBinding="{Binding Location}"/>
+                                    </telerik:RadGridView.Columns>
+                                </telerik:RadGridView>
+                    <StackPanel Orientation="Horizontal">
+                        <telerik:RadDataPager PageSize="{Binding GridPageSize.Key}"
+                                                  Margin="5,0,0,0"
+                                                  Source="{Binding Items, ElementName=radGridViewAccessPortalsInActive}"
+                                                  IsTotalItemCountFixed="True" />
+                        <ui:GridPageSizeSelector Margin="5,0,0,0"/>
+                    </StackPanel>
+
+                            </StackPanel>
+                        </telerik:RadTabItem>
+
+                    </telerik:RadTabControl>
+
+
+
+                </Grid>
+
+                <Grid Grid.Row="0" Grid.Column="0" animations:VisibilityAnimation.AnimationType="Fade" >
+
+                    <Border CornerRadius="4" Margin="10" BorderThickness="1"
+                Visibility="{Binding CurrentItemViewModel, Converter={StaticResource nullToVisibilityConverter}}">
+                        <ContentControl Content="{Binding CurrentItemViewModel}" />
+                    </Border>
+                </Grid>
+
+            </Grid>
+        </ScrollViewer>
+    </telerik:RadBusyIndicator>
+
+</core:UserControlViewBase>

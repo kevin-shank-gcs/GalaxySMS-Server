@@ -1,0 +1,127 @@
+﻿<core:UserControlViewBase x:Class="GalaxySMS.Admin.Views.AboutView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:resx="clr-namespace:GalaxySMS.Admin.Properties"
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             xmlns:core="http://www.galaxysys.com/GCS/Core"
+             xmlns:converters="clr-namespace:GCS.Core.Common.UI.Converters;assembly=GCS.Core.Common.UI"
+             xmlns:vm="clr-namespace:GalaxySMS.Admin.ViewModels"
+             mc:Ignorable="d" MinWidth="300" Height="Auto">
+
+    <core:UserControlViewBase.Resources>
+        <converters:BooleanToVisibilityConverter x:Key="boolToVisibility" />
+        <converters:InverseBooleanToVisibilityConverter x:Key="boolNotToVisiblity" />
+        <vm:AboutViewModel x:Key="AboutVm"></vm:AboutViewModel>
+
+        <BitmapImage x:Key="aboutLogo" UriSource="/GalaxySMS.Admin;component/Images/About-icon.png" />
+        <Style x:Key="DisplayAreaStyle" TargetType="{x:Type StackPanel}">
+            <Setter Property="Margin" Value="10,10,10,5" />
+        </Style>
+        <Style x:Key="BackgroundStyle" TargetType="{x:Type StackPanel}">
+            <Setter Property="Background">
+                <Setter.Value>
+                    <LinearGradientBrush EndPoint="0,1">
+                        <GradientStop Offset="0" Color="{Binding GradientStartColor}" />
+                        <GradientStop Offset="0.55" Color="{Binding GradientMiddleColor}" />
+                        <GradientStop Offset="0.85" Color="{Binding GradientMiddleColor}" />
+                        <GradientStop Offset="1" Color="{Binding GradientStopColor}" />
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style TargetType="Label">
+            <Setter Property="Padding" Value="0" />
+        </Style>
+        <Style x:Key="ParagraphSeparator" TargetType="{x:Type TextBlock}">
+            <Setter Property="Padding" Value="0,10,0,0" />
+        </Style>
+        <Style x:Key="LinkLabelStyle">
+            <Setter Property="Control.Padding" Value="0" />
+            <Setter Property="Control.VerticalAlignment" Value="Center" />
+        </Style>
+        <Style x:Key="ReadOnlyDescStyle" TargetType="{x:Type TextBox}">
+            <Setter Property="MinLines" Value="6" />
+            <Setter Property="MaxLines" Value="6" />
+            <Setter Property="IsReadOnly" Value="True" />
+            <Setter Property="TextWrapping" Value="WrapWithOverflow" />
+            <Setter Property="VerticalScrollBarVisibility" Value="Visible" />
+        </Style>
+    </core:UserControlViewBase.Resources>
+    <core:UserControlViewBase.DataContext>
+        <Binding Source="{StaticResource AboutVm}"/>
+    </core:UserControlViewBase.DataContext>
+    <StackPanel x:Uid="clientArea" Style="{StaticResource BackgroundStyle}" Margin="10">
+        <StackPanel Orientation="Horizontal">
+            <Image x:Name="imgAbout" Source="{StaticResource aboutLogo}" Margin="0, 0, 20, 0" MaxHeight="75" VerticalAlignment="Top" />
+            <StackPanel x:Uid="displayArea">
+                <TextBlock x:Name="productName" x:Uid="productName" Text="{Binding Attributes.Title, Mode=OneTime}" FontSize="20"/>
+                <StackPanel x:Uid="versionArea" Orientation="Horizontal">
+                    <TextBlock x:Name="versionLabel" x:Uid="VersionLabel" Margin="0,0,4, 0" Text="{x:Static resx:Resources.AboutView_VersionTitle}" />
+                    <TextBlock x:Name="version" x:Uid="version" Text="{Binding Attributes.Version, Mode=OneTime}" />
+                </StackPanel>
+                <TextBlock x:Name="copyright" x:Uid="copyright" Text="{Binding Attributes.Copyright, Mode=OneTime}"  />
+                <TextBlock x:Name="company" x:Uid="company" Text="{Binding Attributes.Company, Mode=OneTime}" />
+                <TextBlock x:Name="reserved" x:Uid="reserved" Text="{x:Static resx:Resources.AboutView_AllRightsReserved}" />
+                <GroupBox Margin="0,10,0,0">
+                    <GroupBox.HeaderTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{x:Static resx:Resources.AboutView_LicenseInfoHeader}" FontSize="16"/>
+                        </DataTemplate>
+                    </GroupBox.HeaderTemplate>
+                    <StackPanel>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition></RowDefinition>
+                                <RowDefinition></RowDefinition>
+                                <RowDefinition></RowDefinition>
+                                <RowDefinition></RowDefinition>
+                                <RowDefinition></RowDefinition>
+                                <RowDefinition></RowDefinition>
+                                <RowDefinition></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition Width="10"></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Grid.Row="0" Text="{x:Static resx:Resources.AboutView_LicenseType}"/>
+                            <TextBlock Grid.Row="0" Grid.Column="2" Text="{Binding Globals.MyLicense.LicenseTypeDescription}"/>
+                            <core:ErrorsPanel Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" DataContext="{Binding Globals}" />
+                            <TextBlock Grid.Row="2" Grid.Column="0" Text="{x:Static resx:Resources.AboutView_LicenseId}"/>
+                            <TextBlock Grid.Row="2" Grid.Column="2" Text="{Binding Globals.MyLicense.LicenseId}"/>
+                            <TextBlock Grid.Row="3" Grid.Column="0" Text="{x:Static resx:Resources.AboutView_LicenseCompany}"/>
+                            <TextBlock Grid.Row="3" Grid.Column="2" Text="{Binding Globals.MyLicense.LicensedCustomerName}"/>
+                            <TextBlock Grid.Row="4" Grid.Column="0" Text="{x:Static resx:Resources.AboutView_LicenseExpireation}"/>
+                            <TextBlock Grid.Row="4" Grid.Column="2" Text="{Binding Globals.MyLicense.LicenseExpiration}"/>
+                            <Button Grid.Row="5" Grid.Column="0" Content="{x:Static resx:Resources.AboutView_ViewLicenseDetails}"
+                                    Command="{Binding ViewLicenseDetailsCommand}"></Button>
+                            <Button Grid.Row="6" Grid.Column="0" Content="{x:Static resx:Resources.AboutView_UpdateLicense}"
+                                    Command="{Binding UpdateLicenseCommand}"></Button>          
+                        </Grid>
+                    </StackPanel>
+                </GroupBox>
+                <TextBlock x:Name="info" x:Uid="info" Style="{StaticResource ParagraphSeparator}" 
+                   Text="{x:Static resx:Resources.AboutView_ProductDetails}" Visibility="Collapsed" />
+                <TextBox x:Name="description" x:Uid="description" Text="{Binding Attributes.Description, Mode=OneTime}"
+                     Style="{StaticResource ReadOnlyDescStyle}" Visibility="Collapsed" />
+                <DockPanel x:Uid="buttonArea">
+                    <Button x:Name="okButton" x:Uid="okButton" DockPanel.Dock="Right" 
+                            MinWidth="75"
+                            IsDefault="True"
+                            IsCancel="True"
+                            Margin="0,5"
+                        Content="{x:Static resx:Resources.AboutView_OkButtonText}"/>
+                    <Label x:Name="productLink" x:Uid="productLink" Style="{StaticResource LinkLabelStyle}" >
+                        <Hyperlink x:Name="hyperlink" x:Uid="hyperlink" NavigateUri="{Binding AboutUri, Mode=OneTime}"  Style="{StaticResource LinkLabelStyle}"
+                               Hyperlink.RequestNavigate="Hyperlink_OnRequestNavigate">
+                            <TextBlock Text="{Binding AboutUriDescription, Mode=OneTime}" />
+                        </Hyperlink>
+                    </Label>
+                </DockPanel>
+            </StackPanel>
+        </StackPanel>
+    </StackPanel>
+
+</core:UserControlViewBase>

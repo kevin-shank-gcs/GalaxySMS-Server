@@ -1,0 +1,342 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="BusyContent_EnsureAccessProfilesExist" xml:space="preserve">
+    <value>Please wait while the access profiles are being synced...</value>
+  </data>
+  <data name="BusyContent_EnsureBadgeTemplatesExist" xml:space="preserve">
+    <value>Please wait while the badge templates are being synced...</value>
+  </data>
+  <data name="BusyContent_EnsureDepartmentsExist" xml:space="preserve">
+    <value>Please wait while the departments are being synced...</value>
+  </data>
+  <data name="BusyContent_EnsureEntityExists" xml:space="preserve">
+    <value>Please wait while the entity is being created.</value>
+  </data>
+  <data name="BusyContent_EnsurePeopleExist" xml:space="preserve">
+    <value>Please wait while the person data is being synced...</value>
+  </data>
+  <data name="BusyContent_EnsurePersonListItemsExist" xml:space="preserve">
+    <value>Please wait while the person list items are being synced...</value>
+  </data>
+  <data name="BusyContent_EnsurePersonPropertyTitleExist" xml:space="preserve">
+    <value>Please wait while the person property titles are being synced...</value>
+  </data>
+  <data name="BusyContent_EnsurePersonTypesExist" xml:space="preserve">
+    <value>Please wait while the person types are being synced...</value>
+  </data>
+  <data name="BusyContent_GettingPersonEditingData" xml:space="preserve">
+    <value>Getting person editing data...</value>
+  </data>
+  <data name="BusyContent_ImportingCluster_ReadingAllClusterDataFromSG" xml:space="preserve">
+    <value>Retrieving all System Galaxy cluster data...</value>
+  </data>
+  <data name="BusyContent_ImportingPanel_ReadingPanelDataFromSG" xml:space="preserve">
+    <value>Retrieving System Galaxy panel data...</value>
+  </data>
+  <data name="BusyContent_ImportingPanel_ReadingPanelEditingData" xml:space="preserve">
+    <value>Reading panel editing data...</value>
+  </data>
+  <data name="BusyContent_ImportingPanel_SavingPanelData" xml:space="preserve">
+    <value>Saving panel data...</value>
+  </data>
+  <data name="BusyContent_PleaseWait" xml:space="preserve">
+    <value>Please wait...</value>
+  </data>
+  <data name="BusyContent_ReadingFullSystemGalaxyCustomerData" xml:space="preserve">
+    <value>Reading System Galaxy customer specific data...</value>
+  </data>
+  <data name="BusyContent_ReadingSmsPersonFieldData" xml:space="preserve">
+    <value>Reading GalaxySMS person property editing data...</value>
+  </data>
+  <data name="BusyContent_ReadingSmsSensitivityLevelData" xml:space="preserve">
+    <value>Reading GalaxySMS sensitivity level data...</value>
+  </data>
+  <data name="BusyContent_ReadingSmsUserDefinedPropertyData" xml:space="preserve">
+    <value>Reading GalaxySMS user defined property data...</value>
+  </data>
+  <data name="BusyContent_SavingAccessProfile" xml:space="preserve">
+    <value>Saving access profile </value>
+  </data>
+  <data name="BusyContent_SavingBadgeTemplate" xml:space="preserve">
+    <value>Saving badge template </value>
+  </data>
+  <data name="BusyContent_SavingDepartment" xml:space="preserve">
+    <value>Saving department </value>
+  </data>
+  <data name="BusyContent_SavingPerson" xml:space="preserve">
+    <value>Saving person </value>
+  </data>
+  <data name="BusyContent_SavingPersonRecordType" xml:space="preserve">
+    <value>Saving person record type </value>
+  </data>
+  <data name="BusyContent_SavingSmsUserDefinedPropertyData" xml:space="preserve">
+    <value>Saving GalaxySMS user defined property data...</value>
+  </data>
+  <data name="Button_SyncAccessProfilesTitle" xml:space="preserve">
+    <value>Import Access Profiles</value>
+  </data>
+  <data name="Button_SyncAccessProfilesToolTip" xml:space="preserve">
+    <value>Create access profiles in GalaxySMS from System Galaxy access profiles</value>
+  </data>
+  <data name="Button_SyncBadgeTemplatesTitle" xml:space="preserve">
+    <value>Import Badge Templates</value>
+  </data>
+  <data name="Button_SyncBadgeTemplatesToolTip" xml:space="preserve">
+    <value>Create badge templates in GalaxySMS from System Galaxy badge templates</value>
+  </data>
+  <data name="Button_SyncDepartmentsTitle" xml:space="preserve">
+    <value>Import Departments</value>
+  </data>
+  <data name="Button_SyncDepartmentsToolTip" xml:space="preserve">
+    <value>Create departments in GalaxySMS from System Galaxy departments</value>
+  </data>
+  <data name="Button_SyncPersonEditingItemsTitle" xml:space="preserve">
+    <value>Import Person Editing Data</value>
+  </data>
+  <data name="Button_SyncPersonEditingItemsToolTip" xml:space="preserve">
+    <value>Create person editing items in GalaxySMS from System Galaxy person items</value>
+  </data>
+  <data name="Button_SyncPersonsTitle" xml:space="preserve">
+    <value>Import Person Data</value>
+  </data>
+  <data name="Button_SyncPersonsToolTip" xml:space="preserve">
+    <value>Import people, credentials and access permissions from Systems Galaxy cardholder data</value>
+  </data>
+  <data name="EnsureEntityExistsButton_Text" xml:space="preserve">
+    <value>Ensure Matching Entity Exists</value>
+  </data>
+  <data name="GalaxySMSConnectionHeaderText" xml:space="preserve">
+    <value>Galaxy SMS API Connection</value>
+  </data>
+  <data name="GalaxySMSPasswordTitle" xml:space="preserve">
+    <value>Password:</value>
+  </data>
+  <data name="GalaxySMSServerAddressTitle" xml:space="preserve">
+    <value>GalaxySMS Server Address:</value>
+  </data>
+  <data name="GalaxySMSSignOffButton_Text" xml:space="preserve">
+    <value>Sign Off</value>
+  </data>
+  <data name="GalaxySMSSignOnButton_Text" xml:space="preserve">
+    <value>Sign On</value>
+  </data>
+  <data name="GalaxySMSUserNameTitle" xml:space="preserve">
+    <value>Username:</value>
+  </data>
+  <data name="ImportClusterButton_Text" xml:space="preserve">
+    <value>Import Cluster into GalaxySMS</value>
+  </data>
+  <data name="ImportClusterButton_TextRun1" xml:space="preserve">
+    <value>Import Cluster '</value>
+  </data>
+  <data name="ImportClusterButton_TextRun2" xml:space="preserve">
+    <value>' into Entity '</value>
+  </data>
+  <data name="ImportClusterButton_TextRun3" xml:space="preserve">
+    <value>', Site '</value>
+  </data>
+  <data name="ImportClustersBeforeTheFollowingSteps" xml:space="preserve">
+    <value>Import Clusters and Panel hardware BEFORE completing the following import steps.</value>
+  </data>
+  <data name="ImportingCluster_BusyContent" xml:space="preserve">
+    <value>Please wait while the cluster is being imported.</value>
+  </data>
+  <data name="ImportPanelButton_TextRun1" xml:space="preserve">
+    <value>Import into GalaxySMS</value>
+  </data>
+  <data name="PanelImportStatusColumnHeader" xml:space="preserve">
+    <value>Import Status</value>
+  </data>
+  <data name="SGClusterDetailsRun1" xml:space="preserve">
+    <value>System Galaxy Cluster '</value>
+  </data>
+  <data name="SGClusterDetailsRun2" xml:space="preserve">
+    <value>' has already been imported as GalaxySMS Cluster '</value>
+  </data>
+  <data name="SGClusterDetailsRun3" xml:space="preserve">
+    <value>' has not yet been imported into GalaxySMS. Click</value>
+  </data>
+  <data name="SGClusterDetailsRun4" xml:space="preserve">
+    <value>to import the cluster into GalaxySMS.</value>
+  </data>
+  <data name="SGClusterList_ClusterIdTitle" xml:space="preserve">
+    <value>Cluster #</value>
+  </data>
+  <data name="SGClusterList_ClusterNameTitle" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="SGClustersTab_HeaderText" xml:space="preserve">
+    <value>System Galaxy Clusters</value>
+  </data>
+  <data name="SGConnectionHeaderText" xml:space="preserve">
+    <value>System Galaxy API Connection</value>
+  </data>
+  <data name="SGCustomerDetailsRun1" xml:space="preserve">
+    <value>System Galaxy Customer '</value>
+  </data>
+  <data name="SGCustomerDetailsRun2" xml:space="preserve">
+    <value>' is mapped to GalaxySMS Entity '</value>
+  </data>
+  <data name="SGCustomerDetailsRun3" xml:space="preserve">
+    <value>' is not mapped to a GalaxySMS Entity. Click</value>
+  </data>
+  <data name="SGCustomerDetailsRun4" xml:space="preserve">
+    <value>to map the customer to an entity.</value>
+  </data>
+  <data name="SGCustomerList_CustomerIdTitle" xml:space="preserve">
+    <value>Customer ID</value>
+  </data>
+  <data name="SGCustomerList_CustomerNameTitle" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="SGCustomerTab_HeaderText" xml:space="preserve">
+    <value>System Galaxy Customers</value>
+  </data>
+  <data name="SGPanelDetailsRun1" xml:space="preserve">
+    <value>System Galaxy Panel '</value>
+  </data>
+  <data name="SGPanelDetailsRun2" xml:space="preserve">
+    <value>' has already been imported.</value>
+  </data>
+  <data name="SGPanelList_PanelClusterIdTitle" xml:space="preserve">
+    <value>Cluster #</value>
+  </data>
+  <data name="SGPanelList_PanelNameTitle" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="SGPanelList_PanelNumberTitle" xml:space="preserve">
+    <value>Unit #</value>
+  </data>
+  <data name="SGPasswordTitle" xml:space="preserve">
+    <value>Password:</value>
+  </data>
+  <data name="SGSignOffButton_Text" xml:space="preserve">
+    <value>Sign Off</value>
+  </data>
+  <data name="SGSignOnButton_Text" xml:space="preserve">
+    <value>Sign On</value>
+  </data>
+  <data name="SGUserNameTitle" xml:space="preserve">
+    <value>Username:</value>
+  </data>
+  <data name="SGWebApiUrlTitle" xml:space="preserve">
+    <value>SG WebApi URL:</value>
+  </data>
+</root>

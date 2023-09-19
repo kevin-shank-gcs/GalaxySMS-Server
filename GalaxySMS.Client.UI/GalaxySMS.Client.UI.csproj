@@ -1,0 +1,538 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{524F7C40-89C7-4C0F-A8BE-697BC520E533}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GalaxySMS.Client.UI</RootNamespace>
+    <AssemblyName>GalaxySMS.Client.UI</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="GCS.Core.Common.ServiceModel, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="GCS.Framework.Utilities, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Telerik.Windows.Controls, Version=2020.1.218.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\RCWPF\Current\Telerik.Windows.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Data, Version=2020.1.218.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\RCWPF\Current\Telerik.Windows.Controls.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Docking, Version=2020.1.218.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\RCWPF\Current\Telerik.Windows.Controls.Docking.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.GridView, Version=2020.1.218.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\RCWPF\Current\Telerik.Windows.Controls.GridView.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Input, Version=2020.1.218.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\RCWPF\Current\Telerik.Windows.Controls.Input.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Navigation, Version=2020.1.218.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\RCWPF\Current\Telerik.Windows.Controls.Navigation.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Data, Version=2020.1.218.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\RCWPF\Current\Telerik.Windows.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BindableControls\AddNewButtonControlBindable.xaml.cs" />
+    <Compile Include="BindableControls\AddNewRefreshButtonControlBindable.xaml.cs" />
+    <Compile Include="BindableControls\ButtonControlBindable.xaml.cs" />
+    <Compile Include="BindableControls\ToggleSwitchButtonBindable.xaml.cs">
+      <DependentUpon>ToggleSwitchButtonBindable.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BindableControls\ToggleSwitchButtonUserControlBase.cs" />
+    <Compile Include="BindableControls\LabeledMaskedTextInputBindable.xaml.cs">
+      <DependentUpon>LabeledMaskedTextInputBindable.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BindableControls\LabeledTextBoxBindable.xaml.cs">
+      <DependentUpon>LabeledTextBoxBindable.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BindableControls\LabeledTextBoxUserControlBase.cs" />
+    <Compile Include="BindableControls\ButtonUserControlBase.cs" />
+    <Compile Include="BindableControls\CancelButtonControlBindable.xaml.cs" />
+    <Compile Include="BindableControls\DeleteButtonControlBindable.xaml.cs" />
+    <Compile Include="BindableControls\EditButtonControlBindable.xaml.cs" />
+    <Compile Include="BindableControls\RefreshButtonControlBindable.xaml.cs" />
+    <Compile Include="BindableControls\SaveButtonControlBindable.xaml.cs" />
+    <Compile Include="Converters\DeviceIdCommandIdMultiValueConverter.cs" />
+    <Compile Include="Converters\MenuBuilder.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ucAlert.xaml.cs">
+      <DependentUpon>ucAlert.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ComboColumnFilteringControl.xaml.cs">
+      <DependentUpon>ComboColumnFilteringControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ucStandardInsertUpdateData.xaml.cs">
+      <DependentUpon>ucStandardInsertUpdateData.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\CalendarDayControl.xaml.cs">
+      <DependentUpon>CalendarDayControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\MonthYearControl.xaml.cs">
+      <DependentUpon>MonthYearControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\NoteUserControl.xaml.cs">
+      <DependentUpon>NoteUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\TotalRecordCountUserControl.xaml.cs">
+      <DependentUpon>TotalRecordCountUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\GridPageSizeSelectorUserControl.xaml.cs">
+      <DependentUpon>GridPageSizeSelectorUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\DayPeriodControl.xaml.cs">
+      <DependentUpon>DayPeriodControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\SectionHeaderControl.xaml.cs">
+      <DependentUpon>SectionHeaderControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\TimeScheduleMapUserControl.xaml.cs">
+      <DependentUpon>TimeScheduleMapUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\GalaxyClusterControl.xaml.cs">
+      <DependentUpon>GalaxyClusterControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\SaveDeleteButtonControl.xaml.cs">
+      <DependentUpon>SaveDeleteButtonControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\EntityMapUserControl.xaml.cs">
+      <DependentUpon>EntityMapUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\FormHeaderControl.xaml.cs">
+      <DependentUpon>FormHeaderControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\EditDeleteButtonControl.xaml.cs">
+      <DependentUpon>EditDeleteButtonControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\AddressUserControl.xaml.cs">
+      <DependentUpon>AddressUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\AddNewRefreshButtonControl.xaml.cs">
+      <DependentUpon>AddNewRefreshButtonControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\SaveCancelButtonControl.xaml.cs">
+      <DependentUpon>SaveCancelButtonControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\TimePeriodStartStopControl.xaml.cs">
+      <DependentUpon>TimePeriodStartStopControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\SignInOutViewModel.cs" />
+    <Compile Include="Views\CurrentUserEntityUserControlView.xaml.cs">
+      <DependentUpon>CurrentUserEntityUserControlView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CurrentSystemUserControlView.xaml.cs">
+      <DependentUpon>CurrentSystemUserControlView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SignInOutView.xaml.cs">
+      <DependentUpon>SignInOutView.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="BindableControls\AddNewButtonControlBindable.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="BindableControls\AddNewRefreshButtonControlBindable.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="BindableControls\ButtonControlBindable.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="BindableControls\CancelButtonControlBindable.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="BindableControls\DeleteButtonControlBindable.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="BindableControls\EditButtonControlBindable.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="BindableControls\LabeledMaskedTextInputBindable.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="BindableControls\ToggleSwitchButtonBindable.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="BindableControls\LabeledTextBoxBindable.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BindableControls\RefreshButtonControlBindable.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="BindableControls\SaveButtonControlBindable.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\ucAlert.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\ComboColumnFilteringControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\ucStandardInsertUpdateData.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\CalendarDayControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\MonthYearControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\NoteUserControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\TotalRecordCountUserControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\GridPageSizeSelectorUserControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\DayPeriodControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\SectionHeaderControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\TimeScheduleMapUserControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\GalaxyClusterControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\SaveDeleteButtonControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\EntityMapUserControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\FormHeaderControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\EditDeleteButtonControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\AddressUserControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\AddNewRefreshButtonControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\SaveCancelButtonControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\TimePeriodStartStopControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\CurrentUserEntityUserControlView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\CurrentSystemUserControlView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SignInOutView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\PadLockAndKey.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Applications\Prism\GalaxySMS.TelerikWPF.Infrastructure\GalaxySMS.TelerikWPF.Infrastructure.csproj">
+      <Project>{6de0ac28-0b20-42c7-a5a6-c608224fe8a9}</Project>
+      <Name>GalaxySMS.TelerikWPF.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GalaxySMS.Client.Contracts\GalaxySMS.Client.Contracts.csproj">
+      <Project>{3e3f24e8-dc52-49e6-909d-aa4577e15375}</Project>
+      <Name>GalaxySMS.Client.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GalaxySMS.Client.Entities\GalaxySMS.Client.Entities.csproj">
+      <Project>{5868c670-3e3f-4022-b780-5b27cef8d3e7}</Project>
+      <Name>GalaxySMS.Client.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GalaxySMS.Client.Resources\GalaxySMS.Resources.csproj">
+      <Project>{8c7ef8a3-05d8-4f67-baa3-8e7d4c09d1c3}</Project>
+      <Name>GalaxySMS.Resources</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GalaxySMS.Client.SDK\GalaxySMS.Client.SDK.csproj">
+      <Project>{ceea547d-5774-412b-9b13-50402c2a3d7d}</Project>
+      <Name>GalaxySMS.Client.SDK</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GalaxySMS.Common\GalaxySMS.Common.csproj">
+      <Project>{51D2F1C3-F892-4DB1-AC14-52ADC98EC05B}</Project>
+      <Name>GalaxySMS.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GCS.Framework\GCS.Core.Common.UI\GCS.Core.Common.UI.csproj">
+      <Project>{574996b0-f074-484b-9d11-6e47df8307a7}</Project>
+      <Name>GCS.Core.Common.UI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GCS.Framework\GCS.Core.Common\GCS.Core.Common.csproj">
+      <Project>{106abc97-2143-4722-a2b0-cbe597d59f91}</Project>
+      <Name>GCS.Core.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GCS.Framework\GCS.Core.Contracts\GCS.Core.Common.Contracts.csproj">
+      <Project>{e3820436-5d37-4ccb-87ca-f50420041668}</Project>
+      <Name>GCS.Core.Common.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GCS.Framework\GCS.Framework.Security\GCS.Framework.Security.csproj">
+      <Project>{4b4444b5-5de7-4fff-b355-f7dc8662f2a1}</Project>
+      <Name>GCS.Framework.Security</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\key.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\small_lock_locked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DataClasses\" />
+    <Folder Include="Resources\Images\Refresh\96x96\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\red_x_curved.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\GreenCheck1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\AddNew.png" />
+    <Resource Include="Resources\Images\Add\AddBlue1.png" />
+    <Resource Include="Resources\Images\Add\AddContactGreen1.png" />
+    <Resource Include="Resources\Images\Add\AddDatabaseBlue1.png" />
+    <Resource Include="Resources\Images\Add\AddDatabaseGreen1.png" />
+    <Resource Include="Resources\Images\Add\AddPersonGreen1.png" />
+    <Resource Include="Resources\Images\Add\AddUserBlue1.png" />
+    <Resource Include="Resources\Images\Add\AddUserBlue2.png" />
+    <Resource Include="Resources\Images\Add\AddUserProfileBlue.png" />
+    <Resource Include="Resources\Images\AssaAbloy\circle_green.png" />
+    <Resource Include="Resources\Images\AssaAbloy\circle_red.png" />
+    <Resource Include="Resources\Images\AssaAbloy\greensignal.png" />
+    <Resource Include="Resources\Images\AssaAbloy\redsignal.png" />
+    <Resource Include="Resources\Images\Batteries\battery_10percent.png" />
+    <Resource Include="Resources\Images\Batteries\battery_20percent.png" />
+    <Resource Include="Resources\Images\Batteries\battery_40percent.png" />
+    <Resource Include="Resources\Images\Batteries\battery_60percent.png" />
+    <Resource Include="Resources\Images\Batteries\battery_80percent.png" />
+    <Resource Include="Resources\Images\Batteries\battery_charging.png" />
+    <Resource Include="Resources\Images\Batteries\battery_empty.png" />
+    <Resource Include="Resources\Images\Batteries\battery_full.png" />
+    <Resource Include="Resources\Images\Batteries\battery_pluged_in.png" />
+    <Resource Include="Resources\Images\Camera\SLR_128.png" />
+    <Resource Include="Resources\Images\Camera\SLR_16.png" />
+    <Resource Include="Resources\Images\Camera\SLR_24.png" />
+    <Resource Include="Resources\Images\Camera\SLR_32.png" />
+    <Resource Include="Resources\Images\Camera\SLR_48.png" />
+    <Resource Include="Resources\Images\Camera\SLR_64.png" />
+    <Resource Include="Resources\Images\Camera\SLR_72.png" />
+    <Resource Include="Resources\Images\Camera\SLR_96.png" />
+    <Resource Include="Resources\Images\CancelEdit.png" />
+    <Resource Include="Resources\Images\close.png" />
+    <Resource Include="Resources\Images\DataForm.png" />
+    <Resource Include="Resources\Images\Delete\DeleteUserRed1.png" />
+    <Resource Include="Resources\Images\Edit.png" />
+    <Resource Include="Resources\Images\EditData.png" />
+    <Resource Include="Resources\Images\green_check.png" />
+    <Resource Include="Resources\Images\ImportData1.png" />
+    <Resource Include="Resources\Images\Locks\LockedCombination.png" />
+    <Resource Include="Resources\Images\Locks\UnlockedCombination.png" />
+    <Resource Include="Resources\Images\Partners\Allegion\Allegion_Logo.jpg" />
+    <Resource Include="Resources\Images\Partners\Altronix\altronix200.jpg" />
+    <Resource Include="Resources\Images\Partners\ASSAABLOY\mainAALogo.jpg" />
+    <Resource Include="Resources\Images\Partners\ASSAABLOY\Products\Aperio\ADAMSRITE_A100.png" />
+    <Resource Include="Resources\Images\Partners\ASSAABLOY\Products\Aperio\HES_20K100.png" />
+    <Resource Include="Resources\Images\Partners\ASSAABLOY\Products\Aperio\HES_KS100.png" />
+    <Resource Include="Resources\Images\Partners\ASSAABLOY\Products\Aperio\MEDECO_M100.png" />
+    <Resource Include="Resources\Images\Partners\ASSAABLOY\Products\Aperio\SAR_IN100.png" />
+    <Resource Include="Resources\Images\Partners\ASSAABLOY\Products\Aperio\SAR_PR100.png" />
+    <Resource Include="Resources\Images\Partners\ASSAABLOY\Products\Aperio\SMC_R100.png" />
+    <Resource Include="Resources\Images\Partners\ASSAABLOY\Products\WIFI\CR_Access700_PWI1.png" />
+    <Resource Include="Resources\Images\Partners\ASSAABLOY\Products\WIFI\CR_Access800WI1.png" />
+    <Resource Include="Resources\Images\Partners\ASSAABLOY\Products\WIFI\CR_IN120.png" />
+    <Resource Include="Resources\Images\Partners\ASSAABLOY\Products\WIFI\SAR_IN120.png" />
+    <Resource Include="Resources\Images\Partners\ASSAABLOY\Products\WIFI\SAR_Passport-P2.png" />
+    <Resource Include="Resources\Images\Partners\ASSAABLOY\Products\WIFI\SAR_Profile SeriesS2.png" />
+    <Resource Include="Resources\Images\Partners\Bridgepoint\Bridgepoint.png" />
+    <Resource Include="Resources\Images\Partners\DesignedSecurityInc\dsi_logo1.png" />
+    <Resource Include="Resources\Images\Partners\DigitalAcoustics\da.gif" />
+    <Resource Include="Resources\Images\Partners\Dynalock\dynalock200.jpg" />
+    <Resource Include="Resources\Images\Partners\Essex\essex-logo.jpg" />
+    <Resource Include="Resources\Images\Partners\Farpointe\Farpointe_Logo.jpg" />
+    <Resource Include="Resources\Images\Partners\GalaxyControlSystems\GalaxyLogo.png" />
+    <Resource Include="Resources\Images\Partners\HID\ezlobby200.png" />
+    <Resource Include="Resources\Images\Partners\HID\hidw200.png" />
+    <Resource Include="Resources\Images\Partners\IrisID\IRIS_ID_CERTIFIED_Hi.png" />
+    <Resource Include="Resources\Images\Partners\LifeSafetyPower\LSP_Banner.png" />
+    <Resource Include="Resources\Images\Partners\MagicCard\magicard200.jpg" />
+    <Resource Include="Resources\Images\Partners\Magnasphere\magnasphere.jpg" />
+    <Resource Include="Resources\Images\Partners\Nedap\nedapavi200.gif" />
+    <Resource Include="Resources\Images\Partners\OnSSI\OnSSI_Logo_small.png" />
+    <Resource Include="Resources\Images\Partners\OpenEye\openeye.png" />
+    <Resource Include="Resources\Images\Partners\SafranMorpho\morpho200.jpg" />
+    <Resource Include="Resources\Images\Partners\Salto\SALTO.png" />
+    <Resource Include="Resources\Images\Partners\Stopware\stopware.gif" />
+    <Resource Include="Resources\Images\Partners\TKH\tkh.png" />
+    <Resource Include="Resources\Images\Partners\Toshiba\toshiba200.jpg" />
+    <Resource Include="Resources\Images\Partners\ToteVision\ToteVisionLogo.png" />
+    <Resource Include="Resources\Images\Partners\Veridt\Veridt_Logo.jpg" />
+    <Resource Include="Resources\Images\Partners\WindyCityWire\wcw200.jpg" />
+    <Resource Include="Resources\Images\Refresh\128x128\Sign-Refresh-icon.png" />
+    <Resource Include="Resources\Images\Refresh\16x16\Sign-Refresh-icon.png" />
+    <Resource Include="Resources\Images\Refresh\24x24\Sign-Refresh-icon.png" />
+    <Resource Include="Resources\Images\Refresh\256x256\Sign-Refresh-icon.png" />
+    <Resource Include="Resources\Images\Refresh\32x32\Sign-Refresh-icon.png" />
+    <Resource Include="Resources\Images\Refresh\48x48\Sign-Refresh-icon.png" />
+    <Resource Include="Resources\Images\Refresh\64x64\Sign-Refresh-icon.png" />
+    <Resource Include="Resources\Images\Refresh\72x72\Sign-Refresh-icon.png" />
+    <Resource Include="Resources\Images\Refresh\BlueRefresh2400px.png" />
+    <Resource Include="Resources\Images\Refresh\BlueRefresh300px.png" />
+    <Resource Include="Resources\Images\Refresh\BlueRefresh800px.png" />
+    <Resource Include="Resources\Images\Refresh\BlueRefreshDouble2400px.png" />
+    <Resource Include="Resources\Images\Refresh\BlueRefreshDouble300px.png" />
+    <Resource Include="Resources\Images\Refresh\BlueRefreshDouble800px.png" />
+    <Resource Include="Resources\Images\Refresh\GreenBrightRefresh.png" />
+    <Resource Include="Resources\Images\Refresh\GreenBrightRefresh2400px.png" />
+    <Resource Include="Resources\Images\Refresh\GreenBrightRefresh300px.png" />
+    <Resource Include="Resources\Images\Refresh\GreenBrightRefresh800px.png" />
+    <Resource Include="Resources\Images\Refresh\GreenRefresh2400px.png" />
+    <Resource Include="Resources\Images\Refresh\GreenRefresh300px.png" />
+    <Resource Include="Resources\Images\Refresh\GreenRefresh800px.png" />
+    <Resource Include="Resources\Images\Refresh\OrangeRefresh2400px.png" />
+    <Resource Include="Resources\Images\Refresh\OrangeRefresh300px.png" />
+    <Resource Include="Resources\Images\Refresh\OrangeRefresh800px.png" />
+    <Resource Include="Resources\Images\Refresh\RedRefresh2400px.png" />
+    <Resource Include="Resources\Images\Refresh\RedRefresh300px.png" />
+    <Resource Include="Resources\Images\Refresh\RedRefresh800px.png" />
+    <Resource Include="Resources\Images\Refresh\RefreshBlue1.png" />
+    <Resource Include="Resources\Images\Refresh\RefreshBlue2.png" />
+    <Resource Include="Resources\Images\Refresh\RefreshBlue3.png" />
+    <Resource Include="Resources\Images\Refresh\RefreshBlueGreen.png" />
+    <Resource Include="Resources\Images\Refresh\RefreshDatabase.png" />
+    <Resource Include="Resources\Images\Refresh\RefreshGreen1.png" />
+    <Resource Include="Resources\Images\Refresh\RefreshGreen2.png" />
+    <Resource Include="Resources\Images\Refresh\RefreshGreen3.png" />
+    <Resource Include="Resources\Images\Refresh\RefreshGreen4.png" />
+    <Resource Include="Resources\Images\Refresh\RefreshGreen5.png" />
+    <Resource Include="Resources\Images\Refresh\RefreshGreen6.png" />
+    <Resource Include="Resources\Images\Refresh\RefreshMultiColor.png" />
+    <Resource Include="Resources\Images\Refresh\RefreshOrange1.png" />
+    <Resource Include="Resources\Images\Refresh\RefreshRed1.png" />
+    <Resource Include="Resources\Images\Refresh\refresh_blue.png" />
+    <Resource Include="Resources\Images\Refresh\refresh_green.png" />
+    <Resource Include="Resources\Images\SaveData.png" />
+    <Resource Include="Resources\Images\Search\MagnifyingGlass1.png" />
+    <Resource Include="Resources\Images\TrashDelete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\Arrows\ForwardGreen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\send_token_48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\MessageBox\Info.png" />
+    <Resource Include="Resources\Images\MessageBox\QuestionMark.png" />
+    <Resource Include="Resources\Images\MessageBox\StopX.png" />
+    <Resource Include="Resources\Images\MessageBox\Warning.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

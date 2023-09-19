@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DefineConstants>TRACE;WcfClient</DefineConstants>
+    <DocumentationFile>d:\Dev\GalaxySMS\GalaxySMS.Business.Entities.NetCore\GalaxySMS.Business.Entities.NetCore.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>d:\Dev\GalaxySMS\GalaxySMS.Business.Entities.NetCore\GalaxySMS.Business.Entities.NetCore.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <Import Project="..\GalaxySMS.Business.Entities.Shared\GalaxySMS.Business.Entities.Shared.projitems" Label="Shared" />
+
+  <ItemGroup>
+    <ProjectReference Include="..\GalaxySMS.Client.Resources\GalaxySMS.Resources.csproj" />
+    <ProjectReference Include="..\GalaxySMS.Common.NetCore\GalaxySMS.Common.NetCore.csproj" />
+    <ProjectReference Include="..\GCS.Framework\NETCore\GCS.Core.Common.Contracts.NetCore\GCS.Core.Common.Contracts.NetCore.csproj" />
+    <ProjectReference Include="..\GCS.Framework\NETCore\GCS.Core.Common.NetCore\GCS.Core.Common.NetCore.csproj" />
+    <ProjectReference Include="..\GCS.Framework\NETCore\GCS.Framework.Imaging.NetCore\GCS.Framework.Imaging.NetCore.csproj" />
+    <ProjectReference Include="..\GCS.Framework\NETCore\GCS.Framework.Security.NetCore\GCS.Framework.Security.NetCore.csproj" />
+    <ProjectReference Include="..\NETCore\GCS.Core.Common.ServiceModel.NetCore\GCS.Core.Common.ServiceModel.Client.NetCore.csproj" />
+  </ItemGroup>
+
+</Project>

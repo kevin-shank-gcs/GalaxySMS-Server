@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>09ec0616-4fa3-405d-bcde-5ac1bb8f97ba</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>GCS.Framework.Badging.Api.Shared</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)IdProducer\Entities\BasicResult.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IdProducer\Entities\CardTemplate.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IdProducer\Entities\CardTemplateEditingData.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IdProducer\Entities\CardTemplateLite.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IdProducer\Entities\CloseRequestsResponse.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IdProducer\Entities\CreatedPrintRequest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IdProducer\Entities\CrudEventData.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IdProducer\Entities\GetServerVersionNumberResponse.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IdProducer\Entities\PayloadField.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IdProducer\Entities\PreviewData.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IdProducer\Entities\PrinterData.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IdProducer\Entities\PrintRequest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IdProducer\Entities\RequestStateChangeData.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IdProducer\Entities\ResponseBase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IdProducer\Entities\SaveMasterLicenseParameters.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IdProducer\Entities\Subscription.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IdProducer\Entities\SubscriptionBranch.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IdProducer\Entities\SubscriptionTemplateField.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IdProducer\Entities\TemplateFieldFormat.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IdProducer\Entities\FormControlType.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IdProducer\Entities\TemplateFieldType.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IdProducer\Entities\TZ.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IdProducer\Entities\User.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IdProducer\idProducerAPI.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IdProducer\IdProducerHelper.cs" />
+  </ItemGroup>
+</Project>
