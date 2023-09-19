@@ -42,54 +42,54 @@ namespace GalaxySMS.Api.Controllers.Api
 
         }
 
-        //////////////////////////////////////////////////////////////////////////////////////////////////////
-        /////  <summary> Get a collection of Report objects. </summary>
-        /////  <param name="entityId"></param>
-        ///// 
-        /////  <returns>   A Task&lt;ActionResult&lt;ApiEntities.Report[]&gt;&gt; </returns>
-        ///// =================================================================================================
-        //[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
-        //[HttpGet]
-        //[ProducesResponseType(StatusCodes.Status200OK)]
-        //[ProducesResponseType(StatusCodes.Status400BadRequest)]
-        //[ProducesResponseType(StatusCodes.Status401Unauthorized)]
-        //[ProducesResponseType(StatusCodes.Status404NotFound)]
-        //[ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        ////[ApiExplorerSettings(IgnoreApi = true)] // purposely hide this from the Swagger page
-        //// If no MapToApiVersion attribute is specified, then this endpoint will work for all versions
-        ////[MapToApiVersion("1.0")]
-        //public async Task<ActionResult<ApiEntities.ArrayResponse<ApiEntities.Report>>> Get(Guid entityId)
-        //{
-        //    try
-        //    {
-        //        var sessionId = this.GetClaimGuid(GalaxySMSClaimTypes.SessionId.ToString());
-        //        if (sessionId == Guid.Empty)
-        //            return BadRequest(ResponseMessages.JwtMissingSessionId);
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        ///  <summary> Get a collection of Report objects. </summary>
+        ///  <param name="entityId"></param>
+        /// 
+        ///  <returns>   A Task&lt;ActionResult&lt;ApiEntities.Report[]&gt;&gt; </returns>
+        /// =================================================================================================
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+        [HttpGet]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        //[ApiExplorerSettings(IgnoreApi = true)] // purposely hide this from the Swagger page
+        // If no MapToApiVersion attribute is specified, then this endpoint will work for all versions
+        //[MapToApiVersion("1.0")]
+        public async Task<ActionResult<ApiEntities.ArrayResponse<ApiEntities.Report>>> Get(Guid entityId)
+        {
+            try
+            {
+                var sessionId = this.GetClaimGuid(GalaxySMSClaimTypes.SessionId.ToString());
+                if (sessionId == Guid.Empty)
+                    return BadRequest(ResponseMessages.JwtMissingSessionId);
 
-        //        var mgr = Helpers.GetManager<ReportManager>(ServerWcfServerAddress, ServerWcfBindingType, ServerUserName, ServerPassword, ClientUserSessionData);
-        //        var results = await mgr.GetReportsForEntityAsync(new WcfEntities.GetParametersWithPhoto()
-        //        {
-        //            UniqueId = entityId,
-        //            IncludePhoto = includePhoto,
-        //            PhotoPixelWidth = photoPixelWidth,
-        //            IncludeMemberCollections = includeChildren
-        //        });
+                var mgr = Helpers.GetManager<ReportManager>(ServerWcfServerAddress, ServerWcfBindingType, ServerUserName, ServerPassword, ClientUserSessionData);
+                var results = await mgr.GetReportsForEntityAsync(new WcfEntities.GetParametersWithPhoto()
+                {
+                    UniqueId = entityId,
+                    IncludePhoto = includePhoto,
+                    PhotoPixelWidth = photoPixelWidth,
+                    IncludeMemberCollections = includeChildren
+                });
 
-        //        if (mgr.HasErrors)
-        //        {
-        //            return GetStatusCodeResult(mgr);
-        //        }
+                if (mgr.HasErrors)
+                {
+                    return GetStatusCodeResult(mgr);
+                }
 
-        //        var resp = new ApiEntities.ArrayResponse<ApiEntities.Report>();
-        //        resp.Items = Mapper.Map<ApiEntities.Report[]>(results);
-        //        return Ok(resp);
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        Logger.LogError($"Exception thrown in {System.Reflection.MethodBase.GetCurrentMethod()?.DeclaringType?.FullName}: {ex}");
-        //        return this.StatusCode(StatusCodes.Status500InternalServerError, ex.Message);//$"Failure:{ex.ToString()}");
-        //    }
-        //}
+                var resp = new ApiEntities.ArrayResponse<ApiEntities.Report>();
+                resp.Items = Mapper.Map<ApiEntities.Report[]>(results);
+                return Ok(resp);
+            }
+            catch (Exception ex)
+            {
+                Logger.LogError($"Exception thrown in {System.Reflection.MethodBase.GetCurrentMethod()?.DeclaringType?.FullName}: {ex}");
+                return this.StatusCode(StatusCodes.Status500InternalServerError, ex.Message);//$"Failure:{ex.ToString()}");
+            }
+        }
 
 
         //////////////////////////////////////////////////////////////////////////////////////////////////////
