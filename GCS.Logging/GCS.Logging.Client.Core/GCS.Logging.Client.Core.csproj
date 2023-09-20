@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="LoggingClient.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\GCS.Logging.Core\GCS.Logging.Core.csproj" />
+    <ProjectReference Include="..\GCS.Logging.Shared\GCS.Logging.Shared.csproj" />
+  </ItemGroup>
+
+  <Import Project="..\GCS.Logging.Client.Shared\GCS.Logging.Client.Shared.projitems" Label="Shared" />
+
+</Project>

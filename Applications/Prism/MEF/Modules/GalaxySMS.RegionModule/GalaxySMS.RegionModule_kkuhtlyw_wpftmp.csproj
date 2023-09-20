@@ -1,0 +1,388 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4FC91578-8181-41B1-879B-1DA6FF961802}</ProjectGuid>
+    <OutputType>library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GalaxySMS.Region</RootNamespace>
+    <AssemblyName>GalaxySMS.Region</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="RegionModule.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="RibbonTabs\RegionViewTab.xaml.cs">
+      <DependentUpon>RegionViewTab.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RibbonTabs\ViewBTab.xaml.cs">
+      <DependentUpon>ViewBTab.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\EditRegionViewModel.cs" />
+    <Compile Include="ViewModels\ShapefileViewModel.cs" />
+    <Compile Include="ViewModels\ViewBViewModel.cs" />
+    <Compile Include="ViewModels\RegionViewModel.cs" />
+    <Compile Include="Views\EditRegionView.xaml.cs">
+      <DependentUpon>EditRegionView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ViewB.xaml.cs">
+      <DependentUpon>ViewB.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RegionView.xaml.cs">
+      <DependentUpon>RegionView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ViewC.xaml.cs">
+      <DependentUpon>ViewC.xaml</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+    <None Include="Resources\africa.dbf" />
+    <None Include="Resources\africa.shp" />
+    <None Include="Resources\airports.dbf" />
+    <None Include="Resources\airports.shp" />
+    <None Include="Resources\asia.dbf" />
+    <None Include="Resources\asia.shp" />
+    <None Include="Resources\bulgaria.kml" />
+    <None Include="Resources\County.dbf" />
+    <None Include="Resources\County.shp" />
+    <None Include="Resources\county_region_osgb36.dbf" />
+    <None Include="Resources\county_region_osgb36.shp" />
+    <None Include="Resources\eu.kml" />
+    <None Include="Resources\europe.dbf" />
+    <None Include="Resources\europe.shp" />
+    <None Include="Resources\north_america.dbf" />
+    <None Include="Resources\north_america.shp" />
+    <None Include="Resources\oceania.dbf" />
+    <None Include="Resources\oceania.shp" />
+    <None Include="Resources\south_america.dbf" />
+    <None Include="Resources\south_america.shp" />
+    <None Include="Resources\USA\Alabama.dbf" />
+    <None Include="Resources\USA\Alabama.shp" />
+    <None Include="Resources\USA\Alaska.dbf" />
+    <None Include="Resources\USA\Alaska.shp" />
+    <None Include="Resources\USA\Arizona.dbf" />
+    <None Include="Resources\USA\Arizona.shp" />
+    <None Include="Resources\USA\Arkansas.dbf" />
+    <None Include="Resources\USA\Arkansas.shp" />
+    <None Include="Resources\USA\California.dbf" />
+    <None Include="Resources\USA\California.shp" />
+    <None Include="Resources\USA\Colorado.dbf" />
+    <None Include="Resources\USA\Colorado.shp" />
+    <None Include="Resources\USA\Connecticut.dbf" />
+    <None Include="Resources\USA\Connecticut.shp" />
+    <None Include="Resources\USA\Delaware.dbf" />
+    <None Include="Resources\USA\Delaware.shp" />
+    <None Include="Resources\USA\District_of_Columbia.dbf" />
+    <None Include="Resources\USA\District_of_Columbia.shp" />
+    <None Include="Resources\USA\Florida.dbf" />
+    <None Include="Resources\USA\Florida.shp" />
+    <None Include="Resources\USA\Georgia.dbf" />
+    <None Include="Resources\USA\Georgia.shp" />
+    <None Include="Resources\USA\Hawaii.dbf" />
+    <None Include="Resources\USA\Hawaii.shp" />
+    <None Include="Resources\USA\Idaho.dbf" />
+    <None Include="Resources\USA\Idaho.shp" />
+    <None Include="Resources\USA\Illinois.dbf" />
+    <None Include="Resources\USA\Illinois.shp" />
+    <None Include="Resources\USA\Indiana.dbf" />
+    <None Include="Resources\USA\Indiana.shp" />
+    <None Include="Resources\USA\Iowa.dbf" />
+    <None Include="Resources\USA\Iowa.shp" />
+    <None Include="Resources\USA\Kansas.dbf" />
+    <None Include="Resources\USA\Kansas.shp" />
+    <None Include="Resources\USA\Kentucky.dbf" />
+    <None Include="Resources\USA\Kentucky.shp" />
+    <None Include="Resources\USA\Louisiana.dbf" />
+    <None Include="Resources\USA\Louisiana.shp" />
+    <None Include="Resources\USA\Maine.dbf" />
+    <None Include="Resources\USA\Maine.shp" />
+    <None Include="Resources\USA\Maryland.dbf" />
+    <None Include="Resources\USA\Maryland.shp" />
+    <None Include="Resources\USA\Massachusetts.dbf" />
+    <None Include="Resources\USA\Massachusetts.shp" />
+    <None Include="Resources\USA\Michigan.dbf" />
+    <None Include="Resources\USA\Michigan.shp" />
+    <None Include="Resources\USA\Minnesota.dbf" />
+    <None Include="Resources\USA\Minnesota.shp" />
+    <None Include="Resources\USA\Mississippi.dbf" />
+    <None Include="Resources\USA\Mississippi.shp" />
+    <None Include="Resources\USA\Missouri.dbf" />
+    <None Include="Resources\USA\Missouri.shp" />
+    <None Include="Resources\USA\Montana.dbf" />
+    <None Include="Resources\USA\Montana.shp" />
+    <None Include="Resources\USA\Nebraska.dbf" />
+    <None Include="Resources\USA\Nebraska.shp" />
+    <None Include="Resources\USA\Nevada.dbf" />
+    <None Include="Resources\USA\Nevada.shp" />
+    <None Include="Resources\USA\New_Hampshire.dbf" />
+    <None Include="Resources\USA\New_Hampshire.shp" />
+    <None Include="Resources\USA\New_Jersey.dbf" />
+    <None Include="Resources\USA\New_Jersey.shp" />
+    <None Include="Resources\USA\New_Mexico.dbf" />
+    <None Include="Resources\USA\New_Mexico.shp" />
+    <None Include="Resources\USA\New_York.dbf" />
+    <None Include="Resources\USA\New_York.shp" />
+    <None Include="Resources\USA\North_Carolina.dbf" />
+    <None Include="Resources\USA\North_Carolina.shp" />
+    <None Include="Resources\USA\North_Dakota.dbf" />
+    <None Include="Resources\USA\North_Dakota.shp" />
+    <None Include="Resources\USA\Ohio.dbf" />
+    <None Include="Resources\USA\Ohio.shp" />
+    <None Include="Resources\USA\Oklahoma.dbf" />
+    <None Include="Resources\USA\Oklahoma.shp" />
+    <None Include="Resources\USA\Oregon.dbf" />
+    <None Include="Resources\USA\Oregon.shp" />
+    <None Include="Resources\USA\Pennsylvania.dbf" />
+    <None Include="Resources\USA\Pennsylvania.shp" />
+    <None Include="Resources\USA\Rhode_Island.dbf" />
+    <None Include="Resources\USA\Rhode_Island.shp" />
+    <None Include="Resources\USA\South_Carolina.dbf" />
+    <None Include="Resources\USA\South_Carolina.shp" />
+    <None Include="Resources\USA\South_Dakota.dbf" />
+    <None Include="Resources\USA\South_Dakota.shp" />
+    <None Include="Resources\USA\Tennessee.dbf" />
+    <None Include="Resources\USA\Tennessee.shp" />
+    <None Include="Resources\USA\Texas.dbf" />
+    <None Include="Resources\USA\Texas.shp" />
+    <None Include="Resources\USA\usa_states.dbf" />
+    <None Include="Resources\USA\usa_states.shp" />
+    <None Include="Resources\USA\Utah.dbf" />
+    <None Include="Resources\USA\Utah.shp" />
+    <None Include="Resources\USA\Vermont.dbf" />
+    <None Include="Resources\USA\Vermont.shp" />
+    <None Include="Resources\USA\Virginia.dbf" />
+    <None Include="Resources\USA\Virginia.shp" />
+    <None Include="Resources\USA\Washington.dbf" />
+    <None Include="Resources\USA\Washington.shp" />
+    <None Include="Resources\USA\West_Virginia.dbf" />
+    <None Include="Resources\USA\West_Virginia.shp" />
+    <None Include="Resources\USA\Wisconsin.dbf" />
+    <None Include="Resources\USA\Wisconsin.shp" />
+    <None Include="Resources\USA\Wyoming.dbf" />
+    <None Include="Resources\USA\Wyoming.shp" />
+    <None Include="Resources\world.dbf" />
+    <None Include="Resources\world.shp" />
+    <None Include="Resources\world_continents.dbf" />
+    <None Include="Resources\world_continents.shp" />
+    <None Include="Resources\world_continents_epsg900913.dbf" />
+    <None Include="Resources\world_continents_epsg900913.shp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\GalaxySMS.Client.Contracts\GalaxySMS.Client.Contracts.csproj">
+      <Project>{3E3F24E8-DC52-49E6-909D-AA4577E15375}</Project>
+      <Name>GalaxySMS.Client.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\GalaxySMS.Client.Entities\GalaxySMS.Client.Entities.csproj">
+      <Project>{5868c670-3e3f-4022-b780-5b27cef8d3e7}</Project>
+      <Name>GalaxySMS.Client.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\GalaxySMS.Client.Resources\GalaxySMS.Resources.csproj">
+      <Project>{8c7ef8a3-05d8-4f67-baa3-8e7d4c09d1c3}</Project>
+      <Name>GalaxySMS.Resources</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\GalaxySMS.Client.SDK\GalaxySMS.Client.SDK.csproj">
+      <Project>{ceea547d-5774-412b-9b13-50402c2a3d7d}</Project>
+      <Name>GalaxySMS.Client.SDK</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\GalaxySMS.Client.UI\GalaxySMS.Client.UI.csproj">
+      <Project>{524f7c40-89c7-4c0f-a8be-697bc520e533}</Project>
+      <Name>GalaxySMS.Client.UI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\GalaxySMS.Common\GalaxySMS.Common.csproj">
+      <Project>{51d2f1c3-f892-4db1-ac14-52adc98ec05b}</Project>
+      <Name>GalaxySMS.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\GCS.Framework\GCS.Core.Common.UI\GCS.Core.Common.UI.csproj">
+      <Project>{574996b0-f074-484b-9d11-6e47df8307a7}</Project>
+      <Name>GCS.Core.Common.UI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\GCS.Framework\GCS.Core.Common\GCS.Core.Common.csproj">
+      <Project>{106abc97-2143-4722-a2b0-cbe597d59f91}</Project>
+      <Name>GCS.Core.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\GCS.Framework\GCS.Core.Contracts\GCS.Core.Common.Contracts.csproj">
+      <Project>{e3820436-5d37-4ccb-87ca-f50420041668}</Project>
+      <Name>GCS.Core.Common.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\GCS.Framework\GCS.Core.Prism\GCS.Core.Prism.csproj">
+      <Project>{e7a82079-643e-4859-8ee5-2ef2f7d7589d}</Project>
+      <Name>GCS.Core.Prism</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\GCS.Framework\GCS.Framework.Imaging\GCS.Framework.Imaging.csproj">
+      <Project>{BE49A800-0276-49D8-B0CD-CB5AF0120643}</Project>
+      <Name>GCS.Framework.Imaging</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\GalaxySMS.Prism.Infrastructure\GalaxySMS.Prism.Infrastructure.csproj">
+      <Project>{52a35315-01cf-4929-85c0-7305351eb42e}</Project>
+      <Name>GalaxySMS.Prism.Infrastructure</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\SilverlightApplication6.xap" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ItemGroup>
+    <ReferencePath Include="D:\Dev\GalaxySMS\packages\FluentValidation.7.5.2\lib\net45\FluentValidation.dll" />
+    <ReferencePath Include="D:\Dev\GalaxySMS\GalaxySMS.Client.Contracts\bin\Debug\GalaxySMS.Client.Contracts.dll" />
+    <ReferencePath Include="D:\Dev\GalaxySMS\GalaxySMS.Client.Entities\bin\Debug\GalaxySMS.Client.Entities.dll" />
+    <ReferencePath Include="D:\Dev\GalaxySMS\GalaxySMS.Client.SDK\bin\Debug\GalaxySMS.Client.SDK.dll" />
+    <ReferencePath Include="D:\Dev\GalaxySMS\GalaxySMS.Client.UI\bin\Debug\GalaxySMS.Client.UI.dll" />
+    <ReferencePath Include="D:\Dev\GalaxySMS\GalaxySMS.Common\bin\Debug\GalaxySMS.Common.dll" />
+    <ReferencePath Include="D:\Dev\GalaxySMS\Applications\Prism\GalaxySMS.Prism.Infrastructure\bin\Debug\GalaxySMS.Prism.Infrastructure.dll" />
+    <ReferencePath Include="D:\Dev\GalaxySMS\GalaxySMS.Client.Resources\bin\Debug\GalaxySMS.Resources.dll" />
+    <ReferencePath Include="D:\Dev\GalaxySMS\GCS.Framework\GCS.Core.Contracts\bin\Debug\GCS.Core.Common.Contracts.dll" />
+    <ReferencePath Include="D:\Dev\GalaxySMS\GCS.Framework\GCS.Core.Common\bin\Debug\GCS.Core.Common.dll" />
+    <ReferencePath Include="D:\Dev\GalaxySMS\GCS.Framework\GCS.Core.Common.UI\bin\Debug\GCS.Core.Common.UI.dll" />
+    <ReferencePath Include="D:\Dev\GalaxySMS\GCS.Framework\GCS.Core.Prism\bin\Debug\GCS.Core.Prism.dll" />
+    <ReferencePath Include="D:\Dev\GalaxySMS\GCS.Framework\GCS.Framework.Imaging\bin\Debug\GCS.Framework.Imaging.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Microsoft.CSharp.dll" />
+    <ReferencePath Include="D:\Dev\GalaxySMS\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\mscorlib.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\PresentationCore.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\PresentationFramework.dll" />
+    <ReferencePath Include="D:\Dev\GalaxySMS\packages\Prism.Core.6.1.0\lib\net45\Prism.dll" />
+    <ReferencePath Include="D:\Dev\GalaxySMS\packages\Prism.Mef.6.1.0\lib\net45\Prism.Mef.Wpf.dll" />
+    <ReferencePath Include="D:\Dev\GalaxySMS\packages\Prism.Wpf.6.1.0\lib\net45\Prism.Wpf.dll" />
+    <ReferencePath Include="D:\Dev\GalaxySMS\packages\System.ComponentModel.Annotations.4.4.1\lib\net461\System.ComponentModel.Annotations.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\System.ComponentModel.Composition.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\System.ComponentModel.DataAnnotations.dll" />
+    <ReferencePath Include="D:\Dev\GalaxySMS\packages\System.ComponentModel.Primitives.4.3.0\lib\net45\System.ComponentModel.Primitives.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\System.Core.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\System.Data.DataSetExtensions.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\System.Data.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\System.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\System.Drawing.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\System.Net.Http.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\System.Runtime.Serialization.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Microsoft SDKs\Expression\Blend\.NETFramework\v4.5\Libraries\System.Windows.Interactivity.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\System.Xaml.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\System.Xml.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\System.Xml.Linq.dll" />
+    <ReferencePath Include="D:\Dev\GalaxySMS\lib\RCWPF\Current\Telerik.Windows.Controls.Data.dll" />
+    <ReferencePath Include="D:\Dev\GalaxySMS\lib\RCWPF\Current\Telerik.Windows.Controls.DataVisualization.dll" />
+    <ReferencePath Include="D:\Dev\GalaxySMS\lib\RCWPF\Current\Telerik.Windows.Controls.dll" />
+    <ReferencePath Include="D:\Dev\GalaxySMS\lib\RCWPF\Current\Telerik.Windows.Controls.GridView.dll" />
+    <ReferencePath Include="D:\Dev\GalaxySMS\lib\RCWPF\Current\Telerik.Windows.Controls.Input.dll" />
+    <ReferencePath Include="D:\Dev\GalaxySMS\lib\RCWPF\Current\Telerik.Windows.Controls.Navigation.dll" />
+    <ReferencePath Include="D:\Dev\GalaxySMS\lib\RCWPF\Current\Telerik.Windows.Controls.RibbonView.dll" />
+    <ReferencePath Include="D:\Dev\GalaxySMS\lib\RCWPF\Current\Telerik.Windows.Data.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\WindowsBase.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.Collections.Concurrent.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.Collections.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.ComponentModel.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.ComponentModel.EventBasedAsync.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.Diagnostics.Contracts.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.Diagnostics.Debug.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.Diagnostics.Tools.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.Diagnostics.Tracing.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.Dynamic.Runtime.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.Globalization.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.IO.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.Linq.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.Linq.Expressions.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.Linq.Parallel.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.Linq.Queryable.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.Net.NetworkInformation.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.Net.Primitives.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.Net.Requests.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.Net.WebHeaderCollection.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.ObjectModel.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.Reflection.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.Reflection.Emit.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.Reflection.Emit.ILGeneration.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.Reflection.Emit.Lightweight.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.Reflection.Extensions.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.Reflection.Primitives.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.Resources.ResourceManager.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.Runtime.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.Runtime.Extensions.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.Runtime.Handles.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.Runtime.InteropServices.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.Runtime.InteropServices.WindowsRuntime.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.Runtime.Numerics.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.Runtime.Serialization.Json.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.Runtime.Serialization.Primitives.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.Runtime.Serialization.Xml.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.Security.Principal.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.ServiceModel.Duplex.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.ServiceModel.Http.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.ServiceModel.NetTcp.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.ServiceModel.Primitives.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.ServiceModel.Security.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.Text.Encoding.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.Text.Encoding.Extensions.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.Text.RegularExpressions.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.Threading.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.Threading.Tasks.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.Threading.Tasks.Parallel.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.Threading.Timer.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.Xml.ReaderWriter.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.Xml.XDocument.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.Xml.XmlSerializer.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="D:\Dev\GalaxySMS\Applications\Prism\MEF\Modules\GalaxySMS.RegionModule\obj\Debug\RibbonTabs\RegionViewTab.g.cs" />
+    <Compile Include="D:\Dev\GalaxySMS\Applications\Prism\MEF\Modules\GalaxySMS.RegionModule\obj\Debug\RibbonTabs\ViewBTab.g.cs" />
+    <Compile Include="D:\Dev\GalaxySMS\Applications\Prism\MEF\Modules\GalaxySMS.RegionModule\obj\Debug\Views\EditRegionView.g.cs" />
+    <Compile Include="D:\Dev\GalaxySMS\Applications\Prism\MEF\Modules\GalaxySMS.RegionModule\obj\Debug\Views\ViewB.g.cs" />
+    <Compile Include="D:\Dev\GalaxySMS\Applications\Prism\MEF\Modules\GalaxySMS.RegionModule\obj\Debug\Views\RegionView.g.cs" />
+    <Compile Include="D:\Dev\GalaxySMS\Applications\Prism\MEF\Modules\GalaxySMS.RegionModule\obj\Debug\Views\ViewC.g.cs" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,1198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="ManagementInterfaceService" targetNamespace="http://xml.assaabloy.com/dsr/2.0" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://xml.assaabloy.com/dsr/2.0" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata">
+  <wsdl:types>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://xml.assaabloy.com/dsr/2.0" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://xml.assaabloy.com/dsr/2.0">
+<xs:element name="addAndConfirmAccessPoint" type="tns:addAndConfirmAccessPoint"/>
+<xs:element name="addAndConfirmAccessPointResponse" type="tns:addAndConfirmAccessPointResponse"/>
+<xs:element name="addReaderDescription" type="tns:addReaderDescription"/>
+<xs:element name="addReaderDescriptionResponse" type="tns:addReaderDescriptionResponse"/>
+<xs:element name="clearAccessPoint" type="tns:clearAccessPoint"/>
+<xs:element name="clearAccessPointResponse" type="tns:clearAccessPointResponse"/>
+<xs:element name="confirmAccessPoint" type="tns:confirmAccessPoint"/>
+<xs:element name="confirmAccessPointResponse" type="tns:confirmAccessPointResponse"/>
+<xs:element name="disableAccessPoint" type="tns:disableAccessPoint"/>
+<xs:element name="disableAccessPointResponse" type="tns:disableAccessPointResponse"/>
+<xs:element name="enableAccessPoint" type="tns:enableAccessPoint"/>
+<xs:element name="enableAccessPointResponse" type="tns:enableAccessPointResponse"/>
+<xs:element name="findAccessPointBySerialNumber" type="tns:findAccessPointBySerialNumber"/>
+<xs:element name="findAccessPointBySerialNumberResponse" type="tns:findAccessPointBySerialNumberResponse"/>
+<xs:element name="getAccessPointStatus" type="tns:getAccessPointStatus"/>
+<xs:element name="getAccessPointStatusResponse" type="tns:getAccessPointStatusResponse"/>
+<xs:element name="getAccessPointTypes" type="tns:getAccessPointTypes"/>
+<xs:element name="getAccessPointTypesResponse" type="tns:getAccessPointTypesResponse"/>
+<xs:element name="getStatus" type="tns:getStatus"/>
+<xs:element name="getStatusResponse" type="tns:getStatusResponse"/>
+<xs:element name="getSupportedCredentialFormats" type="tns:getSupportedCredentialFormats"/>
+<xs:element name="getSupportedCredentialFormatsResponse" type="tns:getSupportedCredentialFormatsResponse"/>
+<xs:element name="getVersionInfo" type="tns:getVersionInfo"/>
+<xs:element name="getVersionInfoResponse" type="tns:getVersionInfoResponse"/>
+<xs:element name="listAccessPoints" type="tns:listAccessPoints"/>
+<xs:element name="listAccessPointsOnline" type="tns:listAccessPointsOnline"/>
+<xs:element name="listAccessPointsOnlineResponse" type="tns:listAccessPointsOnlineResponse"/>
+<xs:element name="listAccessPointsResponse" type="tns:listAccessPointsResponse"/>
+<xs:element name="listAllAccessPoints" type="tns:listAllAccessPoints"/>
+<xs:element name="listAllAccessPointsResponse" type="tns:listAllAccessPointsResponse"/>
+<xs:element name="listCallbackEndpoints" type="tns:listCallbackEndpoints"/>
+<xs:element name="listCallbackEndpointsResponse" type="tns:listCallbackEndpointsResponse"/>
+<xs:element name="registerCallback" type="tns:registerCallback"/>
+<xs:element name="registerCallbackResponse" type="tns:registerCallbackResponse"/>
+<xs:element name="removeAccessPoint" type="tns:removeAccessPoint"/>
+<xs:element name="removeAccessPointResponse" type="tns:removeAccessPointResponse"/>
+<xs:element name="replaceAccessPoint" type="tns:replaceAccessPoint"/>
+<xs:element name="replaceAccessPointResponse" type="tns:replaceAccessPointResponse"/>
+<xs:element name="setAccessPointEndpointParams" type="tns:setAccessPointEndpointParams"/>
+<xs:element name="setAccessPointEndpointParamsResponse" type="tns:setAccessPointEndpointParamsResponse"/>
+<xs:element name="unRegisterCallback" type="tns:unRegisterCallback"/>
+<xs:element name="unRegisterCallbackResponse" type="tns:unRegisterCallbackResponse"/>
+<xs:element name="verifyAccessPointOnline" type="tns:verifyAccessPointOnline"/>
+<xs:element name="verifyAccessPointOnlineResponse" type="tns:verifyAccessPointOnlineResponse"/>
+<xs:complexType name="getSupportedCredentialFormats">
+<xs:sequence>
+<xs:element minOccurs="0" name="accessPointTypeId" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getSupportedCredentialFormatsResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="return" type="tns:CredentialFormatResponse"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="CredentialFormatResponse">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" name="credentialFormatList" type="tns:CredentialFormat"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="listAccessPointsOnline">
+<xs:sequence>
+<xs:element minOccurs="0" name="accessPointType" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="listAccessPointsOnlineResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="accessPoints" type="tns:accessPoints"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="accessPoints">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" name="accessPoints" type="tns:AccessPoint"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="AccessPoint">
+<xs:complexContent>
+<xs:extension base="tns:Entity">
+<xs:sequence>
+<xs:element name="serialNumber" type="xs:string"/>
+<xs:element name="accessPointType" type="tns:AccessPointType"/>
+<xs:element name="online" type="xs:boolean"/>
+<xs:element name="confirmed" type="xs:boolean"/>
+<xs:element name="syncStatus" type="tns:AccessPointSynchronizationStatus"/>
+<xs:element name="lastSeen" type="xs:dateTime"/>
+<xs:element name="timeOfLastCommunicationError" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="accessPointAttributes" type="tns:AccessPointAttributes"/>
+<xs:element minOccurs="0" name="lastAlarm" type="tns:LogEntry"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType abstract="true" name="Entity">
+<xs:sequence/>
+<xs:attribute name="id" type="xs:string"/>
+</xs:complexType>
+<xs:complexType name="AccessPointType">
+<xs:sequence>
+<xs:element minOccurs="0" name="id" type="xs:string"/>
+<xs:element minOccurs="0" name="displayName" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="AccessPointAttributes">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="attribute" type="tns:AccessPointAttributeValue"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="AccessPointAttributeValue">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="name" type="tns:AccessPointAttribute" use="required"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+<xs:complexType name="LogEntry">
+<xs:sequence>
+<xs:element name="origin" type="tns:LogOrigin"/>
+<xs:element name="family" type="tns:LogFamily"/>
+<xs:element name="code" type="tns:LogCode"/>
+<xs:element name="timeStamp" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="requestId" type="tns:DsrUUID"/>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="logData" type="tns:LogData"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="LogOrigin">
+<xs:all>
+<xs:element name="logOriginType" type="tns:LogOriginType"/>
+<xs:element name="originId" type="xs:string"/>
+</xs:all>
+</xs:complexType>
+<xs:complexType name="DsrUUID">
+<xs:sequence>
+<xs:element form="qualified" name="requestId" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="LogData">
+<xs:sequence>
+<xs:element name="name" type="xs:string"/>
+<xs:element name="value" type="tns:LogDataType"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="LogDataType">
+<xs:sequence>
+<xs:element form="qualified" minOccurs="0" name="intValue" type="xs:long"/>
+<xs:element form="qualified" minOccurs="0" name="stringValue" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="verifyAccessPointOnline">
+<xs:sequence>
+<xs:element minOccurs="0" name="accessPointId" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="verifyAccessPointOnlineResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="confirmAccessPoint">
+<xs:sequence>
+<xs:element minOccurs="0" name="accessPointId" type="xs:string"/>
+<xs:element name="confirmed" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="confirmAccessPointResponse">
+<xs:sequence/>
+</xs:complexType>
+<xs:complexType name="removeAccessPoint">
+<xs:sequence>
+<xs:element minOccurs="0" name="accessPointId" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="removeAccessPointResponse">
+<xs:sequence/>
+</xs:complexType>
+<xs:complexType name="disableAccessPoint">
+<xs:sequence>
+<xs:element minOccurs="0" name="accessPointId" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="disableAccessPointResponse">
+<xs:sequence/>
+</xs:complexType>
+<xs:complexType name="listAccessPoints">
+<xs:sequence>
+<xs:element minOccurs="0" name="accessPointType" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="listAccessPointsResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="accessPoints" type="tns:accessPoints"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="unRegisterCallback">
+<xs:sequence>
+<xs:element minOccurs="0" name="callbackURL" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="unRegisterCallbackResponse">
+<xs:sequence/>
+</xs:complexType>
+<xs:complexType name="replaceAccessPoint">
+<xs:sequence>
+<xs:element minOccurs="0" name="accessPointId" type="xs:string"/>
+<xs:element minOccurs="0" name="newSerialNumber" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="replaceAccessPointResponse">
+<xs:sequence/>
+</xs:complexType>
+<xs:complexType name="findAccessPointBySerialNumber">
+<xs:sequence>
+<xs:element minOccurs="0" name="serialNumber" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="findAccessPointBySerialNumberResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="accessPointBySerialNumber" type="tns:accessPointBySerialNumber"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="accessPointBySerialNumber">
+<xs:sequence>
+<xs:element minOccurs="0" name="accessPoint" type="tns:AccessPoint"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getAccessPointTypes">
+<xs:sequence/>
+</xs:complexType>
+<xs:complexType name="getAccessPointTypesResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="return" type="tns:AccessPointTypes"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="AccessPointTypes">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" name="accessPointTypeList" type="tns:AccessPointType"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="listAllAccessPoints">
+<xs:sequence/>
+</xs:complexType>
+<xs:complexType name="listAllAccessPointsResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="accessPoints" type="tns:accessPoints"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="listCallbackEndpoints">
+<xs:sequence/>
+</xs:complexType>
+<xs:complexType name="listCallbackEndpointsResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="accessPoints" type="tns:callbackEndpoints"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="callbackEndpoints">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" name="callbackEndpoints" type="tns:CallbackEndpoint"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="CallbackEndpoint">
+<xs:sequence>
+<xs:element name="failedCallbacks" type="xs:int"/>
+<xs:element name="lastFailedCallbackDate" type="xs:dateTime"/>
+<xs:element name="url" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="setAccessPointEndpointParams">
+<xs:sequence>
+<xs:element minOccurs="0" name="accessPointId" type="xs:string"/>
+<xs:element minOccurs="0" name="endpointParam" type="tns:EndpointParam"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="EndpointParam">
+<xs:sequence>
+<xs:element form="qualified" name="cryptoAlgorithm" type="tns:CryptoAlgorithm"/>
+<xs:element form="qualified" minOccurs="0" name="sharedSecretKeyHexString" type="xs:string"/>
+<xs:element form="qualified" name="keyLifespan" type="xs:long"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="setAccessPointEndpointParamsResponse">
+<xs:sequence/>
+</xs:complexType>
+<xs:complexType name="getAccessPointStatus">
+<xs:sequence>
+<xs:element minOccurs="0" name="accessPointId" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getAccessPointStatusResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="accessPointStatus" type="tns:accessPointStatus"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="accessPointStatus">
+<xs:sequence>
+<xs:element minOccurs="0" name="accessPoint" type="tns:AccessPoint"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="enableAccessPoint">
+<xs:sequence>
+<xs:element minOccurs="0" name="accessPointId" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="enableAccessPointResponse">
+<xs:sequence/>
+</xs:complexType>
+<xs:complexType name="getStatus">
+<xs:sequence/>
+</xs:complexType>
+<xs:complexType name="getStatusResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="onlineSince" type="tns:OnlineSince"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="OnlineSince">
+<xs:sequence>
+<xs:element minOccurs="0" name="lastTimeDsrGotOnline" type="xs:dateTime"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="addAndConfirmAccessPoint">
+<xs:sequence>
+<xs:element minOccurs="0" name="doorTypeId" type="xs:string"/>
+<xs:element minOccurs="0" name="serialNumber" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="addAndConfirmAccessPointResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="return" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getVersionInfo">
+<xs:sequence/>
+</xs:complexType>
+<xs:complexType name="getVersionInfoResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="versionInfo" type="tns:versionInfo"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="versionInfo">
+<xs:sequence>
+<xs:element minOccurs="0" name="serverVersion" type="xs:string"/>
+<xs:element minOccurs="0" name="serverBuildNumber" type="xs:string"/>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="moduleVersion" type="tns:moduleVersion"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="moduleVersion">
+<xs:sequence>
+<xs:element name="moduleName" type="xs:string"/>
+<xs:element name="moduleVersion" type="xs:string"/>
+<xs:element name="moduleBuildNumber" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="clearAccessPoint">
+<xs:sequence>
+<xs:element minOccurs="0" name="accessPointId" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="clearAccessPointResponse">
+<xs:sequence/>
+</xs:complexType>
+<xs:complexType name="registerCallback">
+<xs:sequence>
+<xs:element minOccurs="0" name="callbackURL" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="registerCallbackResponse">
+<xs:sequence/>
+</xs:complexType>
+<xs:complexType name="addReaderDescription">
+<xs:sequence>
+<xs:element minOccurs="0" name="accessPointId" type="xs:string"/>
+<xs:element minOccurs="0" name="readerName" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="addReaderDescriptionResponse">
+<xs:sequence/>
+</xs:complexType>
+<xs:simpleType name="CredentialFormat">
+<xs:restriction base="xs:string">
+<xs:enumeration value="UNKNOWN"/>
+<xs:enumeration value="SID_0_CID_32"/>
+<xs:enumeration value="SID_0_CID_64"/>
+<xs:enumeration value="SID_32_CID_32"/>
+<xs:enumeration value="MIFARE_CLASSIC_1_K"/>
+<xs:enumeration value="MIFARE_CLASSIC_4_K"/>
+<xs:enumeration value="MIFARE_ULTRALIGHT"/>
+<xs:enumeration value="MIFARE_DESFIRE"/>
+<xs:enumeration value="DALLAS"/>
+<xs:enumeration value="SOLID_DALLAS"/>
+<xs:enumeration value="MAGNETIC"/>
+<xs:enumeration value="PASSWORD"/>
+<xs:enumeration value="PIN_CODE"/>
+<xs:enumeration value="PROX_H_10301"/>
+<xs:enumeration value="PROX_H_10302"/>
+<xs:enumeration value="PROX_H_10304"/>
+<xs:enumeration value="HID_33_BIT_PROPRIETARY"/>
+<xs:enumeration value="HID_34_BIT_PROPRIETARY"/>
+<xs:enumeration value="CORPORATE_1000"/>
+<xs:enumeration value="PROX_RAW"/>
+<xs:enumeration value="MAGNETIC_TRACK_2"/>
+<xs:enumeration value="CORPORATE_1000_48"/>
+</xs:restriction>
+</xs:simpleType>
+<xs:simpleType name="EntityType">
+<xs:restriction base="xs:string">
+<xs:enumeration value="AUTHORIZATION"/>
+<xs:enumeration value="SCHEDULE"/>
+<xs:enumeration value="DAYEXCEPTION"/>
+<xs:enumeration value="DAYEXCEPTIONGROUP"/>
+<xs:enumeration value="DAYPERIOD"/>
+<xs:enumeration value="USER"/>
+<xs:enumeration value="ACCESSPOINT"/>
+<xs:enumeration value="ACCESSPOINTMODE"/>
+<xs:enumeration value="CARDHOLDER"/>
+</xs:restriction>
+</xs:simpleType>
+<xs:simpleType name="FaultCode">
+<xs:restriction base="xs:string">
+<xs:enumeration value="UNKNOWN_IDENTITY"/>
+<xs:enumeration value="DUPLICATE_IDENTITY"/>
+<xs:enumeration value="ENTITY_IN_USE"/>
+<xs:enumeration value="MALFORMED_ENTITY"/>
+<xs:enumeration value="HARDWARE_COMMUNICATION"/>
+<xs:enumeration value="UNSUPPORTED_DOOR_TYPE"/>
+<xs:enumeration value="UNSUPPORTED_OPERATION"/>
+<xs:enumeration value="ACCESSPOINT_NOT_CONFIRMED"/>
+<xs:enumeration value="COMMAND_TIMEOUT"/>
+<xs:enumeration value="UNTRANSLATABLE"/>
+<xs:enumeration value="UNKNOWN_VALUE"/>
+<xs:enumeration value="ACCESSPOINT_COMMUNICATION"/>
+<xs:enumeration value="ENTITY_DATA_VALIDATION"/>
+<xs:enumeration value="INTERNAL_ERROR"/>
+</xs:restriction>
+</xs:simpleType>
+<xs:simpleType name="AccessPointSynchronizationStatus">
+<xs:restriction base="xs:string">
+<xs:enumeration value="SYNCHRONIZED"/>
+<xs:enumeration value="PENDING"/>
+<xs:enumeration value="OUT_OF_SYNC"/>
+<xs:enumeration value="OUT_OF_SYNC_INTERNAL"/>
+<xs:enumeration value="OUT_OF_SYNC_COMM"/>
+<xs:enumeration value="ENABLED"/>
+<xs:enumeration value="DISABLED"/>
+<xs:enumeration value="CLEARED"/>
+<xs:enumeration value="UNKNOWN"/>
+</xs:restriction>
+</xs:simpleType>
+<xs:simpleType name="AccessPointAttribute">
+<xs:restriction base="xs:string">
+<xs:enumeration value="SERIAL_NUMBER"/>
+<xs:enumeration value="BATTERY_LEVEL"/>
+<xs:enumeration value="BATTERY_STATUS"/>
+<xs:enumeration value="FIRMWARE_VERSION"/>
+<xs:enumeration value="FIRMWARE_TAMPERED"/>
+<xs:enumeration value="TAMPERED"/>
+<xs:enumeration value="DC_VOLTAGE"/>
+<xs:enumeration value="DESCRIPTION"/>
+<xs:enumeration value="LOCK_STATE"/>
+<xs:enumeration value="DOOR_STATE"/>
+<xs:enumeration value="RADIO_FIRMWARE_VERSION"/>
+</xs:restriction>
+</xs:simpleType>
+<xs:simpleType name="LogOriginType">
+<xs:restriction base="xs:string">
+<xs:enumeration value="CONTROLLER"/>
+<xs:enumeration value="DOOR"/>
+<xs:enumeration value="EXTENSION"/>
+<xs:enumeration value="DSR"/>
+<xs:enumeration value="CYLINDER"/>
+<xs:enumeration value="KEY"/>
+</xs:restriction>
+</xs:simpleType>
+<xs:simpleType name="LogFamily">
+<xs:restriction base="xs:string">
+<xs:enumeration value="ACCESS"/>
+<xs:enumeration value="ALARM"/>
+<xs:enumeration value="GENERAL"/>
+<xs:enumeration value="AUDIT"/>
+</xs:restriction>
+</xs:simpleType>
+<xs:simpleType name="LogCode">
+<xs:restriction base="xs:string">
+<xs:enumeration value="PROPRIETARY"/>
+<xs:enumeration value="DOOR_FORCED"/>
+<xs:enumeration value="DOOR_HELD"/>
+<xs:enumeration value="DOOR_BOLTTHROWN"/>
+<xs:enumeration value="DOOR_BOLTRETRACTED"/>
+<xs:enumeration value="MODE_PROGRAMMING"/>
+<xs:enumeration value="MODE_LOCKOUT"/>
+<xs:enumeration value="MODE_LOCKOUT_TIMED"/>
+<xs:enumeration value="MODE_LOCKOUT_USER"/>
+<xs:enumeration value="MODE_RELOCK"/>
+<xs:enumeration value="MODE_EMERGENCY"/>
+<xs:enumeration value="MODE_PANIC"/>
+<xs:enumeration value="MODE_RESET"/>
+<xs:enumeration value="MODE_NORMAL"/>
+<xs:enumeration value="MODE_PASSAGE"/>
+<xs:enumeration value="MODE_PASSAGE_TIMED"/>
+<xs:enumeration value="MODE_PASSAGE_USER"/>
+<xs:enumeration value="MODE_LOCKED"/>
+<xs:enumeration value="MODE_LOCKED_TIMED"/>
+<xs:enumeration value="MODE_LOCKED_USER"/>
+<xs:enumeration value="MODE_SECURED"/>
+<xs:enumeration value="MODE_PANIC_END"/>
+<xs:enumeration value="BATTERY_DEPLETED"/>
+<xs:enumeration value="BATTERY_REPLACED"/>
+<xs:enumeration value="BATTERY_CRITICAL"/>
+<xs:enumeration value="BATTERY_WARN"/>
+<xs:enumeration value="BATTERY_CHECK_ERROR"/>
+<xs:enumeration value="USER_MODIFY"/>
+<xs:enumeration value="USER_REVOKE"/>
+<xs:enumeration value="USER_ADD"/>
+<xs:enumeration value="USER_BADTIME"/>
+<xs:enumeration value="USER_INVALID"/>
+<xs:enumeration value="USER_OK"/>
+<xs:enumeration value="ACCESS_DENIED"/>
+<xs:enumeration value="ACCESS_DENIED_SCHEDULE"/>
+<xs:enumeration value="ACCESS_DENIED_LOCKOUT"/>
+<xs:enumeration value="ACCESS_DENIED_BOLTED"/>
+<xs:enumeration value="ACCESS_DENIED_EXPIRED"/>
+<xs:enumeration value="ACCESS_DENIED_BUSY"/>
+<xs:enumeration value="ACCESS_DENIED_SUSPENDED"/>
+<xs:enumeration value="ACCESS_DENIED_PANIC"/>
+<xs:enumeration value="ACCESS_DENIED_PASSAGE"/>
+<xs:enumeration value="ACCESS_GRANTED"/>
+<xs:enumeration value="ACCESS_GRANTED_REMOTEUNLOCK"/>
+<xs:enumeration value="ACCESS_GRANTED_ONE_TIME_USER"/>
+<xs:enumeration value="ACCESS_GRANTED_NOTIFY"/>
+<xs:enumeration value="ACCESS_GRANTED_DEADBOLT_OVERRIDE"/>
+<xs:enumeration value="ACCESS_KEYOVERRIDE"/>
+<xs:enumeration value="ACCESS_INVALIDENTRY"/>
+<xs:enumeration value="AUTHORIZATION_SUCCESS_COMMUSER"/>
+<xs:enumeration value="AUTHORIZATION_DENY_COMMUSER"/>
+<xs:enumeration value="AUTHORIZATION_SUCCESS_MASTER"/>
+<xs:enumeration value="AUTHORIZATION_FAIL_MASTER"/>
+<xs:enumeration value="LOG_LOGCLEARED"/>
+<xs:enumeration value="LOG_LOGWRAPPED"/>
+<xs:enumeration value="FIRMWARE_UPDATE_ABORT"/>
+<xs:enumeration value="FIRMWARE_UPDATE_ERROR"/>
+<xs:enumeration value="FIRMWARE_UPDATE_TIMEOUT"/>
+<xs:enumeration value="FIRMWARE_UPDATE_SUCCESS"/>
+<xs:enumeration value="FIRMWARE_UPDATE_FAIL"/>
+<xs:enumeration value="DB_USERDB_RESET"/>
+<xs:enumeration value="DB_USERDB_RESET_USER"/>
+<xs:enumeration value="CLOCK_DATETIMESET"/>
+<xs:enumeration value="CLOCK_DSTFORWARD"/>
+<xs:enumeration value="CLOCK_DSTBACK"/>
+<xs:enumeration value="CLOCK_ERROR"/>
+<xs:enumeration value="CLOCK_RESET"/>
+<xs:enumeration value="NVRAM_CLEAR"/>
+<xs:enumeration value="NVRAM_OK"/>
+<xs:enumeration value="NVRAM_CLEAR_USER"/>
+<xs:enumeration value="NVRAM_LAYUT_CHANGED"/>
+<xs:enumeration value="NVRAM_CHECKSUM"/>
+<xs:enumeration value="HW_MORTISE_ERROR"/>
+<xs:enumeration value="HW_POWER_ERROR"/>
+<xs:enumeration value="HW_DPAC_ERROR"/>
+<xs:enumeration value="COMMUNICATION_ERROR"/>
+<xs:enumeration value="COMMUNICATION_TIMEOUT"/>
+<xs:enumeration value="COMMUNICATION_HW_DISABLED"/>
+<xs:enumeration value="COMMUNICATION_START"/>
+<xs:enumeration value="COMMUNICATION_END"/>
+<xs:enumeration value="RESET_PERFORMED"/>
+<xs:enumeration value="REMOTE_AUTHORIZATION_REQUEST"/>
+<xs:enumeration value="RXOVERRUN"/>
+<xs:enumeration value="ACCESSPOINT_RXHELD"/>
+<xs:enumeration value="ACCESSPOINT_DELETED"/>
+<xs:enumeration value="ACCESSPOINT_CREATED"/>
+<xs:enumeration value="ACCESSPOINT_REPLACED"/>
+<xs:enumeration value="ACCESSPOINT_CONFIRMED"/>
+<xs:enumeration value="ACCESSPOINT_UNCONFIRMED"/>
+<xs:enumeration value="ACCESSPOINT_ONLINE"/>
+<xs:enumeration value="ACCESSPOINT_OFFLINE"/>
+<xs:enumeration value="ACCESSPOINT_REQUEST_CLOCK_RESET"/>
+<xs:enumeration value="INTERNAL_ERROR"/>
+<xs:enumeration value="LOG_RETRIEVED"/>
+<xs:enumeration value="FIRMWARE_TAMPERED"/>
+<xs:enumeration value="LOCK_TAMPERED"/>
+<xs:enumeration value="AUDIT_LOG"/>
+<xs:enumeration value="MISSED_CALLBACKS_FROM_DSR"/>
+<xs:enumeration value="INTEGRITY_CHECK_FAILED"/>
+<xs:enumeration value="PRESENT_ON_BLACKLIST"/>
+<xs:enumeration value="BLACKLIST_CLEARED"/>
+<xs:enumeration value="BLACKLIST_LOADED"/>
+</xs:restriction>
+</xs:simpleType>
+<xs:simpleType name="CryptoAlgorithm">
+<xs:restriction base="xs:string">
+<xs:enumeration value="CLEARTEXT"/>
+<xs:enumeration value="AES_CTR_R_3"/>
+</xs:restriction>
+</xs:simpleType>
+<xs:element name="DoorServiceRouterException" type="tns:DoorServiceRouterException"/>
+<xs:complexType name="DoorServiceRouterException">
+<xs:sequence>
+<xs:element name="type" nillable="true" type="tns:EntityType"/>
+<xs:element name="faultCode" nillable="true" type="tns:FaultCode"/>
+<xs:element name="doorId" nillable="true" type="xs:string"/>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="entityIds" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="getSupportedCredentialFormats">
+    <wsdl:part name="parameters" element="tns:getSupportedCredentialFormats">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getSupportedCredentialFormatsResponse">
+    <wsdl:part name="parameters" element="tns:getSupportedCredentialFormatsResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="listAccessPointsOnline">
+    <wsdl:part name="parameters" element="tns:listAccessPointsOnline">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAccessPointTypesResponse">
+    <wsdl:part name="parameters" element="tns:getAccessPointTypesResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getStatusResponse">
+    <wsdl:part name="parameters" element="tns:getStatusResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="removeAccessPoint">
+    <wsdl:part name="parameters" element="tns:removeAccessPoint">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="listAccessPointsOnlineResponse">
+    <wsdl:part name="parameters" element="tns:listAccessPointsOnlineResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="disableAccessPoint">
+    <wsdl:part name="parameters" element="tns:disableAccessPoint">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="registerCallbackResponse">
+    <wsdl:part name="parameters" element="tns:registerCallbackResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="unRegisterCallback">
+    <wsdl:part name="parameters" element="tns:unRegisterCallback">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="DoorServiceRouterException">
+    <wsdl:part name="DoorServiceRouterException" element="tns:DoorServiceRouterException">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="listAllAccessPointsResponse">
+    <wsdl:part name="parameters" element="tns:listAllAccessPointsResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="findAccessPointBySerialNumber">
+    <wsdl:part name="parameters" element="tns:findAccessPointBySerialNumber">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAccessPointTypes">
+    <wsdl:part name="parameters" element="tns:getAccessPointTypes">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="listAllAccessPoints">
+    <wsdl:part name="parameters" element="tns:listAllAccessPoints">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="listCallbackEndpoints">
+    <wsdl:part name="parameters" element="tns:listCallbackEndpoints">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="disableAccessPointResponse">
+    <wsdl:part name="parameters" element="tns:disableAccessPointResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAccessPointStatusResponse">
+    <wsdl:part name="parameters" element="tns:getAccessPointStatusResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="enableAccessPoint">
+    <wsdl:part name="parameters" element="tns:enableAccessPoint">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addAndConfirmAccessPointResponse">
+    <wsdl:part name="parameters" element="tns:addAndConfirmAccessPointResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="enableAccessPointResponse">
+    <wsdl:part name="parameters" element="tns:enableAccessPointResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="clearAccessPointResponse">
+    <wsdl:part name="parameters" element="tns:clearAccessPointResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="replaceAccessPointResponse">
+    <wsdl:part name="parameters" element="tns:replaceAccessPointResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="clearAccessPoint">
+    <wsdl:part name="parameters" element="tns:clearAccessPoint">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="registerCallback">
+    <wsdl:part name="parameters" element="tns:registerCallback">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="verifyAccessPointOnlineResponse">
+    <wsdl:part name="parameters" element="tns:verifyAccessPointOnlineResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="listAccessPointsResponse">
+    <wsdl:part name="parameters" element="tns:listAccessPointsResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="findAccessPointBySerialNumberResponse">
+    <wsdl:part name="parameters" element="tns:findAccessPointBySerialNumberResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="listCallbackEndpointsResponse">
+    <wsdl:part name="parameters" element="tns:listCallbackEndpointsResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="confirmAccessPointResponse">
+    <wsdl:part name="parameters" element="tns:confirmAccessPointResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="verifyAccessPointOnline">
+    <wsdl:part name="parameters" element="tns:verifyAccessPointOnline">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getVersionInfoResponse">
+    <wsdl:part name="parameters" element="tns:getVersionInfoResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="confirmAccessPoint">
+    <wsdl:part name="parameters" element="tns:confirmAccessPoint">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="listAccessPoints">
+    <wsdl:part name="parameters" element="tns:listAccessPoints">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="replaceAccessPoint">
+    <wsdl:part name="parameters" element="tns:replaceAccessPoint">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="setAccessPointEndpointParamsResponse">
+    <wsdl:part name="parameters" element="tns:setAccessPointEndpointParamsResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addReaderDescriptionResponse">
+    <wsdl:part name="parameters" element="tns:addReaderDescriptionResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="setAccessPointEndpointParams">
+    <wsdl:part name="parameters" element="tns:setAccessPointEndpointParams">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAccessPointStatus">
+    <wsdl:part name="parameters" element="tns:getAccessPointStatus">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="unRegisterCallbackResponse">
+    <wsdl:part name="parameters" element="tns:unRegisterCallbackResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getStatus">
+    <wsdl:part name="parameters" element="tns:getStatus">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addAndConfirmAccessPoint">
+    <wsdl:part name="parameters" element="tns:addAndConfirmAccessPoint">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="removeAccessPointResponse">
+    <wsdl:part name="parameters" element="tns:removeAccessPointResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getVersionInfo">
+    <wsdl:part name="parameters" element="tns:getVersionInfo">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addReaderDescription">
+    <wsdl:part name="parameters" element="tns:addReaderDescription">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="ManagementInterface">
+    <wsdl:operation name="getSupportedCredentialFormats">
+      <wsdl:input name="getSupportedCredentialFormats" message="tns:getSupportedCredentialFormats" wsam:Action="http://xml.assaabloy.com/dsr/2.0/ManagementInterface/getSupportedCredentialFormatsRequest" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/ManagementInterface/getSupportedCredentialFormatsRequest">
+    </wsdl:input>
+      <wsdl:output name="getSupportedCredentialFormatsResponse" message="tns:getSupportedCredentialFormatsResponse" wsam:Action="http://xml.assaabloy.com/dsr/2.0/ManagementInterface/getSupportedCredentialFormatsResponse" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/ManagementInterface/getSupportedCredentialFormatsResponse">
+    </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException" message="tns:DoorServiceRouterException" wsam:Action="http://xml.assaabloy.com/dsr/2.0/ManagementInterface/getSupportedCredentialFormats/Fault/DoorServiceRouterException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="listAccessPointsOnline">
+      <wsdl:input name="listAccessPointsOnline" message="tns:listAccessPointsOnline" wsam:Action="http://xml.assaabloy.com/dsr/2.0/ManagementInterface/listAccessPointsOnlineRequest" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/ManagementInterface/listAccessPointsOnlineRequest">
+    </wsdl:input>
+      <wsdl:output name="listAccessPointsOnlineResponse" message="tns:listAccessPointsOnlineResponse" wsam:Action="http://xml.assaabloy.com/dsr/2.0/ManagementInterface/listAccessPointsOnlineResponse" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/ManagementInterface/listAccessPointsOnlineResponse">
+    </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException" message="tns:DoorServiceRouterException" wsam:Action="http://xml.assaabloy.com/dsr/2.0/ManagementInterface/listAccessPointsOnline/Fault/DoorServiceRouterException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="verifyAccessPointOnline">
+      <wsdl:input name="verifyAccessPointOnline" message="tns:verifyAccessPointOnline" wsam:Action="http://xml.assaabloy.com/dsr/2.0/ManagementInterface/verifyAccessPointOnlineRequest" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/ManagementInterface/verifyAccessPointOnlineRequest">
+    </wsdl:input>
+      <wsdl:output name="verifyAccessPointOnlineResponse" message="tns:verifyAccessPointOnlineResponse" wsam:Action="http://xml.assaabloy.com/dsr/2.0/ManagementInterface/verifyAccessPointOnlineResponse" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/ManagementInterface/verifyAccessPointOnlineResponse">
+    </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException" message="tns:DoorServiceRouterException" wsam:Action="http://xml.assaabloy.com/dsr/2.0/ManagementInterface/verifyAccessPointOnline/Fault/DoorServiceRouterException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="confirmAccessPoint">
+      <wsdl:input name="confirmAccessPoint" message="tns:confirmAccessPoint" wsam:Action="http://xml.assaabloy.com/dsr/2.0/ManagementInterface/confirmAccessPointRequest" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/ManagementInterface/confirmAccessPointRequest">
+    </wsdl:input>
+      <wsdl:output name="confirmAccessPointResponse" message="tns:confirmAccessPointResponse" wsam:Action="http://xml.assaabloy.com/dsr/2.0/ManagementInterface/confirmAccessPointResponse" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/ManagementInterface/confirmAccessPointResponse">
+    </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException" message="tns:DoorServiceRouterException" wsam:Action="http://xml.assaabloy.com/dsr/2.0/ManagementInterface/confirmAccessPoint/Fault/DoorServiceRouterException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="removeAccessPoint">
+      <wsdl:input name="removeAccessPoint" message="tns:removeAccessPoint" wsam:Action="http://xml.assaabloy.com/dsr/2.0/ManagementInterface/removeAccessPointRequest" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/ManagementInterface/removeAccessPointRequest">
+    </wsdl:input>
+      <wsdl:output name="removeAccessPointResponse" message="tns:removeAccessPointResponse" wsam:Action="http://xml.assaabloy.com/dsr/2.0/ManagementInterface/removeAccessPointResponse" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/ManagementInterface/removeAccessPointResponse">
+    </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException" message="tns:DoorServiceRouterException" wsam:Action="http://xml.assaabloy.com/dsr/2.0/ManagementInterface/removeAccessPoint/Fault/DoorServiceRouterException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="disableAccessPoint">
+      <wsdl:input name="disableAccessPoint" message="tns:disableAccessPoint" wsam:Action="http://xml.assaabloy.com/dsr/2.0/ManagementInterface/disableAccessPointRequest" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/ManagementInterface/disableAccessPointRequest">
+    </wsdl:input>
+      <wsdl:output name="disableAccessPointResponse" message="tns:disableAccessPointResponse" wsam:Action="http://xml.assaabloy.com/dsr/2.0/ManagementInterface/disableAccessPointResponse" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/ManagementInterface/disableAccessPointResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listAccessPoints">
+      <wsdl:input name="listAccessPoints" message="tns:listAccessPoints" wsam:Action="http://xml.assaabloy.com/dsr/2.0/ManagementInterface/listAccessPointsRequest" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/ManagementInterface/listAccessPointsRequest">
+    </wsdl:input>
+      <wsdl:output name="listAccessPointsResponse" message="tns:listAccessPointsResponse" wsam:Action="http://xml.assaabloy.com/dsr/2.0/ManagementInterface/listAccessPointsResponse" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/ManagementInterface/listAccessPointsResponse">
+    </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException" message="tns:DoorServiceRouterException" wsam:Action="http://xml.assaabloy.com/dsr/2.0/ManagementInterface/listAccessPoints/Fault/DoorServiceRouterException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="unRegisterCallback">
+      <wsdl:input name="unRegisterCallback" message="tns:unRegisterCallback" wsam:Action="http://xml.assaabloy.com/dsr/2.0/ManagementInterface/unRegisterCallbackRequest" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/ManagementInterface/unRegisterCallbackRequest">
+    </wsdl:input>
+      <wsdl:output name="unRegisterCallbackResponse" message="tns:unRegisterCallbackResponse" wsam:Action="http://xml.assaabloy.com/dsr/2.0/ManagementInterface/unRegisterCallbackResponse" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/ManagementInterface/unRegisterCallbackResponse">
+    </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException" message="tns:DoorServiceRouterException" wsam:Action="http://xml.assaabloy.com/dsr/2.0/ManagementInterface/unRegisterCallback/Fault/DoorServiceRouterException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="replaceAccessPoint">
+      <wsdl:input name="replaceAccessPoint" message="tns:replaceAccessPoint" wsam:Action="http://xml.assaabloy.com/dsr/2.0/ManagementInterface/replaceAccessPointRequest" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/ManagementInterface/replaceAccessPointRequest">
+    </wsdl:input>
+      <wsdl:output name="replaceAccessPointResponse" message="tns:replaceAccessPointResponse" wsam:Action="http://xml.assaabloy.com/dsr/2.0/ManagementInterface/replaceAccessPointResponse" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/ManagementInterface/replaceAccessPointResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="findAccessPointBySerialNumber">
+      <wsdl:input name="findAccessPointBySerialNumber" message="tns:findAccessPointBySerialNumber" wsam:Action="http://xml.assaabloy.com/dsr/2.0/ManagementInterface/findAccessPointBySerialNumberRequest" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/ManagementInterface/findAccessPointBySerialNumberRequest">
+    </wsdl:input>
+      <wsdl:output name="findAccessPointBySerialNumberResponse" message="tns:findAccessPointBySerialNumberResponse" wsam:Action="http://xml.assaabloy.com/dsr/2.0/ManagementInterface/findAccessPointBySerialNumberResponse" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/ManagementInterface/findAccessPointBySerialNumberResponse">
+    </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException" message="tns:DoorServiceRouterException" wsam:Action="http://xml.assaabloy.com/dsr/2.0/ManagementInterface/findAccessPointBySerialNumber/Fault/DoorServiceRouterException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getAccessPointTypes">
+      <wsdl:input name="getAccessPointTypes" message="tns:getAccessPointTypes" wsam:Action="http://xml.assaabloy.com/dsr/2.0/ManagementInterface/getAccessPointTypesRequest" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/ManagementInterface/getAccessPointTypesRequest">
+    </wsdl:input>
+      <wsdl:output name="getAccessPointTypesResponse" message="tns:getAccessPointTypesResponse" wsam:Action="http://xml.assaabloy.com/dsr/2.0/ManagementInterface/getAccessPointTypesResponse" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/ManagementInterface/getAccessPointTypesResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listAllAccessPoints">
+      <wsdl:input name="listAllAccessPoints" message="tns:listAllAccessPoints" wsam:Action="http://xml.assaabloy.com/dsr/2.0/ManagementInterface/listAllAccessPointsRequest" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/ManagementInterface/listAllAccessPointsRequest">
+    </wsdl:input>
+      <wsdl:output name="listAllAccessPointsResponse" message="tns:listAllAccessPointsResponse" wsam:Action="http://xml.assaabloy.com/dsr/2.0/ManagementInterface/listAllAccessPointsResponse" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/ManagementInterface/listAllAccessPointsResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listCallbackEndpoints">
+      <wsdl:input name="listCallbackEndpoints" message="tns:listCallbackEndpoints" wsam:Action="http://xml.assaabloy.com/dsr/2.0/ManagementInterface/listCallbackEndpointsRequest" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/ManagementInterface/listCallbackEndpointsRequest">
+    </wsdl:input>
+      <wsdl:output name="listCallbackEndpointsResponse" message="tns:listCallbackEndpointsResponse" wsam:Action="http://xml.assaabloy.com/dsr/2.0/ManagementInterface/listCallbackEndpointsResponse" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/ManagementInterface/listCallbackEndpointsResponse">
+    </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException" message="tns:DoorServiceRouterException" wsam:Action="http://xml.assaabloy.com/dsr/2.0/ManagementInterface/listCallbackEndpoints/Fault/DoorServiceRouterException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="setAccessPointEndpointParams">
+      <wsdl:input name="setAccessPointEndpointParams" message="tns:setAccessPointEndpointParams" wsam:Action="http://xml.assaabloy.com/dsr/2.0/ManagementInterface/setAccessPointEndpointParamsRequest" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/ManagementInterface/setAccessPointEndpointParamsRequest">
+    </wsdl:input>
+      <wsdl:output name="setAccessPointEndpointParamsResponse" message="tns:setAccessPointEndpointParamsResponse" wsam:Action="http://xml.assaabloy.com/dsr/2.0/ManagementInterface/setAccessPointEndpointParamsResponse" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/ManagementInterface/setAccessPointEndpointParamsResponse">
+    </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException" message="tns:DoorServiceRouterException" wsam:Action="http://xml.assaabloy.com/dsr/2.0/ManagementInterface/setAccessPointEndpointParams/Fault/DoorServiceRouterException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getAccessPointStatus">
+      <wsdl:input name="getAccessPointStatus" message="tns:getAccessPointStatus" wsam:Action="http://xml.assaabloy.com/dsr/2.0/ManagementInterface/getAccessPointStatusRequest" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/ManagementInterface/getAccessPointStatusRequest">
+    </wsdl:input>
+      <wsdl:output name="getAccessPointStatusResponse" message="tns:getAccessPointStatusResponse" wsam:Action="http://xml.assaabloy.com/dsr/2.0/ManagementInterface/getAccessPointStatusResponse" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/ManagementInterface/getAccessPointStatusResponse">
+    </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException" message="tns:DoorServiceRouterException" wsam:Action="http://xml.assaabloy.com/dsr/2.0/ManagementInterface/getAccessPointStatus/Fault/DoorServiceRouterException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="enableAccessPoint">
+      <wsdl:input name="enableAccessPoint" message="tns:enableAccessPoint" wsam:Action="http://xml.assaabloy.com/dsr/2.0/ManagementInterface/enableAccessPointRequest" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/ManagementInterface/enableAccessPointRequest">
+    </wsdl:input>
+      <wsdl:output name="enableAccessPointResponse" message="tns:enableAccessPointResponse" wsam:Action="http://xml.assaabloy.com/dsr/2.0/ManagementInterface/enableAccessPointResponse" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/ManagementInterface/enableAccessPointResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getStatus">
+      <wsdl:input name="getStatus" message="tns:getStatus" wsam:Action="http://xml.assaabloy.com/dsr/2.0/ManagementInterface/getStatusRequest" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/ManagementInterface/getStatusRequest">
+    </wsdl:input>
+      <wsdl:output name="getStatusResponse" message="tns:getStatusResponse" wsam:Action="http://xml.assaabloy.com/dsr/2.0/ManagementInterface/getStatusResponse" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/ManagementInterface/getStatusResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addAndConfirmAccessPoint">
+      <wsdl:input name="addAndConfirmAccessPoint" message="tns:addAndConfirmAccessPoint" wsam:Action="http://xml.assaabloy.com/dsr/2.0/ManagementInterface/addAndConfirmAccessPointRequest" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/ManagementInterface/addAndConfirmAccessPointRequest">
+    </wsdl:input>
+      <wsdl:output name="addAndConfirmAccessPointResponse" message="tns:addAndConfirmAccessPointResponse" wsam:Action="http://xml.assaabloy.com/dsr/2.0/ManagementInterface/addAndConfirmAccessPointResponse" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/ManagementInterface/addAndConfirmAccessPointResponse">
+    </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException" message="tns:DoorServiceRouterException" wsam:Action="http://xml.assaabloy.com/dsr/2.0/ManagementInterface/addAndConfirmAccessPoint/Fault/DoorServiceRouterException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getVersionInfo">
+      <wsdl:input name="getVersionInfo" message="tns:getVersionInfo" wsam:Action="http://xml.assaabloy.com/dsr/2.0/ManagementInterface/getVersionInfoRequest" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/ManagementInterface/getVersionInfoRequest">
+    </wsdl:input>
+      <wsdl:output name="getVersionInfoResponse" message="tns:getVersionInfoResponse" wsam:Action="http://xml.assaabloy.com/dsr/2.0/ManagementInterface/getVersionInfoResponse" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/ManagementInterface/getVersionInfoResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="clearAccessPoint">
+      <wsdl:input name="clearAccessPoint" message="tns:clearAccessPoint" wsam:Action="http://xml.assaabloy.com/dsr/2.0/ManagementInterface/clearAccessPointRequest" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/ManagementInterface/clearAccessPointRequest">
+    </wsdl:input>
+      <wsdl:output name="clearAccessPointResponse" message="tns:clearAccessPointResponse" wsam:Action="http://xml.assaabloy.com/dsr/2.0/ManagementInterface/clearAccessPointResponse" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/ManagementInterface/clearAccessPointResponse">
+    </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException" message="tns:DoorServiceRouterException" wsam:Action="http://xml.assaabloy.com/dsr/2.0/ManagementInterface/clearAccessPoint/Fault/DoorServiceRouterException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="registerCallback">
+      <wsdl:input name="registerCallback" message="tns:registerCallback" wsam:Action="http://xml.assaabloy.com/dsr/2.0/ManagementInterface/registerCallbackRequest" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/ManagementInterface/registerCallbackRequest">
+    </wsdl:input>
+      <wsdl:output name="registerCallbackResponse" message="tns:registerCallbackResponse" wsam:Action="http://xml.assaabloy.com/dsr/2.0/ManagementInterface/registerCallbackResponse" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/ManagementInterface/registerCallbackResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addReaderDescription">
+      <wsdl:input name="addReaderDescription" message="tns:addReaderDescription" wsam:Action="http://xml.assaabloy.com/dsr/2.0/ManagementInterface/addReaderDescriptionRequest" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/ManagementInterface/addReaderDescriptionRequest">
+    </wsdl:input>
+      <wsdl:output name="addReaderDescriptionResponse" message="tns:addReaderDescriptionResponse" wsam:Action="http://xml.assaabloy.com/dsr/2.0/ManagementInterface/addReaderDescriptionResponse" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/ManagementInterface/addReaderDescriptionResponse">
+    </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException" message="tns:DoorServiceRouterException" wsam:Action="http://xml.assaabloy.com/dsr/2.0/ManagementInterface/addReaderDescription/Fault/DoorServiceRouterException">
+    </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ManagementInterfaceServiceSoapBinding" type="tns:ManagementInterface">
+    <soap12:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsaw:UsingAddressing wsdl:required="true"/>
+    <wsp:PolicyReference URI="#ManagementInterfaceServiceSoapBinding_WSAM_Addressing_Policy"/>
+    <wsdl:operation name="getSupportedCredentialFormats">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="getSupportedCredentialFormats">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getSupportedCredentialFormatsResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException">
+        <soap12:fault name="DoorServiceRouterException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="listAccessPointsOnline">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="listAccessPointsOnline">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="listAccessPointsOnlineResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException">
+        <soap12:fault name="DoorServiceRouterException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="verifyAccessPointOnline">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="verifyAccessPointOnline">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="verifyAccessPointOnlineResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException">
+        <soap12:fault name="DoorServiceRouterException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="confirmAccessPoint">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="confirmAccessPoint">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="confirmAccessPointResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException">
+        <soap12:fault name="DoorServiceRouterException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="removeAccessPoint">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="removeAccessPoint">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="removeAccessPointResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException">
+        <soap12:fault name="DoorServiceRouterException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="disableAccessPoint">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="disableAccessPoint">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="disableAccessPointResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listAccessPoints">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="listAccessPoints">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="listAccessPointsResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException">
+        <soap12:fault name="DoorServiceRouterException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="unRegisterCallback">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="unRegisterCallback">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="unRegisterCallbackResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException">
+        <soap12:fault name="DoorServiceRouterException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="replaceAccessPoint">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="replaceAccessPoint">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="replaceAccessPointResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="findAccessPointBySerialNumber">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="findAccessPointBySerialNumber">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="findAccessPointBySerialNumberResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException">
+        <soap12:fault name="DoorServiceRouterException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getAccessPointTypes">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="getAccessPointTypes">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getAccessPointTypesResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listAllAccessPoints">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="listAllAccessPoints">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="listAllAccessPointsResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listCallbackEndpoints">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="listCallbackEndpoints">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="listCallbackEndpointsResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException">
+        <soap12:fault name="DoorServiceRouterException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="setAccessPointEndpointParams">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="setAccessPointEndpointParams">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="setAccessPointEndpointParamsResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException">
+        <soap12:fault name="DoorServiceRouterException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getAccessPointStatus">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="getAccessPointStatus">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getAccessPointStatusResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException">
+        <soap12:fault name="DoorServiceRouterException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="enableAccessPoint">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="enableAccessPoint">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="enableAccessPointResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getStatus">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="getStatus">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getStatusResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addAndConfirmAccessPoint">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="addAndConfirmAccessPoint">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="addAndConfirmAccessPointResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException">
+        <soap12:fault name="DoorServiceRouterException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getVersionInfo">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="getVersionInfo">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getVersionInfoResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="clearAccessPoint">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="clearAccessPoint">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="clearAccessPointResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException">
+        <soap12:fault name="DoorServiceRouterException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="registerCallback">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="registerCallback">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="registerCallbackResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addReaderDescription">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="addReaderDescription">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="addReaderDescriptionResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="DoorServiceRouterException">
+        <soap12:fault name="DoorServiceRouterException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ManagementInterfaceService">
+    <wsdl:port name="ManagementInterfacePort" binding="tns:ManagementInterfaceServiceSoapBinding">
+      <soap12:address location="http://localhost:9090/ManagementInterfacePort"/>
+    </wsdl:port>
+  </wsdl:service>
+    <wsp:Policy wsu:Id="ManagementInterfaceServiceSoapBinding_WSAM_Addressing_Policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"><wsam:Addressing><wsp:Policy/></wsam:Addressing></wsp:Policy>
+</wsdl:definitions>

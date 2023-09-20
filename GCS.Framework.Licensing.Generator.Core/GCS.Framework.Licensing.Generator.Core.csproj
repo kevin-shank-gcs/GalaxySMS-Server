@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CoreCompat.Portable.Licensing" Version="1.2.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\GCS.Framework.Security.Core\GCS.Framework.Security.Core.csproj" />
+    <ProjectReference Include="..\GCS.Framework\GCS.Framework.Licensing.Core\GCS.Framework.Licensing.Core.csproj" />
+  </ItemGroup>
+
+</Project>

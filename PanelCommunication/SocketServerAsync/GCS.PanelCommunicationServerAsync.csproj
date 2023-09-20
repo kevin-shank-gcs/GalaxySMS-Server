@@ -1,0 +1,180 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{32884591-8455-436C-B6F1-AC09BA822F99}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GCS.PanelCommunicationServerAsync</RootNamespace>
+    <AssemblyName>GCS.PanelCommunicationServerAsync</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=10.0.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\AutoMapper.10.1.1\lib\net461\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentValidation, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7de548da2fbae0f0, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\FluentValidation.10.1.0\lib\netstandard2.0\FluentValidation.dll</HintPath>
+    </Reference>
+    <Reference Include="GCS.Merc.Core.NetFx">
+      <HintPath>..\..\..\Mercury\GCS.Merc\GCS.Merc.Core.NetFx\bin\Debug\GCS.Merc.Core.NetFx.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Annotations, Version=4.2.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.ComponentModel.Annotations.4.4.1\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.ComponentModel.Primitives, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.ComponentModel.Primitives.4.3.0\lib\net45\System.ComponentModel.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.ValueTuple.4.5.0\lib\net461\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Entities\MessageTrackingData.cs" />
+    <Compile Include="MercuryManagerAsync.cs" />
+    <Compile Include="Entities\ActionCode.cs" />
+    <Compile Include="Entities\ClusterType.cs" />
+    <Compile Include="Connection5xx.cs" />
+    <Compile Include="Connection6xx.cs" />
+    <Compile Include="ConnectionManagerAsync.cs" />
+    <Compile Include="AsyncUserToken.cs" />
+    <Compile Include="BufferManager.cs" />
+    <Compile Include="Entities\ClusterConnectionParameters.cs" />
+    <Compile Include="Entities\FlashLoadingData.cs" />
+    <Compile Include="Entities\TransportType.cs" />
+    <Compile Include="EventArgs\ConnectionDebugPacketEventArgs.cs" />
+    <Compile Include="EventArgs\ConnectionStateChangeEventArgs.cs" />
+    <Compile Include="EventArgs\PanelInformationEventArgs.cs" />
+    <Compile Include="EventArgs\DataReceivedEventArgs.cs" />
+    <Compile Include="Globals.cs" />
+    <Compile Include="Interfaces\IPanelConnection.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SocketAsyncEventArgsPool.cs" />
+    <Compile Include="StateObject.cs" />
+    <Compile Include="Support\ExtensionMethods.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\DataProcessors\GCS.PanelDataHandler\GCS.PanelOutputDataHandlers.csproj">
+      <Project>{28001285-43b9-4d36-b378-9623273e0288}</Project>
+      <Name>GCS.PanelOutputDataHandlers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\DataProcessors\GCS.PanelDataProcessors.Interfaces\GCS.PanelDataProcessors.Interfaces.csproj">
+      <Project>{4463019e-2446-499d-a00b-1f80b5d437f3}</Project>
+      <Name>GCS.PanelDataProcessors.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\GalaxySMS.Business.Entities\GalaxySMS.Business.Entities.csproj">
+      <Project>{98af1bad-593d-4e08-8d0d-50dcea4e7a95}</Project>
+      <Name>GalaxySMS.Business.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\GalaxySMS.Client.Entities\GalaxySMS.Client.Entities.csproj">
+      <Project>{5868c670-3e3f-4022-b780-5b27cef8d3e7}</Project>
+      <Name>GalaxySMS.Client.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\GalaxySMS.Client.Resources\GalaxySMS.Resources.csproj">
+      <Project>{8c7ef8a3-05d8-4f67-baa3-8e7d4c09d1c3}</Project>
+      <Name>GalaxySMS.Resources</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\GalaxySMS.Client.SDK\GalaxySMS.Client.SDK.csproj">
+      <Project>{ceea547d-5774-412b-9b13-50402c2a3d7d}</Project>
+      <Name>GalaxySMS.Client.SDK</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\GalaxySMS.Common.AutoMapper\GalaxySMS.Common.AutoMapper.csproj">
+      <Project>{52a5b571-cdd4-48f9-8d9b-f9c17239904a}</Project>
+      <Name>GalaxySMS.Common.AutoMapper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\GalaxySMS.Common\GalaxySMS.Common.csproj">
+      <Project>{51d2f1c3-f892-4db1-ac14-52adc98ec05b}</Project>
+      <Name>GalaxySMS.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\GCS.Framework.Flash\GCS.Framework.Flash.csproj">
+      <Project>{EA747F92-0087-4AED-A4B2-D86FE9A60289}</Project>
+      <Name>GCS.Framework.Flash</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\GCS.Framework\GCS.Core.Common.ServiceModel\GCS.Core.Common.ServiceModel.csproj">
+      <Project>{bb840c9e-afee-406d-8527-cfe934f0a527}</Project>
+      <Name>GCS.Core.Common.ServiceModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\GCS.Framework\GCS.Core.Common\GCS.Core.Common.csproj">
+      <Project>{106abc97-2143-4722-a2b0-cbe597d59f91}</Project>
+      <Name>GCS.Core.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\GCS.Framework\GCS.Core.Contracts\GCS.Core.Common.Contracts.csproj">
+      <Project>{e3820436-5d37-4ccb-87ca-f50420041668}</Project>
+      <Name>GCS.Core.Common.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\GCS.Framework\GCSUtilities\GCS.Framework.Utilities.csproj">
+      <Project>{0b5b7784-7385-44c7-9cfb-af51f3a430e4}</Project>
+      <Name>GCS.Framework.Utilities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Utilities\Security\Security.csproj">
+      <Project>{9e8a3bb6-7a06-45d5-9850-5fb8fd7c56ef}</Project>
+      <Name>Security</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PanelProtocols\PanelPacketConverters\PanelPacketConverters.csproj">
+      <Project>{65a97f42-86b6-4616-8339-571e581498a8}</Project>
+      <Name>PanelPacketConverters</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PanelProtocols\PanelProtocols\PanelProtocols.csproj">
+      <Project>{fb196c8f-69e5-48e7-a0a4-97e62382d681}</Project>
+      <Name>PanelProtocols</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

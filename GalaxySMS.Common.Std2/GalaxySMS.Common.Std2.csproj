@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <Import Project="..\GalaxySMS.Common.Shared\GalaxySMS.Common.Shared.projitems" Label="Shared" />
+
+  <ItemGroup>
+    <ProjectReference Include="..\GCS.Core.Common.Contracts.NetStd\GCS.Core.Common.Contracts.NetStd.csproj" />
+  </ItemGroup>
+
+</Project>

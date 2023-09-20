@@ -1,0 +1,133 @@
+syntax = "proto3";
+
+option csharp_namespace = "GalaxySMS.Grpc";
+
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/wrappers.proto";
+
+package galaxysms.mercury;
+
+// The greeting service definition.
+service MercuryScpService {
+  // Sends a greeting
+  rpc GetScps (GetScpsRequest) returns (GetScpsReply);
+}
+
+// The request message containing the user's name.
+message GetScpsRequest {
+  DeviceManufacturer ManufacturerType = 1;
+  PagedRequest Paging = 2;
+}
+
+message ReplyStatus {
+  OperationStatus OpStatus = 1;
+  string ExceptionType = 2;
+  string Message = 3;
+}
+
+message PagedRequest {
+    int32 PageNumber = 1;
+    int32 PageSize = 2;
+    bool DescendingOrder = 3;
+    string SortProperty = 4;
+}
+
+message PagedResult {
+    int32 PageItemCount = 1;
+    int32 PageSize = 2;
+    int32 PageNumber = 3;
+    int32 TotalItemCount = 4;
+    int32 TotalPageCount = 5;
+}
+
+// The response message containing the greetings.
+message GetScpsReply {
+    ReplyStatus Status = 1;
+    PagedResult PageData = 2;
+    repeated Scp Items = 3;
+}
+
+message Scp {
+    string Guid = 1;
+    string MacAddress = 2;
+    string Name = 3;
+    string Description = 4;
+    google.protobuf.BoolValue Online = 5;	// nullable 
+    DeviceManufacturer DeviceManufacturer = 6;
+    google.protobuf.Timestamp LastConnected = 7;
+    MercuryPanelType PanelType = 8;
+}
+
+enum OperationStatus {
+  Success = 0;
+  Failure = 1;
+}
+
+enum DeviceManufacturer {
+	Galaxy = 0;
+	Mercury = 1;
+	Isonas = 2;
+	OTIS = 3;
+	ThyssenKrupp = 4;
+	Mitsubishi = 5;
+	KONE = 6;
+	Schindler = 7;
+}
+
+enum MercuryPanelType
+{
+    /// <summary>System Control Processor (legacy controller)</summary>
+    SCP = 0;
+        /// <summary>System Control Processor Compact (legacy controller)</summary>
+        SCPC = 1;
+        /// <summary>System Control Processor Extended(legacy controller)</summary>
+        SCPE = 2;
+        /// <summary>Honeywell Pro-Watch 5000</summary>
+        PW5000 = 3;
+        /// <summary>Honeywell Pro-Watch 5000 Rev A</summary>
+        PW5000A = 4;
+        /// <summary>Honeywell Pro-Watch 3000</summary>
+        PW3000 = 5;
+        /// <summary>Event Processor 1501 = ; single-door = ; PoE controller</summary>
+        EP1501 = 6;
+        /// <summary>Event Processor 1502 = ; dual door controller</summary>
+        EP1502 = 7;
+        /// <summary>Event Processor 2500</summary>
+        EP2500 = 8;
+        /// <summary>Event Procssor 4502 (legacy Linux controller)</summary>
+        EP4502 = 9;
+        /// <summary>Honeywell Pro-Watch 6000</summary>
+        PW6000 = 10;
+        /// <summary>Honweywell WIN-PAK 3200</summary>
+        PRO3200 = 11;
+        /// <summary>Keri Systems NXT</summary>
+        NXT = 12;
+        /// <summary>GE RS4 replacement controller</summary>
+        MIRS4 = 13;
+        /// <summary>GE XL15 replacement controller</summary>
+        MIXL16 = 14;
+        /// <summary>Software House iSTAR replacement controller</summary>
+        MSICS = 15;
+        /// <summary>Casi-Rusco M5 replacement controller</summary>
+        M5IC = 16;
+        /// <summary>Schneider Electric SSC controller</summary>
+        SSC = 17;
+        /// <summary>Vanderbilt Aliro AP</summary>
+        AP2 = 18;
+        /// <summary>Linux Processor 1501 = ; single-door = ; PoE controller</summary>
+        LP1501 = 19;
+        /// <summary>Linux Processor 1502 = ; dual door controller</summary>
+        LP1502 = 20;
+        /// <summary>Linux Processor 2500</summary>
+        LP2500 = 21;
+        /// <summary>Linux Processor 4502</summary>
+        LP4502 = 22;
+        /// <summary>X1100 (HID Vertx replacement controller)</summary>
+        X1100 = 23;
+        /// <summary>Honeywell Pro-Watch 7000</summary>
+        PW7000 = 24;
+        /// <summary>Honeywell WIN-PAK 4200</summary>
+        PRO4200 = 25;
+}
+
+

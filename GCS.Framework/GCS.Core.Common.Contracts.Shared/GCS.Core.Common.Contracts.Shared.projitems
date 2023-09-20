@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>624606a3-73ac-492a-8e2a-f29c737a7614</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>GCS.Core.Common.Contracts.Shared</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)IAccessControlCredential.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IAccountOwnedEntity.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IApplicationUserSessionDataHeader.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IArrayResponse.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IBusinessEngine.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IBusinessEngineFactory.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IDataInsertRepository.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IDataRepository.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IDirtyCapable.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IEntity.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IGetParameters.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IHasDescriptionResourceKey.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IHasDisplayResourceKey.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IHasValidData.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IIdentifiableEntity.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ILogger.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ILogManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IPagedResultBase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IRepository.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IResponseBase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IServiceContract.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IHasEntityId.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ITableEntityBase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IValidationProblemDetails.cs" />
+  </ItemGroup>
+</Project>

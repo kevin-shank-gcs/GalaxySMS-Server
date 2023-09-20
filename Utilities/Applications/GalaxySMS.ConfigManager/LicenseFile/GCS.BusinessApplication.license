@@ -1,0 +1,19 @@
+﻿<License>
+  <Id>a8666dcf-fd55-4349-8cee-771370cad424</Id>
+  <Type>Standard</Type>
+  <Expiration>Mon, 06 Oct 2014 16:27:12 GMT</Expiration>
+  <Quantity>5</Quantity>
+  <Customer>
+    <Name>The Acme Company</Name>
+    <Email>RoadRunner@Acme.com</Email>
+  </Customer>
+  <ProductFeatures>
+    <Feature name="Sales">True</Feature>
+    <Feature name="Billing">False</Feature>
+    <Feature name="Users">1000</Feature>
+  </ProductFeatures>
+  <LicenseAttributes>
+    <Attribute name=""></Attribute>
+  </LicenseAttributes>
+  <Signature>MEUCIC65TkeLU2XnkvJMmd534u0daWILd0e/+G/E2De6MkNNAiEAhj5Ejn6YNMytAJqryl/pkL55XK0ELnPDyAw5W3B+ru8=</Signature>
+</License>

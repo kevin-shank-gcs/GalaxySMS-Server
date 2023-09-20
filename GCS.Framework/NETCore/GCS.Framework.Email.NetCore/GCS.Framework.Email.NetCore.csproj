@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+  </PropertyGroup>
+
+  <Import Project="..\..\..\Shared\GCS.Framework.Email.Shared\GCS.Framework.Email.Shared.projitems" Label="Shared" />
+
+  <ItemGroup>
+    <PackageReference Include="MailKit" Version="2.10.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\GCS.Core.Common.NetCore\GCS.Core.Common.NetCore.csproj" />
+  </ItemGroup>
+
+</Project>

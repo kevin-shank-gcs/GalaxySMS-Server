@@ -1,0 +1,1071 @@
+[$RootKey$\ToolboxControlsInstaller]
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.Chart.Direct2D, Version=2021.2.615.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7]
+@="Telerik UI for WPF 2021 R2"
+"CodeBase"="C:\Program Files (x86)\Progress\Telerik UI for WPF R2 2021\Binaries\WPF40\Telerik.Windows.Controls.Chart.Direct2D.dll"
+"TargetFramework"=".NETFramework,Version=v4.0"
+"WPFControls"="1"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.Chart, Version=2021.2.615.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7]
+@="Telerik UI for WPF 2021 R2"
+"CodeBase"="C:\Program Files (x86)\Progress\Telerik UI for WPF R2 2021\Binaries\WPF40\Telerik.Windows.Controls.Chart.dll"
+"TargetFramework"=".NETFramework,Version=v4.0"
+"WPFControls"="1"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.Chart, Version=2021.2.615.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7\ItemCategories]
+"Telerik.Windows.Controls.RadCartesianChart3D"="Telerik UI for WPF - Data Visualization 2021 R2"
+"Telerik.Windows.Controls.ChartDataSource"="Telerik UI for WPF - Data Visualization 2021 R2"
+"Telerik.Windows.Controls.RadFunnelChart"="Telerik UI for WPF - Data Visualization 2021 R2"
+"Telerik.Windows.Controls.RadCartesianChart"="Telerik UI for WPF - Data Visualization 2021 R2"
+"Telerik.Windows.Controls.RadPieChart"="Telerik UI for WPF - Data Visualization 2021 R2"
+"Telerik.Windows.Controls.RadPolarChart"="Telerik UI for WPF - Data Visualization 2021 R2"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.Charting, Version=2021.2.615.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7]
+@="Telerik UI for WPF 2021 R2"
+"CodeBase"="C:\Program Files (x86)\Progress\Telerik UI for WPF R2 2021\Binaries\WPF40\Telerik.Windows.Controls.Charting.dll"
+"TargetFramework"=".NETFramework,Version=v4.0"
+"WPFControls"="1"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.Charting, Version=2021.2.615.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7\ItemCategories]
+"Telerik.Windows.Controls.RadChart"="Telerik UI for WPF - Data Visualization 2021 R2"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.ConversationalUI, Version=2021.2.615.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7]
+@="Telerik UI for WPF 2021 R2"
+"CodeBase"="C:\Program Files (x86)\Progress\Telerik UI for WPF R2 2021\Binaries\WPF40\Telerik.Windows.Controls.ConversationalUI.dll"
+"TargetFramework"=".NETFramework,Version=v4.0"
+"WPFControls"="1"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.ConversationalUI, Version=2021.2.615.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7\ItemCategories]
+"Telerik.Windows.Controls.RadChat"="Telerik UI for WPF - ConversationalUI 2021 R2"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.Data, Version=2021.2.615.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7]
+@="Telerik UI for WPF 2021 R2"
+"CodeBase"="C:\Program Files (x86)\Progress\Telerik UI for WPF R2 2021\Binaries\WPF40\Telerik.Windows.Controls.Data.dll"
+"TargetFramework"=".NETFramework,Version=v4.0"
+"WPFControls"="1"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.Data, Version=2021.2.615.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7\ItemCategories]
+"Telerik.Windows.Controls.RadDataForm"="Telerik UI for WPF - Data 2021 R2"
+"Telerik.Windows.Controls.DataFormDataField"="Telerik UI for WPF - Input 2021 R2"
+"Telerik.Windows.Controls.RadCardView"="Telerik UI for WPF - Data 2021 R2"
+"Telerik.Windows.Controls.RadCollectionNavigator"="Telerik UI for WPF - Data 2021 R2"
+"Telerik.Windows.Controls.RadDataFilter"="Telerik UI for WPF - Data 2021 R2"
+"Telerik.Windows.Controls.DataFormCheckBoxField"="Telerik UI for WPF - Input 2021 R2"
+"Telerik.Windows.Controls.DataFormComboBoxField"="Telerik UI for WPF - Input 2021 R2"
+"Telerik.Windows.Controls.DataFormDateField"="Telerik UI for WPF - Input 2021 R2"
+"Telerik.Windows.Controls.RadDataPager"="Telerik UI for WPF - Data 2021 R2"
+"Telerik.Windows.Controls.Data.PropertyGrid.CollectionEditor"="Telerik UI for WPF - Data 2021 R2"
+"Telerik.Windows.Controls.Data.PropertyGrid.CollectionEditorPicker"="Telerik UI for WPF - Data 2021 R2"
+"Telerik.Windows.Controls.RadPropertyGrid"="Telerik UI for WPF - Data 2021 R2"
+"Telerik.Windows.Controls.Data.PropertyGrid.FlagEnumEditor"="Telerik UI for WPF - Input 2021 R2"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.DataServices, Version=2021.2.615.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7]
+@="Telerik UI for WPF 2021 R2"
+"CodeBase"="C:\Program Files (x86)\Progress\Telerik UI for WPF R2 2021\Binaries\WPF40\Telerik.Windows.Controls.DataServices.dll"
+"TargetFramework"=".NETFramework,Version=v4.0"
+"WPFControls"="1"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.DataServices, Version=2021.2.615.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7\ItemCategories]
+"Telerik.Windows.Controls.RadDataServiceDataSource"="Telerik UI for WPF - Data 2021 R2"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.DataServices50, Version=2021.2.615.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7]
+@="Telerik UI for WPF 2021 R2"
+"CodeBase"="C:\Program Files (x86)\Progress\Telerik UI for WPF R2 2021\Binaries\WPF40\Telerik.Windows.Controls.DataServices50.dll"
+"TargetFramework"=".NETFramework,Version=v4.0"
+"WPFControls"="1"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.DataServices50, Version=2021.2.615.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7\ItemCategories]
+"Telerik.Windows.Controls.RadDataServiceDataSource"="Telerik UI for WPF - Data 2021 R2"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.DataServices60, Version=2021.2.615.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7]
+@="Telerik UI for WPF 2021 R2"
+"CodeBase"="C:\Program Files (x86)\Progress\Telerik UI for WPF R2 2021\Binaries\WPF40\Telerik.Windows.Controls.DataServices60.dll"
+"TargetFramework"=".NETFramework,Version=v4.0"
+"WPFControls"="1"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.DataServices60, Version=2021.2.615.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7\ItemCategories]
+"Telerik.Windows.Controls.RadDataServiceDataSource"="Telerik UI for WPF - Data 2021 R2"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.DataVisualization, Version=2021.2.615.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7]
+@="Telerik UI for WPF 2021 R2"
+"CodeBase"="C:\Program Files (x86)\Progress\Telerik UI for WPF R2 2021\Binaries\WPF40\Telerik.Windows.Controls.DataVisualization.dll"
+"TargetFramework"=".NETFramework,Version=v4.0"
+"WPFControls"="1"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.DataVisualization, Version=2021.2.615.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7\ItemCategories]
+"Telerik.Windows.Controls.RadBarcode"="Telerik UI for WPF - Data Visualization 2021 R2"
+"Telerik.Windows.Controls.RadBarcodeReader"="Telerik UI for WPF - Data Visualization 2021 R2"
+"Telerik.Windows.Controls.RadHorizontalBulletGraph"="Telerik UI for WPF - Data Visualization 2021 R2"
+"Telerik.Windows.Controls.RadVerticalBulletGraph"="Telerik UI for WPF - Data Visualization 2021 R2"
+"Telerik.Windows.Controls.RadDataAxisBase"="Telerik UI for WPF - Data Visualization 2021 R2"
+"Telerik.Windows.Controls.RadHorizontalDataAxis"="Telerik UI for WPF - Data Visualization 2021 R2"
+"Telerik.Windows.Controls.RadDataBar"="Telerik UI for WPF - Data Visualization 2021 R2"
+"Telerik.Windows.Controls.RadStacked100DataBar"="Telerik UI for WPF - Data Visualization 2021 R2"
+"Telerik.Windows.Controls.RadStackedDataBar"="Telerik UI for WPF - Data Visualization 2021 R2"
+"Telerik.Windows.Controls.RadVerticalDataAxis"="Telerik UI for WPF - Data Visualization 2021 R2"
+"Telerik.Windows.Controls.RadHorizontalLinearGauge"="Telerik UI for WPF - Data Visualization 2021 R2"
+"Telerik.Windows.Controls.RadVerticalLinearGauge"="Telerik UI for WPF - Data Visualization 2021 R2"
+"Telerik.Windows.Controls.RadRadialGauge"="Telerik UI for WPF - Data Visualization 2021 R2"
+"Telerik.Windows.Controls.RadQuadrantNEGauge"="Telerik UI for WPF - Data Visualization 2021 R2"
+"Telerik.Windows.Controls.RadQuadrantNWGauge"="Telerik UI for WPF - Data Visualization 2021 R2"
+"Telerik.Windows.Controls.RadQuadrantSEGauge"="Telerik UI for WPF - Data Visualization 2021 R2"
+"Telerik.Windows.Controls.RadQuadrantSWGauge"="Telerik UI for WPF - Data Visualization 2021 R2"
+"Telerik.Windows.Controls.RadSemicircleEastGauge"="Telerik UI for WPF - Data Visualization 2021 R2"
+"Telerik.Windows.Controls.RadSemicircleNorthGauge"="Telerik UI for WPF - Data Visualization 2021 R2"
+"Telerik.Windows.Controls.RadSemicircleSouthGauge"="Telerik UI for WPF - Data Visualization 2021 R2"
+"Telerik.Windows.Controls.RadSemicircleWestGauge"="Telerik UI for WPF - Data Visualization 2021 R2"
+"Telerik.Windows.Controls.RadHeatMap"="Telerik UI for WPF - Data Visualization 2021 R2"
+"Telerik.Windows.Controls.RadMap"="Telerik UI for WPF - Data Visualization 2021 R2"
+"Telerik.Windows.Controls.RadAreaSparkline"="Telerik UI for WPF - Data Visualization 2021 R2"
+"Telerik.Windows.Controls.RadColumnSparkline"="Telerik UI for WPF - Data Visualization 2021 R2"
+"Telerik.Windows.Controls.RadLinearSparkline"="Telerik UI for WPF - Data Visualization 2021 R2"
+"Telerik.Windows.Controls.RadScatterSparkline"="Telerik UI for WPF - Data Visualization 2021 R2"
+"Telerik.Windows.Controls.RadWinLossSparkline"="Telerik UI for WPF - Data Visualization 2021 R2"
+"Telerik.Windows.Controls.TimeBarBase"="Telerik UI for WPF - Data Visualization 2021 R2"
+"Telerik.Windows.Controls.RadTimeBar"="Telerik UI for WPF - Data Visualization 2021 R2"
+"Telerik.Windows.Controls.RadTimeline"="Telerik UI for WPF - Data Visualization 2021 R2"
+"Telerik.Windows.Controls.RadPivotMap"="Telerik UI for WPF - Data Visualization 2021 R2"
+"Telerik.Windows.Controls.RadTreeMap"="Telerik UI for WPF - Data Visualization 2021 R2"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.Diagrams, Version=2021.2.615.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7]
+@="Telerik UI for WPF 2021 R2"
+"CodeBase"="C:\Program Files (x86)\Progress\Telerik UI for WPF R2 2021\Binaries\WPF40\Telerik.Windows.Controls.Diagrams.dll"
+"TargetFramework"=".NETFramework,Version=v4.0"
+"WPFControls"="1"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.Diagrams, Version=2021.2.615.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7\ItemCategories]
+"Telerik.Windows.Controls.RadDiagram"="Telerik UI for WPF - Diagram 2021 R2"
+"Telerik.Windows.Controls.RadDiagramConnection"="Telerik UI for WPF - Diagram 2021 R2"
+"Telerik.Windows.Controls.RadDiagramContainerShape"="Telerik UI for WPF - Diagram 2021 R2"
+"Telerik.Windows.Controls.RadDiagramShape"="Telerik UI for WPF - Diagram 2021 R2"
+"Telerik.Windows.Controls.RadDiagramTextShape"="Telerik UI for WPF - Diagram 2021 R2"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.Diagrams.Extensions, Version=2021.2.615.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7]
+@="Telerik UI for WPF 2021 R2"
+"CodeBase"="C:\Program Files (x86)\Progress\Telerik UI for WPF R2 2021\Binaries\WPF40\Telerik.Windows.Controls.Diagrams.Extensions.dll"
+"TargetFramework"=".NETFramework,Version=v4.0"
+"WPFControls"="1"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.Diagrams.Extensions, Version=2021.2.615.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7\ItemCategories]
+"Telerik.Windows.Controls.Diagrams.Extensions.RadDiagramPrintPreview"="Telerik UI for WPF - Diagram 2021 R2"
+"Telerik.Windows.Controls.Diagrams.Extensions.RadDiagramRuler"="Telerik UI for WPF - Diagram 2021 R2"
+"Telerik.Windows.Controls.Diagrams.Extensions.SettingsPaneView"="Telerik UI for WPF - Diagram 2021 R2"
+"Telerik.Windows.Controls.Diagrams.Extensions.SettingsPane"="Telerik UI for WPF - Diagram 2021 R2"
+"Telerik.Windows.Controls.Diagrams.Extensions.RadDiagramThumbnail"="Telerik UI for WPF - Diagram 2021 R2"
+"Telerik.Windows.Controls.Diagrams.Extensions.RadDiagramNavigationPane"="Telerik UI for WPF - Diagram 2021 R2"
+"Telerik.Windows.Controls.Diagrams.Extensions.RadDiagramToolbox"="Telerik UI for WPF - Diagram 2021 R2"
+"Telerik.Windows.Controls.Diagrams.Extensions.RadDiagramToolboxGroup"="Telerik UI for WPF - Diagram 2021 R2"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.Diagrams.Ribbon, Version=2021.2.615.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7]
+@="Telerik UI for WPF 2021 R2"
+"CodeBase"="C:\Program Files (x86)\Progress\Telerik UI for WPF R2 2021\Binaries\WPF40\Telerik.Windows.Controls.Diagrams.Ribbon.dll"
+"TargetFramework"=".NETFramework,Version=v4.0"
+"WPFControls"="1"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.Diagrams.Ribbon, Version=2021.2.615.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7\ItemCategories]
+"Telerik.Windows.Controls.Diagrams.Ribbon.RadDiagramRibbon"="Telerik UI for WPF - Diagram 2021 R2"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls, Version=2021.2.615.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7]
+@="Telerik UI for WPF 2021 R2"
+"CodeBase"="C:\Program Files (x86)\Progress\Telerik UI for WPF R2 2021\Binaries\WPF40\Telerik.Windows.Controls.dll"
+"TargetFramework"=".NETFramework,Version=v4.0"
+"WPFControls"="1"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls, Version=2021.2.615.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7\ItemCategories]
+"Telerik.Windows.Controls.RadBusyIndicator"="Telerik UI for WPF - Containers 2021 R2"
+"Telerik.Windows.Controls.RadButton"="Telerik UI for WPF - Buttons 2021 R2"
+"Telerik.Windows.Controls.RadDropDownButton"="Telerik UI for WPF - Buttons 2021 R2"
+"Telerik.Windows.Controls.RadHyperlinkButton"="Telerik UI for WPF - Buttons 2021 R2"
+"Telerik.Windows.Controls.RadPathButton"="Telerik UI for WPF - Buttons 2021 R2"
+"Telerik.Windows.Controls.RadRadioButton"="Telerik UI for WPF - Buttons 2021 R2"
+"Telerik.Windows.Controls.RadSplitButton"="Telerik UI for WPF - Buttons 2021 R2"
+"Telerik.Windows.Controls.RadToggleButton"="Telerik UI for WPF - Buttons 2021 R2"
+"Telerik.Windows.Controls.RadToggleSwitchButton"="Telerik UI for WPF - Buttons 2021 R2"
+"Telerik.Windows.Controls.RadCallout"="Telerik UI for WPF - Common 2021 R2"
+"Telerik.Windows.Controls.RadListBox"="Telerik UI for WPF - Data 2021 R2"
+"Telerik.Windows.Controls.RadTileList"="Telerik UI for WPF - Navigation 2021 R2"
+"Telerik.Windows.Controls.Tile"="Telerik UI for WPF - Navigation 2021 R2"
+"Telerik.Windows.Controls.Legend.LegendItemControl"="Telerik UI for WPF - Data Visualization 2021 R2"
+"Telerik.Windows.Controls.RadLegend"="Telerik UI for WPF - Data Visualization 2021 R2"
+"Telerik.Windows.Controls.RadExpander"="Telerik UI for WPF - Containers 2021 R2"
+"Telerik.Windows.Controls.RadFluidContentControl"="Telerik UI for WPF - Containers 2021 R2"
+"Telerik.Windows.Controls.GroupBox"="Telerik UI for WPF - Containers 2021 R2"
+"Telerik.Windows.Controls.Label"="Telerik UI for WPF - Common 2021 R2"
+"Telerik.Windows.Controls.RadListBoxItem"="Telerik UI for WPF - Data 2021 R2"
+"Telerik.Windows.Controls.VirtualizingWrapPanel"="Telerik UI for WPF - Data 2021 R2"
+"Telerik.Windows.Controls.RadProgressBar"="Telerik UI for WPF - Data 2021 R2"
+"Telerik.Windows.Controls.RadSlider"="Telerik UI for WPF - Input 2021 R2"
+"Telerik.Windows.Controls.RadTaskBoard"="Telerik UI for WPF - Navigation 2021 R2"
+"Telerik.Windows.Controls.RadToolTip"="Telerik UI for WPF - Common 2021 R2"
+"Telerik.Windows.Controls.RadToolTipContentView"="Telerik UI for WPF - Common 2021 R2"
+"Telerik.Windows.Controls.RadTransitionControl"="Telerik UI for WPF - Containers 2021 R2"
+"Telerik.Windows.Controls.RadWatermarkTextBox"="Telerik UI for WPF - Input 2021 R2"
+"Telerik.Windows.Controls.RadPasswordBox"="Telerik UI for WPF - Input 2021 R2"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.Docking, Version=2021.2.615.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7]
+@="Telerik UI for WPF 2021 R2"
+"CodeBase"="C:\Program Files (x86)\Progress\Telerik UI for WPF R2 2021\Binaries\WPF40\Telerik.Windows.Controls.Docking.dll"
+"TargetFramework"=".NETFramework,Version=v4.0"
+"WPFControls"="1"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.Docking, Version=2021.2.615.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7\ItemCategories]
+"Telerik.Windows.Controls.RadDocking"="Telerik UI for WPF - Containers 2021 R2"
+"Telerik.Windows.Controls.RadPane"="Telerik UI for WPF - Containers 2021 R2"
+"Telerik.Windows.Controls.RadDocumentPane"="Telerik UI for WPF - Containers 2021 R2"
+"Telerik.Windows.Controls.RadPaneGroup"="Telerik UI for WPF - Containers 2021 R2"
+"Telerik.Windows.Controls.RadSplitContainer"="Telerik UI for WPF - Containers 2021 R2"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.EntityFramework, Version=2021.2.615.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7]
+@="Telerik UI for WPF 2021 R2"
+"CodeBase"="C:\Program Files (x86)\Progress\Telerik UI for WPF R2 2021\Binaries\WPF40\Telerik.Windows.Controls.EntityFramework.dll"
+"TargetFramework"=".NETFramework,Version=v4.0"
+"WPFControls"="1"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.EntityFramework, Version=2021.2.615.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7\ItemCategories]
+"Telerik.Windows.Controls.RadEntityFrameworkDataSource"="Telerik UI for WPF - Data 2021 R2"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.Expressions, Version=2021.2.615.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7]
+@="Telerik UI for WPF 2021 R2"
+"CodeBase"="C:\Program Files (x86)\Progress\Telerik UI for WPF R2 2021\Binaries\WPF40\Telerik.Windows.Controls.Expressions.dll"
+"TargetFramework"=".NETFramework,Version=v4.0"
+"WPFControls"="1"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.Expressions, Version=2021.2.615.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7\ItemCategories]
+"Telerik.Windows.Controls.RadExpressionEditor"="Telerik UI for WPF - Data 2021 R2"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.FileDialogs, Version=2021.2.615.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7]
+@="Telerik UI for WPF 2021 R2"
+"CodeBase"="C:\Program Files (x86)\Progress\Telerik UI for WPF R2 2021\Binaries\WPF40\Telerik.Windows.Controls.FileDialogs.dll"
+"TargetFramework"=".NETFramework,Version=v4.0"
+"WPFControls"="1"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.FileDialogs, Version=2021.2.615.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7\ItemCategories]
+"Telerik.Windows.Controls.FileDialogs.ExplorerControl"="Telerik UI for WPF - File Dialogs 2021 R2"
+"Telerik.Windows.Controls.RadOpenFileDialog"="Telerik UI for WPF - File Dialogs 2021 R2"
+"Telerik.Windows.Controls.RadSaveFileDialog"="Telerik UI for WPF - File Dialogs 2021 R2"
+"Telerik.Windows.Controls.RadFilePathPicker"="Telerik UI for WPF - File Dialogs 2021 R2"
+"Telerik.Windows.Controls.RadOpenFolderDialog"="Telerik UI for WPF - File Dialogs 2021 R2"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.FixedDocumentViewers, Version=2021.2.615.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7]
+@="Telerik UI for WPF 2021 R2"
+"CodeBase"="C:\Program Files (x86)\Progress\Telerik UI for WPF R2 2021\Binaries\WPF40\Telerik.Windows.Controls.FixedDocumentViewers.dll"
+"TargetFramework"=".NETFramework,Version=v4.0"
+"WPFControls"="1"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.FixedDocumentViewers, Version=2021.2.615.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7\ItemCategories]
+"Telerik.Windows.Controls.RadPdfViewer"="Telerik UI for WPF - Documents 2021 R2"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.FixedDocumentViewersUI, Version=2021.2.615.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7]
+@="Telerik UI for WPF 2021 R2"
+"CodeBase"="C:\Program Files (x86)\Progress\Telerik UI for WPF R2 2021\Binaries\WPF40\Telerik.Windows.Controls.FixedDocumentViewersUI.dll"
+"TargetFramework"=".NETFramework,Version=v4.0"
+"WPFControls"="1"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.FixedDocumentViewersUI, Version=2021.2.615.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7\ItemCategories]
+"Telerik.Windows.Controls.FixedDocumentViewersUI.RadPdfViewerNavigationPane"="Telerik UI for WPF - Documents 2021 R2"
+"Telerik.Windows.Controls.FixedDocumentViewersUI.SignaturePanel"="Telerik UI for WPF - Documents 2021 R2"
+"Telerik.Windows.Controls.RadPdfViewerToolBar"="Telerik UI for WPF - Documents 2021 R2"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.GanttView, Version=2021.2.615.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7]
+@="Telerik UI for WPF 2021 R2"
+"CodeBase"="C:\Program Files (x86)\Progress\Telerik UI for WPF R2 2021\Binaries\WPF40\Telerik.Windows.Controls.GanttView.dll"
+"TargetFramework"=".NETFramework,Version=v4.0"
+"WPFControls"="1"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.GanttView, Version=2021.2.615.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7\ItemCategories]
+"Telerik.Windows.Controls.RadGanttView"="Telerik UI for WPF - Data 2021 R2"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.GridView, Version=2021.2.615.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7]
+@="Telerik UI for WPF 2021 R2"
+"CodeBase"="C:\Program Files (x86)\Progress\Telerik UI for WPF R2 2021\Binaries\WPF40\Telerik.Windows.Controls.GridView.dll"
+"TargetFramework"=".NETFramework,Version=v4.0"
+"WPFControls"="1"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.GridView, Version=2021.2.615.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7\ItemCategories]
+"Telerik.Windows.Controls.RadGridView"="Telerik UI for WPF - Data 2021 R2"
+"Telerik.Windows.Controls.RadMultiColumnComboBox"="Telerik UI for WPF - Data 2021 R2"
+"Telerik.Windows.Controls.RadTreeListView"="Telerik UI for WPF - Data 2021 R2"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.GridView.Export, Version=2021.2.615.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7]
+@="Telerik UI for WPF 2021 R2"
+"CodeBase"="C:\Program Files (x86)\Progress\Telerik UI for WPF R2 2021\Binaries\WPF40\Telerik.Windows.Controls.GridView.Export.dll"
+"TargetFramework"=".NETFramework,Version=v4.0"
+"WPFControls"="1"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.GridView.SpreadsheetStreamingExport, Version=2021.2.615.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7]
+@="Telerik UI for WPF 2021 R2"
+"CodeBase"="C:\Program Files (x86)\Progress\Telerik UI for WPF R2 2021\Binaries\WPF40\Telerik.Windows.Controls.GridView.SpreadsheetStreamingExport.dll"
+"TargetFramework"=".NETFramework,Version=v4.0"
+"WPFControls"="1"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.ImageEditor, Version=2021.2.615.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7]
+@="Telerik UI for WPF 2021 R2"
+"CodeBase"="C:\Program Files (x86)\Progress\Telerik UI for WPF R2 2021\Binaries\WPF40\Telerik.Windows.Controls.ImageEditor.dll"
+"TargetFramework"=".NETFramework,Version=v4.0"
+"WPFControls"="1"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.ImageEditor, Version=2021.2.615.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7\ItemCategories]
+"Telerik.Windows.Controls.RadImageEditor"="Telerik UI for WPF - Input 2021 R2"
+"Telerik.Windows.Controls.RadImageEditorUI"="Telerik UI for WPF - Input 2021 R2"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.Input, Version=2021.2.615.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7]
+@="Telerik UI for WPF 2021 R2"
+"CodeBase"="C:\Program Files (x86)\Progress\Telerik UI for WPF R2 2021\Binaries\WPF40\Telerik.Windows.Controls.Input.dll"
+"TargetFramework"=".NETFramework,Version=v4.0"
+"WPFControls"="1"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.Input, Version=2021.2.615.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7\ItemCategories]
+"Telerik.Windows.Controls.RadAutoCompleteBox"="Telerik UI for WPF - Input 2021 R2"
+"Telerik.Windows.Controls.RadAutoCompleteBoxItem"="Telerik UI for WPF - Input 2021 R2"
+"Telerik.Windows.Controls.RadAutoSuggestBox"="Telerik UI for WPF - Input 2021 R2"
+"Telerik.Windows.Controls.RadCalculator"="Telerik UI for WPF - Input 2021 R2"
+"Telerik.Windows.Controls.RadCalculatorPicker"="Telerik UI for WPF - Input 2021 R2"
+"Telerik.Windows.Controls.RadCalendar"="Telerik UI for WPF - Input 2021 R2"
+"Telerik.Windows.Controls.RadColorEditor"="Telerik UI for WPF - Input 2021 R2"
+"Telerik.Windows.Controls.RadColorPicker"="Telerik UI for WPF - Input 2021 R2"
+"Telerik.Windows.Controls.RadColorSelector"="Telerik UI for WPF - Input 2021 R2"
+"Telerik.Windows.Controls.RadComboBox"="Telerik UI for WPF - Input 2021 R2"
+"Telerik.Windows.Controls.RadComboBoxItem"="Telerik UI for WPF - Input 2021 R2"
+"Telerik.Windows.Controls.RadDateTimePicker"="Telerik UI for WPF - Input 2021 R2"
+"Telerik.Windows.Controls.RadDatePicker"="Telerik UI for WPF - Input 2021 R2"
+"Telerik.Windows.Controls.RadMaskedCurrencyInput"="Telerik UI for WPF - Input 2021 R2"
+"Telerik.Windows.Controls.RadMaskedDateTimeInput"="Telerik UI for WPF - Input 2021 R2"
+"Telerik.Windows.Controls.RadMaskedNumericInput"="Telerik UI for WPF - Input 2021 R2"
+"Telerik.Windows.Controls.RadMaskedTextInput"="Telerik UI for WPF - Input 2021 R2"
+"Telerik.Windows.Controls.RadNumericUpDown"="Telerik UI for WPF - Input 2021 R2"
+"Telerik.Windows.Controls.RadRating"="Telerik UI for WPF - Input 2021 R2"
+"Telerik.Windows.Controls.RadRatingItem"="Telerik UI for WPF - Input 2021 R2"
+"Telerik.Windows.Controls.RadTimePicker"="Telerik UI for WPF - Input 2021 R2"
+"Telerik.Windows.Controls.RadTimeSpanPicker"="Telerik UI for WPF - Input 2021 R2"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.Media, Version=2021.2.615.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7]
+@="Telerik UI for WPF 2021 R2"
+"CodeBase"="C:\Program Files (x86)\Progress\Telerik UI for WPF R2 2021\Binaries\WPF40\Telerik.Windows.Controls.Media.dll"
+"TargetFramework"=".NETFramework,Version=v4.0"
+"WPFControls"="1"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.Media, Version=2021.2.615.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7\ItemCategories]
+"Telerik.Windows.Controls.CameraSettingsControl"="Telerik UI for WPF - Media 2021 R2"
+"Telerik.Windows.Controls.RadMediaPlayer"="Telerik UI for WPF - Data 2021 R2"
+"Telerik.Windows.Controls.RadWebCam"="Telerik UI for WPF - Media 2021 R2"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.Navigation, Version=2021.2.615.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7]
+@="Telerik UI for WPF 2021 R2"
+"CodeBase"="C:\Program Files (x86)\Progress\Telerik UI for WPF R2 2021\Binaries\WPF40\Telerik.Windows.Controls.Navigation.dll"
+"TargetFramework"=".NETFramework,Version=v4.0"
+"WPFControls"="1"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.Navigation, Version=2021.2.615.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7\ItemCategories]
+"Telerik.Windows.Controls.RadCarouselPanel"="Telerik UI for WPF - Navigation 2021 R2"
+"Telerik.Windows.Controls.LayoutControl.LayoutControlSplitter"="Telerik UI for WPF - Containers 2021 R2"
+"Telerik.Windows.Controls.LayoutControl.LayoutControlToolBox"="Telerik UI for WPF - Containers 2021 R2"
+"Telerik.Windows.Controls.LayoutControl.LayoutControlToolBoxView"="Telerik UI for WPF - Containers 2021 R2"
+"Telerik.Windows.Controls.LayoutControlExpanderGroup"="Telerik UI for WPF - Containers 2021 R2"
+"Telerik.Windows.Controls.LayoutControlTabGroupItem"="Telerik UI for WPF - Containers 2021 R2"
+"Telerik.Windows.Controls.LayoutControlTabGroup"="Telerik UI for WPF - Containers 2021 R2"
+"Telerik.Windows.Controls.RadLayoutControl"="Telerik UI for WPF - Containers 2021 R2"
+"Telerik.Windows.Controls.RadMenu"="Telerik UI for WPF - Navigation 2021 R2"
+"Telerik.Windows.Controls.RadNavigationView"="Telerik UI for WPF - Navigation 2021 R2"
+"Telerik.Windows.Controls.RadNotifyIcon"="Telerik UI for WPF - Containers 2021 R2"
+"Telerik.Windows.Controls.RadNavigationViewItem"="Telerik UI for WPF - Navigation 2021 R2"
+"Telerik.Windows.Controls.RadBook"="Telerik UI for WPF - Containers 2021 R2"
+"Telerik.Windows.Controls.RadBookItem"="Telerik UI for WPF - Containers 2021 R2"
+"Telerik.Windows.Controls.RadBreadcrumb"="Telerik UI for WPF - Navigation 2021 R2"
+"Telerik.Windows.Controls.RadBreadcrumbItem"="Telerik UI for WPF - Navigation 2021 R2"
+"Telerik.Windows.Controls.RadCarousel"="Telerik UI for WPF - Navigation 2021 R2"
+"Telerik.Windows.Controls.RadDesktopAlert"="Telerik UI for WPF - Containers 2021 R2"
+"Telerik.Windows.Controls.LayoutControlGroup"="Telerik UI for WPF - Containers 2021 R2"
+"Telerik.Windows.Controls.RadContextMenu"="Telerik UI for WPF - Navigation 2021 R2"
+"Telerik.Windows.Controls.RadMenuItem"="Telerik UI for WPF - Navigation 2021 R2"
+"Telerik.Windows.Controls.RadMenuSeparatorItem"="Telerik UI for WPF - Navigation 2021 R2"
+"Telerik.Windows.Controls.RadMenuGroupItem"="Telerik UI for WPF - Navigation 2021 R2"
+"Telerik.Windows.Controls.RadTabControl"="Telerik UI for WPF - Navigation 2021 R2"
+"Telerik.Windows.Controls.RadOutlookBar"="Telerik UI for WPF - Navigation 2021 R2"
+"Telerik.Windows.Controls.RadTreeView"="Telerik UI for WPF - Navigation 2021 R2"
+"Telerik.Windows.Controls.RadPanelBar"="Telerik UI for WPF - Navigation 2021 R2"
+"Telerik.Windows.Controls.RadTreeViewItem"="Telerik UI for WPF - Navigation 2021 R2"
+"Telerik.Windows.Controls.RadPanelBarItem"="Telerik UI for WPF - Navigation 2021 R2"
+"Telerik.Windows.Controls.RadRadialMenuItem"="Telerik UI for WPF - Navigation 2021 R2"
+"Telerik.Windows.Controls.RadRadialMenu"="Telerik UI for WPF - Navigation 2021 R2"
+"Telerik.Windows.Controls.RadSplashScreen"="Telerik UI for WPF - Containers 2021 R2"
+"Telerik.Windows.Controls.RadWindow"="Telerik UI for WPF - Containers 2021 R2"
+"Telerik.Windows.Controls.RadTabbedWindow"="Telerik UI for WPF - Navigation 2021 R2"
+"Telerik.Windows.Controls.RadTileView"="Telerik UI for WPF - Containers 2021 R2"
+"Telerik.Windows.Controls.RadWizard"="Telerik UI for WPF - Navigation 2021 R2"
+"Telerik.Windows.Controls.WizardPage"="Telerik UI for WPF - Navigation 2021 R2"
+"Telerik.Windows.Controls.CompletionWizardPage"="Telerik UI for WPF - Navigation 2021 R2"
+"Telerik.Windows.Controls.WelcomeWizardPage"="Telerik UI for WPF - Navigation 2021 R2"
+"Telerik.Windows.Controls.RadTabItem"="Telerik UI for WPF - Navigation 2021 R2"
+"Telerik.Windows.Controls.RadTileViewItem"="Telerik UI for WPF - Containers 2021 R2"
+"Telerik.Windows.Controls.RadOutlookBarItem"="Telerik UI for WPF - Navigation 2021 R2"
+"Telerik.Windows.Controls.RadToolBar"="Telerik UI for WPF - Navigation 2021 R2"
+"Telerik.Windows.Controls.RadToolBarSeparator"="Telerik UI for WPF - Navigation 2021 R2"
+"Telerik.Windows.Controls.RadToolBarTray"="Telerik UI for WPF - Navigation 2021 R2"
+"Telerik.Windows.Controls.CarouselItem"="Telerik UI for WPF - Navigation 2021 R2"
+"Telerik.Windows.Controls.RadAlert"="Telerik UI for WPF - Navigation 2021 R2"
+"Telerik.Windows.Controls.RadConfirm"="Telerik UI for WPF - Navigation 2021 R2"
+"Telerik.Windows.Controls.RadPrompt"="Telerik UI for WPF - Navigation 2021 R2"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.Pivot, Version=2021.2.615.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7]
+@="Telerik UI for WPF 2021 R2"
+"CodeBase"="C:\Program Files (x86)\Progress\Telerik UI for WPF R2 2021\Binaries\WPF40\Telerik.Windows.Controls.Pivot.dll"
+"TargetFramework"=".NETFramework,Version=v4.0"
+"WPFControls"="1"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.Pivot, Version=2021.2.615.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7\ItemCategories]
+"Telerik.Windows.Controls.RadPivotGrid"="Telerik UI for WPF - Data 2021 R2"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.PivotFieldList, Version=2021.2.615.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7]
+@="Telerik UI for WPF 2021 R2"
+"CodeBase"="C:\Program Files (x86)\Progress\Telerik UI for WPF R2 2021\Binaries\WPF40\Telerik.Windows.Controls.PivotFieldList.dll"
+"TargetFramework"=".NETFramework,Version=v4.0"
+"WPFControls"="1"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.PivotFieldList, Version=2021.2.615.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7\ItemCategories]
+"Telerik.Windows.Controls.RadPivotFieldList"="Telerik UI for WPF - Data 2021 R2"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.RibbonView, Version=2021.2.615.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7]
+@="Telerik UI for WPF 2021 R2"
+"CodeBase"="C:\Program Files (x86)\Progress\Telerik UI for WPF R2 2021\Binaries\WPF40\Telerik.Windows.Controls.RibbonView.dll"
+"TargetFramework"=".NETFramework,Version=v4.0"
+"WPFControls"="1"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.RibbonView, Version=2021.2.615.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7\ItemCategories]
+"Telerik.Windows.Controls.ApplicationMenu"="Telerik UI for WPF - Navigation 2021 R2"
+"Telerik.Windows.Controls.RadRibbonDropDownButton"="Telerik UI for WPF - Navigation 2021 R2"
+"Telerik.Windows.Controls.RadRibbonSplitButton"="Telerik UI for WPF - Navigation 2021 R2"
+"Telerik.Windows.Controls.RadRibbonButton"="Telerik UI for WPF - Navigation 2021 R2"
+"Telerik.Windows.Controls.RadRibbonRadioButton"="Telerik UI for WPF - Navigation 2021 R2"
+"Telerik.Windows.Controls.RadRibbonToggleButton"="Telerik UI for WPF - Navigation 2021 R2"
+"Telerik.Windows.Controls.RadRibbonTab"="Telerik UI for WPF - Navigation 2021 R2"
+"Telerik.Windows.Controls.RadRibbonView"="Telerik UI for WPF - Navigation 2021 R2"
+"Telerik.Windows.Controls.QuickAccessToolBar"="Telerik UI for WPF - Navigation 2021 R2"
+"Telerik.Windows.Controls.RadButtonGroup"="Telerik UI for WPF - Navigation 2021 R2"
+"Telerik.Windows.Controls.RadCollapsiblePanel"="Telerik UI for WPF - Navigation 2021 R2"
+"Telerik.Windows.Controls.RadGalleryItem"="Telerik UI for WPF - Navigation 2021 R2"
+"Telerik.Windows.Controls.RadOrderedWrapPanel"="Telerik UI for WPF - Navigation 2021 R2"
+"Telerik.Windows.Controls.RadRibbonBackstage"="Telerik UI for WPF - Navigation 2021 R2"
+"Telerik.Windows.Controls.RadRibbonBackstageItem"="Telerik UI for WPF - Navigation 2021 R2"
+"Telerik.Windows.Controls.RadRibbonComboBox"="Telerik UI for WPF - Navigation 2021 R2"
+"Telerik.Windows.Controls.RadRibbonComboBoxItem"="Telerik UI for WPF - Navigation 2021 R2"
+"Telerik.Windows.Controls.RadRibbonContextualGroup"="Telerik UI for WPF - Navigation 2021 R2"
+"Telerik.Windows.Controls.RadRibbonGallery"="Telerik UI for WPF - Navigation 2021 R2"
+"Telerik.Windows.Controls.RadRibbonGroup"="Telerik UI for WPF - Navigation 2021 R2"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.RichTextBoxUI, Version=2021.2.615.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7]
+@="Telerik UI for WPF 2021 R2"
+"CodeBase"="C:\Program Files (x86)\Progress\Telerik UI for WPF R2 2021\Binaries\WPF40\Telerik.Windows.Controls.RichTextBoxUI.dll"
+"TargetFramework"=".NETFramework,Version=v4.0"
+"WPFControls"="1"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.RichTextBoxUI, Version=2021.2.615.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7\ItemCategories]
+"Telerik.Windows.Controls.RichTextBoxUI.RadRichTextBoxRibbonUI"="Telerik UI for WPF - Documents 2021 R2"
+"Telerik.Windows.Controls.RichTextBoxUI.DocumentRuler"="Telerik UI for WPF - Documents 2021 R2"
+"Telerik.Windows.Controls.RichTextBoxUI.RadRichTextBoxStatusBar"="Telerik UI for WPF - Documents 2021 R2"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.ScheduleView, Version=2021.2.615.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7]
+@="Telerik UI for WPF 2021 R2"
+"CodeBase"="C:\Program Files (x86)\Progress\Telerik UI for WPF R2 2021\Binaries\WPF40\Telerik.Windows.Controls.ScheduleView.dll"
+"TargetFramework"=".NETFramework,Version=v4.0"
+"WPFControls"="1"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.ScheduleView, Version=2021.2.615.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7\ItemCategories]
+"Telerik.Windows.Controls.RadScheduleView"="Telerik UI for WPF - Data 2021 R2"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.Spreadsheet, Version=2021.2.615.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7]
+@="Telerik UI for WPF 2021 R2"
+"CodeBase"="C:\Program Files (x86)\Progress\Telerik UI for WPF R2 2021\Binaries\WPF40\Telerik.Windows.Controls.Spreadsheet.dll"
+"TargetFramework"=".NETFramework,Version=v4.0"
+"WPFControls"="1"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.Spreadsheet, Version=2021.2.615.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7\ItemCategories]
+"Telerik.Windows.Controls.Spreadsheet.Controls.RadSpreadsheetFormulaBar"="Telerik UI for WPF - Documents 2021 R2"
+"Telerik.Windows.Controls.Spreadsheet.Controls.RadSpreadsheetStatusBar"="Telerik UI for WPF - Documents 2021 R2"
+"Telerik.Windows.Controls.RadSpreadsheet"="Telerik UI for WPF - Documents 2021 R2"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.SpreadsheetUI, Version=2021.2.615.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7]
+@="Telerik UI for WPF 2021 R2"
+"CodeBase"="C:\Program Files (x86)\Progress\Telerik UI for WPF R2 2021\Binaries\WPF40\Telerik.Windows.Controls.SpreadsheetUI.dll"
+"TargetFramework"=".NETFramework,Version=v4.0"
+"WPFControls"="1"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.SpreadsheetUI, Version=2021.2.615.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7\ItemCategories]
+"Telerik.Windows.Controls.RadSpreadsheetRibbon"="Telerik UI for WPF - Documents 2021 R2"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.SyntaxEditor, Version=2021.2.615.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7]
+@="Telerik UI for WPF 2021 R2"
+"CodeBase"="C:\Program Files (x86)\Progress\Telerik UI for WPF R2 2021\Binaries\WPF40\Telerik.Windows.Controls.SyntaxEditor.dll"
+"TargetFramework"=".NETFramework,Version=v4.0"
+"WPFControls"="1"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.SyntaxEditor, Version=2021.2.615.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7\ItemCategories]
+"Telerik.Windows.Controls.RadSyntaxEditor"="Telerik UI for WPF - Input 2021 R2"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.VirtualGrid, Version=2021.2.615.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7]
+@="Telerik UI for WPF 2021 R2"
+"CodeBase"="C:\Program Files (x86)\Progress\Telerik UI for WPF R2 2021\Binaries\WPF40\Telerik.Windows.Controls.VirtualGrid.dll"
+"TargetFramework"=".NETFramework,Version=v4.0"
+"WPFControls"="1"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.VirtualGrid, Version=2021.2.615.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7\ItemCategories]
+"Telerik.Windows.Controls.RadVirtualGrid"="Telerik UI for WPF - Data 2021 R2"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Cloud.Controls, Version=2021.2.615.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7]
+@="Telerik UI for WPF 2021 R2"
+"CodeBase"="C:\Program Files (x86)\Progress\Telerik UI for WPF R2 2021\Binaries\WPF40\Telerik.Windows.Cloud.Controls.dll"
+"TargetFramework"=".NETFramework,Version=v4.0"
+"WPFControls"="1"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Cloud.Controls, Version=2021.2.615.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7\ItemCategories]
+"Telerik.Windows.Cloud.Controls.RadCloudUploadListItem"="Telerik UI for WPF - Cloud Upload 2021 R2"
+"Telerik.Windows.Cloud.Controls.RadCloudUpload"="Telerik UI for WPF - Cloud Upload 2021 R2"
+"Telerik.Windows.Cloud.Controls.RadCloudUploadList"="Telerik UI for WPF - Cloud Upload 2021 R2"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Documents, Version=2021.2.615.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7]
+@="Telerik UI for WPF 2021 R2"
+"CodeBase"="C:\Program Files (x86)\Progress\Telerik UI for WPF R2 2021\Binaries\WPF40\Telerik.Windows.Documents.dll"
+"TargetFramework"=".NETFramework,Version=v4.0"
+"WPFControls"="1"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Documents, Version=2021.2.615.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7\ItemCategories]
+"Telerik.Windows.Controls.RadRichTextBox"="Telerik UI for WPF - Documents 2021 R2"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.Chart.Direct2D, Version=2021.2.615.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7]
+@="Telerik UI for WPF 2021 R2"
+"CodeBase"="C:\Program Files (x86)\Progress\Telerik UI for WPF R2 2021\Binaries\WPF45\Telerik.Windows.Controls.Chart.Direct2D.dll"
+"TargetFramework"=".NETFramework,Version=v4.5"
+"WPFControls"="1"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.Chart, Version=2021.2.615.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7]
+@="Telerik UI for WPF 2021 R2"
+"CodeBase"="C:\Program Files (x86)\Progress\Telerik UI for WPF R2 2021\Binaries\WPF45\Telerik.Windows.Controls.Chart.dll"
+"TargetFramework"=".NETFramework,Version=v4.5"
+"WPFControls"="1"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.Chart, Version=2021.2.615.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7\ItemCategories]
+"Telerik.Windows.Controls.RadCartesianChart3D"="Telerik UI for WPF - Data Visualization 2021 R2"
+"Telerik.Windows.Controls.ChartDataSource"="Telerik UI for WPF - Data Visualization 2021 R2"
+"Telerik.Windows.Controls.RadFunnelChart"="Telerik UI for WPF - Data Visualization 2021 R2"
+"Telerik.Windows.Controls.RadCartesianChart"="Telerik UI for WPF - Data Visualization 2021 R2"
+"Telerik.Windows.Controls.RadPieChart"="Telerik UI for WPF - Data Visualization 2021 R2"
+"Telerik.Windows.Controls.RadPolarChart"="Telerik UI for WPF - Data Visualization 2021 R2"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.Charting, Version=2021.2.615.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7]
+@="Telerik UI for WPF 2021 R2"
+"CodeBase"="C:\Program Files (x86)\Progress\Telerik UI for WPF R2 2021\Binaries\WPF45\Telerik.Windows.Controls.Charting.dll"
+"TargetFramework"=".NETFramework,Version=v4.5"
+"WPFControls"="1"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.Charting, Version=2021.2.615.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7\ItemCategories]
+"Telerik.Windows.Controls.RadChart"="Telerik UI for WPF - Data Visualization 2021 R2"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.ConversationalUI, Version=2021.2.615.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7]
+@="Telerik UI for WPF 2021 R2"
+"CodeBase"="C:\Program Files (x86)\Progress\Telerik UI for WPF R2 2021\Binaries\WPF45\Telerik.Windows.Controls.ConversationalUI.dll"
+"TargetFramework"=".NETFramework,Version=v4.5"
+"WPFControls"="1"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.ConversationalUI, Version=2021.2.615.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7\ItemCategories]
+"Telerik.Windows.Controls.RadChat"="Telerik UI for WPF - ConversationalUI 2021 R2"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.Data, Version=2021.2.615.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7]
+@="Telerik UI for WPF 2021 R2"
+"CodeBase"="C:\Program Files (x86)\Progress\Telerik UI for WPF R2 2021\Binaries\WPF45\Telerik.Windows.Controls.Data.dll"
+"TargetFramework"=".NETFramework,Version=v4.5"
+"WPFControls"="1"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.Data, Version=2021.2.615.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7\ItemCategories]
+"Telerik.Windows.Controls.RadDataForm"="Telerik UI for WPF - Data 2021 R2"
+"Telerik.Windows.Controls.DataFormDataField"="Telerik UI for WPF - Input 2021 R2"
+"Telerik.Windows.Controls.RadCardView"="Telerik UI for WPF - Data 2021 R2"
+"Telerik.Windows.Controls.RadCollectionNavigator"="Telerik UI for WPF - Data 2021 R2"
+"Telerik.Windows.Controls.RadDataFilter"="Telerik UI for WPF - Data 2021 R2"
+"Telerik.Windows.Controls.DataFormCheckBoxField"="Telerik UI for WPF - Input 2021 R2"
+"Telerik.Windows.Controls.DataFormComboBoxField"="Telerik UI for WPF - Input 2021 R2"
+"Telerik.Windows.Controls.DataFormDateField"="Telerik UI for WPF - Input 2021 R2"
+"Telerik.Windows.Controls.RadDataPager"="Telerik UI for WPF - Data 2021 R2"
+"Telerik.Windows.Controls.Data.PropertyGrid.CollectionEditor"="Telerik UI for WPF - Data 2021 R2"
+"Telerik.Windows.Controls.Data.PropertyGrid.CollectionEditorPicker"="Telerik UI for WPF - Data 2021 R2"
+"Telerik.Windows.Controls.RadPropertyGrid"="Telerik UI for WPF - Data 2021 R2"
+"Telerik.Windows.Controls.Data.PropertyGrid.FlagEnumEditor"="Telerik UI for WPF - Input 2021 R2"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.DataServices, Version=2021.2.615.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7]
+@="Telerik UI for WPF 2021 R2"
+"CodeBase"="C:\Program Files (x86)\Progress\Telerik UI for WPF R2 2021\Binaries\WPF45\Telerik.Windows.Controls.DataServices.dll"
+"TargetFramework"=".NETFramework,Version=v4.5"
+"WPFControls"="1"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.DataServices, Version=2021.2.615.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7\ItemCategories]
+"Telerik.Windows.Controls.RadDataServiceDataSource"="Telerik UI for WPF - Data 2021 R2"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.DataServices50, Version=2021.2.615.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7]
+@="Telerik UI for WPF 2021 R2"
+"CodeBase"="C:\Program Files (x86)\Progress\Telerik UI for WPF R2 2021\Binaries\WPF45\Telerik.Windows.Controls.DataServices50.dll"
+"TargetFramework"=".NETFramework,Version=v4.5"
+"WPFControls"="1"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.DataServices50, Version=2021.2.615.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7\ItemCategories]
+"Telerik.Windows.Controls.RadDataServiceDataSource"="Telerik UI for WPF - Data 2021 R2"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.DataServices60, Version=2021.2.615.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7]
+@="Telerik UI for WPF 2021 R2"
+"CodeBase"="C:\Program Files (x86)\Progress\Telerik UI for WPF R2 2021\Binaries\WPF45\Telerik.Windows.Controls.DataServices60.dll"
+"TargetFramework"=".NETFramework,Version=v4.5"
+"WPFControls"="1"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.DataServices60, Version=2021.2.615.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7\ItemCategories]
+"Telerik.Windows.Controls.RadDataServiceDataSource"="Telerik UI for WPF - Data 2021 R2"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.DataVisualization, Version=2021.2.615.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7]
+@="Telerik UI for WPF 2021 R2"
+"CodeBase"="C:\Program Files (x86)\Progress\Telerik UI for WPF R2 2021\Binaries\WPF45\Telerik.Windows.Controls.DataVisualization.dll"
+"TargetFramework"=".NETFramework,Version=v4.5"
+"WPFControls"="1"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.DataVisualization, Version=2021.2.615.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7\ItemCategories]
+"Telerik.Windows.Controls.RadBarcode"="Telerik UI for WPF - Data Visualization 2021 R2"
+"Telerik.Windows.Controls.RadBarcodeReader"="Telerik UI for WPF - Data Visualization 2021 R2"
+"Telerik.Windows.Controls.RadHorizontalBulletGraph"="Telerik UI for WPF - Data Visualization 2021 R2"
+"Telerik.Windows.Controls.RadVerticalBulletGraph"="Telerik UI for WPF - Data Visualization 2021 R2"
+"Telerik.Windows.Controls.RadDataAxisBase"="Telerik UI for WPF - Data Visualization 2021 R2"
+"Telerik.Windows.Controls.RadHorizontalDataAxis"="Telerik UI for WPF - Data Visualization 2021 R2"
+"Telerik.Windows.Controls.RadDataBar"="Telerik UI for WPF - Data Visualization 2021 R2"
+"Telerik.Windows.Controls.RadStacked100DataBar"="Telerik UI for WPF - Data Visualization 2021 R2"
+"Telerik.Windows.Controls.RadStackedDataBar"="Telerik UI for WPF - Data Visualization 2021 R2"
+"Telerik.Windows.Controls.RadVerticalDataAxis"="Telerik UI for WPF - Data Visualization 2021 R2"
+"Telerik.Windows.Controls.RadHorizontalLinearGauge"="Telerik UI for WPF - Data Visualization 2021 R2"
+"Telerik.Windows.Controls.RadVerticalLinearGauge"="Telerik UI for WPF - Data Visualization 2021 R2"
+"Telerik.Windows.Controls.RadRadialGauge"="Telerik UI for WPF - Data Visualization 2021 R2"
+"Telerik.Windows.Controls.RadQuadrantNEGauge"="Telerik UI for WPF - Data Visualization 2021 R2"
+"Telerik.Windows.Controls.RadQuadrantNWGauge"="Telerik UI for WPF - Data Visualization 2021 R2"
+"Telerik.Windows.Controls.RadQuadrantSEGauge"="Telerik UI for WPF - Data Visualization 2021 R2"
+"Telerik.Windows.Controls.RadQuadrantSWGauge"="Telerik UI for WPF - Data Visualization 2021 R2"
+"Telerik.Windows.Controls.RadSemicircleEastGauge"="Telerik UI for WPF - Data Visualization 2021 R2"
+"Telerik.Windows.Controls.RadSemicircleNorthGauge"="Telerik UI for WPF - Data Visualization 2021 R2"
+"Telerik.Windows.Controls.RadSemicircleSouthGauge"="Telerik UI for WPF - Data Visualization 2021 R2"
+"Telerik.Windows.Controls.RadSemicircleWestGauge"="Telerik UI for WPF - Data Visualization 2021 R2"
+"Telerik.Windows.Controls.RadHeatMap"="Telerik UI for WPF - Data Visualization 2021 R2"
+"Telerik.Windows.Controls.RadMap"="Telerik UI for WPF - Data Visualization 2021 R2"
+"Telerik.Windows.Controls.RadAreaSparkline"="Telerik UI for WPF - Data Visualization 2021 R2"
+"Telerik.Windows.Controls.RadColumnSparkline"="Telerik UI for WPF - Data Visualization 2021 R2"
+"Telerik.Windows.Controls.RadLinearSparkline"="Telerik UI for WPF - Data Visualization 2021 R2"
+"Telerik.Windows.Controls.RadScatterSparkline"="Telerik UI for WPF - Data Visualization 2021 R2"
+"Telerik.Windows.Controls.RadWinLossSparkline"="Telerik UI for WPF - Data Visualization 2021 R2"
+"Telerik.Windows.Controls.TimeBarBase"="Telerik UI for WPF - Data Visualization 2021 R2"
+"Telerik.Windows.Controls.RadTimeBar"="Telerik UI for WPF - Data Visualization 2021 R2"
+"Telerik.Windows.Controls.RadTimeline"="Telerik UI for WPF - Data Visualization 2021 R2"
+"Telerik.Windows.Controls.RadPivotMap"="Telerik UI for WPF - Data Visualization 2021 R2"
+"Telerik.Windows.Controls.RadTreeMap"="Telerik UI for WPF - Data Visualization 2021 R2"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.Diagrams, Version=2021.2.615.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7]
+@="Telerik UI for WPF 2021 R2"
+"CodeBase"="C:\Program Files (x86)\Progress\Telerik UI for WPF R2 2021\Binaries\WPF45\Telerik.Windows.Controls.Diagrams.dll"
+"TargetFramework"=".NETFramework,Version=v4.5"
+"WPFControls"="1"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.Diagrams, Version=2021.2.615.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7\ItemCategories]
+"Telerik.Windows.Controls.RadDiagram"="Telerik UI for WPF - Diagram 2021 R2"
+"Telerik.Windows.Controls.RadDiagramConnection"="Telerik UI for WPF - Diagram 2021 R2"
+"Telerik.Windows.Controls.RadDiagramContainerShape"="Telerik UI for WPF - Diagram 2021 R2"
+"Telerik.Windows.Controls.RadDiagramShape"="Telerik UI for WPF - Diagram 2021 R2"
+"Telerik.Windows.Controls.RadDiagramTextShape"="Telerik UI for WPF - Diagram 2021 R2"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.Diagrams.Extensions, Version=2021.2.615.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7]
+@="Telerik UI for WPF 2021 R2"
+"CodeBase"="C:\Program Files (x86)\Progress\Telerik UI for WPF R2 2021\Binaries\WPF45\Telerik.Windows.Controls.Diagrams.Extensions.dll"
+"TargetFramework"=".NETFramework,Version=v4.5"
+"WPFControls"="1"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.Diagrams.Extensions, Version=2021.2.615.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7\ItemCategories]
+"Telerik.Windows.Controls.Diagrams.Extensions.RadDiagramPrintPreview"="Telerik UI for WPF - Diagram 2021 R2"
+"Telerik.Windows.Controls.Diagrams.Extensions.RadDiagramRuler"="Telerik UI for WPF - Diagram 2021 R2"
+"Telerik.Windows.Controls.Diagrams.Extensions.SettingsPaneView"="Telerik UI for WPF - Diagram 2021 R2"
+"Telerik.Windows.Controls.Diagrams.Extensions.SettingsPane"="Telerik UI for WPF - Diagram 2021 R2"
+"Telerik.Windows.Controls.Diagrams.Extensions.RadDiagramThumbnail"="Telerik UI for WPF - Diagram 2021 R2"
+"Telerik.Windows.Controls.Diagrams.Extensions.RadDiagramNavigationPane"="Telerik UI for WPF - Diagram 2021 R2"
+"Telerik.Windows.Controls.Diagrams.Extensions.RadDiagramToolbox"="Telerik UI for WPF - Diagram 2021 R2"
+"Telerik.Windows.Controls.Diagrams.Extensions.RadDiagramToolboxGroup"="Telerik UI for WPF - Diagram 2021 R2"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.Diagrams.Ribbon, Version=2021.2.615.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7]
+@="Telerik UI for WPF 2021 R2"
+"CodeBase"="C:\Program Files (x86)\Progress\Telerik UI for WPF R2 2021\Binaries\WPF45\Telerik.Windows.Controls.Diagrams.Ribbon.dll"
+"TargetFramework"=".NETFramework,Version=v4.5"
+"WPFControls"="1"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.Diagrams.Ribbon, Version=2021.2.615.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7\ItemCategories]
+"Telerik.Windows.Controls.Diagrams.Ribbon.RadDiagramRibbon"="Telerik UI for WPF - Diagram 2021 R2"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls, Version=2021.2.615.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7]
+@="Telerik UI for WPF 2021 R2"
+"CodeBase"="C:\Program Files (x86)\Progress\Telerik UI for WPF R2 2021\Binaries\WPF45\Telerik.Windows.Controls.dll"
+"TargetFramework"=".NETFramework,Version=v4.5"
+"WPFControls"="1"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls, Version=2021.2.615.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7\ItemCategories]
+"Telerik.Windows.Controls.RadBusyIndicator"="Telerik UI for WPF - Containers 2021 R2"
+"Telerik.Windows.Controls.RadButton"="Telerik UI for WPF - Buttons 2021 R2"
+"Telerik.Windows.Controls.RadDropDownButton"="Telerik UI for WPF - Buttons 2021 R2"
+"Telerik.Windows.Controls.RadHyperlinkButton"="Telerik UI for WPF - Buttons 2021 R2"
+"Telerik.Windows.Controls.RadPathButton"="Telerik UI for WPF - Buttons 2021 R2"
+"Telerik.Windows.Controls.RadRadioButton"="Telerik UI for WPF - Buttons 2021 R2"
+"Telerik.Windows.Controls.RadSplitButton"="Telerik UI for WPF - Buttons 2021 R2"
+"Telerik.Windows.Controls.RadToggleButton"="Telerik UI for WPF - Buttons 2021 R2"
+"Telerik.Windows.Controls.RadToggleSwitchButton"="Telerik UI for WPF - Buttons 2021 R2"
+"Telerik.Windows.Controls.RadCallout"="Telerik UI for WPF - Common 2021 R2"
+"Telerik.Windows.Controls.RadListBox"="Telerik UI for WPF - Data 2021 R2"
+"Telerik.Windows.Controls.VirtualizingWrapPanel"="Telerik UI for WPF - Data 2021 R2"
+"Telerik.Windows.Controls.RadTileList"="Telerik UI for WPF - Navigation 2021 R2"
+"Telerik.Windows.Controls.Tile"="Telerik UI for WPF - Navigation 2021 R2"
+"Telerik.Windows.Controls.Legend.LegendItemControl"="Telerik UI for WPF - Data Visualization 2021 R2"
+"Telerik.Windows.Controls.RadLegend"="Telerik UI for WPF - Data Visualization 2021 R2"
+"Telerik.Windows.Controls.RadExpander"="Telerik UI for WPF - Containers 2021 R2"
+"Telerik.Windows.Controls.RadFluidContentControl"="Telerik UI for WPF - Containers 2021 R2"
+"Telerik.Windows.Controls.GroupBox"="Telerik UI for WPF - Containers 2021 R2"
+"Telerik.Windows.Controls.Label"="Telerik UI for WPF - Common 2021 R2"
+"Telerik.Windows.Controls.RadListBoxItem"="Telerik UI for WPF - Data 2021 R2"
+"Telerik.Windows.Controls.RadProgressBar"="Telerik UI for WPF - Data 2021 R2"
+"Telerik.Windows.Controls.RadSlider"="Telerik UI for WPF - Input 2021 R2"
+"Telerik.Windows.Controls.RadTaskBoard"="Telerik UI for WPF - Navigation 2021 R2"
+"Telerik.Windows.Controls.RadToolTip"="Telerik UI for WPF - Common 2021 R2"
+"Telerik.Windows.Controls.RadToolTipContentView"="Telerik UI for WPF - Common 2021 R2"
+"Telerik.Windows.Controls.RadTransitionControl"="Telerik UI for WPF - Containers 2021 R2"
+"Telerik.Windows.Controls.RadWatermarkTextBox"="Telerik UI for WPF - Input 2021 R2"
+"Telerik.Windows.Controls.RadPasswordBox"="Telerik UI for WPF - Input 2021 R2"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.Docking, Version=2021.2.615.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7]
+@="Telerik UI for WPF 2021 R2"
+"CodeBase"="C:\Program Files (x86)\Progress\Telerik UI for WPF R2 2021\Binaries\WPF45\Telerik.Windows.Controls.Docking.dll"
+"TargetFramework"=".NETFramework,Version=v4.5"
+"WPFControls"="1"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.Docking, Version=2021.2.615.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7\ItemCategories]
+"Telerik.Windows.Controls.RadDocking"="Telerik UI for WPF - Containers 2021 R2"
+"Telerik.Windows.Controls.RadPane"="Telerik UI for WPF - Containers 2021 R2"
+"Telerik.Windows.Controls.RadDocumentPane"="Telerik UI for WPF - Containers 2021 R2"
+"Telerik.Windows.Controls.RadPaneGroup"="Telerik UI for WPF - Containers 2021 R2"
+"Telerik.Windows.Controls.RadSplitContainer"="Telerik UI for WPF - Containers 2021 R2"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.EntityFramework, Version=2021.2.615.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7]
+@="Telerik UI for WPF 2021 R2"
+"CodeBase"="C:\Program Files (x86)\Progress\Telerik UI for WPF R2 2021\Binaries\WPF45\Telerik.Windows.Controls.EntityFramework.dll"
+"TargetFramework"=".NETFramework,Version=v4.5"
+"WPFControls"="1"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.EntityFramework, Version=2021.2.615.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7\ItemCategories]
+"Telerik.Windows.Controls.RadEntityFrameworkDataSource"="Telerik UI for WPF - Data 2021 R2"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.EntityFramework60, Version=2021.2.615.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7]
+@="Telerik UI for WPF 2021 R2"
+"CodeBase"="C:\Program Files (x86)\Progress\Telerik UI for WPF R2 2021\Binaries\WPF45\Telerik.Windows.Controls.EntityFramework60.dll"
+"TargetFramework"=".NETFramework,Version=v4.5"
+"WPFControls"="1"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.EntityFramework60, Version=2021.2.615.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7\ItemCategories]
+"Telerik.Windows.Controls.RadEntityFrameworkDataSource"="Telerik UI for WPF - Data 2021 R2"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.Expressions, Version=2021.2.615.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7]
+@="Telerik UI for WPF 2021 R2"
+"CodeBase"="C:\Program Files (x86)\Progress\Telerik UI for WPF R2 2021\Binaries\WPF45\Telerik.Windows.Controls.Expressions.dll"
+"TargetFramework"=".NETFramework,Version=v4.5"
+"WPFControls"="1"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.Expressions, Version=2021.2.615.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7\ItemCategories]
+"Telerik.Windows.Controls.RadExpressionEditor"="Telerik UI for WPF - Data 2021 R2"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.FileDialogs, Version=2021.2.615.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7]
+@="Telerik UI for WPF 2021 R2"
+"CodeBase"="C:\Program Files (x86)\Progress\Telerik UI for WPF R2 2021\Binaries\WPF45\Telerik.Windows.Controls.FileDialogs.dll"
+"TargetFramework"=".NETFramework,Version=v4.5"
+"WPFControls"="1"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.FileDialogs, Version=2021.2.615.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7\ItemCategories]
+"Telerik.Windows.Controls.FileDialogs.ExplorerControl"="Telerik UI for WPF - File Dialogs 2021 R2"
+"Telerik.Windows.Controls.RadOpenFileDialog"="Telerik UI for WPF - File Dialogs 2021 R2"
+"Telerik.Windows.Controls.RadSaveFileDialog"="Telerik UI for WPF - File Dialogs 2021 R2"
+"Telerik.Windows.Controls.RadFilePathPicker"="Telerik UI for WPF - File Dialogs 2021 R2"
+"Telerik.Windows.Controls.RadOpenFolderDialog"="Telerik UI for WPF - File Dialogs 2021 R2"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.FixedDocumentViewers, Version=2021.2.615.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7]
+@="Telerik UI for WPF 2021 R2"
+"CodeBase"="C:\Program Files (x86)\Progress\Telerik UI for WPF R2 2021\Binaries\WPF45\Telerik.Windows.Controls.FixedDocumentViewers.dll"
+"TargetFramework"=".NETFramework,Version=v4.5"
+"WPFControls"="1"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.FixedDocumentViewers, Version=2021.2.615.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7\ItemCategories]
+"Telerik.Windows.Controls.RadPdfViewer"="Telerik UI for WPF - Documents 2021 R2"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.FixedDocumentViewersUI, Version=2021.2.615.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7]
+@="Telerik UI for WPF 2021 R2"
+"CodeBase"="C:\Program Files (x86)\Progress\Telerik UI for WPF R2 2021\Binaries\WPF45\Telerik.Windows.Controls.FixedDocumentViewersUI.dll"
+"TargetFramework"=".NETFramework,Version=v4.5"
+"WPFControls"="1"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.FixedDocumentViewersUI, Version=2021.2.615.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7\ItemCategories]
+"Telerik.Windows.Controls.FixedDocumentViewersUI.RadPdfViewerNavigationPane"="Telerik UI for WPF - Documents 2021 R2"
+"Telerik.Windows.Controls.FixedDocumentViewersUI.SignaturePanel"="Telerik UI for WPF - Documents 2021 R2"
+"Telerik.Windows.Controls.RadPdfViewerToolBar"="Telerik UI for WPF - Documents 2021 R2"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.GanttView, Version=2021.2.615.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7]
+@="Telerik UI for WPF 2021 R2"
+"CodeBase"="C:\Program Files (x86)\Progress\Telerik UI for WPF R2 2021\Binaries\WPF45\Telerik.Windows.Controls.GanttView.dll"
+"TargetFramework"=".NETFramework,Version=v4.5"
+"WPFControls"="1"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.GanttView, Version=2021.2.615.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7\ItemCategories]
+"Telerik.Windows.Controls.RadGanttView"="Telerik UI for WPF - Data 2021 R2"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.GridView, Version=2021.2.615.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7]
+@="Telerik UI for WPF 2021 R2"
+"CodeBase"="C:\Program Files (x86)\Progress\Telerik UI for WPF R2 2021\Binaries\WPF45\Telerik.Windows.Controls.GridView.dll"
+"TargetFramework"=".NETFramework,Version=v4.5"
+"WPFControls"="1"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.GridView, Version=2021.2.615.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7\ItemCategories]
+"Telerik.Windows.Controls.RadGridView"="Telerik UI for WPF - Data 2021 R2"
+"Telerik.Windows.Controls.RadMultiColumnComboBox"="Telerik UI for WPF - Data 2021 R2"
+"Telerik.Windows.Controls.RadTreeListView"="Telerik UI for WPF - Data 2021 R2"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.GridView.Export, Version=2021.2.615.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7]
+@="Telerik UI for WPF 2021 R2"
+"CodeBase"="C:\Program Files (x86)\Progress\Telerik UI for WPF R2 2021\Binaries\WPF45\Telerik.Windows.Controls.GridView.Export.dll"
+"TargetFramework"=".NETFramework,Version=v4.5"
+"WPFControls"="1"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.GridView.SpreadsheetStreamingExport, Version=2021.2.615.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7]
+@="Telerik UI for WPF 2021 R2"
+"CodeBase"="C:\Program Files (x86)\Progress\Telerik UI for WPF R2 2021\Binaries\WPF45\Telerik.Windows.Controls.GridView.SpreadsheetStreamingExport.dll"
+"TargetFramework"=".NETFramework,Version=v4.5"
+"WPFControls"="1"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.ImageEditor, Version=2021.2.615.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7]
+@="Telerik UI for WPF 2021 R2"
+"CodeBase"="C:\Program Files (x86)\Progress\Telerik UI for WPF R2 2021\Binaries\WPF45\Telerik.Windows.Controls.ImageEditor.dll"
+"TargetFramework"=".NETFramework,Version=v4.5"
+"WPFControls"="1"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.ImageEditor, Version=2021.2.615.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7\ItemCategories]
+"Telerik.Windows.Controls.RadImageEditor"="Telerik UI for WPF - Input 2021 R2"
+"Telerik.Windows.Controls.RadImageEditorUI"="Telerik UI for WPF - Input 2021 R2"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.Input, Version=2021.2.615.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7]
+@="Telerik UI for WPF 2021 R2"
+"CodeBase"="C:\Program Files (x86)\Progress\Telerik UI for WPF R2 2021\Binaries\WPF45\Telerik.Windows.Controls.Input.dll"
+"TargetFramework"=".NETFramework,Version=v4.5"
+"WPFControls"="1"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.Input, Version=2021.2.615.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7\ItemCategories]
+"Telerik.Windows.Controls.RadAutoCompleteBox"="Telerik UI for WPF - Input 2021 R2"
+"Telerik.Windows.Controls.RadAutoCompleteBoxItem"="Telerik UI for WPF - Input 2021 R2"
+"Telerik.Windows.Controls.RadAutoSuggestBox"="Telerik UI for WPF - Input 2021 R2"
+"Telerik.Windows.Controls.RadCalculator"="Telerik UI for WPF - Input 2021 R2"
+"Telerik.Windows.Controls.RadCalculatorPicker"="Telerik UI for WPF - Input 2021 R2"
+"Telerik.Windows.Controls.RadCalendar"="Telerik UI for WPF - Input 2021 R2"
+"Telerik.Windows.Controls.RadColorEditor"="Telerik UI for WPF - Input 2021 R2"
+"Telerik.Windows.Controls.RadColorPicker"="Telerik UI for WPF - Input 2021 R2"
+"Telerik.Windows.Controls.RadColorSelector"="Telerik UI for WPF - Input 2021 R2"
+"Telerik.Windows.Controls.RadComboBox"="Telerik UI for WPF - Input 2021 R2"
+"Telerik.Windows.Controls.RadComboBoxItem"="Telerik UI for WPF - Input 2021 R2"
+"Telerik.Windows.Controls.RadDateTimePicker"="Telerik UI for WPF - Input 2021 R2"
+"Telerik.Windows.Controls.RadDatePicker"="Telerik UI for WPF - Input 2021 R2"
+"Telerik.Windows.Controls.RadMaskedCurrencyInput"="Telerik UI for WPF - Input 2021 R2"
+"Telerik.Windows.Controls.RadMaskedDateTimeInput"="Telerik UI for WPF - Input 2021 R2"
+"Telerik.Windows.Controls.RadMaskedNumericInput"="Telerik UI for WPF - Input 2021 R2"
+"Telerik.Windows.Controls.RadMaskedTextInput"="Telerik UI for WPF - Input 2021 R2"
+"Telerik.Windows.Controls.RadNumericUpDown"="Telerik UI for WPF - Input 2021 R2"
+"Telerik.Windows.Controls.RadRating"="Telerik UI for WPF - Input 2021 R2"
+"Telerik.Windows.Controls.RadRatingItem"="Telerik UI for WPF - Input 2021 R2"
+"Telerik.Windows.Controls.RadTimePicker"="Telerik UI for WPF - Input 2021 R2"
+"Telerik.Windows.Controls.RadTimeSpanPicker"="Telerik UI for WPF - Input 2021 R2"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.Media, Version=2021.2.615.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7]
+@="Telerik UI for WPF 2021 R2"
+"CodeBase"="C:\Program Files (x86)\Progress\Telerik UI for WPF R2 2021\Binaries\WPF45\Telerik.Windows.Controls.Media.dll"
+"TargetFramework"=".NETFramework,Version=v4.5"
+"WPFControls"="1"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.Media, Version=2021.2.615.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7\ItemCategories]
+"Telerik.Windows.Controls.CameraSettingsControl"="Telerik UI for WPF - Media 2021 R2"
+"Telerik.Windows.Controls.RadMediaPlayer"="Telerik UI for WPF - Data 2021 R2"
+"Telerik.Windows.Controls.RadWebCam"="Telerik UI for WPF - Media 2021 R2"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.Navigation, Version=2021.2.615.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7]
+@="Telerik UI for WPF 2021 R2"
+"CodeBase"="C:\Program Files (x86)\Progress\Telerik UI for WPF R2 2021\Binaries\WPF45\Telerik.Windows.Controls.Navigation.dll"
+"TargetFramework"=".NETFramework,Version=v4.5"
+"WPFControls"="1"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.Navigation, Version=2021.2.615.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7\ItemCategories]
+"Telerik.Windows.Controls.RadCarouselPanel"="Telerik UI for WPF - Navigation 2021 R2"
+"Telerik.Windows.Controls.LayoutControl.LayoutControlSplitter"="Telerik UI for WPF - Containers 2021 R2"
+"Telerik.Windows.Controls.LayoutControl.LayoutControlToolBox"="Telerik UI for WPF - Containers 2021 R2"
+"Telerik.Windows.Controls.LayoutControl.LayoutControlToolBoxView"="Telerik UI for WPF - Containers 2021 R2"
+"Telerik.Windows.Controls.LayoutControlExpanderGroup"="Telerik UI for WPF - Containers 2021 R2"
+"Telerik.Windows.Controls.LayoutControlTabGroupItem"="Telerik UI for WPF - Containers 2021 R2"
+"Telerik.Windows.Controls.LayoutControlTabGroup"="Telerik UI for WPF - Containers 2021 R2"
+"Telerik.Windows.Controls.RadLayoutControl"="Telerik UI for WPF - Containers 2021 R2"
+"Telerik.Windows.Controls.RadMenu"="Telerik UI for WPF - Navigation 2021 R2"
+"Telerik.Windows.Controls.RadNavigationView"="Telerik UI for WPF - Navigation 2021 R2"
+"Telerik.Windows.Controls.RadNotifyIcon"="Telerik UI for WPF - Containers 2021 R2"
+"Telerik.Windows.Controls.RadNavigationViewItem"="Telerik UI for WPF - Navigation 2021 R2"
+"Telerik.Windows.Controls.RadBook"="Telerik UI for WPF - Containers 2021 R2"
+"Telerik.Windows.Controls.RadBookItem"="Telerik UI for WPF - Containers 2021 R2"
+"Telerik.Windows.Controls.RadBreadcrumb"="Telerik UI for WPF - Navigation 2021 R2"
+"Telerik.Windows.Controls.RadBreadcrumbItem"="Telerik UI for WPF - Navigation 2021 R2"
+"Telerik.Windows.Controls.RadCarousel"="Telerik UI for WPF - Navigation 2021 R2"
+"Telerik.Windows.Controls.RadDesktopAlert"="Telerik UI for WPF - Containers 2021 R2"
+"Telerik.Windows.Controls.LayoutControlGroup"="Telerik UI for WPF - Containers 2021 R2"
+"Telerik.Windows.Controls.RadContextMenu"="Telerik UI for WPF - Navigation 2021 R2"
+"Telerik.Windows.Controls.RadMenuItem"="Telerik UI for WPF - Navigation 2021 R2"
+"Telerik.Windows.Controls.RadMenuSeparatorItem"="Telerik UI for WPF - Navigation 2021 R2"
+"Telerik.Windows.Controls.RadMenuGroupItem"="Telerik UI for WPF - Navigation 2021 R2"
+"Telerik.Windows.Controls.RadTabControl"="Telerik UI for WPF - Navigation 2021 R2"
+"Telerik.Windows.Controls.RadOutlookBar"="Telerik UI for WPF - Navigation 2021 R2"
+"Telerik.Windows.Controls.RadTreeView"="Telerik UI for WPF - Navigation 2021 R2"
+"Telerik.Windows.Controls.RadPanelBar"="Telerik UI for WPF - Navigation 2021 R2"
+"Telerik.Windows.Controls.RadTreeViewItem"="Telerik UI for WPF - Navigation 2021 R2"
+"Telerik.Windows.Controls.RadPanelBarItem"="Telerik UI for WPF - Navigation 2021 R2"
+"Telerik.Windows.Controls.RadRadialMenuItem"="Telerik UI for WPF - Navigation 2021 R2"
+"Telerik.Windows.Controls.RadRadialMenu"="Telerik UI for WPF - Navigation 2021 R2"
+"Telerik.Windows.Controls.RadSplashScreen"="Telerik UI for WPF - Containers 2021 R2"
+"Telerik.Windows.Controls.RadWindow"="Telerik UI for WPF - Containers 2021 R2"
+"Telerik.Windows.Controls.RadTabbedWindow"="Telerik UI for WPF - Navigation 2021 R2"
+"Telerik.Windows.Controls.RadTileView"="Telerik UI for WPF - Containers 2021 R2"
+"Telerik.Windows.Controls.RadWizard"="Telerik UI for WPF - Navigation 2021 R2"
+"Telerik.Windows.Controls.WizardPage"="Telerik UI for WPF - Navigation 2021 R2"
+"Telerik.Windows.Controls.CompletionWizardPage"="Telerik UI for WPF - Navigation 2021 R2"
+"Telerik.Windows.Controls.WelcomeWizardPage"="Telerik UI for WPF - Navigation 2021 R2"
+"Telerik.Windows.Controls.RadTabItem"="Telerik UI for WPF - Navigation 2021 R2"
+"Telerik.Windows.Controls.RadTileViewItem"="Telerik UI for WPF - Containers 2021 R2"
+"Telerik.Windows.Controls.RadOutlookBarItem"="Telerik UI for WPF - Navigation 2021 R2"
+"Telerik.Windows.Controls.RadToolBar"="Telerik UI for WPF - Navigation 2021 R2"
+"Telerik.Windows.Controls.RadToolBarSeparator"="Telerik UI for WPF - Navigation 2021 R2"
+"Telerik.Windows.Controls.RadToolBarTray"="Telerik UI for WPF - Navigation 2021 R2"
+"Telerik.Windows.Controls.CarouselItem"="Telerik UI for WPF - Navigation 2021 R2"
+"Telerik.Windows.Controls.RadAlert"="Telerik UI for WPF - Navigation 2021 R2"
+"Telerik.Windows.Controls.RadConfirm"="Telerik UI for WPF - Navigation 2021 R2"
+"Telerik.Windows.Controls.RadPrompt"="Telerik UI for WPF - Navigation 2021 R2"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.Pivot, Version=2021.2.615.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7]
+@="Telerik UI for WPF 2021 R2"
+"CodeBase"="C:\Program Files (x86)\Progress\Telerik UI for WPF R2 2021\Binaries\WPF45\Telerik.Windows.Controls.Pivot.dll"
+"TargetFramework"=".NETFramework,Version=v4.5"
+"WPFControls"="1"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.Pivot, Version=2021.2.615.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7\ItemCategories]
+"Telerik.Windows.Controls.RadPivotGrid"="Telerik UI for WPF - Data 2021 R2"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.PivotFieldList, Version=2021.2.615.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7]
+@="Telerik UI for WPF 2021 R2"
+"CodeBase"="C:\Program Files (x86)\Progress\Telerik UI for WPF R2 2021\Binaries\WPF45\Telerik.Windows.Controls.PivotFieldList.dll"
+"TargetFramework"=".NETFramework,Version=v4.5"
+"WPFControls"="1"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.PivotFieldList, Version=2021.2.615.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7\ItemCategories]
+"Telerik.Windows.Controls.RadPivotFieldList"="Telerik UI for WPF - Data 2021 R2"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.RibbonView, Version=2021.2.615.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7]
+@="Telerik UI for WPF 2021 R2"
+"CodeBase"="C:\Program Files (x86)\Progress\Telerik UI for WPF R2 2021\Binaries\WPF45\Telerik.Windows.Controls.RibbonView.dll"
+"TargetFramework"=".NETFramework,Version=v4.5"
+"WPFControls"="1"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.RibbonView, Version=2021.2.615.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7\ItemCategories]
+"Telerik.Windows.Controls.ApplicationMenu"="Telerik UI for WPF - Navigation 2021 R2"
+"Telerik.Windows.Controls.RadRibbonDropDownButton"="Telerik UI for WPF - Navigation 2021 R2"
+"Telerik.Windows.Controls.RadRibbonSplitButton"="Telerik UI for WPF - Navigation 2021 R2"
+"Telerik.Windows.Controls.RadRibbonButton"="Telerik UI for WPF - Navigation 2021 R2"
+"Telerik.Windows.Controls.RadRibbonRadioButton"="Telerik UI for WPF - Navigation 2021 R2"
+"Telerik.Windows.Controls.RadRibbonToggleButton"="Telerik UI for WPF - Navigation 2021 R2"
+"Telerik.Windows.Controls.RadRibbonTab"="Telerik UI for WPF - Navigation 2021 R2"
+"Telerik.Windows.Controls.RadRibbonView"="Telerik UI for WPF - Navigation 2021 R2"
+"Telerik.Windows.Controls.QuickAccessToolBar"="Telerik UI for WPF - Navigation 2021 R2"
+"Telerik.Windows.Controls.RadButtonGroup"="Telerik UI for WPF - Navigation 2021 R2"
+"Telerik.Windows.Controls.RadCollapsiblePanel"="Telerik UI for WPF - Navigation 2021 R2"
+"Telerik.Windows.Controls.RadGalleryItem"="Telerik UI for WPF - Navigation 2021 R2"
+"Telerik.Windows.Controls.RadOrderedWrapPanel"="Telerik UI for WPF - Navigation 2021 R2"
+"Telerik.Windows.Controls.RadRibbonBackstage"="Telerik UI for WPF - Navigation 2021 R2"
+"Telerik.Windows.Controls.RadRibbonBackstageItem"="Telerik UI for WPF - Navigation 2021 R2"
+"Telerik.Windows.Controls.RadRibbonComboBox"="Telerik UI for WPF - Navigation 2021 R2"
+"Telerik.Windows.Controls.RadRibbonComboBoxItem"="Telerik UI for WPF - Navigation 2021 R2"
+"Telerik.Windows.Controls.RadRibbonContextualGroup"="Telerik UI for WPF - Navigation 2021 R2"
+"Telerik.Windows.Controls.RadRibbonGallery"="Telerik UI for WPF - Navigation 2021 R2"
+"Telerik.Windows.Controls.RadRibbonGroup"="Telerik UI for WPF - Navigation 2021 R2"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.RichTextBoxUI, Version=2021.2.615.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7]
+@="Telerik UI for WPF 2021 R2"
+"CodeBase"="C:\Program Files (x86)\Progress\Telerik UI for WPF R2 2021\Binaries\WPF45\Telerik.Windows.Controls.RichTextBoxUI.dll"
+"TargetFramework"=".NETFramework,Version=v4.5"
+"WPFControls"="1"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.RichTextBoxUI, Version=2021.2.615.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7\ItemCategories]
+"Telerik.Windows.Controls.RichTextBoxUI.RadRichTextBoxRibbonUI"="Telerik UI for WPF - Documents 2021 R2"
+"Telerik.Windows.Controls.RichTextBoxUI.DocumentRuler"="Telerik UI for WPF - Documents 2021 R2"
+"Telerik.Windows.Controls.RichTextBoxUI.RadRichTextBoxStatusBar"="Telerik UI for WPF - Documents 2021 R2"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.ScheduleView, Version=2021.2.615.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7]
+@="Telerik UI for WPF 2021 R2"
+"CodeBase"="C:\Program Files (x86)\Progress\Telerik UI for WPF R2 2021\Binaries\WPF45\Telerik.Windows.Controls.ScheduleView.dll"
+"TargetFramework"=".NETFramework,Version=v4.5"
+"WPFControls"="1"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.ScheduleView, Version=2021.2.615.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7\ItemCategories]
+"Telerik.Windows.Controls.RadScheduleView"="Telerik UI for WPF - Data 2021 R2"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.Spreadsheet, Version=2021.2.615.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7]
+@="Telerik UI for WPF 2021 R2"
+"CodeBase"="C:\Program Files (x86)\Progress\Telerik UI for WPF R2 2021\Binaries\WPF45\Telerik.Windows.Controls.Spreadsheet.dll"
+"TargetFramework"=".NETFramework,Version=v4.5"
+"WPFControls"="1"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.Spreadsheet, Version=2021.2.615.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7\ItemCategories]
+"Telerik.Windows.Controls.Spreadsheet.Controls.RadSpreadsheetFormulaBar"="Telerik UI for WPF - Documents 2021 R2"
+"Telerik.Windows.Controls.Spreadsheet.Controls.RadSpreadsheetStatusBar"="Telerik UI for WPF - Documents 2021 R2"
+"Telerik.Windows.Controls.RadSpreadsheet"="Telerik UI for WPF - Documents 2021 R2"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.SpreadsheetUI, Version=2021.2.615.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7]
+@="Telerik UI for WPF 2021 R2"
+"CodeBase"="C:\Program Files (x86)\Progress\Telerik UI for WPF R2 2021\Binaries\WPF45\Telerik.Windows.Controls.SpreadsheetUI.dll"
+"TargetFramework"=".NETFramework,Version=v4.5"
+"WPFControls"="1"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.SpreadsheetUI, Version=2021.2.615.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7\ItemCategories]
+"Telerik.Windows.Controls.RadSpreadsheetRibbon"="Telerik UI for WPF - Documents 2021 R2"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.SyntaxEditor, Version=2021.2.615.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7]
+@="Telerik UI for WPF 2021 R2"
+"CodeBase"="C:\Program Files (x86)\Progress\Telerik UI for WPF R2 2021\Binaries\WPF45\Telerik.Windows.Controls.SyntaxEditor.dll"
+"TargetFramework"=".NETFramework,Version=v4.5"
+"WPFControls"="1"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.SyntaxEditor, Version=2021.2.615.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7\ItemCategories]
+"Telerik.Windows.Controls.RadSyntaxEditor"="Telerik UI for WPF - Input 2021 R2"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.VirtualGrid, Version=2021.2.615.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7]
+@="Telerik UI for WPF 2021 R2"
+"CodeBase"="C:\Program Files (x86)\Progress\Telerik UI for WPF R2 2021\Binaries\WPF45\Telerik.Windows.Controls.VirtualGrid.dll"
+"TargetFramework"=".NETFramework,Version=v4.5"
+"WPFControls"="1"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Controls.VirtualGrid, Version=2021.2.615.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7\ItemCategories]
+"Telerik.Windows.Controls.RadVirtualGrid"="Telerik UI for WPF - Data 2021 R2"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Cloud.Controls, Version=2021.2.615.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7]
+@="Telerik UI for WPF 2021 R2"
+"CodeBase"="C:\Program Files (x86)\Progress\Telerik UI for WPF R2 2021\Binaries\WPF45\Telerik.Windows.Cloud.Controls.dll"
+"TargetFramework"=".NETFramework,Version=v4.5"
+"WPFControls"="1"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Cloud.Controls, Version=2021.2.615.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7\ItemCategories]
+"Telerik.Windows.Cloud.Controls.RadCloudUploadListItem"="Telerik UI for WPF - Cloud Upload 2021 R2"
+"Telerik.Windows.Cloud.Controls.RadCloudUpload"="Telerik UI for WPF - Cloud Upload 2021 R2"
+"Telerik.Windows.Cloud.Controls.RadCloudUploadList"="Telerik UI for WPF - Cloud Upload 2021 R2"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Documents, Version=2021.2.615.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7]
+@="Telerik UI for WPF 2021 R2"
+"CodeBase"="C:\Program Files (x86)\Progress\Telerik UI for WPF R2 2021\Binaries\WPF45\Telerik.Windows.Documents.dll"
+"TargetFramework"=".NETFramework,Version=v4.5"
+"WPFControls"="1"
+
+[$RootKey$\ToolboxControlsInstaller\Telerik.Windows.Documents, Version=2021.2.615.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7\ItemCategories]
+"Telerik.Windows.Controls.RadRichTextBox"="Telerik UI for WPF - Documents 2021 R2"
+

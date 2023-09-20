@@ -1,0 +1,148 @@
+﻿<UserControl x:Class="GalaxySMS.PersonCredential.UserControls.PersonSearchControl"
+                          xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                          xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                          xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                          xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                          xmlns:local="clr-namespace:GalaxySMS.PersonCredential.UserControls"
+                          xmlns:core="http://www.galaxysys.com/GCS/Core"
+                          xmlns:prism="http://prismlibrary.com/"
+                          xmlns:prismInfra="clr-namespace:GalaxySMS.Prism.Infrastructure;assembly=GalaxySMS.Prism.Infrastructure"
+                          xmlns:resx="clr-namespace:GalaxySMS.PersonCredential.Properties"
+                          xmlns:sharedResources="clr-namespace:GalaxySMS.Resources;assembly=GalaxySMS.Resources"
+                          xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+                          xmlns:converters="clr-namespace:GCS.Core.Common.UI.Converters;assembly=GCS.Core.Common.UI"
+                          xmlns:ui="clr-namespace:GalaxySMS.Client.UI;assembly=GalaxySMS.Client.UI"
+                          xmlns:ui1="clr-namespace:GCS.Core.Common.UI;assembly=GCS.Core.Common.UI"
+                          xmlns:sys="clr-namespace:System;assembly=mscorlib"
+                          xmlns:enums="clr-namespace:GalaxySMS.Common.Enums;assembly=GalaxySMS.Common"
+                          xmlns:constants="clr-namespace:GalaxySMS.Common.Constants;assembly=GalaxySMS.Common"
+                          xmlns:maskedInput="clr-namespace:Telerik.Windows.Controls.MaskedInput;assembly=Telerik.Windows.Controls.Input"
+                          xmlns:searchProperties="clr-namespace:GalaxySMS.PersonCredential.UserControls.SearchProperties"
+                          xmlns:individualProperties="clr-namespace:GalaxySMS.PersonCredential.UserControls.IndividualProperties"
+                          mc:Ignorable="d"
+                          d:DesignHeight="400"
+                          d:DesignWidth="600"
+                          FlowDirection="{Binding FlowDirection}">
+    <UserControl.Resources>
+        <BitmapImage x:Key="imgSearch" UriSource="/GalaxySMS.Resources;component/Images/Search/MagnifyingGlass1.png" />
+        <converters:ParameterAndValueToVisibilityConverter x:Key="parameterValueToVisibilityConverter" />
+        <!--<sys:UInt32 x:Key="MaxUintValue">0xffff</sys:UInt32>-->
+    </UserControl.Resources>
+
+    <telerik:RadExpander ExpandDirection="Down"
+                         IsExpanded="{Binding IsSearchControlExpanded}">
+        <telerik:RadExpander.Header>
+            <Border Style="{StaticResource HeaderBorder}">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock
+                        Margin="8"
+                        Style="{StaticResource Heading3Left}"
+                        Text="{x:Static sharedResources:Resources.PersonView_SearchExpanderHeaderText}" />
+                </StackPanel>
+            </Border>
+        </telerik:RadExpander.Header>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <StackPanel>
+                <StackPanel>
+                    <TextBlock Style="{StaticResource DataEntryControlTitle}" Text="{x:Static sharedResources:Resources.PersonSearch_SearchTypeTitle}"/>
+                    <telerik:RadComboBox ItemsSource="{Binding SearchTypes}" SelectedItem="{Binding SearchData.SelectedSearchType}"
+                                     DisplayMemberPath="Title"
+                                     ToolTip ="{Binding SelectedItem.ToolTip, RelativeSource={RelativeSource Self}}"/>
+                </StackPanel>
+                <!--<StackPanel Visibility="{Binding SearchData.SelectedSearchType.SearchType, 
+                    Converter={StaticResource parameterValueToVisibilityConverter}, 
+                    ConverterParameter={x:Static enums:PersonSearchType.ByFields }}">
+                    <TextBlock Style="{StaticResource DataEntryControlTitle}" Text="{x:Static sharedResources:Resources.PersonSearch_SearchField_Title}"/>
+                    <telerik:RadComboBox ItemsSource="{Binding SearchData.PersonSearchProperties}" SelectedItem="{Binding SearchData.SelectedSearchProperty}" DisplayMemberPath="Display" />
+                </StackPanel>-->
+
+                <StackPanel Visibility="{Binding SearchData.SelectedSearchType.SearchType, 
+                    Converter={StaticResource parameterValueToVisibilityConverter}, 
+                    ConverterParameter={x:Static enums:PersonSearchType.ByFields }}">
+                    <TextBlock Style="{StaticResource DataEntryControlTitle}" Text="{x:Static sharedResources:Resources.PersonSearch_SearchField_Title}"/>
+                    <telerik:RadComboBox ItemsSource="{Binding SearchData.PersonSearchProperties}" SelectedItem="{Binding SearchData.SelectedSearchProperty}" DisplayMemberPath="Display" />
+                    <searchProperties:ucSearchText/>
+                    <searchProperties:ucSearchNumber/>
+                    <searchProperties:ucSearchDate/>
+                    <searchProperties:ucSearchBoolean/>
+                    <searchProperties:ucSearchGuid/>
+
+                    <searchProperties:ucSearchGender/>
+
+                    <searchProperties:ucSearchDepartment/>
+                    <searchProperties:ucSearchPersonActiveStatusType/>
+                    <searchProperties:ucSearchPersonRecordType/>
+                    <searchProperties:ucSearchCountryOfBirth/>
+                    <searchProperties:ucSearchAccessProfile/>
+                    <searchProperties:ucSearchAnyText/>
+
+                </StackPanel>
+
+                <searchProperties:ucSearchGuid Visibility="{Binding SearchData.SelectedSearchType.SearchType, 
+                    Converter={StaticResource parameterValueToVisibilityConverter}, 
+                    ConverterParameter={x:Static enums:PersonSearchType.ByPersonUid }}"/>
+                <searchProperties:ucSearchPersonId Visibility="{Binding SearchData.SelectedSearchType.SearchType, 
+                    Converter={StaticResource parameterValueToVisibilityConverter}, 
+                    ConverterParameter={x:Static enums:PersonSearchType.ByPersonId }}"/>
+                <searchProperties:ucSearchPersonRecordType Visibility="{Binding SearchData.SelectedSearchType.SearchType, 
+                    Converter={StaticResource parameterValueToVisibilityConverter}, 
+                    ConverterParameter={x:Static enums:PersonSearchType.ByPersonRecordTypeUid }}"/>
+                <searchProperties:ucSearchPersonActiveStatusType Visibility="{Binding SearchData.SelectedSearchType.SearchType, 
+                    Converter={StaticResource parameterValueToVisibilityConverter}, 
+                    ConverterParameter={x:Static enums:PersonSearchType.ByPersonActiveStatusTypeUid }}"/>
+                <searchProperties:ucSearchDepartment Visibility="{Binding SearchData.SelectedSearchType.SearchType, 
+                    Converter={StaticResource parameterValueToVisibilityConverter}, 
+                    ConverterParameter={x:Static enums:PersonSearchType.ByDepartmentUid }}"/>
+                <searchProperties:ucSearchAccessProfile Visibility="{Binding SearchData.SelectedSearchType.SearchType, 
+                    Converter={StaticResource parameterValueToVisibilityConverter}, 
+                    ConverterParameter={x:Static enums:PersonSearchType.ByAccessProfileUid }}"/>
+                <searchProperties:ucSearchOriginId Visibility="{Binding SearchData.SelectedSearchType.SearchType, 
+                    Converter={StaticResource parameterValueToVisibilityConverter}, 
+                    ConverterParameter={x:Static enums:PersonSearchType.ByOriginId }}"/>
+                <searchProperties:ucSearchRecentlyUpdated Visibility="{Binding SearchData.SelectedSearchType.SearchType, 
+                    Converter={StaticResource parameterValueToVisibilityConverter}, 
+                    ConverterParameter={x:Static enums:PersonSearchType.ByLastUpdatedDate }}"/>
+                <searchProperties:ucSearchFirstLastName Visibility="{Binding SearchData.SelectedSearchType.SearchType, 
+                    Converter={StaticResource parameterValueToVisibilityConverter}, 
+                    ConverterParameter={x:Static enums:PersonSearchType.ByLastFirstName }}"/>
+                <searchProperties:ucSearchCredentialFieldValue Visibility="{Binding SearchData.SelectedSearchType.SearchType, 
+                    Converter={StaticResource parameterValueToVisibilityConverter}, 
+                    ConverterParameter={x:Static enums:PersonSearchType.ByCredentialFieldValue }}"/>
+                <searchProperties:ucSearchAnyText Visibility="{Binding SearchData.SelectedSearchType.SearchType, 
+                    Converter={StaticResource parameterValueToVisibilityConverter}, 
+                    ConverterParameter={x:Static enums:PersonSearchType.ByAnyNameField }}"/>
+                <searchProperties:ucSearchCredential Visibility="{Binding SearchData.SelectedSearchType.SearchType, 
+                    Converter={StaticResource parameterValueToVisibilityConverter}, 
+                    ConverterParameter={x:Static enums:PersonSearchType.ByCredentialFieldValues }}"/>
+            </StackPanel>
+            <!--<StackPanel Grid.Row="1" Margin="5, 0" Orientation="Vertical">
+                <TextBlock Style="{StaticResource DataEntryControlTitle}"
+                           Text="{x:Static sharedResources:Resources.PersonView_SearchByPropertyTitle}" />
+                <telerik:RadComboBox ItemsSource="{Binding SearchTypes}"
+                                     DisplayMemberPath="Display"
+                                     SelectedItem="{Binding SelectedSearchProperty}" />
+            </StackPanel>
+            <StackPanel Grid.Row="2" Margin="5, 0" Orientation="Vertical">
+                <TextBlock Style="{StaticResource DataEntryControlTitle}"
+                           Text="{x:Static sharedResources:Resources.PersonView_SearchForValueTitle}" />
+                <TextBox Text="{Binding SearchTextValue}" />
+            </StackPanel>-->
+
+            <ui:ButtonControlBindable Grid.Row="3" Command="{Binding SearchCommand}"
+                                      ImageHeight="32"
+                                      ImageWidth="32"
+                                      ImageSource="{StaticResource imgSearch}"
+                                      IsVisible="{Binding IsSearchControlVisible}"
+                                      Text="{x:Static sharedResources:Resources.SearchPersons_Text}"
+                                      ToolTip="{x:Static sharedResources:Resources.SearchPersons_ToolTip}" />
+
+        </Grid>
+    </telerik:RadExpander>
+
+</UserControl>

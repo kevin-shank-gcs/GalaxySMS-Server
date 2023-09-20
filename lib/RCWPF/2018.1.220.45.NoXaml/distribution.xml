@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<Distribution xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Version>2018.1.220.45</Version>
+  <Trial>false</Trial>
+  <Dependencies>
+    <Project>524f7c40-89c7-4c0f-a8be-697bc520e533</Project>
+    <Project>6de0ac28-0b20-42c7-a5a6-c608224fe8a9</Project>
+    <Project>7fad2e82-e19b-4083-9317-3eb8c0f5cc8d</Project>
+    <Project>099706c6-e724-4f12-b580-3fc84622cb19</Project>
+    <Project>093e36fa-1210-4664-b531-d6dff8c05cea</Project>
+    <Project>8a699732-928f-4535-aa8a-cd359f0779d8</Project>
+    <Project>e145cf3a-95b9-48a6-8475-eb3e90bae42d</Project>
+    <Project>02ccdaf1-60d0-4035-be8c-84b450ba43a9</Project>
+    <Project>8eb13662-bd89-40fc-93dd-5f195bdfa36e</Project>
+    <Project>4fc91578-8181-41b1-879b-1da6ff961802</Project>
+    <Project>a867a626-01a8-4e35-83a9-90d7f7b55fe4</Project>
+    <Project>2147f7a6-5eaa-4f62-aa24-9ff641262929</Project>
+    <Project>4703685f-f377-417e-b2a5-8e3ea8854ff0</Project>
+    <Project>c9c6e42e-5c7b-4427-942a-276ddcd15605</Project>
+    <Project>874eaf61-5ff6-4f86-b2cc-7f50254c1f3d</Project>
+    <Project>be2256ec-79a1-4226-90cb-73a225eebb50</Project>
+    <Project>95b43169-5eca-4ed2-b556-5d10c4951941</Project>
+    <Project>c828f575-3a5e-4a14-ac53-02406d8b9335</Project>
+    <Project>fe0c33ae-0906-4a4c-9f80-e1f077c9a877</Project>
+    <Project>d215fe5c-176a-470e-aa7b-260b58322df3</Project>
+    <Project>be49a800-0276-49d8-b0cd-cb5af0120643</Project>
+    <Project>ad0e2773-c267-4fd1-9376-64c8f43892d9</Project>
+    <Project>9a5d5347-d0bd-4509-a102-db8df7123194</Project>
+    <Project>574996b0-f074-484b-9d11-6e47df8307a7</Project>
+  </Dependencies>
+  <NoXaml>true</NoXaml>
+</Distribution>

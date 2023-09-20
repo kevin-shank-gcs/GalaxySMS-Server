@@ -1,0 +1,218 @@
+﻿<# 
+/*
+   Copyright (c) 2011, thinktecture (http://www.thinktecture.com).
+   All rights reserved.
+
+   Permission is hereby granted to use this software, for both commercial 
+   and non-commercial purposes, without limitations and free of charge.
+   Permission is hereby granted to copy and distribute the software for 
+   non-commercial purposes. A commercial distribution is NOT allowed without
+   prior written permission of the authors.
+
+   This software is supplied "AS IS". The authors disclaim all warranties, 
+   expressed or implied, including, without limitation, the warranties of 
+   merchantability and of fitness for any purpose. The authors assume no
+   liability for direct, indirect, incidental, special, exemplary, or
+   consequential damages, which may result from the use of this software,
+   even if advised of the possibility of such damage.
+*/
+#>
+<#@ template debug="true" hostspecific="true" #>
+<#@ output extension="cs" #>
+<#@ assembly name="EnvDTE" #>
+<#@ import namespace="EnvDTE" #>
+<#@ import namespace="System.Diagnostics" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#	
+	// USAGE:
+	// 1. Drop this file into your VS project
+	// 2. Rename this file to match this pattern: {YOUR_SERVICECONTRACT_FILE}Async.tt
+	// 3. The async version of your original service contract gets generated as 
+	//    {YOUR_SERVICECONTRACT_FILE}Async.cs
+	
+	EnvDTE.DTE dte = GetEnvDTE();
+
+    string sourceFileName = dte.Solution.FindProjectItem(Host.TemplateFile).Name;
+	sourceFileName = sourceFileName.Replace("Async.tt", ".cs");
+   
+ 	ProjectItem enumProjectItem = dte.Solution.FindProjectItem(sourceFileName);
+	FileCodeModel codeModel = enumProjectItem.FileCodeModel;
+
+	CodeNamespace codeNamespace = FindNamespace(codeModel.CodeElements);
+	CodeInterface codeInterface = FindInterface(codeModel.CodeElements);
+	List<CodeFunction> codeFunctions = FindMethods(codeInterface.Children);
+		
+	//System.Diagnostics.Debugger.Break();
+#>
+using System;
+using System.ServiceModel;
+
+namespace <#= codeNamespace.Name #>
+{
+	[ServiceContract(Name = "<#= codeInterface.Name #>")]
+	public interface <#= codeInterface.Name #>Async : 
+		<#= codeInterface.Name#>
+    {            		
+		<#
+			PushIndent("        ");
+			
+			int methodCount = 0;
+			
+			foreach (CodeFunction method in codeFunctions)
+			{
+				if(methodCount > 0)
+				{
+					WriteLine(String.Empty);
+					WriteLine(String.Empty);
+				}
+				
+				WriteAsyncOperationContract(method);
+				WriteLine(string.Empty);
+				
+				methodCount ++;
+			}
+			
+			ClearIndent();
+        #>
+    }
+}
+
+<#+
+	private void WriteAsyncOperationContract(CodeFunction method)
+    {
+		string operationContractValue = TryGetOperationContractValue(method);
+		
+		WriteLine("[OperationContract(");
+		
+		if(String.IsNullOrEmpty(operationContractValue))
+		{			
+			Write("    Action = \"");
+			Write(method.Name + "\",");
+			WriteLine(String.Empty);
+			Write("    ReplyAction = \"");
+			Write(method.Name + "Reply\",");
+			WriteLine(String.Empty);
+        }
+		else
+		{
+			ClearIndent();
+			WriteLine("            " + operationContractValue + ",");
+			PushIndent("        ");
+		}
+		
+		WriteLine("    AsyncPattern = true)]");
+		
+		Write("IAsyncResult Begin");
+		Write(method.Name);
+		Write("(");
+				
+		foreach(CodeElement element in method.Parameters)
+		{
+			int count = 0;			
+			CodeParameter parameter = element as CodeParameter;
+		
+			if (parameter != null)
+			{
+				Write(parameter.Type.AsString + " ");
+				Write(parameter.Name);
+				
+				if(count < method.Parameters.Count)
+					Write(", ");
+				
+				count++;
+			}
+		}
+		
+		Write("AsyncCallback callback, object asyncState);");
+		
+		WriteLine(String.Empty);
+		WriteLine(String.Empty);
+		
+		Write(method.Type.AsString + " ");
+		Write("End");
+		Write(method.Name);
+		Write("(IAsyncResult result);");		
+    }
+	
+	private string TryGetOperationContractValue(CodeFunction method)
+	{
+		string attributeValue = String.Empty;
+		
+		foreach(CodeElement attributeElement in method.Attributes)
+		{
+			CodeAttribute attribute = attributeElement as CodeAttribute;
+			
+			if(attribute != null)
+			{		
+				if(attribute.Name == "OperationContract" || attribute.Name == "OperationContractAttribute")
+				{
+					attributeValue = attribute.Value;
+					break;
+				}
+			}
+		}
+		
+		return attributeValue;
+	}
+	
+	private CodeNamespace FindNamespace(CodeElements elements)
+	{
+		foreach (CodeElement element in elements)
+		{
+			CodeNamespace ns = element as CodeNamespace;
+		
+			if (ns != null)
+				return ns;
+		}
+	
+		return null;
+	}
+	
+	private CodeInterface FindInterface(CodeElements elements)
+	{
+		foreach (CodeElement element in elements)
+		{
+			CodeInterface codeInterface = element as CodeInterface;
+		
+			if (codeInterface != null)
+				return codeInterface;
+	
+			codeInterface = FindInterface(element.Children);
+	
+			if (codeInterface != null)
+				return codeInterface;
+		}
+	
+		return null;
+	}
+	
+	private List<CodeFunction> FindMethods(CodeElements elements)
+	{
+		List<CodeFunction> methods = new List<CodeFunction>();
+		
+		foreach (CodeElement element in elements)
+		{
+			CodeFunction method = element as CodeFunction;
+		
+			if (method != null)
+				methods.Add(method);			
+		}
+	
+		return methods;
+	}
+	
+	private EnvDTE.DTE GetEnvDTE()
+	{
+		IServiceProvider hostServiceProvider = (IServiceProvider)Host;
+    	
+		if (hostServiceProvider == null)
+       		throw new Exception("Host property returned unexpected value (null)");
+    	
+		EnvDTE.DTE dte = (EnvDTE.DTE)hostServiceProvider.GetService(typeof(EnvDTE.DTE));
+    	
+		if (dte == null)
+       		throw new Exception("Unable to retrieve EnvDTE.DTE");
+	
+		return dte;
+	}
+#>

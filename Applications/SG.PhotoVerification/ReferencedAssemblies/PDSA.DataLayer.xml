@@ -1,0 +1,1444 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>PDSA.DataLayer</name>
+    </assembly>
+    <members>
+        <member name="T:PDSA.DataLayer.Configuration.PDSADataConfigProvider">
+            <summary>
+            This class holds all properties read in from each data provider's config file settings.
+            </summary>
+        </member>
+        <member name="P:PDSA.DataLayer.Configuration.PDSADataConfigProvider.ConnectStringName">
+            <summary>
+            Get/Set the Connect String Name that will be used to look up the connection string in the &lt;connectionStrings&gt; section in the Config file
+            </summary>
+        </member>
+        <member name="P:PDSA.DataLayer.Configuration.PDSADataConfigProvider.DBLanguage">
+            <summary>
+            Get/Set the language used to store data in this database.
+            </summary>
+        </member>
+        <member name="P:PDSA.DataLayer.Configuration.PDSADataConfigProvider.DBDateFormat">
+            <summary>
+            Get/Set the database format string used to store date data in the database.
+            </summary>
+        </member>
+        <member name="P:PDSA.DataLayer.Configuration.PDSADataConfigProvider.MinDate">
+            <summary>
+            Get/Set the minimum date that is allowed to be stored in the database.
+            </summary>
+        </member>
+        <member name="P:PDSA.DataLayer.Configuration.PDSADataConfigProvider.MaxDate">
+            <summary>
+            Get/Set the maximum date that is allowed to be stored in the database.
+            </summary>
+        </member>
+        <member name="P:PDSA.DataLayer.Configuration.PDSADataConfigProvider.UseStoredProcedures">
+            <summary>
+            Get/Set whether or not the data classes should use stored procedures for all calls to the database.
+            </summary>
+        </member>
+        <member name="P:PDSA.DataLayer.Configuration.PDSADataConfigProvider.UseDBAuditTracking">
+            <summary>
+            Get/Set whether or not the data classes should use audit tracking.
+            </summary>
+        </member>
+        <member name="P:PDSA.DataLayer.Configuration.PDSADataConfigProvider.PKTableType">
+            <summary>
+            Get/Set the name of the Class that will be used for retrieving a Primary key from the pdsaTableIds table.
+            </summary>
+        </member>
+        <member name="P:PDSA.DataLayer.Configuration.PDSADataConfigProvider.PKTableAssembly">
+            <summary>
+            Get/Set the name of the Assembly where the PKTableType class is located that will be used for retrieving a Primary key from the pdsaTableIds table.
+            </summary>
+        </member>
+        <member name="T:PDSA.DataLayer.Configuration.PDSADataConfigProviderCollection">
+            <summary>
+            A collection of PDSADataConfigProvider objects
+            </summary>
+        </member>
+        <member name="T:PDSA.DataLayer.Configuration.PDSADataConfigProviders">
+            <summary>
+            The collection class for all PDSADataConfigProvider objects
+            </summary>
+        </member>
+        <member name="M:PDSA.DataLayer.Configuration.PDSADataConfigProviders.CreateNewElement">
+            <summary>
+            Create new PDSADataConfigProvider object
+            </summary>
+            <returns>A ConfigurationElement object</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.Configuration.PDSADataConfigProviders.GetElementKey(System.Configuration.ConfigurationElement)">
+            <summary>
+            Returns a provider name from the element name passed in.
+            </summary>
+            <param name="element">The element to locate</param>
+            <returns>A String with the Provider Name</returns>
+        </member>
+        <member name="P:PDSA.DataLayer.Configuration.PDSADataConfigProviders.DefaultProvider">
+            <summary>
+            Get/Set the default provider to use.
+            </summary>
+        </member>
+        <member name="P:PDSA.DataLayer.Configuration.PDSADataConfigProviders.UserLanguage">
+            <summary>
+            Get the Language for all Messages
+            </summary>
+        </member>
+        <member name="P:PDSA.DataLayer.Configuration.PDSADataConfigProviders.CollectionType">
+            <summary>
+            Gets the ConfigurationElementCollectionType object
+            </summary>
+        </member>
+        <member name="P:PDSA.DataLayer.Configuration.PDSADataConfigProviders.ElementName">
+            <summary>
+            Returns 'add' as that is what is used for each data provider in the config file
+            </summary>
+        </member>
+        <member name="T:PDSA.DataLayer.Configuration.PDSADataSectionHandler">
+            <summary>
+            This class handles the &lt;providers&gt; section in the config file
+            </summary>
+        </member>
+        <member name="P:PDSA.DataLayer.Configuration.PDSADataSectionHandler.ConfigProviders">
+            <summary>
+            Get/Set the the collection of PDSADataProviders.
+            </summary>
+        </member>
+        <member name="T:PDSA.DataLayer.IPDSAPKTableId">
+            <summary>
+            Interface for classes to implement that retrieve a new Primary Key from the pdsaTableIds table.
+            </summary>
+        </member>
+        <member name="M:PDSA.DataLayer.IPDSAPKTableId.GetNewPrimaryKey(System.String,System.String,System.String)">
+            <summary>
+            Gets a new Int32 primary key value for the specified table name.
+            </summary>
+            <param name="tableName">The table name for which to retrieve a primary key</param>
+            <param name="pkField">The primary key field name of the table</param>
+            <param name="loginName">The user requesting the key</param>
+            <returns>Int32</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.IPDSAPKTableId.ResetAllTableIds">
+            <summary>
+            Deletes all rows in the pdsaTableIds table.
+            </summary>
+        </member>
+        <member name="M:PDSA.DataLayer.IPDSAPKTableId.ResetTableId(System.String,System.String,System.String)">
+            <summary>
+            You must override this method. Deletes the row in the pdsaTableIds table for the specified table name passed in. Then calculates the next primary key for that table.
+            </summary>
+            <param name="tableName">The table name to retrieve a primary key for</param>
+            <param name="pkField">The primary key field name</param>
+            <param name="loginName">The user requesting to reset</param>
+            <returns>The new pirmary key id</returns>
+        </member>
+        <member name="P:PDSA.DataLayer.IPDSAPKTableId.ErrorMessage">
+            <summary>
+            Get/Set the error message
+            </summary>
+        </member>
+        <member name="T:PDSA.DataLayer.PDSADatabaseType">
+            <summary>
+            Enumeration for which database server you are connected to.
+            </summary>
+        </member>
+        <member name="F:PDSA.DataLayer.PDSADatabaseType.Unknown">
+            <summary>
+            Initial state
+            </summary>
+        </member>
+        <member name="F:PDSA.DataLayer.PDSADatabaseType.SQLServer">
+            <summary>
+            SQL Server
+            </summary>
+        </member>
+        <member name="F:PDSA.DataLayer.PDSADatabaseType.Oracle">
+            <summary>
+            Oracle
+            </summary>
+        </member>
+        <member name="F:PDSA.DataLayer.PDSADatabaseType.Sybase">
+            <summary>
+            Sybase
+            </summary>
+        </member>
+        <member name="F:PDSA.DataLayer.PDSADatabaseType.MySQL">
+            <summary>
+            MySQL
+            </summary>
+        </member>
+        <member name="F:PDSA.DataLayer.PDSADatabaseType.DB2">
+            <summary>
+            DB2
+            </summary>
+        </member>
+        <member name="T:PDSA.DataLayer.PDSADataException">
+            <summary>
+            Pass any exception into this class to get a complete list of all of the parameters, and all inner exceptions.
+            </summary>
+        </member>
+        <member name="M:PDSA.DataLayer.PDSADataException.#ctor">
+            <summary>
+            Base constructor for the PDSADataException object. Calls the Init method.
+            </summary>
+        </member>
+        <member name="M:PDSA.DataLayer.PDSADataException.#ctor(System.String,System.Exception)">
+            <summary>
+            Constructor for the PDSADataException object.
+            </summary>
+            <param name="message">The message to set</param>
+            <param name="theException">The exception to put into the inner exception</param>
+        </member>
+        <member name="M:PDSA.DataLayer.PDSADataException.#ctor(System.String,System.Exception,System.String,System.String)">
+            <summary>
+            Constructor for the PDSADataException object.
+            </summary>
+            <param name="message">The message to set</param>
+            <param name="theException">The exception to put into the inner exception</param>
+            <param name="className">The class name that caused the exception</param>
+            <param name="methodName">The method name that caused the exception</param>
+        </member>
+        <member name="M:PDSA.DataLayer.PDSADataException.Init">
+            <summary>
+            Initialize variables to a valid start state.
+            </summary>
+        </member>
+        <member name="M:PDSA.DataLayer.PDSADataException.GetFullExceptionMessage(System.Boolean)">
+            <summary>
+            Creates an exception object from all the information gathered from the various objects
+            </summary>
+            <param name="retrieveFullMessage">True=Retrieve all info about the message</param>
+            <returns>An exception message</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.PDSADataException.ToString">
+            <summary>
+            Calls the GetFullExceptionMessage method
+            </summary>
+            <returns>A string exception message</returns>
+        </member>
+        <member name="P:PDSA.DataLayer.PDSADataException.ParameterInfo">
+            <summary>
+            Get/Set the ParameterInfo object
+            </summary>
+        </member>
+        <member name="P:PDSA.DataLayer.PDSADataException.SQL">
+            <summary>
+            Get/Set the last SQL Statement submitted.
+            </summary>
+        </member>
+        <member name="P:PDSA.DataLayer.PDSADataException.ConnectString">
+            <summary>
+            Get/Set the connection string the last SQL statement was sumitted on.
+            </summary>
+        </member>
+        <member name="P:PDSA.DataLayer.PDSADataException.ConfigProvider">
+            <summary>
+            Get/Set a reference to the PDSADataConfigProvider
+            </summary>
+        </member>
+        <member name="P:PDSA.DataLayer.PDSADataException.Provider">
+            <summary>
+            Get/Set the PDSADataProvider the exception occurred on
+            </summary>
+        </member>
+        <member name="T:PDSA.DataLayer.PDSADataProviderParameterInfo">
+            <summary>
+            This class holds information about how to pass parameters via the data provider
+            </summary>
+        </member>
+        <member name="M:PDSA.DataLayer.PDSADataProviderParameterInfo.#ctor">
+            <summary>
+            Constructor to initialize all properties to a valid start state
+            </summary>
+        </member>
+        <member name="P:PDSA.DataLayer.PDSADataProviderParameterInfo.ObjectPrefix">
+            <summary>
+            Get/Set the prefix to put around object names that might have a space. For example, in SQL Server you would use the open square bracket '['.
+            </summary>
+        </member>
+        <member name="P:PDSA.DataLayer.PDSADataProviderParameterInfo.ObjectSuffix">
+            <summary>
+            Get/Set the suffix to put around object names that might have a space. For example, in SQL Server you would use the close square bracket ']'.
+            </summary>
+        </member>
+        <member name="P:PDSA.DataLayer.PDSADataProviderParameterInfo.ObjectSeparator">
+            <summary>
+            Get/Set the separator character to put in between names. For example, in SQL Server you would use the period '.'.
+            </summary>
+        </member>
+        <member name="P:PDSA.DataLayer.PDSADataProviderParameterInfo.ParameterPrefixForADONETCommands">
+            <summary>
+            Get/Set the prefix to use when passing parameters via an ADO.NET parameter object
+            </summary>
+        </member>
+        <member name="P:PDSA.DataLayer.PDSADataProviderParameterInfo.ParameterPrefixInSql">
+            <summary>
+            Get/Set the Parameter prefix that is used in SQL of the database. For example, in SQL Server you use an @ sign, while in Oracle you use a colon (:)
+            </summary>
+        </member>
+        <member name="P:PDSA.DataLayer.PDSADataProviderParameterInfo.ReturnParameterName">
+            <summary>
+            Get/Set the name of the return parameter name. For example in SQL Server it is always RETURN_VALUE.
+            </summary>
+        </member>
+        <member name="P:PDSA.DataLayer.PDSADataProviderParameterInfo.ReturnParameterDataType">
+            <summary>
+            Get/Set the data type of the return parameter.
+            </summary>
+        </member>
+        <member name="T:PDSA.DataLayer.PDSADataManager">
+            <summary>
+            A class that you use to submit all SQL statements on
+            </summary>
+        </member>
+        <member name="F:PDSA.DataLayer.PDSADataManager.SECTION_NAME">
+            <summary>
+            The section name in the config file to read
+            </summary>
+        </member>
+        <member name="F:PDSA.DataLayer.PDSADataManager.PDSAFrameworkProviderCacheKey">
+            <summary>
+            Use this as the 'Key' param to the call to the GetProvider() 
+            when you want to cache the PDSADataProvider object that is used for the PDSA Framework tables.
+            </summary>
+        </member>
+        <member name="M:PDSA.DataLayer.PDSADataManager.#ctor">
+            <summary>
+            Constructor for PDSADataManager
+            </summary>
+        </member>
+        <member name="M:PDSA.DataLayer.PDSADataManager.Reset">
+            <summary>
+            Resets all objects to null
+            </summary>
+        </member>
+        <member name="M:PDSA.DataLayer.PDSADataManager.GetProviderNames">
+            <summary>
+            Gets a collection of all Provider Names from the Config File
+            </summary>
+            <returns>A collection of PDSADataConfigProvider objects</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.PDSADataManager.GetDefaultProviderName">
+            <summary>
+            Returns a string of the default provider name
+            </summary>
+            <returns>A string of the default provider name</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.PDSADataManager.GetDefaultProvider">
+            <summary>
+            Returns the default PDSADataProvider object
+            </summary>
+            <returns>A PDSADataProvider object</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.PDSADataManager.GetProvider(System.String)">
+            <summary>
+            Returns a PDSADataProvider object based on the provider name passed in.
+            </summary>
+            <param name="providerName">A provider name</param>
+            <returns>A PDSADataProvider object, or null if not found.</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.PDSADataManager.GetPDSAFrameworkProvider">
+            <summary>
+            Returns the PDSADataProvider that will be used to get all tables in the PDSA Framework database
+            </summary>
+            <returns>A PDSADataProvider object, or if not found, then the Default provider will be returned</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.PDSADataManager.GetPDSAFrameworkProvider(System.String)">
+            <summary>
+            Returns the PDSADataProvider that will be used to get all tables in the PDSA Framework database
+            </summary>
+            <param name="providerName">A provider name</param>
+            <returns>A PDSADataProvider object, or if not found, then the Default provider will be returned</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.PDSADataManager.GetProvider(System.String,System.String)">
+            <summary>
+            Returns a PDSADataProvider object based on the provider name passed in.
+            </summary>
+            <param name="providerName">A provider name</param>
+            <param name="keyNameForCache">A key name to look up the provider in the data provider cache</param>
+            <returns>A PDSADataProvider object, or null if not found.</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.PDSADataManager.GetProvidersCollection">
+            <summary>
+            Returns a PDSADataConfigProviders object of all data providers read in from the config file
+            </summary>
+            <returns>A PDSADataConfigProviders object</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.PDSADataManager.InitProvider(PDSA.DataLayer.Configuration.PDSADataConfigProvider,System.String)">
+            <summary>
+            Initializes a PDSADataProvider object
+            </summary>
+            <param name="configProvider">A PDSADataConfigProvider that will be used to create an instance of the PDSADataProvider object</param>
+            <param name="keyNameForCache">The key name in the data provider cache to look up</param>
+            <returns>A PDSADataProvider object, null if an exception occurs.</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.PDSADataManager.CreateException(System.Exception,System.String,System.String,System.String,PDSA.DataLayer.Configuration.PDSADataConfigProvider)">
+            <summary>
+            Create a PDSADataException object
+            </summary>
+            <param name="ex">An exception object</param>
+            <param name="msg">A message</param>
+            <param name="className">Class name in which exception occurred</param>
+            <param name="methodName">Method name in which exception occurred</param>
+            <param name="configProvider">Current configuration provider</param>
+            <returns>A PDSADataException object</returns>
+        </member>
+        <member name="P:PDSA.DataLayer.PDSADataManager.Provider">
+            <summary>
+            Get/Set the current Data Provider
+            </summary>
+        </member>
+        <member name="P:PDSA.DataLayer.PDSADataManager.ConfigurationProvider">
+            <summary>
+            Get/Set the PDSADataConfigProvider object
+            </summary>
+        </member>
+        <member name="P:PDSA.DataLayer.PDSADataManager.ConfigFileName">
+            <summary>
+            Get/Set the Config File Name string
+            </summary>
+        </member>
+        <member name="P:PDSA.DataLayer.PDSADataManager.PDSAFrameworkProviderName">
+            <summary>
+            Get/Set the DataProviderName that is used to get the Data Provider for all the PDSA Framework Tables. The default value is 'PDSASqlClient'.
+            </summary>
+        </member>
+        <member name="P:PDSA.DataLayer.PDSADataManager.ConfigurationProviders">
+            <summary>
+            Get/Set the PDSADataConfigProviders object
+            </summary>
+        </member>
+        <member name="T:PDSA.DataLayer.PDSADataNullProvider">
+            <summary>
+            This class is used when we do not need a full provider, but need something that will return values. Useful in WPF and Silverlight applications when data binding.
+            </summary>
+        </member>
+        <member name="T:PDSA.DataLayer.PDSADataProvider">
+            <summary>
+            An abstract class from which all PDSADataProvider classes inherit.
+            </summary>
+        </member>
+        <member name="M:PDSA.DataLayer.PDSADataProvider.#ctor">
+            <summary>
+            Base constructor for the PDSADataProvider class. Calls the Init method.
+            </summary>
+        </member>
+        <member name="M:PDSA.DataLayer.PDSADataProvider.Init">
+            <summary>
+            Initialize any properties to a valid start state
+            </summary>
+        </member>
+        <member name="F:PDSA.DataLayer.PDSADataProvider.mConfig">
+            <summary>
+            Variable to hold a reference to the PDSADataConfigProvider object
+            </summary>
+        </member>
+        <member name="F:PDSA.DataLayer.PDSADataProvider.mConfigs">
+            <summary>
+            Variable to hold a reference to the PDSADataConfigProviders object
+            </summary>
+        </member>
+        <member name="F:PDSA.DataLayer.PDSADataProvider.mConnectString">
+            <summary>
+            Variable to hold the connection string
+            </summary>
+        </member>
+        <member name="F:PDSA.DataLayer.PDSADataProvider.mDBLanguage">
+            <summary>
+            Variable to hold the Database Language read from the Config file
+            </summary>
+        </member>
+        <member name="F:PDSA.DataLayer.PDSADataProvider.mDefaultDateFormatString">
+            <summary>
+            Variable to hold the default date date format string
+            </summary>
+        </member>
+        <member name="F:PDSA.DataLayer.PDSADataProvider.mLikeOperator">
+            <summary>
+            Variable to hold the LIKE operator that this database uses.
+            </summary>
+        </member>
+        <member name="F:PDSA.DataLayer.PDSADataProvider.mUseStoredProcedures">
+            <summary>
+            Variable to hold whether or not to use stored procedures
+            </summary>
+        </member>
+        <member name="F:PDSA.DataLayer.PDSADataProvider.mUseDBAuditTracking">
+            <summary>
+            Variable to hold whether or not to use audit tracking
+            </summary>
+        </member>
+        <member name="F:PDSA.DataLayer.PDSADataProvider.mParameterInfo">
+            <summary>
+            Variable to hold a reference to a PDSADataProviderParameterInfo object
+            </summary>
+        </member>
+        <member name="F:PDSA.DataLayer.PDSADataProvider.mPKTableIdObject">
+            <summary>
+            Variable to hold an instance of a PDSA Primary Key Table ID Generation Class
+            </summary>
+        </member>
+        <member name="M:PDSA.DataLayer.PDSADataProvider.CreatePKTableIdObject">
+            <summary>
+            Create an instance of a PDSAPKTableId class
+            </summary>
+            <returns>A PDSAPKTableId object</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.PDSADataProvider.QuoteString(System.String)">
+            <summary>
+            Checks the passed in string for any single quote characters and puts two single quotes in its place. This will help avoid SQL injection attacks on string values
+            </summary>
+            <param name="value">A value that may contain single quotes</param>
+            <returns>A string with the appropriate single quotes around it</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.PDSADataProvider.HideLoginInfoForConnectionString(System.String)">
+            <summary>
+            Looks for UID, User Id, Pwd, Password, etc. in a connection string and replaces their 'values' with astericks.
+            </summary>
+            <param name="connectString">The connection string to check</param>
+            <returns>A string with hidden user id and password values</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.PDSADataProvider.NowFormatted">
+            <summary>
+            Returns the current date/time using the default date format string
+            </summary>
+            <returns>a string value that contains the current date/time</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.PDSADataProvider.NowFormatted(System.String)">
+            <summary>
+            Returns the current date/time using the default date format string
+            </summary>
+            <param name="dateFormatString">A date format string</param>
+            <returns>a string value that contains the current date/time</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.PDSADataProvider.GetDataExceptionString(System.Exception)">
+            <summary>
+            This method is intended to be overriden. By default will return the Message property from the passed in Exception object
+            </summary>
+            <param name="ex">An Exception object</param>
+            <returns>A string containing error info</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.PDSADataProvider.StringToDateFieldFormat(System.String)">
+            <summary>
+            Returns a date that is passed in with single quotes around it.
+            </summary>
+            <param name="value">The string to quote</param>
+            <returns>A string</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.PDSADataProvider.StringToDateFieldFormat(System.DateTime)">
+            <summary>
+            Returns a string in the Default Date Format specified for this provider.
+            </summary>
+            <param name="value">The date/time value to format</param>
+            <returns>a date in a string format with single quotes around it</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.PDSADataProvider.GetDataSet(System.String)">
+            <summary>
+            Returns a DataSet from the supplied SQL string passed in.
+            </summary>
+            <param name="sql">A SQL string that returns data</param>
+            <returns>A DataSet Object</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.PDSADataProvider.GetDataSet(System.String,System.String)">
+            <summary>
+            Returns a DataSet from the supplied SQL string passed in.
+            </summary>
+            <param name="sql">A SQL string that returns data</param>
+            <param name="connectString">A connection string</param>
+            <returns>A DataSet Object</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.PDSADataProvider.GetDataSet(System.String,System.Data.IDbConnection)">
+            <summary>
+            Returns a DataSet from the supplied SQL string passed in.
+            </summary>
+            <param name="sql">A SQL string that returns data</param>
+            <param name="cnn">A IDbConnection Object</param>
+            <returns>A DataSet Object</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.PDSADataProvider.GetDataSet(System.Data.IDbCommand)">
+            <summary>
+            Returns a DataSet from the IDbCommand object passed in.
+            </summary>
+            <param name="cmd">A IDbCommand object</param>
+            <returns>A DataSet object</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.PDSADataProvider.GetDataSet(System.Data.IDbCommand,System.String)">
+            <summary>
+            Returns a DataSet from the IDbCommand object passed in.
+            </summary>
+            <param name="cmd">A IDbCommand object</param>
+            <param name="connectString">A connection string</param>
+            <returns>A DataSet object</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.PDSADataProvider.GetDataSet(System.Data.IDbCommand,System.String,System.Boolean)">
+            <summary>
+            Returns a DataSet from the IDbCommand object passed in.
+            </summary>
+            <param name="cmd">A IDbCommand object</param>
+            <param name="connectString">A connection string</param>
+            <param name="closeConnection">True = Close connection when call is complete.</param>
+            <returns>A DataSet object</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.PDSADataProvider.GetDataSet(System.Data.IDbCommand,System.Boolean)">
+            <summary>
+            Returns a DataSet from the IDbCommand object passed in.
+            </summary>
+            <param name="cmd">A IDbCommand object</param>
+            <param name="closeConnection">True = Close connection when call is complete.</param>
+            <returns>A DataSet object</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.PDSADataProvider.GetDataReader(System.Data.IDbCommand,System.Data.CommandBehavior)">
+            <summary>
+            Returns a IDataReader object after running the command in the IDbCommand object passed in.
+            </summary>
+            <param name="cmd">An IDbCommand object</param>
+            <param name="behavior">A CommandBehavior enumeration</param>
+            <returns>An IDataReader object</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.PDSADataProvider.GetDataReader(System.Data.IDbCommand)">
+            <summary>
+            Returns a IDataReader object after running the command in the IDbCommand object passed in.
+            </summary>
+            <param name="cmd">An IDbCommand object</param>
+            <returns>An IDataReader object</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.PDSADataProvider.GetDataReader(System.Data.IDbCommand,System.String)">
+            <summary>
+            Returns a IDataReader object after running the command in the IDbCommand object passed in.
+            </summary>
+            <param name="cmd">An IDbCommand object</param>
+            <param name="connectString">A connection string</param>
+            <returns>An IDataReader object</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.PDSADataProvider.GetDataReader(System.Data.IDbCommand,System.Data.IDbConnection)">
+            <summary>
+            Returns a IDataReader object after running the command in the IDbCommand object passed in.
+            </summary>
+            <param name="cmd">An IDbCommand object</param>
+            <param name="cnn">An IDbConnection object</param>
+            <returns>An IDataReader object</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.PDSADataProvider.GetDataReader(System.Data.IDbCommand,System.Data.IDbConnection,System.Data.CommandBehavior)">
+            <summary>
+            Returns a IDataReader object after running the command in the IDbCommand object passed in.
+            </summary>
+            <param name="cmd">An IDbCommand object</param>
+            <param name="cnn">An IDbConnection object</param>
+            <param name="behavior">A CommandBehavior enumeration</param>
+            <returns>An IDataReader object</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.PDSADataProvider.GetDataReader(System.String,System.String)">
+            <summary>
+            Returns a IDataReader object after running the SQL string passed in.
+            </summary>
+            <param name="sql">A SQL statement that returns data</param>
+            <param name="connectString">A connection string</param>
+            <returns>An IDataReader object</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.PDSADataProvider.GetDataReader(System.String,System.String,System.Data.CommandBehavior)">
+            <summary>
+            Returns a IDataReader object after running the SQL string passed in.
+            </summary>
+            <param name="sql">A SQL statement that returns data</param>
+            <param name="behavior">A CommandBehavior enumeration</param>
+            <param name="connectString">A connection string</param>
+            <returns>An IDataReader object</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.PDSADataProvider.GetDataReader(System.String,System.Data.IDbConnection)">
+            <summary>
+            Returns a IDataReader object after running the SQL string passed in.
+            </summary>
+            <param name="sql">A SQL statement that returns data</param>
+            <param name="cnn">A IDbConnection object</param>
+            <returns>An IDataReader object</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.PDSADataProvider.ExecuteSQL(System.Data.IDbCommand)">
+            <summary>
+            Executes a SQL data modification 
+            </summary>
+            <param name="cmd">An IDbCommand object with the appropriate SQL statement and connection object already set.</param>
+            <returns>The number of rows affected</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.PDSADataProvider.ExecuteSQL(System.Data.IDbCommand,System.String)">
+            <summary>
+            Executes a SQL data modification 
+            </summary>
+            <param name="cmd">An IDbCommand object with the appropriate SQL statement and connection object already set.</param>
+            <param name="connectString">A connection string</param>
+            <returns>The number of rows affected</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.PDSADataProvider.ExecuteSQL(System.String,System.String)">
+            <summary>
+            Executes a SQL data modification 
+            </summary>
+            <param name="sql">A SQL statement.</param>
+            <param name="connectString">A connection string</param>
+            <returns>The number of rows affected</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.PDSADataProvider.ExecuteSQL(System.String,System.Data.IDbConnection)">
+            <summary>
+            Executes a SQL data modification 
+            </summary>
+            <param name="sql">A SQL statement.</param>
+            <param name="cnn">A IDbConnection object</param>
+            <returns>The number of rows affected</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.PDSADataProvider.ExecuteSQL(System.Data.IDbCommand,System.Boolean)">
+            <summary>
+            Executes a SQL data modification 
+            </summary>
+            <param name="cmd">An IDbCommand object with the appropriate SQL statement and connection object already set.</param>
+            <param name="closeConnection">Close the connection after executing the SQL</param>
+            <returns>The number of rows affected</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.PDSADataProvider.ExecuteScalar(System.String,System.String)">
+            <summary>
+            Executes a SQL statement that just returns a single value
+            </summary>
+            <param name="sql">A SQL statement</param>
+            <param name="connectString">A Connection String</param>
+            <returns>The value returned from the execution. Null if an error occurred.</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.PDSADataProvider.ExecuteScalar(System.String,System.Data.IDbConnection)">
+            <summary>
+            Executes a SQL statement that just returns a single value
+            </summary>
+            <param name="sql">A SQL statement</param>
+            <param name="cnn">A IDbConnection object</param>
+            <returns>The value returned from the execution. Null if an error occurred.</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.PDSADataProvider.ExecuteScalar(System.String,System.Data.IDbTransaction)">
+            <summary>
+            Executes a SQL statement that just returns a single value
+            </summary>
+            <param name="sql">A SQL statement</param>
+            <param name="tran">A IDbTransaction object</param>
+            <returns>The value returned from the execution. Null if an error occurred.</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.PDSADataProvider.ExecuteScalar(System.Data.IDbCommand,System.String)">
+            <summary>
+            Executes a SQL statement that just returns a single value
+            </summary>
+            <param name="cmd">A IDbCommand object</param>
+            <param name="connectString">A connection string</param>
+            <returns>The value returned from the execution. Null if an error occurred.</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.PDSADataProvider.ExecuteScalar(System.Data.IDbCommand)">
+            <summary>
+            Executes a SQL statement that just returns a single value
+            </summary>
+            <param name="cmd">A IDbCommand object</param>
+            <returns>The value returned from the execution. Null if an error occurred.</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.PDSADataProvider.CreateParameterInfo">
+            <summary>
+            Abstract method to be overriden. Use this to create a parameter information object
+            </summary>
+            <returns>A PDSADataProviderParameterInfo object</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.PDSADataProvider.CreateConnection">
+            <summary>
+            Creates a Connection object for the specific data provider
+            </summary>
+            <returns>An IDbConnection object</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.PDSADataProvider.CreateConnection(System.String,System.Boolean)">
+            <summary>
+            Creates a Connection object for the specific data provider
+            </summary>
+            <param name="connectString">A connection string</param>
+            <param name="openConnection">Open the connection?</param>
+            <returns>An IDbConnection object</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.PDSADataProvider.CreateConnection(System.Boolean)">
+            <summary>
+            Creates a Connection object for the specific data provider
+            </summary>
+            <param name="openConnection">Open the connection?</param>
+            <returns>An IDbConnection object</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.PDSADataProvider.CreateConnection(System.String)">
+            <summary>
+            Creates a Connection object for the specific data provider
+            </summary>
+            <param name="connectString">A connection string</param>
+            <returns>An IDbConnection object</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.PDSADataProvider.CreateCommand">
+            <summary>
+            Creates a Command object for the specific data provider
+            </summary>
+            <returns>An IDbCommand object</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.PDSADataProvider.CreateCommand(System.String)">
+            <summary>
+            Creates a Command object for the specific data provider
+            </summary>
+            <param name="sql">A SQL statement</param>
+            <returns>An IDbCommand object</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.PDSADataProvider.CreateCommand(System.String,System.String)">
+            <summary>
+            Creates a Command object for the specific data provider
+            </summary>
+            <param name="sql">A SQL statement</param>
+            <param name="connectString">A connection string</param>
+            <returns>An IDbCommand object</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.PDSADataProvider.CreateCommand(System.String,System.String,System.Boolean)">
+            <summary>
+            Creates a Command object for the specific data provider
+            </summary>
+            <param name="sql">A SQL statement</param>
+            <param name="connectString">A connection string</param>
+            <param name="openConnection">Open the connection object?</param>
+            <returns>An IDbCommand object</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.PDSADataProvider.CreateCommand(System.String,System.Data.IDbConnection)">
+            <summary>
+            Creates a Command object for the specific data provider
+            </summary>
+            <param name="sql">A SQL statement</param>
+            <param name="cnn">An IDbConnection object</param>
+            <returns>An IDbCommand object</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.PDSADataProvider.CreateParameter">
+            <summary>
+            Creates a Parameter object for the specific data provider
+            </summary>
+            <returns>An IDataParameter object</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.PDSADataProvider.CreateParameter(System.String)">
+            <summary>
+            Creates a Parameter object for the specific data provider
+            </summary>
+            <param name="paramName">The parameter name</param>
+            <returns>An IDataParameter object</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.PDSADataProvider.CreateParameter(System.String,System.Data.DbType)">
+            <summary>
+            Creates a Parameter object for the specific data provider
+            </summary>
+            <param name="paramName">The parameter name</param>
+            <param name="dataType">The data type for the parameter</param>
+            <returns>An IDataParameter object</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.PDSADataProvider.CreateParameter(System.String,System.Data.DbType,System.Object)">
+            <summary>
+            Creates a Parameter object for the specific data provider
+            </summary>
+            <param name="paramName">The parameter name</param>
+            <param name="dataType">The data type for the parameter</param>
+            <param name="value">The value for the parameter</param>
+            <returns>An IDataParameter object</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.PDSADataProvider.CreateParameter(System.String,System.Data.DbType,System.Object,System.Int32)">
+            <summary>
+            Creates a Parameter object for the specific data provider
+            </summary>
+            <param name="paramName">The parameter name</param>
+            <param name="dataType">The data type for the parameter</param>
+            <param name="value">The value for the parameter</param>
+            <param name="size">The size of the parameter</param>
+            <returns>An IDataParameter object</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.PDSADataProvider.GetDataFromParameter(System.Data.IDataParameter)">
+            <summary>
+            Returns the 'value' from the parameter object passed in
+            </summary>
+            <param name="param">An IDataParameter object</param>
+            <returns>An IDataParameter object</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.PDSADataProvider.CreateParameterName(System.String)">
+            <summary>
+            Creates a Parameter name for the specific data provider by using the ParameterPrefixForADONETCommands property from the ParameterInfo object.
+            </summary>
+            <param name="paramName">The name of the parameter to create</param>
+            <returns>a string</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.PDSADataProvider.CreateDataAdapter(System.String,System.String)">
+            <summary>
+            Create an IDbDataAdapter
+            </summary>
+            <param name="sql">A SQL String</param>
+            <param name="connectString">A Connection String</param>
+            <returns>An IDbDataAdapter object</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.PDSADataProvider.CreateDataAdapter(System.Data.IDbCommand)">
+            <summary>
+            Create an IDbDataAdapter
+            </summary>
+            <param name="cmd">An IDbCommand object</param>
+            <returns>An IDbDataAdapter object</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.PDSADataProvider.CreateDataReader(System.Data.IDbCommand)">
+            <summary>
+            Create an IDataReader object
+            </summary>
+            <param name="cmd">An IDbCommand object</param>
+            <returns>An IDataReader object</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.PDSADataProvider.CreateDataReader(System.Data.IDbCommand,System.String)">
+            <summary>
+            Create an IDataReader object
+            </summary>
+            <param name="cmd">An IDbCommand object</param>
+            <param name="connectString">A connection string</param>
+            <returns>An IDataReader object</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.PDSADataProvider.CreateDataReader(System.Data.IDbCommand,System.Data.IDbConnection)">
+            <summary>
+            Create an IDataReader object
+            </summary>
+            <param name="cmd">An IDbCommand object</param>
+            <param name="cnn">An IDbConnection object</param>
+            <returns>An IDataReader object</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.PDSADataProvider.CreateDataReader(System.Data.IDbCommand,System.Data.CommandBehavior)">
+            <summary>
+            Create an IDataReader object
+            </summary>
+            <param name="cmd">An IDbCommand object</param>
+            <param name="behavior">A CommandBehavior Enumeration</param>
+            <returns>An IDataReader object</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.PDSADataProvider.CreateDataReader(System.String,System.Data.IDbConnection)">
+            <summary>
+            Create an IDataReader object
+            </summary>
+            <param name="sql">A SQL string</param>
+            <param name="cnn">An IDbConnection object</param>
+            <returns>An IDataReader</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.PDSADataProvider.CreateTransaction(System.Data.IDbConnection)">
+            <summary>
+            Create an IDbTransaction object
+            </summary>
+            <param name="cnn">An IDbConnection object</param>
+            <returns>A IDbTransaction object</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.PDSADataProvider.RetrieveObjectPrimaryKeyAfterInsert(System.Data.IDbConnection)">
+            <summary>
+            Submits the appropriate command to retrieve an auto-generated value from the database
+            </summary>
+            <param name="cnn">An IDbConnection object</param>
+            <returns>An object value</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.PDSADataProvider.RetrieveObjectPrimaryKeyAfterInsert(System.Data.IDbTransaction)">
+            <summary>
+            Submits the appropriate command to retrieve an auto-generated value from the database
+            </summary>
+            <param name="tran">An IDbTransaction object</param>
+            <returns>An object value</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.PDSADataProvider.RetrievePrimaryKeyAfterInsert(System.Data.IDbConnection)">
+            <summary>
+            Submits the appropriate command to retrieve an auto-generated value from the database
+            </summary>
+            <param name="cnn">An IDbConnection object</param>
+            <returns>An integer value</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.PDSADataProvider.RetrievePrimaryKeyAfterInsert(System.Data.IDbTransaction)">
+            <summary>
+            Submits the appropriate command to retrieve an auto-generated value from the database
+            </summary>
+            <param name="tran">An IDbTransaction object</param>
+            <returns>An integer value</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.PDSADataProvider.RetrieveLongPrimaryKeyAfterInsert(System.Data.IDbConnection)">
+            <summary>
+            Submits the appropriate command to retrieve an auto-generated value from the database
+            </summary>
+            <param name="cnn">An IDbConnection object</param>
+            <returns>A long value</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.PDSADataProvider.RetrieveLongPrimaryKeyAfterInsert(System.Data.IDbTransaction)">
+            <summary>
+            Submits the appropriate command to retrieve an auto-generated value from the database
+            </summary>
+            <param name="tran">An IDbTransaction object</param>
+            <returns>An long value</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.PDSADataProvider.RetrieveDecimalPrimaryKeyAfterInsert(System.Data.IDbConnection)">
+            <summary>
+            Submits the appropriate command to retrieve an auto-generated value from the database
+            </summary>
+            <param name="cnn">An IDbConnection object</param>
+            <returns>A decimal value</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.PDSADataProvider.RetrieveDecimalPrimaryKeyAfterInsert(System.Data.IDbTransaction)">
+            <summary>
+            Submits the appropriate command to retrieve an auto-generated value from the database
+            </summary>
+            <param name="tran">An IDbTransaction object</param>
+            <returns>An decimal value</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.PDSADataProvider.RetrieveDoublePrimaryKeyAfterInsert(System.Data.IDbConnection)">
+            <summary>
+            Submits the appropriate command to retrieve an auto-generated value from the database
+            </summary>
+            <param name="cnn">An IDbConnection object</param>
+            <returns>A double value</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.PDSADataProvider.RetrieveDoublePrimaryKeyAfterInsert(System.Data.IDbTransaction)">
+            <summary>
+            Submits the appropriate command to retrieve an auto-generated value from the database
+            </summary>
+            <param name="tran">An IDbTransaction object</param>
+            <returns>An double value</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.PDSADataProvider.RetrieveShortPrimaryKeyAfterInsert(System.Data.IDbConnection)">
+            <summary>
+            Submits the appropriate command to retrieve an auto-generated value from the database
+            </summary>
+            <param name="cnn">An IDbConnection object</param>
+            <returns>A short value</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.PDSADataProvider.RetrieveShortPrimaryKeyAfterInsert(System.Data.IDbTransaction)">
+            <summary>
+            Submits the appropriate command to retrieve an auto-generated value from the database
+            </summary>
+            <param name="tran">An IDbTransaction object</param>
+            <returns>An short value</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.PDSADataProvider.CreateException(System.Exception,System.String,System.String,System.String,System.String,System.String,System.Data.IDbCommand)">
+            <summary>
+            Creates a PDSADataException object
+            </summary>
+            <param name="ex">An exception object</param>
+            <param name="msg">A message</param>
+            <param name="className">The class name where the exception originated</param>
+            <param name="methodName">The method name where the exception originated</param>
+            <param name="sql">The SQL statement that was just submitted</param>
+            <param name="connectString">The connection string used to submit the last SQL Statement</param>
+            <param name="cmd">An IDbCommand object</param>
+            <returns>A PDSADataException object</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.PDSADataProvider.CanOpenConnection">
+            <summary>
+            Returns true if a connection can be opened used the connection string set in the data provider.
+            This method just opens the connection, then closes it immediately.
+            </summary>
+            <returns>True if the connection can be opened.</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.PDSADataProvider.SetCursorOnParam(System.Data.IDataParameter)">
+            <summary>
+            Use this mainly for oracle databases to set a Cursor Type on a data parameter
+            </summary>
+            <param name="param">The parameter on which to set the Cursor type</param>
+        </member>
+        <member name="P:PDSA.DataLayer.PDSADataProvider.ConfigurationProvider">
+            <summary>
+            Get/Set a PDSADataConfigProvider object for this Data Provider
+            </summary>
+        </member>
+        <member name="P:PDSA.DataLayer.PDSADataProvider.ConfigFileName">
+            <summary>
+            Get/Set the confgiFileName string
+            </summary>
+        </member>
+        <member name="P:PDSA.DataLayer.PDSADataProvider.ConfigurationProviders">
+            <summary>
+             Get/Set a PDSADataConfigProviders object for this Data Provider
+             </summary>
+        </member>
+        <member name="P:PDSA.DataLayer.PDSADataProvider.ProviderConnectStringKey">
+            <summary>
+            Get/Set the connect string key for this provider. This key is used to 
+            </summary>
+        </member>
+        <member name="P:PDSA.DataLayer.PDSADataProvider.ParameterInfo">
+            <summary>
+            Get/Set a reference to a PDSADataProviderParameterInfo object for this data provider.
+            </summary>
+        </member>
+        <member name="P:PDSA.DataLayer.PDSADataProvider.ConnectString">
+            <summary>
+            Get/Set the connection string used by this data provider.
+            </summary>
+        </member>
+        <member name="P:PDSA.DataLayer.PDSADataProvider.DefaultDateFormatString">
+            <summary>
+            Get/Set the default date format string used for this provider.
+            </summary>
+        </member>
+        <member name="P:PDSA.DataLayer.PDSADataProvider.DBLanguage">
+            <summary>
+            Get/Set the language used by this database.
+            </summary>
+        </member>
+        <member name="P:PDSA.DataLayer.PDSADataProvider.LikeOperator">
+            <summary>
+            Get/Set the LIKE operator used by this database.
+            </summary>
+        </member>
+        <member name="P:PDSA.DataLayer.PDSADataProvider.UseStoredProcedures">
+            <summary>
+            Get/Set whether or not to use stored procedures for all data access.
+            </summary>
+        </member>
+        <member name="P:PDSA.DataLayer.PDSADataProvider.UseDBAuditTracking">
+            <summary>
+            Get/Set whether or not to have the data classes use audit tracking for all data modification operations.
+            </summary>
+        </member>
+        <member name="P:PDSA.DataLayer.PDSADataProvider.PKTableIdObject">
+            <summary>
+            Get/Set an instance of a PDSA PK Table ID Generation Class
+            </summary>
+        </member>
+        <member name="M:PDSA.DataLayer.PDSADataNullProvider.CreateParameterInfo">
+            <summary>
+            Creates a new PDSADataProviderParameterInfo object
+            </summary>
+            <returns>A PDSADataProviderParameterInfo object</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.PDSADataNullProvider.CreateConnection">
+            <summary>
+            Create NULL Connection
+            </summary>
+            <returns>A null value</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.PDSADataNullProvider.CreateConnection(System.String,System.Boolean)">
+            <summary>
+            Create NULL Connection
+            </summary>
+            <param name="connectString">Connection string</param>
+            <param name="openConnection">Open a connection</param>
+            <returns>A null value</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.PDSADataNullProvider.CreateConnection(System.Boolean)">
+            <summary>
+            Create NULL Connection
+            </summary>
+            <param name="openConnection">Open a connection</param>
+            <returns>A null value</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.PDSADataNullProvider.CreateConnection(System.String)">
+            <summary>
+            Create NULL Connection
+            </summary>
+            <param name="connectString">Connection string</param>
+            <returns>A null value</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.PDSADataNullProvider.CreateCommand">
+            <summary>
+            Create NULL Command
+            </summary>
+            <returns>A null value</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.PDSADataNullProvider.CreateCommand(System.String)">
+            <summary>
+            Create NULL Command
+            </summary>
+            <param name="sql">SQL String</param>
+            <returns>A null value</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.PDSADataNullProvider.CreateCommand(System.String,System.String)">
+            <summary>
+            Create NULL Command
+            </summary>
+            <param name="sql">SQL String</param>
+            <param name="connectString">Connection String</param>
+            <returns>A null value</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.PDSADataNullProvider.CreateCommand(System.String,System.String,System.Boolean)">
+            <summary>
+            Create NULL Command
+            </summary>
+            <param name="sql">SQL String</param>
+            <param name="connectString">Connection String</param>
+            <param name="openConnection">Open a connection</param>
+            <returns>A null value</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.PDSADataNullProvider.CreateCommand(System.String,System.Data.IDbConnection)">
+            <summary>
+            Create NULL Command
+            </summary>
+            <param name="sql">SQL String</param>
+            <param name="cnn">A Connection</param>
+            <returns>A null value</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.PDSADataNullProvider.CreateParameter">
+            <summary>
+            Create NULL Parameter
+            </summary>
+            <returns>A null value</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.PDSADataNullProvider.CreateParameter(System.String)">
+            <summary>
+            Create NULL Parameter
+            </summary>
+            <param name="paramName">A parameter name</param>
+            <returns>A null value</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.PDSADataNullProvider.CreateParameter(System.String,System.Data.DbType)">
+            <summary>
+            Create NULL Parameter
+            </summary>
+            <param name="paramName">A parameter name</param>
+            <param name="dataType">A data type</param>
+            <returns>A null value</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.PDSADataNullProvider.CreateParameter(System.String,System.Data.DbType,System.Object)">
+            <summary>
+            Create NULL Parameter
+            </summary>
+            <param name="paramName">A parameter name</param>
+            <param name="dataType">A data type</param>
+            <param name="value">A value</param>
+            <returns>A null value</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.PDSADataNullProvider.CreateParameter(System.String,System.Data.DbType,System.Object,System.Int32)">
+            <summary>
+            Create NULL Parameter
+            </summary>
+            <param name="paramName">A parameter name</param>
+            <param name="dataType">A data type</param>
+            <param name="value">A value</param>
+            <param name="size">Size of parameter</param>
+            <returns>A null value</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.PDSADataNullProvider.GetDataFromParameter(System.Data.IDataParameter)">
+            <summary>
+            Get NULL
+            </summary>
+            <param name="param">Parameter name</param>
+            <returns>A null value</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.PDSADataNullProvider.CreateDataAdapter(System.String,System.String)">
+            <summary>
+            Create NULL Data Adapter
+            </summary>
+            <param name="sql">SQL String</param>
+            <param name="connectString">Connection string</param>
+            <returns>A null value</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.PDSADataNullProvider.CreateDataAdapter(System.Data.IDbCommand)">
+            <summary>
+            Create NULL Data Adapter
+            </summary>
+            <param name="cmd">Command object</param>
+            <returns>A null value</returns>
+        </member>
+        <member name="T:PDSA.DataLayer.PDSALastDbStatus">
+            <summary>
+            Enumeration to keep track of the status of the last database call
+            </summary>
+        </member>
+        <member name="F:PDSA.DataLayer.PDSALastDbStatus.Unknown">
+            <summary>
+            Initial state
+            </summary>
+        </member>
+        <member name="F:PDSA.DataLayer.PDSALastDbStatus.Success">
+            <summary>
+            Database operation was successful
+            </summary>
+        </member>
+        <member name="F:PDSA.DataLayer.PDSALastDbStatus.Exception">
+            <summary>
+            An exception occurred during the last database operation
+            </summary>
+        </member>
+        <member name="F:PDSA.DataLayer.PDSALastDbStatus.NoRecordsFound">
+            <summary>
+            No records found as a result of the last database operation
+            </summary>
+        </member>
+        <member name="F:PDSA.DataLayer.PDSALastDbStatus.ValidationFailed">
+            <summary>
+            Validation of data failed
+            </summary>
+        </member>
+        <member name="T:PDSA.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:PDSA.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:PDSA.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="T:PDSA.DataLayer.Providers.PDSADataSqlClient">
+            <summary>
+            A PDSA Data Provider for dealing specifically with SQL Server
+            </summary>
+        </member>
+        <member name="M:PDSA.DataLayer.Providers.PDSADataSqlClient.#ctor">
+            <summary>
+            Base constructor for PDSADataSqlClient. Calls the Init Method.
+            </summary>
+        </member>
+        <member name="M:PDSA.DataLayer.Providers.PDSADataSqlClient.Init">
+            <summary>
+            Initializes all variables to a valid start state
+            </summary>
+        </member>
+        <member name="M:PDSA.DataLayer.Providers.PDSADataSqlClient.CreateParameterInfo">
+            <summary>
+            Create parameter information for this data provider and initializes each property to valid values for this database.
+            </summary>
+            <returns>A PDSADataProviderParameterInfo object</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.Providers.PDSADataSqlClient.RetrieveObjectPrimaryKeyAfterInsert(System.Data.IDbConnection)">
+            <summary>
+            Implements the specific method for SQL Server to return the IDENTITY.
+            </summary>
+            <param name="cnn">An IDbConnection Object</param>
+            <returns>An Object</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.Providers.PDSADataSqlClient.RetrieveObjectPrimaryKeyAfterInsert(System.Data.IDbTransaction)">
+            <summary>
+            Implements the specific method for SQL Server to return the IDENTITY.
+            </summary>
+            <param name="tran">An IDbTransaction Object</param>
+            <returns>An Object</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.Providers.PDSADataSqlClient.GetDataExceptionString(System.Exception)">
+            <summary>
+            Loops through all exceptions in the Errors collection and returns an Exception message.
+            </summary>
+            <param name="ex">An exception</param>
+            <returns>A string</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.Providers.PDSADataSqlClient.CreateConnection(System.String,System.Boolean)">
+            <summary>
+            Creates and returns a SqlConnection object.
+            </summary>
+            <param name="connectString">The connection string</param>
+            <param name="openConnection">Pass in a true if you want to open the connection after setting the connection string</param>
+            <returns>A SqlConnection object</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.Providers.PDSADataSqlClient.CreateConnection">
+            <summary>
+            Creates and returns a SqlConnection object.
+            </summary>
+            <returns>A SqlConnection Object</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.Providers.PDSADataSqlClient.CreateConnection(System.Boolean)">
+            <summary>
+            Creates and returns a SqlConnection object.
+            </summary>
+            <param name="openConnection">Pass in a true if you want to open the connection after setting the connection string</param>
+            <returns>A SqlConnection Object</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.Providers.PDSADataSqlClient.CreateConnection(System.String)">
+            <summary>
+            Creates and returns a SqlConnection object.
+            </summary>
+            <param name="connectString">The connection string</param>
+            <returns>A SqlConnection object</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.Providers.PDSADataSqlClient.CreateCommand">
+            <summary>
+            Create and return a SqlCommand object
+            </summary>
+            <returns>A SqlCommand object</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.Providers.PDSADataSqlClient.CreateCommand(System.String)">
+            <summary>
+            Create and return a SqlCommand object
+            </summary>
+            <param name="sql">The SQL string for this SqlCommand object</param>
+            <returns>A SqlCommand object</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.Providers.PDSADataSqlClient.CreateCommand(System.String,System.String)">
+            <summary>
+            Create and return a SqlCommand object
+            </summary>
+            <param name="sql">The SQL string for this SqlCommand object</param>
+            <param name="connectString">The connection string for this SqlCommand object</param>
+            <returns>A SqlCommand object</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.Providers.PDSADataSqlClient.CreateCommand(System.String,System.String,System.Boolean)">
+            <summary>
+            Create and return a SqlCommand object
+            </summary>
+            <param name="sql">The SQL string for this SqlCommand object</param>
+            <param name="connectString">The connection string for this SqlCommand object</param>
+            <param name="openConnection">Open the connection on this Command object</param>
+            <returns>A SqlCommand object</returns>    
+        </member>
+        <member name="M:PDSA.DataLayer.Providers.PDSADataSqlClient.CreateCommand(System.String,System.Data.IDbConnection)">
+            <summary>
+            Create and return a SqlCommand object
+            </summary>
+            <param name="sql">The SQL string for this SqlCommand object</param>
+            <param name="cnn">A SqlConnection object</param>
+            <returns>A SqlCommand object</returns>    
+        </member>
+        <member name="M:PDSA.DataLayer.Providers.PDSADataSqlClient.CreateParameter">
+            <summary>
+            Create and return a SqlParameter
+            </summary>
+            <returns>A SqlParameter object</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.Providers.PDSADataSqlClient.CreateParameter(System.String)">
+            <summary>
+            Create and return a SqlParameter
+            </summary>
+            <param name="paramName">The name to assign to the ParameterName property</param>
+            <returns>A SqlParameter object</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.Providers.PDSADataSqlClient.CreateParameter(System.String,System.Data.DbType)">
+            <summary>
+            Create and return a SqlParameter
+            </summary>
+            <param name="paramName">The name to assign to the ParameterName property</param>
+            <param name="dataType">The data type for this parameter</param>
+            <returns>A SqlParameter object</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.Providers.PDSADataSqlClient.CreateParameter(System.String,System.Data.DbType,System.Object)">
+            <summary>
+            Create and return a SqlParameter
+            </summary>
+            <param name="paramName">The name to assign to the ParameterName property</param>
+            <param name="dataType">The data type for this parameter</param>
+            <param name="value">The value for this parameter</param>
+            <returns>A SqlParameter object</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.Providers.PDSADataSqlClient.CreateParameter(System.String,System.Data.DbType,System.Object,System.Int32)">
+            <summary>
+            Create and return a SqlParameter
+            </summary>
+            <param name="paramName">The name to assign to the ParameterName property</param>
+            <param name="dataType">The data type for this parameter</param>
+            <param name="value">The value for this parameter</param>
+            <param name="size">The size of this parameter</param>
+            <returns>A SqlParameter object</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.Providers.PDSADataSqlClient.GetDataFromParameter(System.Data.IDataParameter)">
+            <summary>
+            Returns the value property from a SqlParameter object
+            </summary>
+            <param name="param">A SqlParameter object</param>
+            <returns>An object</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.Providers.PDSADataSqlClient.CreateDataAdapter(System.String,System.String)">
+            <summary>
+            Create and return a SqlDataAdapter object
+            </summary>
+            <param name="sql">The SQL string for the SqlDataAdapter</param>
+            <param name="connectString">The connection string for the SqlDataAdapter</param>
+            <returns>A SqlDataAdapter object</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.Providers.PDSADataSqlClient.CreateDataAdapter(System.Data.IDbCommand)">
+            <summary>
+            Create and return a SqlDataAdapter object
+            </summary>
+            <param name="cmd">A SqlCommand object pre-populated with the appropriate SQL string and Connection String.</param>
+            <returns>A SqlDataAdapter object</returns>
+        </member>
+    </members>
+</doc>

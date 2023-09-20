@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>GalaxySMS.Cdn</name>
+    </assembly>
+    <members>
+        <member name="T:GalaxySMS.Cdn.Controllers.Api.UploadController">
+             <summary>   Operations relating to Countries. </summary>
+            <remarks>  </remarks>
+             <seealso cref="T:GalaxySMS.Api.Controllers.Api.ControllerBaseEx"/>
+            =================================================================================================
+        </member>
+    </members>
+</doc>

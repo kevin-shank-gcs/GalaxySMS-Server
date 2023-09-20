@@ -1,0 +1,67 @@
+﻿<UserControl x:Class="SystemGalaxyDataImporter.UserControls.ucSystemGalaxyConnection"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             xmlns:local="clr-namespace:SystemGalaxyDataImporter.UserControls"
+             xmlns:resx="clr-namespace:SystemGalaxyDataImporter.Properties"
+             xmlns:controls="http://www.galaxysys.com/GCS/Core"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+    </UserControl.Resources>
+    <Grid>
+        <telerik:RadExpander IsExpanded="True">
+            <telerik:RadExpander.Header>
+                <StackPanel>
+                    <TextBlock x:Name="expanderCaption" Text="{x:Static resx:Resources.SGConnectionHeaderText}" Style="{StaticResource DataEntryControlTitle}"/>
+                </StackPanel>
+            </telerik:RadExpander.Header>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.Row="1">
+                    <!--<TextBlock Text=""/>-->
+                    <TextBlock Text="{x:Static resx:Resources.SGWebApiUrlTitle}"/>
+                    <TextBox Text="{Binding Globals.SystemGalaxyConnectionData.WebApiUrl}"
+                             IsEnabled="{Binding Globals.SystemGalaxyConnectionData.UserToken.IsLoggedOn, Converter={StaticResource InvertedBooleanConverter}}"/>
+                </StackPanel>
+                <StackPanel Grid.Row="1" Grid.Column="2">
+                    <TextBlock Text="{x:Static resx:Resources.SGUserNameTitle}"/>
+                    <!--<TextBlock Text="Username" Style="{StaticResource DataEntryControlTitle}"/>-->
+                    <TextBox Text="{Binding Globals.SystemGalaxyConnectionData.UserName}"
+                             IsEnabled="{Binding Globals.SystemGalaxyConnectionData.UserToken.IsLoggedOn, Converter={StaticResource InvertedBooleanConverter}}"/>
+                </StackPanel>
+                <StackPanel Grid.Row="1" Grid.Column="4">
+                    <TextBlock Text="{x:Static resx:Resources.SGPasswordTitle}"/>
+                    <!--<TextBlock Text="Password" Style="{StaticResource DataEntryControlTitle}"/>-->
+                    <PasswordBox IsEnabled="{Binding Globals.SystemGalaxyConnectionData.UserToken.IsLoggedOn, Converter={StaticResource InvertedBooleanConverter}}"
+                                 controls:PasswordBoxAssistant.BindPassword="True"
+                                 controls:PasswordBoxAssistant.BoundPassword="{Binding Globals.SystemGalaxyConnectionData.Password, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"/>
+                </StackPanel>
+                <telerik:RadButton Grid.Row="1" Grid.Column="6" Content="{x:Static resx:Resources.SGSignOnButton_Text}" Command="{Binding SGSignOnCommand}"/>
+                <telerik:RadButton Grid.Row="1" Grid.Column="8" Content="{x:Static resx:Resources.SGSignOffButton_Text}" Command="{Binding SGSignOffCommand}"/>
+                <TextBlock Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="8" 
+                           Visibility="{Binding Globals.SystemGalaxyConnectionData.UserToken.IsLoggedOn, Converter={StaticResource BooleanToVisibilityConverter}}">
+                        <Run Text="TokenGuid: "/>
+                        <Run Text="{Binding Globals.SystemGalaxyConnectionData.UserToken.TokenGuid}"/>
+                </TextBlock>
+            </Grid>
+        </telerik:RadExpander>
+    </Grid>
+</UserControl>

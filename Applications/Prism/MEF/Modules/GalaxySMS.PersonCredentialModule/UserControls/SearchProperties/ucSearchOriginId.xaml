@@ -1,0 +1,37 @@
+﻿<UserControl x:Class="GalaxySMS.PersonCredential.UserControls.SearchProperties.ucSearchOriginId"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:GalaxySMS.PersonCredential.UserControls.SearchProperties"
+             xmlns:constants="clr-namespace:GalaxySMS.Common.Constants;assembly=GalaxySMS.Common"
+             xmlns:converters="clr-namespace:GCS.Core.Common.UI.Converters;assembly=GCS.Core.Common.UI"
+             xmlns:enums="clr-namespace:GalaxySMS.Common.Enums;assembly=GalaxySMS.Common"
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             xmlns:sharedResources="clr-namespace:GalaxySMS.Resources;assembly=GalaxySMS.Resources"
+             xmlns:maskedInput="clr-namespace:Telerik.Windows.Controls.MaskedInput;assembly=Telerik.Windows.Controls.Input"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <converters:ParameterAndValueToVisibilityConverter x:Key="parameterValueToVisibilityConverter" />
+    </UserControl.Resources>
+    <StackPanel Visibility="{Binding SearchData.SelectedSearchType.SearchType, 
+                    Converter={StaticResource parameterValueToVisibilityConverter}, 
+                    ConverterParameter={x:Static enums:PersonSearchType.ByOriginId }}">
+        <TextBlock Style="{StaticResource DataEntryControlTitle}" Text="{Binding SearchData.SelectedSearchProperty.Display}"/>
+
+        <!--<TextBox Text="{Binding SearchData.SearchStringValue}"/>-->
+        <telerik:RadMaskedTextInput 
+            Value="{Binding SearchData.SearchStringValue}"
+            ToolTip="{Binding SearchData.SelectedSearchProperty.Display}"
+            EmptyContent="{x:Static sharedResources:Resources.PersonSearch_SearchValue_Default_EmptyContent}"
+            SelectionOnFocus="DefaultSelectAll" 
+            MinWidth="250"
+            AcceptsReturn="False"
+            Mask="{Binding SearchData.SelectedSearchProperty.UserDefinedTextPropertyRules.Mask}"
+            maskedInput:MaskedInputExtensions.MinTextLength="{Binding SearchData.SelectedSearchProperty.UserDefinedTextPropertyRules.MinimumLength}"
+            maskedInput:MaskedInputExtensions.MaxTextLength="{Binding SearchData.SelectedSearchProperty.UserDefinedTextPropertyRules.MaximumLength}" />
+
+    </StackPanel>
+
+</UserControl>

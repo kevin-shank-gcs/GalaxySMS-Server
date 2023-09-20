@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Service Contracts\**" />
+    <EmbeddedResource Remove="Service Contracts\**" />
+    <None Remove="Service Contracts\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Private.ServiceModel" Version="4.8.1" />
+    <PackageReference Include="System.ServiceModel.Duplex" Version="4.8.1" />
+    <PackageReference Include="System.ServiceModel.Http" Version="4.8.1" />
+    <PackageReference Include="System.ServiceModel.NetTcp" Version="4.8.1" />
+    <PackageReference Include="System.ServiceModel.Primitives" Version="4.8.1" />
+    <PackageReference Include="System.ServiceModel.Security" Version="4.8.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\GalaxySMS.Business.Entities.NetCore\GalaxySMS.Business.Entities.NetCore.csproj" />
+    <ProjectReference Include="..\GCS.Core.Common.ServiceModel.NetCore\GCS.Core.Common.ServiceModel.Client.NetCore.csproj" />
+  </ItemGroup>
+
+</Project>

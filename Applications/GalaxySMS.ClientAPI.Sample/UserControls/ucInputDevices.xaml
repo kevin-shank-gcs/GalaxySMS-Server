@@ -1,0 +1,101 @@
+﻿<UserControl x:Class="GalaxySMS.ClientAPI.Sample.UserControls.ucInputDevices"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:core="http://www.galaxysys.com/GCS/Core"
+             xmlns:galaxysmscommonenums="clr-namespace:GalaxySMS.Common.Enums;assembly=GalaxySMS.Common"
+             xmlns:local="clr-namespace:GalaxySMS.ClientAPI.Sample.UserControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800"
+             DataContext="{Binding InputDevices, Source={StaticResource Locator}}">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="5"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Button Command="{Binding RefreshInputDevicesCommand}">
+            <Button.Content>
+                <StackPanel>
+                    <TextBlock Text="Refresh"/>
+                </StackPanel>
+            </Button.Content>
+        </Button>
+        <core:ErrorsPanel Grid.Row="1" DataContext="{Binding}" />
+        <ListBox Grid.Row="2" ItemsSource="{Binding InputDevices}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding Name}"/>
+                        <Button Command="{Binding DataContext.UnshuntCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                CommandParameter="{Binding}">
+                            <Button.Content>
+                                <StackPanel>
+                                    <TextBlock Text="Unshunt"/>
+                                </StackPanel>
+                            </Button.Content>
+                        </Button>
+                        <Button Command="{Binding DataContext.ShuntCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                CommandParameter="{Binding}">
+                            <Button.Content>
+                                <StackPanel>
+                                    <TextBlock Text="Shunt"/>
+                                </StackPanel>
+                            </Button.Content>
+                        </Button>
+                        <Button Command="{Binding DataContext.EnableCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                CommandParameter="{Binding}">
+                            <Button.Content>
+                                <StackPanel>
+                                    <TextBlock Text="Return to Service"/>
+                                </StackPanel>
+                            </Button.Content>
+                        </Button>
+                        <Button Command="{Binding DataContext.DisableCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                CommandParameter="{Binding}">
+                            <Button.Content>
+                                <StackPanel>
+                                    <TextBlock Text="Service Mode"/>
+                                </StackPanel>
+                            </Button.Content>
+                        </Button>
+                        <Button Command="{Binding DataContext.RequestStatusCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                CommandParameter="{Binding}">
+                            <Button.Content>
+                                <StackPanel>
+                                    <TextBlock Text="Request Status"/>
+                                </StackPanel>
+                            </Button.Content>
+                        </Button>
+                        <TextBlock Margin="5,0">
+                            <Run Text="ArmedStatus => "/>
+                            <Run Text="{Binding LastStatusReply.ArmedStatus}" FontWeight="SemiBold"/>
+                        </TextBlock>
+                        <TextBlock Margin="5,0">
+                            <Run Text="ArmedManuallyStatus => "/>
+                            <Run Text="{Binding LastStatusReply.ArmedManuallyStatus}" FontWeight="SemiBold"/>
+                        </TextBlock> 
+                        <TextBlock Margin="5,0">
+                            <Run Text="ContactStatus => "/>
+                            <Run Text="{Binding LastStatusReply.ContactStatus}" FontWeight="SemiBold"/>
+                        </TextBlock>                        
+                        <TextBlock Margin="5,0">
+                            <Run Text="MonitoringStatus => "/>
+                            <Run Text="{Binding LastStatusReply.MonitoringStatus}" FontWeight="SemiBold"/>
+                        </TextBlock> 
+                        <TextBlock Margin="5,0">
+                            <Run Text="BoardStatus => "/>
+                            <Run Text="{Binding LastStatusReply.BoardStatus}" FontWeight="SemiBold"/>
+                        </TextBlock> 
+                        <TextBlock Margin="5,0">
+                            <Run Text="IoGroupIsLocal => "/>
+                            <Run Text="{Binding LastStatusReply.IoGroupIsLocal}" FontWeight="SemiBold"/>
+                        </TextBlock> 
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </Grid>
+</UserControl>
+

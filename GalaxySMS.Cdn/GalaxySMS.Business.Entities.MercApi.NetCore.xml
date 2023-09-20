@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>GalaxySMS.Business.Entities.MercApi.NetCore</name>
+    </assembly>
+    <members>
+        <member name="P:GalaxySMS.MercApi.Models.RequestModels.PutRequestBase.ConcurrencyValue">
+             <summary>   Gets or sets the concurrency value. </summary>
+             <remarks>   Used to prevent update conflicts.</remarks>
+             <value> The concurrency value. </value>
+            =================================================================================================
+        </member>
+    </members>
+</doc>

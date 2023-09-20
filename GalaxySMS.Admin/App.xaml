@@ -1,0 +1,265 @@
+﻿<Application x:Class="GalaxySMS.Admin.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="clr-namespace:GalaxySMS.Admin.ViewModels"
+             xmlns:v="clr-namespace:GalaxySMS.Admin.Views"
+             xmlns:clientViews="clr-namespace:GalaxySMS.Client.UI.Views;assembly=GalaxySMS.Client.UI"
+             xmlns:clientViewModels="clr-namespace:GalaxySMS.Client.UI.ViewModels;assembly=GalaxySMS.Client.UI"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <!--http://blogs.msdn.com/b/bethmassi/archive/2008/06/27/displaying-data-validation-messages-in-wpf.aspx-->
+        <!--<Style TargetType="Control" x:Key="myErrorTemplate">
+            <Setter Property="Validation.ErrorTemplate">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <DockPanel LastChildFill="True">
+                            <TextBlock DockPanel.Dock="Right" 
+                        Foreground="Red"
+                        FontSize="11pt" 
+                        FontWeight="Bold">*
+                            </TextBlock>
+                            <Border BorderBrush="Red" BorderThickness="1">
+                                <AdornedElementPlaceholder Name="myControl"/>
+                            </Border>
+                        </DockPanel>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="Validation.HasError" Value="true">
+                    <Setter Property="ToolTip"
+                    Value="{Binding RelativeSource={x:Static RelativeSource.Self},
+                    Path=(Validation.Errors)[0].ErrorContent}"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        <Style TargetType="TextBox" BasedOn="{StaticResource myErrorTemplate}" />
+        <Style TargetType="CheckBox" BasedOn="{StaticResource myErrorTemplate}" />
+        <Style TargetType="ComboBox" BasedOn="{StaticResource myErrorTemplate}" />-->
+
+        <!--<Storyboard x:Key="FlashErrorIcon">
+            <ObjectAnimationUsingKeyFrames BeginTime="00:00:00" 
+                                       Storyboard.TargetProperty="(UIElement.Visibility)">
+                <DiscreteObjectKeyFrame KeyTime="00:00:00" Value="{x:Static Visibility.Hidden}"/>
+                <DiscreteObjectKeyFrame KeyTime="00:00:00.2000000" Value="{x:Static Visibility.Visible}"/>
+                <DiscreteObjectKeyFrame KeyTime="00:00:00.4000000" Value="{x:Static Visibility.Hidden}"/>
+                <DiscreteObjectKeyFrame KeyTime="00:00:00.6000000" Value="{x:Static Visibility.Visible}"/>
+                <DiscreteObjectKeyFrame KeyTime="00:00:00.8000000" Value="{x:Static Visibility.Hidden}"/>
+                <DiscreteObjectKeyFrame KeyTime="00:00:01" Value="{x:Static Visibility.Visible}"/>
+            </ObjectAnimationUsingKeyFrames>
+        </Storyboard>
+        <Style x:Key="myErrorTemplate" TargetType="Control">
+            <Setter Property="Validation.ErrorTemplate">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <DockPanel LastChildFill="True">
+                            <Ellipse DockPanel.Dock="Right" 
+                                 ToolTip="{Binding ElementName=myTextbox, 
+                                     Path=AdornedElement.(Validation.Errors)[0].ErrorContent}"
+                                 Width="15" Height="15" 
+                                 Margin="-25,0,0,0"
+                                 StrokeThickness="1" Fill="Red" >
+                                <Ellipse.Stroke>
+                                    <LinearGradientBrush EndPoint="1,0.5" StartPoint="0,0.5">
+                                        <GradientStop Color="#FFFA0404" Offset="0"/>
+                                        <GradientStop Color="#FFC9C7C7" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </Ellipse.Stroke>
+                                <Ellipse.Triggers>
+                                    <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+                                        <BeginStoryboard Storyboard="{StaticResource FlashErrorIcon}"/>
+                                    </EventTrigger>
+                                </Ellipse.Triggers>
+                            </Ellipse>
+                            <TextBlock DockPanel.Dock="Right" 
+                                ToolTip="{Binding ElementName=myControl, 
+                                     Path=AdornedElement.(Validation.Errors)[0].ErrorContent}"
+                                Foreground="White"
+                                FontSize="11pt" 
+                                Margin="-15,5,0,0" FontWeight="Bold">!
+                                <TextBlock.Triggers>
+                                    <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+                                        <BeginStoryboard Storyboard="{StaticResource FlashErrorIcon}"/>
+                                    </EventTrigger>
+                                </TextBlock.Triggers>
+                            </TextBlock>
+                            <Border BorderBrush="Red" BorderThickness="1">
+                                <AdornedElementPlaceholder Name="myControl"/>
+                            </Border>
+                        </DockPanel>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="Validation.HasError" Value="true">
+                    <Setter Property="ToolTip"
+                        Value="{Binding RelativeSource={x:Static RelativeSource.Self},
+                        Path=(Validation.Errors)[0].ErrorContent}"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        <Style TargetType="TextBox" BasedOn="{StaticResource myErrorTemplate}" />
+        <Style TargetType="CheckBox" BasedOn="{StaticResource myErrorTemplate}" />
+        <Style TargetType="ComboBox" BasedOn="{StaticResource myErrorTemplate}" />-->
+
+        <Style x:Key="MenuLink" TargetType="{x:Type Hyperlink}">
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <!--<Setter Property="Foreground" Value="SteelBlue" />-->
+                    <Setter Property="FontWeight" Value="Bold" />
+                </Trigger>
+            </Style.Triggers>
+            <!--<Setter Property="Foreground" Value="LightSteelBlue" />-->
+            <Setter Property="TextBlock.TextDecorations" Value="{x:Null}" />
+            <!--<Setter Property="TextBlock.FontFamily" Value="Segoe UI Light" />-->
+            <Setter Property="TextBlock.FontSize" Value="26" />
+        </Style>
+        <Style x:Key="MetroTextHeader" TargetType="{x:Type TextBlock}">
+            <!--<Setter Property="Foreground" Value="Navy" />
+            <Setter Property="TextBlock.FontFamily" Value="Segoe UI Light" />-->
+            <Setter Property="TextBlock.FontSize" Value="20" />
+        </Style>
+        <Style x:Key="MetroText" TargetType="{x:Type TextBlock}">
+            <!--<Setter Property="Foreground" Value="Black" />
+            <Setter Property="TextBlock.FontFamily" Value="Segoe UI Light" />-->
+            <Setter Property="TextBlock.FontSize" Value="18" />
+        </Style>
+        <Style x:Key="MetroLink" TargetType="{x:Type TextBlock}">
+            <!--<Setter Property="Foreground" Value="#0000CC" />-->
+            <!--<Setter Property="TextBlock.FontFamily" Value="Segoe UI Light" />-->
+            <Setter Property="TextBlock.FontSize" Value="16" />
+        </Style>
+        <Style x:Key="DataFieldTitle" TargetType="{x:Type TextBlock}">
+            <!--<Setter Property="Foreground" Value="#0000CC" />-->
+            <!--<Setter Property="TextBlock.FontFamily" Value="Segoe UI Light" />-->
+            <Setter Property="TextBlock.FontSize" Value="16" />
+            <Setter Property="TextBlock.Margin" Value="3" />
+        </Style>
+        <Style x:Key="DataFieldTitleBold" TargetType="{x:Type TextBlock}">
+            <!--<Setter Property="Foreground" Value="#0000CC" />-->
+            <!--<Setter Property="TextBlock.FontFamily" Value="Segoe UI Light" />-->
+            <Setter Property="TextBlock.Margin" Value="3" />
+            <Setter Property="TextBlock.FontWeight" Value="SemiBold"/>
+        </Style>
+        <Style x:Key="{x:Type ToolTip}" TargetType="{x:Type ToolTip}">
+            <Setter Property="HasDropShadow" Value="true">
+            </Setter>
+            <Setter Property="HorizontalOffset" Value="50" />
+            <Setter Property="VerticalOffset" Value="-50" />
+            <Setter Property="Placement" Value="Relative"></Setter>
+            <!--<Setter Property="Background" Value="Beige" />
+            <Setter Property="Foreground" Value="Gray" />-->
+            <Setter Property="FontSize" Value="16" />
+            <!--<Setter Property="FontFamily" Value="Segoe UI" />-->
+        </Style>
+
+        <SolidColorBrush Color="#d6d4d4" x:Key="BorderBrush" />
+
+        <Style TargetType="TextBlock" x:Key="TitleStyle">
+            <Setter Property="Foreground" Value="#25a0da" />
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="FontFamily" Value="/Telerik.Windows.QuickStartUITheme;component/Fonts/MyriadPro-Light.otf#Myriad Pro Light" />
+            <Setter Property="Margin" Value="10 5" />
+        </Style>
+
+        <Style TargetType="TextBlock" x:Key="SubTitleStyle">
+            <Setter Property="Foreground" Value="#767676" />
+            <Setter Property="FontSize" Value="11" />
+            <Setter Property="FontFamily" Value="Segoe UI" />
+            <Setter Property="FontWeight" Value="Bold" />
+        </Style>
+
+        <!--<Style x:Key="{x:Type ToolTip}" TargetType="ToolTip">
+            <Setter Property="OverridesDefaultStyle" Value="true" />
+            <Setter Property="HorizontalOffset" Value="0" />
+            <Setter Property="VerticalOffset" Value="-75" />
+            <Setter Property="Background" Value="GhostWhite" />
+            <Setter Property="Foreground" Value="Gray" />
+            <Setter Property="FontSize" Value="12" />
+            <Setter Property="FontFamily" Value="Segoe UI" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ToolTip">
+                        <Canvas Width="200" Height="100">
+                            <Path x:Name="Container"
+                                  Canvas.Left="0"
+                                  Canvas.Top="0"
+                                  Margin="20"
+                                  Data="M 0,40 L15,50 15,80 150,80 150,0 15,0 15,30"
+                                  Fill="{TemplateBinding Background}"
+                                  Stroke="Black">
+                                <Path.Effect>
+                                    <DropShadowEffect BlurRadius="10"
+                                                      Opacity="0.5"
+                                                      ShadowDepth="4" />
+                                </Path.Effect>
+                            </Path>
+                            <TextBlock Canvas.Left="50"
+                                       Canvas.Top="28"
+                                       Width="100"
+                                       Height="65"
+                                       Text="{TemplateBinding Content}"
+                                       TextWrapping="Wrapwithoverflow" />
+                        </Canvas>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>-->
+
+
+        <DataTemplate DataType="{x:Type clientViewModels:SignInOutViewModel}">
+            <clientViews:SignInOutView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:GalaxyPanelCommunicationViewModel}">
+            <v:GalaxyPanelCommunicationView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:GalaxyConnectionDebugViewModel}">
+            <v:GalaxyConnectionDebugView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:MaintainEntitiesViewModel}">
+            <v:MaintainEntitiesView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:EditEntityViewModel}">
+            <v:EditEntityView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:EditUserRequirementsViewModel}">
+            <v:EditUserRequirementsView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:MaintainLanguagesViewModel}">
+            <v:MaintainLanguagesView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:EditLanguageViewModel}">
+            <v:EditLanguageView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:MaintainApplicationsViewModel}">
+            <v:MaintainApplicationsView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:EditApplicationViewModel}">
+            <v:EditApplicationView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:MaintainRolesViewModel}">
+            <v:MaintainRolesView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:EditRoleViewModel}">
+            <v:EditRoleView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:MaintainUsersViewModel}">
+            <v:MaintainUsersView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:EditUserViewModel}">
+            <v:EditUserView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:MaintainPermissionCategoriesViewModel}">
+            <v:MaintainPermissionCategoriesView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:EditPermissionCategoryViewModel}">
+            <v:EditPermissionCategoryView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:MaintainPermissionsViewModel}">
+            <v:MaintainPermissionsView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:EditPermissionViewModel}">
+            <v:EditPermissionView/>
+        </DataTemplate>    
+    </Application.Resources>
+</Application>

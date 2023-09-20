@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects Condition="'$(MSBuildVersion)' == '' Or '$(MSBuildVersion)' &lt; '16.0'">$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>06279596-2a80-4a48-8551-d06e6d101d10</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>GCS.PanelOutputDataHandlers.Shared</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)MercPanelDataRecorderProcessor.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)PanelDataRecorderProcessor.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MercPanelOutputDataMessageDecoder.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)PanelOutputDataMessageDecoder.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MercPanelOutputDataMessageHandler.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)JobMessageHandler.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)PanelOutputDataMessageHandler.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MercPanelOutputDataProcessor.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)PanelOutputDataProcessor.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MercPanelPacketDataRecorder.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)PanelPacketDataRecorder.cs" />
+  </ItemGroup>
+</Project>

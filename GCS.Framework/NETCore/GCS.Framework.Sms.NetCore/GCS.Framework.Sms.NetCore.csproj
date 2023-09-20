@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+  </PropertyGroup>
+
+  <Import Project="..\..\..\Shared\GCS.Framework.Sms.Shared\GCS.Framework.Sms.Shared.projitems" Label="Shared" />
+
+  <ItemGroup>
+    <PackageReference Include="Twilio" Version="5.54.0" />
+  </ItemGroup>
+
+</Project>

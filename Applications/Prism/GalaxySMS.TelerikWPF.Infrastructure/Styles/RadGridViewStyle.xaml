@@ -1,0 +1,53 @@
+﻿<ResourceDictionary
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    xmlns:converters="clr-namespace:GCS.Core.Common.UI.Converters;assembly=GCS.Core.Common.UI"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <!--CONVERTERS-->
+    <converters:ObjectToUpperCaseStringConverter x:Key="ToUpperConverter" />
+    <converters:DateTimeToRecentDaysConverter x:Key="DateTimeToRecentDaysConverter" />
+
+    <Style x:Key="RevenueCellStyle" BasedOn="{StaticResource GridViewCellStyle}" TargetType="telerik:GridViewCell">
+        <Setter Property="HorizontalContentAlignment" Value="Right" />
+        <Setter Property="Padding" Value="0,2,4,0"/>
+    </Style>
+
+    <!--GRID PRIRORITY TEMPLATES-->
+    <DataTemplate x:Key="LowPriorityDataTemplate">
+        <Path Data="M0,0 L9,0 L4.5,7 z" Height="7" Stretch="Fill" Stroke="{StaticResource GreenBrush}" VerticalAlignment="Center" UseLayoutRounding="False" HorizontalAlignment="Center" Width="9"/>
+    </DataTemplate>
+    <DataTemplate x:Key="MediumPriorityDataTemplate">
+        <Rectangle Stroke="{StaticResource MeetBrush}" UseLayoutRounding="True" Height="7" VerticalAlignment="Center" HorizontalAlignment="Center" Width="7" RadiusX="7" RadiusY="7"/>
+    </DataTemplate>
+    <DataTemplate x:Key="HighPriorityDataTemplate">
+        <Path Data="M5,0 L10,10 L0,10 z" HorizontalAlignment="Center" Height="7" Stretch="Fill" Stroke="{StaticResource RedBrush}" UseLayoutRounding="True" VerticalAlignment="Center" Width="9"/>
+    </DataTemplate>
+
+    <Style x:Key="CustomGridViewStyle" TargetType="telerik:RadGridView" BasedOn="{StaticResource RadGridViewStyle}">
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding RelativeSource={x:Static RelativeSource.Self}, Path=Items.Count}" Value="0">
+                <Setter Property="Template" Value="{StaticResource EmptyDataTemplate}" />
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="GridViewImageCellStyle" TargetType="telerik:GridViewCell">
+        <Setter Property="Padding" Value="1"/>
+        <Setter Property="HorizontalContentAlignment" Value="Left" />
+    </Style> 
+
+    <Style x:Key="OpportunitiesGridViewCellStyle" TargetType="telerik:GridViewCell" BasedOn="{StaticResource GridViewCellStyle}">
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding Path=IsOverdue}" Value="True">
+                <DataTrigger.Setters>
+                    <Setter Property="Foreground" Value="{StaticResource ValidationBrush}" />
+                </DataTrigger.Setters>
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>
+
+</ResourceDictionary>

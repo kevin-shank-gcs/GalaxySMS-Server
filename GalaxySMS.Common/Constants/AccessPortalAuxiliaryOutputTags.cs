@@ -1,0 +1,26 @@
+﻿////////////////////////////////////////////////////////////////////////////////////////////////////
+// file:	Constants\AccessPortalAuxiliaryOutputTags.cs
+//
+// summary:	Implements the access portal auxiliary output tags class
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace GalaxySMS.Common.Constants
+{
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+    /// <summary>   The access portal auxiliary output tags. </summary>
+    ///
+    /// <remarks>   Kevin, 1/3/2019. </remarks>
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    public class AccessPortalAuxiliaryOutputTags
+    {
+        /// <summary>   The second relay. </summary>
+        public static readonly string Relay2 = "Relay2";
+    }
+}

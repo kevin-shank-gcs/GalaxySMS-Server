@@ -1,0 +1,525 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.0\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8F7B6F67-2933-4B98-9BC5-56138F7E255B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GalaxySMS.Data</RootNamespace>
+    <AssemblyName>GalaxySMS.Data</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;UsePaging</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;UsePaging</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentValidation, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7de548da2fbae0f0, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentValidation.10.1.0\lib\netstandard2.0\FluentValidation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.5.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="PDSA.Common, Version=5.0.9.0, Culture=neutral, PublicKeyToken=e9345238070b4f6f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\PDSA\PDSA.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="PDSA.DataLayer, Version=5.0.9.0, Culture=neutral, PublicKeyToken=e9345238070b4f6f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\PDSA\PDSA.DataLayer.dll</HintPath>
+    </Reference>
+    <Reference Include="Pipelines.Sockets.Unofficial, Version=1.0.0.0, Culture=neutral, PublicKeyToken=42ea0a778e13fbe2, processorArchitecture=MSIL">
+      <HintPath>..\packages\Pipelines.Sockets.Unofficial.2.2.2\lib\net461\Pipelines.Sockets.Unofficial.dll</HintPath>
+    </Reference>
+    <Reference Include="Portable.Licensing.Prime, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Portable.Licensing.Prime.1.1.0.1\lib\net45\Portable.Licensing.Prime.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="StackExchange.Redis, Version=2.0.0.0, Culture=neutral, PublicKeyToken=c219ff1ca8c2ce46, processorArchitecture=MSIL">
+      <HintPath>..\packages\StackExchange.Redis.2.6.48\lib\net461\StackExchange.Redis.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Diagnostics.PerformanceCounter, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.PerformanceCounter.5.0.0\lib\net461\System.Diagnostics.PerformanceCounter.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression, Version=4.1.2.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Compression.4.3.0\lib\net46\System.IO.Compression.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Pipelines, Version=5.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Pipelines.5.0.1\lib\net461\System.IO.Pipelines.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.3\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Threading.Channels, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Channels.5.0.0\lib\net461\System.Threading.Channels.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Data Repositories\BackgroundJobStateChangeRepository.cs" />
+    <Compile Include="Data Repositories\BackgroundJobDataRepository.cs" />
+    <Compile Include="Data Repositories\BackgroundJobRepository.cs" />
+    <Compile Include="Data Repositories\AccessPortalCommandChoiceRepository.cs" />
+    <Compile Include="Data Repositories\MercScpRepository.cs" />
+    <Compile Include="Data Repositories\MercScpGroupRepository.cs" />
+    <Compile Include="Data Repositories\DtTestRepository.cs" />
+    <Compile Include="Data Repositories\RoleMercScpGroupPermissionRepository.cs" />
+    <Compile Include="Data Repositories\RoleMercScpGroupRepository.cs" />
+    <Compile Include="Data Repositories\RoleRegionPermissionRepository.cs" />
+    <Compile Include="Data Repositories\RoleSitePermissionRepository.cs" />
+    <Compile Include="Data Repositories\RoleRegionRepository.cs" />
+    <Compile Include="Data Repositories\RoleSiteRepository.cs" />
+    <Compile Include="Data Repositories\RoleFiltersRepository.cs" />
+    <Compile Include="Data Repositories\GcsUserEntityRoleRepository.cs" />
+    <Compile Include="Data Repositories\MercSioTypeRepository.cs" />
+    <Compile Include="Data Repositories\MercScpTypeRepository.cs" />
+    <Compile Include="Data Repositories\MercScpIdReportRepository.cs" />
+    <Compile Include="Data Repositories\GalaxyOutputDeviceInputSourceInputOutputGroupRepository.cs" />
+    <Compile Include="Data Repositories\GalaxyOutputDeviceInputSourceAssignmentRepository.cs" />
+    <Compile Include="Data Repositories\GalaxyOutputDeviceInputSourceRepository.cs" />
+    <Compile Include="Data Repositories\GalaxyOutputDeviceRepository.cs" />
+    <Compile Include="Data Repositories\GalaxyOutputInputSourceModeRepository.cs" />
+    <Compile Include="Data Repositories\GalaxyOutputInputSourceTriggerConditionRepository.cs" />
+    <Compile Include="Data Repositories\GalaxyOutputInputSourceRelationshipRepository.cs" />
+    <Compile Include="Data Repositories\GalaxyOutputModeRepository.cs" />
+    <Compile Include="Data Repositories\GcsLargeObjectStorageRepository.cs" />
+    <Compile Include="Data Repositories\GcsSerializedObjectRepository.cs" />
+    <Compile Include="Data Repositories\InputCommandGalaxyPanelModelRepository.cs" />
+    <Compile Include="Data Repositories\InputDeviceNoteRepository.cs" />
+    <Compile Include="Data Repositories\InputDeviceAlertEventTypeRepository.cs" />
+    <Compile Include="Data Repositories\InputDeviceEventPropertiesRepository.cs" />
+    <Compile Include="Data Repositories\GalaxyInputArmingInputOutputGroupRepository.cs" />
+    <Compile Include="Data Repositories\InputDeviceAlertEventRepository.cs" />
+    <Compile Include="Data Repositories\GalaxyInputDeviceTimeScheduleRepository.cs" />
+    <Compile Include="Data Repositories\AccessProfileInputOutputGroupRepository.cs" />
+    <Compile Include="Data Repositories\GalaxyInterfaceBoardSectionCommandAuditRepository.cs" />
+    <Compile Include="Data Repositories\GalaxyInterfaceBoardSectionCommandRepository.cs" />
+    <Compile Include="Data Repositories\CredentialH1030237BitRepository.cs" />
+    <Compile Include="Data Repositories\CredentialSoftwareHouse37BitRepository.cs" />
+    <Compile Include="Data Repositories\GalaxyInterfaceBoardSectionModeCommandRepository.cs" />
+    <Compile Include="Data Repositories\InputDeviceActivityAlarmEventRepository.cs" />
+    <Compile Include="Data Repositories\GalaxyPanelActivityAlarmEventRepository.cs" />
+    <Compile Include="Data Repositories\AccessPortalActivityAlarmEventRepository.cs" />
+    <Compile Include="Data Repositories\InputDeviceAlarmEventAcknowledgmentRepository.cs" />
+    <Compile Include="Data Repositories\GalaxyPanelAlarmEventAcknowledgmentRepository.cs" />
+    <Compile Include="Data Repositories\AccessPortalAlarmEventAcknowledgmentRepository.cs" />
+    <Compile Include="Data Repositories\GalaxyPanelAlertEventRepository.cs" />
+    <Compile Include="Data Repositories\GalaxyPanelAlertEventTypeRepository.cs" />
+    <Compile Include="Data Repositories\GalaxyActivityEventTypeRepository.cs" />
+    <Compile Include="Data Repositories\AccessPortalMultiFactorModeRepository.cs" />
+    <Compile Include="Data Repositories\GalaxyFlashImageRepository.cs" />
+    <Compile Include="Data Repositories\GcsSettingRepository.cs" />
+    <Compile Include="Data Repositories\AcknowledgeAlarmPredefinedResponseRepository.cs" />
+    <Compile Include="Data Repositories\OutputCommandGalaxyOutputModeRepository.cs" />
+    <Compile Include="Data Repositories\InputDeviceSupervisionTypeInterfaceBoardSectionModeRepository.cs" />
+    <Compile Include="Data Repositories\PersonPhotoScaledRepository.cs" />
+    <Compile Include="Data Repositories\UploadedFileRepository.cs" />
+    <Compile Include="Data Repositories\RoleClusterPermissionRepository.cs" />
+    <Compile Include="Data Repositories\RoleInputDevicePermissionRepository.cs" />
+    <Compile Include="Data Repositories\RoleOutputDevicePermissionRepository.cs" />
+    <Compile Include="Data Repositories\RoleInputOutputGroupPermissionRepository.cs" />
+    <Compile Include="Data Repositories\RoleAccessPortalPermissionRepository.cs" />
+    <Compile Include="Data Repositories\RoleClusterRepository.cs" />
+    <Compile Include="Data Repositories\RoleInputDeviceRepository.cs" />
+    <Compile Include="Data Repositories\RoleOutputDeviceRepository.cs" />
+    <Compile Include="Data Repositories\RoleInputOutputGroupRepository.cs" />
+    <Compile Include="Data Repositories\RoleAccessPortalRepository.cs" />
+    <Compile Include="Data Repositories\InputCommandAuditRepository.cs" />
+    <Compile Include="Data Repositories\InputCommandRepository.cs" />
+    <Compile Include="Data Repositories\AccessPortalTypeAccessPortalCommandRepository.cs" />
+    <Compile Include="Data Repositories\BiometricSystemTypeRepository.cs" />
+    <Compile Include="Data Repositories\BadgeSystemTypeRepository.cs" />
+    <Compile Include="Data Repositories\InputOutputGroupCommandAuditRepository.cs" />
+    <Compile Include="Data Repositories\OutputCommandAuditRepository.cs" />
+    <Compile Include="Data Repositories\AccessPortalCommandAuditRepository.cs" />
+    <Compile Include="Data Repositories\InputOutputGroupCommandRepository.cs" />
+    <Compile Include="Data Repositories\OutputCommandRepository.cs" />
+    <Compile Include="Data Repositories\AccessPortalCommandRepository.cs" />
+    <Compile Include="Data Repositories\GcsEntityIdProducerRepository.cs" />
+    <Compile Include="Data Repositories\GcsPermissionTypeRepository.cs" />
+    <Compile Include="Data Repositories\PersonRepository.cs" />
+    <Compile Include="Data Repositories\PersonCredentialRepository.cs" />
+    <Compile Include="Data Repositories\PersonalAccessGroupDynamicAccessGroupRepository.cs" />
+    <Compile Include="Data Repositories\PersonalAccessGroupDynamicAccessGroupTempRepository.cs" />
+    <Compile Include="Data Repositories\PersonalAccessGroupAccessPortalTempRepository.cs" />
+    <Compile Include="Data Repositories\PersonalAccessGroupAccessPortalRepository.cs" />
+    <Compile Include="Data Repositories\PersonCredentialCommandScriptRepository.cs" />
+    <Compile Include="Data Repositories\PersonClusterPermissionRepository.cs" />
+    <Compile Include="Data Repositories\PersonLcdMessageRepository.cs" />
+    <Compile Include="Data Repositories\PersonNoteRepository.cs" />
+    <Compile Include="Data Repositories\PersonPersonalAccessGroupRepository.cs" />
+    <Compile Include="Data Repositories\PersonOtisElevatorRepository.cs" />
+    <Compile Include="Data Repositories\PersonInputOutputGroupRepository.cs" />
+    <Compile Include="Data Repositories\PersonLcdMessageDisplayModeRepository.cs" />
+    <Compile Include="Data Repositories\PersonAddressRepository.cs" />
+    <Compile Include="Data Repositories\PersonEmailAddressRepository.cs" />
+    <Compile Include="Data Repositories\PersonPhoneNumberRepository.cs" />
+    <Compile Include="Data Repositories\PersonPhotoRepository.cs" />
+    <Compile Include="Data Repositories\PersonListPropertyItemRepository.cs" />
+    <Compile Include="Data Repositories\PersonPropertyBagRepository.cs" />
+    <Compile Include="Data Repositories\PersonAccessGroupRepository.cs" />
+    <Compile Include="Data Repositories\PersonTextPropertyRepository.cs" />
+    <Compile Include="Data Repositories\PersonNumberPropertyRepository.cs" />
+    <Compile Include="Data Repositories\PersonDatePropertyRepository.cs" />
+    <Compile Include="Data Repositories\PersonBooleanPropertyRepository.cs" />
+    <Compile Include="Data Repositories\PersonAccessControlPropertiesRepository.cs" />
+    <Compile Include="Data Repositories\PersonEntityMapRepository.cs" />
+    <Compile Include="Data Repositories\CredentialBqt36BitRepository.cs" />
+    <Compile Include="Data Repositories\CredentialXceedId40BitRepository.cs" />
+    <Compile Include="Data Repositories\CredentialPIV75BitRepository.cs" />
+    <Compile Include="Data Repositories\CredentialH1030437BitRepository.cs" />
+    <Compile Include="Data Repositories\CredentialDataRepository.cs" />
+    <Compile Include="Data Repositories\CredentialCypress37BitRepository.cs" />
+    <Compile Include="Data Repositories\CredentialCorporate1K48BitRepository.cs" />
+    <Compile Include="Data Repositories\CredentialCorporate1K35BitRepository.cs" />
+    <Compile Include="Data Repositories\CredentialRepository.cs" />
+    <Compile Include="Data Repositories\CredentialFormatParityRepository.cs" />
+    <Compile Include="Data Repositories\CredentialFormatEntityMapRepository.cs" />
+    <Compile Include="Data Repositories\AccessProfileEntityMapRepository.cs" />
+    <Compile Include="Data Repositories\AccessProfileAccessGroupRepository.cs" />
+    <Compile Include="Data Repositories\AccessPortalElevatorControlTypePanelModelRepository.cs" />
+    <Compile Include="Data Repositories\AccessPortalAreaRepository.cs" />
+    <Compile Include="Data Repositories\AccessPortalAuxiliaryOutputRepository.cs" />
+    <Compile Include="Data Repositories\AccessPortalAlertEventRepository.cs" />
+    <Compile Include="Data Repositories\AccessPortalNoteRepository.cs" />
+    <Compile Include="Data Repositories\AccessPortalTimeScheduleRepository.cs" />
+    <Compile Include="Data Repositories\AccessPortalPropertiesRepository.cs" />
+    <Compile Include="Data Repositories\AccessProfileClusterRepository.cs" />
+    <Compile Include="Data Repositories\AccessProfileRepository.cs" />
+    <Compile Include="Data Repositories\CellCarrierRepository.cs" />
+    <Compile Include="Data Repositories\CommandScriptRepository.cs" />
+    <Compile Include="Data Repositories\CredentialFormatDataFieldRepository.cs" />
+    <Compile Include="Data Repositories\CredentialFormatRepository.cs" />
+    <Compile Include="Data Repositories\Credential26BitStandardRepository.cs" />
+    <Compile Include="Data Repositories\CredentialClusterTourRepository.cs" />
+    <Compile Include="Data Repositories\DepartmentRepository.cs" />
+    <Compile Include="Data Repositories\DateTypeDefaultBehaviorRepository.cs" />
+    <Compile Include="Data Repositories\DateTypeRepository.cs" />
+    <Compile Include="Data Repositories\BadgeTemplateEntityMapRepository.cs" />
+    <Compile Include="Data Repositories\BadgeTemplateRepository.cs" />
+    <Compile Include="Data Repositories\PersonExpirationModeRepository.cs" />
+    <Compile Include="Data Repositories\PersonCredentialRoleRepository.cs" />
+    <Compile Include="Data Repositories\PersonActivationModeRepository.cs" />
+    <Compile Include="Data Repositories\PropertySensitivityLevelRepository.cs" />
+    <Compile Include="Data Repositories\PropertySensitivityLevePermissionRepository.cs" />
+    <Compile Include="Data Repositories\UserDefinedPropertyEntityMapRepository.cs" />
+    <Compile Include="Data Repositories\UserDefinedNumberPropertyRulesRepository.cs" />
+    <Compile Include="Data Repositories\UserDefinedDatePropertyRulesRepository.cs" />
+    <Compile Include="Data Repositories\UserDefinedBooleanPropertyRulesRepository.cs" />
+    <Compile Include="Data Repositories\UserDefinedGuidPropertyRulesRepository.cs" />
+    <Compile Include="Data Repositories\UserDefinedTextPropertyRulesRepository.cs" />
+    <Compile Include="Data Repositories\UserDefinedListPropertyItemRepository.cs" />
+    <Compile Include="Data Repositories\UserDefinedListPropertyRulesRepository.cs" />
+    <Compile Include="Data Repositories\UserDefinedPropertyRepository.cs" />
+    <Compile Include="Data Repositories\UserDefinedPropertyTypeRepository.cs" />
+    <Compile Include="Data Repositories\PersonRecordTypeRepository.cs" />
+    <Compile Include="Data Repositories\PersonActiveStatusTypeRepository.cs" />
+    <Compile Include="Data Repositories\GenderRepository.cs" />
+    <Compile Include="Data Repositories\GalaxyClusterTimePeriodMapRepository.cs" />
+    <Compile Include="Data Repositories\GalaxyTimePeriodRepository.cs" />
+    <Compile Include="Data Repositories\TimeScheduleDayTypeGalaxyTimePeriodRepository.cs" />
+    <Compile Include="Data Repositories\TimeScheduleDayTypeTimePeriodRepository.cs" />
+    <Compile Include="Data Repositories\GalaxyClusterDayTypeMapRepository.cs" />
+    <Compile Include="Data Repositories\GalaxyPanelCommandAuditRepository.cs" />
+    <Compile Include="Data Repositories\ClusterCommandAuditRepository.cs" />
+    <Compile Include="Data Repositories\AccessGroupAccessPortalRepository.cs" />
+    <Compile Include="Data Repositories\InputOutputGroupAssignmentRepository.cs" />
+    <Compile Include="Data Repositories\NoteRepository.cs" />
+    <Compile Include="Data Repositories\PinRequiredModeRepository.cs" />
+    <Compile Include="Data Repositories\AutomaticForgivePassbackFrequencyRepository.cs" />
+    <Compile Include="Data Repositories\AccessPortalAreaTypeRepository.cs" />
+    <Compile Include="Data Repositories\AccessPortalAuxiliaryOutputModeRepository.cs" />
+    <Compile Include="Data Repositories\AccessPortalContactSupervisionTypeRepository.cs" />
+    <Compile Include="Data Repositories\AccessPortalDeferToServerBehaviorRepository.cs" />
+    <Compile Include="Data Repositories\AccessPortalElevatorControlTypeRepository.cs" />
+    <Compile Include="Data Repositories\AccessPortalLockPushButtonBehaviorRepository.cs" />
+    <Compile Include="Data Repositories\AccessPortalNoServerReplyBehaviorRepository.cs" />
+    <Compile Include="Data Repositories\AccessPortalScheduleTypeRepository.cs" />
+    <Compile Include="Data Repositories\AccessPortalAlertEventTypeRepository.cs" />
+    <Compile Include="Data Repositories\LiquidCrystalDisplayEntityMapRepository.cs" />
+    <Compile Include="Data Repositories\LiquidCrystalDisplayGalaxyHardwareAddressRepository.cs" />
+    <Compile Include="Data Repositories\LiquidCrystalDisplayRepository.cs" />
+    <Compile Include="Data Repositories\GalaxyInputDeviceRepository.cs" />
+    <Compile Include="Data Repositories\GalaxyInputDelayTypeRepository.cs" />
+    <Compile Include="Data Repositories\OutputDeviceEntityMapRepository.cs" />
+    <Compile Include="Data Repositories\OutputDeviceGalaxyHardwareAddressRepository.cs" />
+    <Compile Include="Data Repositories\OutputDeviceRepository.cs" />
+    <Compile Include="Data Repositories\InputDeviceSupervisionTypeRepository.cs" />
+    <Compile Include="Data Repositories\GalaxyInputModeRepository.cs" />
+    <Compile Include="Data Repositories\InputDeviceGalaxyHardwareAddressRepository.cs" />
+    <Compile Include="Data Repositories\InputDeviceEntityMapRepository.cs" />
+    <Compile Include="Data Repositories\AccessPortalGalaxyHardwareAddressRepository.cs" />
+    <Compile Include="Data Repositories\InputDeviceRepository.cs" />
+    <Compile Include="Data Repositories\EntityMapPermissionLevelRepository.cs" />
+    <Compile Include="Data Repositories\GalaxyPanelModelInterfaceBoardTypeRepository.cs" />
+    <Compile Include="Data Repositories\GalaxyPanelModelInterfaceBoardSectionModeRepository.cs" />
+    <Compile Include="Data Repositories\GcsResourceStringLanguageRepository.cs" />
+    <Compile Include="Data Repositories\GcsUserSessionRepository.cs" />
+    <Compile Include="Data Repositories\ClusterLedBehaviorModeRepository.cs" />
+    <Compile Include="Data Repositories\GalaxyClusterTimeScheduleMapRepository.cs" />
+    <Compile Include="Data Repositories\DayTypeRepository.cs" />
+    <Compile Include="Data Repositories\DayTypeEntityMapRepository.cs" />
+    <Compile Include="Data Repositories\GalaxyTimePeriodEntityMapRepository.cs" />
+    <Compile Include="Data Repositories\TimeZoneRepository.cs" />
+    <Compile Include="Data Repositories\ClusterInputOutputGroupRepository.cs" />
+    <Compile Include="Data Repositories\CredentialDataLengthRepository.cs" />
+    <Compile Include="Data Repositories\TimeScheduleTypeRepository.cs" />
+    <Compile Include="Data Repositories\GalaxyAreaEntityMapRepository.cs" />
+    <Compile Include="Data Repositories\GalaxyAreaRepository.cs" />
+    <Compile Include="Data Repositories\GalaxyCpuModelInterfaceBoardSectionModeRepository.cs" />
+    <Compile Include="Data Repositories\GalaxyInputOutputGroupEntityMapRepository.cs" />
+    <Compile Include="Data Repositories\GalaxyInputOutputGroupRepository.cs" />
+    <Compile Include="Data Repositories\GalaxyHardwareModuleRepository.cs" />
+    <Compile Include="Data Repositories\GalaxyInterfaceBoardSectionNodeRepository.cs" />
+    <Compile Include="Data Repositories\GalaxyInterfaceBoardSectionRepository.cs" />
+    <Compile Include="Data Repositories\GalaxyInterfaceBoardRepository.cs" />
+    <Compile Include="Data Repositories\GalaxyInterfaceBoardSectionModeRepository.cs" />
+    <Compile Include="Data Repositories\GalaxyHardwareModuleTypeRepository.cs" />
+    <Compile Include="Data Repositories\ClusterCommandRepository.cs" />
+    <Compile Include="Data Repositories\ClusterTypeClusterCommandRepository.cs" />
+    <Compile Include="Data Repositories\GalaxyPanelModelGalaxyPanelCommandRepository.cs" />
+    <Compile Include="Data Repositories\GalaxyPanelCommandRepository.cs" />
+    <Compile Include="Data Repositories\GalaxyPanelRepository.cs" />
+    <Compile Include="Data Repositories\GalaxyInterfaceBoardTypeRepository.cs" />
+    <Compile Include="Data Repositories\GalaxyPanelModelRepository.cs" />
+    <Compile Include="Data Repositories\GalaxyCpuModelRepository.cs" />
+    <Compile Include="Data Repositories\ClusterTypeRepository.cs" />
+    <Compile Include="Data Repositories\GalaxyAccessGroupEntityMapRepository.cs" />
+    <Compile Include="Data Repositories\ClusterEntityMapRepository.cs" />
+    <Compile Include="Data Repositories\GalaxyCpuLoggingControlRepository.cs" />
+    <Compile Include="Data Repositories\GalaxyAccessGroupRepository.cs" />
+    <Compile Include="Data Repositories\GalaxyCpuRepository.cs" />
+    <Compile Include="Data Repositories\ClusterRepository.cs" />
+    <Compile Include="Data Repositories\GcsResourceStringRepository.cs" />
+    <Compile Include="Data Repositories\TimePeriodEntityMapRepository.cs" />
+    <Compile Include="Data Repositories\AssaDayPeriodTimePeriodRepository.cs" />
+    <Compile Include="Data Repositories\TimePeriodRepository.cs" />
+    <Compile Include="Data Repositories\AssaTimeScheduleDayPeriodRepository.cs" />
+    <Compile Include="Data Repositories\AssaDsrEntityMapRepository.cs" />
+    <Compile Include="Data Repositories\AccessPortalEntityMapRepository.cs" />
+    <Compile Include="Data Repositories\AssaAccessPointTypeRepository.cs" />
+    <Compile Include="Data Repositories\AssaAccessPointRepository.cs" />
+    <Compile Include="Data Repositories\AssaDayPeriodEntityMapRepository.cs" />
+    <Compile Include="Data Repositories\TimeScheduleEntityMapRepository.cs" />
+    <Compile Include="Data Repositories\AssaDayPeriodRepository.cs" />
+    <Compile Include="Data Repositories\TimeScheduleRepository.cs" />
+    <Compile Include="Data Repositories\AccessPortalRepository.cs" />
+    <Compile Include="Data Repositories\AccessPortalTypeRepository.cs" />
+    <Compile Include="Data Repositories\BrandRepository.cs" />
+    <Compile Include="Data Repositories\CredentialReaderDataFormatRepository.cs" />
+    <Compile Include="Data Repositories\CredentialReaderTypeFeatureMapRepository.cs" />
+    <Compile Include="Data Repositories\CredentialReaderTypeRepository.cs" />
+    <Compile Include="Data Repositories\FeatureItemRepository.cs" />
+    <Compile Include="Data Repositories\FeatureRepository.cs" />
+    <Compile Include="Data Repositories\RegionEntityMapRepository.cs" />
+    <Compile Include="Data Repositories\SiteEntityMapRepository.cs" />
+    <Compile Include="Data Repositories\AccessPortalTypeFeatureMapRepository.cs" />
+    <Compile Include="Data Repositories\AssaDsrRepository.cs" />
+    <Compile Include="Data Repositories\GcsApplicationAuditRepository.cs" />
+    <Compile Include="Data Repositories\GcsBinaryResourceRepository.cs" />
+    <Compile Include="Data Repositories\GcsApplicationAuditTypeRepository.cs" />
+    <Compile Include="Data Repositories\GcsEntityRepository.cs" />
+    <Compile Include="Data Repositories\GcsApplicationRepository.cs" />
+    <Compile Include="Data Repositories\AddressRepository.cs" />
+    <Compile Include="Data Repositories\StateProvinceRepository.cs" />
+    <Compile Include="Data Repositories\CountryRepository.cs" />
+    <Compile Include="Data Repositories\SiteRepository.cs" />
+    <Compile Include="Data Repositories\RegionRepository.cs" />
+    <Compile Include="Data Repositories\GcsSystemRepository.cs" />
+    <Compile Include="Data Repositories\GcsLanguageRepository.cs" />
+    <Compile Include="Data Repositories\GcsPermissionRepository.cs" />
+    <Compile Include="Data Repositories\GcsPermissionCategoryRepository.cs" />
+    <Compile Include="Data Repositories\GcsRolePermissionRepository.cs" />
+    <Compile Include="Data Repositories\GcsRoleRepository.cs" />
+    <Compile Include="Data Repositories\GcsApplicationSettingRepository.cs" />
+    <Compile Include="Data Repositories\GcsUserEntityRepository.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Data Repositories\GcsUserOldPasswordRepository.cs" />
+    <Compile Include="Data Repositories\GcsUserSettingRepository.cs" />
+    <Compile Include="Data Repositories\GcsUserRequirementsRepository.cs" />
+    <Compile Include="Data Repositories\GcsUserRepository.cs" />
+    <Compile Include="Data Repositories\CredentialToDeleteFromCpuRepository.cs" />
+    <Compile Include="Data Repositories\ActivityHistoryEventRepository.cs" />
+    <Compile Include="Data Repositories\ValidationRepository.cs" />
+    <Compile Include="DataUpdateRepositoryBase.cs" />
+    <Compile Include="Insert Repositories\ActivityEventAcknowledgementInsertRepository.cs" />
+    <Compile Include="Insert Repositories\ActivityEventInsertRepository.cs" />
+    <Compile Include="Insert Repositories\CredentialToLoadToCpuRepository.cs" />
+    <Compile Include="Insert Repositories\OutputDeviceActivityEventInsertRepository.cs" />
+    <Compile Include="Insert Repositories\InputDeviceActivityEventInsertRepository.cs" />
+    <Compile Include="Insert Repositories\GalaxyPanelActivityEventInsertRepository.cs" />
+    <Compile Include="Insert Repositories\AccessPortalActivityEventInsertRepository.cs" />
+    <Compile Include="Insert Repositories\GalaxyRawActivityEventInsertRepository.cs" />
+    <Compile Include="Insert Repositories\PanelDataPacketLogRepository.cs" />
+    <Compile Include="DataInsertRepositoryBase.cs" />
+    <Compile Include="GalaxySMSDatabaseManager.cs" />
+    <Compile Include="GalaxySMSDBContextBase.cs" />
+    <Compile Include="GalaxySMSContext.cs" />
+    <Compile Include="DataRepositoryBase.cs" />
+    <Compile Include="DataRepositoryFactory.cs" />
+    <Compile Include="MagicStrings.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Repositories\DeviceAlertEventSettingsRepository.cs" />
+    <Compile Include="Support\AccessGroupHelpers.cs" />
+    <Compile Include="Support\AuditRecordPDSAFormat.cs" />
+    <Compile Include="Support\InputOutputGroupHelpers.cs" />
+    <Compile Include="Update Repositories\AccessPortalUpdateRepository.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GalaxySMS.Business.Entities\GalaxySMS.Business.Entities.csproj">
+      <Project>{98af1bad-593d-4e08-8d0d-50dcea4e7a95}</Project>
+      <Name>GalaxySMS.Business.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GalaxySMS.Client.Resources\GalaxySMS.Resources.csproj">
+      <Project>{8c7ef8a3-05d8-4f67-baa3-8e7d4c09d1c3}</Project>
+      <Name>GalaxySMS.Resources</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GalaxySMS.Common\GalaxySMS.Common.csproj">
+      <Project>{51d2f1c3-f892-4db1-ac14-52adc98ec05b}</Project>
+      <Name>GalaxySMS.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GalaxySMS.Data.Contracts\GalaxySMS.Data.Contracts.csproj">
+      <Project>{df1387d0-e630-4f05-9b65-622f9dc8a12f}</Project>
+      <Name>GalaxySMS.Data.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GalaxySMS.Data.PDSA\GalaxySMS.Data.PDSA.csproj">
+      <Project>{ae0f1b11-77ee-47e3-8bc8-4f47d99ec755}</Project>
+      <Name>GalaxySMS.Data.PDSA</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GCS.Framework.Caching.StackEx.Redis\GCS.Framework.Caching.StackEx.Redis.csproj">
+      <Project>{1f63bbb1-ca55-4e51-b4ac-fb062fa303c5}</Project>
+      <Name>GCS.Framework.Caching.StackEx.Redis</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GCS.Framework.Licensing.Generator\GCS.Framework.Licensing.Generator.csproj">
+      <Project>{7d0f36ae-2267-468f-9f6f-7b61b6440391}</Project>
+      <Name>GCS.Framework.Licensing.Generator</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GCS.Framework.Licensing\GCS.Framework.Licensing.csproj">
+      <Project>{ef5fb621-a35d-4a0c-932a-ac4fd850acdf}</Project>
+      <Name>GCS.Framework.Licensing</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GCS.Framework\GCS.Core.Common.ServiceModel\GCS.Core.Common.ServiceModel.csproj">
+      <Project>{bb840c9e-afee-406d-8527-cfe934f0a527}</Project>
+      <Name>GCS.Core.Common.ServiceModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GCS.Framework\GCS.Core.Common\GCS.Core.Common.csproj">
+      <Project>{106abc97-2143-4722-a2b0-cbe597d59f91}</Project>
+      <Name>GCS.Core.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GCS.Framework\GCS.Core.Contracts\GCS.Core.Common.Contracts.csproj">
+      <Project>{e3820436-5d37-4ccb-87ca-f50420041668}</Project>
+      <Name>GCS.Core.Common.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GCS.Framework\GCS.Framework.CredentialProcessor\GCS.Framework.CredentialProcessor.csproj">
+      <Project>{18D53DF1-76A3-4039-A5A8-7360F0A01D80}</Project>
+      <Name>GCS.Framework.CredentialProcessor</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GCS.Framework\GCS.Framework.Email\GCS.Framework.Email.csproj">
+      <Project>{ef91da36-bd1f-4777-adbb-09f3df6eef1c}</Project>
+      <Name>GCS.Framework.Email</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GCS.Framework\GCS.Framework.Imaging\GCS.Framework.Imaging.csproj">
+      <Project>{be49a800-0276-49d8-b0cd-cb5af0120643}</Project>
+      <Name>GCS.Framework.Imaging</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GCS.Framework\GCS.Framework.Security\GCS.Framework.Security.csproj">
+      <Project>{4b4444b5-5de7-4fff-b355-f7dc8662f2a1}</Project>
+      <Name>GCS.Framework.Security</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GCS.Framework\GCS.Framework.Sms\GCS.Framework.Sms.csproj">
+      <Project>{c8f2b677-5aa8-4186-ba6c-191be518f3a0}</Project>
+      <Name>GCS.Framework.Sms</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GCS.Framework\GCSUtilities\GCS.Framework.Utilities.csproj">
+      <Project>{0b5b7784-7385-44c7-9cfb-af51f3a430e4}</Project>
+      <Name>GCS.Framework.Utilities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.0\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.0\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.0\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

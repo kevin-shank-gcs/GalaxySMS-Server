@@ -1,0 +1,23 @@
+﻿////////////////////////////////////////////////////////////////////////////////////////////////////
+// file:	Enums\InputOutputGroupCommandActionCode.cs
+//
+// summary:	Implements the input output group command action code class
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace GalaxySMS.Common.Enums
+{
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+    /// <summary>   Values that represent input output group command action codes. </summary>
+    ///
+    /// <remarks>   Kevin, 1/3/2019. </remarks>
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    public enum InputOutputGroupCommandActionCode { None, Arm, Disarm, Shunt, Unshunt, UnlockAccessPortals, LockAccessPortals, EnableAccessPortals, DisableAccessPortals }
+
+}

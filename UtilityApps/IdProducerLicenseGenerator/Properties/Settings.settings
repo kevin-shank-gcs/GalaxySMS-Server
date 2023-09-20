@@ -1,0 +1,21 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="IdProducerLicenseGenerator.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="IdProducerUrl" Type="System.String" Scope="User">
+      <Value Profile="(Default)">http://localhost:81</Value>
+    </Setting>
+    <Setting Name="urlSuffix" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">/idProducer.BadgingServer/MasterService/JsonService_V2/</Value>
+    </Setting>
+    <Setting Name="devUrlSuffix" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">/idProducer.BadgingServer/MasterService/JsonService_V2/</Value>
+    </Setting>
+    <Setting Name="UserName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">master@idproducer.com</Value>
+    </Setting>
+    <Setting Name="Password" Type="System.String" Scope="User">
+      <Value Profile="(Default)">master</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

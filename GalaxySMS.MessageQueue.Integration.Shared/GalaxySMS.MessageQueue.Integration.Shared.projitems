@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects Condition="'$(MSBuildVersion)' == '' Or '$(MSBuildVersion)' &lt; '16.0'">$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>c1b2c08d-9925-43ef-9351-530022084c26</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>GalaxySMS.MessageQueue.Integration.Shared</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)QueueNames.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Workflows\MercPanelMessageDecoderWorkflow.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Workflows\MercPanelMessageReceivedPublisherWorkflow.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Workflows\MercPanelMessageReceivedWorkflow.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Workflows\MercPanelMessageRecorderWorkflow.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Workflows\PanelMessageDecoderWorkflow.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Workflows\PanelMessageReceivedPublisherWorkflow.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Workflows\GalaxyJobWorkflow.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Workflows\PanelMessageReceivedWorkflow.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Workflows\PanelMessageRecorderWorkflow.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Workflows\Spec\IPanelMessageWorkflow.cs" />
+  </ItemGroup>
+</Project>

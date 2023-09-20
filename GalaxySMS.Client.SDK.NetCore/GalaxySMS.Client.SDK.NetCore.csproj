@@ -1,0 +1,42 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>D:\Dev\GalaxySMS\GalaxySMS.Client.SDK.NetCore\GalaxySMS.Client.SDK.NetCore.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>d:\Dev\GalaxySMS\GalaxySMS.Client.SDK.NetCore\GalaxySMS.Client.SDK.NetCore.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Data Classes\**" />
+    <Compile Remove="EventArgs\**" />
+    <Compile Remove="Helpers\**" />
+    <Compile Remove="WcfManagers\**" />
+    <EmbeddedResource Remove="Data Classes\**" />
+    <EmbeddedResource Remove="EventArgs\**" />
+    <EmbeddedResource Remove="Helpers\**" />
+    <EmbeddedResource Remove="WcfManagers\**" />
+    <None Remove="Data Classes\**" />
+    <None Remove="EventArgs\**" />
+    <None Remove="Helpers\**" />
+    <None Remove="WcfManagers\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\GalaxySMS.Business.Entities.NetCore\GalaxySMS.Business.Entities.NetCore.csproj" />
+    <ProjectReference Include="..\GalaxySMS.Client.Proxies.NetCore\GalaxySMS.Client.Proxies.NetCore.csproj" />
+    <ProjectReference Include="..\GalaxySMS.Common.NetCore\GalaxySMS.Common.NetCore.csproj" />
+    <ProjectReference Include="..\GCS.Framework\NETCore\GCS.Core.Common.Contracts.NetCore\GCS.Core.Common.Contracts.NetCore.csproj" />
+    <ProjectReference Include="..\GCS.Framework\NETCore\GCS.Core.Common.NetCore\GCS.Core.Common.NetCore.csproj" />
+    <ProjectReference Include="..\NETCore\GalaxySMS.NetCore.Client.Contracts\GalaxySMS.Client.Contracts.NetCore.csproj" />
+    <ProjectReference Include="..\NETCore\GCS.Core.Common.ServiceModel.NetCore\GCS.Core.Common.ServiceModel.Client.NetCore.csproj" />
+  </ItemGroup>
+
+  <Import Project="..\GalaxySMS.Business.WcfClient.Shared\GalaxySMS.Business.WcfClient.Shared.projitems" Label="Shared" />
+
+</Project>

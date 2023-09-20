@@ -1,0 +1,101 @@
+﻿<UserControl x:Class="GalaxySMS.PersonCredential.UserControls.ucBadgePrintPreview"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:GalaxySMS.PersonCredential.UserControls"
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             xmlns:support="clr-namespace:GalaxySMS.PersonCredential.Support"
+             xmlns:individualProperties="clr-namespace:GalaxySMS.PersonCredential.UserControls.IndividualProperties"
+             xmlns:sharedResources="clr-namespace:GalaxySMS.Resources;assembly=GalaxySMS.Resources"
+             xmlns:core="http://www.galaxysys.com/GCS/Core"
+             xmlns:ui="clr-namespace:GalaxySMS.Client.UI;assembly=GalaxySMS.Client.UI"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <BitmapImage x:Key="PrintBadge" UriSource="/GalaxySMS.Resources;component/Images/Print/access_card-print.png" />
+    </UserControl.Resources>
+    <Grid>
+        <StackPanel>
+            <StackPanel Orientation ="Horizontal" x:Name="previewPanel">
+                <!--<Image x:Name="imgPreview" Margin="5" Source="{Binding DataContext.BadgePreviewData.FrontImage, RelativeSource={RelativeSource AncestorType=core:UserControlViewBase}}">
+                    <Image.Effect>
+                        <DropShadowEffect ShadowDepth="0" Color="#FFA4A4A4" BlurRadius="10"/>
+                    </Image.Effect>
+                </Image>
+                <Image x:Name="imgPreviewBack" Margin="5" Source="{Binding DataContext.BadgePreviewData.BackImage, RelativeSource={RelativeSource AncestorType=core:UserControlViewBase}}">
+                    <Image.Effect>
+                        <DropShadowEffect ShadowDepth="0" Color="#FFA4A4A4" BlurRadius="10"/>
+                    </Image.Effect>
+                </Image>-->
+                <Image x:Name="imgPreview" Margin="5" Source="{Binding BadgePreviewData.FrontImage}">
+                    <Image.Effect>
+                        <DropShadowEffect ShadowDepth="0" Color="#FFA4A4A4" BlurRadius="10"/>
+                    </Image.Effect>
+                </Image>
+                <Image x:Name="imgPreviewBack" Margin="5" Source="{Binding BadgePreviewData.BackImage}">
+                    <Image.Effect>
+                        <DropShadowEffect ShadowDepth="0" Color="#FFA4A4A4" BlurRadius="10"/>
+                    </Image.Effect>
+                </Image>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+            <GroupBox>
+                <GroupBox.Header>
+                    <TextBlock Style="{StaticResource DataEntryControlTitle}" Text="{x:Static sharedResources:Resources.BadgePrintPreview_SelectPrinterHeader_Text}"/>
+                </GroupBox.Header>
+                <StackPanel>
+                <!--<telerik:RadComboBox ItemsSource="{Binding DataContext.Printers, RelativeSource={RelativeSource AncestorType=core:UserControlViewBase}}"
+                                     DisplayMemberPath="FriendlyName" 
+                                     SelectedItem="{Binding DataContext.SelectedPrinter, RelativeSource={RelativeSource AncestorType=core:UserControlViewBase}}" MinWidth="100"/>
+                <ui:ButtonControlBindable Command="{Binding DataContext.SendToPrinterCommand, RelativeSource={RelativeSource AncestorType=core:UserControlViewBase}}"
+                                          CommandParameter="{Binding}"
+                                          ImageHeight="32"
+                                          ImageWidth="32"
+                                          ImageSource="{StaticResource PrintBadge}"
+                                          Text="{x:Static sharedResources:Resources.BadgePrintPreview_SendToPrinter_Text}"
+                                          ToolTip="{x:Static sharedResources:Resources.BadgePrintPreview_SendToPrinter_ToolTip}" />-->
+                <telerik:RadComboBox ItemsSource="{Binding DataContext.Printers, RelativeSource={RelativeSource AncestorType=core:UserControlViewBase}}"
+                                     DisplayMemberPath="FriendlyName" 
+                                     SelectedItem="{Binding SelectedPrinter}" MinWidth="100"/>
+                <ui:ButtonControlBindable Command="{Binding DataContext.SendToPrinterCommand, RelativeSource={RelativeSource AncestorType=core:UserControlViewBase}}"
+                                          CommandParameter="{Binding}"
+                                          ImageHeight="32"
+                                          ImageWidth="32"
+                                          ImageSource="{StaticResource PrintBadge}"
+                                          Text="{x:Static sharedResources:Resources.BadgePrintPreview_SendToPrinter_Text}"
+                                          ToolTip="{x:Static sharedResources:Resources.BadgePrintPreview_SendToPrinter_ToolTip}" />
+
+            </StackPanel>
+            </GroupBox>
+            <GroupBox>
+                <GroupBox.Header>
+                    <TextBlock Style="{StaticResource DataEntryControlTitle}" Text="{x:Static sharedResources:Resources.BadgePrintPreview_SelectPrintDispatcherHeader_Text}"/>
+                </GroupBox.Header>
+            <StackPanel>
+                <!--<telerik:RadComboBox ItemsSource="{Binding DataContext.PrintDispatchers, RelativeSource={RelativeSource AncestorType=core:UserControlViewBase}}" 
+                                     DisplayMemberPath="FriendlyName" SelectedItem="{Binding DataContext.SelectedPrintDispatcher, RelativeSource={RelativeSource AncestorType=core:UserControlViewBase}}" MinWidth="100"/>
+                <ui:ButtonControlBindable Command="{Binding DataContext.SendToPrintDispatcherCommand, RelativeSource={RelativeSource AncestorType=core:UserControlViewBase}}"
+                                          CommandParameter="{Binding}"
+                                          ImageHeight="32"
+                                          ImageWidth="32"
+                                          ImageSource="{StaticResource PrintBadge}"
+                                          Text="{x:Static sharedResources:Resources.BadgePrintPreview_SendToPrintDispatcher_Text}"
+                                          ToolTip="{x:Static sharedResources:Resources.BadgePrintPreview_SendToPrintDispatcher_ToolTip}" />-->
+                <telerik:RadComboBox ItemsSource="{Binding DataContext.PrintDispatchers, RelativeSource={RelativeSource AncestorType=core:UserControlViewBase}}" 
+                                     DisplayMemberPath="FriendlyName" SelectedItem="{Binding SelectedPrintDispatcher}" MinWidth="100"/>
+                <ui:ButtonControlBindable Command="{Binding DataContext.SendToPrintDispatcherCommand, RelativeSource={RelativeSource AncestorType=core:UserControlViewBase}}"
+                                          CommandParameter="{Binding}"
+                                          ImageHeight="32"
+                                          ImageWidth="32"
+                                          ImageSource="{StaticResource PrintBadge}"
+                                          Text="{x:Static sharedResources:Resources.BadgePrintPreview_SendToPrintDispatcher_Text}"
+                                          ToolTip="{x:Static sharedResources:Resources.BadgePrintPreview_SendToPrintDispatcher_ToolTip}" />
+
+
+            </StackPanel>
+                </GroupBox>
+            </StackPanel>
+        </StackPanel>    
+    </Grid>
+</UserControl>

@@ -1,0 +1,1155 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{72766990-9239-4F51-8F63-5A569560E9F5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GalaxySMS.Business.Entities</RootNamespace>
+    <AssemblyName>GalaxySMS.Business.Entities</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>..\..\XmlDocs\GalaxySMS.Business.Entities.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccessGroup.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AccessGroupAccessPortal.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AccessGroupAccessPortalLoadToCpu.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AccessGroupEntityMap.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AccessGroupLoadToCpu.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AccessPortal.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AccessPortalActivityAlarmEvent.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AccessPortalActivityEvent.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AccessPortalAlarmEventAcknowledgment.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AccessPortalAlertEvent.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AccessPortalAlertEventType.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AccessPortalArea.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AccessPortalAreaType.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AccessPortalAuxiliaryOutput.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AccessPortalAuxiliaryOutputMode.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AccessPortalAuxiliaryOutputTriggeringEvent.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AccessPortalCommand.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AccessPortalCommandAudit.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AccessPortalCommandChoice.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AccessPortalContactSupervisionType.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AccessPortalDeferToServerBehavior.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AccessPortalElevatorControlType.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AccessPortalElevatorControlTypePanelModel.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AccessPortalEntityMap.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AccessPortalGalaxyHardwareAddress.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AccessPortalLastUsage.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AccessPortalLoadToCpu.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AccessPortalLockPushButtonBehavior.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AccessPortalMultiFactorMode.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AccessPortalNoServerReplyBehavior.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AccessPortalNote.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AccessPortalProperty.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AccessPortalScheduleType.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AccessPortalTimeSchedule.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AccessPortalType.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AccessPortalTypeAccessPortalCommand.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AccessPortalTypeFeatureMap.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AccessProfile.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AccessProfileAccessGroup.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AccessProfileCluster.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AccessProfileEntityMap.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AccessProfileInputOutputGroup.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AcknowledgeAlarmPredefinedResponse.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ActivityEvent.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ActivityEventAcknowledgement.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Address.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Area.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AreaEntityMap.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AssaAccessPoint.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AssaAccessPointType.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AssaDayPeriod.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AssaDayPeriodEntityMap.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AssaDayPeriodTimePeriod.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AssaDsr.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AssaDsrEntityMap.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AssaDsrTimeScheduleMap.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AssaTimeScheduleDayPeriod.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AutomaticForgivePassbackFrequency.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BackgroundJob.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BackgroundJobData.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BackgroundJobStateChange.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BadgeSystemType.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BadgeTemplate.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BadgeTemplateEntityMap.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BiometricSystemType.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Brand.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CellCarrier.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Cluster.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ClusterCommand.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ClusterCommandAudit.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ClusterEntityMap.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ClusterInputOutputGroup.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ClusterLedBehaviorMode.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ClusterType.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ClusterTypeClusterCommand.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CommandScript.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Country.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Credential.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Credential26BitStandard.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CredentialBqt36Bit.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CredentialClusterTour.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CredentialCorporate1K35Bit.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CredentialCorporate1K48Bit.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CredentialCypress37Bit.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CredentialData.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CredentialDataLength.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CredentialFormat.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CredentialFormatDataField.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CredentialFormatEntity.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CredentialFormatEntityMap.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CredentialFormatParity.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CredentialH1030237Bit.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CredentialH1030437Bit.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CredentialPIV75Bit.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CredentialReaderDataFormat.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CredentialReaderType.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CredentialReaderTypeFeatureMap.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CredentialSoftwareHouse37Bit.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CredentialToDeleteFromCpu.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CredentialToLoadToCpu.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CredentialXceedId40Bit.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Credential_PanelLoadData.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DateType.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DateTypeDefaultBehavior.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DateTypeEntityMap.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DayType.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DayTypeEntityMap.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DayTypeTimePeriod.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Department.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DTOs\InitializeSystemDatabaseRequest.cs" />
+    <Compile Include="DTOs\GetParameters.cs" />
+    <Compile Include="DTOs\ResponseBase.cs" />
+    <Compile Include="DTOs\DeleteParameters.cs" />
+    <Compile Include="DTOs\SaveParameters.cs" />
+    <Compile Include="DTOs\UserData.cs" />
+    <Compile Include="DTOs\UserSessionSettings.cs" />
+    <Compile Include="DTOs\WindowsUserIdentity.cs" />
+    <Compile Include="DTOs\ComputerInformation.cs" />
+    <Compile Include="DTOs\UserPermission.cs" />
+    <Compile Include="DTOs\UserEntity.cs" />
+    <Compile Include="DTOs\UserApplication.cs" />
+    <Compile Include="DTOs\UserRole.cs" />
+    <Compile Include="DTOs\UserSessionToken.cs" />
+    <Compile Include="DTOs\UserSignInRequest.cs" />
+    <Compile Include="DTOs\UserSignInResult.cs" />
+    <Compile Include="EntityMapPermissionLevel.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ExtendedClasses\Cluster.cs" />
+    <Compile Include="ExtendedClasses\GalaxyCpu.cs" />
+    <Compile Include="ExtendedClasses\GalaxyCpuLoggingControl.cs" />
+    <Compile Include="ExtendedClasses\GalaxyInterfaceBoard.cs" />
+    <Compile Include="ExtendedClasses\GalaxyInterfaceBoardSection.cs" />
+    <Compile Include="ExtendedClasses\GalaxyInterfaceBoardSectionNode.cs" />
+    <Compile Include="ExtendedClasses\GalaxyPanel.cs" />
+    <Compile Include="ExtendedClasses\gcsApplication.cs" />
+    <Compile Include="ExtendedClasses\gcsApplicationAudit.cs" />
+    <Compile Include="ExtendedClasses\gcsApplicationAuditType.cs" />
+    <Compile Include="ExtendedClasses\gcsApplicationSetting.cs" />
+    <Compile Include="ExtendedClasses\gcsAudit.cs" />
+    <Compile Include="ExtendedClasses\gcsAuditXml.cs" />
+    <Compile Include="ExtendedClasses\gcsBinaryResource.cs" />
+    <Compile Include="ExtendedClasses\gcsEntityApplication.cs" />
+    <Compile Include="ExtendedClasses\gcsEntityApplicationRole.cs" />
+    <Compile Include="ExtendedClasses\gcsEnumNamespace.cs" />
+    <Compile Include="ExtendedClasses\gcsEnumValue.cs" />
+    <Compile Include="ExtendedClasses\gcsImageType.cs" />
+    <Compile Include="ExtendedClasses\gcsLanguage.cs" />
+    <Compile Include="ExtendedClasses\gcsLog.cs" />
+    <Compile Include="ExtendedClasses\gcsMenuItem.cs" />
+    <Compile Include="ExtendedClasses\gcsPermission.cs" />
+    <Compile Include="ExtendedClasses\gcsPermissionCategory.cs" />
+    <Compile Include="ExtendedClasses\gcsReferenceTable.cs" />
+    <Compile Include="ExtendedClasses\gcsResourceImage.cs" />
+    <Compile Include="ExtendedClasses\gcsResourceString.cs" />
+    <Compile Include="ExtendedClasses\gcsResourceStringLanguage.cs" />
+    <Compile Include="ExtendedClasses\gcsRole.cs" />
+    <Compile Include="ExtendedClasses\gcsRolePermission.cs" />
+    <Compile Include="ExtendedClasses\gcsSecurityControl.cs" />
+    <Compile Include="ExtendedClasses\gcsSerializedObject.cs" />
+    <Compile Include="ExtendedClasses\gcsSetting.cs" />
+    <Compile Include="ExtendedClasses\gcsSystem.cs" />
+    <Compile Include="ExtendedClasses\gcsUserEntity.cs" />
+    <Compile Include="ExtendedClasses\gcsEntity.cs" />
+    <Compile Include="ExtendedClasses\gcsUser.cs" />
+    <Compile Include="ExtendedClasses\gcsUserEntityApplicationRole.cs" />
+    <Compile Include="ExtendedClasses\gcsUserOldPassword.cs" />
+    <Compile Include="ExtendedClasses\gcsUserRequirement.cs" />
+    <Compile Include="ExtendedClasses\gcsUserSecurityQuestion.cs" />
+    <Compile Include="ExtendedClasses\gcsUserSetting.cs" />
+    <Compile Include="ExtendedClasses\InterfaceBoardSectionMode.cs" />
+    <Compile Include="ExtendedClasses\InterfaceBoardType.cs" />
+    <Compile Include="ExtendedClasses\PanelDataPacketLog.cs" />
+    <Compile Include="ExtendedClasses\Region.cs" />
+    <Compile Include="ExtendedClasses\Site.cs" />
+    <Compile Include="Feature.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FeatureItem.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GalaxyActivityEventType.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GalaxyClusterDayTypeMap.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GalaxyClusterTimeScheduleMap.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GalaxyCpu.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GalaxyCpuConnection.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GalaxyCpuLoggingControl.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GalaxyCpuModel.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GalaxyCpuModelInterfaceBoardSectionMode.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GalaxyFlashImage.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GalaxyHardwareModule.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GalaxyHardwareModuleType.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GalaxyInputArmingInputOutputGroup.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GalaxyInputDelayType.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GalaxyInputDevice.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GalaxyInputDeviceTimeSchedule.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GalaxyInputMode.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GalaxyInterfaceBoard.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GalaxyInterfaceBoardSection.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GalaxyInterfaceBoardSectionCommand.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GalaxyInterfaceBoardSectionCommandAudit.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GalaxyInterfaceBoardSectionModeCommand.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GalaxyInterfaceBoardSectionNode.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GalaxyOutputDevice.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GalaxyOutputDeviceInputSource.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GalaxyOutputDeviceInputSourceAssignment.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GalaxyOutputDeviceInputSourceInputOutputGroup.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GalaxyOutputInputSourceMode.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GalaxyOutputInputSourceRelationship.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GalaxyOutputInputSourceTriggerCondition.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GalaxyOutputMode.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GalaxyPanel.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GalaxyPanelActivityAlarmEvent.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GalaxyPanelActivityEvent.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GalaxyPanelAlarmEventAcknowledgment.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GalaxyPanelAlertEvent.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GalaxyPanelAlertEventType.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GalaxyPanelCommand.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GalaxyPanelCommandAudit.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GalaxyPanelModel.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GalaxyPanelModelGalaxyPanelCommand.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GalaxyPanelModelInterfaceBoardSectionMode.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GalaxyPanelModelInterfaceBoardType.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GalaxyPanelSite.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GalaxyRawActivityEvent.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GalaxySMSModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GalaxyTimePeriod.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GalaxyTimePeriodEntityMap.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="gcsApplication.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="gcsApplicationAudit.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="gcsApplicationAuditType.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="gcsApplicationSetting.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="gcsAudit.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="gcsAuditXml.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="gcsBinaryResource.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="gcsEntity.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="gcsEntityApplication.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="gcsEntityApplicationRole.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="gcsEntityCount.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="gcsEntityIdProducer.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="gcsEnumNamespace.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="gcsEnumValue.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="gcsImageType.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="gcsLanguage.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="gcsLargeObjectStorage.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="gcsLog.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="gcsMenuItem.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="gcsPermission.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="gcsPermissionCategory.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="gcsPermissionType.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="gcsReferenceTable.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="gcsResourceImage.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="gcsResourceString.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="gcsResourceStringLanguage.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="gcsRole.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="gcsRolePermission.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="gcsSecurityControl.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="gcsSerializedObject.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="gcsSetting.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="gcsSystem.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="gcsUser.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="gcsUserEntity.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="gcsUserEntityApplicationRole.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="gcsUserEntityRole.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="gcsUserGroup.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="gcsUserGroupEntity.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="gcsUserGroupEntityRole.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="gcsUserOldPassword.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="gcsUserRequirement.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="gcsUserSecurityQuestion.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="gcsUserSession.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="gcsUserSetting.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="gcsUserUserGroup.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Gender.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IHasBinaryResource.cs" />
+    <Compile Include="InputCommand.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="InputCommandAudit.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="InputCommandGalaxyPanelModel.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="InputDevice.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="InputDeviceActivityAlarmEvent.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="InputDeviceActivityEvent.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="InputDeviceAlarmEventAcknowledgment.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="InputDeviceAlertEvent.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="InputDeviceAlertEventType.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="InputDeviceEntityMap.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="InputDeviceEventProperty.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="InputDeviceGalaxyHardwareAddress.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="InputDeviceLoadToCpu.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="InputDeviceNote.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="InputDeviceSupervisionType.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="InputDeviceSupervisionTypeInterfaceBoardSectionMode.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="InputOutputGroup.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="InputOutputGroupAssignment.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="InputOutputGroupAssignment1.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="InputOutputGroupCommand.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="InputOutputGroupCommandAudit.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="InputOutputGroupEntityMap.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="InterfaceBoardSectionMode.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="InterfaceBoardType.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LiquidCrystalDisplay.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LiquidCrystalDisplayEntityMap.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LiquidCrystalDisplayGalaxyHardwareAddress.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MercScp.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MercScpGroup.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MercScpIdReport.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MercScpIdReport1.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MercScpStatu.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MercScpType.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MercScpType1.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MercSioType.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MercSioType1.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Note.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OutputCommand.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OutputCommandAudit.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OutputCommandGalaxyOutputMode.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OutputDevice.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OutputDeviceActivityEvent.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OutputDeviceEntityMap.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OutputDeviceGalaxyHardwareAddress.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OutputDeviceLoadToCpu.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OutputDeviceNote.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PanelDataPacketLog.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Person.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PersonAccessControlProperty.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PersonAccessGroup.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PersonAccessProfile.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PersonActivationMode.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PersonActiveStatusType.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PersonAddress.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PersonalAccessGroupAccessPortal.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PersonalAccessGroupAccessPortalTemp.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PersonalAccessGroupDynamicAccessGroup.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PersonalAccessGroupDynamicAccessGroupTemp.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PersonalAccessGroup_PanelLoadData.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PersonBooleanProperty.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PersonClusterPermission.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PersonCredential.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PersonCredentialCommandScript.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PersonCredentialRole.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PersonDateProperty.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PersonEmailAddress.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PersonEntityMap.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PersonExpirationMode.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PersonInputOutputGroup.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PersonLastUsage.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PersonLcdMessage.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PersonLcdMessageDisplayMode.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PersonListPropertyItem.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PersonNote.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PersonNumberProperty.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PersonOtisElevator.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PersonPersonalAccessGroup.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PersonPhoneNumber.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PersonPhoto.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PersonPhotoScaled.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PersonPropertyBag.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PersonRecordType.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PersonTextProperty.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PinRequiredMode.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PropertySensitivityLevel.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PropertySensitivityLevelPermission.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Region.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RegionEntityMap.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RoleAccessPortal.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RoleAccessPortalPermission.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RoleCluster.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RoleClusterPermission.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RoleFilter.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RoleInputDevice.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RoleInputDevicePermission.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RoleInputOutputGroup.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RoleInputOutputGroupPermission.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RoleMercScpGroup.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RoleMercScpGroupPermission.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RoleOutputDevice.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RoleOutputDevicePermission.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RoleRegion.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RoleRegionPermission.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RoleSite.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RoleSitePermission.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SecurityHeader.cs" />
+    <Compile Include="Account.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Site.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SiteEntityMap.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StateProvince.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TimePeriod.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TimePeriodEntityMap.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TimeSchedule.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TimeScheduleDayTypeGalaxyTimePeriod.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TimeScheduleDayTypeTimePeriod.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TimeScheduleEntityMap.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TimeScheduleType.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TimeZone.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UploadedFile.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserDefinedBooleanPropertyRule.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserDefinedDatePropertyRule.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserDefinedGuidPropertyRule.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserDefinedListPropertyItem.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserDefinedListPropertyRule.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserDefinedNumberPropertyRule.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserDefinedProperty.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserDefinedPropertyEntityMap.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserDefinedPropertyPermission.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserDefinedPropertyType.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserDefinedTextPropertyRule.cs">
+      <DependentUpon>GalaxySMSModel.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GCS.Framework\GCS.Core.Common\GCS.Core.Common.csproj">
+      <Project>{106abc97-2143-4722-a2b0-cbe597d59f91}</Project>
+      <Name>GCS.Core.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GCS.Framework\GCS.Core.Contracts\GCS.Core.Common.Contracts.csproj">
+      <Project>{e3820436-5d37-4ccb-87ca-f50420041668}</Project>
+      <Name>GCS.Core.Common.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GCS.Framework\GCS.Framework.Imaging\GCS.Framework.Imaging.csproj">
+      <Project>{be49a800-0276-49d8-b0cd-cb5af0120643}</Project>
+      <Name>GCS.Framework.Imaging</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GCS.Framework\GCS.Framework.Security\GCS.Framework.Security.csproj">
+      <Project>{4b4444b5-5de7-4fff-b355-f7dc8662f2a1}</Project>
+      <Name>GCS.Framework.Security</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <None Include="GalaxySMSModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>GalaxySMSModel.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

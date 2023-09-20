@@ -1,0 +1,113 @@
+﻿<telerik:RadRibbonWindow x:Class="GalaxySMS.MonitorManager.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:core="http://www.galaxysys.com/GCS/Core"
+        xmlns:local="clr-namespace:GalaxySMS.MonitorManager"
+        xmlns:prism="http://prismlibrary.com/"
+        xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+        xmlns:converters="clr-namespace:GCS.Core.Common.UI.Converters;assembly=GCS.Core.Common.UI"
+        xmlns:prismInfra="clr-namespace:GalaxySMS.Prism.Infrastructure;assembly=GalaxySMS.Prism.Infrastructure"
+        xmlns:telerikConverters="clr-namespace:GalaxySMS.TelerikWPF.Infrastructure.Converters;assembly=GalaxySMS.TelerikWPF.Infrastructure"
+        xmlns:theme="clr-namespace:GalaxySMS.TelerikWPF.Infrastructure.Appearance;assembly=GalaxySMS.TelerikWPF.Infrastructure"
+        xmlns:telerikPrism="clr-namespace:GalaxySMS.TelerikWPF.Infrastructure.Prism;assembly=GalaxySMS.TelerikWPF.Infrastructure"
+        xmlns:resx="clr-namespace:GalaxySMS.MonitorManager.Properties"
+        xmlns:views="clr-namespace:GalaxySMS.MonitorManager.Views"
+        MinWidth="1024" MinHeight="720"
+        WindowState="Maximized"
+        prism:ViewModelLocator.AutoWireViewModel="True"
+        mc:Ignorable="d"
+        Title="{Binding Title}" Closing="Window_Closing" FlowDirection="{Binding FlowDirection}">
+    <!--<Grid>
+        <DockPanel LastChildFill="True">
+            <StackPanel>
+                <Button Content="Sign In" Command="{Binding NavigateCommand}" CommandParameter="SignInOutView" />
+            </StackPanel>
+            <ContentControl prism:RegionManager.RegionName="ContentRegion" Margin="1,3,3,3" />
+        </DockPanel>
+    </Grid>-->
+    <telerik:RadRibbonWindow.Resources>
+        <converters:WidthToVisibilityConverter x:Key="WidthToVisibilityConverter" />
+    </telerik:RadRibbonWindow.Resources>
+    <!--<telerik:RadBusyIndicator x:Name="busyIndicator" 
+								  IsIndeterminate="{Binding BusyIndicatorIsIndeterminate}" 
+								  IsBusy="{Binding IsBusy}" DisplayAfter="0:0:0.2"
+								  telerik:AnimationManager.IsAnimationEnabled="True">-->
+    <Grid x:Name="RootGrid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <views:RibbonViewContainer></views:RibbonViewContainer>
+        <telerik:RadDocking Grid.Row="1" x:Name="radDocking" 
+                     prism:RegionManager.RegionName="{x:Static prismInfra:RegionNames.ContentRegion}"
+                            PreviewClose="RadDocking_PreviewClose"
+                            Close="RadDocking_Close">
+            <telerik:RadDocking.DockingPanesFactory>
+                <telerikPrism:CustomDockingPanesFactory />
+            </telerik:RadDocking.DockingPanesFactory>
+            <!--<telerik:RadDocking.DocumentHost>
+                <telerik:RadSplitContainer InitialPosition="DockedTop">
+                    <telerik:RadPaneGroup>
+                        <telerik:RadPane Header="Tab" CanUserClose="False">
+                            <ContentControl prism:RegionManager.RegionName="{x:Static prismInfra:RegionNames.ContentRegion}" x:Name="ContentRegionPlaceholder" 
+                        Margin="20 0 20 20"
+                        HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" 
+                        IsTabStop="False" />
+                        </telerik:RadPane>
+                    </telerik:RadPaneGroup>
+                </telerik:RadSplitContainer>
+            </telerik:RadDocking.DocumentHost>-->
+
+            <!--<telerik:RadDocking Grid.Row="1" x:Name="radDocking">
+            <telerik:RadDocking.DocumentHost>
+                <telerik:RadSplitContainer>
+                    <telerik:RadPaneGroup>
+                        <telerik:RadPane Header="Tab" CanUserClose="False"  >
+                            <ContentControl Grid.Row="1" prism:RegionManager.RegionName="{x:Static prismInfra:RegionNames.ContentRegion}" x:Name="ContentRegionPlaceholder" 
+                        Margin="20 0 20 20"
+                        HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" 
+                        IsTabStop="False" />
+                        </telerik:RadPane>
+                        <telerik:RadPane />
+                    </telerik:RadPaneGroup>
+                </telerik:RadSplitContainer>
+            </telerik:RadDocking.DocumentHost>-->
+
+            <!--<telerik:RadSplitContainer>
+                <telerik:RadPaneGroup>
+                    <telerik:RadPane Header="{x:Static resx:Resources.RibbonTabGroup_Theme}" CanFloat="False" CanUserClose="False" CanDockInDocumentHost="False" >
+                        <ContentControl prism:RegionManager.RegionName="{x:Static prismInfra:RegionNames.LeftSidebarRegion}" x:Name="LeftSideBarRegionPlaceholder" 
+                        Margin="20 0 20 20"
+                        HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" 
+                        IsTabStop="False" />
+
+                    </telerik:RadPane>
+                </telerik:RadPaneGroup>
+            </telerik:RadSplitContainer>-->
+            <telerik:RadSplitContainer>
+                <telerik:RadPaneGroup x:Name="PaneGroup1">
+                    <telerik:RadPane Header="Tabbed Pane 1"/>
+                    <telerik:RadPane Header="Tabbed Pane 2"/>
+                    <telerik:RadPane Header="Tabbed Pane 3" x:Name="TabbedPane3" CanUserClose="False"/>
+                </telerik:RadPaneGroup>
+            </telerik:RadSplitContainer>
+        </telerik:RadDocking>
+
+        <DockPanel Grid.Row="2" Dock="Bottom">
+            <StatusBar>
+                <StatusBarItem Content="{Binding CustomerName}" VerticalAlignment="Center" />
+                <Separator />
+                <StatusBarItem>
+                    <StatusBarItem VerticalAlignment="Center">
+                        <core:MessagesPanel DataContext="{Binding}" />
+                    </StatusBarItem>
+                </StatusBarItem>
+            </StatusBar>
+        </DockPanel>
+    </Grid>
+    <!--</telerik:RadBusyIndicator>-->
+</telerik:RadRibbonWindow>

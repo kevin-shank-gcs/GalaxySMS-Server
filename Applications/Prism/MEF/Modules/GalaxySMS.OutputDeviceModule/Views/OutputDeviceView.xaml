@@ -1,0 +1,344 @@
+﻿<core:UserControlViewBase x:Class="GalaxySMS.OutputDevice.Views.OutputDeviceView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:prism="http://prismlibrary.com/"
+             xmlns:core="http://www.galaxysys.com/GCS/Core"
+             xmlns:local="clr-namespace:GalaxySMS.OutputDevice.Views"
+             xmlns:resx="clr-namespace:GalaxySMS.OutputDevice.Properties"
+             xmlns:sharedResources="clr-namespace:GalaxySMS.Resources;assembly=GalaxySMS.Resources"
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             xmlns:converters="clr-namespace:GCS.Core.Common.UI.Converters;assembly=GCS.Core.Common.UI"
+             xmlns:animations="clr-namespace:GCS.Core.Common.UI.Animations;assembly=GCS.Core.Common.UI"
+             xmlns:ui="clr-namespace:GalaxySMS.Client.UI;assembly=GalaxySMS.Client.UI"
+                          xmlns:entities="clr-namespace:GalaxySMS.Client.Entities;assembly=GalaxySMS.Client.Entities"
+                          xmlns:system="clr-namespace:System;assembly=mscorlib"
+                          prism:ViewModelLocator.AutoWireViewModel="True" FlowDirection="{Binding FlowDirection}"
+             mc:Ignorable="d">
+    <core:UserControlViewBase.Resources>
+        <converters:NullToVisibilityConverter x:Key="nullToVisibilityConverter" />
+        <converters:NotNullToVisibilityConverter x:Key="notNullToVisibilityConverter" />
+        <converters:BooleanToVisibilityConverter x:Key="boolToVisibility" />
+        <system:Double x:Key="commandButtonImageWidth">24</system:Double>
+        <system:Double x:Key="commandButtonImageHeight">24</system:Double>
+        <ui:DeviceIdCommandIdMultiValueConverter x:Key="deviceIdCommandIdMVConverter"/>
+        <Style x:Key="MenuItemStyle" TargetType="telerik:RadMenuItem" BasedOn="{StaticResource RadMenuItemStyle}">
+            <Setter Property="Header" Value="{Binding Text}"/>
+            <Setter Property="ToolTip" Value="{Binding ToolTip}"/>
+            <Setter Property="ItemsSource" Value="{Binding SubItems}"/>
+            <Setter Property="Command" Value="{Binding DataContext.SendOutputDeviceCommand, RelativeSource={RelativeSource AncestorType=core:UserControlViewBase}}" />
+            <Setter Property="CommandParameter" Value="{Binding}" />
+            <Setter Property="Icon" Value="{Binding IconUrl}"/>
+            <!--<Setter Property="IconColumnWidth" Value="{Binding IconColumnWidth}"/>-->
+            <Setter Property="IconColumnWidth" Value="NaN"/>
+            <Setter Property="IconTemplate">
+                <Setter.Value>
+                    <DataTemplate>
+                        <Image Source="{Binding}" Stretch="None" />
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+
+        <Style x:Key="MenuCustomIconColumnWidthStyle" TargetType="telerik:RadMenuItem" BasedOn="{StaticResource RadMenuItemStyle}">
+            <Setter Property="Header" Value="{Binding Text}"/>
+            <Setter Property="ToolTip" Value="{Binding ToolTip}"/>
+            <Setter Property="ItemsSource" Value="{Binding SubItems}"/>
+            <Setter Property="Command" Value="{Binding DataContext.SendOutputDeviceCommand, RelativeSource={RelativeSource AncestorType=core:UserControlViewBase}}" />
+            <Setter Property="CommandParameter" Value="{Binding}" />
+            <Setter Property="Icon" Value="{Binding IconUrl}"/>
+            <Setter Property="IconColumnWidth" Value="NaN"/>
+            <Setter Property="IconTemplate">
+                <Setter.Value>
+                    <DataTemplate>
+                        <Image Source="{Binding}" Stretch="None" />
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </core:UserControlViewBase.Resources>
+
+    <telerik:RadBusyIndicator
+        BusyContent="{Binding BusyContent}"
+        DisplayAfter="0"
+        IsBusy="{Binding IsBusy}"
+        IsIndeterminate="True">
+        <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+            <Grid>
+                <Grid Grid.Row="0" Visibility="{Binding CurrentItemViewModel, Converter={StaticResource notNullToVisibilityConverter}}" 
+              animations:VisibilityAnimation.AnimationType="Fade" >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <StackPanel Grid.Row="0" Orientation="Vertical">
+                        <core:ErrorsPanel DataContext="{Binding}" />
+                        <StackPanel Orientation="Horizontal">
+                            <ui:RefreshButtonControlBindable
+                                Command="{Binding RefreshCommand}"
+                                ImageHeight="32"
+                                ImageWidth="32"
+                                IsVisible="{Binding IsRefreshControlVisible}"
+                                Text="{x:Static sharedResources:Resources.RefreshOutputDevices_Text}"
+                                ToolTip="{x:Static sharedResources:Resources.RefreshOutputDevices_ToolTip}" />
+
+                            <ui:RefreshButtonControlBindable
+                                Command="{Binding RefreshInactiveCommand}"
+                                ImageHeight="32"
+                                ImageWidth="32"
+                                IsVisible="{Binding IsRefreshControlVisible}"
+                                Text="{x:Static sharedResources:Resources.RefreshInactiveOutputDevices_Text}"
+                                ToolTip="{x:Static sharedResources:Resources.RefreshInactiveOutputDevices_ToolTip}" />
+                        </StackPanel>
+
+                    </StackPanel>
+
+                    <telerik:RadTabControl Grid.Row="1">
+                        <telerik:RadTabItem>
+                            <telerik:RadTabItem.Header>
+                                <Grid>
+                                    <Grid.ToolTip>
+                                        <TextBlock  Text="{x:Static sharedResources:Resources.OutputDeviceView_ActiveDevicesToolTip}"/>
+                                    </Grid.ToolTip>
+                                    <TextBlock Style="{StaticResource NormalTextStyle}" Text="{x:Static sharedResources:Resources.OutputDeviceView_ActiveDevicesTabHeaderText}"/>
+                                </Grid>
+                            </telerik:RadTabItem.Header>
+                            <StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <StackPanel Orientation="Vertical" Margin="5,0,0,0">
+                                        <ui:TotalRecordCountControl/>
+                                        <telerik:RadDataPager PageSize="{Binding GridPageSize.Key}"
+                                                  Source="{Binding Items, ElementName=radGridViewOutputDevices}"
+                                                  IsTotalItemCountFixed="True" />
+                                    </StackPanel>
+                                    <ui:GridPageSizeSelector Margin="5,0,0,0"/>
+                                </StackPanel>
+                                <telerik:RadGridView
+                                 x:Name="radGridViewOutputDevices" 
+                                 Visibility="Visible" 
+                                 ShowGroupPanel="False" 
+                                 ItemsSource="{Binding OutputDevices}"
+                                 IsFilteringAllowed="True" 
+                                 IsReadOnly="True" 
+                                 AutoGenerateColumns="False"
+                                 Width="Auto"
+                                 RowIndicatorVisibility="Collapsed"
+                                 RowDetailsVisibilityMode="VisibleWhenSelected">
+                                    <telerik:RadGridView.Columns>
+                                        <!--<telerik:GridViewToggleRowDetailsColumn/>-->
+                                        <telerik:GridViewColumn Header="{x:Static sharedResources:Resources.Common_Actions}" ToolTip="{x:Static sharedResources:Resources.Common_ActionsTooltip}" >
+                                            <telerik:GridViewColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <!--<ui:EditDeleteButtonControl/>-->
+                                                    <ui:EditButtonControlBindable 
+                                                        Command="{Binding DataContext.EditCommand, RelativeSource={RelativeSource AncestorType=core:UserControlViewBase}}"
+                                                        CommandParameter="{Binding}"/>
+                                                </DataTemplate>
+                                            </telerik:GridViewColumn.CellTemplate>
+                                        </telerik:GridViewColumn>
+                                        <telerik:GridViewDataColumn Header="{x:Static sharedResources:Resources.MaintainOutputDevices_OutputDeviceImage}" >
+                                            <telerik:GridViewDataColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <Border Visibility="{Binding gcsBinaryResource, Converter={StaticResource nullToVisibilityConverter}}"  Margin="2" MaxHeight="64" BorderThickness="2" BorderBrush="Black">
+                                                        <Image MaxHeight="60" Source="{Binding gcsBinaryResource.BinaryResource}"/>
+                                                    </Border>
+                                                </DataTemplate>
+                                            </telerik:GridViewDataColumn.CellTemplate>
+                                        </telerik:GridViewDataColumn>
+                                        <telerik:GridViewDataColumn Header="{x:Static sharedResources:Resources.MaintainOutputDevices_OutputDeviceName}" DataMemberBinding="{Binding OutputName}"/>
+                                        <telerik:GridViewDataColumn Header="{x:Static sharedResources:Resources.MaintainOutputDevices_Location}" DataMemberBinding="{Binding Location}"/>
+                                        <!--<telerik:GridViewCheckBoxColumn Header="{x:Static sharedResources:Resources.MaintainOutputDevices_IsActive}" DataMemberBinding="{Binding IsActive}"/>-->
+                                        <telerik:GridViewColumn Header="{x:Static sharedResources:Resources.MaintainOutputDevices_CommandActions}">
+                                            <telerik:GridViewColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <StackPanel Orientation ="Horizontal">
+                                                        <!--<telerik:RadMenu ItemsSource="{Binding CommandMenu}" ItemContainerStyle="{StaticResource MenuItemStyle}">
+                                                <telerik:EventToCommandBehavior.EventBindings>
+                                                    <telerik:EventBinding Command="{Binding DataContext.SendOutputDeviceCommand, RelativeSource={RelativeSource AncestorType=core:UserControlViewBase}}"
+                                                                          EventName="ItemClick" RaiseOnHandledEvents="True">
+                                                        -->
+                                                        <!--<telerik:EventBinding.CommandParameter>
+                                                            <MultiBinding Converter="{StaticResource deviceIdCommandIdMVConverter}">
+                                                                <Binding Path="OutputDeviceUid"/>
+                                                                <Binding Path="CommandUid"/>
+                                                            </MultiBinding>
+                                                        </telerik:EventBinding.CommandParameter>-->
+                                                        <!--
+                                                    </telerik:EventBinding>
+                                                </telerik:EventToCommandBehavior.EventBindings>
+                                            </telerik:RadMenu>-->
+                                                        <telerik:RadMenu ItemsSource="{Binding CommandMenu}" ItemContainerStyle="{StaticResource MenuCustomIconColumnWidthStyle}">
+
+                                                        </telerik:RadMenu>
+                                                        <telerik:RadMenu x:Name="Menu" VerticalAlignment="Top">
+                                                            <telerik:RadMenuItem Header="Test">
+                                                                <telerik:RadMenuGroupItem ItemsSource="{Binding CommandMenu}" ItemContainerStyle="{StaticResource MenuCustomIconColumnWidthStyle}"/>
+                                                            </telerik:RadMenuItem>
+                                                        </telerik:RadMenu>
+
+                                                        <ui:ButtonControlBindable
+                                                            Command="{Binding DataContext.OnCommand, RelativeSource={RelativeSource AncestorType=core:UserControlViewBase}}"
+                                                            CommandParameter="{Binding}"
+                                                            ImageHeight="{StaticResource commandButtonImageHeight}"
+                                                            ImageWidth="{StaticResource commandButtonImageWidth}"
+                                                            IsVisible="{Binding DataContext.IsOnVisible, RelativeSource={RelativeSource AncestorType=core:UserControlViewBase}}"
+                                                            Text="{x:Static sharedResources:Resources.OutputDeviceCommand_On_Name}"
+                                                            ToolTip="{x:Static sharedResources:Resources.OutputDeviceCommand_On_Description}" />
+                                                        <ui:ButtonControlBindable
+                                                            Command="{Binding DataContext.OffCommand, RelativeSource={RelativeSource AncestorType=core:UserControlViewBase}}"
+                                                            CommandParameter="{Binding}"
+                                                            ImageHeight="{StaticResource commandButtonImageHeight}"
+                                                            ImageWidth="{StaticResource commandButtonImageWidth}"
+                                                            IsVisible="{Binding DataContext.IsOffVisible, RelativeSource={RelativeSource AncestorType=core:UserControlViewBase}}"
+                                                            Text="{x:Static sharedResources:Resources.OutputDeviceCommand_Off_Name}"
+                                                            ToolTip="{x:Static sharedResources:Resources.OutputDeviceCommand_Off_Description}" />
+                                                        <ui:ButtonControlBindable
+                                                            Command="{Binding DataContext.EnableCommand, RelativeSource={RelativeSource AncestorType=core:UserControlViewBase}}"
+                                                            CommandParameter="{Binding}"
+                                                            ImageHeight="{StaticResource commandButtonImageHeight}"
+                                                            ImageWidth="{StaticResource commandButtonImageWidth}"
+                                                            IsVisible="{Binding DataContext.IsEnableVisible, RelativeSource={RelativeSource AncestorType=core:UserControlViewBase}}"
+                                                            Text="{x:Static sharedResources:Resources.OutputDeviceCommand_Enable_Name}"
+                                                            ToolTip="{x:Static sharedResources:Resources.OutputDeviceCommand_Enable_Description}" />
+                                                        <ui:ButtonControlBindable
+                                                            Command="{Binding DataContext.DisableCommand, RelativeSource={RelativeSource AncestorType=core:UserControlViewBase}}"
+                                                            CommandParameter="{Binding}"
+                                                            ImageHeight="{StaticResource commandButtonImageHeight}"
+                                                            ImageWidth="{StaticResource commandButtonImageWidth}"
+                                                            IsVisible="{Binding DataContext.IsDisableVisible, RelativeSource={RelativeSource AncestorType=core:UserControlViewBase}}"
+                                                            Text="{x:Static sharedResources:Resources.OutputDeviceCommand_Disable_Name}"
+                                                            ToolTip="{x:Static sharedResources:Resources.OutputDeviceCommand_Disable_Description}" />
+                                                        <ui:ButtonControlBindable
+                                                            Command="{Binding DataContext.RequestStatusCommand, RelativeSource={RelativeSource AncestorType=core:UserControlViewBase}}"
+                                                            CommandParameter="{Binding}"
+                                                            ImageHeight="{StaticResource commandButtonImageHeight}"
+                                                            ImageWidth="{StaticResource commandButtonImageWidth}"
+                                                            IsVisible="{Binding DataContext.IsRequestStatusVisible, RelativeSource={RelativeSource AncestorType=core:UserControlViewBase}}"
+                                                            Text="{x:Static sharedResources:Resources.OutputDeviceCommand_RequestStatus_Name}"
+                                                            ToolTip="{x:Static sharedResources:Resources.OutputDeviceCommand_RequestStatus_Description}" />
+                                                    </StackPanel>
+                                                </DataTemplate>
+                                            </telerik:GridViewColumn.CellTemplate>
+                                        </telerik:GridViewColumn>
+                                    </telerik:RadGridView.Columns>
+                                    <!--<telerik:RadGridView.RowDetailsTemplate>
+                    <DataTemplate>
+
+                        <telerik:RadDataForm x:Name="myRadDataForm"
+										 CurrentItem="{Binding}"
+										 Header="{x:Static resx:Resources.MaintainRegions_RegionName}" 
+                                         telerik:TouchManager.TouchMode="HitTestVisible"/>
+                        -->
+                                    <!--<telerik:RadDataForm x:Name="regionRadDataForm" CurrentItem="{Binding}" AutoGenerateFields="false" Header="Edit Region:"
+                                             ReadOnlyTemplate="{StaticResource regionDetailTemplate}"
+                                             EditTemplate="{StaticResource regionDetailTemplate}"
+                                             NewItemTemplate="{StaticResource regionDetailTemplate}"/>-->
+                                    <!--
+                    </DataTemplate>
+                </telerik:RadGridView.RowDetailsTemplate>-->
+                                </telerik:RadGridView>
+                                <StackPanel Orientation="Horizontal">
+                                    <telerik:RadDataPager PageSize="{Binding GridPageSize.Key}"
+                                                  Margin="5,0,0,0"
+                                                  Source="{Binding Items, ElementName=radGridViewOutputDevices}"
+                                                  IsTotalItemCountFixed="True" />
+                                    <ui:GridPageSizeSelector Margin="5,0,0,0"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </telerik:RadTabItem>
+                        <telerik:RadTabItem>
+                            <telerik:RadTabItem.Header>
+                                <Grid>
+                                    <Grid.ToolTip>
+                                        <TextBlock Text="{x:Static sharedResources:Resources.OutputDeviceView_NotActiveDevicesToolTip}"/>
+                                    </Grid.ToolTip>
+                                    <TextBlock Text="{x:Static sharedResources:Resources.OutputDeviceView_NotActiveDevicesTabHeaderText}"/>
+                                </Grid>
+                            </telerik:RadTabItem.Header>
+                            <StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <StackPanel Orientation="Vertical" Margin="5,0,0,0">
+                                        <TextBlock>
+                                            <TextBlock.Text>
+                                                <MultiBinding StringFormat="{x:Static sharedResources:Resources.TotalRecordsCount}">
+                                                    <Binding Path="TotalInactiveRecordCount" />
+                                                </MultiBinding>
+                                            </TextBlock.Text>
+                                        </TextBlock>
+                                        <telerik:RadDataPager PageSize="{Binding GridPageSize.Key}"
+                                                  Source="{Binding Items, ElementName=radGridViewOutputDevicesInActive}"
+                                                  IsTotalItemCountFixed="True" />
+                                    </StackPanel>
+                                    <ui:GridPageSizeSelector Margin="5,0,0,0"/>
+                                </StackPanel>
+
+                                <telerik:RadGridView
+                                 x:Name="radGridViewOutputDevicesInActive" 
+                                 Visibility="Visible" 
+                                 ShowGroupPanel="False" 
+                                 ItemsSource="{Binding OutputDevicesInactive}"
+                                 IsFilteringAllowed="True" 
+                                 IsReadOnly="True" 
+                                 AutoGenerateColumns="False"
+                                 Width="Auto"
+                                 RowIndicatorVisibility="Collapsed"
+                                 RowDetailsVisibilityMode="VisibleWhenSelected">
+                                    <telerik:RadGridView.Columns>
+                                        <!--<telerik:GridViewToggleRowDetailsColumn/>-->
+                                        <telerik:GridViewColumn Header="{x:Static sharedResources:Resources.Common_Actions}" ToolTip="{x:Static sharedResources:Resources.Common_ActionsTooltip}" >
+                                            <telerik:GridViewColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <!--<ui:EditDeleteButtonControl/>-->
+                                                    <ui:EditButtonControlBindable 
+                                                        Command="{Binding DataContext.EditCommand, RelativeSource={RelativeSource AncestorType=core:UserControlViewBase}}"
+                                                        CommandParameter="{Binding}"/>
+                                                </DataTemplate>
+                                            </telerik:GridViewColumn.CellTemplate>
+                                        </telerik:GridViewColumn>
+                                        <telerik:GridViewDataColumn Header="{x:Static sharedResources:Resources.MaintainOutputDevices_OutputDeviceImage}" >
+                                            <telerik:GridViewDataColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <Border Visibility="{Binding gcsBinaryResource, Converter={StaticResource nullToVisibilityConverter}}"  Margin="2"  Height="64" BorderThickness="2" BorderBrush="Black">
+                                                        <Image MaxHeight="60" Source="{Binding gcsBinaryResource.BinaryResource}"/>
+                                                    </Border>
+                                                </DataTemplate>
+                                            </telerik:GridViewDataColumn.CellTemplate>
+                                        </telerik:GridViewDataColumn>
+                                        <telerik:GridViewDataColumn Header="{x:Static sharedResources:Resources.MaintainOutputDevices_OutputDeviceName}" DataMemberBinding="{Binding InputName}"/>
+                                        <telerik:GridViewDataColumn Header="{x:Static sharedResources:Resources.MaintainOutputDevices_Location}" DataMemberBinding="{Binding Location}"/>
+                                    </telerik:RadGridView.Columns>
+                                </telerik:RadGridView>
+                                <StackPanel Orientation="Horizontal">
+                                    <telerik:RadDataPager PageSize="{Binding GridPageSize.Key}"
+                                                  Margin="5,0,0,0"
+                                                  Source="{Binding Items, ElementName=radGridViewOutputDevicesInActive}"
+                                                  IsTotalItemCountFixed="True" />
+                                    <ui:GridPageSizeSelector Margin="5,0,0,0"/>
+                                </StackPanel>
+
+                            </StackPanel>
+                        </telerik:RadTabItem>
+
+                    </telerik:RadTabControl>
+
+
+
+                </Grid>
+
+                <Grid Grid.Row="0" Grid.Column="0" animations:VisibilityAnimation.AnimationType="Fade" >
+
+                    <Border CornerRadius="4" Margin="10" BorderThickness="1"
+                Visibility="{Binding CurrentItemViewModel, Converter={StaticResource nullToVisibilityConverter}}">
+                        <ContentControl Content="{Binding CurrentItemViewModel}" />
+                    </Border>
+                </Grid>
+
+            </Grid>
+        </ScrollViewer>
+    </telerik:RadBusyIndicator>
+
+</core:UserControlViewBase>

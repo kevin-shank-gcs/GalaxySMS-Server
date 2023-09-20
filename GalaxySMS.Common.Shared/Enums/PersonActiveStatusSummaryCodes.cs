@@ -1,0 +1,27 @@
+﻿////////////////////////////////////////////////////////////////////////////////////////////////////
+// file:	Enums\PersonActiveStatusTypes.cs
+//
+// summary:	Implements the person active status types class
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+namespace GalaxySMS.Common.Enums
+{
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+    /// <summary>   Values that represent person active status types. </summary>
+    ///
+    /// <remarks>   Kevin, 1/3/2019. </remarks>
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    public enum PersonActiveStatusSummaryCodes : int
+    {
+        None,
+        Active,
+        Inactive,
+        InactiveNotYetActivated,
+        InactiveExpiredByDateOrUsage,
+        InactiveNotYetEmployed,
+        InactiveTerminated,
+        InactiveByActiveStatusType,
+        InactiveNoActiveCards
+    }
+}

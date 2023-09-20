@@ -1,0 +1,23 @@
+﻿<Window x:Class="GalaxySMS.SiteManager.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:v="clr-namespace:GalaxySMS.SiteManager.Views"
+        xmlns:resx="clr-namespace:GalaxySMS.SiteManager.Properties"
+        xmlns:vm="clr-namespace:GalaxySMS.SiteManager.ViewModels"
+        xmlns:converters="clr-namespace:GCS.Core.Common.UI.Converters;assembly=GCS.Core.Common.UI"
+        Title="{Binding ViewTitle}"
+        MinWidth="800" MinHeight="600" Closing="Window_Closing" Background="{Binding Globals.MainWindowBackgroundBrush}">
+    <Window.Resources>
+        <vm:MainWindowViewModel x:Key="MyViewModel"></vm:MainWindowViewModel>
+        <converters:BooleanToVisibilityConverter x:Key="boolToVisibility" />
+    </Window.Resources>
+    <Window.DataContext>
+        <Binding Source="{StaticResource MyViewModel}"/>
+    </Window.DataContext>
+    
+    <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+        <Grid Visibility="{Binding Globals.IsApplicationValidatedWithServer, Converter={StaticResource boolToVisibility}}">
+            <v:MainView x:Name="main" Margin="5" />
+        </Grid>
+    </ScrollViewer>
+</Window>

@@ -1,0 +1,169 @@
+﻿<UserControl x:Class="GalaxySMS.Schedule.UserControls.DateTypeOneMinuteFormatDefaultBehavior"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:GalaxySMS.Schedule.UserControls"
+             xmlns:ui="clr-namespace:GalaxySMS.Client.UI;assembly=GalaxySMS.Client.UI"
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             xmlns:sharedResources="clr-namespace:GalaxySMS.Resources;assembly=GalaxySMS.Resources"
+             xmlns:core="http://www.galaxysys.com/GCS/Core"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+
+    </UserControl.Resources>
+    <telerik:RadExpander ExpandDirection="Down" IsExpanded="True" >
+        <telerik:RadExpander.Header>
+            <Border Style="{StaticResource HeaderBorder}">
+                <StackPanel Orientation="Vertical">
+                    <TextBlock
+                        Margin="8"
+                        Style="{StaticResource Heading2Left}"
+                        Text="{x:Static sharedResources:Resources.DayTypeCalendarView_DefaultOneMinuteBehavior_HeaderText}" />
+                    <TextBlock
+                        Margin="8"
+                        Style="{StaticResource Heading3Left}"
+                        Text="{x:Static sharedResources:Resources.DayTypeCalendarView_DefaultOneMinuteBehavior_HeaderSubText}" />
+                </StackPanel>
+            </Border>
+        </telerik:RadExpander.Header>
+        <StackPanel>
+            <StackPanel Margin="5">
+                <TextBlock Text="{Binding SundayTitle}" Style="{StaticResource DataEntryControlTitle}" />
+                <telerik:RadComboBox x:Name="cbDayTypes"
+                                     HorizontalAlignment="Stretch"
+                                     Margin="5, 5, 5, 0"
+                                     MinWidth="100"
+                                     ItemsSource="{Binding DataContext.DayTypes, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type core:UserControlViewBase}}}"
+                                     DisplayMemberPath="Name"
+                                     SelectedValue="{Binding OneMinuteFormatDateTypeDefaultBehaviors.SundayDayTypeUid}"
+                                     SelectedValuePath="DayTypeUid">
+                    <telerik:RadComboBox.ToolTip>
+                        <ToolTip>
+                            <TextBlock
+                                Text="{Binding Path=SundayTitle, StringFormat={x:Static sharedResources:Resources.DefaultOneMinuteBehavior_DayBehavior_ToolTip}}" />
+                        </ToolTip>
+                    </telerik:RadComboBox.ToolTip>
+                </telerik:RadComboBox>
+            </StackPanel>
+            <StackPanel Margin="5">
+                <TextBlock Text="{Binding MondayTitle}" Style="{StaticResource DataEntryControlTitle}" />
+                <telerik:RadComboBox
+                    HorizontalAlignment="Stretch"
+                    Margin="5, 5, 5, 0"
+                    MinWidth="100"
+                    ItemsSource="{Binding DataContext.DayTypes, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type core:UserControlViewBase}}}"
+                    DisplayMemberPath="Name"
+                    SelectedValue="{Binding OneMinuteFormatDateTypeDefaultBehaviors.MondayDayTypeUid}"
+                    SelectedValuePath="DayTypeUid">
+                    <telerik:RadComboBox.ToolTip>
+                        <ToolTip>
+                            <TextBlock
+                                Text="{Binding Path=MondayTitle, StringFormat={x:Static sharedResources:Resources.DefaultOneMinuteBehavior_DayBehavior_ToolTip}}" />
+                        </ToolTip>
+                    </telerik:RadComboBox.ToolTip>
+                </telerik:RadComboBox>
+            </StackPanel>
+            <StackPanel Margin="5">
+                <TextBlock Text="{Binding TuesdayTitle}" Style="{StaticResource DataEntryControlTitle}" />
+                <telerik:RadComboBox
+                    HorizontalAlignment="Stretch"
+                    Margin="5, 5, 5, 0"
+                    MinWidth="100"
+                    ItemsSource="{Binding DataContext.DayTypes, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type core:UserControlViewBase}}}"
+                    DisplayMemberPath="Name"
+                    SelectedValue="{Binding OneMinuteFormatDateTypeDefaultBehaviors.TuesdayDayTypeUid}"
+                    SelectedValuePath="DayTypeUid">
+                    <telerik:RadComboBox.ToolTip>
+                        <ToolTip>
+                            <TextBlock
+                                Text="{Binding Path=TuesdayTitle, StringFormat={x:Static sharedResources:Resources.DefaultOneMinuteBehavior_DayBehavior_ToolTip}}" />
+                        </ToolTip>
+                    </telerik:RadComboBox.ToolTip>
+                </telerik:RadComboBox>
+            </StackPanel>
+            <StackPanel Margin="5">
+                <TextBlock Text="{Binding WednesdayTitle}" Style="{StaticResource DataEntryControlTitle}" />
+                <telerik:RadComboBox
+                    HorizontalAlignment="Stretch"
+                    Margin="5, 5, 5, 0"
+                    MinWidth="100"
+                    ItemsSource="{Binding DataContext.DayTypes, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type core:UserControlViewBase}}}"
+                    DisplayMemberPath="Name"
+                    SelectedValue="{Binding OneMinuteFormatDateTypeDefaultBehaviors.WednesdayDayTypeUid}"
+                    SelectedValuePath="DayTypeUid">
+                    <telerik:RadComboBox.ToolTip>
+                        <ToolTip>
+                            <TextBlock
+                                Text="{Binding Path=WednesdayTitle, StringFormat={x:Static sharedResources:Resources.DefaultOneMinuteBehavior_DayBehavior_ToolTip}}" />
+                        </ToolTip>
+                    </telerik:RadComboBox.ToolTip>
+                </telerik:RadComboBox>
+            </StackPanel>
+            <StackPanel Margin="5">
+                <TextBlock Text="{Binding ThursdayTitle}" Style="{StaticResource DataEntryControlTitle}" />
+                <telerik:RadComboBox
+                    HorizontalAlignment="Stretch"
+                    Margin="5, 5, 5, 0"
+                    MinWidth="100"
+                    ItemsSource="{Binding DataContext.DayTypes, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type core:UserControlViewBase}}}"
+                    DisplayMemberPath="Name"
+                    SelectedValue="{Binding OneMinuteFormatDateTypeDefaultBehaviors.ThursdayDayTypeUid}"
+                    SelectedValuePath="DayTypeUid">
+                    <telerik:RadComboBox.ToolTip>
+                        <ToolTip>
+                            <TextBlock
+                                Text="{Binding Path=ThursdayTitle, StringFormat={x:Static sharedResources:Resources.DefaultOneMinuteBehavior_DayBehavior_ToolTip}}" />
+                        </ToolTip>
+                    </telerik:RadComboBox.ToolTip>
+                </telerik:RadComboBox>
+            </StackPanel>
+            <StackPanel Margin="5">
+                <TextBlock Text="{Binding FridayTitle}" Style="{StaticResource DataEntryControlTitle}" />
+                <telerik:RadComboBox
+                    HorizontalAlignment="Stretch"
+                    Margin="5, 5, 5, 0"
+                    MinWidth="100"
+                    ItemsSource="{Binding DataContext.DayTypes, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type core:UserControlViewBase}}}"
+                    DisplayMemberPath="Name"
+                    SelectedValue="{Binding OneMinuteFormatDateTypeDefaultBehaviors.FridayDayTypeUid}"
+                    SelectedValuePath="DayTypeUid">
+                    <telerik:RadComboBox.ToolTip>
+                        <ToolTip>
+                            <TextBlock
+                                Text="{Binding Path=FridayTitle, StringFormat={x:Static sharedResources:Resources.DefaultOneMinuteBehavior_DayBehavior_ToolTip}}" />
+                        </ToolTip>
+                    </telerik:RadComboBox.ToolTip>
+                </telerik:RadComboBox>
+            </StackPanel>
+            <StackPanel Margin="5">
+                <TextBlock Text="{Binding SaturdayTitle}" Style="{StaticResource DataEntryControlTitle}" />
+                <telerik:RadComboBox
+                    HorizontalAlignment="Stretch"
+                    Margin="5, 5, 5, 0"
+                    MinWidth="100"
+                    ItemsSource="{Binding DataContext.DayTypes, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type core:UserControlViewBase}}}"
+                    DisplayMemberPath="Name"
+                    SelectedValue="{Binding OneMinuteFormatDateTypeDefaultBehaviors.SaturdayDayTypeUid}"
+                    SelectedValuePath="DayTypeUid">
+                    <telerik:RadComboBox.ToolTip>
+                        <ToolTip>
+                            <TextBlock
+                                Text="{Binding Path=SaturdayTitle, StringFormat={x:Static sharedResources:Resources.DefaultOneMinuteBehavior_DayBehavior_ToolTip}}" />
+                        </ToolTip>
+                    </telerik:RadComboBox.ToolTip>
+                </telerik:RadComboBox>
+            </StackPanel>
+            <ui:SaveButtonControlBindable HorizontalAlignment="Stretch"
+                Margin="10,3"
+                Command="{Binding SaveDateTypeDefaultsCommand}"
+                ImageHeight="32"
+                ImageWidth="32"
+                IsVisible="{Binding IsDateTypeDefaultsControlVisible}"
+                Text="{x:Static sharedResources:Resources.SaveDayTypeDefaultBehavior_Text}"
+                ToolTip="{x:Static sharedResources:Resources.SaveDayTypeDefaultBehavior_ToolTip}" />
+
+        </StackPanel>
+    </telerik:RadExpander>
+</UserControl>

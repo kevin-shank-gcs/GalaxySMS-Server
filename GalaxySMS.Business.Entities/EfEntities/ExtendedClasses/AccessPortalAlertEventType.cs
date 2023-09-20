@@ -1,0 +1,102 @@
+using System;
+using System.Collections.Generic;
+using GCS.Core.Common.Contracts;
+using GCS.Core.Common.Core;
+using GCS.Core.Common.Extensions;
+
+namespace GalaxySMS.Business.Entities
+{
+    public partial class AccessPortalAlertEventType
+    {
+        public AccessPortalAlertEventType()
+        {
+            Initialize();
+        }
+
+        public AccessPortalAlertEventType(AccessPortalAlertEventType e)
+        {
+            Initialize(e);
+        }
+
+        public void Initialize()
+        {
+            this.AccessPortalAlertEvents = new HashSet<AccessPortalAlertEvent>();
+        }
+
+        public void Initialize(AccessPortalAlertEventType e)
+        {
+            Initialize();
+            if (e == null)
+                return;
+
+            this.IsDirty = e.IsDirty;
+            this.AccessPortalAlertEventTypeUid = e.AccessPortalAlertEventTypeUid;
+            this.Tag = e.Tag;
+            this.CanAcknowledge = e.CanAcknowledge;
+            this.CanHaveInputOutputGroupOffset = e.CanHaveInputOutputGroupOffset;
+            this.CanHaveSchedule = e.CanHaveSchedule;
+            this.CanHaveAudio = e.CanHaveAudio;
+            this.CanHaveInstructions = e.CanHaveInstructions;
+
+            this.InsertName = e.InsertName;
+            this.InsertDate = e.InsertDate;
+            this.UpdateName = e.UpdateName;
+            this.UpdateDate = e.UpdateDate;
+            this.ConcurrencyValue = e.ConcurrencyValue;
+            this.AccessPortalAlertEvents = e.AccessPortalAlertEvents.ToCollection();
+
+            // IHasDisplayResource & IHasDescriptionResource members
+            this.Display = e.Display;
+            this.DisplayResourceKey = e.DisplayResourceKey;
+            this.Description = e.Description;
+            this.DescriptionResourceKey = e.DescriptionResourceKey;
+            this.ResourceClassName = e.ResourceClassName;
+            this.UniqueResourceName = e.UniqueResourceName;
+            this.DisplayResourceName = e.DisplayResourceName;
+            this.DescriptionResourceName = e.DescriptionResourceName;
+        }
+
+        public bool IsAnythingDirty
+        {
+            get
+            {
+                //foreach( var o in InterfaceBoardSections)
+                //{
+                //	if (o.IsAnythingDirty == true)
+                //		return true;
+                //}
+                return IsDirty;
+            }
+        }
+
+        public AccessPortalAlertEventType Clone(AccessPortalAlertEventType e)
+        {
+            return new AccessPortalAlertEventType(e);
+        }
+
+        public bool Equals(AccessPortalAlertEventType other)
+        {
+            return base.Equals(other);
+        }
+
+        public bool IsPrimaryKeyEqual(AccessPortalAlertEventType other)
+        {
+            if (other == null)
+                return false;
+
+            if (other.AccessPortalAlertEventTypeUid != this.AccessPortalAlertEventTypeUid)
+                return false;
+            return true;
+        }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
+
+        public override string ToString()
+        {
+            return base.ToString();
+        }
+    }
+}

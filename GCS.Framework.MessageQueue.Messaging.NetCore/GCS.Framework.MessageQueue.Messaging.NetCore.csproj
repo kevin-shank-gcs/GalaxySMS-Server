@@ -1,0 +1,62 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DefineConstants>$(DefineConstants)TRACE;NET6_0</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DefineConstants>$(DefineConstants)TRACE;NET6_0</DefineConstants>
+  </PropertyGroup>
+
+  <Import Project="..\Shared\GCS.Framework.MessageQueue.Messaging.Shared\GCS.Framework.MessageQueue.Messaging.Shared.projitems" Label="Shared" />
+
+  <ItemGroup>
+    <Compile Remove="Impl\Amazon\**" />
+    <Compile Remove="Impl\Azure\**" />
+    <Compile Remove="Impl\EasyNetQ\**" />
+    <Compile Remove="Impl\WebSphereMq\**" />
+    <Compile Remove="Impl\ZeroMq\**" />
+    <EmbeddedResource Remove="Impl\Amazon\**" />
+    <EmbeddedResource Remove="Impl\Azure\**" />
+    <EmbeddedResource Remove="Impl\EasyNetQ\**" />
+    <EmbeddedResource Remove="Impl\WebSphereMq\**" />
+    <EmbeddedResource Remove="Impl\ZeroMq\**" />
+    <None Remove="Impl\Amazon\**" />
+    <None Remove="Impl\Azure\**" />
+    <None Remove="Impl\EasyNetQ\**" />
+    <None Remove="Impl\WebSphereMq\**" />
+    <None Remove="Impl\ZeroMq\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Impl\MessageQueueBase.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AWSSDK.SimpleNotificationService" Version="3.7.2.21" />
+    <PackageReference Include="AWSSDK.SQS" Version="3.7.0.51" />
+    <PackageReference Include="Azure.Messaging.ServiceBus" Version="7.2.1" />
+    <PackageReference Include="EasyNetQ" Version="6.3.1" />
+    <PackageReference Include="Microsoft.Azure.ServiceBus" Version="5.1.3" />
+    <PackageReference Include="Microsoft.Azure.Services.AppAuthentication" Version="1.6.1" />
+    <PackageReference Include="Microsoft.IdentityModel.Clients.ActiveDirectory" Version="5.2.9" />
+    <PackageReference Include="MSMQ.Messaging" Version="1.0.2" />
+    <PackageReference Include="NetMQ" Version="4.0.1.6" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\GCS.Framework\NETCore\GCS.Core.Common.NetCore\GCS.Core.Common.NetCore.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="ZeroMQ">
+      <HintPath>..\GalaxySMS.MessageQueue.Integration.NetCore\zmqFiles\bin\Release\ZeroMQ.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

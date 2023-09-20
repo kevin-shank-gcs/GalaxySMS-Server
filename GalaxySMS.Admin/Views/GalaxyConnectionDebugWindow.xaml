@@ -1,0 +1,12 @@
+﻿<Window x:Class="GalaxySMS.Admin.Views.GalaxyConnectionDebugWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:v="clr-namespace:GalaxySMS.Admin.Views"
+        Title="{Binding ViewTitle}" Width="Auto" Height="Auto">
+    <Window.Resources>
+        
+    </Window.Resources>
+    <Grid>
+        <v:GalaxyConnectionDebugView x:Name="main" Margin="10" />
+    </Grid>
+</Window>

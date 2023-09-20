@@ -1,0 +1,527 @@
+﻿<core:UserControlViewBase x:Class="GalaxySMS.Admin.Views.EditRoleView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:core="http://www.galaxysys.com/GCS/Core"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:resx="clr-namespace:GalaxySMS.Admin.Properties"
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             xmlns:dragDrop="clr-namespace:GCS.Core.Common.UI.DragDrop;assembly=GCS.Core.Common.UI"
+             xmlns:views="clr-namespace:GalaxySMS.Admin.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+
+    <core:UserControlViewBase.Resources>
+        <SolidColorBrush Color="#d6d4d4" x:Key="BorderBrush" />
+
+        <Style TargetType="TextBlock" x:Key="TitleStyle">
+            <Setter Property="Foreground" Value="#25a0da" />
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="FontFamily" Value="/Telerik.Windows.QuickStartUITheme;component/Fonts/MyriadPro-Light.otf#Myriad Pro Light" />
+            <Setter Property="Margin" Value="10 5" />
+        </Style>
+
+        <Style TargetType="TextBlock" x:Key="SubTitleStyle">
+            <Setter Property="Foreground" Value="#767676" />
+            <Setter Property="FontSize" Value="11" />
+            <Setter Property="FontFamily" Value="Segoe UI" />
+            <Setter Property="FontWeight" Value="Bold" />
+        </Style>
+
+        <!--<Style TargetType="telerik:RadTreeViewItem">
+            <Setter Property="FontWeight" Value="Normal" />
+        </Style>-->
+        <DataTemplate x:Key="PermissionTemplate">
+            <!--<TextBlock Text="{Binding PermissionName}" />-->
+            <CheckBox Content="{Binding PermissionName}" ToolTip="{Binding PermissionDescription}"
+                      IsChecked="{Binding RoleHasPermission, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" 
+                      Command="{Binding Path=DataContext.PermissionChecked, 
+                                    RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type core:UserControlViewBase}}}"
+											  CommandParameter="{Binding}"/>
+        </DataTemplate>
+
+        <HierarchicalDataTemplate x:Key="PermissionCategoryTemplate"
+				ItemsSource="{Binding Permissions}"
+				ItemTemplate="{StaticResource PermissionTemplate}">
+            <TextBlock Text="{Binding CategoryName}" ToolTip="{Binding PermissionCategoryDescription}" />
+        </HierarchicalDataTemplate>
+
+        <HierarchicalDataTemplate x:Key="ApplicationPermissionsTemplate"
+                                  ItemsSource="{Binding PermissionCategories}"
+                                  ItemTemplate="{StaticResource PermissionCategoryTemplate}">
+            <TextBlock Text="{Binding ApplicationName}" ToolTip="{Binding ApplicationDescription}" />
+        </HierarchicalDataTemplate>
+
+
+        <DataTemplate x:Key="AccessPortalTemplate">
+            <!--<TextBlock Text="{Binding PermissionName}" />-->
+            <CheckBox Content="{Binding AccessPortalName}" ToolTip="{Binding Location}"
+                      IsChecked="{Binding RoleIncludesItem, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" 
+                      Command="{Binding Path=DataContext.AccessPortalChecked, 
+                                    RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type core:UserControlViewBase}}}"
+											  CommandParameter="{Binding}"/>
+        </DataTemplate>
+        
+        <DataTemplate x:Key="InputDeviceTemplate">
+            <!--<TextBlock Text="{Binding PermissionName}" />-->
+            <CheckBox Content="{Binding InputName}" ToolTip="{Binding Location}"
+                      IsChecked="{Binding RoleIncludesItem, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" 
+                      Command="{Binding Path=DataContext.InputDeviceChecked, 
+                                    RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type core:UserControlViewBase}}}"
+											  CommandParameter="{Binding}"/>
+        </DataTemplate>
+        
+        <DataTemplate x:Key="OutputDeviceTemplate">
+            <!--<TextBlock Text="{Binding PermissionName}" />-->
+            <CheckBox Content="{Binding OutputName}" ToolTip="{Binding Location}"
+                      IsChecked="{Binding RoleIncludesItem, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" 
+                      Command="{Binding Path=DataContext.OutputDeviceChecked, 
+                                    RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type core:UserControlViewBase}}}"
+											  CommandParameter="{Binding}"/>
+        </DataTemplate>
+
+        <DataTemplate x:Key="InputOutputGroupTemplate">
+            <!--<TextBlock Text="{Binding PermissionName}" />-->
+            <CheckBox Content="{Binding InputOutputGroupName}" ToolTip="{Binding Location}"
+                      IsChecked="{Binding RoleIncludesItem, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" 
+                      Command="{Binding Path=DataContext.InputOutputGroupChecked, 
+                                    RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type core:UserControlViewBase}}}"
+											  CommandParameter="{Binding}"/>
+        </DataTemplate>
+
+        <DataTemplate x:Key="ClusterTemplate">
+            <!--<TextBlock Text="{Binding PermissionName}" />-->
+            <CheckBox Content="{Binding ClusterName}" ToolTip="{Binding Location}"
+                      IsChecked="{Binding RoleIncludesItem, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" 
+                      Command="{Binding Path=DataContext.ClusterChecked, 
+                                    RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type core:UserControlViewBase}}}"
+											  CommandParameter="{Binding}"/>
+        </DataTemplate>
+
+        <HierarchicalDataTemplate x:Key="ClusterAccessPortalsTemplate"
+				ItemsSource="{Binding AccessPortals}"
+				ItemTemplate="{StaticResource AccessPortalTemplate}">
+            <TextBlock Text="{Binding ClusterName}" ToolTip="{Binding ClusterName}" />
+        </HierarchicalDataTemplate>
+
+        <HierarchicalDataTemplate x:Key="SiteAccessPortalsTemplate"
+				ItemsSource="{Binding Clusters}"
+				ItemTemplate="{StaticResource ClusterAccessPortalsTemplate}">
+            <TextBlock Text="{Binding SiteName}" ToolTip="{Binding SiteName}" />
+        </HierarchicalDataTemplate>
+
+        <HierarchicalDataTemplate x:Key="RegionAccessPortalsTemplate"
+				ItemsSource="{Binding Sites}"
+				ItemTemplate="{StaticResource SiteAccessPortalsTemplate}">
+            <TextBlock Text="{Binding RegionName}" ToolTip="{Binding RegionName}" />
+        </HierarchicalDataTemplate>
+
+        <HierarchicalDataTemplate x:Key="EntityFiltersAccessPortalsTemplate"
+				ItemsSource="{Binding Regions}"
+				ItemTemplate="{StaticResource RegionAccessPortalsTemplate}">
+            <TextBlock Text="{Binding EntityName}" ToolTip="{Binding EntityDescription}" />
+        </HierarchicalDataTemplate>
+
+
+        <HierarchicalDataTemplate x:Key="ClusterInputDevicesTemplate"
+				ItemsSource="{Binding InputDevices}"
+				ItemTemplate="{StaticResource InputDeviceTemplate}">
+            <TextBlock Text="{Binding ClusterName}" ToolTip="{Binding ClusterName}" />
+        </HierarchicalDataTemplate>
+
+        <HierarchicalDataTemplate x:Key="SiteInputDevicesTemplate"
+				ItemsSource="{Binding Clusters}"
+				ItemTemplate="{StaticResource ClusterInputDevicesTemplate}">
+            <TextBlock Text="{Binding SiteName}" ToolTip="{Binding SiteName}" />
+        </HierarchicalDataTemplate>
+
+        <HierarchicalDataTemplate x:Key="RegionInputDevicesTemplate"
+				ItemsSource="{Binding Sites}"
+				ItemTemplate="{StaticResource SiteInputDevicesTemplate}">
+            <TextBlock Text="{Binding RegionName}" ToolTip="{Binding RegionName}" />
+        </HierarchicalDataTemplate>
+
+        <HierarchicalDataTemplate x:Key="EntityFiltersInputDevicesTemplate"
+				ItemsSource="{Binding Regions}"
+				ItemTemplate="{StaticResource RegionInputDevicesTemplate}">
+            <TextBlock Text="{Binding EntityName}" ToolTip="{Binding EntityDescription}" />
+        </HierarchicalDataTemplate>
+
+
+
+        <HierarchicalDataTemplate x:Key="ClusterOutputDevicesTemplate"
+				ItemsSource="{Binding OutputDevices}"
+				ItemTemplate="{StaticResource OutputDeviceTemplate}">
+            <TextBlock Text="{Binding ClusterName}" ToolTip="{Binding ClusterName}" />
+        </HierarchicalDataTemplate>
+
+        <HierarchicalDataTemplate x:Key="SiteOutputDevicesTemplate"
+				ItemsSource="{Binding Clusters}"
+				ItemTemplate="{StaticResource ClusterOutputDevicesTemplate}">
+            <TextBlock Text="{Binding SiteName}" ToolTip="{Binding SiteName}" />
+        </HierarchicalDataTemplate>
+
+        <HierarchicalDataTemplate x:Key="RegionOutputDevicesTemplate"
+				ItemsSource="{Binding Sites}"
+				ItemTemplate="{StaticResource SiteOutputDevicesTemplate}">
+            <TextBlock Text="{Binding RegionName}" ToolTip="{Binding RegionName}" />
+        </HierarchicalDataTemplate>
+
+        <HierarchicalDataTemplate x:Key="EntityFiltersOutputDevicesTemplate"
+				ItemsSource="{Binding Regions}"
+				ItemTemplate="{StaticResource RegionOutputDevicesTemplate}">
+            <TextBlock Text="{Binding EntityName}" ToolTip="{Binding EntityDescription}" />
+        </HierarchicalDataTemplate>
+
+
+        <HierarchicalDataTemplate x:Key="ClusterInputOutputGroupsTemplate"
+				ItemsSource="{Binding InputOutputGroups}"
+				ItemTemplate="{StaticResource InputOutputGroupTemplate}">
+            <TextBlock Text="{Binding ClusterName}" ToolTip="{Binding ClusterName}" />
+        </HierarchicalDataTemplate>
+
+        <HierarchicalDataTemplate x:Key="SiteInputOutputGroupsTemplate"
+				ItemsSource="{Binding Clusters}"
+				ItemTemplate="{StaticResource ClusterInputOutputGroupsTemplate}">
+            <TextBlock Text="{Binding SiteName}" ToolTip="{Binding SiteName}" />
+        </HierarchicalDataTemplate>
+
+        <HierarchicalDataTemplate x:Key="RegionInputOutputGroupsTemplate"
+				ItemsSource="{Binding Sites}"
+				ItemTemplate="{StaticResource SiteInputOutputGroupsTemplate}">
+            <TextBlock Text="{Binding RegionName}" ToolTip="{Binding RegionName}" />
+        </HierarchicalDataTemplate>
+
+        <HierarchicalDataTemplate x:Key="EntityFiltersInputOutputGroupsTemplate"
+				ItemsSource="{Binding Regions}"
+				ItemTemplate="{StaticResource RegionInputOutputGroupsTemplate}">
+            <TextBlock Text="{Binding EntityName}" ToolTip="{Binding EntityDescription}" />
+        </HierarchicalDataTemplate>
+
+
+        <HierarchicalDataTemplate x:Key="SiteClustersTemplate"
+				ItemsSource="{Binding Clusters}"
+				ItemTemplate="{StaticResource ClusterTemplate}">
+            <TextBlock Text="{Binding SiteName}" ToolTip="{Binding SiteName}" />
+        </HierarchicalDataTemplate>
+
+        <HierarchicalDataTemplate x:Key="RegionClustersTemplate"
+				ItemsSource="{Binding Sites}"
+				ItemTemplate="{StaticResource SiteClustersTemplate}">
+            <TextBlock Text="{Binding RegionName}" ToolTip="{Binding RegionName}" />
+        </HierarchicalDataTemplate>
+
+        <HierarchicalDataTemplate x:Key="EntityFiltersClustersTemplate"
+				ItemsSource="{Binding Regions}"
+				ItemTemplate="{StaticResource RegionClustersTemplate}">
+            <TextBlock Text="{Binding EntityName}" ToolTip="{Binding EntityDescription}" />
+        </HierarchicalDataTemplate>
+
+    </core:UserControlViewBase.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <core:ValidationHeader Grid.Row="0" DataContext="{Binding}" />
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Row="0" Margin="3" Text="{x:Static resx:Resources.EditRoleView_SelectEntityTitle}"></TextBlock>
+            <telerik:RadComboBox Grid.Row="1" Margin="3" ItemsSource="{Binding Entities}" DisplayMemberPath="EntityName" SelectedValue="{Binding Role.EntityId}" SelectedValuePath="EntityId" IsEnabled="{Binding CanChangeEntity}" />
+            <TextBlock Grid.Row="2" Margin="3" Text="{x:Static resx:Resources.EditRoleView_RoleNameTitle}" />
+            <TextBox Grid.Row="3" Margin="3" MinWidth="200"  Text="{Binding Role.RoleName, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" HorizontalAlignment="Left" />
+            <TextBlock Grid.Row="4" Margin="3" Text="{x:Static resx:Resources.EditRoleView_RoleDescriptionTitle}" />
+            <TextBox Grid.Row="5" Margin="3" MinWidth="200" Text="{Binding Role.RoleDescription, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" HorizontalAlignment="Left" />
+            <CheckBox Grid.Row="6" Margin="3" Content="{x:Static resx:Resources.EditRoleView_RoleIsActive}"  IsChecked="{Binding Role.IsActive, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" HorizontalAlignment="Left" />
+            <CheckBox Grid.Row="7" Margin="3" Content="{x:Static resx:Resources.EditRoleView_RoleIsDefaultRole}"  IsChecked="{Binding Role.IsDefault, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" HorizontalAlignment="Left" />
+            <CheckBox Grid.Row="8" Margin="3" Content="{x:Static resx:Resources.EditRoleView_RoleIsAdministratorRole}" IsChecked="{Binding Role.IsAdministratorRole, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" HorizontalAlignment="Left" />
+        </Grid>
+
+        <StackPanel Grid.Row="2" Orientation="Horizontal">
+            <Button Margin="3" Command="{Binding SaveCommand}" ToolTip="{x:Static resx:Resources.Common_SaveToolTip}">
+                <Button.Content>
+                    <StackPanel Orientation="Horizontal" Margin="3">
+                        <Image x:Name="imgSave" Source="/Images\SaveData.png" Width="16" Height="16"/>
+                        <TextBlock VerticalAlignment="Center" Margin="3,0,0,0" Text="{x:Static resx:Resources.Common_Save}" ></TextBlock>
+                    </StackPanel>
+                </Button.Content>
+            </Button>
+            <Button Margin="5" Command="{Binding CancelCommand}" ToolTip="{x:Static resx:Resources.Common_CancelToolTip}">
+                <Button.Content>
+                    <StackPanel Orientation="Horizontal" Margin="3">
+                        <Image x:Name="imgCancel" Source="/Images\CancelEdit.png" Width="16" Height="16"/>
+                        <TextBlock VerticalAlignment="Center" Margin="3,0,0,0" Text="{x:Static resx:Resources.Common_Cancel}" ></TextBlock>
+                    </StackPanel>
+                </Button.Content>
+            </Button>
+        </StackPanel>
+        <core:ErrorsPanel Grid.Row="3" DataContext="{Binding}" />
+        <telerik:RadTabControl Grid.Row="1" Grid.Column="1" Grid.RowSpan="4">
+            <telerik:RadTabItem Header="{x:Static resx:Resources.EditRoleView_PermissionsTabItemTitle}" ToolTip="{x:Static resx:Resources.EditRoleView_PermissionsTabItemToolTip}">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        <ColumnDefinition Width="10"></ColumnDefinition>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+
+                    <Border BorderBrush="{StaticResource BorderBrush}" BorderThickness="1">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+
+                            <Border BorderBrush="{StaticResource BorderBrush}" BorderThickness="0 0 0 1">
+                                <TextBlock Text="{x:Static resx:Resources.EditRoleView_RolePermissions}" Style="{StaticResource TitleStyle}"/>
+                            </Border>
+
+                            <telerik:RadTreeView Margin="5" BorderThickness="0" Grid.Row="2" Visibility="Visible"
+						IsDragDropEnabled="True"
+						IsDropPreviewLineEnabled="False"
+						ItemsSource="{Binding ApplicationPermissions}"
+						ItemTemplate="{StaticResource ApplicationPermissionsTemplate}" />
+                            <!--<TreeView Margin="5" BorderThickness="0" Grid.Row="2"
+						ItemsSource="{Binding AuthorizedPermissions}"
+						ItemTemplate="{StaticResource PermissionCategoryTemplate}" />-->
+
+                        </Grid>
+                    </Border>
+                </Grid>
+            </telerik:RadTabItem>
+            <telerik:RadTabItem Header="{x:Static resx:Resources.EditRoleView_ClustersTabItemTitle}" ToolTip="{x:Static resx:Resources.EditRoleView_ClustersTabItemToolTip}">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        <ColumnDefinition Width="10"></ColumnDefinition>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <!--<Border BorderBrush="{StaticResource BorderBrush}" BorderThickness="1">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+
+                            <Border BorderBrush="{StaticResource BorderBrush}" BorderThickness="0 0 0 1">
+                                <TextBlock Text="{x:Static resx:Resources.EditRoleView_RoleClusters}" Style="{StaticResource TitleStyle}"/>
+                            </Border>
+
+                            <telerik:RadTreeView Margin="5" BorderThickness="0" Grid.Row="2" Visibility="Visible"
+						IsDragDropEnabled="True"
+						IsDropPreviewLineEnabled="False"
+						ItemsSource="{Binding EditingData.FilterData.Regions}"
+						ItemTemplate="{StaticResource EntityFiltersClustersTemplate}" />
+
+                        </Grid>
+                    </Border>-->
+                    <Border BorderBrush="{StaticResource BorderBrush}" BorderThickness="1">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+
+                            <Border BorderBrush="{StaticResource BorderBrush}" BorderThickness="0 0 0 1">
+                                <TextBlock Text="{x:Static resx:Resources.EditRoleView_RoleClusters}" Style="{StaticResource TitleStyle}"/>
+                            </Border>
+
+                            <telerik:RadTreeView Margin="5" BorderThickness="0" Grid.Row="2" Visibility="Visible"
+                                                 IsDragDropEnabled="True"
+                                                 IsDropPreviewLineEnabled="False"
+                                                 ItemsSource="{Binding EditingData.FilterData.Regions}"
+                                                 ItemTemplate="{StaticResource RegionClustersTemplate}" />
+
+                        </Grid>
+                    </Border>
+                </Grid>
+            </telerik:RadTabItem>
+            <telerik:RadTabItem Header="{x:Static resx:Resources.EditRoleView_AccessPortalsTabItemTitle}" ToolTip="{x:Static resx:Resources.EditRoleView_AccessPortalsTabItemToolTip}">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        <ColumnDefinition Width="10"></ColumnDefinition>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <Border BorderBrush="{StaticResource BorderBrush}" BorderThickness="1">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+
+                            <Border BorderBrush="{StaticResource BorderBrush}" BorderThickness="0 0 0 1">
+                                <TextBlock Text="{x:Static resx:Resources.EditRoleView_RoleAccessPortals}" Style="{StaticResource TitleStyle}"/>
+                            </Border>
+
+                            <telerik:RadTreeView Margin="5" BorderThickness="0" Grid.Row="2" Visibility="Visible"
+						IsDragDropEnabled="True"
+						IsDropPreviewLineEnabled="False"
+						ItemsSource="{Binding EditingData.FilterData.Regions}"
+						ItemTemplate="{StaticResource RegionAccessPortalsTemplate}" />
+
+                        </Grid>
+                    </Border>
+                </Grid>                
+            </telerik:RadTabItem>
+            <telerik:RadTabItem Header="{x:Static resx:Resources.EditRoleView_InputDevicesTabItemTitle}" ToolTip="{x:Static resx:Resources.EditRoleView_InputDevicesTabItemToolTip}">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        <ColumnDefinition Width="10"></ColumnDefinition>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <Border BorderBrush="{StaticResource BorderBrush}" BorderThickness="1">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+
+                            <Border BorderBrush="{StaticResource BorderBrush}" BorderThickness="0 0 0 1">
+                                <TextBlock Text="{x:Static resx:Resources.EditRoleView_RoleInputDevices}" Style="{StaticResource TitleStyle}"/>
+                            </Border>
+
+                            <telerik:RadTreeView Margin="5" BorderThickness="0" Grid.Row="2" Visibility="Visible"
+						IsDragDropEnabled="True"
+						IsDropPreviewLineEnabled="False"
+						ItemsSource="{Binding EditingData.FilterData.Regions}"
+						ItemTemplate="{StaticResource RegionInputDevicesTemplate}" />
+
+                        </Grid>
+                    </Border>
+                </Grid>
+            </telerik:RadTabItem>
+            <telerik:RadTabItem Header="{x:Static resx:Resources.EditRoleView_OutputDevicesTabItemTitle}" ToolTip="{x:Static resx:Resources.EditRoleView_OutputDevicesTabItemToolTip}">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        <ColumnDefinition Width="10"></ColumnDefinition>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <Border BorderBrush="{StaticResource BorderBrush}" BorderThickness="1">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+
+                            <Border BorderBrush="{StaticResource BorderBrush}" BorderThickness="0 0 0 1">
+                                <TextBlock Text="{x:Static resx:Resources.EditRoleView_RoleOutputDevices}" Style="{StaticResource TitleStyle}"/>
+                            </Border>
+
+                            <telerik:RadTreeView Margin="5" BorderThickness="0" Grid.Row="2" Visibility="Visible"
+						IsDragDropEnabled="True"
+						IsDropPreviewLineEnabled="False"
+						ItemsSource="{Binding EditingData.FilterData.Regions}"
+						ItemTemplate="{StaticResource RegionOutputDevicesTemplate}" />
+
+                        </Grid>
+                    </Border>
+                </Grid>
+            </telerik:RadTabItem>
+            <telerik:RadTabItem Header="{x:Static resx:Resources.EditRoleView_InputOutputGroupsTabItemTitle}" ToolTip="{x:Static resx:Resources.EditRoleView_InputOutputGroupsTabItemToolTip}">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        <ColumnDefinition Width="10"></ColumnDefinition>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <Border BorderBrush="{StaticResource BorderBrush}" BorderThickness="1">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+
+                            <Border BorderBrush="{StaticResource BorderBrush}" BorderThickness="0 0 0 1">
+                                <TextBlock Text="{x:Static resx:Resources.EditRoleView_RoleInputOutputGroups}" Style="{StaticResource TitleStyle}"/>
+                            </Border>
+
+                            <telerik:RadTreeView Margin="5" BorderThickness="0" Grid.Row="2" Visibility="Visible"
+						IsDragDropEnabled="True"
+						IsDropPreviewLineEnabled="False"
+						ItemsSource="{Binding EditingData.FilterData.Regions}"
+						ItemTemplate="{StaticResource RegionInputOutputGroupsTemplate}" />
+
+                        </Grid>
+                    </Border>
+                </Grid>
+            </telerik:RadTabItem>
+        </telerik:RadTabControl>
+
+
+    </Grid>
+</core:UserControlViewBase>

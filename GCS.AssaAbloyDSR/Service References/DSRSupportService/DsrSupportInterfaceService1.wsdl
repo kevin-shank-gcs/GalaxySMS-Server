@@ -1,0 +1,751 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:tns="http://xml.assaabloy.com/dsr/2.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" name="DsrSupportInterfaceService" targetNamespace="http://xml.assaabloy.com/dsr/2.0" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="DsrSupportInterfaceServiceSoapBinding_WSAM_Addressing_Policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+    <wsam:Addressing>
+      <wsp:Policy />
+    </wsam:Addressing>
+  </wsp:Policy>
+  <wsdl:types>
+    <xs:schema elementFormDefault="unqualified" targetNamespace="http://xml.assaabloy.com/dsr/2.0" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="checkMedecoWebService" type="tns:checkMedecoWebService" />
+      <xs:element name="checkMedecoWebServiceResponse" type="tns:checkMedecoWebServiceResponse" />
+      <xs:element name="getAccessPoint" type="tns:getAccessPoint" />
+      <xs:element name="getAccessPointBatteryLog" type="tns:getAccessPointBatteryLog" />
+      <xs:element name="getAccessPointBatteryLogResponse" type="tns:getAccessPointBatteryLogResponse" />
+      <xs:element name="getAccessPointResponse" type="tns:getAccessPointResponse" />
+      <xs:element name="getAccessPointsList" type="tns:getAccessPointsList" />
+      <xs:element name="getAccessPointsListResponse" type="tns:getAccessPointsListResponse" />
+      <xs:element name="getActivity" type="tns:getActivity" />
+      <xs:element name="getActivityResponse" type="tns:getActivityResponse" />
+      <xs:element name="getAllAccessPoint" type="tns:getAllAccessPoint" />
+      <xs:element name="getAllAccessPointResponse" type="tns:getAllAccessPointResponse" />
+      <xs:element name="getBatteryActivityReport" type="tns:getBatteryActivityReport" />
+      <xs:element name="getBatteryActivityReportResponse" type="tns:getBatteryActivityReportResponse" />
+      <xs:element name="getCardholders" type="tns:getCardholders" />
+      <xs:element name="getCardholdersResponse" type="tns:getCardholdersResponse" />
+      <xs:element name="getStatus" type="tns:getStatus" />
+      <xs:element name="getStatusResponse" type="tns:getStatusResponse" />
+      <xs:element name="syncConfigurationForConfirmedLocks" type="tns:syncConfigurationForConfirmedLocks" />
+      <xs:element name="syncConfigurationForConfirmedLocksResponse" type="tns:syncConfigurationForConfirmedLocksResponse" />
+      <xs:element name="upgradeAccessPointFirmware" type="tns:upgradeAccessPointFirmware" />
+      <xs:element name="upgradeAccessPointFirmwareResponse" type="tns:upgradeAccessPointFirmwareResponse" />
+      <xs:element name="upgradeAccessPointRadioFirmware" type="tns:upgradeAccessPointRadioFirmware" />
+      <xs:element name="upgradeAccessPointRadioFirmwareResponse" type="tns:upgradeAccessPointRadioFirmwareResponse" />
+      <xs:complexType name="getActivity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DsrActivitySearchBean" type="tns:DsrActivitySearchBean" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DsrActivitySearchBean">
+        <xs:sequence>
+          <xs:element name="ActivityType" nillable="true" type="xs:string" />
+          <xs:element name="StartDate" nillable="true" type="xs:dateTime" />
+          <xs:element name="EndDate" nillable="true" type="xs:dateTime" />
+          <xs:element name="SearchList" type="tns:SearchList" />
+          <xs:element minOccurs="0" name="AuditEventList" type="tns:AuditEventList" />
+          <xs:element minOccurs="0" name="SortBy" type="xs:string" />
+          <xs:element minOccurs="0" name="SortOrder" type="xs:string" />
+          <xs:element name="PageOffSet" type="xs:int" />
+          <xs:element name="PageMaxResult" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SearchList">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" name="SerialNumber" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AuditEventList">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" name="EventType" type="tns:LogCode" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getActivityResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="activityDTOList" type="tns:activityDTOList" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="activityDTOList">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:StatusResponse">
+            <xs:sequence>
+              <xs:element maxOccurs="unbounded" name="activityDTOs" type="tns:ActivityDto" />
+              <xs:element minOccurs="0" name="message" type="xs:string" />
+              <xs:element name="count" type="xs:int" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="StatusResponse">
+        <xs:sequence>
+          <xs:element name="Status" type="tns:StatusCode" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ActivityDto">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CredentialSerialNumber" type="xs:string" />
+          <xs:element minOccurs="0" name="AccessPointSerialNumber" type="xs:string" />
+          <xs:element minOccurs="0" name="Timezone" type="xs:string" />
+          <xs:element name="TimeStamp" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="CredentialHolderFullName" type="xs:string" />
+          <xs:element minOccurs="0" name="CredentialHolderId" type="xs:string" />
+          <xs:element minOccurs="0" name="Description" type="xs:string" />
+          <xs:element name="Event" type="tns:LogCode" />
+          <xs:element minOccurs="0" name="AuditType" type="xs:string" />
+          <xs:element minOccurs="0" name="CredentialType" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="batteryDTOList">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:StatusResponse">
+            <xs:sequence>
+              <xs:element maxOccurs="unbounded" name="batteryDTOs" type="tns:BatteryDto" />
+              <xs:element minOccurs="0" name="message" type="xs:string" />
+              <xs:element name="count" type="xs:int" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="BatteryDto">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="accesspointid" type="xs:string" />
+          <xs:element name="TimeStamp" type="xs:string" />
+          <xs:element minOccurs="0" name="voltage" type="xs:string" />
+          <xs:element minOccurs="0" name="description" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getAccessPointsList">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="sortBy" type="xs:string" />
+          <xs:element minOccurs="0" name="sortOrder" type="xs:string" />
+          <xs:element name="offset" type="xs:int" />
+          <xs:element name="maxResults" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getAccessPointsListResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="accessPointDTOs" type="tns:accessPointDTOs" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="accessPointDTOs">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" name="accessPointDTOs" type="tns:AccessPointDTO" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AccessPointDTO">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:Entity">
+            <xs:sequence>
+              <xs:element name="serialNumber" type="xs:string" />
+              <xs:element name="accessPointType" type="tns:AccessPointType" />
+              <xs:element name="online" type="xs:boolean" />
+              <xs:element name="confirmed" type="xs:boolean" />
+              <xs:element name="syncStatus" type="tns:AccessPointSynchronizationStatus" />
+              <xs:element name="lastSeen" type="xs:dateTime" />
+              <xs:element name="timeOfLastCommunicationError" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="accessPointAttributes" type="tns:AccessPointAttributes" />
+              <xs:element minOccurs="0" name="lastAlarm" type="tns:LogEntry" />
+              <xs:element minOccurs="0" name="ipAddress" type="xs:string" />
+              <xs:element minOccurs="0" name="description" type="xs:string" />
+              <xs:element minOccurs="0" name="batteryVoltage" type="xs:string" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="Entity" abstract="true">
+        <xs:sequence />
+        <xs:attribute name="id" type="xs:string" />
+      </xs:complexType>
+      <xs:complexType name="AccessPointType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="id" type="xs:string" />
+          <xs:element minOccurs="0" name="displayName" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AccessPointAttributes">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="attribute" type="tns:AccessPointAttributeValue" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AccessPointAttributeValue">
+        <xs:simpleContent>
+          <xs:extension base="xs:string">
+            <xs:attribute name="name" type="tns:AccessPointAttribute" use="required" />
+          </xs:extension>
+        </xs:simpleContent>
+      </xs:complexType>
+      <xs:complexType name="LogEntry">
+        <xs:sequence>
+          <xs:element name="origin" type="tns:LogOrigin" />
+          <xs:element name="family" type="tns:LogFamily" />
+          <xs:element name="code" type="tns:LogCode" />
+          <xs:element name="timeStamp" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="requestId" type="tns:DsrUUID" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="logData" type="tns:LogData" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="LogOrigin">
+        <xs:all>
+          <xs:element name="logOriginType" type="tns:LogOriginType" />
+          <xs:element name="originId" type="xs:string" />
+        </xs:all>
+      </xs:complexType>
+      <xs:complexType name="DsrUUID">
+        <xs:sequence>
+          <xs:element form="qualified" name="requestId" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="LogData">
+        <xs:sequence>
+          <xs:element name="name" type="xs:string" />
+          <xs:element name="value" type="tns:LogDataType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="LogDataType">
+        <xs:sequence>
+          <xs:element minOccurs="0" form="qualified" name="intValue" type="xs:long" />
+          <xs:element minOccurs="0" form="qualified" name="stringValue" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="upgradeAccessPointRadioFirmware">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="accessPointIds" type="xs:string" />
+          <xs:element minOccurs="0" name="radioFirmwareVersion" type="xs:string" />
+          <xs:element minOccurs="0" name="serverPort" type="xs:string" />
+          <xs:element minOccurs="0" name="networkSSID" type="xs:string" />
+          <xs:element minOccurs="0" name="networkPassword" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="upgradeAccessPointRadioFirmwareResponse">
+        <xs:sequence />
+      </xs:complexType>
+      <xs:complexType name="getStatus">
+        <xs:sequence />
+      </xs:complexType>
+      <xs:complexType name="getStatusResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="onlineSince" type="tns:OnlineSince" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="OnlineSince">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="lastTimeDsrGotOnline" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="upgradeAccessPointFirmware">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="accessPointIds" type="xs:string" />
+          <xs:element minOccurs="0" name="firmwareVersion" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="upgradeAccessPointFirmwareResponse">
+        <xs:sequence />
+      </xs:complexType>
+      <xs:complexType name="getAllAccessPoint">
+        <xs:sequence />
+      </xs:complexType>
+      <xs:complexType name="getAllAccessPointResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="accessPointDTOs" type="tns:accessPointDTOs" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getBatteryActivityReport">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DsrBatterySearchBean" type="tns:DsrBatterySearchBean" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DsrBatterySearchBean">
+        <xs:sequence>
+          <xs:element name="SearchList" type="tns:SearchList" />
+          <xs:element name="StartDate" nillable="true" type="xs:dateTime" />
+          <xs:element name="EndDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="SortBy" type="xs:string" />
+          <xs:element minOccurs="0" name="SortOrder" type="xs:string" />
+          <xs:element name="PageOffSet" type="xs:int" />
+          <xs:element name="PageMaxResult" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getBatteryActivityReportResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="batteryDTOList" type="tns:batteryDTOList" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="syncConfigurationForConfirmedLocks">
+        <xs:sequence>
+          <xs:element name="includeConfigItem" type="xs:boolean" />
+          <xs:element name="includeFilters" type="xs:boolean" />
+          <xs:element name="includeAlarms" type="xs:boolean" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="syncConfigurationForConfirmedLocksResponse">
+        <xs:sequence />
+      </xs:complexType>
+      <xs:complexType name="getAccessPointBatteryLog">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DsrBatterySearchBean" type="tns:DsrBatterySearchBean" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getAccessPointBatteryLogResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="batteryDTOList" type="tns:batteryDTOList" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getAccessPoint">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getAccessPointResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="accessPointDTO" type="tns:supportAccessPoint" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="supportAccessPoint">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="accessPointDTO" type="tns:AccessPointDTO" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getCardholders">
+        <xs:sequence />
+      </xs:complexType>
+      <xs:complexType name="getCardholdersResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="cardholderDTOs" type="tns:cardholderDTOs" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="cardholderDTOs">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" name="cardholderDTOs" type="tns:CardholderDTO" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="CardholderDTO">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:Entity">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="firstName" type="xs:string" />
+              <xs:element minOccurs="0" name="lastName" type="xs:string" />
+              <xs:element minOccurs="0" name="midname" type="xs:string" />
+              <xs:element minOccurs="0" name="address" type="xs:string" />
+              <xs:element minOccurs="0" name="phone" type="xs:string" />
+              <xs:element minOccurs="0" name="email" type="xs:string" />
+              <xs:element minOccurs="0" name="ext" type="xs:string" />
+              <xs:element minOccurs="0" name="title" type="xs:string" />
+              <xs:element minOccurs="0" name="cardholderId" type="xs:string" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="checkMedecoWebService">
+        <xs:sequence />
+      </xs:complexType>
+      <xs:complexType name="checkMedecoWebServiceResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="onlineSince" type="tns:OnlineSince" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="LogCode">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="PROPRIETARY" />
+          <xs:enumeration value="DOOR_FORCED" />
+          <xs:enumeration value="DOOR_HELD" />
+          <xs:enumeration value="DOOR_BOLTTHROWN" />
+          <xs:enumeration value="DOOR_BOLTRETRACTED" />
+          <xs:enumeration value="MODE_PROGRAMMING" />
+          <xs:enumeration value="MODE_LOCKOUT" />
+          <xs:enumeration value="MODE_LOCKOUT_TIMED" />
+          <xs:enumeration value="MODE_LOCKOUT_USER" />
+          <xs:enumeration value="MODE_RELOCK" />
+          <xs:enumeration value="MODE_EMERGENCY" />
+          <xs:enumeration value="MODE_PANIC" />
+          <xs:enumeration value="MODE_RESET" />
+          <xs:enumeration value="MODE_NORMAL" />
+          <xs:enumeration value="MODE_PASSAGE" />
+          <xs:enumeration value="MODE_PASSAGE_TIMED" />
+          <xs:enumeration value="MODE_PASSAGE_USER" />
+          <xs:enumeration value="MODE_LOCKED" />
+          <xs:enumeration value="MODE_LOCKED_TIMED" />
+          <xs:enumeration value="MODE_LOCKED_USER" />
+          <xs:enumeration value="MODE_SECURED" />
+          <xs:enumeration value="MODE_PANIC_END" />
+          <xs:enumeration value="BATTERY_DEPLETED" />
+          <xs:enumeration value="BATTERY_REPLACED" />
+          <xs:enumeration value="BATTERY_CRITICAL" />
+          <xs:enumeration value="BATTERY_WARN" />
+          <xs:enumeration value="BATTERY_CHECK_ERROR" />
+          <xs:enumeration value="USER_MODIFY" />
+          <xs:enumeration value="USER_REVOKE" />
+          <xs:enumeration value="USER_ADD" />
+          <xs:enumeration value="USER_BADTIME" />
+          <xs:enumeration value="USER_INVALID" />
+          <xs:enumeration value="USER_OK" />
+          <xs:enumeration value="ACCESS_DENIED" />
+          <xs:enumeration value="ACCESS_DENIED_SCHEDULE" />
+          <xs:enumeration value="ACCESS_DENIED_LOCKOUT" />
+          <xs:enumeration value="ACCESS_DENIED_BOLTED" />
+          <xs:enumeration value="ACCESS_DENIED_EXPIRED" />
+          <xs:enumeration value="ACCESS_DENIED_BUSY" />
+          <xs:enumeration value="ACCESS_DENIED_SUSPENDED" />
+          <xs:enumeration value="ACCESS_DENIED_PANIC" />
+          <xs:enumeration value="ACCESS_DENIED_PASSAGE" />
+          <xs:enumeration value="ACCESS_GRANTED" />
+          <xs:enumeration value="ACCESS_GRANTED_REMOTEUNLOCK" />
+          <xs:enumeration value="ACCESS_GRANTED_ONE_TIME_USER" />
+          <xs:enumeration value="ACCESS_GRANTED_NOTIFY" />
+          <xs:enumeration value="ACCESS_GRANTED_DEADBOLT_OVERRIDE" />
+          <xs:enumeration value="ACCESS_KEYOVERRIDE" />
+          <xs:enumeration value="ACCESS_INVALIDENTRY" />
+          <xs:enumeration value="AUTHORIZATION_SUCCESS_COMMUSER" />
+          <xs:enumeration value="AUTHORIZATION_DENY_COMMUSER" />
+          <xs:enumeration value="AUTHORIZATION_SUCCESS_MASTER" />
+          <xs:enumeration value="AUTHORIZATION_FAIL_MASTER" />
+          <xs:enumeration value="LOG_LOGCLEARED" />
+          <xs:enumeration value="LOG_LOGWRAPPED" />
+          <xs:enumeration value="FIRMWARE_UPDATE_ABORT" />
+          <xs:enumeration value="FIRMWARE_UPDATE_ERROR" />
+          <xs:enumeration value="FIRMWARE_UPDATE_TIMEOUT" />
+          <xs:enumeration value="FIRMWARE_UPDATE_SUCCESS" />
+          <xs:enumeration value="FIRMWARE_UPDATE_FAIL" />
+          <xs:enumeration value="DB_USERDB_RESET" />
+          <xs:enumeration value="DB_USERDB_RESET_USER" />
+          <xs:enumeration value="CLOCK_DATETIMESET" />
+          <xs:enumeration value="CLOCK_DSTFORWARD" />
+          <xs:enumeration value="CLOCK_DSTBACK" />
+          <xs:enumeration value="CLOCK_ERROR" />
+          <xs:enumeration value="CLOCK_RESET" />
+          <xs:enumeration value="NVRAM_CLEAR" />
+          <xs:enumeration value="NVRAM_OK" />
+          <xs:enumeration value="NVRAM_CLEAR_USER" />
+          <xs:enumeration value="NVRAM_LAYUT_CHANGED" />
+          <xs:enumeration value="NVRAM_CHECKSUM" />
+          <xs:enumeration value="HW_MORTISE_ERROR" />
+          <xs:enumeration value="HW_POWER_ERROR" />
+          <xs:enumeration value="HW_DPAC_ERROR" />
+          <xs:enumeration value="COMMUNICATION_ERROR" />
+          <xs:enumeration value="COMMUNICATION_TIMEOUT" />
+          <xs:enumeration value="COMMUNICATION_HW_DISABLED" />
+          <xs:enumeration value="COMMUNICATION_START" />
+          <xs:enumeration value="COMMUNICATION_END" />
+          <xs:enumeration value="RESET_PERFORMED" />
+          <xs:enumeration value="REMOTE_AUTHORIZATION_REQUEST" />
+          <xs:enumeration value="RXOVERRUN" />
+          <xs:enumeration value="ACCESSPOINT_RXHELD" />
+          <xs:enumeration value="ACCESSPOINT_DELETED" />
+          <xs:enumeration value="ACCESSPOINT_CREATED" />
+          <xs:enumeration value="ACCESSPOINT_REPLACED" />
+          <xs:enumeration value="ACCESSPOINT_CONFIRMED" />
+          <xs:enumeration value="ACCESSPOINT_UNCONFIRMED" />
+          <xs:enumeration value="ACCESSPOINT_ONLINE" />
+          <xs:enumeration value="ACCESSPOINT_OFFLINE" />
+          <xs:enumeration value="ACCESSPOINT_REQUEST_CLOCK_RESET" />
+          <xs:enumeration value="INTERNAL_ERROR" />
+          <xs:enumeration value="LOG_RETRIEVED" />
+          <xs:enumeration value="FIRMWARE_TAMPERED" />
+          <xs:enumeration value="LOCK_TAMPERED" />
+          <xs:enumeration value="AUDIT_LOG" />
+          <xs:enumeration value="MISSED_CALLBACKS_FROM_DSR" />
+          <xs:enumeration value="INTEGRITY_CHECK_FAILED" />
+          <xs:enumeration value="PRESENT_ON_BLACKLIST" />
+          <xs:enumeration value="BLACKLIST_CLEARED" />
+          <xs:enumeration value="BLACKLIST_LOADED" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="StatusCode">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Success" />
+          <xs:enumeration value="GenericFailure" />
+          <xs:enumeration value="NotFound" />
+          <xs:enumeration value="DuplicateRecord" />
+          <xs:enumeration value="ExistingCodebook" />
+          <xs:enumeration value="InvalidEmailFormat" />
+          <xs:enumeration value="InvalidUrl" />
+          <xs:enumeration value="InvalidOperation" />
+          <xs:enumeration value="AuthenticationRequired" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="AccessPointSynchronizationStatus">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="SYNCHRONIZED" />
+          <xs:enumeration value="PENDING" />
+          <xs:enumeration value="OUT_OF_SYNC" />
+          <xs:enumeration value="OUT_OF_SYNC_INTERNAL" />
+          <xs:enumeration value="OUT_OF_SYNC_COMM" />
+          <xs:enumeration value="ENABLED" />
+          <xs:enumeration value="DISABLED" />
+          <xs:enumeration value="CLEARED" />
+          <xs:enumeration value="UNKNOWN" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="AccessPointAttribute">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="SERIAL_NUMBER" />
+          <xs:enumeration value="BATTERY_LEVEL" />
+          <xs:enumeration value="BATTERY_STATUS" />
+          <xs:enumeration value="FIRMWARE_VERSION" />
+          <xs:enumeration value="FIRMWARE_TAMPERED" />
+          <xs:enumeration value="TAMPERED" />
+          <xs:enumeration value="DC_VOLTAGE" />
+          <xs:enumeration value="DESCRIPTION" />
+          <xs:enumeration value="LOCK_STATE" />
+          <xs:enumeration value="DOOR_STATE" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="LogOriginType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="CONTROLLER" />
+          <xs:enumeration value="DOOR" />
+          <xs:enumeration value="EXTENSION" />
+          <xs:enumeration value="DSR" />
+          <xs:enumeration value="CYLINDER" />
+          <xs:enumeration value="KEY" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="LogFamily">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="ACCESS" />
+          <xs:enumeration value="ALARM" />
+          <xs:enumeration value="GENERAL" />
+          <xs:enumeration value="AUDIT" />
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="checkMedecoWebService">
+    <wsdl:part name="parameters" element="tns:checkMedecoWebService" />
+  </wsdl:message>
+  <wsdl:message name="getAccessPointsList">
+    <wsdl:part name="parameters" element="tns:getAccessPointsList" />
+  </wsdl:message>
+  <wsdl:message name="upgradeAccessPointRadioFirmwareResponse">
+    <wsdl:part name="parameters" element="tns:upgradeAccessPointRadioFirmwareResponse" />
+  </wsdl:message>
+  <wsdl:message name="getAllAccessPoint">
+    <wsdl:part name="parameters" element="tns:getAllAccessPoint" />
+  </wsdl:message>
+  <wsdl:message name="upgradeAccessPointRadioFirmware">
+    <wsdl:part name="parameters" element="tns:upgradeAccessPointRadioFirmware" />
+  </wsdl:message>
+  <wsdl:message name="getCardholdersResponse">
+    <wsdl:part name="parameters" element="tns:getCardholdersResponse" />
+  </wsdl:message>
+  <wsdl:message name="getBatteryActivityReportResponse">
+    <wsdl:part name="parameters" element="tns:getBatteryActivityReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="getActivity">
+    <wsdl:part name="parameters" element="tns:getActivity" />
+  </wsdl:message>
+  <wsdl:message name="upgradeAccessPointFirmware">
+    <wsdl:part name="parameters" element="tns:upgradeAccessPointFirmware" />
+  </wsdl:message>
+  <wsdl:message name="upgradeAccessPointFirmwareResponse">
+    <wsdl:part name="parameters" element="tns:upgradeAccessPointFirmwareResponse" />
+  </wsdl:message>
+  <wsdl:message name="getAllAccessPointResponse">
+    <wsdl:part name="parameters" element="tns:getAllAccessPointResponse" />
+  </wsdl:message>
+  <wsdl:message name="getCardholders">
+    <wsdl:part name="parameters" element="tns:getCardholders" />
+  </wsdl:message>
+  <wsdl:message name="getAccessPointResponse">
+    <wsdl:part name="parameters" element="tns:getAccessPointResponse" />
+  </wsdl:message>
+  <wsdl:message name="getStatusResponse">
+    <wsdl:part name="parameters" element="tns:getStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="getAccessPointBatteryLogResponse">
+    <wsdl:part name="parameters" element="tns:getAccessPointBatteryLogResponse" />
+  </wsdl:message>
+  <wsdl:message name="getAccessPointsListResponse">
+    <wsdl:part name="parameters" element="tns:getAccessPointsListResponse" />
+  </wsdl:message>
+  <wsdl:message name="getStatus">
+    <wsdl:part name="parameters" element="tns:getStatus" />
+  </wsdl:message>
+  <wsdl:message name="syncConfigurationForConfirmedLocksResponse">
+    <wsdl:part name="parameters" element="tns:syncConfigurationForConfirmedLocksResponse" />
+  </wsdl:message>
+  <wsdl:message name="checkMedecoWebServiceResponse">
+    <wsdl:part name="parameters" element="tns:checkMedecoWebServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="syncConfigurationForConfirmedLocks">
+    <wsdl:part name="parameters" element="tns:syncConfigurationForConfirmedLocks" />
+  </wsdl:message>
+  <wsdl:message name="getBatteryActivityReport">
+    <wsdl:part name="parameters" element="tns:getBatteryActivityReport" />
+  </wsdl:message>
+  <wsdl:message name="getActivityResponse">
+    <wsdl:part name="parameters" element="tns:getActivityResponse" />
+  </wsdl:message>
+  <wsdl:message name="getAccessPoint">
+    <wsdl:part name="parameters" element="tns:getAccessPoint" />
+  </wsdl:message>
+  <wsdl:message name="getAccessPointBatteryLog">
+    <wsdl:part name="parameters" element="tns:getAccessPointBatteryLog" />
+  </wsdl:message>
+  <wsdl:portType name="DsrSupportInterface">
+    <wsdl:operation name="getActivity">
+      <wsdl:input wsam:Action="http://xml.assaabloy.com/dsr/2.0/DsrSupportInterface/getActivityRequest" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/DsrSupportInterface/getActivityRequest" name="getActivity" message="tns:getActivity" />
+      <wsdl:output wsam:Action="http://xml.assaabloy.com/dsr/2.0/DsrSupportInterface/getActivityResponse" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/DsrSupportInterface/getActivityResponse" name="getActivityResponse" message="tns:getActivityResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getAccessPointsList">
+      <wsdl:input wsam:Action="http://xml.assaabloy.com/dsr/2.0/DsrSupportInterface/getAccessPointsListRequest" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/DsrSupportInterface/getAccessPointsListRequest" name="getAccessPointsList" message="tns:getAccessPointsList" />
+      <wsdl:output wsam:Action="http://xml.assaabloy.com/dsr/2.0/DsrSupportInterface/getAccessPointsListResponse" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/DsrSupportInterface/getAccessPointsListResponse" name="getAccessPointsListResponse" message="tns:getAccessPointsListResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="upgradeAccessPointRadioFirmware">
+      <wsdl:input wsam:Action="http://xml.assaabloy.com/dsr/2.0/DsrSupportInterface/upgradeAccessPointRadioFirmwareRequest" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/DsrSupportInterface/upgradeAccessPointRadioFirmwareRequest" name="upgradeAccessPointRadioFirmware" message="tns:upgradeAccessPointRadioFirmware" />
+      <wsdl:output wsam:Action="http://xml.assaabloy.com/dsr/2.0/DsrSupportInterface/upgradeAccessPointRadioFirmwareResponse" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/DsrSupportInterface/upgradeAccessPointRadioFirmwareResponse" name="upgradeAccessPointRadioFirmwareResponse" message="tns:upgradeAccessPointRadioFirmwareResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getStatus">
+      <wsdl:input wsam:Action="http://xml.assaabloy.com/dsr/2.0/DsrSupportInterface/getStatusRequest" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/DsrSupportInterface/getStatusRequest" name="getStatus" message="tns:getStatus" />
+      <wsdl:output wsam:Action="http://xml.assaabloy.com/dsr/2.0/DsrSupportInterface/getStatusResponse" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/DsrSupportInterface/getStatusResponse" name="getStatusResponse" message="tns:getStatusResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="upgradeAccessPointFirmware">
+      <wsdl:input wsam:Action="http://xml.assaabloy.com/dsr/2.0/DsrSupportInterface/upgradeAccessPointFirmwareRequest" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/DsrSupportInterface/upgradeAccessPointFirmwareRequest" name="upgradeAccessPointFirmware" message="tns:upgradeAccessPointFirmware" />
+      <wsdl:output wsam:Action="http://xml.assaabloy.com/dsr/2.0/DsrSupportInterface/upgradeAccessPointFirmwareResponse" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/DsrSupportInterface/upgradeAccessPointFirmwareResponse" name="upgradeAccessPointFirmwareResponse" message="tns:upgradeAccessPointFirmwareResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getAllAccessPoint">
+      <wsdl:input wsam:Action="http://xml.assaabloy.com/dsr/2.0/DsrSupportInterface/getAllAccessPointRequest" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/DsrSupportInterface/getAllAccessPointRequest" name="getAllAccessPoint" message="tns:getAllAccessPoint" />
+      <wsdl:output wsam:Action="http://xml.assaabloy.com/dsr/2.0/DsrSupportInterface/getAllAccessPointResponse" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/DsrSupportInterface/getAllAccessPointResponse" name="getAllAccessPointResponse" message="tns:getAllAccessPointResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getBatteryActivityReport">
+      <wsdl:input wsam:Action="http://xml.assaabloy.com/dsr/2.0/DsrSupportInterface/getBatteryActivityReportRequest" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/DsrSupportInterface/getBatteryActivityReportRequest" name="getBatteryActivityReport" message="tns:getBatteryActivityReport" />
+      <wsdl:output wsam:Action="http://xml.assaabloy.com/dsr/2.0/DsrSupportInterface/getBatteryActivityReportResponse" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/DsrSupportInterface/getBatteryActivityReportResponse" name="getBatteryActivityReportResponse" message="tns:getBatteryActivityReportResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="syncConfigurationForConfirmedLocks">
+      <wsdl:input wsam:Action="http://xml.assaabloy.com/dsr/2.0/DsrSupportInterface/syncConfigurationForConfirmedLocksRequest" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/DsrSupportInterface/syncConfigurationForConfirmedLocksRequest" name="syncConfigurationForConfirmedLocks" message="tns:syncConfigurationForConfirmedLocks" />
+      <wsdl:output wsam:Action="http://xml.assaabloy.com/dsr/2.0/DsrSupportInterface/syncConfigurationForConfirmedLocksResponse" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/DsrSupportInterface/syncConfigurationForConfirmedLocksResponse" name="syncConfigurationForConfirmedLocksResponse" message="tns:syncConfigurationForConfirmedLocksResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getAccessPointBatteryLog">
+      <wsdl:input wsam:Action="http://xml.assaabloy.com/dsr/2.0/DsrSupportInterface/getAccessPointBatteryLogRequest" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/DsrSupportInterface/getAccessPointBatteryLogRequest" name="getAccessPointBatteryLog" message="tns:getAccessPointBatteryLog" />
+      <wsdl:output wsam:Action="http://xml.assaabloy.com/dsr/2.0/DsrSupportInterface/getAccessPointBatteryLogResponse" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/DsrSupportInterface/getAccessPointBatteryLogResponse" name="getAccessPointBatteryLogResponse" message="tns:getAccessPointBatteryLogResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getAccessPoint">
+      <wsdl:input wsam:Action="http://xml.assaabloy.com/dsr/2.0/DsrSupportInterface/getAccessPointRequest" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/DsrSupportInterface/getAccessPointRequest" name="getAccessPoint" message="tns:getAccessPoint" />
+      <wsdl:output wsam:Action="http://xml.assaabloy.com/dsr/2.0/DsrSupportInterface/getAccessPointResponse" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/DsrSupportInterface/getAccessPointResponse" name="getAccessPointResponse" message="tns:getAccessPointResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getCardholders">
+      <wsdl:input wsam:Action="http://xml.assaabloy.com/dsr/2.0/DsrSupportInterface/getCardholdersRequest" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/DsrSupportInterface/getCardholdersRequest" name="getCardholders" message="tns:getCardholders" />
+      <wsdl:output wsam:Action="http://xml.assaabloy.com/dsr/2.0/DsrSupportInterface/getCardholdersResponse" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/DsrSupportInterface/getCardholdersResponse" name="getCardholdersResponse" message="tns:getCardholdersResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="checkMedecoWebService">
+      <wsdl:input wsam:Action="http://xml.assaabloy.com/dsr/2.0/DsrSupportInterface/checkMedecoWebServiceRequest" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/DsrSupportInterface/checkMedecoWebServiceRequest" name="checkMedecoWebService" message="tns:checkMedecoWebService" />
+      <wsdl:output wsam:Action="http://xml.assaabloy.com/dsr/2.0/DsrSupportInterface/checkMedecoWebServiceResponse" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/DsrSupportInterface/checkMedecoWebServiceResponse" name="checkMedecoWebServiceResponse" message="tns:checkMedecoWebServiceResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="DsrSupportInterfaceServiceSoapBinding" type="tns:DsrSupportInterface">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsaw:UsingAddressing wsdl:required="true" />
+    <wsp:PolicyReference URI="#DsrSupportInterfaceServiceSoapBinding_WSAM_Addressing_Policy" />
+    <wsdl:operation name="getActivity">
+      <soap12:operation soapAction="" style="document" />
+      <wsdl:input name="getActivity">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getActivityResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAccessPointsList">
+      <soap12:operation soapAction="" style="document" />
+      <wsdl:input name="getAccessPointsList">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getAccessPointsListResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="upgradeAccessPointRadioFirmware">
+      <soap12:operation soapAction="" style="document" />
+      <wsdl:input name="upgradeAccessPointRadioFirmware">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="upgradeAccessPointRadioFirmwareResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getStatus">
+      <soap12:operation soapAction="" style="document" />
+      <wsdl:input name="getStatus">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getStatusResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="upgradeAccessPointFirmware">
+      <soap12:operation soapAction="" style="document" />
+      <wsdl:input name="upgradeAccessPointFirmware">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="upgradeAccessPointFirmwareResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllAccessPoint">
+      <soap12:operation soapAction="" style="document" />
+      <wsdl:input name="getAllAccessPoint">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getAllAccessPointResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBatteryActivityReport">
+      <soap12:operation soapAction="" style="document" />
+      <wsdl:input name="getBatteryActivityReport">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getBatteryActivityReportResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="syncConfigurationForConfirmedLocks">
+      <soap12:operation soapAction="" style="document" />
+      <wsdl:input name="syncConfigurationForConfirmedLocks">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="syncConfigurationForConfirmedLocksResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAccessPointBatteryLog">
+      <soap12:operation soapAction="" style="document" />
+      <wsdl:input name="getAccessPointBatteryLog">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getAccessPointBatteryLogResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAccessPoint">
+      <soap12:operation soapAction="" style="document" />
+      <wsdl:input name="getAccessPoint">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getAccessPointResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCardholders">
+      <soap12:operation soapAction="" style="document" />
+      <wsdl:input name="getCardholders">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getCardholdersResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkMedecoWebService">
+      <soap12:operation soapAction="" style="document" />
+      <wsdl:input name="checkMedecoWebService">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="checkMedecoWebServiceResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="DsrSupportInterfaceService">
+    <wsdl:port name="DsrSupportInterfacePort" binding="tns:DsrSupportInterfaceServiceSoapBinding">
+      <soap12:address location="http://localhost:9090/DsrSupportInterfacePort" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

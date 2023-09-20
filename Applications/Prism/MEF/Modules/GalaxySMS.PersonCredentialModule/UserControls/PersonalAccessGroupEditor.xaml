@@ -1,0 +1,340 @@
+﻿<UserControl x:Class="GalaxySMS.PersonCredential.UserControls.PersonalAccessGroupEditor"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:core="http://www.galaxysys.com/GCS/Core"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:prism="http://prismlibrary.com/"
+             xmlns:prismInfra="clr-namespace:GalaxySMS.Prism.Infrastructure;assembly=GalaxySMS.Prism.Infrastructure"
+             xmlns:sharedResources="clr-namespace:GalaxySMS.Resources;assembly=GalaxySMS.Resources"
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             xmlns:converters="clr-namespace:GCS.Core.Common.UI.Converters;assembly=GCS.Core.Common.UI"
+             xmlns:ui="clr-namespace:GalaxySMS.Client.UI;assembly=GalaxySMS.Client.UI"
+             xmlns:ui1="clr-namespace:GCS.Core.Common.UI;assembly=GCS.Core.Common.UI"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             xmlns:corewpf="clr-namespace:GCS.Core.Common.UI.WPF;assembly=GCS.Core.Common.UI"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:support="clr-namespace:GalaxySMS.PersonCredential.Support"
+             mc:Ignorable="d"
+             d:DesignHeight="400"
+             d:DesignWidth="600">
+    <UserControl.Resources>
+        <sys:Double x:Key="defaultImageButtonImageHeight">16</sys:Double>
+        <sys:Double x:Key="defaultImageButtonImageWidth">16</sys:Double>
+        <ui:LeftOrRight x:Key="imagePositionRight">Right</ui:LeftOrRight>
+        <ui:LeftOrRight x:Key="imagePositionLeft">Left</ui:LeftOrRight>
+        <sys:Double x:Key="accessPortalMaxImageHeight">32</sys:Double>
+        <sys:Double x:Key="accessPortalMaxImageWidth">32</sys:Double>
+
+        <BitmapImage x:Key="GreenDoubleArrowLeft"
+                 UriSource="/GalaxySMS.Resources;component/Images/Arrows/green_double_arrow_left.png" />
+        <BitmapImage x:Key="RedDoubleArrowRight"
+                 UriSource="/GalaxySMS.Resources;component/Images/Arrows/red_double_arrow_right.png" />
+        <Style x:Key="DraggableListBoxItem" TargetType="telerik:RadListBoxItem">
+            <Setter Property="telerik:DragDropManager.AllowCapturedDrag" Value="True" />
+        </Style>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <Border Grid.Row="0" Grid.Column="0" Style="{StaticResource HeaderBorder}">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Style="{StaticResource Heading3Left}" 
+                           Text="{x:Static sharedResources:Resources.EditPersonalAccessGroupView_AuthorizedAccessPortals}"
+                           Margin="10" />
+                <StackPanel Orientation="Vertical">
+                    <TextBlock
+                        Style="{StaticResource DataEntryControlTitle}"
+                        Text="{x:Static sharedResources:Resources.EditPersonalAccessGroupView_SelectTimeScheduleTitle}" />
+                    <telerik:RadComboBox 
+                        x:Name="cbAuthorizedTimeSchedules"
+                        ItemsSource="{Binding ClusterSelectionItem.TimeSchedules}"
+                        DisplayMemberPath="TimeScheduleName"
+                        SelectedValue="{Binding PersonPersonalAccessGroup.TimeScheduleUid}"
+                        SelectedValuePath="TimeScheduleUid"/>
+                </StackPanel>
+            </StackPanel>
+        </Border>
+
+        <corewpf:ConstrainingStackPanel Grid.Row="1" Grid.Column="0">
+            <telerik:RadGridView corewpf:ConstrainingStackPanel.Constrain="true"
+                                 x:Name="radGridViewAccessPortalsAuthorized"
+                                 Visibility="Visible"
+                                 ShowGroupPanel="False"
+                                 ItemsSource="{Binding AccessPortalsAuthorized}"
+                                 IsFilteringAllowed="False"
+                                 IsReadOnly="True"
+                                 AutoGenerateColumns="False"
+                                 Width="Auto"
+                                 RowIndicatorVisibility="Collapsed"
+                                 RowDetailsVisibilityMode="VisibleWhenSelected"
+                                 SelectionMode="Extended">
+                <i:Interaction.Behaviors>
+                    <core:MyMultiSelectBehavior SelectedItems="{Binding SelectedPersonalAccessPortalsAuthorized, Mode=TwoWay}" />
+                </i:Interaction.Behaviors>
+                <telerik:RadGridView.Columns>
+                    <telerik:GridViewDataColumn >
+                        <telerik:GridViewDataColumn.CellTemplate>
+                            <DataTemplate>
+                                <Border Margin="2" BorderThickness="2" BorderBrush="Black">
+                                    <Image MaxHeight="{StaticResource accessPortalMaxImageHeight}" Source="{Binding BinaryResource}"/>
+                                </Border>
+                            </DataTemplate>
+                        </telerik:GridViewDataColumn.CellTemplate>
+                    </telerik:GridViewDataColumn>
+                    <telerik:GridViewDataColumn
+                        Header="{x:Static sharedResources:Resources.EditPersonalAccessGroupView_AccessPortalName}"
+                        DataMemberBinding="{Binding AccessPortalName}" />
+                </telerik:RadGridView.Columns>
+
+            </telerik:RadGridView>
+        </corewpf:ConstrainingStackPanel>
+
+
+        <StackPanel Grid.Row="1" Grid.Column="1" Margin="5, 25,5,0">
+            <ui:ButtonControlBindable
+                                    ToolTip="{x:Static sharedResources:Resources.EditPersonalAccessGroupView_MoveAccessPortalsToNotAuthorizedToolTip}"
+                                    ImageSource="{StaticResource RedDoubleArrowRight}"
+                                    ImageHeight="{StaticResource defaultImageButtonImageHeight}"
+                                    TextColumn="0"
+                                    ImageColumn="1"
+                                    Command="{Binding Path=DataContext.PersonalAccessPortalToNotAuthorizedCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type core:UserControlViewBase}}}"
+                                    CommandParameter="{Binding SelectedItems, ElementName=radGridViewAccessPortalsAuthorized}" />
+
+            <ui:ButtonControlBindable 
+                                    ToolTip="{x:Static sharedResources:Resources.EditPersonalAccessGroupView_MoveAccessPortalsToAuthorizedToolTip}"
+                                    ImageSource="{StaticResource GreenDoubleArrowLeft}"
+                                    ImageHeight="{StaticResource defaultImageButtonImageHeight}"
+                                    TextColumn="0"
+                                    ImageColumn="1"
+                                    Command="{Binding Path=DataContext.PersonalAccessPortalToAuthorizedCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type core:UserControlViewBase}}}"
+                                    CommandParameter="{Binding SelectedItems, ElementName=radGridViewAccessPortalsNotAuthorized}" />
+
+        </StackPanel>
+
+        <Border Grid.Row="0" Grid.Column="2" Style="{StaticResource HeaderBorder}">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Style="{StaticResource Heading3Left}" 
+                           Text="{x:Static sharedResources:Resources.EditPersonalAccessGroupView_NotAuthorizedAccessPortals}"
+                           Margin="10" />
+            </StackPanel>
+        </Border>
+        <corewpf:ConstrainingStackPanel Grid.Row="1" Grid.Column="2">
+            <telerik:RadGridView corewpf:ConstrainingStackPanel.Constrain="true"
+                                 x:Name="radGridViewAccessPortalsNotAuthorized"
+                                 Visibility="Visible"
+                                 ShowGroupPanel="False"
+                                 ItemsSource="{Binding AccessPortalsNotAuthorized}"
+                                 IsFilteringAllowed="False"
+                                 IsReadOnly="True"
+                                 AutoGenerateColumns="False"
+                                 Width="Auto"
+                                 RowIndicatorVisibility="Collapsed"
+                                 RowDetailsVisibilityMode="VisibleWhenSelected"
+                                 SelectionMode="Extended">
+                <i:Interaction.Behaviors>
+                    <core:MyMultiSelectBehavior SelectedItems="{Binding SelectedPersonalAccessPortalsNotAuthorized}" />
+                </i:Interaction.Behaviors>
+                <telerik:RadGridView.Columns>
+                    <telerik:GridViewDataColumn >
+                        <telerik:GridViewDataColumn.CellTemplate>
+                            <DataTemplate>
+                                <Border Margin="2" BorderThickness="2" BorderBrush="Black">
+                                    <Image MaxHeight="{StaticResource accessPortalMaxImageHeight}" Source="{Binding BinaryResource}"/>
+                                </Border>
+                            </DataTemplate>
+                        </telerik:GridViewDataColumn.CellTemplate>
+                    </telerik:GridViewDataColumn>
+                    <telerik:GridViewDataColumn
+                        Header="{x:Static sharedResources:Resources.EditPersonalAccessGroupView_AccessPortalName}"
+                        DataMemberBinding="{Binding AccessPortalName}" />
+                </telerik:RadGridView.Columns>
+
+            </telerik:RadGridView>
+        </corewpf:ConstrainingStackPanel>
+
+        <!--<corewpf:ConstrainingStackPanel Grid.Row="1" Grid.Column="3">
+            <telerik:RadListBox ItemContainerStyle="{StaticResource DraggableListBoxItem}"
+                                ItemsSource="{Binding AccessPortalsAuthorized}" 
+                                BorderBrush="Black" BorderThickness="1" Margin="10"
+                                MinWidth="300">
+                <telerik:RadListBox.DragVisualProvider>
+                    <telerik:ScreenshotDragVisualProvider />
+                </telerik:RadListBox.DragVisualProvider>
+                <telerik:RadListBox.DragDropBehavior>
+                    <telerik:ListBoxDragDropBehavior />
+                </telerik:RadListBox.DragDropBehavior>
+                <telerik:RadListBox.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <telerik:RadWrapPanel Orientation="Horizontal"/>
+                    </ItemsPanelTemplate>
+                </telerik:RadListBox.ItemsPanel>
+                <telerik:RadListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Border BorderThickness="1" BorderBrush="LightGreen">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Image Source="{Binding BinaryResource}" MaxWidth="{StaticResource accessPortalMaxImageWidth}" MaxHeight="{StaticResource accessPortalMaxImageHeight}"/>
+                                <TextBlock Text="{Binding AccessPortalName}" Grid.Row="1"/>
+                            </Grid>
+                        </Border>
+                    </DataTemplate>
+                </telerik:RadListBox.ItemTemplate>
+            </telerik:RadListBox>
+
+        </corewpf:ConstrainingStackPanel>
+        <corewpf:ConstrainingStackPanel Grid.Row="1" Grid.Column="4">
+            <telerik:RadListBox ItemContainerStyle="{StaticResource DraggableListBoxItem}"
+                                ItemsSource="{Binding AccessPortalsNotAuthorized}" 
+                                BorderBrush="Black" 
+                                BorderThickness="1" Margin="10" MinWidth="300">
+                <telerik:RadListBox.DragVisualProvider>
+                    <telerik:ScreenshotDragVisualProvider />
+                </telerik:RadListBox.DragVisualProvider>
+                <telerik:RadListBox.DragDropBehavior>
+                    <telerik:ListBoxDragDropBehavior />
+                </telerik:RadListBox.DragDropBehavior>
+                <telerik:RadListBox.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <telerik:RadWrapPanel Orientation="Horizontal"/>
+                    </ItemsPanelTemplate>
+                </telerik:RadListBox.ItemsPanel>
+                <telerik:RadListBox.ItemTemplate >
+                    <DataTemplate>
+                        <Border BorderThickness="1" BorderBrush="Red">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Image Source="{Binding BinaryResource}" MaxWidth="{StaticResource accessPortalMaxImageWidth}" MaxHeight="{StaticResource accessPortalMaxImageHeight}"/>
+                                <TextBlock Text="{Binding AccessPortalName}" Grid.Row="1"/>
+                            </Grid>
+                        </Border>
+                    </DataTemplate>
+                </telerik:RadListBox.ItemTemplate>
+            </telerik:RadListBox>
+
+        </corewpf:ConstrainingStackPanel>-->
+
+        <Border Grid.Row="0" Grid.Column="4" Style="{StaticResource HeaderBorder}">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Style="{StaticResource Heading3Left}" 
+                           Text="{x:Static sharedResources:Resources.EditPersonalAccessGroupView_AuthorizedAccessGroups}"
+                           Margin="10" />
+            </StackPanel>
+        </Border>
+        <corewpf:ConstrainingStackPanel Grid.Row="1" Grid.Column="4">
+            <telerik:RadGridView corewpf:ConstrainingStackPanel.Constrain="true"
+                                 x:Name="radGridViewDynamicAccessGroupsAuthorized"
+                                 Visibility="Visible"
+                                 ShowGroupPanel="False"
+                                 ItemsSource="{Binding AccessGroupsAuthorized}"
+                                 IsFilteringAllowed="False"
+                                 IsReadOnly="True"
+                                 AutoGenerateColumns="False"
+                                 Width="Auto"
+                                 RowIndicatorVisibility="Collapsed"
+                                 RowDetailsVisibilityMode="VisibleWhenSelected"
+                                 SelectionMode="Extended">
+                <i:Interaction.Behaviors>
+                    <core:MyMultiSelectBehavior SelectedItems="{Binding SelectedPersonalAccessGroupsAuthorized, Mode=TwoWay}" />
+                </i:Interaction.Behaviors>
+                <telerik:RadGridView.Columns>
+                    <!--<telerik:GridViewDataColumn >
+                        <telerik:GridViewDataColumn.CellTemplate>
+                            <DataTemplate>
+                                <Border Margin="2" BorderThickness="2" BorderBrush="Black">
+                                    <Image MaxHeight="{StaticResource accessPortalMaxImageHeight}" Source="{Binding BinaryResource}"/>
+                                </Border>
+                            </DataTemplate>
+                        </telerik:GridViewDataColumn.CellTemplate>
+                    </telerik:GridViewDataColumn>-->
+                    <telerik:GridViewDataColumn
+                        Header="{x:Static sharedResources:Resources.EditPersonalAccessGroupView_AccessGroupName}"
+                        DataMemberBinding="{Binding AccessGroupName}" />
+                </telerik:RadGridView.Columns>
+
+            </telerik:RadGridView>
+        </corewpf:ConstrainingStackPanel>
+
+
+        <StackPanel Grid.Row="1" Grid.Column="5" Margin="5, 25,5,0">
+            <ui:ButtonControlBindable
+                                    ToolTip="{x:Static sharedResources:Resources.EditPersonalAccessGroupView_MoveAccessGroupsToNotAuthorizedToolTip}"
+                                    ImageSource="{StaticResource RedDoubleArrowRight}"
+                                    ImageHeight="{StaticResource defaultImageButtonImageHeight}"
+                                    TextColumn="0"
+                                    ImageColumn="1"
+                                    Command="{Binding Path=DataContext.PersonalDynamicAccessGroupToNotAuthorizedCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type core:UserControlViewBase}}}"
+                                    CommandParameter="{Binding SelectedItems, ElementName=radGridViewDynamicAccessGroupsAuthorized}" />
+
+            <ui:ButtonControlBindable 
+                                    ToolTip="{x:Static sharedResources:Resources.EditPersonalAccessGroupView_MoveAccessGroupsToAuthorizedToolTip}"
+                                    ImageSource="{StaticResource GreenDoubleArrowLeft}"
+                                    ImageHeight="{StaticResource defaultImageButtonImageHeight}"
+                                    TextColumn="0"
+                                    ImageColumn="1"
+                                    Command="{Binding Path=DataContext.PersonalDynamicAccessGroupToAuthorizedCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type core:UserControlViewBase}}}"
+                                    CommandParameter="{Binding SelectedItems, ElementName=radGridViewDynamicAccessGroupsNotAuthorized}" />
+
+        </StackPanel>
+
+        <Border Grid.Row="0" Grid.Column="6" Style="{StaticResource HeaderBorder}">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Style="{StaticResource Heading3Left}" 
+                           Text="{x:Static sharedResources:Resources.EditPersonalAccessGroupView_NotAuthorizedAccessGroups}"
+                           Margin="10" />
+            </StackPanel>
+        </Border>
+        <corewpf:ConstrainingStackPanel Grid.Row="1" Grid.Column="6">
+            <telerik:RadGridView corewpf:ConstrainingStackPanel.Constrain="true"
+                                 x:Name="radGridViewDynamicAccessGroupsNotAuthorized"
+                                 Visibility="Visible"
+                                 ShowGroupPanel="False"
+                                 ItemsSource="{Binding AccessGroupsNotAuthorized}"
+                                 IsFilteringAllowed="False"
+                                 IsReadOnly="True"
+                                 AutoGenerateColumns="False"
+                                 Width="Auto"
+                                 RowIndicatorVisibility="Collapsed"
+                                 RowDetailsVisibilityMode="VisibleWhenSelected"
+                                 SelectionMode="Extended">
+                <i:Interaction.Behaviors>
+                    <core:MyMultiSelectBehavior SelectedItems="{Binding SelectedPersonalAccessGroupsNotAuthorized}" />
+                </i:Interaction.Behaviors>
+                <telerik:RadGridView.Columns>
+                    <!--<telerik:GridViewDataColumn >
+                        <telerik:GridViewDataColumn.CellTemplate>
+                            <DataTemplate>
+                                <Border Margin="2" BorderThickness="2" BorderBrush="Black">
+                                    <Image MaxHeight="{StaticResource accessPortalMaxImageHeight}" Source="{Binding BinaryResource}"/>
+                                </Border>
+                            </DataTemplate>
+                        </telerik:GridViewDataColumn.CellTemplate>
+                    </telerik:GridViewDataColumn>-->
+                    <telerik:GridViewDataColumn
+                        Header="{x:Static sharedResources:Resources.EditPersonalAccessGroupView_AccessGroupName}"
+                        DataMemberBinding="{Binding AccessGroupName}" />
+                </telerik:RadGridView.Columns>
+
+            </telerik:RadGridView>
+        </corewpf:ConstrainingStackPanel>
+    </Grid>
+
+</UserControl>

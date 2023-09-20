@@ -382,3 +382,12 @@ Database/Files/
 /WpfApp1
 /WpfCoreApp
 /GalaxySMS - Copy.sln
+/GalaxySMS.SignalR/appsettings.json
+/GalaxySMS.ServiceHost.Console/App.config
+/GalaxySMS.MessageQueue.Processor/App.config
+/GalaxySMS.MercuryApi/appsettings.json
+/GalaxySMS.HangFire/appsettings.json
+/GalaxySMS.Grpc/appsettings.json
+/GalaxySMS.Core/App.config
+/GalaxySMS.Cdn/appsettings.json
+/GalaxySMS.Api/appsettings.json

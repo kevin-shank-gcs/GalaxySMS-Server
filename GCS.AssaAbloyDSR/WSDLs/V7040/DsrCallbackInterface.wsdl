@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="DsrCallbackInterfaceService" targetNamespace="http://xml.assaabloy.com/dsr/2.0" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://xml.assaabloy.com/dsr/2.0" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata">
+  <wsdl:types>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://xml.assaabloy.com/dsr/2.0" elementFormDefault="unqualified" targetNamespace="http://xml.assaabloy.com/dsr/2.0" version="1.0">
+<xs:element name="newEvent" type="tns:newEvent"/>
+<xs:element name="newEventResponse" type="tns:newEventResponse"/>
+<xs:element name="notifyUpdated" type="tns:notifyUpdated"/>
+<xs:element name="notifyUpdatedResponse" type="tns:notifyUpdatedResponse"/>
+<xs:complexType name="newEvent">
+<xs:sequence>
+<xs:element minOccurs="0" name="logEntry" type="tns:LogEntry"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="LogEntry">
+<xs:sequence>
+<xs:element name="origin" type="tns:LogOrigin"/>
+<xs:element name="family" type="tns:LogFamily"/>
+<xs:element name="code" type="tns:LogCode"/>
+<xs:element name="timeStamp" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="requestId" type="tns:DsrUUID"/>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="logData" type="tns:LogData"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="LogOrigin">
+<xs:all>
+<xs:element name="logOriginType" type="tns:LogOriginType"/>
+<xs:element name="originId" type="xs:string"/>
+</xs:all>
+</xs:complexType>
+<xs:complexType name="DsrUUID">
+<xs:sequence>
+<xs:element form="qualified" name="requestId" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="LogData">
+<xs:sequence>
+<xs:element name="name" type="xs:string"/>
+<xs:element name="value" type="tns:LogDataType"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="LogDataType">
+<xs:sequence>
+<xs:element form="qualified" minOccurs="0" name="intValue" type="xs:long"/>
+<xs:element form="qualified" minOccurs="0" name="stringValue" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="newEventResponse">
+<xs:sequence/>
+</xs:complexType>
+<xs:complexType name="notifyUpdated">
+<xs:sequence>
+<xs:element minOccurs="0" name="accessPoint" type="tns:AccessPoint"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="AccessPoint">
+<xs:complexContent>
+<xs:extension base="tns:Entity">
+<xs:sequence>
+<xs:element name="serialNumber" type="xs:string"/>
+<xs:element name="accessPointType" type="tns:AccessPointType"/>
+<xs:element name="online" type="xs:boolean"/>
+<xs:element name="confirmed" type="xs:boolean"/>
+<xs:element name="syncStatus" type="tns:AccessPointSynchronizationStatus"/>
+<xs:element name="lastSeen" type="xs:dateTime"/>
+<xs:element name="timeOfLastCommunicationError" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="accessPointAttributes" type="tns:AccessPointAttributes"/>
+<xs:element minOccurs="0" name="lastAlarm" type="tns:LogEntry"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType abstract="true" name="Entity">
+<xs:sequence/>
+<xs:attribute name="id" type="xs:string"/>
+</xs:complexType>
+<xs:complexType name="AccessPointType">
+<xs:sequence>
+<xs:element minOccurs="0" name="id" type="xs:string"/>
+<xs:element minOccurs="0" name="displayName" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="AccessPointAttributes">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="attribute" type="tns:AccessPointAttributeValue"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="AccessPointAttributeValue">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="name" type="tns:AccessPointAttribute" use="required"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+<xs:complexType name="notifyUpdatedResponse">
+<xs:sequence/>
+</xs:complexType>
+<xs:simpleType name="LogOriginType">
+<xs:restriction base="xs:string">
+<xs:enumeration value="CONTROLLER"/>
+<xs:enumeration value="DOOR"/>
+<xs:enumeration value="EXTENSION"/>
+<xs:enumeration value="DSR"/>
+<xs:enumeration value="CYLINDER"/>
+<xs:enumeration value="KEY"/>
+</xs:restriction>
+</xs:simpleType>
+<xs:simpleType name="LogFamily">
+<xs:restriction base="xs:string">
+<xs:enumeration value="ACCESS"/>
+<xs:enumeration value="ALARM"/>
+<xs:enumeration value="GENERAL"/>
+<xs:enumeration value="AUDIT"/>
+</xs:restriction>
+</xs:simpleType>
+<xs:simpleType name="LogCode">
+<xs:restriction base="xs:string">
+<xs:enumeration value="PROPRIETARY"/>
+<xs:enumeration value="DOOR_FORCED"/>
+<xs:enumeration value="DOOR_HELD"/>
+<xs:enumeration value="DOOR_BOLTTHROWN"/>
+<xs:enumeration value="DOOR_BOLTRETRACTED"/>
+<xs:enumeration value="MODE_PROGRAMMING"/>
+<xs:enumeration value="MODE_LOCKOUT"/>
+<xs:enumeration value="MODE_LOCKOUT_TIMED"/>
+<xs:enumeration value="MODE_LOCKOUT_USER"/>
+<xs:enumeration value="MODE_RELOCK"/>
+<xs:enumeration value="MODE_EMERGENCY"/>
+<xs:enumeration value="MODE_PANIC"/>
+<xs:enumeration value="MODE_RESET"/>
+<xs:enumeration value="MODE_NORMAL"/>
+<xs:enumeration value="MODE_PASSAGE"/>
+<xs:enumeration value="MODE_PASSAGE_TIMED"/>
+<xs:enumeration value="MODE_PASSAGE_USER"/>
+<xs:enumeration value="MODE_LOCKED"/>
+<xs:enumeration value="MODE_LOCKED_TIMED"/>
+<xs:enumeration value="MODE_LOCKED_USER"/>
+<xs:enumeration value="MODE_SECURED"/>
+<xs:enumeration value="MODE_PANIC_END"/>
+<xs:enumeration value="BATTERY_DEPLETED"/>
+<xs:enumeration value="BATTERY_REPLACED"/>
+<xs:enumeration value="BATTERY_CRITICAL"/>
+<xs:enumeration value="BATTERY_WARN"/>
+<xs:enumeration value="BATTERY_CHECK_ERROR"/>
+<xs:enumeration value="USER_MODIFY"/>
+<xs:enumeration value="USER_REVOKE"/>
+<xs:enumeration value="USER_ADD"/>
+<xs:enumeration value="USER_BADTIME"/>
+<xs:enumeration value="USER_INVALID"/>
+<xs:enumeration value="USER_OK"/>
+<xs:enumeration value="ACCESS_DENIED"/>
+<xs:enumeration value="ACCESS_DENIED_SCHEDULE"/>
+<xs:enumeration value="ACCESS_DENIED_LOCKOUT"/>
+<xs:enumeration value="ACCESS_DENIED_BOLTED"/>
+<xs:enumeration value="ACCESS_DENIED_EXPIRED"/>
+<xs:enumeration value="ACCESS_DENIED_BUSY"/>
+<xs:enumeration value="ACCESS_DENIED_SUSPENDED"/>
+<xs:enumeration value="ACCESS_DENIED_PANIC"/>
+<xs:enumeration value="ACCESS_DENIED_PASSAGE"/>
+<xs:enumeration value="ACCESS_GRANTED"/>
+<xs:enumeration value="ACCESS_GRANTED_REMOTEUNLOCK"/>
+<xs:enumeration value="ACCESS_GRANTED_ONE_TIME_USER"/>
+<xs:enumeration value="ACCESS_GRANTED_NOTIFY"/>
+<xs:enumeration value="ACCESS_GRANTED_DEADBOLT_OVERRIDE"/>
+<xs:enumeration value="ACCESS_KEYOVERRIDE"/>
+<xs:enumeration value="ACCESS_INVALIDENTRY"/>
+<xs:enumeration value="AUTHORIZATION_SUCCESS_COMMUSER"/>
+<xs:enumeration value="AUTHORIZATION_DENY_COMMUSER"/>
+<xs:enumeration value="AUTHORIZATION_SUCCESS_MASTER"/>
+<xs:enumeration value="AUTHORIZATION_FAIL_MASTER"/>
+<xs:enumeration value="LOG_LOGCLEARED"/>
+<xs:enumeration value="LOG_LOGWRAPPED"/>
+<xs:enumeration value="FIRMWARE_UPDATE_ABORT"/>
+<xs:enumeration value="FIRMWARE_UPDATE_ERROR"/>
+<xs:enumeration value="FIRMWARE_UPDATE_TIMEOUT"/>
+<xs:enumeration value="FIRMWARE_UPDATE_SUCCESS"/>
+<xs:enumeration value="FIRMWARE_UPDATE_FAIL"/>
+<xs:enumeration value="DB_USERDB_RESET"/>
+<xs:enumeration value="DB_USERDB_RESET_USER"/>
+<xs:enumeration value="CLOCK_DATETIMESET"/>
+<xs:enumeration value="CLOCK_DSTFORWARD"/>
+<xs:enumeration value="CLOCK_DSTBACK"/>
+<xs:enumeration value="CLOCK_ERROR"/>
+<xs:enumeration value="CLOCK_RESET"/>
+<xs:enumeration value="NVRAM_CLEAR"/>
+<xs:enumeration value="NVRAM_OK"/>
+<xs:enumeration value="NVRAM_CLEAR_USER"/>
+<xs:enumeration value="NVRAM_LAYUT_CHANGED"/>
+<xs:enumeration value="NVRAM_CHECKSUM"/>
+<xs:enumeration value="HW_MORTISE_ERROR"/>
+<xs:enumeration value="HW_POWER_ERROR"/>
+<xs:enumeration value="HW_DPAC_ERROR"/>
+<xs:enumeration value="COMMUNICATION_ERROR"/>
+<xs:enumeration value="COMMUNICATION_TIMEOUT"/>
+<xs:enumeration value="COMMUNICATION_HW_DISABLED"/>
+<xs:enumeration value="COMMUNICATION_START"/>
+<xs:enumeration value="COMMUNICATION_END"/>
+<xs:enumeration value="RESET_PERFORMED"/>
+<xs:enumeration value="REMOTE_AUTHORIZATION_REQUEST"/>
+<xs:enumeration value="RXOVERRUN"/>
+<xs:enumeration value="ACCESSPOINT_RXHELD"/>
+<xs:enumeration value="ACCESSPOINT_DELETED"/>
+<xs:enumeration value="ACCESSPOINT_CREATED"/>
+<xs:enumeration value="ACCESSPOINT_REPLACED"/>
+<xs:enumeration value="ACCESSPOINT_CONFIRMED"/>
+<xs:enumeration value="ACCESSPOINT_UNCONFIRMED"/>
+<xs:enumeration value="ACCESSPOINT_ONLINE"/>
+<xs:enumeration value="ACCESSPOINT_OFFLINE"/>
+<xs:enumeration value="ACCESSPOINT_REQUEST_CLOCK_RESET"/>
+<xs:enumeration value="INTERNAL_ERROR"/>
+<xs:enumeration value="LOG_RETRIEVED"/>
+<xs:enumeration value="FIRMWARE_TAMPERED"/>
+<xs:enumeration value="LOCK_TAMPERED"/>
+<xs:enumeration value="AUDIT_LOG"/>
+<xs:enumeration value="MISSED_CALLBACKS_FROM_DSR"/>
+<xs:enumeration value="INTEGRITY_CHECK_FAILED"/>
+<xs:enumeration value="PRESENT_ON_BLACKLIST"/>
+<xs:enumeration value="BLACKLIST_CLEARED"/>
+<xs:enumeration value="BLACKLIST_LOADED"/>
+</xs:restriction>
+</xs:simpleType>
+<xs:simpleType name="AccessPointSynchronizationStatus">
+<xs:restriction base="xs:string">
+<xs:enumeration value="SYNCHRONIZED"/>
+<xs:enumeration value="PENDING"/>
+<xs:enumeration value="OUT_OF_SYNC"/>
+<xs:enumeration value="OUT_OF_SYNC_INTERNAL"/>
+<xs:enumeration value="OUT_OF_SYNC_COMM"/>
+<xs:enumeration value="ENABLED"/>
+<xs:enumeration value="DISABLED"/>
+<xs:enumeration value="CLEARED"/>
+<xs:enumeration value="UNKNOWN"/>
+</xs:restriction>
+</xs:simpleType>
+<xs:simpleType name="AccessPointAttribute">
+<xs:restriction base="xs:string">
+<xs:enumeration value="SERIAL_NUMBER"/>
+<xs:enumeration value="FIRMWARE_VERSION"/>
+<xs:enumeration value="FIRMWARE_TAMPERED"/>
+<xs:enumeration value="TAMPERED"/>
+<xs:enumeration value="BATTERY_LEVEL"/>
+<xs:enumeration value="BATTERY_STATUS"/>
+<xs:enumeration value="DC_VOLTAGE"/>
+<xs:enumeration value="DESCRIPTION"/>
+<xs:enumeration value="LOCK_STATE"/>
+<xs:enumeration value="DOOR_STATE"/>
+<xs:enumeration value="RADIO_FIRMWARE_VERSION"/>
+<xs:enumeration value="TLS_CA_CERTIFICATE_VALID_FROM"/>
+<xs:enumeration value="TLS_CA_CERTIFICATE_VALID_TILL"/>
+<xs:enumeration value="TLS_CLIENT_CERTIFICATE_VALID_FROM"/>
+<xs:enumeration value="TLS_CLIENT_CERTIFICATE_VALID_TILL"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="newEvent">
+    <wsdl:part name="parameters" element="tns:newEvent">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="notifyUpdated">
+    <wsdl:part name="parameters" element="tns:notifyUpdated">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="notifyUpdatedResponse">
+    <wsdl:part name="parameters" element="tns:notifyUpdatedResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="newEventResponse">
+    <wsdl:part name="parameters" element="tns:newEventResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="DsrCallbackInterface">
+    <wsdl:operation name="newEvent">
+      <wsdl:input name="newEvent" message="tns:newEvent" wsam:Action="http://xml.assaabloy.com/dsr/2.0/DsrCallbackInterface/newEvent" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/DsrCallbackInterface/newEvent">
+    </wsdl:input>
+      <wsdl:output name="newEventResponse" message="tns:newEventResponse" wsam:Action="http://xml.assaabloy.com/dsr/2.0/DsrCallbackInterface/newEventResponse" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/DsrCallbackInterface/newEventResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="notifyUpdated">
+      <wsdl:input name="notifyUpdated" message="tns:notifyUpdated" wsam:Action="http://xml.assaabloy.com/dsr/2.0/DsrCallbackInterface/notifyUpdated" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/DsrCallbackInterface/notifyUpdated">
+    </wsdl:input>
+      <wsdl:output name="notifyUpdatedResponse" message="tns:notifyUpdatedResponse" wsam:Action="http://xml.assaabloy.com/dsr/2.0/DsrCallbackInterface/notifyUpdatedResponse" wsaw:Action="http://xml.assaabloy.com/dsr/2.0/DsrCallbackInterface/notifyUpdatedResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="DsrCallbackInterfaceServiceSoapBinding" type="tns:DsrCallbackInterface">
+    <soap12:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsaw:UsingAddressing wsdl:required="true"/>
+    <wsp:PolicyReference URI="#DsrCallbackInterfaceServiceSoapBinding_WSAM_Addressing_Policy"/>
+    <wsdl:operation name="newEvent">
+      <soap12:operation soapAction="http://xml.assaabloy.com/dsr/2.0/DsrCallbackInterface/newEvent" style="document"/>
+      <wsdl:input name="newEvent">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="newEventResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="notifyUpdated">
+      <soap12:operation soapAction="http://xml.assaabloy.com/dsr/2.0/DsrCallbackInterface/notifyUpdated" style="document"/>
+      <wsdl:input name="notifyUpdated">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="notifyUpdatedResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="DsrCallbackInterfaceService">
+    <wsdl:port name="DsrCallbackInterfacePort" binding="tns:DsrCallbackInterfaceServiceSoapBinding">
+      <soap12:address location="http://localhost:9090/DsrCallbackInterfacePort"/>
+    </wsdl:port>
+  </wsdl:service>
+    <wsp:Policy wsu:Id="DsrCallbackInterfaceServiceSoapBinding_WSAM_Addressing_Policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"><wsam:Addressing><wsp:Policy/></wsam:Addressing></wsp:Policy>
+</wsdl:definitions>

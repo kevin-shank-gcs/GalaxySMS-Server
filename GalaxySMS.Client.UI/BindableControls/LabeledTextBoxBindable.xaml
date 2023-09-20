@@ -1,0 +1,43 @@
+﻿<local:LabeledTextBoxUserControlBase
+    x:Class="GalaxySMS.Client.UI.LabeledTextBoxBindable"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:GalaxySMS.Client.UI"
+    xmlns:resx="clr-namespace:GalaxySMS.Client.UI.Properties"
+    xmlns:core="http://www.galaxysys.com/GCS/Core"
+    xmlns:converters="clr-namespace:GCS.Core.Common.UI.Converters;assembly=GCS.Core.Common.UI"
+    mc:Ignorable="d"
+    d:DesignHeight="300"
+    d:DesignWidth="300">
+
+    <local:LabeledTextBoxUserControlBase.Resources>
+        <converters:BooleanToVisibilityConverter x:Key="boolToVisibility" />
+        <converters:NullToVisibilityConverter x:Key="nullToVisibility" />
+        <converters:NotNullToVisibilityConverter x:Key="notNullToVisibility" />
+        <!--<BitmapImage x:Key="Image" UriSource="/GalaxySMS.Client.UI;component/Resources/Images/AddNew.png" />-->
+    </local:LabeledTextBoxUserControlBase.Resources>
+
+    <Grid ToolTip="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:LabeledTextBoxUserControlBase}}, Path=ToolTip}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        <TextBlock
+            Grid.Row="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:LabeledTextBoxUserControlBase}}, Path=LabelRow}"
+            Grid.Column="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:LabeledTextBoxUserControlBase}}, Path=LabelColumn}"
+            VerticalAlignment="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:LabeledTextBoxUserControlBase}}, Path= LabelVerticalAlignment}"
+            Text="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:LabeledTextBoxUserControlBase}}, Path=LabelText}" />
+        <TextBox
+            Grid.Row="1"
+            Grid.Column="1"
+            Text="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:LabeledTextBoxUserControlBase}}, 
+            Path=TextBoxValue, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, Mode=TwoWay}" />
+    </Grid>
+
+</local:LabeledTextBoxUserControlBase>

@@ -1,0 +1,124 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>GCS.Framework.Badging.Api.NetCore</name>
+    </assembly>
+    <members>
+        <member name="T:GCS.Framework.Badging.IdProducer.idProducerAPI">
+            <summary>
+            Wrapper class for idProducer JSON API calls
+            </summary>
+        </member>
+        <member name="F:GCS.Framework.Badging.IdProducer.idProducerAPI.RequestStateMapping.RequestInitState">
+            <summary>
+            Request is being sent out but is not created yet.
+            </summary>
+        </member>
+        <member name="F:GCS.Framework.Badging.IdProducer.idProducerAPI.RequestStateMapping.RequestCreated">
+            <summary>
+            Request has been created.
+            </summary>
+        </member>
+        <member name="F:GCS.Framework.Badging.IdProducer.idProducerAPI.RequestStateMapping.RequestUnassigned">
+            <summary>
+            Request has been unassigned.
+            </summary>
+        </member>
+        <member name="F:GCS.Framework.Badging.IdProducer.idProducerAPI.RequestStateMapping.RequestAssigned">
+            <summary>
+            Request has been assigned (at least to a Print Dispatcher station).
+            </summary>
+        </member>
+        <member name="F:GCS.Framework.Badging.IdProducer.idProducerAPI.RequestStateMapping.RequestAutoAssigned">
+            <summary>
+            Request has been auto-assigned (from an direct print request).
+            </summary>
+        </member>
+        <member name="F:GCS.Framework.Badging.IdProducer.idProducerAPI.RequestStateMapping.RequestReadyToPrint">
+            <summary>
+            Request is ready to be printed.
+            </summary>
+        </member>
+        <member name="F:GCS.Framework.Badging.IdProducer.idProducerAPI.RequestStateMapping.RequestPrinting">
+            <summary>
+            Request is being printed.
+            </summary>
+        </member>
+        <member name="F:GCS.Framework.Badging.IdProducer.idProducerAPI.RequestStateMapping.RequestError">
+            <summary>
+            Request has errors (resulting from a print failure or other).
+            </summary>
+        </member>
+        <member name="F:GCS.Framework.Badging.IdProducer.idProducerAPI.RequestStateMapping.RequestPrinted">
+            <summary>
+            Request has been printed without any error.
+            </summary>
+        </member>
+        <member name="F:GCS.Framework.Badging.IdProducer.idProducerAPI.RequestStateMapping.RequestQAFailed">
+            <summary>
+            Request has been rejected by QA.
+            </summary>
+        </member>
+        <member name="F:GCS.Framework.Badging.IdProducer.idProducerAPI.RequestStateMapping.RequestOnHold">
+            <summary>
+            Request has been put on hold.
+            </summary>
+        </member>
+        <member name="F:GCS.Framework.Badging.IdProducer.idProducerAPI.RequestStateMapping.RequestQAed">
+            <summary>
+            Request has been QAed successfully.
+            </summary>
+        </member>
+        <member name="F:GCS.Framework.Badging.IdProducer.idProducerAPI.RequestStateMapping.RequestClosed">
+            <summary>
+            Request has been closed.
+            </summary>
+        </member>
+        <member name="F:GCS.Framework.Badging.IdProducer.idProducerAPI.RequestStateMapping.UnknownState">
+            <summary>
+            Request is in an unknown state (i.e. bad).
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "T:GCS.Framework.Badging.IdProducer.idProducerAPI.BadgingEventType" -->
+        <member name="F:GCS.Framework.Badging.IdProducer.idProducerAPI.BadgingEventType.Added">
+            <summary>
+            An item was added.
+            </summary>
+        </member>
+        <member name="F:GCS.Framework.Badging.IdProducer.idProducerAPI.BadgingEventType.Deleted">
+            <summary>
+            An item was deleted.
+            </summary>
+        </member>
+        <member name="F:GCS.Framework.Badging.IdProducer.idProducerAPI.BadgingEventType.Modified">
+            <summary>
+            An item was modified.
+            </summary>
+        </member>
+        <member name="F:GCS.Framework.Badging.IdProducer.idProducerAPI.BadgingEventType.Complex">
+            <summary>
+            An item complex CRUD.
+            </summary>
+        </member>
+        <member name="M:GCS.Framework.Badging.IdProducer.idProducerAPI.CreateXmlPayload(System.String,System.String,System.Object)">
+            <summary>
+            Generate XML document payload from supplied values (for one record)
+            </summary>
+            <param name="identifier">Unique ID for individual print request</param>
+            <param name="label">Not currently used</param>
+            <param name="payloadFields">FieldName-Value pairs</param>
+            <returns></returns>
+        </member>
+        <member name="M:GCS.Framework.Badging.IdProducer.idProducerAPI.CreateXmlPayloadFromKVP(System.String,System.String,System.Collections.Generic.List{System.Collections.Generic.KeyValuePair{System.String,System.String}})">
+             <summary>   Generate XML document payload from supplied values (for one record) </summary>
+            
+             <remarks>   Kevin, 2/20/2018. </remarks>
+            
+             <param name="identifier">       Unique ID for individual print request. </param>
+             <param name="label">            Not currently used. </param>
+             <param name="payloadFields">    FieldName-Value pairs. </param>
+            
+             <returns>   The new XML payload. </returns>
+        </member>
+    </members>
+</doc>

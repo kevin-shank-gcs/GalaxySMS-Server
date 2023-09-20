@@ -1,0 +1,15 @@
+﻿////////////////////////////////////////////////////////////////////////////////////////////////////
+// file:	Constants\GetOptions.cs
+//
+// summary:	Implements the get options class
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+namespace GalaxySMS.Common.Constants
+{
+
+    public class DeleteOptions_Entity
+    {
+        public const string AutoDeleteRegions = "AutoDeleteRegions";
+        public const string AutoDeleteSites = "AutoDeleteSites";
+    }
+}

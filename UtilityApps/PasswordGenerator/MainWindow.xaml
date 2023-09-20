@@ -1,0 +1,85 @@
+﻿<Window x:Class="PasswordGenerator.MainWindow"
+                xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+                xmlns:passwordGenerator="clr-namespace:PasswordGenerator"
+                Title="Kevin's Password Generator" Width="545" Height="375" Icon="Oxygen-Icons.org-Oxygen-Status-security-high.ico">
+    <Window.DataContext>
+        <passwordGenerator:MainWindowViewModel />
+    </Window.DataContext>
+    <Window.Resources>
+        <BitmapImage x:Key="PasswordLock" UriSource="/PasswordGenerator;component/Images/password-wizard_128x128.png"></BitmapImage>
+        <BitmapImage x:Key="Gears" UriSource="/PasswordGenerator;component/Images/gear_icon.png"></BitmapImage>
+        <BitmapImage x:Key="Copy" UriSource="/PasswordGenerator;component/Images/copy.png"></BitmapImage>
+        <SolidColorBrush x:Key="PasswordBackgroundBrush" Color="DarkGray"/>
+    </Window.Resources>
+    <Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Image x:Name="imgPasswordLock" Grid.RowSpan="2"  Source="{StaticResource PasswordLock}" VerticalAlignment="Center"/>
+
+            <telerik:GroupBox x:Name="groupBox" Grid.Row="0" Grid.Column="2"  HorizontalAlignment="Left" VerticalAlignment="Top" Header="Password Requirements:">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="10"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Row="0" Grid.Column="0" Text="Minimum Password Length:"/>
+                    <telerik:RadMaskedNumericInput Grid.Row="0" Grid.Column="2" Mask="#2" MinWidth="20" TextMode="PlainText" AutoFillZeros="True"  Value="{Binding PasswordMinimumLength}"/>
+                    <TextBlock Grid.Row="1" Grid.Column="0" Text="Maximum Password Length:"/>
+                    <telerik:RadMaskedNumericInput Grid.Row="1" Grid.Column="2" Mask="#2" MinWidth="20" TextMode="PlainText" AutoFillZeros="True" Value="{Binding PasswordMaximumLength}"/>
+                    <TextBlock Grid.Row="2" Grid.Column="0" Text="Minimum # of UPPER CASE Letters?"/>
+                    <telerik:RadMaskedNumericInput Grid.Row="2" Grid.Column="2" Mask="#2" MinWidth="20" TextMode="PlainText" AutoFillZeros="True"  Value="{Binding MinimumUpperCase}" />
+                    <TextBlock Grid.Row="3" Grid.Column="0" Text="Minimum # of lower case Letters:"/>
+                    <telerik:RadMaskedNumericInput Grid.Row="3" Grid.Column="2" Mask="#2" MinWidth="20" TextMode="PlainText" AutoFillZeros="True"  Value="{Binding MinimumLowerCase}" />
+                    <TextBlock Grid.Row="4" Grid.Column="0" Text="Minimum # of numbers:"/>
+                    <telerik:RadMaskedNumericInput Grid.Row="4" Grid.Column="2" Mask="#2" MinWidth="20" TextMode="PlainText" AutoFillZeros="True" Value="{Binding MinimumNumericDigits}" />
+                    <TextBlock Grid.Row="5" Grid.Column="0" Text="Minimum # of $peci@! characters:"/>
+                    <telerik:RadMaskedNumericInput Grid.Row="5" Grid.Column="2" Mask="#2" MinWidth="20" TextMode="PlainText" AutoFillZeros="True" Value="{Binding MinimumSpecialCharacters}"  />
+                    <CheckBox Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="3" IsChecked="{Binding GenerateCloudStylePassword}">Use Wierd Words</CheckBox>
+                </Grid>
+            </telerik:GroupBox>
+            <telerik:GroupBox x:Name="groupBoxAction" Grid.Row="1" Grid.Column="2" Header="Generate Password">
+                <StackPanel Orientation="Vertical">
+                    <telerik:RadButton Command="{Binding GeneratePasswordCommand}">
+                        <StackPanel Orientation="Horizontal">
+                            <Image x:Name="imgGears" Margin="0,0,5,0" MaxHeight="48" Source="{StaticResource Gears}" VerticalAlignment="Center"/>
+                            <TextBlock Text="Generate Password" VerticalAlignment="Center"></TextBlock>
+                        </StackPanel>
+                    </telerik:RadButton>
+                    <!--<TextBlock Text="Password" HorizontalAlignment="Center"/>-->
+                    <StackPanel Background="{DynamicResource PasswordBackgroundBrush}">
+                        <TextBox Background="{DynamicResource PasswordBackgroundBrush}" Text="{Binding GeneratedPassword}" IsReadOnly="True" Foreground="#FFF70C0C" FontWeight="SemiBold" HorizontalAlignment="Center" HorizontalContentAlignment="Center" FontSize="20"/>
+                    </StackPanel>
+                    <telerik:RadButton Command="{Binding CopyPasswordCommand}">
+                        <StackPanel Orientation="Horizontal">
+                            <Image x:Name="imgCopy" MaxHeight="48"  Margin="0,0,5,0" Source="{StaticResource Copy}" VerticalAlignment="Center"/>
+                            <TextBlock Text="Copy Password to Clipboard" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </telerik:RadButton>
+
+                </StackPanel>
+            </telerik:GroupBox>
+        </Grid>
+    </Grid>
+</Window>

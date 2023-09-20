@@ -1,0 +1,361 @@
+﻿<core:UserControlViewBase x:Class="GalaxySMS.PersonCredential.Views.EditPersonView"
+                          xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                          xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                          xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                          xmlns:core="http://www.galaxysys.com/GCS/Core"
+                          xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                          xmlns:prism="http://prismlibrary.com/"
+                          xmlns:resx="clr-namespace:GalaxySMS.PersonCredential.Properties"
+                          xmlns:localUserControls="clr-namespace:GalaxySMS.PersonCredential.UserControls"
+                          xmlns:sharedResources="clr-namespace:GalaxySMS.Resources;assembly=GalaxySMS.Resources"
+                          xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+                          xmlns:converters="clr-namespace:GCS.Core.Common.UI.Converters;assembly=GCS.Core.Common.UI"
+                          xmlns:ui="clr-namespace:GalaxySMS.Client.UI;assembly=GalaxySMS.Client.UI"
+                          xmlns:sys="clr-namespace:System;assembly=mscorlib"
+                          mc:Ignorable="d"
+                          d:DesignHeight="300" d:DesignWidth="300" 
+                          FlowDirection="{Binding FlowDirection}">
+    <core:UserControlViewBase.Resources>
+        <sys:Double x:Key="defaultImageButtonImageHeight">16</sys:Double>
+        <sys:Double x:Key="defaultImageButtonImageWidth">16</sys:Double>
+    </core:UserControlViewBase.Resources>
+   
+    <telerik:RadBusyIndicator IsBusy="{Binding IsBusy}" IsIndeterminate="True" BusyContent="{Binding BusyContent}" DisplayAfter="0">
+        <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <ui:FormHeaderControl/>
+                    <StackPanel Grid.Column="1" Orientation="Horizontal">
+                        <ui:SaveButtonControlBindable
+                            Command="{Binding  DataContext.SaveCommand, RelativeSource={RelativeSource AncestorType=core:UserControlViewBase}}"
+                            CommandParameter="{Binding}"
+                            ImageHeight="{StaticResource defaultImageButtonImageHeight}"
+                            ImageWidth="{StaticResource defaultImageButtonImageWidth}"
+                            Text="{x:Static sharedResources:Resources.SavePerson_Text}"
+                            ToolTip="{x:Static sharedResources:Resources.SavePerson_ToolTip}" />
+                        <ui:CancelButtonControlBindable
+                            Command="{Binding  DataContext.CancelCommand, RelativeSource={RelativeSource AncestorType=core:UserControlViewBase}}"
+                            CommandParameter="{Binding}"
+                            ImageHeight="{StaticResource defaultImageButtonImageHeight}"
+                            ImageWidth="{StaticResource defaultImageButtonImageWidth}"
+                            Text="{x:Static sharedResources:Resources.CancelEditPerson_Text}"
+                            ToolTip="{x:Static sharedResources:Resources.CancelEditPerson_ToolTip}" />
+                    </StackPanel>
+                </Grid>
+                <core:ValidationHeader Grid.Row="1" DataContext="{Binding}" />
+                <Grid Grid.Row="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="10" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="10" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="10" />
+                    </Grid.ColumnDefinitions>
+                    <telerik:RadExpander
+                        Grid.Row="0"
+                        Grid.RowSpan="8"
+                        Grid.ColumnSpan="2"
+                        ExpandDirection="Right"
+                        IsExpanded="{Binding IsBasicInfoExpanded}">
+                        <telerik:RadExpander.Header>
+                            <Border Style="{StaticResource HeaderBorder}">
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock
+                                        Margin="8"
+                                        Style="{StaticResource Heading2Left}"
+                                        Text="{x:Static sharedResources:Resources.EditPersonView_BasicDataExpanderHeaderText}" />
+                                </StackPanel>
+                            </Border>
+                        </telerik:RadExpander.Header>
+                        <Grid>
+                            <localUserControls:PersonBasicProperties />
+                        </Grid>
+                    </telerik:RadExpander>
+                    <StackPanel Grid.Row="1" Grid.Column="4" Grid.RowSpan="7">
+                        <Border BorderThickness="1" BorderBrush="Gainsboro">
+                            <telerik:RadExpander
+                                ExpandDirection="Down"
+                                Margin="5">
+                                <telerik:RadExpander.Header>
+                                    <Border Style="{StaticResource HeaderBorder}">
+                                        <Grid>
+                                            <Grid.ToolTip>
+                                                <TextBlock
+                                                    Text="{x:Static sharedResources:Resources.EditPersonView_RequiredPropertiesTabHeaderToolTip}" />
+                                            </Grid.ToolTip>
+                                            <TextBlock Margin="8"
+                                                       Style="{StaticResource Heading2Left}"
+                                                       Text="{x:Static sharedResources:Resources.EditPersonView_RequiredPropertiesTabHeaderText}" />
+                                        </Grid>
+                                    </Border>
+                                </telerik:RadExpander.Header>
+                                <Grid>
+                                    <localUserControls:ucRequiredProperties />
+                                </Grid>
+                            </telerik:RadExpander>
+                        </Border>
+                        
+                        <Border BorderThickness="1" BorderBrush="Gainsboro">
+                            <telerik:RadExpander
+                                ExpandDirection="Down"
+                                Margin="5">
+                                <telerik:RadExpander.Header>
+                                    <Border Style="{StaticResource HeaderBorder}">
+                                        <Grid>
+                                            <Grid.ToolTip>
+                                                <TextBlock
+                                                    Text="{x:Static sharedResources:Resources.EditPersonView_CredentialsTabHeaderToolTip}" />
+                                            </Grid.ToolTip>
+                                            <TextBlock Margin="8"
+                                                       Style="{StaticResource Heading2Left}"
+                                                       Text="{x:Static sharedResources:Resources.EditPersonView_CredentialsTabHeaderText}" />
+                                        </Grid>
+                                    </Border>
+                                </telerik:RadExpander.Header>
+                                <Grid>
+                                    <localUserControls:ucPersonCredentials />
+                                </Grid>
+                            </telerik:RadExpander>
+                        </Border>
+
+                        <Border BorderThickness="1" BorderBrush="Gainsboro">
+                            <telerik:RadExpander
+                                ExpandDirection="Down"
+                                Margin="5">
+                                <telerik:RadExpander.Header>
+                                    <Border Style="{StaticResource HeaderBorder}">
+                                        <Grid>
+                                            <Grid.ToolTip>
+                                                <TextBlock
+                                                    Text="{x:Static sharedResources:Resources.EditPersonView_AccessAlarmControlPermissionsTabHeaderToolTip}" />
+                                            </Grid.ToolTip>
+                                            <TextBlock Margin="8"
+                                                       Style="{StaticResource Heading2Left}"
+                                                       Text="{x:Static sharedResources:Resources.EditPersonView_AccessAlarmControlPermissionsTabHeaderText}" />
+                                        </Grid>
+                                    </Border>
+                                </telerik:RadExpander.Header>
+                                <Grid>
+                                    <localUserControls:ucPersonAccessControlProperties />
+                                </Grid>
+                            </telerik:RadExpander>
+                        </Border>
+
+                        <Border BorderThickness="1" BorderBrush="Gainsboro">
+                            <telerik:RadExpander
+                                ExpandDirection="Down"
+                                Margin="5">
+                                <telerik:RadExpander.Header>
+                                    <Border Style="{StaticResource HeaderBorder}">
+                                        <Grid>
+                                            <Grid.ToolTip>
+                                                <TextBlock
+                                                    Text="{x:Static sharedResources:Resources.EditPersonView_PersonalPropertiesTabHeaderToolTip}" />
+                                            </Grid.ToolTip>
+                                            <TextBlock Margin="8"
+                                                       Style="{StaticResource Heading2Left}"
+                                                       Text="{x:Static sharedResources:Resources.EditPersonView_PersonalPropertiesTabHeaderText}" />
+                                        </Grid>
+                                    </Border>
+                                </telerik:RadExpander.Header>
+                                <Grid>
+                                    <localUserControls:PersonPersonalProperties />
+                                </Grid>
+                            </telerik:RadExpander>
+                        </Border>
+
+                        <Border BorderThickness="1" BorderBrush="Gainsboro">
+                            <telerik:RadExpander
+                                ExpandDirection="Down"
+                                Margin="5">
+                                <telerik:RadExpander.Header>
+                                    <Border Style="{StaticResource HeaderBorder}">
+                                        <Grid>
+                                            <Grid.ToolTip>
+                                                <TextBlock
+                                                    Text="{x:Static sharedResources:Resources.EditPersonView_EmploymentPropertiesTabHeaderToolTip}" />
+                                            </Grid.ToolTip>
+                                            <TextBlock Margin="8"
+                                                       Style="{StaticResource Heading2Left}"
+                                                       Text="{x:Static sharedResources:Resources.EditPersonView_EmploymentPropertiesTabHeaderText}" />
+                                        </Grid>
+                                    </Border>
+                                </telerik:RadExpander.Header>
+                                <Grid>
+                                    <localUserControls:PersonEmploymentProperties />
+                                </Grid>
+                            </telerik:RadExpander>
+                        </Border>
+                        
+                        <Border BorderThickness="1" BorderBrush="Gainsboro">
+                            <telerik:RadExpander
+                                ExpandDirection="Down"
+                                Margin="5">
+                                <telerik:RadExpander.Header>
+                                    <Border Style="{StaticResource HeaderBorder}">
+                                        <Grid>
+                                            <Grid.ToolTip>
+                                                <TextBlock
+                                                    Text="{x:Static sharedResources:Resources.EditPersonView_GeneralPropertiesTabHeaderToolTip}" />
+                                            </Grid.ToolTip>
+                                            <TextBlock Margin="8"
+                                                       Style="{StaticResource Heading2Left}"
+                                                       Text="{x:Static sharedResources:Resources.EditPersonView_GeneralPropertiesTabHeaderText}" />
+                                        </Grid>
+                                    </Border>
+                                </telerik:RadExpander.Header>
+                                <Grid>
+                                    <localUserControls:PersonGeneralProperties />
+                                </Grid>
+                            </telerik:RadExpander>
+                        </Border> 
+                        
+                        <Border BorderThickness="1" BorderBrush="Gainsboro">
+                            <telerik:RadExpander
+                                ExpandDirection="Down"
+                                Margin="5">
+                                <telerik:RadExpander.Header>
+                                    <Border Style="{StaticResource HeaderBorder}">
+                                        <Grid>
+                                            <Grid.ToolTip>
+                                                <TextBlock
+                                                    Text="{Binding Path=EntityAliasPlural, StringFormat={x:Static sharedResources:Resources.EditPersonView_EntityMappingTabHeaderToolTip}}" />
+                                            </Grid.ToolTip>
+                                            <TextBlock Margin="8"
+                                                       Style="{StaticResource Heading2Left}"
+                                                       Text="{Binding Path=EntityAlias, StringFormat={x:Static sharedResources:Resources.EditPersonView_EntityMappingTabHeader}}" />
+                                        </Grid>
+                                    </Border>
+                                </telerik:RadExpander.Header>
+                                <Grid>
+                                    <ui:EntityMapUserControl />
+                                </Grid>
+                            </telerik:RadExpander>
+
+                        </Border>
+                    </StackPanel>
+                        <!--<telerik:RadTabControl Grid.Row="1" Grid.Column="4" Grid.RowSpan="7" SelectionChanged="RadTabControl_SelectionChanged">
+                            <telerik:RadTabItem>
+                                <telerik:RadTabItem.Header>
+                                    <Grid>
+                                        <Grid.ToolTip>
+                                            <TextBlock
+                                                Text="{x:Static sharedResources:Resources.EditPersonView_RequiredPropertiesTabHeaderToolTip}" />
+                                        </Grid.ToolTip>
+                                        <TextBlock
+                                            Text="{x:Static sharedResources:Resources.EditPersonView_RequiredPropertiesTabHeaderText}" />
+                                    </Grid>
+                                </telerik:RadTabItem.Header>
+                                <AdornerDecorator>
+                                    <StackPanel>
+                                        <localUserControls:ucRequiredProperties />
+                                    </StackPanel>
+                                </AdornerDecorator>
+                            </telerik:RadTabItem>
+                            <telerik:RadTabItem>
+                                <telerik:RadTabItem.Header>
+                                    <Grid>
+                                        <Grid.ToolTip>
+                                            <TextBlock
+                                                Text="{x:Static sharedResources:Resources.EditPersonView_PersonalPropertiesTabHeaderToolTip}" />
+                                        </Grid.ToolTip>
+                                        <TextBlock
+                                            Text="{x:Static sharedResources:Resources.EditPersonView_PersonalPropertiesTabHeaderText}" />
+                                    </Grid>
+                                </telerik:RadTabItem.Header>
+                                <StackPanel>
+                                    <localUserControls:PersonPersonalProperties />
+                                </StackPanel>
+                            </telerik:RadTabItem>
+                            <telerik:RadTabItem>
+                                <telerik:RadTabItem.Header>
+                                    <Grid>
+                                        <Grid.ToolTip>
+                                            <TextBlock
+                                                Text="{x:Static sharedResources:Resources.EditPersonView_EmploymentPropertiesTabHeaderToolTip}" />
+                                        </Grid.ToolTip>
+                                        <TextBlock
+                                            Text="{x:Static sharedResources:Resources.EditPersonView_EmploymentPropertiesTabHeaderText}" />
+                                    </Grid>
+                                </telerik:RadTabItem.Header>
+                                <StackPanel>
+                                    <localUserControls:PersonEmploymentProperties />
+                                </StackPanel>
+                            </telerik:RadTabItem>
+                            <telerik:RadTabItem>
+                                <telerik:RadTabItem.Header>
+                                    <Grid>
+                                        <Grid.ToolTip>
+                                            <TextBlock
+                                                Text="{x:Static sharedResources:Resources.EditPersonView_GeneralPropertiesTabHeaderToolTip}" />
+                                        </Grid.ToolTip>
+                                        <TextBlock
+                                            Text="{x:Static sharedResources:Resources.EditPersonView_GeneralPropertiesTabHeaderText}" />
+                                    </Grid>
+                                </telerik:RadTabItem.Header>
+                                <StackPanel>
+                                    <localUserControls:PersonGeneralProperties />
+                                </StackPanel>
+                            </telerik:RadTabItem>
+                            <telerik:RadTabItem>
+                                <telerik:RadTabItem.Header>
+                                    <Grid>
+                                        <Grid.ToolTip>
+                                            <TextBlock
+                                                Text="{Binding Path=EntityAliasPlural, StringFormat={x:Static sharedResources:Resources.EditPersonView_EntityMappingTabHeaderToolTip}}" />
+                                        </Grid.ToolTip>
+                                        <TextBlock
+                                            Text="{Binding Path=EntityAlias, StringFormat={x:Static sharedResources:Resources.EditPersonView_EntityMappingTabHeader}}" />
+                                    </Grid>
+                                </telerik:RadTabItem.Header>
+                                <ui:EntityMapUserControl />
+                            </telerik:RadTabItem>
+                        </telerik:RadTabControl>-->
+                    </Grid>
+
+                <StackPanel Grid.Row="3" Orientation="Horizontal">
+                    <ui:SaveButtonControlBindable
+                        Command="{Binding  DataContext.SaveCommand, RelativeSource={RelativeSource AncestorType=core:UserControlViewBase}}"
+                        CommandParameter="{Binding}"
+                        ImageHeight="{StaticResource defaultImageButtonImageHeight}"
+                        ImageWidth="{StaticResource defaultImageButtonImageWidth}"
+                        Text="{x:Static sharedResources:Resources.SavePerson_Text}"
+                        ToolTip="{x:Static sharedResources:Resources.SavePerson_ToolTip}" />
+                    <ui:CancelButtonControlBindable
+                        Command="{Binding  DataContext.CancelCommand, RelativeSource={RelativeSource AncestorType=core:UserControlViewBase}}"
+                        CommandParameter="{Binding}"
+                        ImageHeight="{StaticResource defaultImageButtonImageHeight}"
+                        ImageWidth="{StaticResource defaultImageButtonImageWidth}"
+                        Text="{x:Static sharedResources:Resources.CancelEditPerson_Text}"
+                        ToolTip="{x:Static sharedResources:Resources.CancelEditPerson_ToolTip}" />
+                </StackPanel>
+                <core:ErrorsPanel Grid.Row="4" DataContext="{Binding}" />
+            </Grid>
+        </ScrollViewer>
+    </telerik:RadBusyIndicator>
+</core:UserControlViewBase>

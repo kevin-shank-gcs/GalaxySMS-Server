@@ -1,0 +1,88 @@
+﻿////////////////////////////////////////////////////////////////////////////////////////////////////
+// file:	PanelMessages\FromPanel\CardCountReply.cs
+//
+// summary:	Implements the card count reply class
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace GalaxySMS.Client.Entities
+{
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+    /// <summary>   A card count reply. </summary>
+    ///
+    /// <remarks>   Kevin, 12/26/2018. </remarks>
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+	[DataContract]
+	public class CredentialCountReply : PanelMessageBase
+	{
+        /// <summary>   The value. </summary>
+	    private uint _value;
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Default constructor. </summary>
+        ///
+        /// <remarks>   Kevin, 12/26/2018. </remarks>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+	    public CredentialCountReply()
+		{
+		}
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Constructor. </summary>
+        ///
+        /// <remarks>   Kevin, 12/26/2018. </remarks>
+        ///
+        /// <param name="b">    The PanelMessageBase to process. </param>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        public CredentialCountReply(PanelMessageBase b)
+            : base(b)
+        {
+        }
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Constructor. </summary>
+        ///
+        /// <remarks>   Kevin, 12/26/2018. </remarks>
+        ///
+        /// <param name="o">    The CardCountReply to process. </param>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        public CredentialCountReply(CredentialCountReply o)
+			: base(o)
+		{
+			if (o != null)
+			{
+				Value = o.Value;
+			}
+		}
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Gets or sets the value. </summary>
+        ///
+        /// <value> The value. </value>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+	    [DataMember]
+	    public UInt32 Value
+	    {
+	        get { return _value; }
+	        set
+	        {
+	            if (_value != value)
+	            {
+	                _value = value;
+                    OnPropertyChanged(() => Value);
+                }
+	        }
+	    }
+	}
+}

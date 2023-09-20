@@ -1,0 +1,70 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using GalaxySMS.Common.Enums;
+
+namespace GCS.Framework.CredentialProcessor
+{
+    public class CredentialFormatBase
+    {
+        public const int StandardBinaryDataLength = 6;
+        public const int ExtendedBinaryDataLength = 32;
+
+        public CredentialFormatBase()
+        {
+            ContainsData = false;
+            FCC = string.Empty;
+        }
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Gets or sets a value indicating whether this object contains data. </summary>
+        ///
+        /// <value> true if contains data, false if not. </value>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        public virtual bool ContainsData { get; internal set; }
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Gets or sets the fcc. </summary>
+        ///
+        /// <value> The fcc. </value>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        public virtual string FCC { get; internal set; }
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Gets or sets the data format. </summary>
+        ///
+        /// <value> The data format. </value>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        public virtual CredentialFormatCodes DataFormat { get; internal set; }
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Gets or sets the number of bits. </summary>
+        ///
+        /// <value> The number of bits. </value>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        public virtual int BitCount { get; set; }
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Gets or sets information describing the binary. </summary>
+        ///
+        /// <value> Information describing the binary. </value>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        public virtual byte[] BinaryDataStandard {get; internal set;}
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Gets or sets the binary data extended. </summary>
+        ///
+        /// <value> The binary data extended. </value>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        public virtual byte[] BinaryDataExtended { get; internal set; }
+    }
+    
+}

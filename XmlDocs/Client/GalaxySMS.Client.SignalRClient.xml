@@ -1,0 +1,366 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>GalaxySMS.Client.SignalRClient</name>
+    </assembly>
+    <members>
+        <member name="F:GalaxySMS.Client.SignalRClient.SignalRClient._serverUrl">
+            <summary>   URL of the server. </summary>
+        </member>
+        <member name="M:GalaxySMS.Client.SignalRClient.SignalRClient.#ctor">
+             <summary>   Default constructor. </summary>
+            
+             <remarks>   Kevin, 9/6/2018. </remarks>
+        </member>
+        <member name="M:GalaxySMS.Client.SignalRClient.SignalRClient.#ctor(System.String)">
+             <summary>   Constructor. </summary>
+            
+             <remarks>   Kevin, 9/6/2018. </remarks>
+            
+             <param name="name"> The name. </param>
+        </member>
+        <member name="P:GalaxySMS.Client.SignalRClient.SignalRClient.Name">
+             <summary>   Gets or sets the name. </summary>
+            
+             <value> The name. </value>
+        </member>
+        <member name="M:GalaxySMS.Client.SignalRClient.SignalRClient.Dispose">
+             <summary>
+             Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged
+             resources.
+             </summary>
+            
+             <remarks>   Kevin, 9/6/2018. </remarks>
+        </member>
+        <member name="M:GalaxySMS.Client.SignalRClient.SignalRClient.ConnectAsync(System.String,System.Guid)">
+             <summary>   Connects to the SignalR server identified by the serverUrl. </summary>
+            
+             <remarks>   Kevin, 9/6/2018. </remarks>
+            
+             <param name="serverUrl">    URL of the server. </param>
+             <param name="_sessionId">   The session Guid value. </param>
+            
+             <returns>   A Task. </returns>
+        </member>
+        <member name="M:GalaxySMS.Client.SignalRClient.SignalRClient.JoinGroup(System.String)">
+             <summary>   Joins a SignalR group. </summary>
+            
+             <remarks>   The groupName should be the EntityId or SessionId value that the application wants to receive notifications from. </remarks>
+            
+             <param name="groupName">    Name of the group. This should be a Guid value in string format.</param>
+            
+             <returns>   A Task. </returns>
+        </member>
+        <member name="M:GalaxySMS.Client.SignalRClient.SignalRClient.LeaveGroup(System.String)">
+             <summary>   Leave group. </summary>
+            
+             <remarks>   The groupName should be the EntityId or SessionId value that the application wants to stop receiving notifications from. </remarks>
+            
+             <param name="groupName">    Name of the group. This should be a Guid value in string format. </param>
+            
+             <returns>   A Task. </returns>
+        </member>
+        <member name="M:GalaxySMS.Client.SignalRClient.SignalRClient.UpdateSessionId(System.Guid)">
+             <summary>   Updates the session identifier described by sessionId. </summary>
+            
+             <remarks>   If an application signs in or changes login so that the SessionId changes, this method should be called. This will leave the group with the previous SessionId value and join a new group with the new value. </remarks>
+            
+             <param name="sessionId">    Identifier for the session. </param>
+            
+             <returns>   A Task. </returns>
+        </member>
+        <member name="P:GalaxySMS.Client.SignalRClient.SignalRClient.HubProxy">
+             <summary>   Gets or sets the hub proxy. </summary>
+            
+             <value> The hub proxy. </value>
+        </member>
+        <member name="P:GalaxySMS.Client.SignalRClient.SignalRClient.Connection">
+             <summary>   Gets or sets the connection. </summary>
+            
+             <value> The connection. </value>
+        </member>
+        <member name="T:GalaxySMS.Client.SignalRClient.SignalRClient.PanelBoardInformationCollectionEventArgs">
+             <summary>   Additional information for panel board information collection events. </summary>
+            
+             <remarks>   Contains a collection of PanelBoardInformation objects that represent the boards connected to a specific panel. </remarks>
+        </member>
+        <member name="T:GalaxySMS.Client.SignalRClient.SignalRClient.SerialChannelGalaxyDoorModuleDataCollectionEventArgs">
+             <summary>
+             Additional information for serial channel galaxy door module data collection events.
+             </summary>
+            
+             <seealso cref="T:System.EventArgs"/>
+            =================================================================================================
+        </member>
+        <member name="T:GalaxySMS.Client.SignalRClient.SignalRClient.SerialChannelGalaxyInputModuleDataCollectionEventArgs">
+             <summary>
+             Additional information for serial channel galaxy input module data collection events.
+             </summary>
+            
+             <seealso cref="T:System.EventArgs"/>
+            =================================================================================================
+        </member>
+        <member name="T:GalaxySMS.Client.SignalRClient.SignalRClient.PanelInqueryReplyEventArgs">
+             <summary>   Additional information for panel inquery reply events. </summary>
+            
+             <remarks>   Kevin, 1/3/2019. </remarks>
+        </member>
+        <member name="T:GalaxySMS.Client.SignalRClient.SignalRClient.LoggingStatusReplyEventArgs">
+             <summary>   Additional information for logging status reply events. </summary>
+            
+             <remarks>   Kevin, 1/3/2019. </remarks>
+        </member>
+        <member name="T:GalaxySMS.Client.SignalRClient.SignalRClient.FlashProgressMessageEventArgs">
+             <summary>   Additional information for flash progress message events. </summary>
+            
+             <remarks>   Kevin, 1/24/2019. </remarks>
+        </member>
+        <member name="T:GalaxySMS.Client.SignalRClient.SignalRClient.CredentialCountReplyEventArgs">
+             <summary>   Additional information for card count reply events. </summary>
+            
+             <remarks>   Kevin, 1/3/2019. </remarks>
+        </member>
+        <member name="T:GalaxySMS.Client.SignalRClient.SignalRClient.AccessPortalStatusReplyEventArgs">
+             <summary>   Additional information for access portal status reply events. </summary>
+            
+             <remarks>   Contains a AccessPortalStatusReply object that provides information about the current state of a access portal. </remarks>
+        </member>
+        <member name="T:GalaxySMS.Client.SignalRClient.SignalRClient.InputDeviceStatusReplyEventArgs">
+             <summary>   Additional information for input device status reply events. </summary>
+            
+             <seealso cref="T:System.EventArgs"/>
+            =================================================================================================
+        </member>
+        <member name="T:GalaxySMS.Client.SignalRClient.SignalRClient.InputDeviceVoltagesReplyEventArgs">
+             <summary>   Additional information for input device voltages reply events. </summary>
+            
+             <seealso cref="T:System.EventArgs"/>
+            =================================================================================================
+        </member>
+        <member name="T:GalaxySMS.Client.SignalRClient.SignalRClient.PanelActivityLogMessageEventArgs">
+             <summary>   Additional information for panel activity log message events. </summary>
+            
+             <remarks>   Contains a PanelActivityLogMessage object that provides information about a specific activity that occured on the system. </remarks>
+        </member>
+        <member name="T:GalaxySMS.Client.SignalRClient.SignalRClient.PanelCredentialActivityLogMessageEventArgs">
+             <summary>
+             Additional information for panel credential activity log message events.
+             </summary>
+            
+             <remarks>   Contains a PanelCredentialActivityLogMessage object that provides information about a specific credential based activity that occured on the system. </remarks>
+            
+        </member>
+        <member name="T:GalaxySMS.Client.SignalRClient.SignalRClient.PanelBoardInformationCollectionHandler">
+             <summary>   Delegate for handling PanelBoardInformationCollection events. </summary>
+             
+             <remarks>   Kevin, 1/3/2019. </remarks>
+            
+             <param name="sender">   Source of the event. </param>
+             <param name="e">        Panel board information collection event information. </param>
+        </member>
+        <member name="E:GalaxySMS.Client.SignalRClient.SignalRClient.PanelBoardInformationCollectionEvent">
+            <summary>
+            Event queue for all listeners interested in PanelBoardInformationCollection events.
+            </summary>
+        </member>
+        <member name="E:GalaxySMS.Client.SignalRClient.SignalRClient.SerialChannelGalaxyDoorModuleDataCollectionEvent">
+            <summary>   Event queue for all listeners interested in activityLog events. </summary>
+        </member>
+        <member name="E:GalaxySMS.Client.SignalRClient.SignalRClient.SerialChannelGalaxyInputModuleDataCollectionEvent">
+            <summary>   Event queue for all listeners interested in activityLog events. </summary>
+        </member>
+        <member name="T:GalaxySMS.Client.SignalRClient.SignalRClient.PanelInqueryReplyHandler">
+             <summary>   Delegate for handling PanelInqueryReply events. </summary>
+            
+             <remarks>   Kevin, 1/3/2019. </remarks>
+            
+             <param name="sender">   Source of the event. </param>
+             <param name="e">        Panel inquery reply event information. </param>
+        </member>
+        <member name="E:GalaxySMS.Client.SignalRClient.SignalRClient.PanelInqueryReplyEvent">
+            <summary>   Event queue for all listeners interested in panelInqueryReply events. </summary>
+        </member>
+        <member name="T:GalaxySMS.Client.SignalRClient.SignalRClient.CredentialCountReplyHandler">
+             <summary>   Delegate for handling CardCountReply events. </summary>
+            
+             <remarks>   Kevin, 1/3/2019. </remarks>
+            
+             <param name="sender">   Source of the event. </param>
+             <param name="e">        Card count reply event information. </param>
+        </member>
+        <member name="E:GalaxySMS.Client.SignalRClient.SignalRClient.CredentialCountReplyEvent">
+            <summary>   Event queue for all listeners interested in cardCountReply events. </summary>
+        </member>
+        <member name="T:GalaxySMS.Client.SignalRClient.SignalRClient.LoggingStatusReplyHandler">
+             <summary>   Delegate for handling LoggingStatusReply events. </summary>
+            
+             <remarks>   Kevin, 1/3/2019. </remarks>
+            
+             <param name="sender">   Source of the event. </param>
+             <param name="e">        Logging status reply event information. </param>
+        </member>
+        <member name="E:GalaxySMS.Client.SignalRClient.SignalRClient.LoggingStatusReplyEvent">
+            <summary>   Event queue for all listeners interested in loggingStatusReply events. </summary>
+        </member>
+        <member name="T:GalaxySMS.Client.SignalRClient.SignalRClient.FlashProgressMessageHandler">
+             <summary>   Handler, called when the flash progress message. </summary>
+            
+             <remarks>   Kevin, 1/24/2019. </remarks>
+            
+             <param name="sender">   Source of the event. </param>
+             <param name="e">        Flash progress message event information. </param>
+        </member>
+        <member name="E:GalaxySMS.Client.SignalRClient.SignalRClient.FlashProgressMessageEvent">
+            <summary>   Event queue for all listeners interested in flashProgressMessage events. </summary>
+        </member>
+        <member name="T:GalaxySMS.Client.SignalRClient.SignalRClient.PanelLoadDataReplyHandler">
+             <summary>   Handler, called when the flash progress message. </summary>
+            
+             <remarks>   Kevin, 1/24/2019. </remarks>
+            
+             <param name="sender">   Source of the event. </param>
+             <param name="e">        Flash progress message event information. </param>
+        </member>
+        <member name="E:GalaxySMS.Client.SignalRClient.SignalRClient.PanelLoadDataReplyEvent">
+            <summary>   Event queue for all listeners interested in flashProgressMessage events. </summary>
+        </member>
+        <member name="T:GalaxySMS.Client.SignalRClient.SignalRClient.AccessPortalStatusReplyHandler">
+             <summary>   Delegate for handling AccessPortalStatusReply events. </summary>
+             
+             <remarks>   Kevin, 1/3/2019. </remarks>
+            
+             <param name="sender">   Source of the event. </param>
+             <param name="e">        Access portal status reply event information. </param>
+        </member>
+        <member name="E:GalaxySMS.Client.SignalRClient.SignalRClient.AccessPortalStatusReplyEvent">
+            <summary>
+            Event queue for all listeners interested in AccessPortalStatusReply events.
+            </summary>
+        </member>
+        <member name="T:GalaxySMS.Client.SignalRClient.SignalRClient.AccessPortalCommandReplyHandler">
+             <summary>   Delegate for handling AccessPortalCommandReply events. </summary>
+             
+             <remarks>   Kevin, 1/3/2019. </remarks>
+            
+             <param name="sender">   Source of the event. </param>
+             <param name="e">        Access portal status reply event information. </param>
+        </member>
+        <member name="E:GalaxySMS.Client.SignalRClient.SignalRClient.AccessPortalCommandReplyEvent">
+            <summary>
+            Event queue for all listeners interested in AccessPortalCommandReply events.
+            </summary>
+        </member>
+        <member name="T:GalaxySMS.Client.SignalRClient.SignalRClient.InputDeviceStatusReplyHandler">
+             <summary>   Delegate for handling InputDeviceStatusReply events. </summary>
+             
+             <remarks>   Kevin, 1/3/2019. </remarks>
+            
+             <param name="sender">   Source of the event. </param>
+             <param name="e">        input device status reply event information. </param>
+        </member>
+        <member name="E:GalaxySMS.Client.SignalRClient.SignalRClient.InputDeviceStatusReplyEvent">
+            <summary>
+            Event queue for all listeners interested in InputDeviceStatusReply events.
+            </summary>
+        </member>
+        <member name="T:GalaxySMS.Client.SignalRClient.SignalRClient.InputDeviceVoltagesReplyHandler">
+             <summary>   Delegate for handling InputDeviceVoltagesReply events. </summary>
+             
+             <remarks>   Kevin, 1/3/2019. </remarks>
+            
+             <param name="sender">   Source of the event. </param>
+             <param name="e">        Input device voltages reply event information. </param>
+        </member>
+        <member name="E:GalaxySMS.Client.SignalRClient.SignalRClient.InputDeviceVoltagesReplyEvent">
+            <summary>
+            Event queue for all listeners interested in InputDeviceVoltagesReply events.
+            </summary>
+        </member>
+        <member name="T:GalaxySMS.Client.SignalRClient.SignalRClient.PanelCredentialActivityLogMessageEventHandler">
+             <summary>   Delegate for handling PanelCredentialActivityLogMessage events. </summary>
+            
+             <remarks>   Kevin, 1/3/2019. </remarks>
+            
+             <param name="sender">   Source of the event. </param>
+             <param name="e">        Panel credential activity log message event information. </param>
+        </member>
+        <member name="E:GalaxySMS.Client.SignalRClient.SignalRClient.CredentialActivityLogEvent">
+            <summary>   Event queue for all listeners interested in CredentialActivityLog events. </summary>
+        </member>
+        <member name="E:GalaxySMS.Client.SignalRClient.SignalRClient.NotInPanelMemoryCredentialActivityLogEvent">
+            <summary>   Event queue for all listeners interested in NotInPanelMemoryCredentialActivity events. </summary>
+        </member>
+        <member name="E:GalaxySMS.Client.SignalRClient.SignalRClient.CredentialAlarmEvent">
+            <summary>   Event queue for all listeners interested in CredentialAlarm events. </summary>
+        </member>
+        <member name="T:GalaxySMS.Client.SignalRClient.SignalRClient.PanelActivityLogMessageEventHandler">
+             <summary>   Delegate for handling PanelActivityLogMessage events. </summary>
+            
+             <remarks>   Kevin, 1/3/2019. </remarks>
+            
+             <param name="sender">   Source of the event. </param>
+             <param name="e">        Panel activity log message event information. </param>
+        </member>
+        <member name="E:GalaxySMS.Client.SignalRClient.SignalRClient.ActivityLogEvent">
+            <summary>   Event queue for all listeners interested in ActivityLog events. </summary>
+        </member>
+        <member name="E:GalaxySMS.Client.SignalRClient.SignalRClient.AlarmEvent">
+            <summary>   Event queue for all listeners interested in Alarm events. </summary>
+        </member>
+        <member name="E:GalaxySMS.Client.SignalRClient.SignalRClient.AcknowledgedAlarmBasicDataEvent">
+            <summary>   Event queue for all listeners interested in activityLog events. </summary>
+        </member>
+        <member name="T:GalaxySMS.Client.SignalRClient.SignalRClient.ConnectionClosedEventHandler">
+             <summary>   Delegate for handling ConnectionClosed events. </summary>
+            
+             <remarks>   Kevin, 9/6/2018. </remarks>
+            
+             <param name="sender">   Source of the event. </param>
+             <param name="e">        Signal r connection closed event information. </param>
+        </member>
+        <member name="E:GalaxySMS.Client.SignalRClient.SignalRClient.ConnectionClosedEvent">
+            <summary>   Event queue for all listeners interested in ConnectionClosed events. </summary>
+        </member>
+        <member name="T:GalaxySMS.Client.SignalRClient.SignalRClient.ConnectionStateChangedEventHandler">
+             <summary>   Delegate for handling ConnectionClosed events. </summary>
+            
+             <remarks>   Kevin, 9/6/2018. </remarks>
+            
+             <param name="sender">   Source of the event. </param>
+             <param name="e">        Signal r connection closed event information. </param>
+        </member>
+        <member name="E:GalaxySMS.Client.SignalRClient.SignalRClient.ConnectionStateChangedEvent">
+            <summary>   Event queue for all listeners interested in connectionClosed events. </summary>
+        </member>
+        <member name="T:GalaxySMS.Client.SignalRClient.SignalRClient.ConnectionErrorEventHandler">
+             <summary>   Delegate for handling ConnectionError events. </summary>
+            
+             <remarks>   Kevin, 1/3/2019. </remarks>
+            
+             <param name="sender">   Source of the event. </param>
+             <param name="e">        Signal r connection error event information. </param>
+        </member>
+        <member name="E:GalaxySMS.Client.SignalRClient.SignalRClient.ConnectionErrorEvent">
+            <summary>   Event queue for all listeners interested in connectionError events. </summary>
+        </member>
+        <member name="M:GalaxySMS.Client.SignalRClient.SignalRClient.Connection_Closed">
+             <summary>   Connection closed. </summary>
+            
+             <remarks>   Kevin, 9/6/2018. </remarks>
+        </member>
+        <member name="M:GalaxySMS.Client.SignalRClient.SignalRClient.Connection_StateChanged(Microsoft.AspNet.SignalR.Client.StateChange)">
+             <summary>   Connection state changed. </summary>
+            
+             <remarks>   Kevin, 9/6/2018. </remarks>
+            
+             <param name="obj">  The object. </param>
+        </member>
+        <member name="M:GalaxySMS.Client.SignalRClient.SignalRClient.Connection_Error(System.Exception)">
+             <summary>   Connection error. </summary>
+            
+             <remarks>   Kevin, 9/6/2018. </remarks>
+            
+             <param name="obj">  The object. </param>
+        </member>
+    </members>
+</doc>

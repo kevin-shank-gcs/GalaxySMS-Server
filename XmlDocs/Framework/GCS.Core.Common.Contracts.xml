@@ -1,0 +1,1619 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>GCS.Core.Common.Contracts</name>
+    </assembly>
+    <members>
+        <member name="T:GCS.Core.Common.Contracts.Message">
+             <summary>   A message. </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+        </member>
+        <member name="P:GCS.Core.Common.Contracts.Message.MessageId">
+             <summary>   Gets or sets the identifier of the message. </summary>
+            
+             <value> The identifier of the message. </value>
+        </member>
+        <member name="P:GCS.Core.Common.Contracts.Message.Subject">
+             <summary>   Gets or sets the subject. </summary>
+            
+             <value> The subject. </value>
+        </member>
+        <member name="P:GCS.Core.Common.Contracts.Message.Category">
+             <summary>   Gets or sets the category. </summary>
+            
+             <value> The category. </value>
+        </member>
+        <member name="P:GCS.Core.Common.Contracts.Message.Tag">
+             <summary>   Gets or sets the tag. </summary>
+            
+             <value> The tag. </value>
+        </member>
+        <member name="P:GCS.Core.Common.Contracts.Message.TextData">
+             <summary>   Gets or sets information describing the text. </summary>
+            
+             <value> Information describing the text. </value>
+        </member>
+        <member name="P:GCS.Core.Common.Contracts.Message.BinaryData">
+             <summary>   Gets or sets information describing the binary. </summary>
+            
+             <value> Information describing the binary. </value>
+        </member>
+        <member name="P:GCS.Core.Common.Contracts.Message.Messages">
+             <summary>   Gets or sets the messages. </summary>
+            
+             <value> The messages. </value>
+        </member>
+        <member name="T:GCS.Core.Common.Contracts.IApplicationControlMonitor">
+             <summary>   Interface for application control monitor. </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+        </member>
+        <member name="M:GCS.Core.Common.Contracts.IApplicationControlMonitor.SendMessageOneWay(GCS.Core.Common.Contracts.Message)">
+             <summary>   Sends a message one way. </summary>
+            
+             <param name="data"> The data. </param>
+        </member>
+        <member name="M:GCS.Core.Common.Contracts.IApplicationControlMonitor.SendMessageWithResponse(GCS.Core.Common.Contracts.Message)">
+             <summary>   Sends a message with response. </summary>
+            
+             <param name="data"> The data. </param>
+            
+             <returns>   A Message. </returns>
+        </member>
+        <member name="T:GCS.Core.Common.Contracts.IApplicationControlMonitorCallback">
+             <summary>   Interface for application control monitor callback. </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+        </member>
+        <member name="M:GCS.Core.Common.Contracts.IApplicationControlMonitorCallback.SendEventMessage(GCS.Core.Common.Contracts.Message)">
+             <summary>   Sends an event message. </summary>
+            
+             <param name="data"> The data. </param>
+        </member>
+        <member name="T:GCS.Core.Common.Contracts.IDataRepositoryDbContext">
+             <summary>   Interface for data repository database context. </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+        </member>
+        <member name="T:GCS.Core.Common.Contracts.IDataRepositoryDbContext`1">
+             <summary>   Interface for data repository database context. </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+            
+             <typeparam name="T">    Generic type parameter. </typeparam>
+        </member>
+        <member name="M:GCS.Core.Common.Contracts.IDataRepositoryDbContext`1.Add(`0,GCS.Core.Common.Contracts.IApplicationUserSessionDataHeader)">
+             <summary>   Adds entity. </summary>
+            
+             <param name="entity">       The entity. </param>
+             <param name="sessionData">  Information describing the session. </param>
+            
+             <returns>   A T. </returns>
+        </member>
+        <member name="M:GCS.Core.Common.Contracts.IDataRepositoryDbContext`1.Update(`0,GCS.Core.Common.Contracts.IApplicationUserSessionDataHeader)">
+             <summary>   Updates this IDataRepositoryDbContext&lt;T&gt; </summary>
+            
+             <param name="entity">       The entity. </param>
+             <param name="sessionData">  Information describing the session. </param>
+            
+             <returns>   A T. </returns>
+        </member>
+        <member name="M:GCS.Core.Common.Contracts.IDataRepositoryDbContext`1.Remove(`0,GCS.Core.Common.Contracts.IApplicationUserSessionDataHeader)">
+             <summary>   Removes this IDataRepositoryDbContext&lt;T&gt; </summary>
+            
+             <param name="entity">       The entity. </param>
+             <param name="sessionData">  Information describing the session. </param>
+        </member>
+        <member name="M:GCS.Core.Common.Contracts.IDataRepositoryDbContext`1.Remove(System.Int32,GCS.Core.Common.Contracts.IApplicationUserSessionDataHeader)">
+             <summary>   Removes this IDataRepositoryDbContext&lt;T&gt; </summary>
+            
+             <param name="id">           The identifier. </param>
+             <param name="sessionData">  Information describing the session. </param>
+        </member>
+        <member name="M:GCS.Core.Common.Contracts.IDataRepositoryDbContext`1.Remove(System.Guid,GCS.Core.Common.Contracts.IApplicationUserSessionDataHeader)">
+             <summary>   Removes this IDataRepositoryDbContext&lt;T&gt; </summary>
+            
+             <param name="id">           The identifier. </param>
+             <param name="sessionData">  Information describing the session. </param>
+        </member>
+        <member name="M:GCS.Core.Common.Contracts.IDataRepositoryDbContext`1.Get(GCS.Core.Common.Contracts.IApplicationUserSessionDataHeader)">
+             <summary>   Gets. </summary>
+            
+             <param name="sessionData">  Information describing the session. </param>
+            
+             <returns>   A T. </returns>
+        </member>
+        <member name="M:GCS.Core.Common.Contracts.IDataRepositoryDbContext`1.Get(System.Int32,GCS.Core.Common.Contracts.IApplicationUserSessionDataHeader)">
+             <summary>   Gets. </summary>
+            
+             <param name="id">           The identifier. </param>
+             <param name="sessionData">  Information describing the session. </param>
+            
+             <returns>   A T. </returns>
+        </member>
+        <member name="M:GCS.Core.Common.Contracts.IDataRepositoryDbContext`1.Get(System.Guid,GCS.Core.Common.Contracts.IApplicationUserSessionDataHeader)">
+             <summary>   Gets. </summary>
+            
+             <param name="id">           The identifier. </param>
+             <param name="sessionData">  Information describing the session. </param>
+            
+             <returns>   A T. </returns>
+        </member>
+        <member name="T:GCS.Core.Common.Contracts.IDataRepositoryFactory">
+             <summary>   Interface for data repository factory. </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+        </member>
+        <member name="M:GCS.Core.Common.Contracts.IDataRepositoryFactory.GetDataRepository``1">
+             <summary>   Gets data repository. </summary>
+            
+             <typeparam name="T">    Generic type parameter. </typeparam>
+            
+             <returns>   The data repository. </returns>
+        </member>
+        <member name="M:GCS.Core.Common.Contracts.IDataRepositoryFactory.GetDataInsertRepository``1">
+             <summary>   Gets data insert repository. </summary>
+            
+             <typeparam name="T">    Generic type parameter. </typeparam>
+            
+             <returns>   The data insert repository. </returns>
+        </member>
+        <member name="M:GCS.Core.Common.Contracts.IDataRepositoryFactory.GetRepository``1">
+             <summary>   Gets data insert repository. </summary>
+            
+             <typeparam name="T">    Generic type parameter. </typeparam>
+            
+             <returns>   The data insert repository. </returns>
+        </member>
+        <member name="T:GCS.Core.Common.Contracts.IServiceAwareController">
+             <summary>   Interface for service aware controller. </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+        </member>
+        <member name="M:GCS.Core.Common.Contracts.IServiceAwareController.RegisterDisposableServices(System.Collections.Generic.List{GCS.Core.Common.Contracts.IServiceContract})">
+             <summary>   Registers the disposable services described by disposableServices. </summary>
+            
+             <param name="disposableServices">   The disposable services. </param>
+        </member>
+        <member name="P:GCS.Core.Common.Contracts.IServiceAwareController.DisposableServices">
+             <summary>   Gets the disposable services. </summary>
+            
+             <value> The disposable services. </value>
+        </member>
+        <member name="T:GCS.Core.Common.Contracts.IServiceFactory">
+             <summary>   Interface for service factory. </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+        </member>
+        <member name="M:GCS.Core.Common.Contracts.IServiceFactory.CreateClient``1">
+             <summary>   Creates a client. </summary>
+            
+             <typeparam name="T">    Generic type parameter. </typeparam>
+            
+             <returns>   The new client. </returns>
+        </member>
+        <member name="M:GCS.Core.Common.Contracts.IServiceFactory.CreateClient``1(System.ServiceModel.Channels.Binding,System.ServiceModel.EndpointAddress,GCS.Core.Common.Contracts.IApplicationUserSessionDataHeader)">
+             <summary>   Creates a client. </summary>
+            
+             <typeparam name="T">    Generic type parameter. </typeparam>
+             <param name="binding">                          The binding. </param>
+             <param name="endpointAddress">                  The endpoint address. </param>
+             <param name="applicationUserSessionDataHeader"> The application user session data header. </param>
+            
+             <returns>   The new client. </returns>
+        </member>
+        <member name="M:GCS.Core.Common.Contracts.IServiceFactory.CreateDuplexClient``1(System.Object)">
+             <summary>   Creates duplex client. </summary>
+            
+             <typeparam name="T">    Generic type parameter. </typeparam>
+             <param name="callbackInstance"> The callback instance. </param>
+            
+             <returns>   The new duplex client. </returns>
+        </member>
+        <member name="T:GCS.Core.Common.Contracts.IView">
+             <summary>   Interface for view. </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+        </member>
+        <member name="P:GCS.Core.Common.Contracts.IView.ViewModel">
+             <summary>   Gets or sets the view model. </summary>
+            
+             <value> The view model. </value>
+        </member>
+        <member name="T:GCS.Core.Common.Contracts.IViewModel">
+             <summary>   Interface for view model. </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+        </member>
+        <member name="P:GCS.Core.Common.Contracts.IViewModel.View">
+             <summary>   Gets or sets the view. </summary>
+            
+             <value> The view. </value>
+        </member>
+        <member name="T:GCS.Core.Common.Contracts.IAccessControlCredential">
+             <summary>   Interface for access control credential. </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+        </member>
+        <member name="P:GCS.Core.Common.Contracts.IAccessControlCredential.CredentialFormatDescription">
+             <summary>   Gets or sets information describing the credential format. </summary>
+            
+             <value> Information describing the credential format. </value>
+        </member>
+        <member name="P:GCS.Core.Common.Contracts.IAccessControlCredential.CredentialValueDescription">
+             <summary>   Gets or sets information describing the credential value. </summary>
+            
+             <value> Information describing the credential value. </value>
+        </member>
+        <member name="P:GCS.Core.Common.Contracts.IAccessControlCredential.CredentialPartsString">
+             <summary>   Gets or sets the credential parts string. </summary>
+            
+             <value> The credential parts string. </value>
+        </member>
+        <member name="P:GCS.Core.Common.Contracts.IAccessControlCredential.CredentialFormatCodeAndPartsString">
+             <summary>   Gets or sets the credential format code and parts string. </summary>
+            
+             <value> The credential format code and parts string. </value>
+        </member>
+        <member name="P:GCS.Core.Common.Contracts.IAccessControlCredential.CardNumber">
+             <summary>   Gets or sets the card number. </summary>
+            
+             <value> The card number. </value>
+        </member>
+        <member name="P:GCS.Core.Common.Contracts.IAccessControlCredential.CardBinaryData">
+             <summary>   Gets or sets information describing the card binary. </summary>
+            
+             <value> Information describing the card binary. </value>
+        </member>
+        <member name="T:GCS.Core.Common.Contracts.IAccountOwnedEntity">
+             <summary>   Interface for account owned entity. </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+        </member>
+        <member name="P:GCS.Core.Common.Contracts.IAccountOwnedEntity.OwnerAccountId">
+             <summary>   Gets the account identifier that owns this item. </summary>
+            
+             <value> The identifier of the owner account. </value>
+        </member>
+        <member name="T:GCS.Core.Common.Contracts.IApplicationUserSessionDataHeader">
+             <summary>   Interface for application user session data header. </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+        </member>
+        <member name="P:GCS.Core.Common.Contracts.IApplicationUserSessionDataHeader.CurrentEntityId">
+             <summary>   Gets or sets the current entity identifier. </summary>
+            
+             <value> The identifier of the current entity. </value>
+        </member>
+        <member name="P:GCS.Core.Common.Contracts.IApplicationUserSessionDataHeader.CurrentSiteId">
+             <summary>   Gets or sets the current site identifier. </summary>
+            
+             <value> The identifier of the current site. </value>
+        </member>
+        <member name="P:GCS.Core.Common.Contracts.IApplicationUserSessionDataHeader.SessionGuid">
+             <summary>   Gets or sets a unique identifier of the session. </summary>
+            
+             <value> Unique identifier of the session. </value>
+        </member>
+        <member name="P:GCS.Core.Common.Contracts.IApplicationUserSessionDataHeader.OperationGuid">
+             <summary>   Gets or sets a unique identifier of the operation. </summary>
+            
+             <value> Unique identifier of the operation. </value>
+        </member>
+        <member name="P:GCS.Core.Common.Contracts.IApplicationUserSessionDataHeader.UserName">
+             <summary>   Gets or sets the name of the user. </summary>
+            
+             <value> The name of the user. </value>
+        </member>
+        <member name="P:GCS.Core.Common.Contracts.IApplicationUserSessionDataHeader.Culture">
+             <summary>   Gets or sets the culture. </summary>
+            
+             <value> The culture. </value>
+        </member>
+        <member name="P:GCS.Core.Common.Contracts.IApplicationUserSessionDataHeader.UiCulture">
+             <summary>   Gets or sets the culture. </summary>
+            
+             <value> The user interface culture. </value>
+        </member>
+        <member name="P:GCS.Core.Common.Contracts.IApplicationUserSessionDataHeader.ClientTimeZoneId">
+             <summary>   Gets or sets the identifier of the client time zone. </summary>
+            
+             <value> The identifier of the client time zone. </value>
+        </member>
+        <member name="P:GCS.Core.Common.Contracts.IApplicationUserSessionDataHeader.ApplicationId">
+             <summary>   Gets or sets the identifier of the application. </summary>
+            
+             <value> The identifier of the application. </value>
+        </member>
+        <member name="P:GCS.Core.Common.Contracts.IApplicationUserSessionDataHeader.ApplicationName">
+             <summary>   Gets or sets the name of the application. </summary>
+            
+             <value> The name of the application. </value>
+        </member>
+        <member name="P:GCS.Core.Common.Contracts.IApplicationUserSessionDataHeader.ApplicationVersion">
+             <summary>   Gets or sets the application version. </summary>
+            
+             <value> The application version. </value>
+        </member>
+        <member name="P:GCS.Core.Common.Contracts.IApplicationUserSessionDataHeader.ProductVersionMajor">
+             <summary>   Gets or sets the product version major. </summary>
+            
+             <value> The product version major. </value>
+        </member>
+        <member name="P:GCS.Core.Common.Contracts.IApplicationUserSessionDataHeader.ProductVersionMinor">
+             <summary>   Gets or sets the product version minor. </summary>
+            
+             <value> The product version minor. </value>
+        </member>
+        <member name="P:GCS.Core.Common.Contracts.IApplicationUserSessionDataHeader.ProductVersionBuild">
+             <summary>   Gets or sets the product version build. </summary>
+            
+             <value> The product version build. </value>
+        </member>
+        <member name="P:GCS.Core.Common.Contracts.IApplicationUserSessionDataHeader.ProductVersionRevision">
+             <summary>   Gets or sets the product version revision. </summary>
+            
+             <value> The product version revision. </value>
+        </member>
+        <member name="P:GCS.Core.Common.Contracts.IApplicationUserSessionDataHeader.MachineName">
+             <summary>   Gets or sets the name of the machine. </summary>
+            
+             <value> The name of the machine. </value>
+        </member>
+        <member name="T:GCS.Core.Common.Contracts.IBusinessEngine">
+             <summary>   Interface for business engine. </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+        </member>
+        <member name="T:GCS.Core.Common.Contracts.IBusinessEngineFactory">
+             <summary>   Interface for business engine factory. </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+        </member>
+        <member name="M:GCS.Core.Common.Contracts.IBusinessEngineFactory.GetBusinessEngine``1">
+             <summary>   Gets business engine. </summary>
+            
+             <typeparam name="T">    Generic type parameter. </typeparam>
+            
+             <returns>   The business engine. </returns>
+        </member>
+        <member name="T:GCS.Core.Common.Contracts.IDataInsertRepository">
+             <summary>   Interface for data insert repository. </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+        </member>
+        <member name="T:GCS.Core.Common.Contracts.IDataInsertRepository`1">
+             <summary>   Interface for data insert repository. </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+            
+             <typeparam name="T">    Generic type parameter. </typeparam>
+        </member>
+        <member name="M:GCS.Core.Common.Contracts.IDataInsertRepository`1.Insert(`0)">
+             <summary>   Inserts the given entity. </summary>
+            
+             <param name="entity">   The entity. </param>
+        </member>
+        <member name="T:GCS.Core.Common.Contracts.OperationType">
+             <summary>   Values that represent operation types. </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+        </member>
+        <member name="F:GCS.Core.Common.Contracts.OperationType.None">
+            <summary>   An enum constant representing the none option. </summary>
+        </member>
+        <member name="F:GCS.Core.Common.Contracts.OperationType.Read">
+            <summary>   An enum constant representing the read option. </summary>
+        </member>
+        <member name="F:GCS.Core.Common.Contracts.OperationType.Insert">
+            <summary>   An enum constant representing the insert option. </summary>
+        </member>
+        <member name="F:GCS.Core.Common.Contracts.OperationType.Update">
+            <summary>   An enum constant representing the update option. </summary>
+        </member>
+        <member name="F:GCS.Core.Common.Contracts.OperationType.Delete">
+            <summary>   An enum constant representing the delete option. </summary>
+        </member>
+        <member name="T:GCS.Core.Common.Contracts.IDataRepository">
+             <summary>   Interface for data repository. </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+        </member>
+        <member name="T:GCS.Core.Common.Contracts.IDataRepository`1">
+             <summary>   Interface for data repository. </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+            
+             <typeparam name="T">    Generic type parameter. </typeparam>
+        </member>
+        <member name="M:GCS.Core.Common.Contracts.IDataRepository`1.Add(`0,GCS.Core.Common.Contracts.IApplicationUserSessionDataHeader,GCS.Core.Common.Contracts.ISaveParameters)">
+             <summary>   Adds entity. </summary>
+            
+             <param name="entity">       The entity. </param>
+             <param name="sessionData">  Information describing the session. </param>
+             <param name="transaction">  The transaction. </param>
+             <param name="saveParams">   Save parameters </param>
+            
+             <returns>   A T. </returns>
+        </member>
+        <member name="M:GCS.Core.Common.Contracts.IDataRepository`1.Update(`0,GCS.Core.Common.Contracts.IApplicationUserSessionDataHeader,GCS.Core.Common.Contracts.ISaveParameters)">
+             <summary>   Updates this IDataRepository&lt;T&gt; </summary>
+            
+             <param name="entity">       The entity. </param>
+             <param name="sessionData">  Information describing the session. </param>
+             <param name="transaction">  The transaction. </param>
+             <param name="saveParams">   Save parameters </param>
+            
+             <returns>   A T. </returns>
+        </member>
+        <member name="M:GCS.Core.Common.Contracts.IDataRepository`1.Remove(`0,GCS.Core.Common.Contracts.IApplicationUserSessionDataHeader)">
+             <summary>   Removes this IDataRepository&lt;T&gt; </summary>
+            
+             <param name="entity">       The entity. </param>
+             <param name="sessionData">  Information describing the session. </param>
+             <param name="transaction">  The transaction. </param>
+            
+             <returns>   An int. </returns>
+        </member>
+        <member name="M:GCS.Core.Common.Contracts.IDataRepository`1.Remove(System.Int32,GCS.Core.Common.Contracts.IApplicationUserSessionDataHeader)">
+             <summary>   Removes this IDataRepository&lt;T&gt; </summary>
+            
+             <param name="id">           The identifier. </param>
+             <param name="sessionData">  Information describing the session. </param>
+             <param name="transaction">  The transaction. </param>
+            
+             <returns>   An int. </returns>
+        </member>
+        <member name="M:GCS.Core.Common.Contracts.IDataRepository`1.Remove(System.Guid,GCS.Core.Common.Contracts.IApplicationUserSessionDataHeader)">
+             <summary>   Removes this IDataRepository&lt;T&gt; </summary>
+            
+             <param name="id">           The identifier. </param>
+             <param name="sessionData">  Information describing the session. </param>
+             <param name="transaction">  The transaction. </param>
+            
+             <returns>   An int. </returns>
+        </member>
+        <member name="M:GCS.Core.Common.Contracts.IDataRepository`1.Get(GCS.Core.Common.Contracts.IApplicationUserSessionDataHeader,GCS.Core.Common.Contracts.IGetParametersWithPhoto)">
+             <summary>   Gets. </summary>
+            
+             <param name="sessionData">      Information describing the session. </param>
+             <param name="getParameters">    Options for controlling the get. </param>
+            
+             <returns>   A T. </returns>
+        </member>
+        <member name="M:GCS.Core.Common.Contracts.IDataRepository`1.GetAll(GCS.Core.Common.Contracts.IApplicationUserSessionDataHeader,GCS.Core.Common.Contracts.IGetParametersWithPhoto)">
+             <summary>   Gets all items in this collection. </summary>
+            
+             <param name="sessionData">      Information describing the session. </param>
+             <param name="getParameters">    Options for controlling the get. </param>
+            
+             <returns>
+             An enumerator that allows foreach to be used to process all items in this collection.
+             </returns>
+        </member>
+        <member name="M:GCS.Core.Common.Contracts.IDataRepository`1.Get(System.Int32,GCS.Core.Common.Contracts.IApplicationUserSessionDataHeader,GCS.Core.Common.Contracts.IGetParametersWithPhoto)">
+             <summary>   Gets. </summary>
+            
+             <param name="id">               The identifier. </param>
+             <param name="sessionData">      Information describing the session. </param>
+             <param name="getParameters">    Options for controlling the get. </param>
+            
+             <returns>   A T. </returns>
+        </member>
+        <member name="M:GCS.Core.Common.Contracts.IDataRepository`1.Get(System.Guid,GCS.Core.Common.Contracts.IApplicationUserSessionDataHeader,GCS.Core.Common.Contracts.IGetParametersWithPhoto)">
+             <summary>   Gets. </summary>
+            
+             <param name="id">               The identifier. </param>
+             <param name="sessionData">      Information describing the session. </param>
+             <param name="getParameters">    Options for controlling the get. </param>
+            
+             <returns>   A T. </returns>
+        </member>
+        <member name="M:GCS.Core.Common.Contracts.IDataRepository`1.IsReferenced(System.Guid)">
+             <summary>   Query if 'id' is referenced. </summary>
+            
+             <param name="id">   The identifier. </param>
+            
+             <returns>   True if referenced, false if not. </returns>
+        </member>
+        <member name="M:GCS.Core.Common.Contracts.IDataRepository`1.IsReferenced(System.Int32)">
+             <summary>   Query if 'id' is referenced. </summary>
+            
+             <param name="id">   The identifier. </param>
+            
+             <returns>   True if referenced, false if not. </returns>
+        </member>
+        <member name="M:GCS.Core.Common.Contracts.IDataRepository`1.CanDelete(System.Guid)">
+             <summary>   Determine if we can delete. </summary>
+            
+             <param name="id">   The identifier. </param>
+            
+             <returns>   True if we can delete, false if not. </returns>
+        </member>
+        <member name="M:GCS.Core.Common.Contracts.IDataRepository`1.CanDelete(System.Int32)">
+             <summary>   Determine if we can delete. </summary>
+            
+             <param name="id">   The identifier. </param>
+            
+             <returns>   True if we can delete, false if not. </returns>
+        </member>
+        <member name="M:GCS.Core.Common.Contracts.IDataRepository`1.IsUnique(`0)">
+             <summary>   Query if 'entity' is unique. </summary>
+            
+             <param name="entity">   The entity. </param>
+            
+             <returns>   True if unique, false if not. </returns>
+        </member>
+        <member name="M:GCS.Core.Common.Contracts.IDataRepository`1.DoesExist(System.Guid)">
+             <summary>   Query if 'id' does exist. </summary>
+            
+             <param name="id">   The identifier. </param>
+            
+             <returns>   True if it succeeds, false if it fails. </returns>
+        </member>
+        <member name="M:GCS.Core.Common.Contracts.IDataRepository`1.DoesExist(System.Int32)">
+             <summary>   Query if 'id' does exist. </summary>
+            
+             <param name="id">   The identifier. </param>
+            
+             <returns>   True if it succeeds, false if it fails. </returns>
+        </member>
+        <member name="M:GCS.Core.Common.Contracts.IPagedDataRepository`1.GetPaged(GCS.Core.Common.Contracts.IApplicationUserSessionDataHeader,GCS.Core.Common.Contracts.IGetParametersWithPhoto)">
+             <summary>   Gets. </summary>
+            
+             <param name="sessionData">      Information describing the session. </param>
+             <param name="getParameters">    Options for controlling the get. </param>
+            
+             <returns>   A T. </returns>
+        </member>
+        <member name="M:GCS.Core.Common.Contracts.IPagedDataRepository`1.GetAllPaged(GCS.Core.Common.Contracts.IApplicationUserSessionDataHeader,GCS.Core.Common.Contracts.IGetParametersWithPhoto)">
+             <summary>   Gets all items in this collection. </summary>
+            
+             <param name="sessionData">      Information describing the session. </param>
+             <param name="getParameters">    Options for controlling the get. </param>
+            
+             <returns>
+             An enumerator that allows foreach to be used to process all items in this collection.
+             </returns>
+        </member>
+        <member name="T:GCS.Core.Common.Contracts.ISimpleDataRepository`1">
+             <summary>   Interface for simple data repository. </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+            
+             <typeparam name="T">    Generic type parameter. </typeparam>
+        </member>
+        <member name="M:GCS.Core.Common.Contracts.ISimpleDataRepository`1.Add(`0,GCS.Core.Common.Contracts.IApplicationUserSessionDataHeader)">
+             <summary>   Adds entity. </summary>
+            
+             <param name="entity">       The entity. </param>
+             <param name="sessionData">  Information describing the session. </param>
+             <param name="transaction">  The transaction. </param>
+            
+             <returns>   A T. </returns>
+        </member>
+        <member name="M:GCS.Core.Common.Contracts.ISimpleDataRepository`1.Update(`0,GCS.Core.Common.Contracts.IApplicationUserSessionDataHeader)">
+             <summary>   Updates this ISimpleDataRepository&lt;T&gt; </summary>
+            
+             <param name="entity">       The entity. </param>
+             <param name="sessionData">  Information describing the session. </param>
+             <param name="transaction">  The transaction. </param>
+            
+             <returns>   A T. </returns>
+        </member>
+        <member name="M:GCS.Core.Common.Contracts.ISimpleDataRepository`1.Remove(`0,GCS.Core.Common.Contracts.IApplicationUserSessionDataHeader)">
+             <summary>   Removes this ISimpleDataRepository&lt;T&gt; </summary>
+            
+             <param name="entity">       The entity. </param>
+             <param name="sessionData">  Information describing the session. </param>
+             <param name="transaction">  The transaction. </param>
+            
+             <returns>   An int. </returns>
+        </member>
+        <member name="M:GCS.Core.Common.Contracts.ISimpleDataRepository`1.Remove(System.Int32,GCS.Core.Common.Contracts.IApplicationUserSessionDataHeader)">
+             <summary>   Removes this ISimpleDataRepository&lt;T&gt; </summary>
+            
+             <param name="id">           The identifier. </param>
+             <param name="sessionData">  Information describing the session. </param>
+             <param name="transaction">  The transaction. </param>
+            
+             <returns>   An int. </returns>
+        </member>
+        <member name="M:GCS.Core.Common.Contracts.ISimpleDataRepository`1.Remove(System.Guid,GCS.Core.Common.Contracts.IApplicationUserSessionDataHeader)">
+             <summary>   Removes this ISimpleDataRepository&lt;T&gt; </summary>
+            
+             <param name="id">           The identifier. </param>
+             <param name="sessionData">  Information describing the session. </param>
+             <param name="transaction">  The transaction. </param>
+            
+             <returns>   An int. </returns>
+        </member>
+        <member name="M:GCS.Core.Common.Contracts.ISimpleDataRepository`1.Get">
+             <summary>   Gets. </summary>
+            
+             <returns>   A T. </returns>
+        </member>
+        <member name="M:GCS.Core.Common.Contracts.ISimpleDataRepository`1.Get(GCS.Core.Common.Contracts.IApplicationUserSessionDataHeader,GCS.Core.Common.Contracts.IGetParametersWithPhoto)">
+             <summary>   Gets. </summary>
+            
+             <param name="sessionData">      Information describing the session. </param>
+             <param name="getParameters">    Options for controlling the get. </param>
+            
+             <returns>   A T. </returns>
+        </member>
+        <member name="M:GCS.Core.Common.Contracts.ISimpleDataRepository`1.Get(System.Int32,GCS.Core.Common.Contracts.IApplicationUserSessionDataHeader,GCS.Core.Common.Contracts.IGetParametersWithPhoto)">
+             <summary>   Gets. </summary>
+            
+             <param name="id">               The identifier. </param>
+             <param name="sessionData">      Information describing the session. </param>
+             <param name="getParameters">    Options for controlling the get. </param>
+            
+             <returns>   A T. </returns>
+        </member>
+        <member name="M:GCS.Core.Common.Contracts.ISimpleDataRepository`1.Get(System.Guid,GCS.Core.Common.Contracts.IApplicationUserSessionDataHeader,GCS.Core.Common.Contracts.IGetParametersWithPhoto)">
+             <summary>   Gets. </summary>
+            
+             <param name="id">               The identifier. </param>
+             <param name="sessionData">      Information describing the session. </param>
+             <param name="getParameters">    Options for controlling the get. </param>
+            
+             <returns>   A T. </returns>
+        </member>
+        <member name="M:GCS.Core.Common.Contracts.ISimpleDataRepository`1.IsReferenced(System.Guid)">
+             <summary>   Query if 'id' is referenced. </summary>
+            
+             <param name="id">   The identifier. </param>
+            
+             <returns>   True if referenced, false if not. </returns>
+        </member>
+        <member name="M:GCS.Core.Common.Contracts.ISimpleDataRepository`1.IsReferenced(System.Int32)">
+             <summary>   Query if 'id' is referenced. </summary>
+            
+             <param name="id">   The identifier. </param>
+            
+             <returns>   True if referenced, false if not. </returns>
+        </member>
+        <member name="M:GCS.Core.Common.Contracts.ISimpleDataRepository`1.CanDelete(System.Guid)">
+             <summary>   Determine if we can delete. </summary>
+            
+             <param name="id">   The identifier. </param>
+            
+             <returns>   True if we can delete, false if not. </returns>
+        </member>
+        <member name="M:GCS.Core.Common.Contracts.ISimpleDataRepository`1.CanDelete(System.Int32)">
+             <summary>   Determine if we can delete. </summary>
+            
+             <param name="id">   The identifier. </param>
+            
+             <returns>   True if we can delete, false if not. </returns>
+        </member>
+        <member name="M:GCS.Core.Common.Contracts.ISimpleDataRepository`1.IsUnique(`0)">
+             <summary>   Query if 'entity' is unique. </summary>
+            
+             <param name="entity">   The entity. </param>
+            
+             <returns>   True if unique, false if not. </returns>
+        </member>
+        <member name="M:GCS.Core.Common.Contracts.ISimpleDataRepository`1.DoesExist(System.Guid)">
+             <summary>   Query if 'id' does exist. </summary>
+            
+             <param name="id">   The identifier. </param>
+            
+             <returns>   True if it succeeds, false if it fails. </returns>
+        </member>
+        <member name="M:GCS.Core.Common.Contracts.ISimpleDataRepository`1.DoesExist(System.Int32)">
+             <summary>   Query if 'id' does exist. </summary>
+            
+             <param name="id">   The identifier. </param>
+            
+             <returns>   True if it succeeds, false if it fails. </returns>
+        </member>
+        <member name="T:GCS.Core.Common.Contracts.IDirtyCapable">
+             <summary>   Interface for dirty capable. </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+        </member>
+        <member name="P:GCS.Core.Common.Contracts.IDirtyCapable.IsDirty">
+             <summary>   Gets a value indicating whether this IDirtyCapable is dirty. </summary>
+            
+             <value> True if this IDirtyCapable is dirty, false if not. </value>
+        </member>
+        <member name="P:GCS.Core.Common.Contracts.IDirtyCapable.IsPanelDataDirty">
+             <summary>
+             Gets a value indicating whether this IDirtyCapable is panel data dirty.
+             </summary>
+            
+             <value> True if this IDirtyCapable is panel data dirty, false if not. </value>
+        </member>
+        <member name="P:GCS.Core.Common.Contracts.IDirtyCapable.IsAnyPropertyDirty">
+             <summary>
+             Gets a value indicating whether this IDirtyCapable is any property dirty.
+             </summary>
+            
+             <value> True if this IDirtyCapable is any property dirty, false if not. </value>
+        </member>
+        <member name="M:GCS.Core.Common.Contracts.IDirtyCapable.IsAnythingDirty">
+             <summary>   Query if this IDirtyCapable is anything dirty. </summary>
+            
+             <returns>   True if anything dirty, false if not. </returns>
+        </member>
+        <member name="M:GCS.Core.Common.Contracts.IDirtyCapable.GetDirtyObjects">
+             <summary>   Gets dirty objects. </summary>
+            
+             <returns>   The dirty objects. </returns>
+        </member>
+        <member name="M:GCS.Core.Common.Contracts.IDirtyCapable.MakeDirty">
+            <summary>   Makes the dirty. </summary>
+        </member>
+        <member name="M:GCS.Core.Common.Contracts.IDirtyCapable.MakePanelDataDirty">
+            <summary>   Makes panel data dirty. </summary>
+        </member>
+        <member name="M:GCS.Core.Common.Contracts.IDirtyCapable.CleanAll">
+            <summary>   Clean all. </summary>
+        </member>
+        <member name="T:GCS.Core.Common.Contracts.ICallParametersBase">
+             <summary>   Interface for call parameters base. </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+        </member>
+        <member name="P:GCS.Core.Common.Contracts.ICallParametersBase.OperationUid">
+             <summary>   Gets or sets the operation UID. </summary>
+            
+             <value> The operation UID. </value>
+        </member>
+        <member name="P:GCS.Core.Common.Contracts.ICallParametersBase.BackgroundJobId">
+             <summary>   Gets or sets the identifier of the background job. </summary>
+            
+             <value> The identifier of the background job. </value>
+        </member>
+        <member name="P:GCS.Core.Common.Contracts.ICallParametersBase.CurrentEntityId">
+             <summary>   Gets or sets the current entity identifier. </summary>
+            
+             <value> The identifier of the current entity. </value>
+        </member>
+        <member name="P:GCS.Core.Common.Contracts.ICallParametersBase.CurrentSiteUid">
+             <summary>   Gets or sets the current site u identifier. </summary>
+            
+             <value> The identifier of the current site u. </value>
+        </member>
+        <member name="P:GCS.Core.Common.Contracts.ICallParametersBase.RequestDateTime">
+             <summary>   Gets or sets the request date time. </summary>
+            
+             <value> The request date time. </value>
+        </member>
+        <member name="P:GCS.Core.Common.Contracts.ICallParametersBase.DoNotValidateAuthorization">
+             <summary>
+             Gets or sets a value indicating whether the do not validate authorization.
+             </summary>
+            
+             <value> True if do not validate authorization, false if not. </value>
+        </member>
+        <member name="T:GCS.Core.Common.Contracts.IGetParametersBase">
+             <summary>   Interface for get parameters base. </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+        </member>
+        <member name="P:GCS.Core.Common.Contracts.IGetParametersBase.UniqueId">
+             <summary>   Gets or sets a unique identifier. </summary>
+            
+             <value> The identifier of the unique. </value>
+        </member>
+        <member name="P:GCS.Core.Common.Contracts.IGetParametersBase.GetGuid">
+             <summary>   Gets or sets a unique identifier of the get. </summary>
+            
+             <value> Unique identifier of the get. </value>
+        </member>
+        <member name="P:GCS.Core.Common.Contracts.IGetParametersBase.GetString">
+             <summary>   Gets or sets the get string. </summary>
+            
+             <value> The get string. </value>
+        </member>
+        <member name="P:GCS.Core.Common.Contracts.IGetParametersBase.GetUInt32">
+             <summary>   Gets or sets the get u int 32. </summary>
+            
+             <value> The get u int 32. </value>
+        </member>
+        <member name="P:GCS.Core.Common.Contracts.IGetParametersBase.GetUInt16">
+             <summary>   Gets or sets the get u int 16. </summary>
+            
+             <value> The get u int 16. </value>
+        </member>
+        <member name="P:GCS.Core.Common.Contracts.IGetParametersBase.GetInt32">
+             <summary>   Gets or sets the get int 32. </summary>
+            
+             <value> The get int 32. </value>
+        </member>
+        <member name="P:GCS.Core.Common.Contracts.IGetParametersBase.GetInt16">
+             <summary>   Gets or sets the get int 16. </summary>
+            
+             <value> The get int 16. </value>
+        </member>
+        <member name="P:GCS.Core.Common.Contracts.IGetParametersBase.GetDate">
+             <summary>   Gets or sets the get date. </summary>
+            
+             <value> The get date. </value>
+        </member>
+        <member name="P:GCS.Core.Common.Contracts.IGetParametersBase.GetDate2">
+             <summary>   Gets or sets the Date/Time of the get date 2. </summary>
+            
+             <value> The get date 2. </value>
+        </member>
+        <member name="P:GCS.Core.Common.Contracts.IGetParametersBase.GetForList">
+             <summary>   Gets or sets a value indicating whether or not to get for list. </summary>
+            
+             <value> True if get for list, false if not. </value>
+        </member>
+        <member name="P:GCS.Core.Common.Contracts.IGetParametersBase.GetBool">
+             <summary>   Gets or sets a value indicating whether or not to get the bool. </summary>
+            
+             <value> True if get bool, false if not. </value>
+        </member>
+        <member name="P:GCS.Core.Common.Contracts.IGetParametersBase.ThrowExceptionIfNotFound">
+             <summary>
+             Gets or sets a value indicating whether the throw exception if not found.
+             </summary>
+            
+             <value> True if throw exception if not found, false if not. </value>
+        </member>
+        <member name="P:GCS.Core.Common.Contracts.IGetParametersBase.Options">
+             <summary>   Gets or sets options for controlling the operation. </summary>
+            
+             <value> The options. </value>
+        </member>
+        <member name="M:GCS.Core.Common.Contracts.IGetParametersBase.GetOption(System.String)">
+             <summary>   Gets an option. </summary>
+            
+             <param name="key">  The key. </param>
+            
+             <returns>   The option. </returns>
+            =================================================================================================
+        </member>
+        <member name="M:GCS.Core.Common.Contracts.IGetParametersBase.AddOption(System.String,System.Boolean)">
+             <summary>   Adds an option to 'value'. </summary>
+            
+             <param name="key">      The key. </param>
+             <param name="value">    True to value. </param>
+            =================================================================================================
+        </member>
+        <member name="P:GCS.Core.Common.Contracts.IGetParametersBase.ClusterGroupId">
+             <summary>   Gets or sets the account code. </summary>
+            
+             <value> The account code. </value>
+        </member>
+        <member name="P:GCS.Core.Common.Contracts.IGetParametersBase.ClusterNumber">
+             <summary>   Gets or sets the cluster number. </summary>
+            
+             <value> The cluster number. </value>
+        </member>
+        <member name="P:GCS.Core.Common.Contracts.IGetParametersBase.PanelNumber">
+             <summary>   Gets or sets the panel number. </summary>
+            
+             <value> The panel number. </value>
+        </member>
+        <member name="P:GCS.Core.Common.Contracts.IGetParametersBase.PersonUid">
+             <summary>   Gets or sets the person UID. </summary>
+            
+             <value> The person UID. </value>
+        </member>
+        <member name="P:GCS.Core.Common.Contracts.IGetParametersBase.ClusterUid">
+             <summary>   Gets or sets the cluster UID. </summary>
+            
+             <value> The cluster UID. </value>
+        </member>
+        <member name="P:GCS.Core.Common.Contracts.IGetParametersBase.MercScpGroupUid">
+             <summary>   Gets or sets the cluster UID. </summary>
+            
+             <value> The cluster UID. </value>
+        </member>
+        <member name="P:GCS.Core.Common.Contracts.IGetParametersBase.PageNumber">
+             <summary>   Gets or sets the page number. </summary>
+            
+             <value> The page number. </value>
+        </member>
+        <member name="P:GCS.Core.Common.Contracts.IGetParametersBase.PageSize">
+             <summary>   Gets or sets the size of the page. </summary>
+            
+             <value> The size of the page. </value>
+        </member>
+        <member name="P:GCS.Core.Common.Contracts.IGetParametersBase.DescendingOrder">
+             <summary>   Gets or sets a value indicating whether to order descending order. </summary>
+            
+             <value> True if descending order, false if not. </value>
+        </member>
+        <member name="P:GCS.Core.Common.Contracts.IGetParametersBase.SortProperty">
+             <summary>   Gets or sets the sort property. </summary>
+            
+             <value> The sort property. </value>
+        </member>
+        <member name="P:GCS.Core.Common.Contracts.IGetParametersBase.IncludeHardwareAddress">
+             <summary>
+             Gets or sets a value indicating whether the hardware address should be included.
+             </summary>
+            
+             <value> True if include hardware address, false if not. </value>
+        </member>
+        <member name="P:GCS.Core.Common.Contracts.IGetParametersBase.IncludeCommands">
+             <summary>
+             Gets or sets a value indicating whether the commands should be included.
+             </summary>
+            
+             <value> True if include commands, false if not. </value>
+        </member>
+        <member name="P:GCS.Core.Common.Contracts.IGetParametersBase.AllowedEntityIds">
+             <summary>   Gets or sets a list of identifiers of the allowed entities. </summary>
+            
+             <value> A list of identifiers of the allowed entities. </value>
+            =================================================================================================
+        </member>
+        <member name="P:GCS.Core.Common.Contracts.IGetParametersBase.AllowedApplicationIds">
+             <summary>   Gets or sets a list of identifiers of the allowed applications. </summary>
+            
+             <value> A list of identifiers of the allowed applications. </value>
+        </member>
+        <member name="T:GCS.Core.Common.Contracts.IGetParametersWithPhoto">
+             <summary>   Interface for get parameters with photo. </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+        </member>
+        <member name="P:GCS.Core.Common.Contracts.IGetParametersWithPhoto.IncludePhoto">
+             <summary>   Gets or sets a value indicating whether the photo should be included. </summary>
+            
+             <value> True if include photo, false if not. </value>
+        </member>
+        <member name="P:GCS.Core.Common.Contracts.IGetParametersWithPhoto.PhotoPixelWidth">
+             <summary>   Gets or sets the width of the photo pixel. </summary>
+            
+             <value> The width of the photo pixel. </value>
+        </member>
+        <member name="P:GCS.Core.Common.Contracts.IGetParametersWithPhoto.OmitPhotoBinaryData">
+             <summary>   Gets or sets the include photo links. </summary>
+            
+             <value> The include photo links. </value>
+        </member>
+        <member name="P:GCS.Core.Common.Contracts.IGetParametersWithPhoto.IncludeScaledPhotos">
+             <summary>
+             Gets or sets a value indicating whether the scaled photos should be included.
+             </summary>
+            
+             <value> True if include scaled photos, false if not. </value>
+        </member>
+        <member name="T:GCS.Core.Common.Contracts.IGetParameters`1">
+             <summary>   Interface for get parameters. </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+            
+             <typeparam name="T">    Generic type parameter. </typeparam>
+        </member>
+        <member name="P:GCS.Core.Common.Contracts.IGetParameters`1.Data">
+             <summary>   Gets or sets the data. </summary>
+            
+             <value> The data. </value>
+        </member>
+        <member name="T:GCS.Core.Common.Contracts.IGetParametersWithPhoto`1">
+             <summary>   Interface for get parameters with photo. </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+            
+             <typeparam name="T">    Generic type parameter. </typeparam>
+        </member>
+        <member name="P:GCS.Core.Common.Contracts.IGetParametersWithPhoto`1.IncludePhoto">
+             <summary>   Gets or sets a value indicating whether the photo should be included. </summary>
+            
+             <value> True if include photo, false if not. </value>
+        </member>
+        <member name="P:GCS.Core.Common.Contracts.IGetParametersWithPhoto`1.PhotoPixelWidth">
+             <summary>   Gets or sets the width of the photo pixel. </summary>
+            
+             <value> The width of the photo pixel. </value>
+        </member>
+        <member name="P:GCS.Core.Common.Contracts.IGetParametersWithPhoto`1.OmitPhotoBinaryData">
+             <summary>   Gets or sets the include photo links. </summary>
+            
+             <value> The include photo links. </value>
+        </member>
+        <member name="P:GCS.Core.Common.Contracts.IGetParametersWithPhoto`1.IncludeScaledPhotos">
+             <summary>
+             Gets or sets a value indicating whether the scaled photos should be included.
+             </summary>
+            
+             <value> True if include scaled photos, false if not. </value>
+        </member>
+        <member name="T:GCS.Core.Common.Contracts.ISaveParameters">
+             <summary>   Interface for save parameters. </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+        </member>
+        <member name="P:GCS.Core.Common.Contracts.ISaveParameters.ThrowExceptionIfDuplicate">
+             <summary>
+             Gets or sets a value indicating whether the throw exception if duplicate.
+             </summary>
+            
+             <value> True if throw exception if duplicate, false if not. </value>
+        </member>
+        <member name="P:GCS.Core.Common.Contracts.ISaveParameters.SavePhoto">
+             <summary>   Gets or sets a value indicating whether the photo should be saveed. </summary>
+            
+             <value> True if save photo, false if not. </value>
+        </member>
+        <member name="P:GCS.Core.Common.Contracts.ISaveParameters.Options">
+             <summary>   Gets or sets options for controlling the operation. </summary>
+            
+             <value> The options. </value>
+            =================================================================================================
+        </member>
+        <member name="P:GCS.Core.Common.Contracts.ISaveParameters.IgnoreProperties">
+             <summary>   Gets or sets the properties to ignore. </summary>
+            
+             <value> The ignore properties. </value>
+            =================================================================================================
+        </member>
+        <member name="M:GCS.Core.Common.Contracts.ISaveParameters.Ignore(System.String)">
+             <summary>   Determine if a specific property name is in the IgnoreProperties collection. </summary>
+            
+             <param name="name"> The name of the property to ignore. </param>
+            
+             <returns>   True if it succeeds, false if it fails. </returns>
+            =================================================================================================
+        </member>
+        <member name="T:GCS.Core.Common.Contracts.ISaveParameters`1">
+             <summary>   Interface for save parameters. </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+            
+             <typeparam name="T">    Generic type parameter. </typeparam>
+        </member>
+        <member name="P:GCS.Core.Common.Contracts.ISaveParameters`1.Data">
+             <summary>   Gets or sets the data. </summary>
+            
+             <value> The data. </value>
+        </member>
+        <member name="T:GCS.Core.Common.Contracts.IDeleteParameters">
+             <summary>   Interface for delete parameters. </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+        </member>
+        <member name="P:GCS.Core.Common.Contracts.IDeleteParameters.UniqueId">
+             <summary>   Gets or sets a unique identifier. </summary>
+            
+             <value> The identifier of the unique. </value>
+        </member>
+        <member name="T:GCS.Core.Common.Contracts.IDeleteParameters`1">
+             <summary>   Interface for delete parameters. </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+            
+             <typeparam name="T">    Generic type parameter. </typeparam>
+        </member>
+        <member name="P:GCS.Core.Common.Contracts.IDeleteParameters`1.Data">
+             <summary>   Gets or sets the data. </summary>
+            
+             <value> The data. </value>
+        </member>
+        <member name="T:GCS.Core.Common.Contracts.ICommandParameters">
+             <summary>   Interface for command parameters. </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+        </member>
+        <member name="P:GCS.Core.Common.Contracts.ICommandParameters.Parameters">
+             <summary>   Gets or sets options for controlling the operation. </summary>
+            
+             <value> The parameters. </value>
+        </member>
+        <member name="T:GCS.Core.Common.Contracts.ICommandResponse">
+             <summary>   Interface for command parameters. </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+        </member>
+        <member name="P:GCS.Core.Common.Contracts.ICommandResponse.OperationUid">
+             <summary>   Gets or sets the operation UID. </summary>
+            
+             <value> The operation UID. </value>
+        </member>
+        <member name="P:GCS.Core.Common.Contracts.ICommandResponse.RequestDateTime">
+             <summary>   Gets or sets the request date time. </summary>
+            
+             <value> The request date time. </value>
+        </member>
+        <member name="P:GCS.Core.Common.Contracts.ICommandResponse.Parameters">
+             <summary>   Gets or sets options for controlling the operation. </summary>
+            
+             <value> The parameters. </value>
+        </member>
+        <member name="P:GCS.Core.Common.Contracts.ICommandResponse`1.Data">
+             <summary>   Gets or sets the data. </summary>
+            
+             <value> The data. </value>
+        </member>
+        <member name="T:GCS.Core.Common.Contracts.ICommandParameters`1">
+             <summary>   Interface for command parameters. </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+            
+             <typeparam name="T">    Generic type parameter. </typeparam>
+        </member>
+        <member name="P:GCS.Core.Common.Contracts.ICommandParameters`1.Data">
+             <summary>   Gets or sets the data. </summary>
+            
+             <value> The data. </value>
+        </member>
+        <member name="P:GCS.Core.Common.Contracts.IHasExcludeMemberSupport.ExcludeMemberCollectionSettings">
+             <summary>   Gets or sets the exclude member collection settings. </summary>
+            
+             <value> The exclude member collection settings. </value>
+        </member>
+        <member name="M:GCS.Core.Common.Contracts.IHasExcludeMemberSupport.IsExcluded(System.String)">
+             <summary>   Query if 'name' is excluded. </summary>
+            
+             <param name="name"> The name. </param>
+            
+             <returns>   True if excluded, false if not. </returns>
+            =================================================================================================
+        </member>
+        <member name="P:GCS.Core.Common.Contracts.IHasExcludeMemberSupport.IncludeMemberCollections">
+             <summary>
+             Gets or sets a value indicating whether the member collections should be included.
+             </summary>
+            
+             <value> True if include member collections, false if not. </value>
+        </member>
+        <member name="T:GCS.Core.Common.Contracts.IHasDescriptionResourceKey">
+             <summary>   Interface for has description resource key. </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+        </member>
+        <member name="P:GCS.Core.Common.Contracts.IHasDescriptionResourceKey.ResourceClassName">
+             <summary>   Gets or sets the name of the resource class. </summary>
+            
+             <value> The name of the resource class. </value>
+        </member>
+        <member name="P:GCS.Core.Common.Contracts.IHasDescriptionResourceKey.UniqueResourceName">
+             <summary>   Gets or sets the name of the unique resource. </summary>
+            
+             <value> The name of the unique resource. </value>
+        </member>
+        <member name="P:GCS.Core.Common.Contracts.IHasDescriptionResourceKey.DescriptionResourceName">
+             <summary>   Gets or sets the name of the description resource. </summary>
+            
+             <value> The name of the description resource. </value>
+        </member>
+        <member name="P:GCS.Core.Common.Contracts.IHasDescriptionResourceKey.Description">
+             <summary>   Gets or sets the description. </summary>
+            
+             <value> The description. </value>
+        </member>
+        <member name="P:GCS.Core.Common.Contracts.IHasDescriptionResourceKey.DescriptionResourceKey">
+             <summary>   Gets or sets the description resource key. </summary>
+            
+             <value> The description resource key. </value>
+        </member>
+        <member name="T:GCS.Core.Common.Contracts.IHasDisplayResourceKey">
+             <summary>   Interface for has display resource key. </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+        </member>
+        <member name="P:GCS.Core.Common.Contracts.IHasDisplayResourceKey.ResourceClassName">
+             <summary>   Gets or sets the name of the resource class. </summary>
+            
+             <value> The name of the resource class. </value>
+        </member>
+        <member name="P:GCS.Core.Common.Contracts.IHasDisplayResourceKey.UniqueResourceName">
+             <summary>   Gets or sets the name of the unique resource. </summary>
+            
+             <value> The name of the unique resource. </value>
+        </member>
+        <member name="P:GCS.Core.Common.Contracts.IHasDisplayResourceKey.DisplayResourceName">
+             <summary>   Gets or sets the name of the display resource. </summary>
+            
+             <value> The name of the display resource. </value>
+        </member>
+        <member name="P:GCS.Core.Common.Contracts.IHasDisplayResourceKey.Display">
+             <summary>   Gets or sets the display. </summary>
+            
+             <value> The display. </value>
+        </member>
+        <member name="P:GCS.Core.Common.Contracts.IHasDisplayResourceKey.DisplayResourceKey">
+             <summary>   Gets or sets the display resource key. </summary>
+            
+             <value> The display resource key. </value>
+        </member>
+        <member name="T:GCS.Core.Common.Contracts.IHasValidData">
+             <summary>   Interface for has valid data. </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+        </member>
+        <member name="P:GCS.Core.Common.Contracts.IHasValidData.HasValidData">
+             <summary>   Gets a value indicating whether this IHasValidData has valid data. </summary>
+            
+             <value> True if this IHasValidData has valid data, false if not. </value>
+        </member>
+        <member name="T:GCS.Core.Common.Contracts.IIdentifiableEntity">
+             <summary>   Interface for identifiable entity. </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+        </member>
+        <member name="P:GCS.Core.Common.Contracts.IIdentifiableEntity.EntityGuid">
+             <summary>   Gets or sets a unique identifier of the entity. </summary>
+            
+             <value> Unique identifier of the entity. </value>
+        </member>
+        <member name="T:GCS.Core.Common.Contracts.ILogger">
+             <summary>   Interface for logger. </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+        </member>
+        <member name="M:GCS.Core.Common.Contracts.ILogger.Debug(System.Object)">
+             <summary>   Debugs. </summary>
+            
+             <param name="message">  The message. </param>
+        </member>
+        <member name="M:GCS.Core.Common.Contracts.ILogger.Debug(System.Object,System.Exception)">
+             <summary>   Debugs. </summary>
+            
+             <param name="message">      The message. </param>
+             <param name="exception">    The exception. </param>
+        </member>
+        <member name="M:GCS.Core.Common.Contracts.ILogger.DebugFormat(System.String,System.Object[])">
+             <summary>   Debug format. </summary>
+            
+             <param name="format">   Describes the format to use. </param>
+             <param name="args">     A variable-length parameters list containing arguments. </param>
+        </member>
+        <member name="M:GCS.Core.Common.Contracts.ILogger.DebugFormat(System.String,System.Object)">
+             <summary>   Debug format. </summary>
+            
+             <param name="format">   Describes the format to use. </param>
+             <param name="arg0">     The argument 0. </param>
+        </member>
+        <member name="M:GCS.Core.Common.Contracts.ILogger.DebugFormat(System.String,System.Object,System.Object)">
+             <summary>   Debug format. </summary>
+            
+             <param name="format">   Describes the format to use. </param>
+             <param name="arg0">     The argument 0. </param>
+             <param name="arg1">     The first argument. </param>
+        </member>
+        <member name="M:GCS.Core.Common.Contracts.ILogger.DebugFormat(System.String,System.Object,System.Object,System.Object)">
+             <summary>   Debug format. </summary>
+            
+             <param name="format">   Describes the format to use. </param>
+             <param name="arg0">     The argument 0. </param>
+             <param name="arg1">     The first argument. </param>
+             <param name="arg2">     The second argument. </param>
+        </member>
+        <member name="M:GCS.Core.Common.Contracts.ILogger.DebugFormat(System.IFormatProvider,System.String,System.Object[])">
+             <summary>   Debug format. </summary>
+            
+             <param name="provider"> The provider. </param>
+             <param name="format">   Describes the format to use. </param>
+             <param name="args">     A variable-length parameters list containing arguments. </param>
+        </member>
+        <member name="M:GCS.Core.Common.Contracts.ILogger.Info(System.Object)">
+             <summary>   Infoes. </summary>
+            
+             <param name="message">  The message. </param>
+        </member>
+        <member name="M:GCS.Core.Common.Contracts.ILogger.Info(System.Object,System.Exception)">
+             <summary>   Infoes. </summary>
+            
+             <param name="message">      The message. </param>
+             <param name="exception">    The exception. </param>
+        </member>
+        <member name="M:GCS.Core.Common.Contracts.ILogger.InfoFormat(System.String,System.Object[])">
+             <summary>   Information format. </summary>
+            
+             <param name="format">   Describes the format to use. </param>
+             <param name="args">     A variable-length parameters list containing arguments. </param>
+        </member>
+        <member name="M:GCS.Core.Common.Contracts.ILogger.InfoFormat(System.String,System.Object)">
+             <summary>   Information format. </summary>
+            
+             <param name="format">   Describes the format to use. </param>
+             <param name="arg0">     The argument 0. </param>
+        </member>
+        <member name="M:GCS.Core.Common.Contracts.ILogger.InfoFormat(System.String,System.Object,System.Object)">
+             <summary>   Information format. </summary>
+            
+             <param name="format">   Describes the format to use. </param>
+             <param name="arg0">     The argument 0. </param>
+             <param name="arg1">     The first argument. </param>
+        </member>
+        <member name="M:GCS.Core.Common.Contracts.ILogger.InfoFormat(System.String,System.Object,System.Object,System.Object)">
+             <summary>   Information format. </summary>
+            
+             <param name="format">   Describes the format to use. </param>
+             <param name="arg0">     The argument 0. </param>
+             <param name="arg1">     The first argument. </param>
+             <param name="arg2">     The second argument. </param>
+        </member>
+        <member name="M:GCS.Core.Common.Contracts.ILogger.InfoFormat(System.IFormatProvider,System.String,System.Object[])">
+             <summary>   Information format. </summary>
+            
+             <param name="provider"> The provider. </param>
+             <param name="format">   Describes the format to use. </param>
+             <param name="args">     A variable-length parameters list containing arguments. </param>
+        </member>
+        <member name="M:GCS.Core.Common.Contracts.ILogger.Warn(System.Object)">
+             <summary>   Warns. </summary>
+            
+             <param name="message">  The message. </param>
+        </member>
+        <member name="M:GCS.Core.Common.Contracts.ILogger.Warn(System.Object,System.Exception)">
+             <summary>   Warns. </summary>
+            
+             <param name="message">      The message. </param>
+             <param name="exception">    The exception. </param>
+        </member>
+        <member name="M:GCS.Core.Common.Contracts.ILogger.WarnFormat(System.String,System.Object[])">
+             <summary>   Warning format. </summary>
+            
+             <param name="format">   Describes the format to use. </param>
+             <param name="args">     A variable-length parameters list containing arguments. </param>
+        </member>
+        <member name="M:GCS.Core.Common.Contracts.ILogger.WarnFormat(System.String,System.Object)">
+             <summary>   Warning format. </summary>
+            
+             <param name="format">   Describes the format to use. </param>
+             <param name="arg0">     The argument 0. </param>
+        </member>
+        <member name="M:GCS.Core.Common.Contracts.ILogger.WarnFormat(System.String,System.Object,System.Object)">
+             <summary>   Warning format. </summary>
+            
+             <param name="format">   Describes the format to use. </param>
+             <param name="arg0">     The argument 0. </param>
+             <param name="arg1">     The first argument. </param>
+        </member>
+        <member name="M:GCS.Core.Common.Contracts.ILogger.WarnFormat(System.String,System.Object,System.Object,System.Object)">
+             <summary>   Warning format. </summary>
+            
+             <param name="format">   Describes the format to use. </param>
+             <param name="arg0">     The argument 0. </param>
+             <param name="arg1">     The first argument. </param>
+             <param name="arg2">     The second argument. </param>
+        </member>
+        <member name="M:GCS.Core.Common.Contracts.ILogger.WarnFormat(System.IFormatProvider,System.String,System.Object[])">
+             <summary>   Warning format. </summary>
+            
+             <param name="provider"> The provider. </param>
+             <param name="format">   Describes the format to use. </param>
+             <param name="args">     A variable-length parameters list containing arguments. </param>
+        </member>
+        <member name="M:GCS.Core.Common.Contracts.ILogger.Error(System.Object)">
+             <summary>   Errors. </summary>
+            
+             <param name="message">  The message. </param>
+        </member>
+        <member name="M:GCS.Core.Common.Contracts.ILogger.Error(System.Object,System.Exception)">
+             <summary>   Errors. </summary>
+            
+             <param name="message">      The message. </param>
+             <param name="exception">    The exception. </param>
+        </member>
+        <member name="M:GCS.Core.Common.Contracts.ILogger.ErrorFormat(System.String,System.Object[])">
+             <summary>   Error format. </summary>
+            
+             <param name="format">   Describes the format to use. </param>
+             <param name="args">     A variable-length parameters list containing arguments. </param>
+        </member>
+        <member name="M:GCS.Core.Common.Contracts.ILogger.ErrorFormat(System.String,System.Object)">
+             <summary>   Error format. </summary>
+            
+             <param name="format">   Describes the format to use. </param>
+             <param name="arg0">     The argument 0. </param>
+        </member>
+        <member name="M:GCS.Core.Common.Contracts.ILogger.ErrorFormat(System.String,System.Object,System.Object)">
+             <summary>   Error format. </summary>
+            
+             <param name="format">   Describes the format to use. </param>
+             <param name="arg0">     The argument 0. </param>
+             <param name="arg1">     The first argument. </param>
+        </member>
+        <member name="M:GCS.Core.Common.Contracts.ILogger.ErrorFormat(System.String,System.Object,System.Object,System.Object)">
+             <summary>   Error format. </summary>
+            
+             <param name="format">   Describes the format to use. </param>
+             <param name="arg0">     The argument 0. </param>
+             <param name="arg1">     The first argument. </param>
+             <param name="arg2">     The second argument. </param>
+        </member>
+        <member name="M:GCS.Core.Common.Contracts.ILogger.ErrorFormat(System.IFormatProvider,System.String,System.Object[])">
+             <summary>   Error format. </summary>
+            
+             <param name="provider"> The provider. </param>
+             <param name="format">   Describes the format to use. </param>
+             <param name="args">     A variable-length parameters list containing arguments. </param>
+        </member>
+        <member name="M:GCS.Core.Common.Contracts.ILogger.Fatal(System.Object)">
+             <summary>   Fatals. </summary>
+            
+             <param name="message">  The message. </param>
+        </member>
+        <member name="M:GCS.Core.Common.Contracts.ILogger.Fatal(System.Object,System.Exception)">
+             <summary>   Fatals. </summary>
+            
+             <param name="message">      The message. </param>
+             <param name="exception">    The exception. </param>
+        </member>
+        <member name="M:GCS.Core.Common.Contracts.ILogger.FatalFormat(System.String,System.Object[])">
+             <summary>   Fatal format. </summary>
+            
+             <param name="format">   Describes the format to use. </param>
+             <param name="args">     A variable-length parameters list containing arguments. </param>
+        </member>
+        <member name="M:GCS.Core.Common.Contracts.ILogger.FatalFormat(System.String,System.Object)">
+             <summary>   Fatal format. </summary>
+            
+             <param name="format">   Describes the format to use. </param>
+             <param name="arg0">     The argument 0. </param>
+        </member>
+        <member name="M:GCS.Core.Common.Contracts.ILogger.FatalFormat(System.String,System.Object,System.Object)">
+             <summary>   Fatal format. </summary>
+            
+             <param name="format">   Describes the format to use. </param>
+             <param name="arg0">     The argument 0. </param>
+             <param name="arg1">     The first argument. </param>
+        </member>
+        <member name="M:GCS.Core.Common.Contracts.ILogger.FatalFormat(System.String,System.Object,System.Object,System.Object)">
+             <summary>   Fatal format. </summary>
+            
+             <param name="format">   Describes the format to use. </param>
+             <param name="arg0">     The argument 0. </param>
+             <param name="arg1">     The first argument. </param>
+             <param name="arg2">     The second argument. </param>
+        </member>
+        <member name="M:GCS.Core.Common.Contracts.ILogger.FatalFormat(System.IFormatProvider,System.String,System.Object[])">
+             <summary>   Fatal format. </summary>
+            
+             <param name="provider"> The provider. </param>
+             <param name="format">   Describes the format to use. </param>
+             <param name="args">     A variable-length parameters list containing arguments. </param>
+        </member>
+        <member name="P:GCS.Core.Common.Contracts.ILogger.IsDebugEnabled">
+             <summary>   Gets a value indicating whether a debug is enabled. </summary>
+            
+             <value> True if a debug is enabled, false if not. </value>
+        </member>
+        <member name="P:GCS.Core.Common.Contracts.ILogger.IsInfoEnabled">
+             <summary>   Gets a value indicating whether an information is enabled. </summary>
+            
+             <value> True if an information is enabled, false if not. </value>
+        </member>
+        <member name="P:GCS.Core.Common.Contracts.ILogger.IsWarnEnabled">
+             <summary>   Gets a value indicating whether a warning is enabled. </summary>
+            
+             <value> True if a warning is enabled, false if not. </value>
+        </member>
+        <member name="P:GCS.Core.Common.Contracts.ILogger.IsErrorEnabled">
+             <summary>   Gets a value indicating whether an error is enabled. </summary>
+            
+             <value> True if an error is enabled, false if not. </value>
+        </member>
+        <member name="P:GCS.Core.Common.Contracts.ILogger.IsFatalEnabled">
+             <summary>   Gets a value indicating whether a fatal is enabled. </summary>
+            
+             <value> True if a fatal is enabled, false if not. </value>
+        </member>
+        <member name="M:GCS.Core.Common.Contracts.ILogger.PushActivity(System.String)">
+             <summary>   Pushes an activity. </summary>
+            
+             <param name="activityName"> Name of the activity. </param>
+            
+             <returns>   An IDisposable. </returns>
+        </member>
+        <member name="T:GCS.Core.Common.Contracts.ILogManager">
+             <summary>   Interface for log manager. </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+        </member>
+        <member name="M:GCS.Core.Common.Contracts.ILogManager.GetLogger(System.Type)">
+             <summary>   Gets a logger. </summary>
+            
+             <param name="type"> The type. </param>
+            
+             <returns>   The logger. </returns>
+        </member>
+        <member name="T:GCS.Core.Common.Contracts.IRepository">
+             <summary>   Interface for data insert repository. </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+        </member>
+        <member name="T:GCS.Core.Common.Contracts.IRepository`1">
+             <summary>   Interface for data insert repository. </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+            
+             <typeparam name="T">    Generic type parameter. </typeparam>
+        </member>
+        <member name="T:GCS.Core.Common.Contracts.IResponseBase`1">
+             <summary>   Interface for response base. </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+            
+             <typeparam name="T">    Generic type parameter. </typeparam>
+        </member>
+        <member name="P:GCS.Core.Common.Contracts.IResponseBase`1.SessionId">
+             <summary>   Gets or sets the identifier of the session. </summary>
+            
+             <value> The identifier of the session. </value>
+        </member>
+        <member name="P:GCS.Core.Common.Contracts.IResponseBase`1.ResponseDateTime">
+             <summary>   Gets or sets the response date time. </summary>
+            
+             <value> The response date time. </value>
+        </member>
+        <member name="P:GCS.Core.Common.Contracts.IResponseBase`1.Data">
+             <summary>   Gets or sets the data. </summary>
+            
+             <value> The data. </value>
+        </member>
+        <member name="T:GCS.Core.Common.Contracts.IServiceContract">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:GCS.Core.Common.Contracts.IHasEntityId">
+             <summary>   Interface for table entity base. </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+        </member>
+        <member name="P:GCS.Core.Common.Contracts.IHasEntityId.EntityId">
+             <summary>   Gets or sets the identifier of the entity. </summary>
+            
+             <value> The identifier of the entity. </value>
+        </member>
+        <member name="T:GCS.Core.Common.Contracts.ITableEntityBase">
+             <summary>   Interface for table entity base. </summary>
+            
+             <remarks>   Kevin, 12/26/2018. </remarks>
+        </member>
+        <member name="P:GCS.Core.Common.Contracts.ITableEntityBase.InsertDate">
+             <summary>   Gets or sets the insert date. </summary>
+            
+             <value> The insert date. </value>
+        </member>
+        <member name="P:GCS.Core.Common.Contracts.ITableEntityBase.InsertName">
+             <summary>   Gets or sets the name of the insert. </summary>
+            
+             <value> The name of the insert. </value>
+        </member>
+        <member name="P:GCS.Core.Common.Contracts.ITableEntityBase.UpdateDate">
+             <summary>   Gets or sets the update. </summary>
+            
+             <value> The update date. </value>
+        </member>
+        <member name="P:GCS.Core.Common.Contracts.ITableEntityBase.UpdateName">
+             <summary>   Gets or sets the name of the update. </summary>
+            
+             <value> The name of the update. </value>
+        </member>
+        <member name="P:GCS.Core.Common.Contracts.ITableEntityBase.ConcurrencyValue">
+             <summary>   Gets or sets the concurrency value. </summary>
+            
+             <value> The concurrency value. </value>
+        </member>
+        <member name="P:GCS.Core.Common.Contracts.ITableEntityBase2.InsertDate">
+             <summary>   Gets or sets the insert date. </summary>
+            
+             <value> The insert date. </value>
+        </member>
+        <member name="P:GCS.Core.Common.Contracts.ITableEntityBase2.InsertName">
+             <summary>   Gets or sets the name of the insert. </summary>
+            
+             <value> The name of the insert. </value>
+        </member>
+        <member name="P:GCS.Core.Common.Contracts.ITableEntityBase2.UpdateDate">
+             <summary>   Gets or sets the update. </summary>
+            
+             <value> The update date. </value>
+        </member>
+        <member name="P:GCS.Core.Common.Contracts.ITableEntityBase2.UpdateName">
+             <summary>   Gets or sets the name of the update. </summary>
+            
+             <value> The name of the update. </value>
+        </member>
+        <member name="P:GCS.Core.Common.Contracts.ITableEntityBase2.ConcurrencyValue">
+             <summary>   Gets or sets the concurrency value. </summary>
+            
+             <value> The concurrency value. </value>
+        </member>
+    </members>
+</doc>

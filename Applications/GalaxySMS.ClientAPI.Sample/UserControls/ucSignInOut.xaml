@@ -1,0 +1,52 @@
+﻿<UserControl x:Class="GalaxySMS.ClientAPI.Sample.UserControls.ucSignInOut"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:GalaxySMS.ClientAPI.Sample.UserControls"
+             xmlns:converters="clr-namespace:GCS.Core.Common.UI.Converters;assembly=GCS.Core.Common.UI"
+             mc:Ignorable="d" 
+             d:DesignHeight="100" d:DesignWidth="300">
+    <UserControl.Resources>
+        <converters:GuidEmptyToVisibilityConverter x:Key="guidEmptyToVisibility" />
+        <converters:GuidNotEmptyToVisibilityConverter x:Key="guidNotEmptyToVisibility" />
+        <converters:NullToVisibilityConverter x:Key="nullToVisibility" />
+    </UserControl.Resources>
+    <Grid>
+        <StackPanel Orientation="Horizontal">
+            <StackPanel Margin="5" Orientation="Horizontal" Visibility="{Binding Globals.UserSessionToken.SessionId, Converter={StaticResource guidEmptyToVisibility}}">
+                <StackPanel Orientation="Vertical" >
+                    <TextBlock Text="User Name:"/>
+                    <TextBox Text="{Binding UserName}"/>
+                </StackPanel>
+                <StackPanel Orientation="Vertical" Margin="5,0">
+                    <TextBlock Text="Password:"/>
+                    <TextBox Text="{Binding Password}"/>
+                </StackPanel>
+                <Button Content="Sign In" VerticalAlignment="Center" Command="{Binding SignInCommand}"/>
+            </StackPanel>
+
+            <StackPanel Visibility="{Binding Globals.UserSessionToken, Converter={StaticResource nullToVisibility}}">
+                <StackPanel Margin="5" Orientation="Horizontal" Visibility="{Binding Globals.UserSessionToken.SessionId, Converter={StaticResource guidNotEmptyToVisibility}}">
+                    <StackPanel Orientation="Vertical">
+                        <Image Source="{Binding Globals.UserSessionToken.UserData.UserImage}" Height="32" Width="Auto" Margin="2"/>
+                        <TextBlock VerticalAlignment="Center" FontSize="12" Text="{Binding Globals.UserSessionToken.UserData.DisplayName}"/>
+                    </StackPanel>
+                    <Button Content="Sign Out" VerticalAlignment="Center" Command="{Binding SignOutCommand}" />
+                </StackPanel>
+            </StackPanel>
+            <Expander Header="Session Data">
+                <StackPanel Margin="5">
+                    <StackPanel Orientation="Horizontal" Margin="5,0">
+                        <TextBlock Text="SignInResult:" Margin="5,0"/>
+                        <TextBlock Text="{Binding Globals.SignInResult.RequestResult}" Margin="5,0"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="5,0">
+                        <TextBlock Text="SessionGuid:" Margin="5,0"/>
+                        <TextBlock Text="{Binding Globals.UserSessionToken.SessionId}" Margin="5,0"/>
+                    </StackPanel>
+                </StackPanel>
+            </Expander>
+        </StackPanel>
+    </Grid>
+</UserControl>

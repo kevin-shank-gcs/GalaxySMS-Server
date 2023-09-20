@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "GalaxySMS.Common.Std2": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:18840;http://localhost:18841"
+    }
+  }
+}

@@ -1,0 +1,312 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="BusyIndicatorContent_BusyRequestingSqlInstancesContent" xml:space="preserve">
+    <value>Please be patient while searching for SQL instances...</value>
+  </data>
+  <data name="BusyIndicatorContent_TestingConnectionBusyMessage" xml:space="preserve">
+    <value>Testing connection to '{0}'.</value>
+  </data>
+  <data name="SqlServerDataImportMapperPage_DestinationCatalogDatabaseText" xml:space="preserve">
+    <value>Select Destination Catalog/Database</value>
+  </data>
+  <data name="SqlServerDataImportMapperPage_DestinationCatalogDatabaseToolTip" xml:space="preserve">
+    <value>Choose the destination Catalog/Database which the data will be imported into</value>
+  </data>
+  <data name="SqlServerPicker_AllServersButtonText" xml:space="preserve">
+    <value>All Servers</value>
+  </data>
+  <data name="SqlServerPicker_AllServersButtonToolTip" xml:space="preserve">
+    <value>Click Here to Load All Network SQL Servers and Local Servers</value>
+  </data>
+  <data name="SqlServerPicker_ApplicationNameText" xml:space="preserve">
+    <value>Application Name</value>
+  </data>
+  <data name="SqlServerPicker_AuthenticationMode_Integrated" xml:space="preserve">
+    <value>Windows Authentication</value>
+  </data>
+  <data name="SqlServerPicker_AuthenticationMode_SqlServer" xml:space="preserve">
+    <value>SQL Server Authentication</value>
+  </data>
+  <data name="SqlServerPicker_AuthenticationText" xml:space="preserve">
+    <value>Authentication</value>
+  </data>
+  <data name="SqlServerPicker_CancelButtonText" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="SqlServerPicker_CancelButtonToolTip" xml:space="preserve">
+    <value>Click Here to Cancel out of Dialog without Saving Connection String</value>
+  </data>
+  <data name="SqlServerPicker_CatalogDatabaseText" xml:space="preserve">
+    <value>Catalog/Database</value>
+  </data>
+  <data name="SqlServerPicker_CatalogDatabaseToolTip" xml:space="preserve">
+    <value>Enter a Valid Catalog/Database Name For This SQL Server</value>
+  </data>
+  <data name="SqlServerPicker_ColumnsGrid_DataTypeHeader" xml:space="preserve">
+    <value>Data Type</value>
+  </data>
+  <data name="SqlServerPicker_ColumnsGrid_InPrimaryKeyHeader" xml:space="preserve">
+    <value>Primary Key</value>
+  </data>
+  <data name="SqlServerPicker_ColumnsGrid_NameHeader" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="SqlServerPicker_ColumnsGrid_NullableHeader" xml:space="preserve">
+    <value>Nullable</value>
+  </data>
+  <data name="SqlServerPicker_ConnectStringText" xml:space="preserve">
+    <value>Connect String</value>
+  </data>
+  <data name="SqlServerPicker_CopyButtonText" xml:space="preserve">
+    <value>Copy</value>
+  </data>
+  <data name="SqlServerPicker_CopyButtonToolTip" xml:space="preserve">
+    <value>Click Here to Copy Connection String to Clipboard</value>
+  </data>
+  <data name="SqlServerPicker_DataHeaderText" xml:space="preserve">
+    <value>Data</value>
+  </data>
+  <data name="SqlServerPicker_EncryptText" xml:space="preserve">
+    <value>Encrypt</value>
+  </data>
+  <data name="SqlServerPicker_EncryptToolTip" xml:space="preserve">
+    <value>Encrypt the connect</value>
+  </data>
+  <data name="SqlServerPicker_ExecuteSQLCommandButtonText" xml:space="preserve">
+    <value>Execute SQL Command</value>
+  </data>
+  <data name="SqlServerPicker_ExecuteSQLCommandButtonToolTip" xml:space="preserve">
+    <value>Execute the SQL command and display the data</value>
+  </data>
+  <data name="SqlServerPicker_GetTableDataButtonText" xml:space="preserve">
+    <value>Read Table Data</value>
+  </data>
+  <data name="SqlServerPicker_GetTableDataButtonToolTip" xml:space="preserve">
+    <value>Read sample data from the selected table</value>
+  </data>
+  <data name="SqlServerPicker_InstancePropertiesHeaderText" xml:space="preserve">
+    <value>Server Details</value>
+  </data>
+  <data name="SqlServerPicker_IsServerRunningText" xml:space="preserve">
+    <value>Is Server Running?</value>
+  </data>
+  <data name="SqlServerPicker_IsServerRunningToolTip" xml:space="preserve">
+    <value>Is This SQL Server Running?</value>
+  </data>
+  <data name="SqlServerPicker_IsSqlExpressText" xml:space="preserve">
+    <value>Is SQL Express?</value>
+  </data>
+  <data name="SqlServerPicker_LocalServersButtonText" xml:space="preserve">
+    <value>Local Servers</value>
+  </data>
+  <data name="SqlServerPicker_LocalServersButtonToolTip" xml:space="preserve">
+    <value>Click Here to Load Local SQL Server Only</value>
+  </data>
+  <data name="SqlServerPicker_OKButtonText" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="SqlServerPicker_OKButtonToolTip" xml:space="preserve">
+    <value>Click Here to Save Connection String</value>
+  </data>
+  <data name="SqlServerPicker_PasswordText" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="SqlServerPicker_PasswordToolTip" xml:space="preserve">
+    <value>Enter a Valid Password</value>
+  </data>
+  <data name="SqlServerPicker_SampleDataTabHeaderText" xml:space="preserve">
+    <value>Sample Data</value>
+  </data>
+  <data name="SqlServerPicker_SelectAuthenticationModeToolTip" xml:space="preserve">
+    <value>Select the Authentication Mode</value>
+  </data>
+  <data name="SqlServerPicker_SelectStoredProcedureListText" xml:space="preserve">
+    <value>Select Source Stored Procedure</value>
+  </data>
+  <data name="SqlServerPicker_SelectStoredProcedureListToolTip" xml:space="preserve">
+    <value>Select the stored procedure that returns the source data to be imported</value>
+  </data>
+  <data name="SqlServerPicker_SelectTableListText" xml:space="preserve">
+    <value>Select Source Table</value>
+  </data>
+  <data name="SqlServerPicker_SelectTableListToolTip" xml:space="preserve">
+    <value>Select the table that contains the source data to be imported</value>
+  </data>
+  <data name="SqlServerPicker_SelectViewListText" xml:space="preserve">
+    <value>Select Source View</value>
+  </data>
+  <data name="SqlServerPicker_SelectViewListToolTip" xml:space="preserve">
+    <value>Select the view that contains the source data to be imported</value>
+  </data>
+  <data name="SqlServerPicker_SqlCommandTabHeaderText" xml:space="preserve">
+    <value>SQL Command</value>
+  </data>
+  <data name="SqlServerPicker_SqlCommandTabHeaderToolTip" xml:space="preserve">
+    <value>View or enter a SQL command that will be used to select the data to be imported</value>
+  </data>
+  <data name="SqlServerPicker_SqlServerEditionText" xml:space="preserve">
+    <value>SQL Server Edition</value>
+  </data>
+  <data name="SqlServerPicker_SqlServerText" xml:space="preserve">
+    <value>SQL Server</value>
+  </data>
+  <data name="SqlServerPicker_SqlServerToolTip" xml:space="preserve">
+    <value>Select a SQL Server</value>
+  </data>
+  <data name="SqlServerPicker_SqlServerVersionText" xml:space="preserve">
+    <value>SQL Server Version</value>
+  </data>
+  <data name="SqlServerPicker_Step1Text" xml:space="preserve">
+    <value>Step 1: Load and Select a SQL Server</value>
+  </data>
+  <data name="SqlServerPicker_Step2Text" xml:space="preserve">
+    <value>Step 2: Click the 'Test Connection' Button to Ensure SQL Server is Valid.</value>
+  </data>
+  <data name="SqlServerPicker_StoredProceduresTabHeaderText" xml:space="preserve">
+    <value>Stored Procedures</value>
+  </data>
+  <data name="SqlServerPicker_StoredProceduresTabHeaderToolTip" xml:space="preserve">
+    <value>Select Source Stored Procedure</value>
+  </data>
+  <data name="SqlServerPicker_TablesTabHeaderText" xml:space="preserve">
+    <value>Tables</value>
+  </data>
+  <data name="SqlServerPicker_TablesTabHeaderToolTip" xml:space="preserve">
+    <value>Select Source Table</value>
+  </data>
+  <data name="SqlServerPicker_TestConnectButtonText" xml:space="preserve">
+    <value>Test Connection</value>
+  </data>
+  <data name="SqlServerPicker_TestConnectButtonToolTip" xml:space="preserve">
+    <value>Click Here to Test Connection</value>
+  </data>
+  <data name="SqlServerPicker_UserNameText" xml:space="preserve">
+    <value>User Name</value>
+  </data>
+  <data name="SqlServerPicker_UserNameToolTip" xml:space="preserve">
+    <value>Enter a Valid SQL Server User Name</value>
+  </data>
+  <data name="SqlServerPicker_ViewsTabHeaderText" xml:space="preserve">
+    <value>Views</value>
+  </data>
+  <data name="SqlServerPicker_ViewsTabHeaderToolTip" xml:space="preserve">
+    <value>Select Source View</value>
+  </data>
+</root>

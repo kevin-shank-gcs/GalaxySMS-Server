@@ -1,0 +1,135 @@
+﻿<core:UserControlViewBase x:Class="GalaxySMS.Schedule.Views.TimePeriodView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:prism="http://prismlibrary.com/"
+             xmlns:core="http://www.galaxysys.com/GCS/Core"
+             xmlns:local="clr-namespace:GalaxySMS.Schedule.Views"
+             xmlns:resx="clr-namespace:GalaxySMS.Schedule.Properties"
+             xmlns:sharedResources="clr-namespace:GalaxySMS.Resources;assembly=GalaxySMS.Resources"
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             xmlns:converters="clr-namespace:GCS.Core.Common.UI.Converters;assembly=GCS.Core.Common.UI"
+             xmlns:animations="clr-namespace:GCS.Core.Common.UI.Animations;assembly=GCS.Core.Common.UI"
+             xmlns:ui="clr-namespace:GalaxySMS.Client.UI;assembly=GalaxySMS.Client.UI"
+            prism:ViewModelLocator.AutoWireViewModel="True" FlowDirection="{Binding FlowDirection}"
+             mc:Ignorable="d">
+    <core:UserControlViewBase.Resources>
+        <converters:NullToVisibilityConverter x:Key="nullToVisibilityConverter" />
+        <converters:NotNullToVisibilityConverter x:Key="notNullToVisibilityConverter" />
+        <converters:BooleanToVisibilityConverter x:Key="boolToVisibility" />
+    </core:UserControlViewBase.Resources>
+
+    <!--<ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">-->
+    <telerik:RadBusyIndicator IsBusy="{Binding IsBusy}" IsIndeterminate="True" BusyContent="{Binding BusyContent}" DisplayAfter="0">
+        <Grid>
+            <Grid Grid.Row="0" Visibility="{Binding CurrentItemViewModel, Converter={StaticResource notNullToVisibilityConverter}}" 
+              animations:VisibilityAnimation.AnimationType="Fade" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <StackPanel Grid.Row="0" Orientation="Vertical">
+                    <core:ErrorsPanel DataContext="{Binding}" />
+                    <!--<ui:AddNewRefreshButtonControl/>-->
+                    <StackPanel Orientation="Horizontal">
+                        <ui:AddNewButtonControlBindable
+                            Command="{Binding AddNewCommand}"
+                            ImageHeight="32"
+                            ImageWidth="32"
+                            IsVisible="{Binding IsAddNewControlVisible}"
+                            Text="{x:Static sharedResources:Resources.AddNewTimePeriod_Text}"
+                            ToolTip="{x:Static sharedResources:Resources.AddNewTimePeriod_ToolTip}" />
+                        <ui:RefreshButtonControlBindable
+                            Command="{Binding RefreshCommand}"
+                            ImageHeight="32"
+                            ImageWidth="32"
+                            IsVisible="{Binding IsRefreshControlVisible}"
+                            Text="{x:Static sharedResources:Resources.RefreshTimePeriods_Text}"
+                            ToolTip="{x:Static sharedResources:Resources.RefreshTimePeriods_ToolTip}" />
+                        <!--<StackPanel>
+                            <TextBlock
+                                Style="{StaticResource DataEntryControlTitle}"
+                                Text="{x:Static sharedResources:Resources.TimePeriodView_SelectTimePeriodTypeTitle}" />
+                            <telerik:RadComboBox ItemsSource ="{Binding TimePeriodTypes}"
+                                                 SelectedItem="{Binding SelectedTimePeriodType}"
+                                                 ToolTip="{x:Static sharedResources:Resources.TimePeriodView_SelectTimePeriodTypeToolTip}">
+                                
+                            </telerik:RadComboBox>
+                        </StackPanel>-->
+                            <StackPanel Orientation="Vertical" Margin="5,0,0,0">
+                            <ui:TotalRecordCountControl/>
+                            <telerik:RadDataPager PageSize="{Binding GridPageSize.Key}"
+                                                  Source="{Binding Items, ElementName=radGridViewTimePeriods}"
+                                                  IsTotalItemCountFixed="True" />
+                        </StackPanel>
+                        <ui:GridPageSizeSelector Margin="5,0,0,0"/>
+                    </StackPanel>
+
+                </StackPanel>
+
+                    <telerik:RadGridView Grid.Row="1" 
+                                 x:Name="radGridViewTimePeriods" 
+                                 Visibility="Visible" 
+                                 ShowGroupPanel="False" 
+                                 ItemsSource="{Binding TimePeriods}"
+                                 IsFilteringAllowed="True" 
+                                 IsReadOnly="True" 
+                                 AutoGenerateColumns="False"
+                                 Width="Auto"
+                                 RowIndicatorVisibility="Collapsed"
+                                 RowDetailsVisibilityMode="VisibleWhenSelected">
+                    <telerik:RadGridView.Columns>
+                        <telerik:GridViewColumn Header="{x:Static sharedResources:Resources.Common_Actions}" ToolTip="{x:Static sharedResources:Resources.Common_ActionsTooltip}" >
+                            <telerik:GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <!--<ui:EditDeleteButtonControl/>-->
+                                        <ui:EditButtonControlBindable
+                                            Command="{Binding DataContext.EditCommand, RelativeSource={RelativeSource AncestorType=core:UserControlViewBase}}"
+                                            CommandParameter="{Binding}"
+                                            IsVisible="{Binding DataContext.IsEditControlVisible, RelativeSource={RelativeSource AncestorType=core:UserControlViewBase}}"
+                                            Text="{x:Static sharedResources:Resources.EditTimePeriod_Text}"
+                                            ToolTip="{x:Static sharedResources:Resources.EditTimePeriod_ToolTip}" />
+                                        <ui:DeleteButtonControlBindable
+                                            Command="{Binding DataContext.DeleteCommand, RelativeSource={RelativeSource AncestorType=core:UserControlViewBase}}"
+                                            CommandParameter="{Binding}"
+                                            IsVisible="{Binding DataContext.IsDeleteControlVisible, RelativeSource={RelativeSource AncestorType=core:UserControlViewBase}}"
+                                            Text="{x:Static sharedResources:Resources.DeleteTimePeriod_Text}"
+                                            ToolTip="{x:Static sharedResources:Resources.DeleteTimePeriod_ToolTip}" />
+                                    </StackPanel>
+                                </DataTemplate>
+                            </telerik:GridViewColumn.CellTemplate>
+                        </telerik:GridViewColumn>
+                        <telerik:GridViewDataColumn Header="{x:Static sharedResources:Resources.MaintainTimePeriods_TimePeriodName}" DataMemberBinding="{Binding Name}"/>
+                        <telerik:GridViewDataColumn Header="{x:Static sharedResources:Resources.MaintainTimePeriods_TimePeriodType}" DataMemberBinding="{Binding TimePeriodType}"/>
+                        <telerik:GridViewColumn Header="{x:Static sharedResources:Resources.TimePeriod_StartTime_Text}" ToolTip="{x:Static sharedResources:Resources.TimePeriod_StartTime_ToolTip}" >
+                            <!--<telerik:GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <telerik:RadTimePicker SelectedValue="{Binding StartTime, Mode=TwoWay}" 
+                                                               DateTimeWatermarkContent="{x:Static sharedResources:Resources.TimePeriod_StartTime_Text}"
+                                                               TimeInterval="0:15:0"
+                                                               ToolTip="{x:Static sharedResources:Resources.TimePeriod_StartTime_ToolTip}"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </telerik:GridViewColumn.CellTemplate>-->
+                        </telerik:GridViewColumn>                    
+                    </telerik:RadGridView.Columns>
+                </telerik:RadGridView>
+            </Grid>
+
+            <Grid Grid.Row="0" Grid.Column="0" animations:VisibilityAnimation.AnimationType="Fade" >
+
+                <Border CornerRadius="4" Margin="10" BorderThickness="1"
+                Visibility="{Binding CurrentItemViewModel, Converter={StaticResource nullToVisibilityConverter}}">
+                    <ContentControl Content="{Binding CurrentItemViewModel}" />
+                </Border>
+            </Grid>
+
+        </Grid>
+    </telerik:RadBusyIndicator>
+    <!--</ScrollViewer>-->
+</core:UserControlViewBase>

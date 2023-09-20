@@ -1,0 +1,172 @@
+﻿<UserControl x:Class="GalaxySMS.ClientAPI.Sample.UserControls.ucClustersPanels"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:core="http://www.galaxysys.com/GCS/Core"
+             xmlns:galaxysmscommonenums="clr-namespace:GalaxySMS.Common.Enums;assembly=GalaxySMS.Common"
+             xmlns:local="clr-namespace:GalaxySMS.ClientAPI.Sample.UserControls"
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800"
+             DataContext="{Binding Clusters, Source={StaticResource Locator}}">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="5"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal">
+            <Button Command="{Binding RefreshClustersForSiteCommand}">
+                <Button.Content>
+                    <StackPanel>
+                        <TextBlock Text="Refresh for Site"/>
+                    </StackPanel>
+                </Button.Content>
+            </Button>
+            <Button Command="{Binding RefreshClustersForEntityCommand}">
+                <Button.Content>
+                    <StackPanel>
+                        <TextBlock Text="Refresh for Entity"/>
+                    </StackPanel>
+                </Button.Content>
+            </Button>
+        </StackPanel>
+        <core:ErrorsPanel Grid.Row="1" DataContext="{Binding}" />
+        <StackPanel Grid.Row="2">
+            <telerik:RadGridView ItemsSource="{Binding Clusters}" AutoGenerateColumns="False"
+                                 RowDetailsVisibilityMode="VisibleWhenSelected">
+                <telerik:RadGridView.Columns>
+                    <telerik:GridViewDataColumn DataMemberBinding="{Binding ClusterName}" Header="Cluster Name" IsReadOnly="True" />
+                    <telerik:GridViewDataColumn DataMemberBinding="{Binding ClusterGroupId}" Header="Account" IsReadOnly="True" />
+                    <telerik:GridViewDataColumn DataMemberBinding="{Binding ClusterNumber}" Header="#" IsReadOnly="True" />
+                    <telerik:GridViewColumn Header="Command">
+                        <telerik:GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <telerik:RadComboBox  ItemsSource="{Binding ClusterCommands}"
+                                                          SelectedItem="{Binding SelectedClusterCommand}"
+                                                      ToolTip="Select command"
+                                                      TextSearch.TextPath="Display"
+                                                      TextSearchMode="StartsWith"
+                                                      IsFilteringEnabled="True">
+                                        <telerik:RadComboBox.ItemTemplate>
+                                            <DataTemplate>
+                                                <StackPanel Orientation="Horizontal" ToolTip="{Binding Description}">
+                                                    <!--<Image Source="{Binding FlagImage}" Height="32" Width="Auto" Margin="5"/>-->
+                                                    <TextBlock VerticalAlignment="Center" Text="{Binding Path=Display}"/>
+                                                </StackPanel>
+                                            </DataTemplate>
+                                        </telerik:RadComboBox.ItemTemplate>
+                                    </telerik:RadComboBox>
+                                    <Button Content="Execute" 
+                                            Command="{Binding DataContext.ClusterCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                            CommandParameter="{Binding}"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </telerik:GridViewColumn.CellTemplate>
+                    </telerik:GridViewColumn>             
+                    </telerik:RadGridView.Columns>
+                <telerik:RadGridView.RowDetailsTemplate>
+                    <DataTemplate>
+                        <StackPanel Margin="4">
+                            <telerik:RadGridView ItemsSource="{Binding GalaxyPanels}" AutoGenerateColumns="False">
+                                <telerik:RadGridView.Columns>
+                                    <telerik:GridViewDataColumn DataMemberBinding="{Binding PanelInqueryReply.CreatedDateTime}" Header="Date Time" IsReadOnly="True"/>
+                                    <telerik:GridViewDataColumn DataMemberBinding="{Binding PanelName}" Header="Panel Name" IsReadOnly="True" />
+                                    <telerik:GridViewDataColumn DataMemberBinding="{Binding PanelNumber}" Header="#" IsReadOnly="True" />
+                                    <telerik:GridViewDataColumn DataMemberBinding="{Binding PanelInqueryReply.SerialNumber}" Header="SN" IsReadOnly="True" />
+                                    <telerik:GridViewDataColumn DataMemberBinding="{Binding PanelInqueryReply.ModelNumber}" Header="Model" IsReadOnly="True" />
+                                    <telerik:GridViewDataColumn DataMemberBinding="{Binding PanelInqueryReply.Version}" Header="Version" IsReadOnly="True" />
+                                    <telerik:GridViewDataColumn DataMemberBinding="{Binding PanelInqueryReply.LastRestartColdOrWarm}" Header="Last Reset" IsReadOnly="True" />
+                                    <telerik:GridViewDataColumn DataMemberBinding="{Binding PanelInqueryReply.CrisisModeActive}" Header="Crisis Mode" IsReadOnly="True" />
+                                    <telerik:GridViewDataColumn DataMemberBinding="{Binding PanelInqueryReply.CardCodeFormat}" Header="Credential Size" IsReadOnly="True" />
+                                    <telerik:GridViewDataColumn DataMemberBinding="{Binding CredentialCountReply.CreatedDateTime}" Header="Date Time" IsReadOnly="True"/>
+                                    <telerik:GridViewDataColumn DataMemberBinding="{Binding CredentialCountReply.Value}" Header="Credential Count" IsReadOnly="True" />
+                                    <telerik:GridViewDataColumn DataMemberBinding="{Binding LoggingStatusReply.EnabledState}" Header="Logging State" IsReadOnly="True" />
+                                    <telerik:GridViewDataColumn DataMemberBinding="{Binding LoggingStatusReply.CreatedDateTime}" Header="Date Time" IsReadOnly="True"/>
+                                    <telerik:GridViewDataColumn DataMemberBinding="{Binding LoggingStatusReply.UnacknowledgedActivityLogCount}" Header="Unacknowledged Log Count" IsReadOnly="True" />
+                                    <telerik:GridViewDataColumn DataMemberBinding="{Binding LoggingStatusReply.BufferedActivityLogCount}" Header="Buffered Log Count" IsReadOnly="True" />                                
+                                </telerik:RadGridView.Columns>
+                            </telerik:RadGridView>
+                        </StackPanel>
+                    </DataTemplate>
+                </telerik:RadGridView.RowDetailsTemplate>
+            </telerik:RadGridView>
+            <!--<ListBox Grid.Row="2" ItemsSource="{Binding Clusters}">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding ClusterName}"/>
+                            <Button Command="{Binding DataContext.PulseCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                CommandParameter="{Binding}">
+                                <Button.Content>
+                                    <StackPanel>
+                                        <TextBlock Text="Pulse"/>
+                                    </StackPanel>
+                                </Button.Content>
+                            </Button>
+                            <Button Command="{Binding DataContext.UnlockCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                CommandParameter="{Binding}">
+                                <Button.Content>
+                                    <StackPanel>
+                                        <TextBlock Text="Unlock"/>
+                                    </StackPanel>
+                                </Button.Content>
+                            </Button>
+                            <Button Command="{Binding DataContext.LockCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                CommandParameter="{Binding}">
+                                <Button.Content>
+                                    <StackPanel>
+                                        <TextBlock Text="Lock"/>
+                                    </StackPanel>
+                                </Button.Content>
+                            </Button>
+                            <Button Command="{Binding DataContext.EnableCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                CommandParameter="{Binding}">
+                                <Button.Content>
+                                    <StackPanel>
+                                        <TextBlock Text="Enable"/>
+                                    </StackPanel>
+                                </Button.Content>
+                            </Button>
+                            <Button Command="{Binding DataContext.DisableCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                CommandParameter="{Binding}">
+                                <Button.Content>
+                                    <StackPanel>
+                                        <TextBlock Text="Disable"/>
+                                    </StackPanel>
+                                </Button.Content>
+                            </Button>
+                            <Button Command="{Binding DataContext.RequestStatusCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                CommandParameter="{Binding}">
+                                <Button.Content>
+                                    <StackPanel>
+                                        <TextBlock Text="Request Status"/>
+                                    </StackPanel>
+                                </Button.Content>
+                            </Button>
+                            <TextBlock Margin="5,0">
+                            <Run Text="AccessPortalStatus => "/>
+                            <Run Text="{Binding LastStatusReply.AccessPortalStatus}" FontWeight="SemiBold"/>
+                            </TextBlock>
+                            <TextBlock Margin="5,0">
+                            <Run Text="ContactStatus => "/>
+                            <Run Text="{Binding LastStatusReply.ContactStatus}" FontWeight="SemiBold"/>
+                            </TextBlock>
+                            <TextBlock Margin="5,0">
+                            <Run Text="LockStatus => "/>
+                            <Run Text="{Binding LastStatusReply.LockStatus}" FontWeight="SemiBold"/>
+                            </TextBlock>
+                            <TextBlock Margin="5,0">
+                            <Run Text="CredentialReaderStatus => "/>
+                            <Run Text="{Binding LastStatusReply.CredentialReaderStatus}" FontWeight="SemiBold" />
+                            </TextBlock>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>-->
+        </StackPanel>
+    </Grid>
+</UserControl>
+

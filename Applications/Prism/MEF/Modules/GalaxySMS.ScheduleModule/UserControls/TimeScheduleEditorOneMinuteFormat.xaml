@@ -1,0 +1,98 @@
+﻿<UserControl x:Class="GalaxySMS.Schedule.UserControls.TimeScheduleEditorOneMinuteFormat"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:GalaxySMS.Schedule.UserControls"
+             xmlns:core="http://www.galaxysys.com/GCS/Core"
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             xmlns:sharedResources="clr-namespace:GalaxySMS.Resources;assembly=GalaxySMS.Resources"
+             xmlns:converters="clr-namespace:GCS.Core.Common.UI.Converters;assembly=GCS.Core.Common.UI"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <converters:IntToBrushConverter x:Key="IntToBrushConverter"/>
+        <converters:EnumToIntConverter x:Key="EnumToIntConverter"/>
+    </UserControl.Resources>
+        <StackPanel>
+        <telerik:RadGridView x:Name="radGridViewSchedulesDayTypeTimePeriods"
+                                 Visibility="Visible"
+                                 ShowGroupPanel="False"
+                                 ItemsSource="{Binding Schedule.DayTypesTimePeriods}"
+                                 IsFilteringAllowed="True"
+                                 AutoGenerateColumns="False"
+                                 Width="Auto"
+                                 RowIndicatorVisibility="Collapsed"
+                                 RowDetailsVisibilityMode="VisibleWhenSelected">
+            <telerik:RadGridView.Columns>
+
+                    <telerik:GridViewDataColumn
+                        Header="{x:Static sharedResources:Resources.EditScheduleView_MinuteFormat_DayTypeNameTitle}"
+                        ToolTip="{x:Static sharedResources:Resources.EditScheduleView_MinuteFormat_DayTypeNameToolTip}"
+                        DataMemberBinding="{Binding Name}"
+                        IsReadOnly="True">
+                        <telerik:GridViewDataColumn.CellTemplate>
+                            <DataTemplate>
+                                <Border
+                                    Background="{Binding TelerikHighlightColor, Converter={StaticResource IntToBrushConverter}}">
+                                    <TextBlock Text="{Binding Name}" Margin="5" />
+                                </Border>
+                            </DataTemplate>
+                        </telerik:GridViewDataColumn.CellTemplate>
+                    </telerik:GridViewDataColumn>
+
+                <telerik:GridViewComboBoxColumn
+                        Header="{x:Static sharedResources:Resources.EditScheduleView_MinuteFormat_TimePeriodNameTitle}"
+                        ToolTip="{x:Static sharedResources:Resources.EditScheduleView_MinuteFormat_TimePeriodNameToolTip}"
+                        ItemsSource="{Binding DataContext.GalaxyTimePeriods, RelativeSource={RelativeSource AncestorType=core:UserControlViewBase}}"
+                        DisplayMemberPath="Display"
+                        SelectedValueMemberPath="GalaxyTimePeriodUid"
+                        DataMemberBinding="{Binding GalaxyTimePeriodUid}" EditTriggers="CellClick"/>
+
+
+                <telerik:GridViewDataColumn
+                        Header="{x:Static sharedResources:Resources.EditScheduleView_MinuteFormat_DayTypeCodeTitle}"
+                        ToolTip="{x:Static sharedResources:Resources.EditScheduleView_MinuteFormat_DayTypeCodeToolTip}"
+                        DataMemberBinding="{Binding DayTypeCode}"
+                        IsReadOnly="True">
+                    <telerik:GridViewDataColumn.CellTemplate>
+                        <DataTemplate>
+                            <Border
+                                Background="{Binding TelerikHighlightColor, Converter={StaticResource IntToBrushConverter}}">
+                                <TextBlock Text="{Binding DayTypeCode}"/>
+                            </Border>
+                        </DataTemplate>
+                    </telerik:GridViewDataColumn.CellTemplate>
+                </telerik:GridViewDataColumn>
+                <telerik:GridViewDataColumn
+                    Header="{x:Static sharedResources:Resources.EditScheduleView_MinuteFormat_DayTypeCodeNumberTitle}"
+                    ToolTip="{x:Static sharedResources:Resources.EditScheduleView_MinuteFormat_DayTypeCodeNumberToolTip}"
+                    DataMemberBinding="{Binding DayTypeCode}"
+                    IsReadOnly="True">
+                    <telerik:GridViewDataColumn.CellTemplate>
+                        <DataTemplate>
+                            <Border Background="{Binding TelerikHighlightColor, Converter={StaticResource IntToBrushConverter}}">
+                                <TextBlock Text="{Binding DayTypeCode, Converter={StaticResource EnumToIntConverter}}"/>
+                            </Border>
+                        </DataTemplate>
+                    </telerik:GridViewDataColumn.CellTemplate>
+                </telerik:GridViewDataColumn>
+            </telerik:RadGridView.Columns>
+            </telerik:RadGridView>
+    </StackPanel>
+</UserControl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

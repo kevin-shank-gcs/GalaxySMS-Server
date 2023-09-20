@@ -1,0 +1,14 @@
+{
+  "profiles": {
+    "LoggingConsole": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "GCS_LOGFILE_ERROR": "d:\\Temp\\error.log",
+        "GCS_LOGFILE_DIAG": "d:\\Temp\\diagnostic.log",
+        "GCS_LOGFILE_INFO": "d:\\Temp\\information.log",
+        "GCS_LOGFILE_USAGE": "d:\\Temp\\usage.log",
+        "GCS_LOGFILE_PERF": "d:\\Temp\\performance.log"
+      }
+    }
+  }
+}

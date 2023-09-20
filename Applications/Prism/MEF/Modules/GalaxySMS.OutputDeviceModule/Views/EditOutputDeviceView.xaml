@@ -1,0 +1,217 @@
+﻿<core:UserControlViewBase x:Class="GalaxySMS.OutputDevice.Views.EditOutputDeviceView"
+                          xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                          xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                          xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                          xmlns:core="http://www.galaxysys.com/GCS/Core"
+                          xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                          xmlns:prism="http://prismlibrary.com/"
+                          xmlns:resx="clr-namespace:GalaxySMS.OutputDevice.Properties"
+                          xmlns:sharedResources="clr-namespace:GalaxySMS.Resources;assembly=GalaxySMS.Resources"
+                          xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+                          xmlns:converters="clr-namespace:GCS.Core.Common.UI.Converters;assembly=GCS.Core.Common.UI"
+                          xmlns:ui="clr-namespace:GalaxySMS.Client.UI;assembly=GalaxySMS.Client.UI"
+                          xmlns:local="clr-namespace:GalaxySMS.OutputDevice.UserControls"
+                          xmlns:sys="clr-namespace:System;assembly=mscorlib"
+                          xmlns:constants="clr-namespace:GalaxySMS.Common.Constants;assembly=GalaxySMS.Common"
+                          mc:Ignorable="d"
+                          d:DesignHeight="300" d:DesignWidth="300" FlowDirection="{Binding FlowDirection}"
+                          VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+    <core:UserControlViewBase.Resources>
+        <BitmapImage x:Key="SelectPhoto" UriSource="/GalaxySMS.Resources;component/Images/Camera/SLR_32.png" />
+        <sys:Double x:Key="defaultImageButtonImageHeight">16</sys:Double>
+        <sys:Double x:Key="defaultImageButtonImageWidth">16</sys:Double>
+        <converters:ParameterAndValueToVisibilityConverter x:Key="parameterAndValueToVisibilityConverter"/>
+    </core:UserControlViewBase.Resources>
+
+    <telerik:RadBusyIndicator IsBusy="{Binding IsBusy}" IsIndeterminate="True" BusyContent="{Binding BusyContent}" DisplayAfter="0">
+        <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <ui:FormHeaderControl/>
+                    <!--<ui:SaveDeleteButtonControl Grid.Column="1"/>-->
+                    <StackPanel Grid.Column="1" Orientation="Horizontal">
+                        <ui:SaveButtonControlBindable
+                            Command="{Binding  DataContext.SaveCommand, RelativeSource={RelativeSource AncestorType=core:UserControlViewBase}}"
+                            CommandParameter="{Binding}"
+                            ImageHeight="{StaticResource defaultImageButtonImageHeight}"
+                            ImageWidth="{StaticResource defaultImageButtonImageWidth}"
+                            Text="{x:Static sharedResources:Resources.SaveOutputDevice_Text}"
+                            ToolTip="{x:Static sharedResources:Resources.SaveOutputDevice_ToolTip}" />
+                        <ui:CancelButtonControlBindable
+                            Command="{Binding  DataContext.CancelCommand, RelativeSource={RelativeSource AncestorType=core:UserControlViewBase}}"
+                            CommandParameter="{Binding}"
+                            ImageHeight="{StaticResource defaultImageButtonImageHeight}"
+                            ImageWidth="{StaticResource defaultImageButtonImageWidth}"
+                            Text="{x:Static sharedResources:Resources.CancelEditOutputDevice_Text}"
+                            ToolTip="{x:Static sharedResources:Resources.CancelEditOutputDevice_ToolTip}" />
+                    </StackPanel>
+                </Grid>
+                <core:ValidationHeader Grid.Row="1" DataContext="{Binding}" />
+                <Grid Grid.Row="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="10" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="10"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="10"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Row="0" Grid.Column="0">
+                        <TextBlock Style="{StaticResource DataEntryControlTitle}" Text="{x:Static sharedResources:Resources.EditOutputDeviceView_OutputDeviceNameTitle}" />
+                        <TextBox Margin="3" MinWidth="200" Text="{Binding OutputDevice.OutputName, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" HorizontalAlignment="Left" />
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="1" Grid.Column="0">
+                        <TextBlock Style="{StaticResource DataEntryControlTitle}" Text="{x:Static sharedResources:Resources.EditOutputDeviceView_LocationTitle}" />
+                        <TextBox Margin="3" MinWidth="200" Text="{Binding OutputDevice.Location, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" HorizontalAlignment="Left" />
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="2" Grid.Column="0">
+                        <TextBlock Style="{StaticResource DataEntryControlTitle}" Text="{x:Static sharedResources:Resources.EditOutputDeviceView_OutputDeviceImageTitle}" />
+
+                        <Border BorderThickness="2" BorderBrush="Black"
+                            HorizontalAlignment="Left" VerticalAlignment="Top">
+                            <StackPanel Orientation="Vertical">
+                                <Image MaxWidth="300" MaxHeight="300"
+                                   Source="{Binding OutputDevice.gcsBinaryResource.BinaryResource}" />
+                                <Button Margin="0,3,0,0" Command="{Binding SelectImageCommand}"
+                                    CommandParameter="{Binding Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}"
+                                    ToolTip="{x:Static sharedResources:Resources.EditOutputDeviceView_OutputDeviceImageSelectButtonToolTip}">
+                                    <StackPanel Orientation="Horizontal" Margin="3">
+                                        <Image x:Name="imgSelectPhoto" Source="{StaticResource SelectPhoto}" />
+                                        <TextBlock VerticalAlignment="Center" Margin="3,0,0,0"
+                                               Text="{x:Static sharedResources:Resources.EditOutputDeviceView_OutputDeviceImageSelectButtonText}" />
+                                    </StackPanel>
+                                </Button>
+                            </StackPanel>
+                        </Border>
+                    </StackPanel>
+
+
+                    <StackPanel Grid.Row="3" Grid.Column="0">
+                        <TextBlock Style="{StaticResource DataEntryControlTitle}" Text="{x:Static sharedResources:Resources.EditOutputDeviceView_CommentsTitle}" />
+                        <TextBox Margin="3" MinWidth="200" MaxWidth="300" MinHeight="40" TextWrapping="Wrap" ToolTip="{x:Static sharedResources:Resources.EditOutputDeviceView_CommentsToolTip}" Text="{Binding OutputDevice.Comment, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" HorizontalAlignment="Left" />
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="4" Grid.Column="0">
+                        <TextBlock Style="{StaticResource DataEntryControlTitle}" Text="{x:Static sharedResources:Resources.EditOutputDeviceView_ServiceCommentsTitle}" />
+                        <TextBox Margin="3" MinWidth="200" MaxWidth="300" MinHeight="40" TextWrapping="Wrap" ToolTip="{x:Static sharedResources:Resources.EditOutputDeviceView_ServiceCommentsToolTip}" Text="{Binding OutputDevice.ServiceComment, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" HorizontalAlignment="Left" />
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="5" Grid.Column="0">
+                        <TextBlock Style="{StaticResource DataEntryControlTitle}" Text="{x:Static sharedResources:Resources.EditOutputDeviceView_CriticalityCommentTitle}" />
+                        <TextBox Margin="3" MinWidth="200" MaxWidth="300" MinHeight="40" TextWrapping="Wrap" ToolTip="{x:Static sharedResources:Resources.EditOutputDeviceView_CriticalityCommentsToolTip}" Text="{Binding OutputDevice.CriticalityComment, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" HorizontalAlignment="Left" />
+                    </StackPanel>
+
+                    <telerik:RadTabControl Grid.Row="1" Grid.Column="4" Grid.RowSpan="11">
+                        <telerik:RadTabItem Header="{x:Static sharedResources:Resources.EditOutputDeviceView_PropertiesTabHeaderText}"
+                                            ToolTip="{x:Static sharedResources:Resources.EditOutputDeviceView_PropertiesTabHeaderToolTip}">
+                            <!--<telerik:RadTabItem.Header>
+                                <Grid>
+                                    <Grid.ToolTip>
+                                        <TextBlock Text="{x:Static sharedResources:Resources.EditOutputDeviceView_PropertiesTabHeaderToolTip}"/>
+                                    </Grid.ToolTip>
+                                    <TextBlock Text="{x:Static sharedResources:Resources.EditOutputDeviceView_PropertiesTabHeaderText}"/>
+                                </Grid>
+                            </telerik:RadTabItem.Header>-->
+                            <StackPanel>
+                                <Border Style="{StaticResource HeaderBorder}">
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Style="{StaticResource Heading3Left}" Text="{Binding OutputDevice.HardwareAddressString}" Margin="8" />
+                                    </StackPanel>
+                                </Border>
+
+                                <local:GalaxyOutputDeviceSettings />
+                                <local:ucEventLogProperties />
+                            </StackPanel>
+                        </telerik:RadTabItem>
+                        <!--<telerik:RadTabItem>
+                            <telerik:RadTabItem.Header>
+                                <Grid>
+                                    <Grid.ToolTip>
+                                        <TextBlock Text="{x:Static sharedResources:Resources.GalaxyOutputDeviceAlertEventProperties_TabHeaderToolTip}"/>
+                                    </Grid.ToolTip>
+                                    <TextBlock Text="{x:Static sharedResources:Resources.GalaxyOutputDeviceAlertEventProperties_TabHeaderText}"/>
+                                </Grid>
+                            </telerik:RadTabItem.Header>
+                            <StackPanel>
+
+                            </StackPanel>
+                        </telerik:RadTabItem>
+                        <telerik:RadTabItem>
+                            <telerik:RadTabItem.Header>
+                                <Grid>
+                                    <Grid.ToolTip>
+                                        <TextBlock Text="{x:Static sharedResources:Resources.GalaxyOutputDeviceAccessGroupProperties_TabHeaderToolTip}"/>
+                                    </Grid.ToolTip>
+                                    <TextBlock Text="{x:Static sharedResources:Resources.GalaxyOutputDeviceAccessGroupProperties_TabHeaderText}"/>
+                                </Grid>
+                            </telerik:RadTabItem.Header>
+                            <StackPanel>
+                            </StackPanel>
+                        </telerik:RadTabItem>-->
+                        <telerik:RadTabItem Header="{Binding Path=EntityAlias, StringFormat={x:Static sharedResources:Resources.EditOutputDeviceView_EntityMappingTabHeader}}"
+                                            ToolTip="{Binding Path=EntityAliasPlural, StringFormat={x:Static sharedResources:Resources.EditOutputDeviceView_EntityMappingTabHeaderToolTip}}">
+                            <!--<telerik:RadTabItem.Header>
+                                <Grid>
+                                    <Grid.ToolTip>
+                                        <TextBlock Text="{Binding Path=EntityAliasPlural, StringFormat={x:Static sharedResources:Resources.EditOutputDeviceView_EntityMappingTabHeaderToolTip}}"/>
+                                    </Grid.ToolTip>
+                                    <TextBlock Text="{Binding Path=EntityAlias, StringFormat={x:Static sharedResources:Resources.EditOutputDeviceView_EntityMappingTabHeader}}"/>
+                                </Grid>
+                            </telerik:RadTabItem.Header>-->
+                            <ui:EntityMapUserControl />
+                        </telerik:RadTabItem>
+                    </telerik:RadTabControl>
+                </Grid>
+                <!--<ui:SaveCancelButtonControl Grid.Row="3"/>-->
+                <StackPanel Grid.Row="3" Orientation="Horizontal">
+                    <ui:SaveButtonControlBindable
+                        Command="{Binding  DataContext.SaveCommand, RelativeSource={RelativeSource AncestorType=core:UserControlViewBase}}"
+                        CommandParameter="{Binding}"
+                        ImageHeight="{StaticResource defaultImageButtonImageHeight}"
+                        ImageWidth="{StaticResource defaultImageButtonImageWidth}"
+                        Text="{x:Static sharedResources:Resources.SaveOutputDevice_Text}"
+                        ToolTip="{x:Static sharedResources:Resources.SaveOutputDevice_ToolTip}" />
+                    <ui:CancelButtonControlBindable
+                        Command="{Binding  DataContext.CancelCommand, RelativeSource={RelativeSource AncestorType=core:UserControlViewBase}}"
+                        CommandParameter="{Binding}"
+                        ImageHeight="{StaticResource defaultImageButtonImageHeight}"
+                        ImageWidth="{StaticResource defaultImageButtonImageWidth}"
+                        Text="{x:Static sharedResources:Resources.CancelEditOutputDevice_Text}"
+                        ToolTip="{x:Static sharedResources:Resources.CancelEditOutputDevice_ToolTip}" />
+                </StackPanel>
+                <core:ErrorsPanel Grid.Row="4" DataContext="{Binding}" />
+            </Grid>
+        </ScrollViewer>
+    </telerik:RadBusyIndicator>
+</core:UserControlViewBase>

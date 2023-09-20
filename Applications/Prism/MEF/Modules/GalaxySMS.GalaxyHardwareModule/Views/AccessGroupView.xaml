@@ -1,0 +1,144 @@
+﻿<core:UserControlViewBase
+    x:Class="GalaxySMS.GalaxyHardware.Views.AccessGroupView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:core="http://www.galaxysys.com/GCS/Core"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:prism="http://prismlibrary.com/"
+    xmlns:prismInfra="clr-namespace:GalaxySMS.Prism.Infrastructure;assembly=GalaxySMS.Prism.Infrastructure"
+    xmlns:resx="clr-namespace:GalaxySMS.GalaxyHardware.Properties"
+    xmlns:sharedResources="clr-namespace:GalaxySMS.Resources;assembly=GalaxySMS.Resources"
+    xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+    xmlns:converters="clr-namespace:GCS.Core.Common.UI.Converters;assembly=GCS.Core.Common.UI"
+    xmlns:animations="clr-namespace:GCS.Core.Common.UI.Animations;assembly=GCS.Core.Common.UI"
+    xmlns:hardware="clr-namespace:GalaxySMS.GalaxyHardware"
+    xmlns:ui="clr-namespace:GalaxySMS.Client.UI;assembly=GalaxySMS.Client.UI"
+    xmlns:ui1="clr-namespace:GCS.Core.Common.UI;assembly=GCS.Core.Common.UI"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+    mc:Ignorable="d"
+    d:DesignHeight="400"
+    d:DesignWidth="600"
+    FlowDirection="{Binding FlowDirection}">
+
+    <core:UserControlViewBase.Resources>
+        <converters:NullToVisibilityConverter x:Key="nullToVisibilityConverter" />
+        <converters:NotNullToVisibilityConverter x:Key="notNullToVisibilityConverter" />
+        <converters:BooleanToVisibilityConverter x:Key="boolToVisibility" />
+    </core:UserControlViewBase.Resources>
+
+    <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+        <Grid>
+            <Grid
+                Grid.Row="0"
+                animations:VisibilityAnimation.AnimationType="Fade"
+                Visibility="{Binding CurrentAccessGroupViewModel, Converter={StaticResource notNullToVisibilityConverter}}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <StackPanel Grid.Row="0" Orientation="Vertical">
+                    <core:ErrorsPanel DataContext="{Binding}" />
+                    <StackPanel Orientation="Vertical">
+                        <StackPanel Orientation="Horizontal">
+                            <ui:AddNewButtonControlBindable
+                                Command="{Binding AddNewCommand}"
+                                IsVisible="{Binding IsAddNewControlVisible}"
+                                Text="{x:Static sharedResources:Resources.AddNewAccessGroup_Text}"
+                                ToolTip="{x:Static sharedResources:Resources.AddNewAccessGroup_ToolTip}" />
+                            <ui:RefreshButtonControlBindable
+                                Command="{Binding RefreshCommand}"
+                                IsVisible="{Binding IsRefreshControlVisible}"
+                                Text="{x:Static sharedResources:Resources.RefreshAccessGroups_Text}"
+                                ToolTip="{x:Static sharedResources:Resources.RefreshAccessGroups_ToolTip}" />
+                        </StackPanel>
+                        <telerik:RadDataPager
+                            DisplayMode="FirstLastPreviousNextNumeric, Text"
+                            PageSize="{Binding Source= {x:Static resx:Settings.Default}, Path=DefaultGridPageSize}"
+                            Source="{Binding Items, ElementName=radGridViewAccessGroups}" />
+                    </StackPanel>
+                </StackPanel>
+                <telerik:RadGridView
+                    x:Name="radGridViewAccessGroups"
+                    Grid.Row="1"
+                    Width="Auto"
+                    AutoGenerateColumns="False"
+                    IsFilteringAllowed="False"
+                    IsReadOnly="True"
+                    ItemsSource="{Binding AccessGroups}"
+                    RowDetailsVisibilityMode="VisibleWhenSelected"
+                    RowIndicatorVisibility="Collapsed"
+                    ShowGroupPanel="False"
+                    Visibility="Visible">
+                    <telerik:RadGridView.Columns>
+                        <!--<telerik:GridViewToggleRowDetailsColumn/>-->
+                        <telerik:GridViewColumn Header="{x:Static sharedResources:Resources.Common_Actions}" ToolTip="{x:Static sharedResources:Resources.Common_ActionsTooltip}">
+                            <telerik:GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <!--<ui:EditDeleteButtonControl/>-->
+                                        <ui:EditButtonControlBindable
+                                            Command="{Binding DataContext.EditCommand, RelativeSource={RelativeSource AncestorType=core:UserControlViewBase}}"
+                                            CommandParameter="{Binding}"
+                                            IsVisible="{Binding DataContext.IsEditControlVisible, RelativeSource={RelativeSource AncestorType=core:UserControlViewBase}}"
+                                            Text="{x:Static sharedResources:Resources.EditAccessGroup_Text}"
+                                            ToolTip="{x:Static sharedResources:Resources.EditAccessGroup_ToolTip}" />
+                                        <ui:DeleteButtonControlBindable
+                                            Command="{Binding DataContext.DeleteCommand, RelativeSource={RelativeSource AncestorType=core:UserControlViewBase}}"
+                                            CommandParameter="{Binding}"
+                                            IsVisible="{Binding DataContext.IsDeleteControlVisible, RelativeSource={RelativeSource AncestorType=core:UserControlViewBase}}"
+                                            Text="{x:Static sharedResources:Resources.DeleteAccessGroup_Text}"
+                                            ToolTip="{x:Static sharedResources:Resources.DeleteAccessGroup_ToolTip}" />
+                                    </StackPanel>
+                                </DataTemplate>
+                            </telerik:GridViewColumn.CellTemplate>
+                        </telerik:GridViewColumn>
+
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding Display}" Header="{x:Static sharedResources:Resources.MaintainAccessGroups_AccessGroupName}" />
+                        <!--<telerik:GridViewColumn Header="{x:Static sharedResources:Resources.MaintainAccessGroups_AccessGroupNumber}">
+                            <telerik:GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel>
+                                        <TextBlock Text="{Binding AccessGroupNumber}"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </telerik:GridViewColumn.CellTemplate>
+                        </telerik:GridViewColumn>-->
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding AccessGroupNumber}" Header="{x:Static sharedResources:Resources.MaintainAccessGroups_AccessGroupNumber}" />
+                        <telerik:GridViewCheckBoxColumn DataMemberBinding="{Binding IsExtended}" Header="{x:Static sharedResources:Resources.MaintainAccessGroups_IsExtendedText}" />
+                        <!--<telerik:GridViewDataColumn DataMemberBinding="{Binding AccessGroupUid}" Header="{x:Static sharedResources:Resources.MaintainAccessGroups_AccessGroupUid}" />-->
+                        <telerik:GridViewColumn Header="{x:Static sharedResources:Resources.MaintainAccessGroups_AccessGroupNumber}">
+                            <telerik:GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel>
+                                        <TextBlock Text="{Binding AccessGroupUid}" />
+                                    </StackPanel>
+                                </DataTemplate>
+                            </telerik:GridViewColumn.CellTemplate>
+                        </telerik:GridViewColumn>
+                    </telerik:RadGridView.Columns>
+                </telerik:RadGridView>
+                <telerik:RadDataPager
+                    Grid.Row="3"
+                    DisplayMode="FirstLastPreviousNextNumeric, Text"
+                    PageSize="{Binding Source= {x:Static resx:Settings.Default}, Path=DefaultGridPageSize}"
+                    Source="{Binding Items, ElementName=radGridViewAccessGroups}" />
+            </Grid>
+            <Grid
+                Grid.Row="0"
+                Grid.Column="0"
+                animations:VisibilityAnimation.AnimationType="Fade">
+                <Border
+                    Margin="10"
+                    BorderThickness="1"
+                    CornerRadius="4"
+                    Visibility="{Binding CurrentAccessGroupViewModel, Converter={StaticResource nullToVisibilityConverter}}">
+                    <ContentControl Content="{Binding CurrentAccessGroupViewModel}" />
+                </Border>
+            </Grid>
+        </Grid>
+    </ScrollViewer>
+
+</core:UserControlViewBase>

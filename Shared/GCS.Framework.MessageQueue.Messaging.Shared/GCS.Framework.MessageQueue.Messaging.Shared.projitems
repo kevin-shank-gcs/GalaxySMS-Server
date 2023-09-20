@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects Condition="'$(MSBuildVersion)' == '' Or '$(MSBuildVersion)' &lt; '16.0'">$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>ef3612d8-773a-4b2b-b993-909551d85016</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>GCS.Framework.MessageQueue.Messaging.Shared</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Configuration\Collections\Bases\ConfigurationElementCollection.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Configuration\Collections\MessageCollection.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Configuration\Collections\MessageQueueCollection.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Configuration\Collections\PropertyCollection.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Configuration\Collections\QueueCollection.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Configuration\Elements\MessageElement.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Configuration\Elements\MessageQueueElement.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Configuration\Elements\PropertyElement.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Configuration\Elements\QueueElement.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Configuration\MessagingConfiguration.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Impl\MessageQueueBase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MessageQueueFactory.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Spec\Direction.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Spec\IMessageQueue.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Spec\Message.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Spec\MessagePattern.cs" />
+  </ItemGroup>
+</Project>

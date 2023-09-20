@@ -1,0 +1,149 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>GCS.Core.Common.SignalR</name>
+    </assembly>
+    <members>
+        <member name="T:GCS.Core.Common.SignalR.ConnectionState">
+             <summary>   Values that represent connection states. </summary>
+            
+             <remarks>   Kevin, 1/3/2019. </remarks>
+        </member>
+        <member name="F:GCS.Core.Common.SignalR.ConnectionState.Connecting">
+            <summary>   An enum constant representing the connecting option. </summary>
+        </member>
+        <member name="F:GCS.Core.Common.SignalR.ConnectionState.Connected">
+            <summary>   An enum constant representing the connected option. </summary>
+        </member>
+        <member name="F:GCS.Core.Common.SignalR.ConnectionState.Reconnecting">
+            <summary>   An enum constant representing the reconnecting option. </summary>
+        </member>
+        <member name="F:GCS.Core.Common.SignalR.ConnectionState.Disconnected">
+            <summary>   An enum constant representing the disconnected option. </summary>
+        </member>
+        <member name="T:GCS.Core.Common.SignalR.StateChange">
+             <summary>   A state change. </summary>
+            
+             <remarks>   Kevin, 1/3/2019. </remarks>
+        </member>
+        <member name="M:GCS.Core.Common.SignalR.StateChange.#ctor(GCS.Core.Common.SignalR.ConnectionState,GCS.Core.Common.SignalR.ConnectionState)">
+             <summary>
+             Creates a new stance of <see cref="T:Microsoft.AspNet.SignalR.Client.StateChange" />.
+             </summary>
+            
+             <remarks>   Kevin, 1/3/2019. </remarks>
+            
+             <param name="oldState"> The old state of the connection. </param>
+             <param name="newState"> The new state of the connection. </param>
+        </member>
+        <member name="P:GCS.Core.Common.SignalR.StateChange.OldState">
+             <summary>   Gets or sets the old state of the connection. </summary>
+            
+             <value> The old state. </value>
+        </member>
+        <member name="P:GCS.Core.Common.SignalR.StateChange.NewState">
+             <summary>   Gets or sets the new state of the connection. </summary>
+            
+             <value> The new state. </value>
+        </member>
+        <member name="T:GCS.Core.Common.SignalR.ErrorHandlingPipelineModule">
+             <summary>   An error handling pipeline module. </summary>
+            
+             <remarks>   Kevin, 1/3/2019. </remarks>
+        </member>
+        <member name="M:GCS.Core.Common.SignalR.ErrorHandlingPipelineModule.OnIncomingError(Microsoft.AspNet.SignalR.Hubs.ExceptionContext,Microsoft.AspNet.SignalR.Hubs.IHubIncomingInvokerContext)">
+             <summary>
+             This is called when an uncaught exception is thrown by a server-side hub method or the
+             incoming component of a module added later to the
+             <see cref="T:Microsoft.AspNet.SignalR.Hubs.IHubPipeline" />. Observing the exception using
+             this method will not prevent it from bubbling up to other modules.
+             </summary>
+            
+             <remarks>   Kevin, 1/3/2019. </remarks>
+            
+             <param name="exceptionContext"> Represents the exception that was thrown during the server-
+                                             side invocation. It is possible to change the error or set a
+                                             result using this context. </param>
+             <param name="invokerContext">   A description of the server-side hub method invocation. </param>
+        </member>
+        <member name="T:GCS.Core.Common.SignalR.SignalRConnectionClosedEventArgs">
+             <summary>   Additional information for signal r connection closed events. </summary>
+            
+             <remarks>   Kevin, 1/3/2019. </remarks>
+        </member>
+        <member name="M:GCS.Core.Common.SignalR.SignalRConnectionClosedEventArgs.#ctor">
+             <summary>   Default constructor. </summary>
+            
+             <remarks>   Kevin, 9/6/2018. </remarks>
+        </member>
+        <member name="P:GCS.Core.Common.SignalR.SignalRConnectionClosedEventArgs.WhenClosed">
+             <summary>   Gets or sets the Date/Time of the when closed. </summary>
+            
+             <value> The when closed. </value>
+        </member>
+        <member name="T:GCS.Core.Common.SignalR.SignalRConnectionStateChangedEventArgs">
+             <summary>   Additional information for signal r connection state changed events. </summary>
+            
+             <remarks>   Kevin, 1/3/2019. </remarks>
+        </member>
+        <member name="M:GCS.Core.Common.SignalR.SignalRConnectionStateChangedEventArgs.#ctor">
+             <summary>   Default constructor. </summary>
+            
+             <remarks>   Kevin, 9/6/2018. </remarks>
+        </member>
+        <member name="M:GCS.Core.Common.SignalR.SignalRConnectionStateChangedEventArgs.#ctor(GCS.Core.Common.SignalR.StateChange)">
+             <summary>   Constructor. </summary>
+            
+             <remarks>   Kevin, 1/3/2019. </remarks>
+            
+             <param name="state">    The state. </param>
+        </member>
+        <member name="P:GCS.Core.Common.SignalR.SignalRConnectionStateChangedEventArgs.WhenChanged">
+             <summary>   Gets or sets the Date/Time of the when changed. </summary>
+            
+             <value> The when changed. </value>
+        </member>
+        <member name="P:GCS.Core.Common.SignalR.SignalRConnectionStateChangedEventArgs.StateChange">
+             <summary>   Gets or sets the state change. </summary>
+            
+             <value> The state change. </value>
+        </member>
+        <member name="T:GCS.Core.Common.SignalR.SignalRConnectionErrorEventArgs">
+             <summary>   Additional information for signal r connection error events. </summary>
+            
+             <remarks>   Kevin, 1/3/2019. </remarks>
+        </member>
+        <member name="M:GCS.Core.Common.SignalR.SignalRConnectionErrorEventArgs.#ctor">
+             <summary>   Default constructor. </summary>
+            
+             <remarks>   Kevin, 9/6/2018. </remarks>
+        </member>
+        <member name="M:GCS.Core.Common.SignalR.SignalRConnectionErrorEventArgs.#ctor(System.Exception)">
+             <summary>   Constructor. </summary>
+            
+             <remarks>   Kevin, 1/3/2019. </remarks>
+            
+             <param name="ex">   The exception. </param>
+        </member>
+        <member name="P:GCS.Core.Common.SignalR.SignalRConnectionErrorEventArgs.When">
+             <summary>   Gets or sets the Date/Time of the error. </summary>
+            
+             <value> The when value. </value>
+        </member>
+        <member name="P:GCS.Core.Common.SignalR.SignalRConnectionErrorEventArgs.Ex">
+             <summary>   Gets or sets the exception. </summary>
+            
+             <value> The exception. </value>
+        </member>
+        <member name="T:GCS.Core.Common.SignalR.SignalRGroup">
+             <summary>   A signal r group. </summary>
+            
+             <remarks>   Kevin, 1/3/2019. </remarks>
+        </member>
+        <member name="P:GCS.Core.Common.SignalR.SignalRGroup.GroupName">
+             <summary>   Gets or sets the name of the group. </summary>
+            
+             <value> The name of the group. </value>
+        </member>
+    </members>
+</doc>

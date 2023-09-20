@@ -1,0 +1,13 @@
+﻿<Window x:Class="SG.PhotoScroller.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:resx="clr-namespace:SG.PhotoScroller.Properties"
+        xmlns:v="clr-namespace:SG.PhotoScroller.Views"
+        Title="{x:Static resx:Resources.MainView_ApplicationTitle}"
+        Height="Auto"
+        Width="Auto"
+        Closing="Window_Closing">
+    <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+            <v:MainView x:Name="main" Margin="10" />
+    </ScrollViewer>
+</Window>

@@ -1,0 +1,30 @@
+﻿<UserControl x:Class="GalaxySMS.PersonCredential.UserControls.IndividualProperties.ucTextData20"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:GalaxySMS.PersonCredential.UserControls.IndividualProperties"
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             xmlns:core="http://www.galaxysys.com/GCS/Core"
+             xmlns:maskedInput="clr-namespace:Telerik.Windows.Controls.MaskedInput;assembly=Telerik.Windows.Controls.Input"
+             xmlns:converters="clr-namespace:GCS.Core.Common.UI.Converters;assembly=GCS.Core.Common.UI"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <converters:BooleanToVisibilityConverter x:Key="boolToVisibility" />
+    </UserControl.Resources>
+    <StackPanel Orientation="Vertical" Margin="5" DataContext="{Binding DataContext.TextData20Property, RelativeSource={RelativeSource AncestorType=core:UserControlViewBase}}"
+                Visibility="{Binding IsVisible, Converter={StaticResource boolToVisibility}}">
+        <TextBlock Style="{StaticResource DataEntryControlTitle}"
+                   Text="{Binding Display}"/>
+        <telerik:RadMaskedTextInput 
+            Value="{Binding DataContext.Person.TextData20, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, RelativeSource={RelativeSource AncestorType=core:UserControlViewBase}}"
+            ToolTip="{Binding Description}"
+            EmptyContent="{Binding EmptyContent}"
+            SelectionOnFocus="DefaultSelectAll" 
+            Mask="{Binding UserDefinedTextPropertyRules.Mask}"
+            maskedInput:MaskedInputExtensions.MinTextLength="{Binding UserDefinedTextPropertyRules.MinimumLength}"
+            maskedInput:MaskedInputExtensions.MaxTextLength="{Binding UserDefinedTextPropertyRules.MaximumLength}"
+            IsReadOnly="{Binding IsEffectiveReadOnly}" />
+    </StackPanel>
+</UserControl>

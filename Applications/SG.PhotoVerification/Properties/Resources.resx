@@ -1,0 +1,330 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AboutView_AboutUriDescription" xml:space="preserve">
+    <value>www.galaxysys.com</value>
+  </data>
+  <data name="AboutView_AllRightsReserved" xml:space="preserve">
+    <value>All Rights Reserved.</value>
+  </data>
+  <data name="AboutView_LicenseCompany" xml:space="preserve">
+    <value>Company:</value>
+  </data>
+  <data name="AboutView_LicenseEmail" xml:space="preserve">
+    <value>Licensed Email:</value>
+  </data>
+  <data name="AboutView_LicenseExpireation" xml:space="preserve">
+    <value>Expires On:</value>
+  </data>
+  <data name="AboutView_LicenseId" xml:space="preserve">
+    <value>License ID:</value>
+  </data>
+  <data name="AboutView_LicenseInfoHeader" xml:space="preserve">
+    <value>License Information</value>
+  </data>
+  <data name="AboutView_LicenseName" xml:space="preserve">
+    <value>Licensed To:</value>
+  </data>
+  <data name="AboutView_LicenseType" xml:space="preserve">
+    <value>Type:</value>
+  </data>
+  <data name="AboutView_LicenseTypeNone" xml:space="preserve">
+    <value>Not Licensed</value>
+  </data>
+  <data name="AboutView_LicenseTypeStandard" xml:space="preserve">
+    <value>Standard License</value>
+  </data>
+  <data name="AboutView_LicenseTypeTrial" xml:space="preserve">
+    <value>Trial License</value>
+  </data>
+  <data name="AboutView_OkButtonText" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="AboutView_ProductDetails" xml:space="preserve">
+    <value>Product details:</value>
+  </data>
+  <data name="AboutView_Title" xml:space="preserve">
+    <value>About {0}</value>
+  </data>
+  <data name="AboutView_VersionTitle" xml:space="preserve">
+    <value>Version:</value>
+  </data>
+  <data name="AboutView_ViewLicenseDetails" xml:space="preserve">
+    <value>View License Details...</value>
+  </data>
+  <data name="LicenseFileDoesNotExist" xml:space="preserve">
+    <value>License file does not exist:\n{0}</value>
+  </data>
+  <data name="LicenseView_CloseButtonText" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="LicenseView_FeatureName" xml:space="preserve">
+    <value>Feature Name</value>
+  </data>
+  <data name="LicenseView_FeatureValue" xml:space="preserve">
+    <value>Value</value>
+  </data>
+  <data name="LicenseView_LicenseCompany" xml:space="preserve">
+    <value>Company</value>
+  </data>
+  <data name="LicenseView_LicenseDetails" xml:space="preserve">
+    <value>License Details</value>
+  </data>
+  <data name="LicenseView_LicenseDetailsHeader" xml:space="preserve">
+    <value>License Details</value>
+  </data>
+  <data name="LicenseView_LicenseEmail" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="LicenseView_LicenseName" xml:space="preserve">
+    <value>Licensed To:</value>
+  </data>
+  <data name="MainView_ApplicationTitle" xml:space="preserve">
+    <value>Application Title</value>
+  </data>
+  <data name="MainView_Exit_ConfirmationNoButton" xml:space="preserve">
+    <value>No, do not exit</value>
+  </data>
+  <data name="MainView_Exit_ConfirmationPrompt" xml:space="preserve">
+    <value>Are you sure you want to exit '{0}'?</value>
+  </data>
+  <data name="MainView_Exit_ConfirmationPromptHeader" xml:space="preserve">
+    <value>Confirm</value>
+  </data>
+  <data name="MainView_Exit_ConfirmationYesButton" xml:space="preserve">
+    <value>Yes, shut it down</value>
+  </data>
+  <data name="MainView_Menu_AppA" xml:space="preserve">
+    <value>_Application Menu A</value>
+  </data>
+  <data name="MainView_Menu_AppB" xml:space="preserve">
+    <value>_Application Menu B</value>
+  </data>
+  <data name="MainView_Menu_File" xml:space="preserve">
+    <value>_File</value>
+  </data>
+  <data name="MainView_Menu_File_Exit" xml:space="preserve">
+    <value>_Exit</value>
+  </data>
+  <data name="MainView_Menu_Help" xml:space="preserve">
+    <value>_Help</value>
+  </data>
+  <data name="MainView_Menu_Help_About" xml:space="preserve">
+    <value>_About...</value>
+  </data>
+  <data name="MainView_Tab1_Header" xml:space="preserve">
+    <value>Tab 1</value>
+  </data>
+  <data name="MainView_Tab2_Header" xml:space="preserve">
+    <value>Tab 2</value>
+  </data>
+  <data name="MainView_ToolBar_SelectTheme" xml:space="preserve">
+    <value>Theme</value>
+  </data>
+  <data name="SampleView_Title" xml:space="preserve">
+    <value>Sample View</value>
+  </data>
+  <data name="ThemeDisplayName_Expression_Dark" xml:space="preserve">
+    <value>Expression Dark</value>
+  </data>
+  <data name="ThemeDisplayName_Office2013" xml:space="preserve">
+    <value>Office 2013</value>
+  </data>
+  <data name="ThemeDisplayName_Office2013_DarkGray" xml:space="preserve">
+    <value>Office 2013 (Dark Gray)</value>
+  </data>
+  <data name="ThemeDisplayName_Office2013_LightGray" xml:space="preserve">
+    <value>Office 2013 (Light Gray)</value>
+  </data>
+  <data name="ThemeDisplayName_Office2013_White" xml:space="preserve">
+    <value>Office 2013 (White)</value>
+  </data>
+  <data name="ThemeDisplayName_Office_Black" xml:space="preserve">
+    <value>Office Black</value>
+  </data>
+  <data name="ThemeDisplayName_Office_Blue" xml:space="preserve">
+    <value>Office Blue</value>
+  </data>
+  <data name="ThemeDisplayName_Office_Silver" xml:space="preserve">
+    <value>Office Silver</value>
+  </data>
+  <data name="ThemeDisplayName_Summer" xml:space="preserve">
+    <value>Summer</value>
+  </data>
+  <data name="ThemeDisplayName_Transparent" xml:space="preserve">
+    <value>Transparent</value>
+  </data>
+  <data name="ThemeDisplayName_Vista" xml:space="preserve">
+    <value>Vista</value>
+  </data>
+  <data name="ThemeDisplayName_VisualStudio2013" xml:space="preserve">
+    <value>Visual Studio 2013</value>
+  </data>
+  <data name="ThemeDisplayName_VisualStudio2013_Blue" xml:space="preserve">
+    <value>Visual Studio 2013 (Blue)</value>
+  </data>
+  <data name="ThemeDisplayName_VisualStudio2013_Dark" xml:space="preserve">
+    <value>Visual Studio 2013 (Dark)</value>
+  </data>
+  <data name="ThemeDisplayName_VisualStudio2013_DarkGold" xml:space="preserve">
+    <value>Visual Studio 2013 (Dark Gold)</value>
+  </data>
+  <data name="ThemeDisplayName_VisualStudio2013_DarkOlive" xml:space="preserve">
+    <value>Visual Studio 2013 (Dark Olive)</value>
+  </data>
+  <data name="ThemeDisplayName_VisualStudio2013_EarthtoneBrown" xml:space="preserve">
+    <value>Visual Studio 2013 (Earthtone Brown)</value>
+  </data>
+  <data name="ThemeDisplayName_VisualStudio2013_Green" xml:space="preserve">
+    <value>Visual Studio 2013 (Green)</value>
+  </data>
+  <data name="ThemeDisplayName_VisualStudio2013_Light" xml:space="preserve">
+    <value>Visual Studio 2013 (Light)</value>
+  </data>
+  <data name="ThemeDisplayName_Windows7" xml:space="preserve">
+    <value>Windows 7</value>
+  </data>
+  <data name="ThemeDisplayName_Windows8" xml:space="preserve">
+    <value>Windows 8</value>
+  </data>
+  <data name="ThemeDisplayName_Windows8Touch" xml:space="preserve">
+    <value>Windows 8 Touch</value>
+  </data>
+  <data name="ThemeDisplayName_Windows8_BeachBlue" xml:space="preserve">
+    <value>Windows 8 (Beach Blue)</value>
+  </data>
+  <data name="ThemeDisplayName_Windows8_BeachSand" xml:space="preserve">
+    <value>Windows 8 (Beach Sand)</value>
+  </data>
+  <data name="ThemeDisplayName_Windows8_CoolBlue" xml:space="preserve">
+    <value>Windows 8 (Cool Blue)</value>
+  </data>
+  <data name="ThemeDisplayName_Windows8_DarkBlue" xml:space="preserve">
+    <value>Windows 8 (Dark Blue)</value>
+  </data>
+  <data name="ThemeDisplayName_Windows8_DullBlue" xml:space="preserve">
+    <value>Windows 8 (Dull Blue)</value>
+  </data>
+  <data name="ThemeDisplayName_Windows8_GrayOrange" xml:space="preserve">
+    <value>Windows 8 (Gray Orange)</value>
+  </data>
+  <data name="ThemeDisplayName_Windows8_GrayScale" xml:space="preserve">
+    <value>Windows 8 (Grayscale)</value>
+  </data>
+</root>

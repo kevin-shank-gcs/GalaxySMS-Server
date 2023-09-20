@@ -1,0 +1,2239 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>PDSA.DataLayer.DataClasses</name>
+    </assembly>
+    <members>
+        <member name="T:PDSA.DataLayer.DataClasses.PDSADataColumn">
+            <summary>
+            Holds information about data fields. Usually used to create a collection of column information for data classes.
+            </summary>
+        </member>
+        <member name="T:PDSA.DataLayer.DataClasses.PDSADataItem">
+            <summary>
+            This abstract base class is used as the basis for all Data Column classes.
+            </summary>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataItem.#ctor">
+            <summary>
+            Constructor for the PDSADataItem class
+            </summary>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataItem.GetPropertiesAsPropertyHeaderCollection">
+            <summary>
+            Returns all properties of this object as a collection of PDSAPropertyHeader objects
+            </summary>
+            <returns>A collection of PDSAPropertyHeader objects</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataItem.CreateParameterName(System.String)">
+            <summary>
+            Create a parameter name from a property or column name.
+            </summary>
+            <param name="propertyName">A property name to create a parameter name from</param>
+            <returns>string</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataItem.BuildCommandParameter(PDSA.DataLayer.PDSADataProvider,System.String,System.Int32)">
+            <summary>
+            Builds an IDataParameter command parameter
+            </summary>
+            <param name="dp">Data Provider</param>
+            <param name="parameterName">Parameter name</param>
+            <param name="size">size</param>
+            <returns>IDataParameter</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataItem.BuildCommandParameter(PDSA.DataLayer.PDSADataProvider,System.String)">
+            <summary>
+            Builds an IDataParameter command parameter
+            </summary>
+            <param name="dp">Data Provider</param>
+            <param name="parameterName">Parameter name</param>
+            <returns>IDataParameter</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataItem.BuildCommandParameter(PDSA.DataLayer.PDSADataProvider)">
+            <summary>
+            Builds an IDataParameter command parameter from the PropertyName property.
+            </summary>
+            <param name="dp">Data Provider</param>
+            <returns>IDataParameter</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataItem.GetCurrentValue">
+            <summary>
+            Returns the current 'value' of this data column.
+            This method must be here because we need to return 'DBNull.Value' and not just a .NET 'null' value.
+            </summary>
+            <returns>object</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataItem.GetGenericDBType">
+            <summary>
+            This method will return the generic type for the DBType contained in this property.
+            </summary>
+            <returns>PDSAGenericPropertyTypes</returns>
+        </member>
+        <member name="P:PDSA.DataLayer.DataClasses.PDSADataItem.ParamDirection">
+            <summary>
+            Get/Set the direction of a parameter used in Stored Procedure classes.
+            </summary>
+        </member>
+        <member name="P:PDSA.DataLayer.DataClasses.PDSADataItem.OrdinalPosition">
+            <summary>
+            Get/Set the ordinal position of the column/parameter
+            </summary>
+        </member>
+        <member name="P:PDSA.DataLayer.DataClasses.PDSADataItem.DBType">
+            <summary>
+             Get/Set the database data type for the specified data column.
+            </summary>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataColumn.#ctor">
+            <summary>
+            Constructor for the PDSADataColumn object
+            </summary>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataColumn.GetGenericDataType">
+            <summary>
+            Returns a generic type for the database data type of this column
+            </summary>
+            <returns>PDSAGenericDBDataTypes</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataColumn.GetPropertiesAsPropertyHeaderCollection">
+            <summary>
+            Returns all properties in this object as a PDSAPropertyHeaders collection.
+            </summary>
+            <returns>A collection of PDSAPropertyHeader objects</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataColumn.CreateDataColumn(System.String,System.String,System.Boolean,System.Type,System.Data.DbType)">
+            <summary>
+            This static method is used to create a new instance of a PDSADataColumn
+            </summary>
+            <param name="columnName">The column name in the table</param>
+            <param name="headerText">The header text or label to describe this column</param>
+            <param name="isRequired">Is this column required</param>
+            <param name="propertyType">The .NET property type</param>
+            <param name="dbType">The database data type</param>
+            <returns>A PDSADataColumn object</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataColumn.CreateDataColumn(System.String,System.String,System.Boolean,System.Type,System.Data.DbType,System.Int32)">
+            <summary>
+            This static method is used to create a new instance of a PDSADataColumn
+            </summary>
+            <param name="columnName">The column name in the table</param>
+            <param name="headerText">The header text or label to describe this column</param>
+            <param name="isRequired">Is this column required</param>
+            <param name="propertyType">The .NET property type</param>
+            <param name="dbType">The database data type</param>
+            <param name="maxLength">The maximum length for this column</param>
+            <returns>A PDSADataColumn object</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataColumn.CreateDataColumn(System.String,System.String,System.Boolean,System.Type,System.Data.DbType,System.Int32,System.String)">
+            <summary>
+            This static method is used to create a new instance of a PDSADataColumn
+            </summary>
+            <param name="columnName">The column name in the table</param>
+            <param name="headerText">The header text or label to describe this column</param>
+            <param name="isRequired">Is this column required</param>
+            <param name="propertyType">The .NET property type</param>
+            <param name="dbType">The database data type</param>
+            <param name="maxLength">The maximum length for this column</param>
+            <param name="requiredMessage">The message to return if this column is required and the value is not filled in</param>
+            <returns>A PDSADataColumn object</returns>
+        </member>
+        <member name="P:PDSA.DataLayer.DataClasses.PDSADataColumn.PublicPropertyName">
+            <summary>
+            Get/Set the Public Property name for this column
+            </summary>
+        </member>
+        <member name="P:PDSA.DataLayer.DataClasses.PDSADataColumn.ColumnAlias">
+            <summary>
+            Get/Set an alias name for this column
+            </summary>
+        </member>
+        <member name="P:PDSA.DataLayer.DataClasses.PDSADataColumn.IsSelectable">
+            <summary>
+            Get/Set whether or not this field can be used in a SELECT statement
+            </summary>
+        </member>
+        <member name="P:PDSA.DataLayer.DataClasses.PDSADataColumn.IsConcurrencyField">
+            <summary>
+            Get/Set whether or not this field is used for concurrency
+            </summary>
+        </member>
+        <member name="P:PDSA.DataLayer.DataClasses.PDSADataColumn.Precision">
+            <summary>
+            Get/Set the Precision of a numeric column
+            </summary>
+        </member>
+        <member name="P:PDSA.DataLayer.DataClasses.PDSADataColumn.Scale">
+            <summary>
+            Get/Set the Scale of a numeric column
+            </summary>
+        </member>
+        <member name="P:PDSA.DataLayer.DataClasses.PDSADataColumn.IsStandardField">
+            <summary>
+            Get/Set whether or not this field is a standard field
+            </summary>
+        </member>
+        <member name="P:PDSA.DataLayer.DataClasses.PDSADataColumn.IsPrimaryKeyAutoNumber">
+            <summary>
+            Get/Set whether or not this primary key field is auto-numbered
+            </summary>
+        </member>
+        <member name="T:PDSA.DataLayer.DataClasses.PDSADataColumns">
+            <summary>
+            This class holds a collection of PDSADataColumn objects. This represents all of the columns in a table, view or a stored procedure.
+            </summary>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataColumns.#ctor">
+            <summary>
+            Initializes the properties in this class to a valid start state
+            </summary>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataColumns.GetByName(System.String)">
+            <summary>
+            Retrieve a specific PDSADataColumn object by the column name passed in
+            </summary>
+            <param name="columnName">A column name to find</param>
+            <returns>A PDSADataColumn object</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataColumns.GetByPublicPropertyName(System.String)">
+            <summary>
+            Retrieve a specific PDSADataColumn object by the public property name passed in
+            </summary>
+            <param name="propertyName">A property name to find</param>
+            <returns>A PDSADataColumn object</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataColumns.GetPKColumn">
+            <summary>
+            Gets a single primary key as a PDSADataColumn object
+            </summary>
+            <returns>A PDSADataColumn object</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataColumns.GetAllPKColumns">
+            <summary>
+            Returns an ArrayList of all primary key as PDSADataColumn objects
+            </summary>
+            <returns>An ArrayList of primary keys</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataColumns.GetAllStandardFields">
+            <summary>
+            Returns an ArrayList of all standard fields as PDSADataColumn objects
+            </summary>
+            <returns>An array list of all standard fields</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataColumns.CheckBusinessRules">
+            <summary>
+            Check all business rules from the data filled into the properties of the data class
+            </summary>
+            <returns>A PDSAValidationRuleStatus enumeration</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataColumns.GetBusinessRuleFailuresAsString">
+            <summary>
+            Returns all failed business rules as a CRLF delimited string
+            </summary>
+            <returns>A CRLF delimited string</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataColumns.GetBusinessRuleFailuresAsString(System.String)">
+            <summary>
+            Returns all failed business rules as a string delimited by the delimiter you pass in.
+            </summary>
+            <param name="delimiter">The delimiter to use to separate business rules</param>
+            <returns>A delimited string</returns>
+        </member>
+        <member name="P:PDSA.DataLayer.DataClasses.PDSADataColumns.BusinessRuleMessages">
+            <summary>
+            Get/Set the collection of business rule messages that are in error for this data column
+            </summary>
+        </member>
+        <member name="P:PDSA.DataLayer.DataClasses.PDSADataColumns.DBObjectName">
+            <summary>
+            Get/Set the database object name to which this column belongs.
+            </summary>
+        </member>
+        <member name="P:PDSA.DataLayer.DataClasses.PDSADataColumns.ParamPrefix">
+            <summary>
+            The parameter prefix to use when building parameters. For example: @ for SQL Server and : for Oracle
+            </summary>
+        </member>
+        <member name="P:PDSA.DataLayer.DataClasses.PDSADataColumns.PrimaryKeyType">
+            <summary>
+            The type of primary key this table uses
+            </summary>
+        </member>
+        <member name="P:PDSA.DataLayer.DataClasses.PDSADataColumns.ReturnNullWhenNull">
+            <summary>
+            Return an actual null value when the value read from the database is a null.
+            </summary>
+        </member>
+        <member name="P:PDSA.DataLayer.DataClasses.PDSADataColumns.IsValid">
+            <summary>
+            Is this data column's value correct?
+            </summary>
+        </member>
+        <member name="P:PDSA.DataLayer.DataClasses.PDSADataColumns.Item(System.String)">
+            <summary>
+            A way to reference the collection of data columns by the column name
+            </summary>
+            <param name="columnName">The column to find</param>
+            <returns>A PDSADataColumn object</returns>
+        </member>
+        <member name="T:PDSA.DataLayer.DataClasses.PDSADataClassManagerReadOnlyBase">
+            <summary>
+            This abstract base class is used by data manager classes that are read only
+            </summary>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataClassManagerReadOnlyBase.#ctor">
+            <summary>
+            Constuctor for PDSADataClassManagerReadOnlyBase class
+            </summary>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataClassManagerReadOnlyBase.#ctor(PDSA.DataLayer.PDSADataProvider)">
+            <summary>
+            Constuctor for the PDSADataClassManagerReadOnlyBase class
+            </summary>
+            <param name="dataProvider">The data provider to use for all data access.</param>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataClassManagerReadOnlyBase.#ctor(System.String)">
+            <summary>
+            Constuctor for the PDSADataClassManagerReadOnlyBase class
+            </summary>
+            <param name="dataProviderName">The data provider name to use for all data access.</param>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataClassManagerReadOnlyBase.ChangeProvider(System.String)">
+            <summary>
+            Call this method to change the Data Provider for all data access
+            NOTE: After calling this method, set the DataObject property in your manager class to this new DataProvider. For example: _Manager.DataObject.DataProvider = _Manager.DataProvider
+            </summary>
+            <param name="dataProviderName">The data provider name to use for all data access.</param>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataClassManagerReadOnlyBase.Init">
+            <summary>
+            Override this method to initialize the object to a valid start state
+            </summary>
+        </member>
+        <member name="P:PDSA.DataLayer.DataClasses.PDSADataClassManagerReadOnlyBase.DataProvider">
+            <summary>
+            Get/Set the data provider object.
+            If the provider has not been set, then the default provider will be retrieved.
+            </summary>
+        </member>
+        <member name="T:PDSA.DataLayer.DataClasses.PDSADataClassBase">
+            <summary>
+            The base class for all Data Classes.
+            </summary>  
+        </member>
+        <member name="F:PDSA.DataLayer.DataClasses.PDSADataClassBase.SB_INIT_LENGTH">
+            <summary>
+            The default length for all string builder objects
+            </summary>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataClassBase.#ctor">
+            <summary>
+            Constructor for PDSADataClassBase class. Calls the Init method
+            </summary>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataClassBase.#ctor(PDSA.DataLayer.PDSADataProvider)">
+            <summary>
+            Constructor for PDSADataClassBase class. Calls the Init method
+            </summary>
+            <param name="dataProvider">The Data provider to use for all data access</param>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataClassBase.InitAutoProperties">
+            <summary>
+            Initializes the auto-properties to a valid start state.
+            </summary>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataClassBase.GetUserName">
+            <summary>
+            Get's the current user name by grabbing either the WindowsPrincipal.Identity.Name or a GenericPrincipal.Identity.Name
+            </summary>
+            <returns>A User Name</returns>
+        </member>
+        <member name="F:PDSA.DataLayer.DataClasses.PDSADataClassBase.mProvider">
+            <summary>
+            The provider to use for all data access
+            </summary>
+        </member>
+        <member name="F:PDSA.DataLayer.DataClasses.PDSADataClassBase.mCommand">
+            <summary>
+            The IDbCommand object used for submitting SQL to back end database
+            </summary>
+        </member>
+        <member name="F:PDSA.DataLayer.DataClasses.PDSADataClassBase.mDBObjectName">
+            <summary>
+            The database object name
+            </summary>
+        </member>
+        <member name="F:PDSA.DataLayer.DataClasses.PDSADataClassBase.mSchemaName">
+            <summary>
+            The schema name of this database object
+            </summary>
+        </member>
+        <member name="F:PDSA.DataLayer.DataClasses.PDSADataClassBase.mUseStoredProcs">
+            <summary>
+            Whether or not to use Stored Procedures when accessing data
+            </summary>
+        </member>
+        <member name="F:PDSA.DataLayer.DataClasses.PDSADataClassBase.mIsPrimaryKeyAutoNumber">
+            <summary>
+            Whether or not the Primary Key is Auto Number
+            </summary>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataClassBase.SetDBObjectNameOnColumnCollection(System.String)">
+            <summary>
+            Sets the database object name property (DBObjectName) on the Data Columns Collection with the value passed in.
+            </summary>
+            <param name="DBOBjectName">The name of the database object for this data class</param>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataClassBase.SetUseStoredProcFlag(System.Boolean)">
+            <summary>
+            Sets the UseStoredProc flag on the Data Columns Collection to a true or false value.
+            </summary>
+            <param name="value">true or false</param>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataClassBase.Init">
+            <summary>
+            Initializes this class to a valid start state.
+            </summary>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataClassBase.GetResourceMessage(System.String,System.String)">
+            <summary>
+            Gets a Resource Message. You can override this method to get the messages from a Resource file, an XML file, or a database for a multi-lingual application.
+            </summary>
+            <param name="resourceCode">A unique identifier for this resource</param>
+            <param name="message">The message if the resource is not found</param>
+            <returns>The message</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataClassBase.CloseConnection">
+            <summary>
+            Close Connection Object and Dispose of it
+            </summary>
+        </member>
+        <member name="P:PDSA.DataLayer.DataClasses.PDSADataClassBase.ClassName">
+            <summary>
+            Get/Set the name of the data class
+            </summary>
+        </member>
+        <member name="P:PDSA.DataLayer.DataClasses.PDSADataClassBase.PDSALoginName">
+            <summary>
+            Get/Set the login name that you can be use to update a field in a record
+            </summary>
+        </member>
+        <member name="P:PDSA.DataLayer.DataClasses.PDSADataClassBase.CommandTimeout">
+            <summary>
+            Get/Set the CommandTimeout property
+            </summary>
+        </member>
+        <member name="P:PDSA.DataLayer.DataClasses.PDSADataClassBase.DataSetObject">
+            <summary>
+            Get/Set the DataSet object of this data class
+            </summary>
+        </member>
+        <member name="P:PDSA.DataLayer.DataClasses.PDSADataClassBase.SQL">
+            <summary>
+            Get/Set the last SQL statement executed by this data class
+            </summary>
+        </member>
+        <member name="P:PDSA.DataLayer.DataClasses.PDSADataClassBase.RowsAffected">
+            <summary>
+            Get/Set the number of rows affected by the last SQL statement
+            </summary>
+        </member>
+        <member name="P:PDSA.DataLayer.DataClasses.PDSADataClassBase.LastException">
+            <summary>
+            Get/Set the Last Exception that occurred
+            </summary>
+        </member>
+        <member name="P:PDSA.DataLayer.DataClasses.PDSADataClassBase.TransactionObject">
+            <summary>
+            Get/Set the Transaction object
+            </summary>
+        </member>
+        <member name="P:PDSA.DataLayer.DataClasses.PDSADataClassBase.ConnectionObject">
+            <summary>
+            Get/Set the Connection object
+            </summary>
+        </member>
+        <member name="P:PDSA.DataLayer.DataClasses.PDSADataClassBase.SchemaName">
+            <summary>
+            Get/Set the name of the schema in the database this object comes from
+            </summary>
+        </member>
+        <member name="P:PDSA.DataLayer.DataClasses.PDSADataClassBase.IsPrimaryKeyAutoNumber">
+            <summary>
+            Get/Set whether or not the primary key field is auto-numbered for this table
+            </summary>
+        </member>
+        <member name="P:PDSA.DataLayer.DataClasses.PDSADataClassBase.DataProvider">
+            <summary>
+            Get/Set the data provider object.
+            If the provider has not been set, then the default provider will be retrieved.
+            </summary>
+        </member>
+        <member name="P:PDSA.DataLayer.DataClasses.PDSADataClassBase.DBObjectName">
+            <summary>
+            Get/Set the database object name this data class represents
+            </summary>
+        </member>
+        <member name="P:PDSA.DataLayer.DataClasses.PDSADataClassBase.DBObjectNameOnly">
+            <summary>
+            Gets the name of the just the database object
+            </summary>
+        </member>
+        <member name="P:PDSA.DataLayer.DataClasses.PDSADataClassBase.CommandObject">
+            <summary>
+            Get/Set the Command object for this data class
+            </summary>
+        </member>
+        <member name="P:PDSA.DataLayer.DataClasses.PDSADataClassBase.UseStoredProcs">
+            <summary>
+            Get/Set whether or not a stored procedure or dynamic SQL is used to submit an SQL statement
+            </summary>
+        </member>
+        <member name="P:PDSA.DataLayer.DataClasses.PDSADataClassBase.DatabaseMinDate">
+            <summary>
+            Gets the minimum date specified for this database provider.
+            If the value is not specified in the .Config file, then DateTime.MinValue is used
+            </summary>
+        </member>
+        <member name="P:PDSA.DataLayer.DataClasses.PDSADataClassBase.DatabaseMaxDate">
+            <summary>
+            Gets the maximum date specified for this database provider.
+            If the value is not specified in the .Config file, then DateTime.MaxValue is used
+            </summary>
+        </member>
+        <member name="T:PDSA.DataLayer.DataClasses.PDSADataClassTable">
+            <summary>
+            The base class for all data classes that need to add/edit/delete and select data from a database object.
+            </summary>
+        </member>
+        <member name="T:PDSA.DataLayer.DataClasses.PDSADataClassReadOnly">
+            <summary>
+            The base class for all Read Only Data Classes that simply need to read data from a database object.
+            </summary>  
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataClassReadOnly.#ctor">
+            <summary>
+            Constructor for PDSADataClassReadOnly class
+            </summary>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataClassReadOnly.#ctor(PDSA.DataLayer.PDSADataProvider)">
+            <summary>
+            Constructor for PDSADataClassReadOnly class
+            </summary>
+            <param name="DataProvider">The data provider to use for all data access</param>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataClassReadOnly.#ctor(PDSA.DataLayer.PDSADataProvider,PDSA.Validation.IPDSAEntity)">
+            <summary>
+            Constructor for the PDSADataClassTable class
+            </summary>
+            <param name="dataProvider">A data provider to be used for all data access</param>
+            <param name="entityObject">An Entity Object</param>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataClassReadOnly.#ctor(PDSA.Validation.IPDSAEntity)">
+            <summary>
+            Constructor for the PDSADataClassTable class
+            </summary>
+            <param name="entityObject">An Entity Object</param>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataClassReadOnly.#ctor(PDSA.DataLayer.PDSADataProvider,PDSA.Validation.IPDSAEntity,PDSA.Validation.IPDSAValidation)">
+            <summary>
+            Constructor for the PDSADataClassTable class
+            </summary>
+            <param name="dataProvider">A data provider to be used for all data access</param>
+            <param name="entityObject">An Entity Object</param>
+            <param name="validatorObject">A Validation Object</param>
+        </member>
+        <member name="F:PDSA.DataLayer.DataClasses.PDSADataClassReadOnly.mSelectCustom">
+            <summary>
+            A custom SELECT statement
+            </summary>
+        </member>
+        <member name="F:PDSA.DataLayer.DataClasses.PDSADataClassReadOnly.mWhereCustom">
+            <summary>
+            A custom WHERE clause
+            </summary>
+        </member>
+        <member name="F:PDSA.DataLayer.DataClasses.PDSADataClassReadOnly.mOrderByCustom">
+            <summary>
+            A custom ORDER BY clause
+            </summary>
+        </member>
+        <member name="F:PDSA.DataLayer.DataClasses.PDSADataClassReadOnly.mInsertCustom">
+            <summary>
+            A custom INSERT statement
+            </summary>
+        </member>
+        <member name="F:PDSA.DataLayer.DataClasses.PDSADataClassReadOnly.mUpdateCustom">
+            <summary>
+            A custom UPDATE statement
+            </summary>
+        </member>
+        <member name="F:PDSA.DataLayer.DataClasses.PDSADataClassReadOnly.mDeleteCustom">
+            <summary>
+            A custom DELETE statement
+            </summary>
+        </member>
+        <member name="F:PDSA.DataLayer.DataClasses.PDSADataClassReadOnly.mRowCountCustom">
+            <summary>
+            A custom SELECT COUNT(*) statement
+            </summary>
+        </member>
+        <member name="F:PDSA.DataLayer.DataClasses.PDSADataClassReadOnly.mProperties">
+            <summary>
+            A collection of PDSAPropery objects
+            </summary>
+        </member>
+        <member name="F:PDSA.DataLayer.DataClasses.PDSADataClassReadOnly.mDataColumns">
+            <summary>
+            A collection of PDSADataColumn objects
+            </summary>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataClassReadOnly.GetDataReader">
+            <summary>
+            Returns a IDataReader object using the .SQL statement from the data class.
+            NOTE: You must close the DataReader in your code!
+            </summary>
+            <returns>IDataReader</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataClassReadOnly.GetDataTable">
+            <summary>
+            Returns a DataTable object
+            </summary>
+            <returns>A DataTable object</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataClassReadOnly.GetDataSet">
+            <summary>
+            Returns a DataSet object using the .SQL statement from the data class.
+            </summary>
+            <returns>DataSet</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataClassReadOnly.GetDataSetAsXml">
+            <summary>
+            Gets a result set by calling the GetDataSet method and turning it into Element based XML.
+            </summary>
+            <returns>An XML string</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataClassReadOnly.GetDataSetAsXml(PDSA.DataLayer.DataClasses.PDSAXmlGenerationType)">
+            <summary>
+            Gets a result set by calling the GetDataSet method and turning it into Element based XML.
+            </summary>
+            <param name="xmlGenType">Attribute or Element Based</param>
+            <returns>An XML string</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataClassReadOnly.GetDataSetAsXml(PDSA.DataLayer.DataClasses.PDSAXmlGenerationType,System.String,System.String)">
+            <summary>
+            Gets a result set by calling the GetDataSet method and turning it into either Attribute or Element based XML.
+            </summary>
+            <param name="xmlGenType">Attribute or Element Based</param>
+            <param name="topNodeName">The name for your top node of your XML</param>
+            <param name="nodesName">The name for each lower level node in your XML</param>
+            <returns>An XML string</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataClassReadOnly.GetDataSetAsJSON">
+            <summary>
+            Gets a result set by calling the GetDataSet method and turning it into a JSON formatted string.
+            </summary>
+            <returns>A JSON formatted string</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataClassReadOnly.GetDataSetAsExcelString">
+            <summary>
+            Pass in a DataSet and this method will return a string that you can open with Excel
+            The string is tab delimited for each column and has a CRLF at the end of each row of data
+            </summary>
+            <returns>A string in Excel format</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataClassReadOnly.GetDataSetAsExcelString(System.Data.DataSet)">
+            <summary>
+            Pass in a DataSet and this method will return a string that you can open with Excel
+            The string is tab delimited for each column and has a CRLF at the end of each row of data
+            </summary>
+            <param name="ds">The DataSet to convert</param>
+            <returns>A string in Excel format</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataClassReadOnly.CleanData(System.Object)">
+            <summary>
+            Cleans up data coming from a database in preparation for converting the data to Excel
+            </summary>
+            <param name="value">The value to clean</param>
+            <returns>A string of the data, or blank string if null</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataClassReadOnly.RowCount">
+            <summary>
+            Returns the total number of rows based on the SELECT and WHERE clause statements filled in, or the RowCount stored procedure selected.
+            </summary>
+            <returns>Rows affected</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataClassReadOnly.Load">
+            <summary>
+            This method calls the GetDataSet() method. It then loads the first data row in the returned dataset into the Entity class.
+            Returns the total number of records loaded from the call to the GetDataSet() method.
+            </summary>
+            <returns>Rows affected</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataClassReadOnly.CreateDataRowFromEntity">
+            <summary>
+            Creates a DataRow object from an Entity object
+            Assumes that you have filled in the 'Entity' property with a valid entity from the table.
+            </summary>
+            <returns>A DataRow</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataClassReadOnly.SetColumnValueToNull(System.String)">
+            <summary>
+            Set a column's value to Null when doing an INSERT or UPDATE.
+            </summary>
+            <param name="columnName">The column name's value to set to null</param>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataClassReadOnly.SyncDataColumnToProperty(PDSA.DataLayer.DataClasses.PDSADataColumn,PDSA.Validation.PDSAProperty)">
+            <summary>
+            This is called from the SyncDataColumnsToProperties method in order to set any special properties during an Insert or Update
+            </summary>
+            <param name="col">A PDSADataColumn object</param>
+            <param name="prop">A PDSAProperty object</param>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataClassReadOnly.SelectSQL">
+            <summary>
+            Builds the SQL for the SELECT statement, or SELECT stored procedure based on the SelectFilter property. You will override this method.
+            </summary>
+            <returns>string</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataClassReadOnly.WhereClauseSQL">
+            <summary>
+            Builds the WHERE clause to be used in combination with a SELECT statement. You will override this method.
+            </summary>
+            <returns>string</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataClassReadOnly.OrderByClauseSQL">
+            <summary>
+            Builds the ORDER BY clause to be used in combination with a SELECT statement. You will override this method.
+            </summary>
+            <returns>string</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataClassReadOnly.InsertSQL">
+            <summary>
+            Builds the SQL for the INSERT statement, or INSERT stored procedure based on the InsertFilter property. You will override this method.
+            </summary>
+            <returns>string</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataClassReadOnly.UpdateSQL">
+            <summary>
+            Builds the SQL for the UPDATE statement, or UPDATE stored procedure based on the UpdateFilter property. You will override this method.
+            </summary>
+            <returns>string</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataClassReadOnly.DeleteSQL">
+            <summary>
+            Builds the SQL for the DELETE statement, or DELETE stored procedure. You can set the WhereFilter property to selectively delete rows from the table. You will override this method.
+            </summary>
+            <returns>string</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataClassReadOnly.RowCountSQL">
+            <summary>
+            Builds the SELECT Count(*) SQL, or the name of the stored procedure, that will count the number of rows. You will override this method.
+            </summary>
+            <returns>string</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataClassReadOnly.DataRowToProperties(System.Data.DataRow)">
+            <summary>
+            Moves the values from a DataRow object into the collection properties. 
+            Called when object is first read in from the database
+            </summary>
+            <param name="dr">DataRow object with all fields from the table in it.</param>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataClassReadOnly.DataRowToProperties(System.Data.DataRow,System.Boolean)">
+            <summary>
+            Moves the values from a DataRow object into the collection properties. 
+            Called when object is first read in from the database
+            </summary>
+            <param name="dr">DataRow object with all fields from the table in it.</param>
+            <param name="populateAllColumnsCollection">Set to True to populate the 'AllColumns' collection with OriginalValue, WasDataReadInAsNull and IsDirty flag</param>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataClassReadOnly.DataSetRowToXml(System.Int32)">
+            <summary>
+            Builds an XML string from the data row index that is passed in.
+            </summary>
+            <param name="rowNumber">The row number to make an XML string from</param>
+            <returns>An XML string</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataClassReadOnly.EntityDataToColumnCollection">
+            <summary>
+            Moves the data from the Entity class into the Columns collection. You will override this method.
+            </summary>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataClassReadOnly.ColumnCollectionToEntityData">
+            <summary>
+            Moves the data from the Columns collection into the Entity class. You will override this method.
+            </summary>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataClassReadOnly.WhereClauseFillInParameters">
+            <summary>
+            Fills in the parameter objects for any WHERE clauses that need it. You will override this method.
+            </summary>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataClassReadOnly.SelectFillInParameters">
+            <summary>
+            Fills in the parameter objects for any SELECT clauses that need it. You will override this method.
+            </summary>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataClassReadOnly.GetFullSelectStatement">
+            <summary>
+            Builds a dynamic SELECT statement using all columns and the database object name.
+            </summary>
+            <returns>A SELECT statement</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataClassReadOnly.InitDataColumns">
+            <summary>
+            Initialize the Data Columns Collection. You will override this method.
+            </summary>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataClassReadOnly.ColumnToString(System.Data.DataRow,PDSA.DataLayer.DataClasses.PDSADataColumn)">
+            <summary>
+            Retrieves the value from a DataRow and uses a PDSADataColumn to get the 'value' property.
+            </summary>
+            <param name="dr">A DataRow</param>
+            <param name="dc">A PDSADataColumn object</param>
+            <returns>string value</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataClassReadOnly.ColumnToShort(System.Data.DataRow,PDSA.DataLayer.DataClasses.PDSADataColumn)">
+            <summary>
+            Retrieves the value from a DataRow and uses a PDSADataColumn to get the 'value' property.
+            </summary>
+            <param name="dr">A DataRow</param>
+            <param name="dc">A PDSADataColumn object</param>
+            <returns>short value</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataClassReadOnly.ColumnToInt16(System.Data.DataRow,PDSA.DataLayer.DataClasses.PDSADataColumn)">
+            <summary>
+            Retrieves the value from a DataRow and uses a PDSADataColumn to get the 'value' property.
+            </summary>
+            <param name="dr">A DataRow</param>
+            <param name="dc">A PDSADataColumn object</param>
+            <returns>short value</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataClassReadOnly.ColumnToInteger(System.Data.DataRow,PDSA.DataLayer.DataClasses.PDSADataColumn)">
+            <summary>
+            Retrieves the value from a DataRow and uses a PDSADataColumn to get the 'value' property.
+            </summary>
+            <param name="dr">A DataRow</param>
+            <param name="dc">A PDSADataColumn object</param>
+            <returns>int value</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataClassReadOnly.ColumnToInt32(System.Data.DataRow,PDSA.DataLayer.DataClasses.PDSADataColumn)">
+            <summary>
+            Retrieves the value from a DataRow and uses a PDSADataColumn to get the 'value' property.
+            </summary>
+            <param name="dr">A DataRow</param>
+            <param name="dc">A PDSADataColumn object</param>
+            <returns>int value</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataClassReadOnly.ColumnToLong(System.Data.DataRow,PDSA.DataLayer.DataClasses.PDSADataColumn)">
+            <summary>
+            Retrieves the value from a DataRow and uses a PDSADataColumn to get the 'value' property.
+            </summary>
+            <param name="dr">A DataRow</param>
+            <param name="dc">A PDSADataColumn object</param>
+            <returns>long value</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataClassReadOnly.ColumnToInt64(System.Data.DataRow,PDSA.DataLayer.DataClasses.PDSADataColumn)">
+            <summary>
+            Retrieves the value from a DataRow and uses a PDSADataColumn to get the 'value' property.
+            </summary>
+            <param name="dr">A DataRow</param>
+            <param name="dc">A PDSADataColumn object</param>
+            <returns>long value</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataClassReadOnly.ColumnToDecimal(System.Data.DataRow,PDSA.DataLayer.DataClasses.PDSADataColumn)">
+            <summary>
+            Retrieves the value from a DataRow and uses a PDSADataColumn to get the 'value' property.
+            </summary>
+            <param name="dr">A DataRow</param>
+            <param name="dc">A PDSADataColumn object</param>
+            <returns>decimal value</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataClassReadOnly.ColumnToSingle(System.Data.DataRow,PDSA.DataLayer.DataClasses.PDSADataColumn)">
+            <summary>
+            Retrieves the value from a DataRow and uses a PDSADataColumn to get the 'value' property.
+            </summary>
+            <param name="dr">A DataRow</param>
+            <param name="dc">A PDSADataColumn object</param>
+            <returns>single value</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataClassReadOnly.ColumnToDouble(System.Data.DataRow,PDSA.DataLayer.DataClasses.PDSADataColumn)">
+            <summary>
+            Retrieves the value from a DataRow and uses a PDSADataColumn to get the 'value' property.
+            </summary>
+            <param name="dr">A DataRow</param>
+            <param name="dc">A PDSADataColumn object</param>
+            <returns>double value</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataClassReadOnly.ColumnToBoolean(System.Data.DataRow,PDSA.DataLayer.DataClasses.PDSADataColumn)">
+            <summary>
+            Retrieves the value from a DataRow and uses a PDSADataColumn to get the 'value' property.
+            </summary>
+            <param name="dr">A DataRow</param>
+            <param name="dc">A PDSADataColumn object</param>
+            <returns>boolean value</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataClassReadOnly.ColumnToByte(System.Data.DataRow,PDSA.DataLayer.DataClasses.PDSADataColumn)">
+            <summary>
+            Retrieves the value from a DataRow and uses a PDSADataColumn to get the 'value' property.
+            </summary>
+            <param name="dr">A DataRow</param>
+            <param name="dc">A PDSADataColumn object</param>
+            <returns>byte value</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataClassReadOnly.ColumnToDate(System.Data.DataRow,PDSA.DataLayer.DataClasses.PDSADataColumn)">
+            <summary>
+            Retrieves the value from a DataRow and uses a PDSADataColumn to get the 'value' property.
+            </summary>
+            <param name="dr">A DataRow</param>
+            <param name="dc">A PDSADataColumn object</param>
+            <returns>DateTime value</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataClassReadOnly.ColumnToXML(System.Data.DataRow,PDSA.DataLayer.DataClasses.PDSADataColumn)">
+            <summary>
+            Retrieves the value from a DataRow and uses a PDSADataColumn to get the 'value' property.
+            </summary>
+            <param name="dr">A DataRow</param>
+            <param name="dc">A PDSADataColumn object</param>
+            <returns>string value</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataClassReadOnly.GetColumnsAsPropertyHeaderCollection">
+            <summary>
+            Return the collection of all table/view/stored procedured columns as a PDSAPropertyHeaders Collection
+            This can be used with the PDSA.WPF.PDSAWPFListView.CreateGridViewColumns() method to create the view for a ListView control.
+            </summary>
+            <returns>A PDSAPropertyHeaders Collection</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataClassReadOnly.SetPrimaryKeyNamesOnDataTable(System.Data.DataTable)">
+            <summary>
+            Sets the PrimaryKey property on a DataTable with an array of DataColumns
+            </summary>
+            <param name="dt">The DataTable to set</param>
+        </member>
+        <member name="P:PDSA.DataLayer.DataClasses.PDSADataClassReadOnly.ValidatorObject">
+            <summary>
+            Get/Set the validator object that is used to call the Validate() method on when an Insert or Update method is performed.
+            </summary>
+        </member>
+        <member name="P:PDSA.DataLayer.DataClasses.PDSADataClassReadOnly.EntityObject">
+            <summary>
+            Get/Set the Entity object
+            </summary>
+        </member>
+        <member name="P:PDSA.DataLayer.DataClasses.PDSADataClassReadOnly.BusinessRuleMessages">
+            <summary>
+            Get/Set the Business Rule Messages that failed during the last validation
+            </summary>
+        </member>
+        <member name="P:PDSA.DataLayer.DataClasses.PDSADataClassReadOnly.AllColumns">
+            <summary>
+            Get/Set the Data Column Collection for this class.
+            The data column collection will hold one PDSADataColumn object for each field in the table.
+            </summary>
+        </member>
+        <member name="P:PDSA.DataLayer.DataClasses.PDSADataClassReadOnly.SelectCustom">
+            <summary>
+            Get/Set a custom dynamic SQL SELECT statement
+            </summary>
+        </member>
+        <member name="P:PDSA.DataLayer.DataClasses.PDSADataClassReadOnly.WhereCustom">
+            <summary>
+            Get/Set a custom dynamic SQL WHERE clause
+            </summary>
+        </member>
+        <member name="P:PDSA.DataLayer.DataClasses.PDSADataClassReadOnly.OrderByCustom">
+            <summary>
+            Get/Set a custom dynamic SQL ORDER BY clause
+            </summary>
+        </member>
+        <member name="P:PDSA.DataLayer.DataClasses.PDSADataClassReadOnly.InsertCustom">
+            <summary>
+            Get/Set a custom dynamic SQL INSERT clause
+            </summary>
+        </member>
+        <member name="P:PDSA.DataLayer.DataClasses.PDSADataClassReadOnly.UpdateCustom">
+            <summary>
+            Get/Set a custom dynamic SQL UPDATE clause
+            </summary>
+        </member>
+        <member name="P:PDSA.DataLayer.DataClasses.PDSADataClassReadOnly.DeleteCustom">
+            <summary>
+            Get/Set a custom dynamic SQL DELETE clause
+            </summary>
+        </member>
+        <member name="P:PDSA.DataLayer.DataClasses.PDSADataClassReadOnly.RowCountCustom">
+            <summary>
+            Get/Set a custom dynamic SQL RowCount clause
+            </summary>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataClassTable.#ctor">
+            <summary>
+            Constructor for the PDSADataClassTable class
+            </summary>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataClassTable.#ctor(PDSA.DataLayer.PDSADataProvider)">
+            <summary>
+            Constructor for the PDSADataClassTable class
+            </summary>
+            <param name="dataProvider">A data provider to be used for all data access</param>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataClassTable.#ctor(PDSA.DataLayer.PDSADataProvider,PDSA.Validation.IPDSAEntity)">
+            <summary>
+            Constructor for the PDSADataClassTable class
+            </summary>
+            <param name="dataProvider">A data provider to be used for all data access</param>
+            <param name="entityObject">An Entity Object</param>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataClassTable.#ctor(PDSA.Validation.IPDSAEntity)">
+            <summary>
+            Constructor for the PDSADataClassTable class
+            </summary>
+            <param name="entityObject">An Entity Object</param>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataClassTable.#ctor(PDSA.DataLayer.PDSADataProvider,PDSA.Validation.IPDSAEntity,PDSA.Validation.IPDSAValidation)">
+            <summary>
+            Constructor for the PDSADataClassTable class
+            </summary>
+            <param name="dataProvider">A data provider to be used for all data access</param>
+            <param name="entityObject">An Entity Object</param>
+            <param name="validatorObject">A Validation Object</param>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataClassTable.ExecuteNonQuery">
+            <summary>
+            Submits an action query to the database
+            </summary>
+            <returns>Int32</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataClassTable.BuildModificationCommandObject(PDSA.Validation.PDSADataModificationState)">
+            <summary>
+            Builds the command object for submitting an action query
+            </summary>
+            <param name="dataModificationState">Which data modication is taking place (Insert/Update/Delete)</param>
+            <returns>An IDbCommand object</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataClassTable.PKGetFromPDSATableIds(System.String)">
+            <summary>
+            Gets a new Int32 primary key value from the pdsaTableIds table
+            </summary>
+            <param name="loginName">The person who is getting the new primary key value</param>
+            <returns>An integer that is the new primary key value</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataClassTable.Validate">
+            <summary>
+            Call this method to perform validation on the Entity Properties for this Data Object
+            </summary>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataClassTable.CheckBusinessRules">
+            <summary>
+            Check business rules on Validator Object after moving entity data into the properties collection
+            </summary>
+            <returns>A status of whether or not the rules were successful or not</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataClassTable.Insert">
+            <summary>
+            Submits the INSERT statement, or stored procedure, to the database.
+            </summary>
+            <returns>int</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataClassTable.Update">
+            <summary>
+            Submits an UPDATE statement to the backend database
+            </summary>
+            <returns>Number of rows updated</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataClassTable.Update(System.Boolean)">
+            <summary>
+            Submits an UPDATE statement to the backend database
+            </summary>
+            <param name="zeroRowsOk">Whether or not to throw an exception if no rows are updated</param>
+            <returns>Number of rows updated</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataClassTable.Delete">
+            <summary>
+            Submits a DELETE action query to the database.
+            </summary>
+            <returns>Number of rows deleted</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataClassTable.Delete(System.Boolean)">
+            <summary>
+            Submits a DELETE action query to the database.
+            </summary>
+            <param name="zeroRowsOk">Whether or not to throw an exception if no rows are deleted</param>
+            <returns>Number of rows deleted</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataClassTable.UpdateAllConcurrencyFields">
+            <summary>
+            Update all ConcurrencyFields that are about to go over the limit back to MinValue.
+            NOTE: This method uses Dynamic SQL to update the Concurrency Field
+            If you want to use stored procedures, you will need to write your own to perform this updating.
+            </summary>
+            <returns>Total number of rows affected</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataClassTable.SetAsNullFlag(System.String,System.Boolean)">
+            <summary>
+            Changes the property/column name SetAsNull property
+            </summary>
+            <param name="propertyName">The property/column name to change</param>
+            <param name="setAsNullFlag">value to change the SetAsNull property to</param>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataClassTable.BuildAuditTrackingXML">
+            <summary>
+            Builds an audit tracking xml from the current row of data.
+            </summary>
+            <returns>string</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataClassTable.BuildAuditTrackingXML(PDSA.Validation.PDSADataModificationState)">
+            <summary>
+            Builds an audit tracking xml from the current row of data.
+            </summary>
+            <param name="dataModification">The data modification state of the data class (Insert/Update/Delete)</param>
+            <returns>string</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataClassTable.ResetCollectionProperties">
+            <summary>
+            Resets IsDirty Flag properties in collections
+            </summary>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataClassTable.SyncDataColumnToProperty(PDSA.DataLayer.DataClasses.PDSADataColumn,PDSA.Validation.PDSAProperty)">
+            <summary>
+            This is called from the SyncDataColumnsToProperties method in order to set any special properties during an Insert or Update
+            </summary>
+            <param name="col">A PDSADataColumn object</param>
+            <param name="prop">A PDSAProperty object</param>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataClassTable.RetrievePrimaryKeyAfterInsert(System.Data.IDbConnection)">
+            <summary>
+            This method is called after an INSERT to retrieve the primary key value.
+            </summary>
+            <param name="cnn">IDbConnection object</param>
+            <returns>The new primary key</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataClassTable.SetModificationCommandParameters">
+            <summary>
+            Sets the command parameters for an action query. You will override this method.
+            </summary>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataClassTable.Inserted">
+            <summary>
+            This method is called after a call to the Insert() method and it is successful.
+            </summary>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataClassTable.Updated">
+            <summary>
+            This method is called after a call to the Update() method and it is successful.
+            </summary>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataClassTable.Deleted">
+            <summary>
+            This method is called after a call to the Update() method and it is successful.
+            </summary>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataClassTable.SetDirtyFlag">
+            <summary>
+            Method raised to allow you to set the dirty flag to any value you wish
+            </summary>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataClassTable.SetDirtyFlag(System.Boolean)">
+            <summary>
+            Method raised to allow you to set the dirty flag to any value you wish
+            This method is called after the Insert and Update methods with false value
+            </summary>
+            <param name="isDirty">Set the IsDirty flag to this value</param>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataClassTable.CheckForNullData(PDSA.Validation.PDSAProperties)">
+            <summary>
+            NOT USED
+            This method will check the data in the 'DefaultValue' property against what is in the 'Value' property.
+            If the two are equal the 'SetAsNull' flag will be set to the value of the 'WasDataReadInAsNull' flag.
+            </summary>
+            <param name="properties">A PDSAEntityInitialDataCollection object</param>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataClassTable.PKGenerateGuid">
+            <summary>
+            Generates a new GUID for a primary key
+            </summary>
+            <returns>string</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataClassTable.PrimaryKeySet(System.Int32)">
+            <summary>
+            Sets an Int32 primary key value. You will override this method.
+            </summary>
+            <param name="PK">The primary key value</param>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataClassTable.PrimaryKeySet(System.Int32,System.Int32)">
+            <summary>
+            Sets two Int32 primary key values. You will override this method.
+            </summary>
+            <param name="PK1">The primary key value</param>
+            <param name="PK2">The primary key value</param>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataClassTable.PrimaryKeySet(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Sets three Int32 primary key values. You will override this method.
+            </summary>
+            <param name="PK1">The primary key value</param>
+            <param name="PK2">The primary key value</param>
+            <param name="PK3">The primary key value</param>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataClassTable.PrimaryKeySet(System.Int64)">
+            <summary>
+            Sets an Int64 primary key value. You will override this method.
+            </summary>
+            <param name="PK">The primary key value</param>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataClassTable.PrimaryKeySet(System.Int64,System.Int64)">
+            <summary>
+            Sets two Int64 primary key values. You will override this method.
+            </summary>
+            <param name="PK1">The primary key value</param>
+            <param name="PK2">The primary key value</param>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataClassTable.PrimaryKeySet(System.Int64,System.Int64,System.Int64)">
+            <summary>
+            Sets three Int64 primary key values. You will override this method.
+            </summary>
+            <param name="PK1">The primary key value</param>
+            <param name="PK2">The primary key value</param>
+            <param name="PK3">The primary key value</param>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataClassTable.PrimaryKeySet(System.Int16)">
+            <summary>
+            Sets an Int16 primary key value. You will override this method.
+            </summary>
+            <param name="PK">The primary key value</param>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataClassTable.PrimaryKeySet(System.Int16,System.Int16)">
+            <summary>
+            Sets two Int16 primary key values. You will override this method.
+            </summary>
+            <param name="PK1">The primary key value</param>
+            <param name="PK2">The primary key value</param>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataClassTable.PrimaryKeySet(System.Int16,System.Int16,System.Int16)">
+            <summary>
+            Sets three Int16 primary key values. You will override this method.
+            </summary>
+            <param name="PK1">The primary key value</param>
+            <param name="PK2">The primary key value</param>
+            <param name="PK3">The primary key value</param>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataClassTable.PrimaryKeySet(System.Double)">
+            <summary>
+            Sets a Double primary key value. You will override this method.
+            </summary>
+            <param name="PK">The primary key value</param>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataClassTable.PrimaryKeySet(System.Decimal)">
+            <summary>
+            Sets a Decimal primary key value. You will override this method.
+            </summary>
+            <param name="PK">The primary key value</param>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataClassTable.PrimaryKeySet(System.String)">
+            <summary>
+            Sets a string primary key value. You will override this method.
+            </summary>
+            <param name="PK">The primary key value</param>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataClassTable.PrimaryKeySet(System.String,System.String)">
+            <summary>
+            Sets a string primary key value. You will override this method.
+            </summary>
+            <param name="PK1">The primary key value</param>
+            <param name="PK2">The primary key value</param>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataClassTable.PrimaryKeySet(System.String,System.String,System.String)">
+            <summary>
+            Sets a string primary key value. You will override this method.
+            </summary>
+            <param name="PK1">The primary key value</param>
+            <param name="PK2">The primary key value</param>
+            <param name="PK3">The primary key value</param>
+        </member>
+        <member name="P:PDSA.DataLayer.DataClasses.PDSADataClassTable.PerformValidation">
+            <summary>
+            Get/Set whether or not to perform validation when doing an INSERT/UPDATE
+            Set to false only when performing an UPDATE with a WHERE clause that updates multiple records
+            </summary>
+        </member>
+        <member name="P:PDSA.DataLayer.DataClasses.PDSADataClassTable.DataColumns">
+            <summary>
+            Get/Set the collection of DataColumns. This is parallel to the AllColumns collection.
+            </summary>
+        </member>
+        <member name="P:PDSA.DataLayer.DataClasses.PDSADataClassTable.DataModificationAction">
+            <summary>
+            Get/Set which data modification is taking place (Insert/Update/Delete)
+            </summary>
+        </member>
+        <member name="P:PDSA.DataLayer.DataClasses.PDSADataClassTable.PrimaryKeyGenerate">
+            <summary>
+            Get/Set a flag of whether or not to generate a primary key using either the pdsaTableIds table, or a GUID.
+            </summary>
+        </member>
+        <member name="P:PDSA.DataLayer.DataClasses.PDSADataClassTable.PrimaryKeyType">
+            <summary>
+            Get/Set the method that will be used to generate a primary key
+            </summary>
+        </member>
+        <member name="P:PDSA.DataLayer.DataClasses.PDSADataClassTable.ConcurrencyFieldName">
+            <summary>
+            Get/Set the Concurrency Field Name on this table (if any)
+            </summary>
+        </member>
+        <member name="P:PDSA.DataLayer.DataClasses.PDSADataClassTable.PrimaryKeyAutoNumberDataType">
+            <summary>
+            Get/Set the data type of the primary key (only if the PK is an Auto Number type)
+            </summary>
+        </member>
+        <member name="P:PDSA.DataLayer.DataClasses.PDSADataClassTable.TransactionType">
+            <summary>
+            Get/Set which method to call when in a transaction
+            </summary>
+        </member>
+        <member name="P:PDSA.DataLayer.DataClasses.PDSADataClassTable.UseAuditTracking">
+            <summary>
+            Get/Set whether or not to build an audit track record
+            </summary>
+        </member>
+        <member name="P:PDSA.DataLayer.DataClasses.PDSADataClassTable.ZeroRowsOK">
+            <summary>
+            Get/Set whether or not to throw an exception if zero rows are returned from an UPDATE or DELETE.
+            </summary>
+        </member>
+        <member name="P:PDSA.DataLayer.DataClasses.PDSADataClassTable.AuditRowAsXml">
+            <summary>
+            Get the audit row as an XML string
+            </summary>
+        </member>
+        <member name="T:PDSA.DataLayer.DataClasses.PDSADataClassManagerBase">
+            <summary>
+            This abstract base class is used by manager data classes
+            </summary>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataClassManagerBase.#ctor">
+            <summary>
+            Constructor for PDSADataClassManagerBase class. Calls the Init method
+            </summary>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataClassManagerBase.#ctor(PDSA.DataLayer.PDSADataProvider)">
+            <summary>
+            Constuctor for the PDSADataClassManagerBase class
+            </summary>
+            <param name="dataProvider">The data provider to use for all data access.</param>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataClassManagerBase.#ctor(System.String)">
+            <summary>
+            Constuctor for the PDSADataClassManagerBase class
+            </summary>
+            <param name="dataProviderName">The data provider name to use for all data access.</param>
+        </member>
+        <member name="T:PDSA.DataLayer.DataClasses.PDSAStoredProcBase">
+            <summary>
+            Base class for executing stored procedures
+            </summary>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSAStoredProcBase.#ctor">
+            <summary>
+            Constructor for PDSAStoredProcBase class
+            </summary>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSAStoredProcBase.#ctor(PDSA.DataLayer.PDSADataProvider)">
+            <summary>
+            Constructor for PDSAStoredProcBase class
+            </summary>
+            <param name="dataProvider">A PDSADataProvider object</param>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSAStoredProcBase.InitParameters">
+            <summary>
+            Initialize all parameters
+            </summary>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSAStoredProcBase.PropertiesToParameters(PDSA.Validation.PDSAProperties)">
+            <summary>
+            Transfers the data from a collection of PDSAProperties objects into the collection of PDSADataParameter objects
+            </summary>
+            <param name="props">A collection of PDSAProperty objects</param>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSAStoredProcBase.BuildExecCall">
+            <summary>
+            Call this method to build a call to the stored procedure where all parameters are passed on the command line
+            Example: EXEC [dbo].[MyStoredproc] @Para1=Value1, @Param2=Value2
+            </summary>
+            <returns>A string</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSAStoredProcBase.AddAllParametersToCommandObject">
+            <summary>
+            Adds all parameters to the command object
+            </summary>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSAStoredProcBase.RetrieveOutputParameterValues">
+            <summary>
+            Retrieves all output parameter values after the stored procedure executes
+            </summary>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSAStoredProcBase.EntityDataToParameterCollection">
+            <summary>
+            Moves all entity properties to the internal parameter collection. You need to override this method
+            </summary>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSAStoredProcBase.OutputParametersToEntityData">
+            <summary>
+            Moves all parameter values from the internal parameter collection to the entity object. You need to override this method.
+            </summary>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSAStoredProcBase.GetReturnValue">
+            <summary>
+            Gets the return value from the command object after executing the stored procedure
+            </summary>
+            <returns>The return value</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSAStoredProcBase.AddReturnValueParameterToCollection">
+            <summary>
+            Adds the return value parameter to the collection.
+            </summary>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSAStoredProcBase.SetDirtyFlag">
+            <summary>
+            Method raised to allow you to set the dirty flag to any value you wish
+            </summary>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSAStoredProcBase.SetDirtyFlag(System.Boolean)">
+            <summary>
+            Method raised to allow you to set the dirty flag to any value you wish
+            This method is called after the Insert and Update methods with false value
+            </summary>
+            <param name="isDirty">Set the IsDirty flag to this value</param>
+        </member>
+        <member name="P:PDSA.DataLayer.DataClasses.PDSAStoredProcBase.ReturnValue">
+            <summary>
+            Get/Set the return value from the stored procedure
+            </summary>
+        </member>
+        <member name="P:PDSA.DataLayer.DataClasses.PDSAStoredProcBase.ReturnValueParamName">
+            <summary>
+            Get/Set the name of the return value parameter
+            </summary>
+        </member>
+        <member name="P:PDSA.DataLayer.DataClasses.PDSAStoredProcBase.StoredProcName">
+            <summary>
+            Get/Set the name of the stored procedure
+            </summary>
+        </member>
+        <member name="P:PDSA.DataLayer.DataClasses.PDSAStoredProcBase.AllParameters">
+            <summary>
+            Get/Set the PDSADataParameters collection
+            </summary>
+        </member>
+        <member name="P:PDSA.DataLayer.DataClasses.PDSAStoredProcBase.ValidatorObject">
+            <summary>
+            Get/Set the validator object that is used to call the Validate() method on when an Insert or Update method is performed.
+            </summary>
+        </member>
+        <member name="T:PDSA.DataLayer.DataClasses.PDSAStoredProcExecute">
+            <summary>
+            A class used to submit a stored procedure that will exceute SQL such as an INSERT, UPDATE or DELETE.
+            </summary>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSAStoredProcExecute.#ctor">
+            <summary>
+            Constructor for the PDSAStoredProcExecute class
+            </summary>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSAStoredProcExecute.#ctor(PDSA.DataLayer.PDSADataProvider)">
+            <summary>
+            Constructor for the PDSAStoredProcExecute class
+            </summary>
+            <param name="dataProvider">A PDSADataProvider object</param>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSAStoredProcExecute.Execute">
+            <summary>
+            Executes a stored procedure
+            </summary>
+            <returns>The number of rows affected by the Execute statement</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSAStoredProcExecute.GetDataSet">
+            <summary>
+            Returns a DataSet object from the results of running the stored procedure.
+            </summary>
+            <returns>A DataSet object</returns>
+        </member>
+        <member name="T:PDSA.DataLayer.DataClasses.PDSAStoredProcExecuteManagerBase">
+            <summary>
+            This abstract base class is used by Execute stored procedure manager classes
+            </summary>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSAStoredProcExecuteManagerBase.#ctor">
+            <summary>
+            Constructor for the PDSAStoredProcExecuteManagerBase class
+            </summary>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSAStoredProcExecuteManagerBase.#ctor(PDSA.DataLayer.PDSADataProvider)">
+            <summary>
+            Constructor for the PDSAStoredProcExecuteManagerBase class
+            </summary>
+            <param name="dataProvider">A PDSADataProvider object</param>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSAStoredProcExecuteManagerBase.Init">
+            <summary>
+            Override this method to initialize the object to a valid start state
+            </summary>
+        </member>
+        <member name="P:PDSA.DataLayer.DataClasses.PDSAStoredProcExecuteManagerBase.DataProvider">
+            <summary>
+            Get/Set the data provider object.
+            If the provider has not been set, then the default provider will be retrieved.
+            </summary>
+        </member>
+        <member name="T:PDSA.DataLayer.DataClasses.PDSAStoredProcReadOnly">
+            <summary>
+            An abstract class that all read-only stored procedure classes will inherit from
+            </summary>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSAStoredProcReadOnly.#ctor">
+            <summary>
+            Constructor for the PDSAStoredProcReadOnly class
+            </summary>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSAStoredProcReadOnly.#ctor(PDSA.DataLayer.PDSADataProvider)">
+            <summary>
+            Constructor for the PDSAStoredProcReadOnly class
+            </summary>
+            <param name="dataProvider">A PDSADataProvider object</param>
+        </member>
+        <member name="F:PDSA.DataLayer.DataClasses.PDSAStoredProcReadOnly.mDCColumns">
+            <summary>
+            Get/Set a collection of PDSADataColumn objects
+            </summary>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSAStoredProcReadOnly.InitDataColumns">
+            <summary>
+            Initializes all data columns that will be returned from this stored procedure. You need to override this method.
+            </summary>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSAStoredProcReadOnly.EntityDataToColumnCollection">
+            <summary>
+            Moves all entity properties to the internal column collection. You need to override this method.
+            </summary>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSAStoredProcReadOnly.ColumnCollectionToEntityData">
+            <summary>
+            Moves all the internal column collection values to the Entity object. You need to override this method.
+            </summary>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSAStoredProcReadOnly.GetDataReader">
+            <summary>
+            Returns a data reader object from the results of running the stored procedure.
+            NOTE: You MUST close the DataReader when you are done!
+            </summary>
+            <returns>A IDataReader object</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSAStoredProcReadOnly.GetDataTable">
+            <summary>
+            Returns a DataTable object from the results of running the stored procedure.
+            </summary>
+            <returns>A DataTable object</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSAStoredProcReadOnly.GetDataSet">
+            <summary>
+            Returns a DataSet object from the results of running the stored procedure.
+            </summary>
+            <returns>A DataSet object</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSAStoredProcReadOnly.GetDataSetAsXml">
+            <summary>
+            Gets a result set by calling the GetDataSet method and turning it into Element based XML.
+            </summary>
+            <returns>An XML string</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSAStoredProcReadOnly.GetDataSetAsXml(PDSA.DataLayer.DataClasses.PDSAXmlGenerationType)">
+            <summary>
+            Gets a result set by calling the GetDataSet method and turning it into Element based XML.
+            </summary>
+            <param name="xmlGenType">Attribute or Element Based</param>
+            <returns>An XML string</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSAStoredProcReadOnly.GetDataSetAsXml(PDSA.DataLayer.DataClasses.PDSAXmlGenerationType,System.String,System.String)">
+            <summary>
+            Gets a result set by calling the GetDataSet method and turning it into either Attribute or Element based XML.
+            </summary>
+            <param name="xmlGenType">Attribute or Element Based</param>
+            <param name="topNodeName">The name for your top node of your XML</param>
+            <param name="nodesName">The name for each lower level node in your XML</param>
+            <returns>An XML string</returns>
+        </member>
+        <member name="P:PDSA.DataLayer.DataClasses.PDSAStoredProcReadOnly.AllColumns">
+            <summary>
+            Get/Set the Data Column Collection for this class.
+            The data column collection will hold one PDSADataColumn object for each field in the table.
+            </summary>
+        </member>
+        <member name="T:PDSA.DataLayer.DataClasses.PDSATransactionException">
+            <summary>
+            This class is used to throw an exception when in a transaction
+            </summary>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSATransactionException.#ctor(System.String)">
+            <summary>
+            Constructor for the PDSATransactionException object
+            </summary>
+            <param name="message">The message for this exception</param>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSATransactionException.#ctor(System.String,System.Exception)">
+            <summary>
+            Constructor for the PDSATransactionException object
+            </summary>
+            <param name="message">The message for this exception</param>
+            <param name="ex">An inner exception object</param>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSATransactionException.#ctor(System.Exception,PDSA.DataLayer.DataClasses.PDSADataClassTable,PDSA.DataLayer.DataClasses.PDSAStoredProcExecute)">
+            <summary>
+            Constructor for the PDSATransactionException object
+            </summary>
+            <param name="ex">An exception from which the ToString() message will be returned</param>
+            <param name="dcObject">A PDSADataClassTable object</param>
+            <param name="spObject">A PDSAStoredProcExecute object</param>
+        </member>
+        <member name="P:PDSA.DataLayer.DataClasses.PDSATransactionException.DataClassObject">
+            <summary>
+            Get/Set the Data Class object that was in error in the transaction
+            </summary>
+        </member>
+        <member name="P:PDSA.DataLayer.DataClasses.PDSATransactionException.StoredProcObject">
+            <summary>
+            Get/Set the Stored Procedure Execute object that was in error in the transaction
+            </summary>
+        </member>
+        <member name="T:PDSA.DataLayer.DataClasses.PDSAZeroRowsException">
+            <summary>
+            This exception is raised if no rows are affected by the latest insert, update or delete on a data class
+            </summary>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSAZeroRowsException.#ctor(System.String)">
+            <summary>
+            Constructor for the PDSAZeroRowsException class
+            </summary>
+            <param name="message">A message for this exception</param>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSAZeroRowsException.#ctor(System.String,System.String,System.String)">
+            <summary>
+            Constructor for the PDSAZeroRowsException class
+            </summary>
+            <param name="message">A message for this exception</param>
+            <param name="className">The class name that this exception is raised from</param>
+            <param name="methodName">The method name that this exception is raised from</param>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSAZeroRowsException.#ctor(System.String,System.String,System.String,PDSA.DataLayer.DataClasses.PDSAStoredProcBase)">
+            <summary>
+            Constructor for the PDSAZeroRowsException class
+            </summary>
+            <param name="message">A message for this exception</param>
+            <param name="className">The class name that this exception is raised from</param>
+            <param name="methodName">The method name that this exception is raised from</param>
+            <param name="dataClass">A DataClass Object</param>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSAZeroRowsException.#ctor(System.String,System.String,System.String,PDSA.DataLayer.DataClasses.PDSADataClassTable)">
+            <summary>
+            Constructor for the PDSAZeroRowsException class
+            </summary>
+            <param name="message">A message for this exception</param>
+            <param name="className">The class name that this exception is raised from</param>
+            <param name="methodName">The method name that this exception is raised from</param>
+            <param name="dataClass">A DataClass Object</param>
+        </member>
+        <member name="P:PDSA.DataLayer.DataClasses.PDSAZeroRowsException.DataClassObject">
+            <summary>
+            Get/Set the DataClass that raised this exception
+            </summary>
+        </member>
+        <member name="T:PDSA.DataLayer.DataClasses.PDSAXmlGenerationType">
+            <summary>
+            Enumeration for how you want to generate XML from a DataSet in your data classes
+            </summary>
+        </member>
+        <member name="F:PDSA.DataLayer.DataClasses.PDSAXmlGenerationType.ElementBased">
+            <summary>
+            Generate Element Based XML
+            </summary>
+        </member>
+        <member name="F:PDSA.DataLayer.DataClasses.PDSAXmlGenerationType.AttributeBased">
+            <summary>
+            Generate Attribute Based XML
+            </summary>
+        </member>
+        <member name="T:PDSA.DataLayer.DataClasses.PDSATransactionType">
+            <summary>
+            Enumeration for the type of transaction you wish to perform on a data class
+            </summary>
+        </member>
+        <member name="F:PDSA.DataLayer.DataClasses.PDSATransactionType.Insert">
+            <summary>
+            Call the Insert method on the data class. If no rows are inserted an exception is raised.
+            </summary>
+        </member>
+        <member name="F:PDSA.DataLayer.DataClasses.PDSATransactionType.Update">
+            <summary>
+            Call the Update method on the data class. If no rows are updated an exception is raised.
+            </summary>
+        </member>
+        <member name="F:PDSA.DataLayer.DataClasses.PDSATransactionType.Delete">
+            <summary>
+            Call the Delete method on the data class. If no rows are deleted an exception is raised.
+            </summary>
+        </member>
+        <member name="F:PDSA.DataLayer.DataClasses.PDSATransactionType.InsertZeroRecsOK">
+            <summary>
+            Call the Insert method on the data class. If no rows are inserted no exception is raised.
+            </summary>
+        </member>
+        <member name="F:PDSA.DataLayer.DataClasses.PDSATransactionType.UpdateZeroRecsOK">
+            <summary>
+            Call the Update method on the data class. If no rows are updated no exception is raised.
+            </summary>
+        </member>
+        <member name="F:PDSA.DataLayer.DataClasses.PDSATransactionType.DeleteZeroRecsOK">
+            <summary>
+            Call the Delete method on the data class. If no rows are deleted no exception is raised.
+            </summary>
+        </member>
+        <member name="F:PDSA.DataLayer.DataClasses.PDSATransactionType.StoredProcExecute">
+            <summary>
+            Calls the Execute method on a stored procedure data class.
+            </summary>
+        </member>
+        <member name="T:PDSA.DataLayer.DataClasses.PDSAPrimaryKeyType">
+            <summary>
+            Enumeration for determining which type of primary key generation a table uses
+            </summary>
+        </member>
+        <member name="F:PDSA.DataLayer.DataClasses.PDSAPrimaryKeyType.SQLIdentity">
+            <summary>
+            The primary key generated using SQL IDENTITY
+            </summary>
+        </member>
+        <member name="F:PDSA.DataLayer.DataClasses.PDSAPrimaryKeyType.PDSA">
+            <summary>
+            The primary key is generated used the PDSA Table IDs table
+            </summary>
+        </member>
+        <member name="F:PDSA.DataLayer.DataClasses.PDSAPrimaryKeyType.OracleSeqNumber">
+            <summary>
+            The primary key is generated from an Oracle Sequence Number
+            </summary>
+        </member>
+        <member name="F:PDSA.DataLayer.DataClasses.PDSAPrimaryKeyType.GUID">
+            <summary>
+            The primary key is generated using a GUID
+            </summary>
+        </member>
+        <member name="F:PDSA.DataLayer.DataClasses.PDSAPrimaryKeyType.Manual">
+            <summary>
+            The primary key is set manually
+            </summary>
+        </member>
+        <member name="F:PDSA.DataLayer.DataClasses.PDSAPrimaryKeyType.None">
+            <summary>
+            There is no primary key for this table
+            </summary>
+        </member>
+        <member name="T:PDSA.DataLayer.DataClasses.PDSAGenericDBDataTypes">
+            <summary>
+            Enumeration of generic database data types
+            </summary>
+        </member>
+        <member name="F:PDSA.DataLayer.DataClasses.PDSAGenericDBDataTypes.StringType">
+            <summary>
+            The generic database data type is string (varchar, char, etc.)
+            </summary>
+        </member>
+        <member name="F:PDSA.DataLayer.DataClasses.PDSAGenericDBDataTypes.NumericType">
+            <summary>
+            The generic database data type is numeric (int, decimal, etc.)
+            </summary>
+        </member>
+        <member name="F:PDSA.DataLayer.DataClasses.PDSAGenericDBDataTypes.DateType">
+            <summary>
+            The generic database data type is date (date, datetime, etc.)
+            </summary>
+        </member>
+        <member name="F:PDSA.DataLayer.DataClasses.PDSAGenericDBDataTypes.BooleanType">
+            <summary>
+            The generic database data type is boolean
+            </summary>
+        </member>
+        <member name="F:PDSA.DataLayer.DataClasses.PDSAGenericDBDataTypes.BinaryType">
+            <summary>
+            The generic database data type is binary (image, blob, etc.)
+            </summary>
+        </member>
+        <member name="F:PDSA.DataLayer.DataClasses.PDSAGenericDBDataTypes.GUIDType">
+            <summary>
+            The generic database data type is GUID
+            </summary>
+        </member>
+        <member name="F:PDSA.DataLayer.DataClasses.PDSAGenericDBDataTypes.TimeStampType">
+            <summary>
+            The generic database data type is a time stamp
+            </summary>
+        </member>
+        <member name="F:PDSA.DataLayer.DataClasses.PDSAGenericDBDataTypes.VariantType">
+            <summary>
+            The generic database data type is variant
+            </summary>
+        </member>
+        <member name="F:PDSA.DataLayer.DataClasses.PDSAGenericDBDataTypes.ObjectType">
+            <summary>
+            The generic database data type is object
+            </summary>
+        </member>
+        <member name="T:PDSA.DataLayer.DataClasses.PDSAPKTableId">
+            <summary>
+            This abstract base class is only for generating the next Primary Key for a table.
+            This is NOT to be used for CRUD on the PDSATableId table.
+            </summary>
+        </member>
+        <member name="F:PDSA.DataLayer.DataClasses.PDSAPKTableId.TABLE_NAME">
+            <summary>
+            The Table Name where the next ids are stored
+            </summary>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSAPKTableId.#ctor">
+            <summary>
+            Constructor for the PDSAPKTableId class
+            </summary>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSAPKTableId.#ctor(PDSA.DataLayer.PDSADataProvider)">
+            <summary>
+            Constructor for the PDSAPKTableId class
+            </summary>
+            <param name="dataProvider">A PDSADataProvider object</param>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSAPKTableId.GetNewPrimaryKey(System.String,System.String,System.String)">
+            <summary>
+            Gets a new Int32 primary key value for the specified table name.
+            </summary>
+            <param name="tableName">The table name for which to retrieve a primary key</param>
+            <param name="pkField">The primary key field name of the table</param>
+            <param name="loginName">The user requesting the key</param>
+            <returns>Int32</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSAPKTableId.GetNewPrimaryKey">
+            <summary>
+            Starts the process for retrieving the new primary key from the pdsaTableIds table.
+            </summary>
+            <returns>Int32</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSAPKTableId.ResetAllTableIds">
+            <summary>
+            Deletes all rows in the pdsaTableIds table.
+            </summary>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSAPKTableId.ResetTableId(System.String,System.String,System.String)">
+            <summary>
+            You must override this method. Deletes the row in the pdsaTableIds table for the specified table name passed in. Then calculates the next primary key for that table.
+            </summary>
+            <param name="tableName">The table name to retrieve a primary key for</param>
+            <param name="pkField">The primary key field name</param>
+            <param name="loginName">The user requesting to reset</param>
+            <returns>The next primary key value</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSAPKTableId.CreateNewPKException(System.Exception)">
+            <summary>
+            This method will create new PDSADataException object
+            </summary>
+            <param name="ex">An exception object</param>
+            <returns>PDSADataException</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSAPKTableId.ReadNextId">
+            <summary>
+            Reads the next id from the pdsaTableIds table.
+            </summary>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSAPKTableId.GetIdTableByName(System.String)">
+            <summary>
+            Returns the next ID for the specified table name
+            </summary>
+            <param name="tableName">The table to retrieve the next PK for</param>
+            <returns>The next primary key</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSAPKTableId.GetNextIDFromTable">
+            <summary>
+            Gets the next primary key value from the specified table by selecting the Max(fieldName) from that table.
+            </summary>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSAPKTableId.UpdateTableID">
+            <summary>
+            Updates the pdsaTableIds table with the new primary key value.
+            </summary>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSAPKTableId.CreateTableIDRecord">
+            <summary>
+            Creates a new row in the pdsaTableids table.
+            </summary>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSAPKTableId.FillInErrorMessage(System.Data.IDataParameter)">
+            <summary>
+            Create an error message from an IDataParameter object passed in.
+            </summary>
+            <param name="param">An IDataParameter object</param>
+        </member>
+        <member name="P:PDSA.DataLayer.DataClasses.PDSAPKTableId.mCurrentMethod">
+            <summary>
+            Get/Set the current method name
+            </summary>
+        </member>
+        <member name="P:PDSA.DataLayer.DataClasses.PDSAPKTableId.mTableName">
+            <summary>
+            Get/Set the Table Name to generate an ID for
+            </summary>
+        </member>
+        <member name="P:PDSA.DataLayer.DataClasses.PDSAPKTableId.mPKField">
+            <summary>
+            Get/Set the Primary Key field
+            </summary>
+        </member>
+        <member name="P:PDSA.DataLayer.DataClasses.PDSAPKTableId.mLoginName">
+            <summary>
+            Get/Set the login name of the person calling this method
+            </summary>
+        </member>
+        <member name="P:PDSA.DataLayer.DataClasses.PDSAPKTableId.mPKValue">
+            <summary>
+            Get/Set the Primary Key Value generated
+            </summary>
+        </member>
+        <member name="P:PDSA.DataLayer.DataClasses.PDSAPKTableId.mConcurValue">
+            <summary>
+            Get/Set the Concurrency Value
+            </summary>
+        </member>
+        <member name="P:PDSA.DataLayer.DataClasses.PDSAPKTableId.mNewConcurValue">
+            <summary>
+            Get/Set the new concurrency value after update the Table IDs table
+            </summary>
+        </member>
+        <member name="P:PDSA.DataLayer.DataClasses.PDSAPKTableId.mIsFound">
+            <summary>
+            Get/Set whether or not the table to generate for was found.
+            </summary>
+        </member>
+        <member name="P:PDSA.DataLayer.DataClasses.PDSAPKTableId.ErrorMessage">
+            <summary>
+            Get/Set the error message
+            </summary>
+        </member>
+        <member name="T:PDSA.DataLayer.DataClasses.PDSAPKTableId.PDSATableIdsColumnNames">
+            <summary>
+            This class contains static members that hold the field names for the pdsaTableIds table, and the parameters for the stored procedures used to modify and select from this table.
+            </summary>
+        </member>
+        <member name="F:PDSA.DataLayer.DataClasses.PDSAPKTableId.PDSATableIdsColumnNames.TableNameId">
+            <summary>
+            Get/Set the TableNameId column name
+            </summary>
+        </member>
+        <member name="F:PDSA.DataLayer.DataClasses.PDSAPKTableId.PDSATableIdsColumnNames.TableName">
+            <summary>
+            Get/Set the TableName column name
+            </summary>
+        </member>
+        <member name="F:PDSA.DataLayer.DataClasses.PDSAPKTableId.PDSATableIdsColumnNames.NextId">
+            <summary>
+            Get/Set the NextId column name
+            </summary>
+        </member>
+        <member name="F:PDSA.DataLayer.DataClasses.PDSAPKTableId.PDSATableIdsColumnNames.InsertName">
+            <summary>
+            Get/Set the InsertName column name
+            </summary>
+        </member>
+        <member name="F:PDSA.DataLayer.DataClasses.PDSAPKTableId.PDSATableIdsColumnNames.InsertDate">
+            <summary>
+            Get/Set the InsertDate column name
+            </summary>
+        </member>
+        <member name="F:PDSA.DataLayer.DataClasses.PDSAPKTableId.PDSATableIdsColumnNames.UpdateName">
+            <summary>
+            Get/Set the UpdateName column name
+            </summary>
+        </member>
+        <member name="F:PDSA.DataLayer.DataClasses.PDSAPKTableId.PDSATableIdsColumnNames.UpdateDate">
+            <summary>
+            Get/Set the UpdateDate column name
+            </summary>
+        </member>
+        <member name="F:PDSA.DataLayer.DataClasses.PDSAPKTableId.PDSATableIdsColumnNames.ConcurrencyValue">
+            <summary>
+            Get/Set the ConcurrencyValue column name
+            </summary>
+        </member>
+        <member name="F:PDSA.DataLayer.DataClasses.PDSAPKTableId.PDSATableIdsColumnNames.NewConcurrencyValue">
+            <summary>
+            Get/Set the NewConcurrencyValue column name
+            </summary>
+        </member>
+        <member name="F:PDSA.DataLayer.DataClasses.PDSAPKTableId.PDSATableIdsColumnNames.FieldName">
+            <summary>
+            Get/Set the FieldName column name
+            </summary>
+        </member>
+        <member name="F:PDSA.DataLayer.DataClasses.PDSAPKTableId.PDSATableIdsColumnNames.MaxValue">
+            <summary>
+            Get/Set the MaxValue column name
+            </summary>
+        </member>
+        <member name="T:PDSA.DataLayer.DataClasses.PDSADataParameter">
+            <summary>
+            This class holds parameter information that will be submitted through a command object.
+            </summary>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataParameter.GetPropertiesAsPropertyHeaderCollection">
+            <summary>
+            Returns all properties of this class as a PDSAPropertyHeaders collection
+            </summary>
+            <returns>A collection of PDSAPropertyHeader objects</returns>
+        </member>
+        <member name="P:PDSA.DataLayer.DataClasses.PDSADataParameter.IsReturnValue">
+            <summary>
+            Get/Set whether or not this parameter is a return value from a stored procedure
+            </summary>
+        </member>
+        <member name="P:PDSA.DataLayer.DataClasses.PDSADataParameter.IsRefCursor">
+            <summary>
+            Get/Set whether or not this parameter is a ref cursor in Oracle
+            </summary>
+        </member>
+        <member name="P:PDSA.DataLayer.DataClasses.PDSADataParameter.ParameterName">
+            <summary>
+            Get/Set the name of the parameter
+            </summary>
+        </member>
+        <member name="T:PDSA.DataLayer.DataClasses.PDSADataParameters">
+            <summary>
+            This class is a collection class of PDSADataParameter objects
+            </summary>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataParameters.#ctor">
+            <summary>
+            Constructor for the PDSADataParameters class
+            </summary>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataParameters.GetByName(System.String)">
+            <summary>
+            Get a PDSADataParameter object by the parameter name
+            </summary>
+            <param name="paramName">The parameter name to find</param>
+            <returns>A PDSADataParameter object, or null if the name is not found</returns>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataParameters.GetOutputParameters(System.Data.IDbCommand,PDSA.DataLayer.PDSADataProvider)">
+            <summary>
+            Sets the output parameters after the command has executed.
+            </summary>
+            <param name="cmd">The IDbCommand object that just executed a stored procedure</param>
+            <param name="dataProvider">The data provider used to submit the command</param>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSADataParameters.AddAllParametersToCommandObject(System.Data.IDbCommand,PDSA.DataLayer.PDSADataProvider)">
+            <summary>
+            Adds all parameters in the collection to the passed in Command object
+            </summary>
+            <param name="cmd">A command object</param>
+            <param name="dataProvider">The data provider that will be used</param>
+        </member>
+        <member name="P:PDSA.DataLayer.DataClasses.PDSADataParameters.Item(System.String)">
+            <summary>
+            Indexer property to retrieve a PDSADataParameter by the parameter name
+            </summary>
+            <param name="paramName">Parameter name to find</param>
+            <returns>A PDSADataParameter object, or null if the name is not found</returns>
+        </member>
+        <member name="P:PDSA.DataLayer.DataClasses.PDSADataParameters.StoredProcName">
+            <summary>
+            Get/Set the stored procedure name
+            </summary>
+        </member>
+        <member name="P:PDSA.DataLayer.DataClasses.PDSADataParameters.BusinessRuleMessages">
+            <summary>
+            Get/Set the validation rules that have failed
+            </summary>
+        </member>
+        <member name="P:PDSA.DataLayer.DataClasses.PDSADataParameters.ParamPrefix">
+            <summary>
+            Get/Set the Parameter prefix that is used for the current database server
+            </summary>
+        </member>
+        <member name="P:PDSA.DataLayer.DataClasses.PDSADataParameters.IsValid">
+            <summary>
+            Get/Set whether or not this parameter is valid after checking the business rules
+            </summary>
+        </member>
+        <member name="T:PDSA.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:PDSA.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:PDSA.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:PDSA.Properties.Resources.colConcurrencyValue">
+            <summary>
+              Looks up a localized string similar to ConcurrecyValue.
+            </summary>
+        </member>
+        <member name="P:PDSA.Properties.Resources.colInsertDate">
+            <summary>
+              Looks up a localized string similar to InsertDate.
+            </summary>
+        </member>
+        <member name="P:PDSA.Properties.Resources.colInsertName">
+            <summary>
+              Looks up a localized string similar to InsertName.
+            </summary>
+        </member>
+        <member name="P:PDSA.Properties.Resources.colUpdateDate">
+            <summary>
+              Looks up a localized string similar to UpdateDate.
+            </summary>
+        </member>
+        <member name="P:PDSA.Properties.Resources.colUpdateName">
+            <summary>
+              Looks up a localized string similar to UpdateName.
+            </summary>
+        </member>
+        <member name="P:PDSA.Properties.Resources.DeleteNoRowsAffected">
+            <summary>
+              Looks up a localized string similar to This record was not deleted. Possible Reasons...\r\n The record you were trying to delete was already deleted or another user updated the record before you attempted to delete it. Or, the Concurrency value field is set to Null..
+            </summary>
+        </member>
+        <member name="P:PDSA.Properties.Resources.TransactionNoRows">
+            <summary>
+              Looks up a localized string similar to No rows were {0} by the class: {1}\r\nPossible Reasons...\r\n  The record you were searching for using the primary key values was not found.\r\n  You forgot to set/update the ConcurrencyID.\r\nThe SQL submitted was: {2}\r\n.
+            </summary>
+        </member>
+        <member name="P:PDSA.Properties.Resources.TransactionNoRowsInserted">
+            <summary>
+              Looks up a localized string similar to No rows were Inserted by the class {0}.\r\nThe SQL submitted was: {1}.\r\n.
+            </summary>
+        </member>
+        <member name="P:PDSA.Properties.Resources.UpdateNoRowsAffected">
+            <summary>
+              Looks up a localized string similar to This record was not updated. Possible Reasons...\r\n The record you were trying to update was deleted or another user updated the record before you did. Or, the Concurrency value field is set to Null..
+            </summary>
+        </member>
+        <member name="T:PDSA.DataLayer.DataClasses.PDSATransaction">
+            <summary>
+            This collection class holds any amount of Data Table Classes. The Execute() method will submit the appropriate SQL based on the TransactionType set in each Data Class. All of these will be placed into a transaction and all will succeed or all will fail.
+            </summary>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSATransaction.#ctor">
+            <summary>
+            Constructor for the PDSATransaction class
+            </summary>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSATransaction.#ctor(PDSA.DataLayer.PDSADataProvider)">
+            <summary>
+            Constructor for the PDSATransaction class
+            </summary>
+            <param name="dataProvider">A PDSADataProvider object</param>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSATransaction.Init">
+            <summary>
+            Initialize this object to a valid start state
+            </summary>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSATransaction.Add(PDSA.DataLayer.DataClasses.PDSADataClassTable)">
+            <summary>
+            Add a Data Class Table object to this collection
+            </summary>
+            <param name="value">A PDSADataClassTable object</param>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSATransaction.Add(PDSA.DataLayer.DataClasses.PDSAStoredProcExecute)">
+            <summary>
+            Add a Stored Procedure Excute object to this collection
+            </summary>
+            <param name="value">A PDSAStoredProcExecute object</param>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSATransaction.Execute">
+            <summary>
+            Execute each data class table object or stored procedure object in the collection within the context of a transaction. Will commit or rollback the transaction based on the outcome of each object.
+            </summary>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSATransaction.CloseConnections">
+            <summary>
+            This method is called after the Execute Method. 
+            Closes and disposes of all connection and command objects used in the data classes.
+            </summary>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSATransaction.CommitTransaction">
+            <summary>
+            Commits the transaction
+            </summary>
+        </member>
+        <member name="M:PDSA.DataLayer.DataClasses.PDSATransaction.RollbackTransaction">
+            <summary>
+            Rolls back the transaction
+            </summary>
+        </member>
+        <member name="E:PDSA.DataLayer.DataClasses.PDSATransaction.BeforeSubmit">
+            <summary>
+            This is the BeforeSubmit event that is raised before an object is submitted through the transaction.
+            </summary>
+        </member>
+        <member name="E:PDSA.DataLayer.DataClasses.PDSATransaction.AfterSubmit">
+            <summary>
+            This is the AfterSubmit event that is raised after an object has been submitted through the transaction.
+            </summary>
+        </member>
+        <member name="P:PDSA.DataLayer.DataClasses.PDSATransaction.DataProvider">
+            <summary>
+            Get/Set the data provider object.
+            If the provider has not been set, then the default provider will be retrieved.
+            </summary>
+        </member>
+        <member name="T:PDSA.DataLayer.DataClasses.PDSATransaction.BeforeSubmitEventHandler">
+            <summary>
+            This delegate sets up the BeforeSubmit event
+            </summary>
+            <param name="sender">this object</param>
+            <param name="e">A PDSATransactionEventArgs object</param>
+        </member>
+        <member name="T:PDSA.DataLayer.DataClasses.PDSATransaction.AfterSubmitEventHandler">
+            <summary>
+            This delegate sets up the AfterSubmit event
+            </summary>
+            <param name="sender">this object</param>
+            <param name="e">A PDSATransactionEventArgs object</param>
+        </member>
+        <member name="T:PDSA.DataLayer.DataClasses.PDSATransactionEventArgs">
+            <summary>
+            This class is used as the 'e' argument from PDSATransaction events.
+            </summary>
+        </member>
+        <member name="P:PDSA.DataLayer.DataClasses.PDSATransactionEventArgs.ClassName">
+            <summary>
+            The class name of the object in this transaction
+            </summary>
+        </member>
+        <member name="P:PDSA.DataLayer.DataClasses.PDSATransactionEventArgs.DataClassTable">
+            <summary>
+            The data class object in this transaction
+            </summary>
+        </member>
+        <member name="P:PDSA.DataLayer.DataClasses.PDSATransactionEventArgs.StoredProcObject">
+            <summary>
+            The stored procedure object in this transaction
+            </summary>
+        </member>
+        <member name="P:PDSA.DataLayer.DataClasses.PDSATransactionEventArgs.Cancel">
+            <summary>
+            Get/Set this property if you wish to cancel the transaction or not
+            </summary>
+        </member>
+    </members>
+</doc>

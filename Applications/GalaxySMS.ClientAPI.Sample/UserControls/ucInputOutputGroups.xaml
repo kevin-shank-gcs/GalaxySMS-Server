@@ -1,0 +1,105 @@
+﻿<UserControl x:Class="GalaxySMS.ClientAPI.Sample.UserControls.ucInputOutputGroups"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:core="http://www.galaxysys.com/GCS/Core"
+             xmlns:galaxysmscommonenums="clr-namespace:GalaxySMS.Common.Enums;assembly=GalaxySMS.Common"
+             xmlns:local="clr-namespace:GalaxySMS.ClientAPI.Sample.UserControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800"
+             DataContext="{Binding InputOutputGroups, Source={StaticResource Locator}}">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="5"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Button Command="{Binding RefreshInputOutputGroupsCommand}">
+            <Button.Content>
+                <StackPanel>
+                    <TextBlock Text="Refresh"/>
+                </StackPanel>
+            </Button.Content>
+        </Button>
+        <core:ErrorsPanel Grid.Row="1" DataContext="{Binding}" />
+        <ListBox Grid.Row="2" ItemsSource="{Binding InputOutputGroups}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding Display}"/>
+                        <Button Command="{Binding DataContext.UnshuntCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                CommandParameter="{Binding}">
+                            <Button.Content>
+                                <StackPanel>
+                                    <TextBlock Text="Unshunt"/>
+                                </StackPanel>
+                            </Button.Content>
+                        </Button>
+                        <Button Command="{Binding DataContext.ShuntCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                CommandParameter="{Binding}">
+                            <Button.Content>
+                                <StackPanel>
+                                    <TextBlock Text="Shunt"/>
+                                </StackPanel>
+                            </Button.Content>
+                        </Button>
+                        <Button Command="{Binding DataContext.ArmCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                CommandParameter="{Binding}">
+                            <Button.Content>
+                                <StackPanel>
+                                    <TextBlock Text="Arm"/>
+                                </StackPanel>
+                            </Button.Content>
+                        </Button>
+                        <Button Command="{Binding DataContext.DisarmCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                CommandParameter="{Binding}">
+                            <Button.Content>
+                                <StackPanel>
+                                    <TextBlock Text="Disarm"/>
+                                </StackPanel>
+                            </Button.Content>
+                        </Button>
+                        <GroupBox Header="Access Portal Group Commands">
+                            <StackPanel Orientation="Horizontal">
+                        <Button Command="{Binding DataContext.UnlockAccessPortalGroupCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                CommandParameter="{Binding}">
+                            <Button.Content>
+                                <StackPanel>
+                                    <TextBlock Text="Unlock Group"/>
+                                </StackPanel>
+                            </Button.Content>
+                        </Button>                                                
+                        <Button Command="{Binding DataContext.LockAccessPortalGroupCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                CommandParameter="{Binding}">
+                            <Button.Content>
+                                <StackPanel>
+                                    <TextBlock Text="Lock Group"/>
+                                </StackPanel>
+                            </Button.Content>
+                        </Button>
+                                                        <Button Command="{Binding DataContext.EnableAccessPortalGroupCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                CommandParameter="{Binding}">
+                            <Button.Content>
+                                <StackPanel>
+                                    <TextBlock Text="Enable Group"/>
+                                </StackPanel>
+                            </Button.Content>
+                        </Button>
+                                                        <Button Command="{Binding DataContext.DisableAccessPortalGroupCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                CommandParameter="{Binding}">
+                            <Button.Content>
+                                <StackPanel>
+                                    <TextBlock Text="Disable Group"/>
+                                </StackPanel>
+                            </Button.Content>
+                        </Button>                                
+                            </StackPanel>
+                                    </GroupBox>         
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </Grid>
+</UserControl>
+

@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Extensions\ApplicationUserSessionHeaderInspectorBehaviorExtension.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Private.ServiceModel" Version="4.8.1" />
+    <PackageReference Include="System.ServiceModel.Duplex" Version="4.8.1" />
+    <PackageReference Include="System.ServiceModel.Http" Version="4.8.1" />
+    <PackageReference Include="System.ServiceModel.NetTcp" Version="4.8.1" />
+    <PackageReference Include="System.ServiceModel.Primitives" Version="4.8.1" />
+    <PackageReference Include="System.ServiceModel.Security" Version="4.8.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\GCS.Framework.Utilities.Std2\GCS.Framework.Utilities.Std2.csproj" />
+    <ProjectReference Include="..\..\GCS.Framework\NETCore\GCS.Core.Common.Contracts.NetCore\GCS.Core.Common.Contracts.NetCore.csproj" />
+    <ProjectReference Include="..\..\GCS.Framework\NETCore\GCS.Core.Common.NetCore\GCS.Core.Common.NetCore.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="MyStuff\" />
+  </ItemGroup>
+
+  <Import Project="..\..\GCS.Core.Common.ServiceModel.Shared\GCS.Core.Common.ServiceModel.Shared.projitems" Label="Shared" />
+
+</Project>

@@ -1,0 +1,226 @@
+﻿<UserControl x:Class="GalaxySMS.Admin.UserControls.ucCpuFlashLoader"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:GalaxySMS.Admin.UserControls"
+             xmlns:ui="clr-namespace:GalaxySMS.Client.UI;assembly=GalaxySMS.Client.UI"
+             xmlns:commonEnums="clr-namespace:GalaxySMS.Common.Enums;assembly=GalaxySMS.Common"
+             xmlns:core="http://www.galaxysys.com/GCS/Core"
+             xmlns:resx="clr-namespace:GalaxySMS.Admin.Properties"
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             xmlns:converters="clr-namespace:GCS.Core.Common.UI.Converters;assembly=GCS.Core.Common.UI"
+             xmlns:support="clr-namespace:GalaxySMS.Admin.Support"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <converters:BooleanToVisibilityConverter x:Key="boolToVisibility" />
+        <converters:InverseBooleanToVisibilityConverter x:Key="inverseBoolToVisibility" />
+        <converters:ParameterAndNotValueToVisibilityConverter x:Key="parameterAndNotValueToVisibility" />
+        <converters:ParameterAndValueToVisibilityConverter x:Key="parameterAndValueToVisibility" />
+        <converters:NullToVisibilityConverter x:Key="nullToVisibility" />
+        <converters:NotNullToVisibilityConverter x:Key="notNullToVisibility" />
+        <converters:ParameterAndValueToBooleanConverter x:Key="parameterValueToBooleanConverter" />
+
+        <BitmapImage x:Key="UploadFlashImage" UriSource="/GalaxySMS.Resources;component/Images/UploadGreenArrow.png" />
+        <BitmapImage x:Key="PauseFlashLoadingImage" UriSource="/GalaxySMS.Resources;component/Images/Pause_blue.png" />
+        <BitmapImage x:Key="CancelFlashLoadingImage"
+                     UriSource="/GalaxySMS.Resources;component/Images/red_x_curved_small.png" />
+        <BitmapImage x:Key="ResumeFlashLoadingImage" UriSource="/GalaxySMS.Resources;component/Images/play_blue.png" />
+        <BitmapImage x:Key="VerifyFlashImage" UriSource="/GalaxySMS.Resources;component/Images/green_check_curved.png" />
+        <BitmapImage x:Key="VerifyAndBurnFlashImage" UriSource="/GalaxySMS.Resources;component/Images/Burn1.png" />
+        <BitmapImage x:Key="VerifyPassedImage" UriSource="/GalaxySMS.Resources;component/Images/thumb_up_green.png" />
+        <BitmapImage x:Key="VerifyFailedImage" UriSource="/GalaxySMS.Resources;component/Images/thumb_down_red.png" />
+
+        <support:PanelModelFlashImageSelector x:Key="PanelModelFlashSelector">
+            <support:PanelModelFlashImageSelector.FlashImage600Template>
+                <DataTemplate>
+                    <StackPanel>
+                        <telerik:RadComboBox
+                            ItemsSource="{Binding DataContext.GalaxyFlashImages600, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type core:UserControlViewBase}}}"
+                            SelectedItem="{Binding DataContext.Selected600FlashImage, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type core:UserControlViewBase}}}">
+                            <telerik:RadComboBox.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="{Binding ImportedFilename}" Margin="5,0"></TextBlock>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </telerik:RadComboBox.ItemTemplate>
+                        </telerik:RadComboBox>
+                    </StackPanel>
+                </DataTemplate>
+            </support:PanelModelFlashImageSelector.FlashImage600Template>
+            <support:PanelModelFlashImageSelector.FlashImage635Template>
+                <DataTemplate>
+                    <StackPanel>
+                        <telerik:RadComboBox
+                            ItemsSource="{Binding DataContext.GalaxyFlashImages635, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type core:UserControlViewBase}}}"
+                            SelectedItem="{Binding DataContext.Selected635FlashImage, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type core:UserControlViewBase}}}">
+                            <telerik:RadComboBox.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="{Binding ImportedFilename}" Margin="5,0"></TextBlock>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </telerik:RadComboBox.ItemTemplate>
+                        </telerik:RadComboBox>
+                    </StackPanel>
+                </DataTemplate>
+            </support:PanelModelFlashImageSelector.FlashImage635Template>
+        </support:PanelModelFlashImageSelector>
+
+    </UserControl.Resources>  
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        <StackPanel>
+            <TextBlock
+                       Text="{x:Static resx:Resources.GalaxyPanelCommunicationView_CpuDetails_FlashImage_Title}"
+                       Margin="5,0" />
+            <ContentControl Content="{Binding ConnectionInfo.GalaxyCpuInformation.InqueryReply.CpuModel}"
+                            ContentTemplateSelector="{StaticResource PanelModelFlashSelector}" />
+        </StackPanel>
+
+
+    <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="0" Grid.RowSpan="2">
+        <ui:ButtonControlBindable
+                                        Visibility="{Binding ConnectionInfo.GalaxyCpuInformation.FlashProgressMessage.CurrentState, 
+                                        Converter={StaticResource parameterAndValueToVisibility}, 
+                                        ConverterParameter={x:Static commonEnums:FlashingState.Idle }}"
+                                        Command="{Binding Path=DataContext.BeginFlashLoadCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type core:UserControlViewBase}}}"
+                                        CommandParameter="{Binding}"
+                                        Text="{x:Static resx:Resources.GalaxyPanelCommunicationView_BeginFlashLoadCPU_Content}"
+                                        ToolTip="{x:Static resx:Resources.GalaxyPanelCommunicationView_BeginFlashLoadCPU_ToolTip}"
+                                        ImageSource="{StaticResource UploadFlashImage}"
+                                        ImageHeight="24"
+                                        ImagePosition="Left">
+        </ui:ButtonControlBindable>
+        <StackPanel Orientation="Horizontal"
+                                                Visibility="{Binding ConnectionInfo.GalaxyCpuInformation.FlashProgressMessage, Converter={StaticResource nullToVisibility}}">
+            <ui:ButtonControlBindable
+                                            Visibility="{Binding ConnectionInfo.GalaxyCpuInformation.FlashProgressMessage.CurrentState, 
+                                        Converter={StaticResource parameterAndValueToVisibility}, 
+                                        ConverterParameter={x:Static commonEnums:FlashingState.LoadingPackets }}"
+                                            Command="{Binding Path=DataContext.PauseFlashLoadCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type core:UserControlViewBase}}}"
+                                            CommandParameter="{Binding}"
+                                            Text="{x:Static resx:Resources.GalaxyPanelCommunicationView_PauseFlashLoadCPU_Content}"
+                                            ToolTip="{x:Static resx:Resources.GalaxyPanelCommunicationView_PauseFlashLoadCPU_ToolTip}"
+                                            ImageSource="{StaticResource PauseFlashLoadingImage}"
+                                            ImageHeight="32"
+                                            ImageWidth="32"
+                                            ImagePosition="Left">
+            </ui:ButtonControlBindable>
+            <ui:ButtonControlBindable
+                                            Visibility="{Binding ConnectionInfo.GalaxyCpuInformation.FlashProgressMessage.CurrentState, 
+                                        Converter={StaticResource parameterAndValueToVisibility}, 
+                                        ConverterParameter={x:Static commonEnums:FlashingState.LoadingPaused }}"
+                                            Command="{Binding Path=DataContext.ResumeFlashLoadCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type core:UserControlViewBase}}}"
+                                            CommandParameter="{Binding}"
+                                            Text="{x:Static resx:Resources.GalaxyPanelCommunicationView_ResumeFlashLoadCPU_Content}"
+                                            ToolTip="{x:Static resx:Resources.GalaxyPanelCommunicationView_ResumeFlashLoadCPU_ToolTip}"
+                                            ImageSource="{StaticResource ResumeFlashLoadingImage}"
+                                            ImageHeight="32"
+                                            ImageWidth="32"
+                                            ImagePosition="Left">
+            </ui:ButtonControlBindable>
+
+            <telerik:RadBusyIndicator
+                                            IsBusy="{Binding ConnectionInfo.GalaxyCpuInformation.FlashProgressMessage.CurrentState, 
+                                        Converter={StaticResource parameterValueToBooleanConverter}, 
+                                        ConverterParameter={x:Static commonEnums:FlashingState.Validating }}"
+                                            BusyContent="{x:Static resx:Resources.GalaxyPanelCommunicationView_ValidatingFlash_BusyContent}">
+                <StackPanel Orientation="Horizontal">
+                    <ui:ButtonControlBindable
+                                                    Visibility="{Binding ConnectionInfo.GalaxyCpuInformation.FlashProgressMessage.CurrentState, 
+                                        Converter={StaticResource parameterAndValueToVisibility}, 
+                                        ConverterParameter={x:Static commonEnums:FlashingState.ValidationFinished }}"
+                                                    Command="{Binding Path=DataContext.ValidateFlashCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type core:UserControlViewBase}}}"
+                                                    CommandParameter="{Binding}"
+                                                    Text="{x:Static resx:Resources.GalaxyPanelCommunicationView_VerifyFlashLoadCPU_Content}"
+                                                    ToolTip="{x:Static resx:Resources.GalaxyPanelCommunicationView_VerifyFlashLoadCPU_ToolTip}"
+                                                    ImageSource="{StaticResource VerifyFlashImage}"
+                                                    ImageHeight="24"
+                                                    ImagePosition="Left">
+                    </ui:ButtonControlBindable>
+                    <StackPanel
+                                                    Visibility="{Binding ConnectionInfo.GalaxyCpuInformation.FlashProgressMessage.CurrentState, 
+                                                    Converter={StaticResource parameterAndValueToVisibility}, 
+                                                    ConverterParameter={x:Static commonEnums:FlashingState.ValidationFinished }}">
+                        <Image Source="{StaticResource VerifyPassedImage}" Margin="5"
+                                                           Visibility="{Binding ConnectionInfo.GalaxyCpuInformation.FlashProgressMessage.ValidationResult, 
+                                            Converter={StaticResource parameterAndValueToVisibility}, 
+                                            ConverterParameter={x:Static commonEnums:FlashValidationResult.Passed }}"
+                                                           Width="32" Height="32" 
+                                                           ToolTip="{x:Static resx:Resources.GalaxyPanelCommunicationView_FlashValidationPassed_ToolTip}"/>
+                        <Image Source="{StaticResource VerifyFailedImage}" Margin="5"
+                                                           Visibility="{Binding ConnectionInfo.GalaxyCpuInformation.FlashProgressMessage.ValidationResult, 
+                                            Converter={StaticResource parameterAndValueToVisibility}, 
+                                            ConverterParameter={x:Static commonEnums:FlashValidationResult.Failed }}"
+                                                           Width="32" Height="32"
+                                                           ToolTip="{x:Static resx:Resources.GalaxyPanelCommunicationView_FlashValidationFailed_ToolTip}"/>
+                    </StackPanel>
+                    <Grid Visibility="{Binding ConnectionInfo.GalaxyCpuInformation.FlashProgressMessage.ValidationResult, 
+                                            Converter={StaticResource parameterAndValueToVisibility}, 
+                                            ConverterParameter={x:Static commonEnums:FlashValidationResult.Passed }}">
+                        <ui:ButtonControlBindable
+                                                    Visibility="{Binding ConnectionInfo.GalaxyCpuInformation.FlashProgressMessage.CurrentState, 
+                                        Converter={StaticResource parameterAndValueToVisibility}, 
+                                        ConverterParameter={x:Static commonEnums:FlashingState.ValidationFinished }}"
+                                                    Command="{Binding Path=DataContext.ValidateAndBurnFlashCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type core:UserControlViewBase}}}"
+                                                    CommandParameter="{Binding}"
+                                                    Text="{x:Static resx:Resources.GalaxyPanelCommunicationView_VerifyAndBurnFlashLoadCPU_Content}"
+                                                    ToolTip="{x:Static resx:Resources.GalaxyPanelCommunicationView_VerifyAndBurnFlashLoadCPU_ToolTip}"
+                                                    ImageSource="{StaticResource VerifyAndBurnFlashImage}"
+                                                    ImageHeight="24"
+                                                    ImagePosition="Left">
+                        </ui:ButtonControlBindable>
+                    </Grid>
+                    <Grid Margin="5,0"
+                                              Visibility="{Binding ConnectionInfo.GalaxyCpuInformation.FlashProgressMessage.CurrentState, 
+                                        Converter={StaticResource parameterAndNotValueToVisibility}, 
+                                        ConverterParameter={x:Static commonEnums:FlashingState.Idle }}">
+                        <telerik:RadProgressBar x:Name="progressBar" Width="150" Minimum="0"
+                                                                    Maximum="{Binding ConnectionInfo.GalaxyCpuInformation.FlashProgressMessage.TotalPacketCount}"
+                                                                    Value="{Binding ConnectionInfo.GalaxyCpuInformation.FlashProgressMessage.PacketNumber}" />
+                        <StackPanel VerticalAlignment="Center">
+                            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center">
+                                                    <Run
+                                                        Text="{Binding Path=ConnectionInfo.GalaxyCpuInformation.FlashProgressMessage.ProgressPercentage, StringFormat={}{0}%, Mode=OneWay}" />
+                                                    <Run Text=" " />
+                                                    <Run
+                                                        Text="{Binding ConnectionInfo.GalaxyCpuInformation.FlashProgressMessage.ProgressMessage, Mode=OneWay}" />
+                            </TextBlock>
+                            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center">
+                                                    <Run
+                                                        Text="{x:Static resx:Resources.GalaxyPanelCommunicationView_FlashLoadDuration}" />
+                                                    <Run
+                                                        Text="{Binding ConnectionInfo.GalaxyCpuInformation.FlashProgressMessage.Duration, StringFormat='{}{0:mm\\:ss}', Mode=OneWay}" />
+                            </TextBlock>
+                        </StackPanel>
+                    </Grid>
+                    <ui:ButtonControlBindable
+                                            Visibility="{Binding ConnectionInfo.GalaxyCpuInformation.FlashProgressMessage.CurrentState, 
+                                        Converter={StaticResource parameterAndNotValueToVisibility}, 
+                                        ConverterParameter={x:Static commonEnums:FlashingState.Idle }}"
+                                            Command="{Binding Path=DataContext.CancelFlashLoadCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type core:UserControlViewBase}}}"
+                                            CommandParameter="{Binding}"
+                                            Text="{x:Static resx:Resources.GalaxyPanelCommunicationView_CancelFlashLoadCPU_Content}"
+                                            ToolTip="{x:Static resx:Resources.GalaxyPanelCommunicationView_CancelFlashLoadCPU_ToolTip}"
+                                            ImageSource="{StaticResource CancelFlashLoadingImage}"
+                                            ImageHeight="24"
+                                            ImageWidth="24"
+                                            ImagePosition="Left">
+                    </ui:ButtonControlBindable>
+                </StackPanel>
+            </telerik:RadBusyIndicator>
+        </StackPanel>
+
+    </StackPanel>
+    </Grid>
+</UserControl>

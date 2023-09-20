@@ -1,0 +1,67 @@
+﻿<UserControl x:Class="GalaxySMS.PersonCredential.UserControls.IndividualProperties.ucPersonActivationMode"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:GalaxySMS.PersonCredential.UserControls.IndividualProperties"
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             xmlns:core="http://www.galaxysys.com/GCS/Core"
+             xmlns:maskedInput="clr-namespace:Telerik.Windows.Controls.MaskedInput;assembly=Telerik.Windows.Controls.Input"
+             xmlns:converters="clr-namespace:GCS.Core.Common.UI.Converters;assembly=GCS.Core.Common.UI"
+             xmlns:sharedResources="clr-namespace:GalaxySMS.Resources;assembly=GalaxySMS.Resources"
+             xmlns:commonEnums="clr-namespace:GalaxySMS.Common.Enums;assembly=GalaxySMS.Common"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <converters:BooleanToVisibilityConverter x:Key="boolToVisibility" />
+        <converters:ParameterAndValueToVisibilityConverter x:Key="parameterValueToVisibilityConverter" />
+        <converters:DateTimeOffsetToDateTimeConverter x:Key="dtoToDateConverter"></converters:DateTimeOffsetToDateTimeConverter>
+    </UserControl.Resources>
+    <StackPanel Orientation="Vertical" Margin="5">
+        <TextBlock Style="{StaticResource DataEntryControlTitle}"
+                   Text="{x:Static sharedResources:Resources.PersonCredentialEditor_ActivationMode_Title}"/>
+        <telerik:RadComboBox x:Name="cbPersonActivationModes"
+            ItemsSource="{Binding DataContext.PersonEditingData.PersonActivationModes, RelativeSource={RelativeSource AncestorType=core:UserControlViewBase}}"
+            SelectedValue="{Binding PersonActivationModeUid}"
+            SelectedValuePath="PersonActivationModeUid"
+            ToolTip="{x:Static sharedResources:Resources.PersonCredentialEditor_ActivationMode_ToolTip}"
+            TextSearch.TextPath="Display"
+            TextSearchMode="StartsWith"
+            IsFilteringEnabled="True">
+            <telerik:RadComboBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal" ToolTip="{Binding Description}">
+                        <!--<Image Source="{Binding FlagImage}" Height="32" Width="Auto" Margin="5"/>-->
+                        <TextBlock VerticalAlignment="Center" Text="{Binding Path=Display}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </telerik:RadComboBox.ItemTemplate>
+        </telerik:RadComboBox>
+        <StackPanel Orientation="Vertical" Margin="5" Visibility="{Binding ElementName=cbPersonActivationModes, Path=SelectedItem.Code
+            ,Converter={StaticResource parameterValueToVisibilityConverter}, 
+                ConverterParameter={x:Static commonEnums:PersonActivationModes.ActivateByDate }}">
+            <TextBlock Style="{StaticResource DataEntryControlTitle}"
+                       Text="{x:Static sharedResources:Resources.PersonCredentialEditor_ActivationDate_Title}"/>
+            <telerik:RadDateTimePicker 
+                DateSelectionMode="Day"
+                SelectedValue="{Binding ActivationDateTime, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, Converter={StaticResource dtoToDateConverter}}"
+                ToolTip="{x:Static sharedResources:Resources.PersonCredentialEditor_ActivationDate_ToolTip}"
+                DateTimeWatermarkContent ="{x:Static sharedResources:Resources.PersonCredentialEditor_ActivationDate_EmptyContent}"
+                SelectionOnFocus="DefaultSelectAll" 
+                IsReadOnly="False" InputMode="DatePicker" />
+        </StackPanel>
+        <StackPanel Orientation="Vertical" Margin="5" Visibility="{Binding ElementName=cbPersonActivationModes, Path=SelectedItem.Code
+            ,Converter={StaticResource parameterValueToVisibilityConverter}, 
+                ConverterParameter={x:Static commonEnums:PersonActivationModes.ActivateByDateAndTime }}">
+            <TextBlock Style="{StaticResource DataEntryControlTitle}"
+                       Text="{x:Static sharedResources:Resources.PersonCredentialEditor_ActivationDateAndTime_Title}"/>
+            <telerik:RadDateTimePicker 
+                DateSelectionMode="Day"
+                SelectedValue="{Binding ActivationDateTime, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, Converter={StaticResource dtoToDateConverter}}"
+                ToolTip="{x:Static sharedResources:Resources.PersonCredentialEditor_ActivationDateAndTime_ToolTip}"
+                DateTimeWatermarkContent ="{x:Static sharedResources:Resources.PersonCredentialEditor_ActivationDateAndTime_EmptyContent}"
+                SelectionOnFocus="DefaultSelectAll" 
+                IsReadOnly="False" InputMode="DateTimePicker" />
+        </StackPanel>
+    </StackPanel>
+</UserControl>

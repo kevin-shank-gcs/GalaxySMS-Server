@@ -1,0 +1,79 @@
+﻿<UserControl x:Class="GalaxySMS.Client.UI.CalendarDayControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:GalaxySMS.Client.UI"
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             xmlns:core="http://www.galaxysys.com/GCS/Core"
+             xmlns:converters="clr-namespace:GCS.Core.Common.UI.Converters;assembly=GCS.Core.Common.UI"
+             xmlns:sharedResources="clr-namespace:GalaxySMS.Resources;assembly=GalaxySMS.Resources"
+             mc:Ignorable="d" 
+             MinWidth="100" MinHeight="100" BorderBrush="LightSlateGray" BorderThickness="0.5,0.5,1.5,1.5">
+    <UserControl.Resources>
+        <converters:IntToBrushConverter x:Key="IntToBrushConverter"/>
+        <converters:BooleanToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
+        <converters:GuidNotEmptyToVisibilityConverter x:Key="GuidNotEmptyToVisibilityConverter"/>
+        <LinearGradientBrush x:Key="BlueGradientBrush" EndPoint="0,1" StartPoint="0,0">
+            <GradientStop Color="#FFFFFFFF" Offset="0"/>
+            <GradientStop Color="#FFC4DDFF" Offset="0.987"/>
+            <GradientStop Color="#FFDEECFF" Offset="0.535"/>
+        </LinearGradientBrush>
+    </UserControl.Resources>
+
+    <!--DataContext must be a GalaxySMS.Client.Entities.DateType object-->
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="21"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition MinWidth="150"/>
+        </Grid.ColumnDefinitions>
+
+        <Border x:Name="DayLabelRowBorder" 
+                CornerRadius="2" Margin="2"  Grid.Row="0" 
+                BorderBrush="{Binding SelectedItem.TelerikHighlightColor, Converter={StaticResource IntToBrushConverter}, ElementName=cbDayTypes}" 
+                Background="{DynamicResource BlueGradientBrush}"
+                BorderThickness="1">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" x:Name="DayNumberLabel" Text="{Binding Date.Day}" Style="{StaticResource DataEntryControlTitle}"/>
+                <TextBlock  Grid.Column="1" x:Name="DayTitle" Text="{Binding Title}" Style="{StaticResource DataEntryControlTitle}"/>
+                <BulletDecorator Grid.Column="2" HorizontalAlignment="Right" Margin="0,0,5,0"  VerticalAlignment="Center" Visibility="{Binding IsDirty, Converter={StaticResource BoolToVisibilityConverter}}">
+                    <BulletDecorator.Bullet>
+                        <Ellipse Height="8" Width="8" Fill="#FF930202"/>
+                    </BulletDecorator.Bullet>
+                </BulletDecorator>
+            </Grid>
+        </Border>
+
+        <StackPanel Grid.Row="1" x:Name="DayAppointmentsStack" 
+                    HorizontalAlignment="Stretch" 
+                    VerticalAlignment="Stretch"
+                    Background="{Binding SelectedItem.TelerikHighlightColor, Converter={StaticResource IntToBrushConverter}, ElementName=cbDayTypes}">
+            <telerik:RadComboBox x:Name="cbDayTypes"
+                                 HorizontalAlignment="Stretch"
+                                 Margin="5, 5, 5, 0"
+                                 MinWidth="100"
+                                 ItemsSource="{Binding DataContext.DayTypeSelectionList, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type core:UserControlViewBase}}}"
+                                 DisplayMemberPath="Name"
+                                 SelectedValue="{Binding DayTypeUid}"
+                                 SelectedValuePath="DayTypeUid"
+                                 ToolTip="{x:Static sharedResources:Resources.DayTypeSelector_ToolTip}"/>
+
+            <StackPanel Orientation="Vertical" Visibility="{Binding DayTypeUid, Converter={StaticResource GuidNotEmptyToVisibilityConverter}}">
+                <TextBlock Text="{x:Static sharedResources:Resources.DayType_TitleText}"
+                           HorizontalAlignment="Stretch" Margin="5, 5, 0, 0"
+                           FontWeight="Bold"/>
+                <TextBox Text="{Binding Title}"
+                         HorizontalAlignment="Stretch" Margin="5,0,5,5"
+                         ToolTip="{x:Static sharedResources:Resources.DayType_TitleToolTip}" />
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</UserControl>

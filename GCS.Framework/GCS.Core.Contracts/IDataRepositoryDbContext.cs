@@ -1,0 +1,117 @@
+﻿////////////////////////////////////////////////////////////////////////////////////////////////////
+// file:	IDataRepositoryDbContext.cs
+//
+// summary:	Declares the IDataRepositoryDbContext interface
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using PDSA.DataLayer.DataClasses;
+
+namespace GCS.Core.Common.Contracts
+{
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+    /// <summary>   Interface for data repository database context. </summary>
+    ///
+    /// <remarks>   Kevin, 12/26/2018. </remarks>
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    public interface IDataRepositoryDbContext
+    {
+
+    }
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+    /// <summary>   Interface for data repository database context. </summary>
+    ///
+    /// <remarks>   Kevin, 12/26/2018. </remarks>
+    ///
+    /// <typeparam name="T">    Generic type parameter. </typeparam>
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    public interface IDataRepositoryDbContext<T> : IDataRepositoryDbContext
+        where T : class, IIdentifiableEntity, new()
+    {
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Adds entity. </summary>
+        ///
+        /// <param name="entity">       The entity. </param>
+        /// <param name="sessionData">  Information describing the session. </param>
+        ///
+        /// <returns>   A T. </returns>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        T Add(T entity, IApplicationUserSessionDataHeader sessionData);
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Updates this IDataRepositoryDbContext&lt;T&gt; </summary>
+        ///
+        /// <param name="entity">       The entity. </param>
+        /// <param name="sessionData">  Information describing the session. </param>
+        ///
+        /// <returns>   A T. </returns>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        T Update(T entity, IApplicationUserSessionDataHeader sessionData);
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Removes this IDataRepositoryDbContext&lt;T&gt; </summary>
+        ///
+        /// <param name="entity">       The entity. </param>
+        /// <param name="sessionData">  Information describing the session. </param>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        void Remove(T entity, IApplicationUserSessionDataHeader sessionData);
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Removes this IDataRepositoryDbContext&lt;T&gt; </summary>
+        ///
+        /// <param name="id">           The identifier. </param>
+        /// <param name="sessionData">  Information describing the session. </param>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        void Remove(int id, IApplicationUserSessionDataHeader sessionData);
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Removes this IDataRepositoryDbContext&lt;T&gt; </summary>
+        ///
+        /// <param name="id">           The identifier. </param>
+        /// <param name="sessionData">  Information describing the session. </param>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        void Remove(Guid id, IApplicationUserSessionDataHeader sessionData);
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Gets. </summary>
+        ///
+        /// <param name="sessionData">  Information describing the session. </param>
+        ///
+        /// <returns>   A T. </returns>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        IEnumerable<T> Get(IApplicationUserSessionDataHeader sessionData);
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Gets. </summary>
+        ///
+        /// <param name="id">           The identifier. </param>
+        /// <param name="sessionData">  Information describing the session. </param>
+        ///
+        /// <returns>   A T. </returns>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        T Get(int id, IApplicationUserSessionDataHeader sessionData);
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Gets. </summary>
+        ///
+        /// <param name="id">           The identifier. </param>
+        /// <param name="sessionData">  Information describing the session. </param>
+        ///
+        /// <returns>   A T. </returns>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        T Get(Guid id, IApplicationUserSessionDataHeader sessionData);
+    }
+}

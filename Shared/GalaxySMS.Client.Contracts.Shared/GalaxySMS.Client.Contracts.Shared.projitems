@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>e99b03c6-6b44-4ed6-b4d7-4dc07aaf886c</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>GalaxySMS.Client.Contracts.Shared</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="$(MSBuildThisFileDirectory)Data Contracts\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Service Contracts\IAccountService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Service Contracts\IAdministrationService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Service Contracts\IGalaxyPanelCommunicationManagerService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Service Contracts\IPanelDataProcessingService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Service Contracts\IMercuryManagementService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Service Contracts\ISystemManagementService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Service Contracts\IUserSessionService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModelContracts\ISupportsUserEntitySelection.cs" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,27 @@
+﻿////////////////////////////////////////////////////////////////////////////////////////////////////
+// file:	Constants\AllegionPimLimits.cs
+//
+// summary:	Implements the allegion pim limits class
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace GalaxySMS.Common.Constants
+{
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+    /// <summary>   An allegion pim limits. </summary>
+    ///
+    /// <remarks>   Kevin, 1/3/2019. </remarks>
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    public class GalaxyFlashLoadLimits
+    {
+        public const int MinimumFlashPacketInterval = 20;
+        public const int DefaultFlashPacketInterval = 100;
+        public const int MaximumFlashPacketInterval = 2000;
+    }
+}

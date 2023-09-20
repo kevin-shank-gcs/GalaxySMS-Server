@@ -1,0 +1,7 @@
+{
+  "profiles": {
+    "GCS.Logging.Core": {
+      "commandName": "Project"
+    }
+  }
+}

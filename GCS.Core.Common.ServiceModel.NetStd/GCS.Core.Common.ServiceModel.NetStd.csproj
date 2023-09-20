@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <Import Project="..\GCS.Core.Common.ServiceModel.Shared\GCS.Core.Common.ServiceModel.Shared.projitems" Label="Shared" />
+
+  <ItemGroup>
+    <ProjectReference Include="..\GCS.Core.Common.Contracts.NetStd\GCS.Core.Common.Contracts.NetStd.csproj" />
+    <ProjectReference Include="..\GCS.Core.Common.NetStd\GCS.Core.Common.NetStd.csproj" />
+    <ProjectReference Include="..\GCS.Framework.Utilities.Std2\GCS.Framework.Utilities.Std2.csproj" />
+  </ItemGroup>
+
+</Project>

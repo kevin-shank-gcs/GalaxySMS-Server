@@ -1,0 +1,31 @@
+﻿////////////////////////////////////////////////////////////////////////////////////////////////////
+// file:	Enums\GalaxyInputDelayType.cs
+//
+// summary:	Implements the galaxy input delay type class
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace GalaxySMS.Common.Enums
+{
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+    /// <summary>   Values that represent galaxy input delay types. </summary>
+    ///
+    /// <remarks>   Kevin, 1/3/2019. </remarks>
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+	public enum GalaxyOutputMode
+	{
+        None,
+        Follows = 1,
+        Latching = 2,
+        Scheduled = 3,
+        TimeoutRetriggerable = 4,
+        Timeout = 5,
+        Limit = 6,
+        Counter = 7
+    }
+}

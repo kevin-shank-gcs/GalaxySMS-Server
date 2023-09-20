@@ -1,0 +1,26 @@
+﻿////////////////////////////////////////////////////////////////////////////////////////////////////
+// file:	Enums\CardTourManagerBoardInterfaceSectionMode.cs
+//
+// summary:	Implements the card tour manager board interface section mode class
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace GalaxySMS.Common.Enums
+{
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+    /// <summary>   Values that represent card tour manager board interface section modes. </summary>
+    ///
+    /// <remarks>   Kevin, 1/3/2019. </remarks>
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    public enum CardTourManagerBoardInterfaceSectionMode
+    {
+        /// <summary>   An enum constant representing the ctm option. </summary>
+        CTM,
+    }
+}

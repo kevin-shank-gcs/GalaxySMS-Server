@@ -1,0 +1,15 @@
+﻿<UserControl x:Class="GalaxySMS.Client.UI.MonthYearControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:sharedResources="clr-namespace:GalaxySMS.Resources;assembly=GalaxySMS.Resources"
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <StackPanel Orientation="Horizontal">
+        <Button FontFamily="Segoe UI Symbol" Content="&#xE112;" Command="{Binding PreviousMonthCommand}" ToolTip="{x:Static sharedResources:Resources.MonthPicker_PreviousMonthButtonToolTip}"/>
+        <telerik:RadDateTimePicker x:Name="monthYearPicker" DateSelectionMode="Month" InputMode="DatePicker" SelectedDate="{Binding SelectedMonth, Mode=TwoWay}" />
+        <Button FontFamily="Segoe UI Symbol" Content="&#xE111;" Command="{Binding NextMonthCommand}" ToolTip="{x:Static sharedResources:Resources.MonthPicker_NextMonthButtonToolTip}"/>
+    </StackPanel>
+</UserControl>

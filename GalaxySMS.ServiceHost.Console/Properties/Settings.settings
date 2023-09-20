@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="GalaxySMS.ServiceHost.Console.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="CustomerName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">The Acme Company</Value>
+    </Setting>
+    <Setting Name="CustomerEmail" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">RoadRunner@Acme.com</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

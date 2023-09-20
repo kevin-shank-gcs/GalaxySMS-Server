@@ -1,0 +1,39 @@
+﻿////////////////////////////////////////////////////////////////////////////////////////////////////
+// file:	Core\DataContractBase.cs
+//
+// summary:	Implements the data contract base class
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace GCS.Core.Common.Core
+{
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+    /// <summary>   A data contract base. </summary>
+    ///
+    /// <remarks>   Kevin, 12/26/2018. </remarks>
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+#if NetCoreApi
+#else
+    [DataContract]
+#endif
+    public class DataContractBase : IExtensibleDataObject
+    {
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Gets or sets the structure that contains extra data. </summary>
+        ///
+        /// <value>
+        /// An <see cref="T:System.Runtime.Serialization.ExtensionDataObject" /> that contains data that
+        /// is not recognized as belonging to the data contract.
+        /// </value>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        public ExtensionDataObject ExtensionData { get; set; }
+    }
+}

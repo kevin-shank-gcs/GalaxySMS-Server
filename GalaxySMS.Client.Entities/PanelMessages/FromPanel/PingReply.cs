@@ -1,0 +1,85 @@
+﻿////////////////////////////////////////////////////////////////////////////////////////////////////
+// file:	PanelMessages\FromPanel\PingReply.cs
+//
+// summary:	Implements the ping reply class
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
+using System.Threading.Tasks;
+using GalaxySMS.Common.Enums;
+
+namespace GalaxySMS.Client.Entities
+{
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+    /// <summary>   A ping reply. </summary>
+    ///
+    /// <remarks>   Kevin, 12/26/2018. </remarks>
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    [DataContract]
+    public class PingReply : PanelMessageBase
+    {
+        /// <summary>   The response. </summary>
+        private YesNo _response;
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Default constructor. </summary>
+        ///
+        /// <remarks>   Kevin, 12/26/2018. </remarks>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        public PingReply() : base() { }
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Constructor. </summary>
+        ///
+        /// <remarks>   Kevin, 12/26/2018. </remarks>
+        ///
+        /// <param name="b">    The PanelMessageBase to process. </param>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        public PingReply(PanelMessageBase b)
+            : base(b)
+        {
+        }
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Constructor. </summary>
+        ///
+        /// <remarks>   Kevin, 12/26/2018. </remarks>
+        ///
+        /// <param name="o">    The PingReply to process. </param>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        public PingReply(PingReply o)
+            : base(o)
+        {
+            if (o != null)
+                Response = o.Response;
+        }
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Gets or sets the response. </summary>
+        ///
+        /// <value> The response. </value>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        [DataMember]
+        public YesNo Response
+        {
+            get { return _response; }
+            set
+            {
+                if (_response != value)
+                {
+                    _response = value;
+                    OnPropertyChanged(() => Response);
+                }
+            }
+        }
+    }
+}

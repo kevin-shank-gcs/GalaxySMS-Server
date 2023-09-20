@@ -1,0 +1,32 @@
+﻿<UserControl x:Class="GalaxySMS.Client.UI.SaveCancelButtonControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:sharedResources="clr-namespace:GalaxySMS.Resources;assembly=GalaxySMS.Resources" 
+             mc:Ignorable="d" 
+             d:DesignHeight="38.31" d:DesignWidth="600">
+    <UserControl.Resources>
+        <BitmapImage x:Key="SaveImage" UriSource="/GalaxySMS.Resources;component/Images/SaveData.png" />
+        <BitmapImage x:Key="CancelImage" UriSource="/GalaxySMS.Resources;component/Images/CancelEdit.png" />
+    </UserControl.Resources>
+
+    <StackPanel Orientation="Horizontal" Style="{StaticResource HeaderStackPanel}">
+            <Button Margin="5" Command="{Binding SaveCommand}"
+				ToolTip="{x:Static sharedResources:Resources.Common_SaveToolTip}">
+                <StackPanel Orientation="Horizontal" Margin="3">
+                    <Image x:Name="imgSave" Source="{StaticResource SaveImage}" Width="16" Height="16" />
+                    <TextBlock VerticalAlignment="Center" Margin="3,0,0,0"
+						Text="{x:Static sharedResources:Resources.Common_Save}" />
+                </StackPanel>
+            </Button>
+            <Button Margin="5" Command="{Binding CancelCommand}"
+				ToolTip="{x:Static sharedResources:Resources.Common_CancelToolTip}">
+                <StackPanel Orientation="Horizontal" Margin="3">
+                    <Image x:Name="imgCancel" Source="{StaticResource CancelImage}" Width="16" Height="16" />
+                    <TextBlock VerticalAlignment="Center" Margin="3,0,0,0"
+						Text="{x:Static sharedResources:Resources.Common_Cancel}" />
+                </StackPanel>
+            </Button>
+        </StackPanel>
+</UserControl>

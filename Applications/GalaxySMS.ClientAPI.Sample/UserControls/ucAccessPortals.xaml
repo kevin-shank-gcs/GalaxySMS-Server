@@ -1,0 +1,101 @@
+﻿<UserControl x:Class="GalaxySMS.ClientAPI.Sample.UserControls.ucAccessPortals"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:core="http://www.galaxysys.com/GCS/Core"
+             xmlns:galaxysmscommonenums="clr-namespace:GalaxySMS.Common.Enums;assembly=GalaxySMS.Common"
+             xmlns:local="clr-namespace:GalaxySMS.ClientAPI.Sample.UserControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800"
+             DataContext="{Binding AccessPortals, Source={StaticResource Locator}}">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="5"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Button Command="{Binding RefreshAccessPortalsCommand}">
+            <Button.Content>
+                <StackPanel>
+                    <TextBlock Text="Refresh"/>
+                </StackPanel>
+            </Button.Content>
+        </Button>
+        <core:ErrorsPanel Grid.Row="1" DataContext="{Binding}" />
+        <ListBox Grid.Row="2" ItemsSource="{Binding AccessPortals}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding Name}"/>
+                        <Button Command="{Binding DataContext.PulseCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                CommandParameter="{Binding}">
+                            <Button.Content>
+                                <StackPanel>
+                                    <TextBlock Text="Pulse"/>
+                                </StackPanel>
+                            </Button.Content>
+                        </Button>
+                        <Button Command="{Binding DataContext.UnlockCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                CommandParameter="{Binding}">
+                            <Button.Content>
+                                <StackPanel>
+                                    <TextBlock Text="Unlock"/>
+                                </StackPanel>
+                            </Button.Content>
+                        </Button>
+                        <Button Command="{Binding DataContext.LockCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                CommandParameter="{Binding}">
+                            <Button.Content>
+                                <StackPanel>
+                                    <TextBlock Text="Lock"/>
+                                </StackPanel>
+                            </Button.Content>
+                        </Button>
+                        <Button Command="{Binding DataContext.EnableCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                CommandParameter="{Binding}">
+                            <Button.Content>
+                                <StackPanel>
+                                    <TextBlock Text="Enable"/>
+                                </StackPanel>
+                            </Button.Content>
+                        </Button>
+                        <Button Command="{Binding DataContext.DisableCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                CommandParameter="{Binding}">
+                            <Button.Content>
+                                <StackPanel>
+                                    <TextBlock Text="Disable"/>
+                                </StackPanel>
+                            </Button.Content>
+                        </Button>
+                        <Button Command="{Binding DataContext.RequestStatusCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                CommandParameter="{Binding}">
+                            <Button.Content>
+                                <StackPanel>
+                                    <TextBlock Text="Request Status"/>
+                                </StackPanel>
+                            </Button.Content>
+                        </Button>
+                        <TextBlock Margin="5,0">
+                            <Run Text="AccessPortalStatus => "/>
+                            <Run Text="{Binding LastStatusReply.AccessPortalStatus}" FontWeight="SemiBold"/>
+                        </TextBlock>
+                        <TextBlock Margin="5,0">
+                            <Run Text="ContactStatus => "/>
+                            <Run Text="{Binding LastStatusReply.ContactStatus}" FontWeight="SemiBold"/>
+                        </TextBlock>                        
+                        <TextBlock Margin="5,0">
+                            <Run Text="LockStatus => "/>
+                            <Run Text="{Binding LastStatusReply.LockStatus}" FontWeight="SemiBold"/>
+                        </TextBlock>                           
+                        <TextBlock Margin="5,0">
+                            <Run Text="CredentialReaderStatus => "/>
+                            <Run Text="{Binding LastStatusReply.CredentialReaderStatus}" FontWeight="SemiBold" />
+                        </TextBlock>                      
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </Grid>
+</UserControl>
+

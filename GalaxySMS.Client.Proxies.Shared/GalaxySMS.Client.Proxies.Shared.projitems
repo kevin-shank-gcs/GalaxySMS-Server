@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects Condition="'$(MSBuildVersion)' == '' Or '$(MSBuildVersion)' &lt; '16.0'">$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>35356ef3-d49b-410e-a904-df061d69dc10</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>GalaxySMS.Client.Proxies.Shared</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Service Proxies\AccountClient.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Service Proxies\AdministrationClient.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Service Proxies\GalaxyPanelCommunicationManagerClient.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Service Proxies\MercuryManagementClient.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Service Proxies\PanelDataProcessingManagerClient.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Service Proxies\SystemManagementClient.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Service Proxies\UserSessionClient.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ServiceFactory.cs" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,70 @@
+﻿<core:UserControlViewBase
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:core="http://www.galaxysys.com/GCS/Core"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:resx="clr-namespace:GalaxySMS.Admin.Properties"
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             xmlns:Entities="clr-namespace:GalaxySMS.Client.Entities;assembly=GalaxySMS.Client.Entities" 
+            x:Class="GalaxySMS.Admin.Views.EditUserRequirementsView"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+            <ColumnDefinition Width="10"></ColumnDefinition>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Row="0">
+            <core:ValidationHeader DataContext="{Binding}" />
+        </StackPanel>
+        <GroupBox Grid.Row="1" Grid.Column="0" Header="{x:Static resx:Resources.EditUserRequirementsView_PasswordStrengthRequirements}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    <ColumnDefinition Width="10"></ColumnDefinition>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <CheckBox Grid.Row="1" Margin="3" Content="{x:Static resx:Resources.EditUserRequirementsView_PasswordCannotContainName}" ToolTip="{x:Static resx:Resources.EditUserRequirementsView_PasswordCannotContainNameToolTip}" IsChecked="{Binding UserRequirement.PasswordCannotContainName, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" HorizontalAlignment="Left" />
+                <TextBlock Grid.Row="2" Margin="3" Text="{x:Static resx:Resources.EditUserRequirementsView_PasswordValidationTechnique}" />
+                <telerik:RadComboBox Grid.Row="3" Margin="3" ItemsSource="{Binding PasswordTechiques}"/>
+
+                <TextBlock Grid.Row="4" Margin="3" Text="{x:Static resx:Resources.EditUserRequirementsView_ValidatePasswordRegularExpression}" />
+                <TextBox Grid.Row="5" Margin="3" MinWidth="200" Text="{Binding UserRequirement.PasswordCustomRegEx, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" HorizontalAlignment="Left" />
+
+                <TextBlock Grid.Row="6" Margin="3" Text="{x:Static resx:Resources.EditUserRequirementsView_MinimumLength}" />
+                <TextBox Grid.Row="7" Margin="3" MinWidth="20" ToolTip="{x:Static resx:Resources.EditUserRequirementsView_MinimumLengthToolTip}" Text="{Binding UserRequirement.PasswordMinimumLength, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" HorizontalAlignment="Left" />
+
+                <TextBlock Grid.Row="8" Margin="3" Text="{x:Static resx:Resources.EditUserRequirementsView_MaximumLength}" />
+                <TextBox Grid.Row="9" Margin="3" MinWidth="20" ToolTip="{x:Static resx:Resources.EditUserRequirementsView_MaximumLengthToolTip}" Text="{Binding UserRequirement.PasswordMaximumLength, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" HorizontalAlignment="Left" />
+            </Grid>
+        </GroupBox>
+    </Grid>
+</core:UserControlViewBase>
