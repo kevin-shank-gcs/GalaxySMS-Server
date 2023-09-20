@@ -19,4 +19,12 @@
     <ProjectReference Include="..\GCS.Framework\NETCore\GCS.Core.Common.NetCore\GCS.Core.Common.NetCore.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Update="appsettings - example.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+
 </Project>

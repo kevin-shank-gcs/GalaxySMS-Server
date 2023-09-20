@@ -309,6 +309,9 @@
     <Compile Include="QueueListener.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="App - example.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="App.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
